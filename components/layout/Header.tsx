@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { mainNav, shopCategories } from '@/data/nav'
@@ -19,17 +18,10 @@ export function Header() {
       <div className="mx-auto px-6" style={{ maxWidth: '1440px' }}>
         <div className="flex items-center justify-between" style={{ height: '64px' }}>
 
-          {/* ── Logo ─────────────────────────────────────── */}
-          {/* TODO: Replace with final SVG transparent / PNG transparent 2x · favicon · OG image once available */}
-          {/* Safety: if 2t-logo-wide-transparent.png shows checkerboard or fringe on #080808, revert to text spans below */}
-          <Link href="/" aria-label="2T Jewelers">
-            <Image
-              src="/assets/brand/2t-logo-wide-transparent.png"
-              alt="2T Jewelers"
-              width={180}
-              height={36}
-              priority
-            />
+          {/* ── Brand lockup: CSS diamond mark + gradient gold wordmark ─────── */}
+          <Link href="/" aria-label="2T Jewelers" className="brand-lockup">
+            <span className="brand-mark-css" aria-hidden="true" />
+            <span className="brand-wordmark">2T JEWELERS</span>
           </Link>
 
           {/* ── Desktop Nav (hidden on mobile) ──────────── */}
@@ -106,7 +98,7 @@ export function Header() {
           {/* ── Desktop CTA (hidden on mobile) ──────────── */}
           <div className="hidden md:flex">
             <Link href="/custom" className="btn-outline-gold" style={{ fontSize: '0.8125rem', padding: '0.55rem 1.1rem' }}>
-              Start Custom
+              Start Yours
             </Link>
           </div>
 
@@ -167,7 +159,7 @@ export function Header() {
             onClick={() => setMobileOpen(false)}
             className="btn-outline-gold text-center mt-5"
           >
-            Start Custom
+            Start Yours
           </Link>
         </nav>
       )}

@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { footerNav } from '@/data/nav'
 
@@ -16,17 +15,12 @@ export function Footer() {
 
         {/* Logo + address block */}
         <div style={{ marginBottom: '3rem' }}>
-          {/* TODO: Replace with final SVG transparent / PNG transparent 2x · favicon · OG image once available */}
-          <Link href="/" aria-label="2T Jewelers" style={{ display: 'inline-block' }}>
-            <Image
-              src="/assets/brand/2t-logo-full-black-bg.png"
-              alt="2T Jewelers"
-              width={192}
-              height={48}
-            />
+          <Link href="/" aria-label="2T Jewelers" className="brand-lockup">
+            <span className="brand-mark-css brand-mark-css-lg" aria-hidden="true" />
+            <span className="brand-wordmark brand-wordmark-lg">2T JEWELERS</span>
           </Link>
           <p style={{ marginTop: '1rem', fontSize: '0.8125rem', color: 'var(--color-brand-muted)', lineHeight: 1.65, maxWidth: '260px' }}>
-            Custom pieces. Real materials.
+            Pittsburgh-built. Custom-first. Nearly 30 years.
           </p>
           <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
             <p style={{ fontSize: '0.78rem', color: 'var(--color-brand-muted)' }}>
@@ -37,7 +31,7 @@ export function Footer() {
               style={{ fontSize: '0.78rem', color: 'var(--color-brand-muted)' }}
               className="nav-link-footer"
             >
-              +1 412-281-7072
+              Call the store: +1 412-281-7072
             </a>
             <a
               href="https://wa.me/14124524343"

@@ -198,12 +198,12 @@ export function CustomHero() {
               letterSpacing: '-0.035em',
             }}
           >
-            You bring
+            Bring the logo.
             <br />
-            the vision.
+            Bring the photo.
             <br />
             <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>
-              We build it.
+              Bring the idea.
             </em>
           </h1>
 
@@ -218,7 +218,7 @@ export function CustomHero() {
               maxWidth:   '36ch',
             }}
           >
-            Logo, sketch, photo, or just an idea — start here. We handle the rest.
+            Logo, sketch, photo, name — whatever you&apos;ve got. Send it. We guide from there.
           </p>
 
           <div
@@ -231,15 +231,12 @@ export function CustomHero() {
                 className="btn-primary"
                 style={{ padding: '0.9rem 1.875rem', fontSize: '0.875rem', letterSpacing: '0.07em' }}
               >
-                START YOUR PIECE →
+                SEND THE IDEA →
               </a>
               <Link href="/collections" className="btn-outline-dim">
                 Browse Ready-Made
               </Link>
             </div>
-            <p className="trust-signal" style={{ marginTop: '1rem' }}>
-              No deposit. No rush. We quote first.
-            </p>
           </div>
         </div>
       </div>

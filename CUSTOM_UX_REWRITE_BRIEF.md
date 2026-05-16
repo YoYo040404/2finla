@@ -2,10 +2,15 @@
 
 ## Current Status
 
-**Research and planning phase: complete.**
-**Execution phase: pending user approval.**
+**WIP — build passes technically, but NOT user-approved as final.**
 
-The Next.js `/custom` page is built and technically works, but the user reviewed the page and said it is too heavy and not friendly/easy enough.
+The `/custom` page has been simplified to a single mobile-first 5-field flow.
+
+**User feedback:** The current build feels too card-heavy and too form-like, especially on mobile. It is directionally better than the previous version, but it is not the final UX.
+
+**Do not commit or push this as an approved milestone.**
+
+**Future direction:** Next iteration should use compact selectors — dropdown or bottom-sheet style — instead of large chip/card grids. The goal is a faster, cleaner, and more mobile-native feel.
 
 Current route:
 
@@ -13,26 +18,47 @@ Current route:
 http://localhost:3000/custom
 ```
 
-Current files:
+Active files:
 
 ```text
 app/custom/page.tsx
 components/custom/CustomHero.tsx
-components/custom/PieceTiles.tsx
+components/custom/CustomForm.tsx   ← rebuilt (5 fields only)
 components/custom/HowItWorks.tsx
-components/custom/CustomForm.tsx
 components/custom/CustomFaq.tsx
 ```
 
-Current issue:
+Removed:
 
-- long scroll
-- heavy categories before user starts
-- form appears too late
-- custom flow not immediate enough
-- page feels like section stack, not fast custom order funnel
-- piece cards may be too big/heavy
-- need to make it easier for audience to start
+```text
+components/custom/IdeaTypeStrip.tsx   ← deleted
+components/custom/PieceTiles.tsx      ← deleted (was unused)
+```
+
+Form structure (current):
+
+Step 1 — What are you building?
+  Chip selector (required): Name Piece, Logo Piece, Photo Pendant, Number Piece,
+  Iced-Out Pendant, Custom Chain, Grillz, Watch, Not Sure Yet
+
+Step 2 — Drop the idea
+  - Tell us the idea (required, textarea)
+  - Drop your reference (optional, file upload, image/* + pdf)
+
+Step 3 — How do we reach you?
+  - Name (required)
+  - Phone (required)
+  - Budget Range (optional, 6 unique options)
+
+One chip selector only — no duplicate selectors, no piece type dropdown.
+pieceType stored in state and included in submission payload.
+
+Competitor signals applied:
+- Moses: share your vision, keep inquiry simple
+- Icebox: rough idea / logo / reference image is enough
+- Johnny Dang: sketch/image upload matters
+- Bighead: upload logo/photo and move fast
+- Trax/Avianne: future gallery matters — not faked now
 
 ## Confirmed Target Mobile Flow
 

@@ -10,12 +10,8 @@ export type NavGroup = {
 }
 
 export const mainNav: NavItem[] = [
-  { label: 'Shop',         href: '/collections' },
-  { label: 'Custom',       href: '/custom' },
-  { label: 'Watches',      href: '/watches' },
-  { label: 'Grillz',       href: '/grillz' },
-  { label: 'Best Sellers', href: '/collections/best-sellers' },
-  { label: 'Contact',      href: '/contact' },
+  { label: 'Shop',   href: '/collections' },
+  { label: 'Custom', href: '/custom' },
 ]
 
 export const shopCategories: NavItem[] = [
@@ -58,9 +54,6 @@ export const footerNav: NavGroup[] = [
     title: 'Inquire',
     links: [
       { label: 'Custom Jewelry', href: '/custom' },
-      { label: 'Watches',        href: '/watches' },
-      { label: 'Grillz',         href: '/grillz' },
-      { label: 'Contact',        href: '/contact' },
     ],
   },
   {
