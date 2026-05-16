@@ -70,7 +70,7 @@ const SOCIALS: Social[] = [
   },
   {
     platform: 'WHATSAPP',
-    handle:   '+1 (412) 452-4343',
+    handle:   'HIT US UP',
     copy:     "Text us when you're ready to build.",
     href:     'https://wa.me/14124524343',
     icon:     <WaIcon />,

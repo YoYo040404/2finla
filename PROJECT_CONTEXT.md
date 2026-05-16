@@ -112,6 +112,29 @@ Core funnel principle:
 
 ---
 
+## Brand Personality — Effi
+
+**Effi** is the visible face and personality of 2T Jewelers on TikTok and Instagram.
+
+- Effi's signature catchphrase / slogan: **"BANG."**
+- Future About, Store, and Social sections must use Effi and "BANG" as real brand personality elements, not as placeholders or invented copy.
+- The site should eventually feature the real downtown Pittsburgh store and real Effi / social media footage.
+
+**Asset rules (strict — no exceptions):**
+- Do not use fake Effi images.
+- Do not use fake store images.
+- Do not use fake social clips.
+- Do not write invented Effi quotes.
+- Until real assets are provided, use structural placeholders (CSS/layout slots) and note "real Effi footage pending" in code comments.
+
+**Spelling:** Always write **Effi**. Never write "Effie."
+
+**Tenure language guard:**
+Current approved wording on site is **"nearly 30 years"** (used in ProofMarquee, PittsburghStory, and related copy).
+Do not change to "over 30 years" or any alternate phrasing unless the user explicitly confirms the correct number.
+
+---
+
 ## Visual Direction
 
 **Dark Shine / Loud Luxury** — committed aesthetic direction.

@@ -179,6 +179,11 @@ Only after user approves:
 - real custom gallery/assets
 - copywriting pass with final brand voice
 - no fake products, reviews, or UGC
+- **Effi integration:** About, Store, and Social sections use real Effi footage and identity — "BANG." catchphrase may appear as owned brand voice
+- **Real store footage:** real downtown Pittsburgh store images/video replace all placeholder slots
+- **Real social clips:** real TikTok/Instagram content replaces any placeholder social cards
+- **Tenure copy:** verify exact language ("nearly 30 years" vs "over 30 years") with user before publishing any About or brand-story copy
+- **Spelling rule:** Effi — never "Effie"
 
 ### Phase 9 — Vercel Preview
 

@@ -491,19 +491,61 @@ export default function HomePage() {
 
       <SocialTeaser />
 
-      {/* ─── 7. MATERIAL PREVIEW ──────────────────────────────────────── */}
-      <Section bg="var(--color-brand-black)" py="2.5rem">
-        <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.68rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-brand-muted)', marginBottom: '1rem' }}>
-          Material Options
+      {/* ─── 9. MATERIAL DIRECTION ───────────────────────────────────── */}
+      <Section bg="var(--color-brand-black)" py="3rem">
+        <p className="section-eyebrow" style={{ marginBottom: '1rem' }}>MATERIAL DIRECTION</p>
+        <h2 className="mat-heading">PICK THE SHINE.</h2>
+        <p className="mat-subcopy">
+          Gold, silver, moissanite, lab diamond, natural diamond — tell us the look and we&rsquo;ll quote the build.
         </p>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-          {['925 Silver','Gold-Plated','Vermeil','10K Gold','14K Gold','Moissanite','Lab Diamond','Natural Diamond*','CZ'].map((mat) => (
-            <span key={mat} className="material-chip">{mat}</span>
-          ))}
+
+        <div className="mat-grid">
+          {/* Metals */}
+          <div className="mat-col">
+            <p className="mat-col-label">Metals</p>
+            <div className="mat-tier">
+              <p className="mat-tier-name">925 Sterling Silver</p>
+              <p className="mat-tier-desc">Full weight. Clean detail. A strong start for custom.</p>
+            </div>
+            <div className="mat-tier">
+              <p className="mat-tier-name">Gold-Plated · Vermeil</p>
+              <p className="mat-tier-desc">Real gold look with a silver-base direction. Ask what fits the build.</p>
+            </div>
+            <div className="mat-tier">
+              <p className="mat-tier-name">Solid Gold <span className="mat-tier-sub">10K · 14K · 18K</span></p>
+              <p className="mat-tier-desc">For pieces made to stay in rotation.</p>
+            </div>
+          </div>
+
+          {/* Stones */}
+          <div className="mat-col">
+            <p className="mat-col-label">Stones</p>
+            <div className="mat-tier">
+              <p className="mat-tier-name">CZ</p>
+              <p className="mat-tier-desc">Bright, clean, and sharp when volume matters.</p>
+            </div>
+            <div className="mat-tier">
+              <p className="mat-tier-name">Moissanite</p>
+              <p className="mat-tier-desc">Big fire. Serious shine. Smart for iced-out custom work.</p>
+            </div>
+            <div className="mat-tier">
+              <p className="mat-tier-name">Lab Diamond · Natural Diamond</p>
+              <p className="mat-tier-desc">Both can be part of the conversation. Details are confirmed per piece.</p>
+            </div>
+          </div>
         </div>
-        <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--color-brand-subtle)', marginTop: '0.875rem' }}>
-          * Natural diamond availability verified per product. Ask before purchase.
-        </p>
+
+        <div className="mat-cta-row">
+          <span className="mat-cta-text">Choosing materials?</span>
+          <a
+            href="https://wa.me/14124524343"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline-gold mat-cta-btn"
+          >
+            HIT US UP →
+          </a>
+        </div>
       </Section>
 
       <FinalCTABar />

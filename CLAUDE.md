@@ -90,6 +90,28 @@ Do not install final logo until user provides the SVG/2x file.
 
 ---
 
+## Brand Personality — Effi
+
+**Effi** is the visible face and personality of 2T Jewelers on TikTok and Instagram.
+
+- Effi's signature catchphrase / slogan: **"BANG."**
+- Future About, Store, and Social sections must treat Effi and "BANG" as real, owned brand personality elements — not placeholder copy.
+- The site should eventually feature the real downtown Pittsburgh store and real Effi / social media footage.
+
+**Asset rules (strict):**
+- Do not use fake Effi images.
+- Do not use fake store images.
+- Do not use fake social clips.
+- Do not write invented Effi quotes.
+
+**Spelling:** Always write **Effi**. Never write "Effie."
+
+**Tenure language guard:**
+Current approved wording is **"nearly 30 years"**.
+Do not change to "over 30 years" or any other formulation unless the user explicitly confirms the exact language.
+
+---
+
 ## Design Direction
 
 Visual direction: **Dark Shine / Loud Luxury.**

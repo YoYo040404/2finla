@@ -24,6 +24,19 @@ Next step: plan a simplified `/custom` redesign using compact selectors (dropdow
 
 ---
 
+## Brand Personality — Effi
+
+**Effi** is the real, visible face and personality of 2T Jewelers on TikTok and Instagram.
+
+- Signature catchphrase: **"BANG."**
+- Future About, Store, and Social sections must treat Effi and "BANG" as real owned brand elements.
+- The site will eventually use the real downtown Pittsburgh store and real Effi / social media footage.
+- Never generate or place fake Effi images, fake store images, fake social clips, or invented Effi quotes.
+- Spelling: **Effi** only — never "Effie."
+- Tenure copy: currently approved as **"nearly 30 years"** — do not change without user confirmation.
+
+---
+
 ## Last Known Visual Feedback
 
 Homepage Phase 2 (approved):
