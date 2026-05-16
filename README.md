@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 2T Jewelers — Next.js Prototype
 
-## Getting Started
+Urban / hip-hop / iced-out jewelry brand. Custom-first. Street-luxury. Dark Shine / Loud Luxury direction.
 
-First, run the development server:
+## Project Context
 
-```bash
+Read `PROJECT_CONTEXT.md` for the full project context, strategy, and current state.
+
+This is a lead-generation website, not a full ecommerce store.
+Primary conversion: custom order inquiries.
+No checkout. No cart.
+
+## Run Locally
+
+```powershell
+cd C:\Users\yaniv\Downloads\2t-jewelers-next
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
+- http://localhost:3000 — homepage
+- http://localhost:3000/custom — custom order page
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Key Files
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+app/page.tsx              — homepage
+app/custom/page.tsx       — custom order page
+app/layout.tsx            — root layout
+app/globals.css           — design tokens, global styles
+data/nav.ts               — navigation data
+components/layout/        — PromoBar, Header, Footer, MobileCtaBar
+components/custom/        — CustomHero, PieceTiles, HowItWorks, CustomForm, CustomFaq
+```
 
-## Learn More
+## Active Docs
 
-To learn more about Next.js, take a look at the following resources:
+| File | Purpose |
+|---|---|
+| PROJECT_CONTEXT.md | Root context — read before any work |
+| CLAUDE.md | Operating rules for Claude Code |
+| AGENT_HANDOFF.md | Current state + next task prompt |
+| CUSTOM_UX_REWRITE_BRIEF.md | Custom page rewrite plan |
+| NEXT_ROADMAP.md | Phase status and future roadmap |
+| CLAIM_SAFETY.md | Forbidden and approved claims |
+| QA_CHECKLIST_NEXT.md | QA checklist |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Paused / Archive
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`C:\Users\yaniv\Downloads\2t-jewelers-shopify` — Shopify project is paused.
+Do not touch. See CLAUDE.md.

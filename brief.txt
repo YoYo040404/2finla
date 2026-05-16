@@ -1,0 +1,67 @@
+# 2T Jewelers — Project Brief
+
+## Business
+Name: 2T Jewelers
+Type: Urban / hip-hop / iced-out / street-luxury jewelry brand
+Products: Cuban chains, tennis chains, custom pendants, grillz, watches, moissanite, vermeil
+Platform: Next.js / Vercel (lead-generation, Phase 1)
+Shopify: Paused — do not touch
+
+## Phase 1 Goal
+Lead-generation website. No checkout. No cart.
+Primary conversion: custom order inquiries.
+
+## Audience
+U.S. hip-hop / urban / style-driven jewelry buyers.
+Black American and broader U.S. buyers familiar with street-luxury status signaling.
+Buyer wants: pieces that hit visually, custom identity pieces, direct inquiry, confidence before spending.
+
+## Visual Direction
+Dark Shine / Loud Luxury.
+Homepage BAM effect: full-bleed hero, video-loop energy, gold/ice flash, big custom piece energy.
+Not: quiet luxury, wedding jewelry, boutique, corporate, generic Shopify, static brochure.
+
+## Benchmarks
+GLD.com — ecommerce behavior only. Do not copy assets, copy, or claims.
+Moses NYC — visual discipline, inquiry-led structure. Do not copy assets, copy, or layout.
+
+## Design Tokens
+Dark base: #080808
+Charcoal card: #141414
+Gold accent: #c9a84c
+Display font: Cormorant Garamond (may adjust — watching for wedding/boutique feel)
+Body font: Outfit
+
+## Primary CTA
+Custom order inquiry — "Start Custom"
+Custom entry must be visible near the top of the homepage.
+
+## Contact
+Address: 332 Fifth Ave, Pittsburgh, PA 15222
+Phone: +1 412-281-7072
+WhatsApp: https://wa.me/14124524343
+Email: TBD
+Instagram: https://www.instagram.com/2tjewelers/
+TikTok: https://www.tiktok.com/@2tjewelers
+
+## Logo
+Temporary assets installed:
+- Header: 2t-logo-wide-transparent.png (numeric width/height, TODO for final SVG/2x)
+- Footer: 2t-logo-full-black-bg.png
+Still needed: final SVG transparent (2x/retina), favicon, OG/social image.
+
+## Hero Video
+Slot wired in app/page.tsx. File pending.
+Drop at: public/assets/hero-loop-demo.mp4
+Specs: 8–10 seconds, MP4, muted, loopable, 16:9 or 21:9.
+
+## Claim Safety
+No unverified claims. See CLAIM_SAFETY.md.
+Approved: "No deposit. No rush. We quote first." / "Ask before you buy." / "Budget range helps guide the conversation."
+
+## Custom Flow
+Target mobile flow:
+1. What are you building?
+2. Upload or describe the idea.
+3. How do we reach you?
+User can start with: logo, sketch, photo, name, number, reference, or rough idea.
