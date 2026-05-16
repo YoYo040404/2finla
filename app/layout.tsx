@@ -4,7 +4,8 @@ import './globals.css'
 import { PromoBar }      from '@/components/layout/PromoBar'
 import { Header }        from '@/components/layout/Header'
 import { Footer }        from '@/components/layout/Footer'
-import { MobileCtaBar }  from '@/components/layout/MobileCtaBar'
+import { MobileCtaBar }           from '@/components/layout/MobileCtaBar'
+import { FloatingWhatsAppButton } from '@/components/layout/FloatingWhatsAppButton'
 
 /* ─── Fonts ─────────────────────────────────────────────────────────────── */
 
@@ -61,6 +62,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <MobileCtaBar />
+        <FloatingWhatsAppButton />
       </body>
     </html>
   )

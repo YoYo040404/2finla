@@ -1359,3 +1359,40 @@
 @media (min-width: 520px) {
   .build-contact-grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* ─── FloatingWhatsAppButton (desktop only) ─────────────────────────────── */
+
+.floating-wa-btn {
+  display:         none;
+  position:        fixed;
+  bottom:          1.75rem;
+  right:           1.75rem;
+  z-index:         40;
+  align-items:     center;
+  gap:             0.55rem;
+  padding:         0.75rem 1.3rem 0.75rem 1rem;
+  background:      var(--color-brand-charcoal);
+  border:          1px solid rgba(201, 168, 76, 0.35);
+  color:           var(--color-brand-white);
+  font-family:     var(--font-body);
+  font-size:       0.7rem;
+  font-weight:     700;
+  letter-spacing:  0.13em;
+  text-transform:  uppercase;
+  text-decoration: none;
+  transition:      border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+}
+.floating-wa-btn svg {
+  color:       #25D366;
+  flex-shrink: 0;
+}
+.floating-wa-btn:hover {
+  border-color: var(--color-brand-gold);
+  box-shadow:   0 0 18px rgba(37, 211, 102, 0.12), 0 0 28px rgba(201, 168, 76, 0.1), 0 6px 28px rgba(0, 0, 0, 0.5);
+  transform:    translateY(-2px);
+}
+@media (min-width: 768px) {
+  .floating-wa-btn {
+    display: flex;
+  }
+}
