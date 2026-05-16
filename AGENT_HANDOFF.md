@@ -15,20 +15,30 @@
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
 Old Shopify folder is archive only. Do not touch it.
 
-Research and planning phase for Custom UX Rewrite is **complete**.
-Next step is **Custom Flow Simplification execution**, pending user approval.
+**Milestone reached: Homepage Phase 2 complete and user-approved.**
+
+Current focus: `/custom` final redesign is next. Build passes technically but is NOT user-approved.
+User finds it too card-heavy and too form-like on mobile.
+
+Next step: plan a simplified `/custom` redesign using compact selectors (dropdown / bottom-sheet) instead of large card/chip grids. Stop and wait for user approval before executing.
 
 ---
 
 ## Last Known Visual Feedback
 
-Homepage:
-- upgraded toward full-bleed immersive hero
-- custom block promoted before categories/browse
-- category cards updated (no visible "PHOTO SLOT" or "VIDEO LOOP" labels)
-- hero video slot wired — `public/assets/hero-loop-demo.mp4` (file pending)
-- trust strip: "Built in Pittsburgh / Family-owned. Nearly 30 years. / Own manufacturing."
-- directionally good; polish expected later
+Homepage Phase 2 (approved):
+- Full-bleed immersive hero — BUILT TO HIT. headline, video slot wired
+- ProofMarquee — CSS-only animated trust strip, 8 facts, accessible
+- Custom Entry Block — Bring the logo / photo / idea, CTA to /custom
+- PICK YOUR LANE — 5 category tiles + secondary category pills
+- BestSellersStrip — two editorial lanes (Best Sellers / New Arrivals), inline SVG shape cards, no real product data
+- Inquiry Lanes — 3 inquiry lanes with CTAs (Diamond Watches, Grillz, Custom)
+- PittsburghStory — outline typography brand story, dual CTAs
+- SocialTeaser — inline SVG icons for Instagram / TikTok / WhatsApp, real links only, no fake data
+- Material Preview — chips render, audit still pending
+- FinalCTABar — HAVE A PIECE IN MIND? + Start the piece + Text 2T
+
+Old Trust Strip removed. Old Shop by Category / Collection Grid removed.
 
 Header:
 - logo: `2t-logo-wide-transparent.png` via next/image (numeric width/height, TODO for final SVG/2x)
@@ -40,16 +50,13 @@ Footer (rebuilt):
 - WhatsApp: wa.me/14124524343
 - Connect column: Instagram, TikTok, WhatsApp CTA, Acima (safe wording)
 - grid: 2×2 mobile / 4-col desktop
-- Preview badge removed; copyright only
 
 Custom page:
-- too heavy
-- too much scrolling
-- feels category-divided
-- needs easier/friendlier flow
-- form should be higher
-- custom path should be more obvious on homepage
-- research/planning done; execution pending approval
+- one clear piece chip selector (Step 1) — required, 9 chips
+- idea textarea + reference upload (Step 2)
+- name, phone, budget (Step 3)
+- street-luxury copy: "Pick the piece. Drop the idea."
+- build passes clean — NOT user-approved final
 
 ---
 
@@ -57,14 +64,21 @@ Custom page:
 
 | Area | Status |
 |---|---|
-| Homepage scaffold | ✅ Built |
-| Homepage visual direction | ✅ Full-bleed hero, Dark Shine direction |
+| Homepage Phase 2 | ✅ Complete and user-approved |
 | Hero video | ✅ Slot wired — `public/assets/hero-loop-demo.mp4` (file pending) |
-| Custom page | ✅ Built (not final) |
-| Custom UX research/plan | ✅ Complete |
-| Custom UX execution | ⏳ Pending approval |
+| ProofMarquee | ✅ Live |
+| BestSellersStrip | ✅ Live (no real product data) |
+| PittsburghStory | ✅ Live |
+| SocialTeaser | ✅ Live (inline SVG icons, real links) |
+| FinalCTABar | ✅ Live |
+| Material Preview | ⚠️ Renders — audit still pending |
+| Custom page | ⚠️ WIP — build passes, NOT user-approved. Too card-heavy on mobile. |
 | Logo (temporary) | ✅ Transparent logo in header, black-bg logo in footer — final SVG/2x pending |
 | Contact / social | ✅ Address, phone, WhatsApp, Instagram, TikTok, Acima all wired in Footer |
+| Real product images | 🚫 Not yet |
+| Typography audit | 🚫 Not yet |
+| Instagram/TikTok dynamic feed | 🚫 Not yet |
+| WhatsApp floating desktop button | 🚫 Not yet |
 | Backend / Formspree | 🚫 Not yet |
 | Watches / Grillz pages | 🚫 Not yet |
 | Vercel deploy | 🚫 Not yet |
@@ -74,58 +88,17 @@ Custom page:
 
 ## Default Next Prompt
 
-Default next task is Custom Flow Simplification, unless the user provides hero video, logo files, contact details, Instagram/TikTok links, or other ready assets first.
+**Current `/custom` build is WIP. Do not treat it as complete or commit it as an approved milestone.**
 
-If user approves Custom Flow Simplification, use this prompt:
+User feedback: too card-heavy, too form-like, especially on mobile.
 
-```text
-Execute Custom Flow Simplification for the /custom page.
+Next step is to plan a simplified `/custom` redesign. Key direction:
+- Compact selectors: dropdown or bottom-sheet style instead of large chip/card grids
+- Faster, cleaner, more mobile-native feel
+- Keep strategic direction: piece selection → upload/reference → budget → name + phone
+- Claim-safe. Street-luxury tone.
 
-Research/planning is complete. Execute only — do not re-research.
-Do not add backend.
-Do not wire Formspree.
-Do not touch homepage unless the plan specifically requires it.
-Do not touch Shopify.
-
-Target mobile flow:
-1. What are you building?
-2. Upload or describe the idea.
-3. How do we reach you?
-
-User can start with: logo, sketch, photo, name, number, reference, or rough idea.
-
-Confirmed structure:
-1. Hero: "Bring the idea. We'll shape the piece." + short support line + "Start Custom" CTA
-2. Quick idea strip: Logo / Sketch / Photo / Name / Number / Reference
-3. Condensed 3-step flow: Send the idea → Choose direction → Get next-step details
-4. Main form earlier on page
-5. Piece types as compact chips/buttons (not heavy cards)
-6. FAQ below the form
-7. Final CTA only if useful
-
-Components to revise:
-app/custom/page.tsx
-components/custom/CustomHero.tsx
-components/custom/PieceTiles.tsx
-components/custom/HowItWorks.tsx
-components/custom/CustomForm.tsx
-components/custom/CustomFaq.tsx
-
-Safe copy:
-- "Have a logo, sketch, photo, or reference? Start the request here and we'll guide the next visual direction before quote or production."
-- "Your request was received. We'll review the details and follow up with next-step information."
-- "No deposit. No rush. We quote first."
-- "Ask before you buy."
-
-Do not add: free mockup, free render, CAD, turnaround time, warranty, guaranteed proof, response time, fake reviews, fake testimonials, fake celebrities, fake product proof, fake customer counts.
-
-After revision:
-- QA desktop 1280px + mobile 390px
-- no horizontal scroll
-- claim-safety scan
-- report files changed + QA result
-- stop and wait for approval before any deployment
-```
+Do NOT execute until user approves the new plan.
 
 ---
 
@@ -135,8 +108,10 @@ Review for:
 
 - Does form appear higher / earlier?
 - Is upload/reference intent obvious in first screen?
-- Are piece type chips easy to tap on mobile?
+- Are piece type selectors easy to tap on mobile at 390px?
 - Does it avoid all forbidden claims?
 - Does it preserve street-luxury tone?
 - Does it avoid generic AI/contact-form look?
+- SocialTeaser: are IG/TT/WA links live and correct? Icons readable at 390px?
+- No horizontal scroll at 390px?
 - Did mobile 390px QA pass?

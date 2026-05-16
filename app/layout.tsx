@@ -53,7 +53,7 @@ export default function RootLayout({
         pb-[54px] reserves space so page content isn't hidden behind
         the fixed MobileCtaBar on small screens.
       */}
-      <body className="min-h-screen flex flex-col pb-[54px] md:pb-0">
+      <body className="min-h-screen flex flex-col pb-[56px] md:pb-0">
         <PromoBar />
         <Header />
         <main className="flex-1">

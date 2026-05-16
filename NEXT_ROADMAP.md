@@ -30,37 +30,36 @@ npm run dev
 
 ## Current Status
 
-### Complete
+### Complete ✅
 
 - Next.js prototype scaffold
-- Homepage shell
-- Layout components:
-  - PromoBar
-  - Header
-  - Footer
-  - MobileCtaBar
+- Homepage Phase 2 — all sections approved (see Phase 2 below)
+- Layout components: PromoBar, Header, Footer, MobileCtaBar
 - Navigation data
 - Design tokens
-- Initial `/custom` page
-- Mock custom form
 - Claim-safe copy
+- SocialTeaser inline SVG icon polish (Instagram / TikTok / WhatsApp)
+- Temporary logos installed (header + footer)
+- Contact info wired (address, phone, WhatsApp, Instagram, TikTok, Acima)
+- Hero video slot wired (file pending)
 
-### Needs Revision
+### WIP / Approval Pending ⚠️
 
-- `/custom` page UX is too heavy
-- form needs to appear earlier or feel easier
-- piece type grid may need to become chips/buttons
-- homepage custom entry may need to be stronger
-- custom upload/reference intent needs to be more immediate
+- `/custom` page — build passes, NOT user-approved (too card-heavy on mobile)
+- Material Preview section — renders, audit still pending
+- Typography — watching for wedding/boutique feel; audit pending
 
-### Blocked / Not Yet
+### Not Yet 🚫
 
-- Formspree backend
-- real upload backend
-- logo installation
+- Real product/category images
+- Instagram/TikTok dynamic feed
+- WhatsApp floating desktop button
+- Formspree backend / lead capture
+- Real upload backend
+- Final logo SVG/2x/favicon
 - Watches page
 - Grillz page
-- Vercel deploy
+- Vercel preview deploy
 - Shopify recalibration
 
 ---
@@ -86,66 +85,71 @@ Do not copy: assets, videos, copy, product names, claims, layout exactly, or res
 - Layout components (PromoBar, Header, Footer, MobileCtaBar)
 - Design tokens
 - Initial `/custom` page
-- Mock custom form, claim-safe copy
+- Claim-safe copy
 
 ### Phase 2a — Custom UX Research + Rewrite Plan ✅ Complete
 - Competitor research done
 - Simplified UX plan defined
-- Target mobile flow confirmed (3 questions)
-- Homepage custom-entry recommendation documented
+- Target mobile flow confirmed (3 steps)
 
-### Phase 2b — Custom Page Revision ← Default next step
-**Pending user approval.**
+### Phase 2b — Homepage Phase 2 ✅ Complete and user-approved
 
-Default next step: Custom Flow Simplification, unless the user provides hero video, logo files, contact details, Instagram/TikTok links, or other ready assets first.
+All 10 homepage sections built, QA'd, and approved:
 
-After approval:
-- revise `/custom`
-- simplify hero / flow / form
-- move form higher
-- convert heavy cards to chips/buttons if approved
-- QA desktop/mobile
+| Section | Component | Notes |
+|---------|-----------|-------|
+| Hero | inline `app/page.tsx` | BUILT TO HIT., video slot wired |
+| ProofMarquee | `components/home/ProofMarquee.tsx` | CSS marquee, 8 trust facts |
+| Custom Entry Block | inline `app/page.tsx` | bring logo/photo/idea, CTA to /custom |
+| PICK YOUR LANE | inline `app/page.tsx` | 5 tiles + secondary pills |
+| BestSellersStrip | `components/home/BestSellersStrip.tsx` | editorial lanes, inline SVG shapes |
+| Inquiry Lanes | inline `app/page.tsx` | Diamond Watches, Grillz, Custom |
+| PittsburghStory | `components/home/PittsburghStory.tsx` | outline type, brand story |
+| SocialTeaser | `components/home/SocialTeaser.tsx` | inline SVG icons, real links only |
+| Material Preview | inline `app/page.tsx` | ⚠️ audit still pending |
+| FinalCTABar | `components/home/FinalCTABar.tsx` | HAVE A PIECE IN MIND? |
 
-### Phase 2c — Visual QA
+Removed: old Trust Strip, old Shop by Category / Collection Grid.
+Build: TypeScript clean, 15 static pages generated.
 
-- desktop 1280px
-- mobile 390px
-- no horizontal scroll
-- screenshot review
-- Dark Shine / BAM effect check
-- non-generic check
+### Phase 2c — Custom Page Revision ⚠️ WIP — Build passes. NOT user-approved as final.
+
+- Removed: IdeaTypeStrip, PieceTiles, piece type dropdown, material, stone, email, notes
+- Kept: CustomHero, CustomForm (5 fields), HowItWorks, CustomFaq
+- User feedback: too card-heavy and too form-like on mobile
+- Do not commit or push as an approved milestone
+- Next direction: compact selectors (dropdown / bottom-sheet style) instead of chip/card grids
+
+### Phase 2d — Custom UX Approval Gate 🚧 Open
+
+Steps:
+1. Plan compact-selector redesign
+2. Present plan to user
+3. Wait for explicit approval
+4. Execute only after approval
+5. QA: desktop 1280px + mobile 390px + no horizontal scroll + claim-safety scan
 
 ### Phase 3 — Brand Asset Setup ✅ Partial
 
-Done (temporary assets in place):
-- header logo installed (`2t-logo-wide-transparent.png`, numeric width/height, TODO comment for final SVG/2x)
-- footer logo installed (`2t-logo-full-black-bg.png`)
-- address: 332 Fifth Ave, Pittsburgh, PA 15222
-- phone: +1 412-281-7072
-- WhatsApp: wa.me/14124524343
-- Instagram: @2tjewelers
-- TikTok: @2tjewelers
-- Acima link: apply.acima.com (safe wording only)
+Done (temporary):
+- header logo: `2t-logo-wide-transparent.png`
+- footer logo: `2t-logo-full-black-bg.png`
+- address, phone, WhatsApp, Instagram, TikTok, Acima wired in Footer
 
 Still needed:
 - final SVG transparent logo (2x, retina)
 - favicon
 - OG / social image
 - email address
-- real logo approved by user
 
 ### Phase 4 — Hero Video Integration ✅ Complete (temporary)
 
-Completed:
-- `<video autoPlay muted loop playsInline>` slot in place in `app/page.tsx`
-- source: `public/assets/hero-loop-demo.mp4` (slot wired, file pending)
-- no CSS placeholder label visible
+- `<video autoPlay muted loop playsInline>` slot wired in `app/page.tsx`
+- source: `public/assets/hero-loop-demo.mp4` (file pending)
 - dark background + gradient overlays handle missing-file gracefully
 
-Still needed:
-- real store footage recorded and placed at `public/assets/hero-loop-demo.mp4`
-- specs: 8–10 seconds, MP4, muted, loopable, 16:9/21:9 desktop, 9:16 mobile backup if possible
-- no logos, no text, no celebrity likeness, no fake product proof in video
+Still needed: real footage at `public/assets/hero-loop-demo.mp4`  
+Specs: 8–10 seconds, MP4, muted, loopable, 16:9/21:9 desktop, 9:16 mobile backup if possible.
 
 ### Phase 5 — Watches / Grillz Prototype Pages
 

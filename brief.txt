@@ -1,5 +1,7 @@
 # 2T Jewelers — Project Brief
 
+**Status:** Homepage Phase 2 approved. /custom WIP — not approved final. No real product data. No backend. Shopify paused.
+
 ## Business
 Name: 2T Jewelers
 Type: Urban / hip-hop / iced-out / street-luxury jewelry brand

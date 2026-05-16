@@ -25,12 +25,28 @@ Open:
 
 ```text
 app/page.tsx              — homepage
-app/custom/page.tsx       — custom order page
+app/custom/page.tsx       — custom order page (WIP, not approved final)
 app/layout.tsx            — root layout
 app/globals.css           — design tokens, global styles
 data/nav.ts               — navigation data
 components/layout/        — PromoBar, Header, Footer, MobileCtaBar
-components/custom/        — CustomHero, PieceTiles, HowItWorks, CustomForm, CustomFaq
+components/home/          — ProofMarquee, BestSellersStrip, PittsburghStory, SocialTeaser, FinalCTABar
+components/custom/        — CustomHero, CustomBuildFlow, HowItWorks, CustomFaq
+```
+
+## Homepage Section Order (Phase 2 — approved)
+
+```text
+1.  Hero                — BUILT TO HIT., video slot, CTA
+2.  ProofMarquee        — animated trust strip
+3.  Custom Entry Block  — bring logo/photo/idea
+4.  PICK YOUR LANE      — 5 category tiles + pills
+5.  BestSellersStrip    — editorial lanes, no real product data
+6.  Inquiry Lanes       — Diamond Watches / Grillz / Custom
+7.  PittsburghStory     — brand story, outline typography
+8.  SocialTeaser        — IG / TT / WA inline SVG icons, real links
+9.  Material Preview    — material option chips
+10. FinalCTABar         — HAVE A PIECE IN MIND?
 ```
 
 ## Active Docs

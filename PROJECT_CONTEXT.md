@@ -222,7 +222,7 @@ Do **not** copy:
 
 ## Built State — Next.js
 
-Phase 1 homepage scaffold complete:
+### Layout components
 
 ```text
 app/globals.css
@@ -235,7 +235,7 @@ components/layout/Footer.tsx
 components/layout/MobileCtaBar.tsx
 ```
 
-Design tokens:
+### Design tokens
 
 ```text
 Dark base: #080808
@@ -245,23 +245,30 @@ Display font: Cormorant Garamond
 Body font: Outfit
 ```
 
-Note: Cormorant Garamond may feel too aristocratic / wedding / boutique. The user said homepage is directionally good, but continue watching typography. If too soft, test stronger display fonts such as Archivo, Sora, Space Grotesk, or similar.
+Note: Cormorant Garamond may feel too aristocratic / wedding / boutique. If too soft, test stronger display fonts such as Archivo, Sora, or similar. Typography audit is pending.
 
-Homepage user feedback:
+### Homepage Phase 2 — Complete and user-approved ✅
 
-- Directionally good.
-- Upgraded toward full-bleed immersive hero.
-- Custom block promoted before categories/browse.
-- Category cards changed from weak placeholders to intentional dark-shine visual frames.
-- No visible "PHOTO SLOT" or "VIDEO LOOP" labels.
-- CSS/video-slot placeholder in place for future real video.
-- Needs polish later; do not overwork unless Custom UX requires it.
+Approved section order:
 
-### Demo Video (integrated — file pending)
+| # | Section | Component | Status |
+|---|---------|-----------|--------|
+| 1 | Hero | inline in `app/page.tsx` | ✅ Full-bleed, BUILT TO HIT., video slot wired |
+| 2 | ProofMarquee | `components/home/ProofMarquee.tsx` | ✅ CSS-only marquee, 8 trust facts, accessible |
+| 3 | Custom Entry Block | inline in `app/page.tsx` | ✅ Bring the logo / photo / idea, CTA to /custom |
+| 4 | PICK YOUR LANE | inline in `app/page.tsx` | ✅ 5 category tiles + secondary category pills |
+| 5 | BestSellersStrip | `components/home/BestSellersStrip.tsx` | ✅ Two editorial lanes, inline SVG shape cards, no real product data |
+| 6 | Inquiry Lanes | inline in `app/page.tsx` | ✅ 3 inquiry lanes (Diamond Watches, Grillz, Custom), each with CTA |
+| 7 | PittsburghStory | `components/home/PittsburghStory.tsx` | ✅ Outline typography brand story, dual CTAs |
+| 8 | SocialTeaser | `components/home/SocialTeaser.tsx` | ✅ Inline SVG icons (IG/TT/WA), real links only, no fake data |
+| 9 | Material Preview | inline in `app/page.tsx` | ⚠️ Chips render; audit still pending |
+| 10 | FinalCTABar | `components/home/FinalCTABar.tsx` | ✅ HAVE A PIECE IN MIND? + two CTAs |
 
-The `<video>` slot is wired in `app/page.tsx`. Source path: `public/assets/hero-loop-demo.mp4`.
+Removed from homepage: old Trust Strip, old Shop by Category / Collection Grid.
 
-The slot is live. The file is not yet recorded. Dark background + gradient overlays handle the missing file gracefully — no visible placeholder label.
+### Demo Video (slot wired — file pending)
+
+The `<video>` slot is wired in `app/page.tsx`. Source: `public/assets/hero-loop-demo.mp4`.
 
 When real footage is available, drop the file at:
 
@@ -269,71 +276,47 @@ When real footage is available, drop the file at:
 public/assets/hero-loop-demo.mp4
 ```
 
-Video specs:
-- 8–10 seconds
-- MP4, muted, loopable
-- 16:9 or 21:9 desktop
-- 9:16 mobile backup if possible
-- No logos, no text, no celebrity likeness, no fake product proof in video
+Specs: 8–10 seconds, MP4, muted, loopable, 16:9 or 21:9 desktop, 9:16 mobile backup if possible. No logos, text, celebrity likeness, or fake product proof in video.
 
-Phase 2 Custom page initial build complete:
+### Approved Copy Direction
 
-```text
-app/custom/page.tsx
-components/custom/CustomHero.tsx
-components/custom/PieceTiles.tsx
-components/custom/HowItWorks.tsx
-components/custom/CustomForm.tsx
-components/custom/CustomFaq.tsx
-app/globals.css additions for form/FAQ utilities
-```
+Hard, direct, street-fluent, hip-hop jewelry focused. Not parody. Not fake Ebonics.
 
-Custom form current behavior:
+Approved lines:
+- BUILT TO HIT.
+- Bring the logo. Bring the photo. Bring the idea.
+- We'll shape the next move.
+- Pick your lane.
+- Start the piece.
+- Text 2T.
+- No deposit. No rush. We quote first.
+- Ask before you buy.
 
-- mock submit only
-- no backend
-- no Formspree yet
-- file upload is prototype-only
-- fields are Formspree-ready later
-- safe success message:
-  > Your request was received. We’ll review the details and follow up with next-step information.
+Voice rules: no N-word, no parody Ebonics, no fake rapper imitation. Voice is confident, direct, street-fluent — not corporate, not boutique, not cheap.
 
-Claim-safety passed.
+### Custom Flow Status
 
----
+The `/custom` page is **WIP — build passes (TypeScript + static generation clean), but NOT user-approved as final.**
 
-## Custom Flow Status
+Flow: CustomHero → CustomForm (5 fields: piece type chip, idea textarea, reference upload, name, phone, budget) → HowItWorks → CustomFaq
 
-The `/custom` page exists and works but is **not final**.
+User feedback: too card-heavy and too form-like on mobile. Not the final design.
 
-Current issues:
-- long scroll
-- heavy category/card section
-- process and form feel separated
-- form appears too late
-- custom flow not immediate enough for the audience
-- custom entry not prominent enough on homepage
+**Do not commit or push `/custom` as an approved milestone.**
 
-Research and planning: ✅ complete.
-
-Confirmed target mobile flow (3 questions):
-1. What are you building?
-2. Upload or describe the idea.
-3. How do we reach you?
-
-User can start with: logo, sketch, photo, name, number, reference, or rough idea.
-
-See `CUSTOM_UX_REWRITE_BRIEF.md` for full plan.
+Future direction: compact selectors (dropdown / bottom-sheet style) instead of large chip/card grids.
 
 ---
 
 ## Current Next Task
 
-**Default next task: Custom Flow Simplification.**
+**Priority 1:** Get `/custom` user-approved — plan compact-selector redesign, wait for approval, then execute.
 
-Unless the user provides hero video, logo files, contact details, Instagram/TikTok links, or other ready assets first — in which case integrate those assets before or alongside the custom flow execution.
+**Priority 2:** Real product/category images.
 
-See `AGENT_HANDOFF.md` for the exact execution prompt.
+**Priority 3:** Typography audit + Material Preview section audit.
+
+**Pending (not started):** Instagram/TikTok dynamic feed, WhatsApp floating desktop button, Vercel preview deploy, lead capture / backend.
 
 ---
 

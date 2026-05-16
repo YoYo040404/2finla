@@ -52,17 +52,35 @@ For execution tasks:
 
 ## Current Active Task
 
-Brand assets, business credibility, and demo video integration are **complete (temporary)**.
+**Homepage Phase 2 is complete and user-approved as a milestone.**
+
+Approved homepage section order:
+
+1. Hero — full-bleed, BUILT TO HIT., video slot wired
+2. ProofMarquee — CSS-only animated trust strip (Pittsburgh-built, family-owned, nearly 30 years)
+3. Custom Entry Block — bring the logo / photo / idea, CTA to /custom
+4. PICK YOUR LANE — 5 category tiles (Chains, Pendants, Grillz, Watches, Custom) + secondary pills
+5. BestSellersStrip — two editorial lanes (Best Sellers / New Arrivals), inline SVG shape cards, no real product data
+6. Inquiry Lanes — 3 inquiry lanes (Diamond Watches, Grillz, Custom Jewelry), each with a CTA
+7. PittsburghStory — outline typography brand story, dual CTAs
+8. SocialTeaser — Instagram / TikTok / WhatsApp cards with inline SVG icons, real links only
+9. Material Preview — material option chips (925 Silver, Gold-Plated, Moissanite, etc.)
+10. FinalCTABar — HAVE A PIECE IN MIND? Start the piece + Text 2T
+
+Removed: old Trust Strip, old Shop by Category / Collection Grid.
 
 - Header logo: `2t-logo-wide-transparent.png` — numeric width/height, TODO for final SVG/2x
 - Footer logo: `2t-logo-full-black-bg.png` — installed
 - Address, phone, WhatsApp, Instagram, TikTok, Acima: all wired in Footer
-- Trust strip: "Built in Pittsburgh / Family-owned. Nearly 30 years. / Own manufacturing."
 - Hero video: slot wired at `public/assets/hero-loop-demo.mp4`, file pending
 
-**Default next task: Custom Flow Simplification (execution pending user approval).**
+**Custom Flow: WIP — build passes but NOT user-approved as final.**
 
-The current `/custom` page exists and works but is not final. It is too heavy and not friendly enough for the audience.
+User feedback: too card-heavy and too form-like, especially on mobile.
+Do not commit or push `/custom` as an approved milestone.
+Future direction: compact selectors (dropdown / bottom-sheet style) instead of large card/chip grids.
+
+**Default next task: plan a simplified `/custom` redesign. Wait for user approval before executing.**
 
 Do not wire Formspree.  
 Do not add backend.  

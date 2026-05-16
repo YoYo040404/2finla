@@ -44,16 +44,24 @@ This is not the old Shopify QA checklist.
 
 ## Homepage
 
-- [ ] Custom path visible early
-- [ ] “Start Custom” or equivalent CTA present
-- [ ] category/product density feels sufficient
-- [ ] homepage does not feel thin
+Section order to verify: Hero → ProofMarquee → Custom Entry Block → PICK YOUR LANE → BestSellersStrip → Inquiry Lanes → PittsburghStory → SocialTeaser → Material Preview → FinalCTABar
+
+- [ ] Hero: BAM effect on load, full-bleed, BUILT TO HIT. headline visible, CTA above fold, no horizontal scroll, video slot or dark background renders cleanly
+- [ ] ProofMarquee: animates smoothly, no layout shift, no horizontal overflow, accessible aria-label present
+- [ ] Custom Entry Block: upload/logo/photo intent clear, CTA visible, readable at 390px
+- [ ] PICK YOUR LANE: all 5 category tiles render, secondary pills present, links resolve
+- [ ] BestSellersStrip: two lanes (Best Sellers + New Arrivals) render, SVG shape icons visible, no fake product data or pricing
+- [ ] Inquiry Lanes: 3 lanes render (Diamond Watches, Grillz, Custom), each has a CTA, copy is claim-safe
+- [ ] PittsburghStory: outline typography renders correctly, dual CTAs present and functional
+- [ ] SocialTeaser: 3 cards render (Instagram, TikTok, WhatsApp), inline SVG icons readable at 390px, real platform links only, no fake follower counts or post images
+- [ ] Material Preview: material chips render, no fake inventory or availability claims
+- [ ] FinalCTABar: headline “HAVE A PIECE IN MIND?” visible, Start the piece → /custom, Text 2T → WhatsApp link
+- [ ] header/nav works on desktop
+- [ ] mobile menu works
+- [ ] mobile CTA bar does not cover content
 - [ ] no fake products presented as real inventory
 - [ ] no fake reviews or proof
 - [ ] no unverified policy claims
-- [ ] mobile CTA bar does not feel scammy
-- [ ] header/nav works on desktop
-- [ ] mobile menu works
 
 ---
 
