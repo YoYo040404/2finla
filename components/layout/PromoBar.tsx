@@ -3,9 +3,9 @@
 import { useEffect, useState } from 'react'
 
 const MESSAGES = [
-  'Custom pieces · Real materials · Ask before you buy',
-  'Build the piece around your look',
-  'Chains · Pendants · Grillz · Watches · Custom',
+  'ICED-OUT PITTSBURGH ◆ CUSTOM ICE',
+  'ASK BEFORE YOU BUY ◆ BUILT TO HIT',
+  'CHAINS ◆ PENDANTS ◆ GRILLZ ◆ WATCHES ◆ CUSTOM',
 ]
 
 export function PromoBar() {
@@ -43,16 +43,16 @@ export function PromoBar() {
           fontSize:        '0.68rem',
           letterSpacing:   '0.12em',
           textTransform:   'uppercase',
-          color:           'var(--color-brand-muted)',
+          color:           '#858585',
           userSelect:      'none',
           transition:      'opacity 0.3s ease, transform 0.3s ease',
           opacity:         visible ? 1 : 0,
           transform:       visible ? 'translateY(0)' : 'translateY(-5px)',
         }}
       >
-        <span style={{ color: 'var(--color-brand-gold)', marginRight: '0.5em', opacity: 0.7 }}>·</span>
+        <span style={{ color: 'var(--color-brand-gold)', marginRight: '0.6em' }}>◆</span>
         {MESSAGES[index]}
-        <span style={{ color: 'var(--color-brand-gold)', marginLeft: '0.5em', opacity: 0.7 }}>·</span>
+        <span style={{ color: 'var(--color-brand-gold)', marginLeft: '0.6em' }}>◆</span>
       </p>
     </div>
   )

@@ -87,17 +87,31 @@
   .btn-outline-gold {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    border: 1px solid var(--color-brand-gold);
+    border: 1.5px solid var(--color-brand-gold);
     color: var(--color-brand-gold);
     font-family: var(--font-body);
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.875rem;
-    letter-spacing: 0.04em;
-    transition: all 0.2s var(--ease-smooth);
+    letter-spacing: 0.08em;
+    transition: all 0.22s var(--ease-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-outline-gold::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.22) 50%, transparent 70%);
+    transition: left 0.5s ease;
+    pointer-events: none;
   }
   .btn-outline-gold:hover {
-    background-color: var(--color-brand-gold);
+    background: linear-gradient(135deg, #a07828, #d4b050);
+    border-color: #d4b050;
     color: var(--color-brand-black);
+  }
+  .btn-outline-gold:hover::after {
+    left: 110%;
   }
 
   .btn-outline-dim {
@@ -118,11 +132,11 @@
 
   /* Nav links */
   .nav-link {
-    color: var(--color-brand-muted);
+    color: #8a8a8a;
     font-family: var(--font-body);
     font-weight: 500;
     font-size: 0.875rem;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.05em;
     transition: color 0.18s ease;
   }
   .nav-link:hover { color: var(--color-brand-white); }
@@ -595,17 +609,17 @@
   }
   .brand-mark-css {
     display: inline-block;
-    width: 9px;
-    height: 9px;
-    background: #c9a84c;
+    width: 11px;
+    height: 11px;
+    background: radial-gradient(circle at 28% 28%, rgba(255,255,255,0.75) 0%, #f0d878 18%, #c9a84c 50%, #7a5c1a 100%);
     transform: rotate(45deg);
     flex-shrink: 0;
     transition: box-shadow 0.3s ease;
-    box-shadow: 0 0 5px 1px rgba(201, 168, 76, 0.28);
+    box-shadow: 0 0 8px 2px rgba(201, 168, 76, 0.45);
     animation: mark-pulse 4s ease-in-out infinite;
   }
   .brand-lockup:hover .brand-mark-css {
-    box-shadow: 0 0 14px 5px rgba(201, 168, 76, 0.72);
+    box-shadow: 0 0 20px 6px rgba(201, 168, 76, 0.78);
   }
   .brand-mark-css-lg {
     width: 9px;
@@ -613,17 +627,18 @@
   }
   .brand-wordmark {
     font-family: var(--font-body);
-    font-weight: 600;
-    font-size: 1.1875rem;
-    letter-spacing: 0.19em;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    background: linear-gradient(135deg, #8a6418 0%, #c9a84c 22%, #edd57c 42%, #fff8d4 50%, #edd57c 58%, #c9a84c 78%, #8a6418 100%);
+    background: linear-gradient(135deg, #5c3d0a 0%, #a07828 14%, #d4b050 28%, #f8e898 42%, #ffffff 50%, #f8e898 58%, #d4b050 72%, #a07828 86%, #5c3d0a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: relative;
     overflow: hidden;
     display: inline-block;
+    filter: drop-shadow(0 0 6px rgba(201, 168, 76, 0.3));
   }
   /* Glint: single left-to-right sweep on hover, never loops */
   .brand-wordmark::after {
@@ -1145,8 +1160,8 @@
 }
 
 @keyframes mark-pulse {
-  0%, 100% { box-shadow: 0 0 5px 1px rgba(201, 168, 76, 0.28); }
-  50%       { box-shadow: 0 0 10px 3px rgba(201, 168, 76, 0.52); }
+  0%, 100% { box-shadow: 0 0 7px 2px rgba(201, 168, 76, 0.38); }
+  50%       { box-shadow: 0 0 16px 5px rgba(201, 168, 76, 0.65); }
 }
 
 @keyframes pulse-glow {
