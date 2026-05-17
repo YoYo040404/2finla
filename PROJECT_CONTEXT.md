@@ -314,6 +314,11 @@ Approved lines:
 - Text 2T.
 - No deposit. No rush. We quote first.
 - Ask before you buy.
+- TAP IN WITH 2T. (SocialTeaser heading)
+- See what's dropping. (TikTok card copy)
+- BUILD WITH 2T. (FinalCTABar heading — updated in 84af600)
+- Let's build. (Grillz inquiry lane — tightened in 84af600)
+- START THE REQUEST → (primary /custom CTA — updated in 84af600)
 
 Voice rules: no N-word, no parody Ebonics, no fake rapper imitation. Voice is confident, direct, street-fluent — not corporate, not boutique, not cheap.
 
@@ -323,23 +328,31 @@ The `/custom` page is **WIP — build passes (TypeScript + static generation cle
 
 Flow: CustomHero → CustomForm (5 fields: piece type chip, idea textarea, reference upload, name, phone, budget) → HowItWorks → CustomFaq
 
-User feedback: too card-heavy and too form-like on mobile. Not the final design.
+Latest update (commit 84af600 — 2026-05-17):
+- Hero is more compact; primary CTA is START THE REQUEST →
+- Browse Ready-Made removed
+- Piece type chips wrap cleanly
+- Upload zone appears above textarea on mobile
+- Textarea reduced to 4 rows; Material + Budget chips remain
+- WHATSAPP OR PHONE label; gold-bordered trust callout
+- SEND REQUEST → full-width
+- Bypass CTA: Not sure yet? Hit us up on WhatsApp →
+- HowItWorks step 02: WE REVIEW THE DIRECTION
+- HowItWorks step 03: WE QUOTE FIRST
 
-**Do not commit or push `/custom` as an approved milestone.**
-
-Future direction: compact selectors (dropdown / bottom-sheet style) instead of large chip/card grids.
+Visual QA and user approval still required. **Do not mark /custom as final.**
 
 ---
 
 ## Current Next Task
 
-**Priority 1:** Get `/custom` user-approved — plan compact-selector redesign, wait for approval, then execute.
+**Priority 1:** Visual QA of `/custom` after commit 84af600 — wait for user approval before further changes.
 
-**Priority 2:** Real product/category images.
+**Priority 2:** Full global UX/UI audit follow-up decisions (audit was run; decisions pending).
 
-**Priority 3:** Typography audit + Material Preview section audit.
+**Priority 3:** Real photo/video assets — hero, custom entry, Effi footage, store footage.
 
-**Pending (not started):** Instagram/TikTok dynamic feed, WhatsApp floating desktop button, Vercel preview deploy, lead capture / backend.
+**Pending (not started):** Instagram/TikTok feed strategy, lead capture/backend, Vercel preview deploy, Watches/Grillz pages.
 
 ---
 

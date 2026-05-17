@@ -45,14 +45,16 @@ npm run dev
 
 ### WIP / Approval Pending ⚠️
 
-- `/custom` page — build passes, NOT user-approved (too card-heavy on mobile)
+- `/custom` page — compact revision applied in 84af600; build passes; visual QA and user approval still pending
 - Material Preview section — renders, audit still pending
-- Typography — watching for wedding/boutique feel; audit pending
+- Typography — hybrid prototype applied in 84af600; watching for wedding/boutique feel; final decision pending
+- Global UX/UI audit — audit was run; follow-up decisions still pending
 
 ### Not Yet 🚫
 
 - Real product/category images
-- Instagram/TikTok dynamic feed
+- Real hero/custom entry/Effi/store photo and video assets
+- Instagram/TikTok feed strategy and dynamic feed
 - WhatsApp floating desktop button
 - Formspree backend / lead capture
 - Real upload backend
@@ -116,17 +118,17 @@ Build: TypeScript clean, 15 static pages generated.
 
 - Removed: IdeaTypeStrip, PieceTiles, piece type dropdown, material, stone, email, notes
 - Kept: CustomHero, CustomForm (5 fields), HowItWorks, CustomFaq
-- User feedback: too card-heavy and too form-like on mobile
+- Refined in commit 84af600 (2026-05-17): compact hero, START THE REQUEST → CTA, Browse Ready-Made removed, upload above textarea on mobile, textarea 4 rows, gold-bordered trust callout, full-width SEND REQUEST →, WhatsApp bypass CTA, updated HowItWorks steps
 - Do not commit or push as an approved milestone
-- Next direction: compact selectors (dropdown / bottom-sheet style) instead of chip/card grids
+- Next: visual QA → user approval
 
-### Phase 2d — Custom UX Approval Gate 🚧 Open
+### Phase 2d — Custom Visual Approval Gate 🚧 Open
 
 Steps:
-1. Plan compact-selector redesign
-2. Present plan to user
+1. Run visual QA of /custom at 390px and 1280px
+2. Present screenshots to user
 3. Wait for explicit approval
-4. Execute only after approval
+4. Mark /custom as complete only after user signs off
 5. QA: desktop 1280px + mobile 390px + no horizontal scroll + claim-safety scan
 
 ### Phase 3 — Brand Asset Setup ✅ Partial

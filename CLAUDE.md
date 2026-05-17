@@ -76,11 +76,31 @@ Removed: old Trust Strip, old Shop by Category / Collection Grid.
 
 **Custom Flow: WIP — build passes but NOT user-approved as final.**
 
-User feedback: too card-heavy and too form-like, especially on mobile.
-Do not commit or push `/custom` as an approved milestone.
-Future direction: compact selectors (dropdown / bottom-sheet style) instead of large card/chip grids.
+Latest update (commit 84af600 — 2026-05-17):
+- Hero is more compact
+- Primary CTA changed to START THE REQUEST →
+- Browse Ready-Made removed
+- Piece type chips wrap cleanly
+- Upload zone appears above textarea on mobile
+- Textarea reduced to 4 rows
+- Material and Budget chips remain
+- Label: WHATSAPP OR PHONE
+- Gold-bordered trust callout added
+- SEND REQUEST → is full-width
+- Bypass CTA: Not sure yet? Hit us up on WhatsApp →
+- HowItWorks step 02: WE REVIEW THE DIRECTION
+- HowItWorks step 03: WE QUOTE FIRST
 
-**Default next task: plan a simplified `/custom` redesign. Wait for user approval before executing.**
+Also in 84af600 — homepage polish applied:
+- Hybrid typography prototype applied using existing fonts
+- SocialTeaser heading changed to TAP IN WITH 2T.
+- TikTok copy changed to See what's dropping.
+- FinalCTABar heading changed to BUILD WITH 2T.
+- Grillz inquiry lane copy tightened to Let's build.
+
+Do not commit or push `/custom` as an approved milestone. Visual QA and user approval still required.
+
+**Default next task: visual QA of /custom after latest update. Wait for user approval before any further changes.**
 
 Do not wire Formspree.  
 Do not add backend.  

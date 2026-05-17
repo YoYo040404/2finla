@@ -17,10 +17,13 @@ Old Shopify folder is archive only. Do not touch it.
 
 **Milestone reached: Homepage Phase 2 complete and user-approved.**
 
-Current focus: `/custom` final redesign is next. Build passes technically but is NOT user-approved.
-User finds it too card-heavy and too form-like on mobile.
+Current focus: `/custom` visual QA after the latest refinement (commit 84af600 — 2026-05-17). Build passes technically. NOT user-approved as final.
 
-Next step: plan a simplified `/custom` redesign using compact selectors (dropdown / bottom-sheet) instead of large card/chip grids. Stop and wait for user approval before executing.
+Latest /custom changes: compact hero, START THE REQUEST → CTA, Browse Ready-Made removed, upload zone above textarea on mobile, textarea 4 rows, gold-bordered trust callout, full-width SEND REQUEST →, bypass WhatsApp CTA, HowItWorks steps updated.
+
+Also in 84af600: homepage polish — hybrid typography applied, SocialTeaser heading → TAP IN WITH 2T., TikTok copy → See what's dropping., FinalCTABar heading → BUILD WITH 2T., Grillz lane → Let's build.
+
+Next step: visual QA of /custom. Stop and wait for user approval before any further /custom changes.
 
 ---
 
@@ -64,12 +67,15 @@ Footer (rebuilt):
 - Connect column: Instagram, TikTok, WhatsApp CTA, Acima (safe wording)
 - grid: 2×2 mobile / 4-col desktop
 
-Custom page:
-- one clear piece chip selector (Step 1) — required, 9 chips
-- idea textarea + reference upload (Step 2)
-- name, phone, budget (Step 3)
-- street-luxury copy: "Pick the piece. Drop the idea."
-- build passes clean — NOT user-approved final
+Custom page (as of commit 84af600 — 2026-05-17):
+- Compact hero; primary CTA: START THE REQUEST →; Browse Ready-Made removed
+- Piece type chips wrap cleanly (Step 1)
+- Upload zone above textarea on mobile; textarea 4 rows (Step 2)
+- Name, phone (label: WHATSAPP OR PHONE), budget chips (Step 3)
+- Gold-bordered trust callout; SEND REQUEST → full-width
+- Bypass CTA: Not sure yet? Hit us up on WhatsApp →
+- HowItWorks step 02: WE REVIEW THE DIRECTION; step 03: WE QUOTE FIRST
+- Build passes clean — NOT user-approved final
 
 ---
 
@@ -85,7 +91,7 @@ Custom page:
 | SocialTeaser | ✅ Live (inline SVG icons, real links) |
 | FinalCTABar | ✅ Live |
 | Material Preview | ⚠️ Renders — audit still pending |
-| Custom page | ⚠️ WIP — build passes, NOT user-approved. Too card-heavy on mobile. |
+| Custom page | ⚠️ WIP — build passes, NOT user-approved. Compact revision applied in 84af600. Visual QA pending. |
 | Logo (temporary) | ✅ Transparent logo in header, black-bg logo in footer — final SVG/2x pending |
 | Contact / social | ✅ Address, phone, WhatsApp, Instagram, TikTok, Acima all wired in Footer |
 | Real product images | 🚫 Not yet |

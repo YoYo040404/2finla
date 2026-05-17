@@ -53,9 +53,9 @@ Section order to verify: Hero → ProofMarquee → Custom Entry Block → PICK Y
 - [ ] BestSellersStrip: two lanes (Best Sellers + New Arrivals) render, SVG shape icons visible, no fake product data or pricing
 - [ ] Inquiry Lanes: 3 lanes render (Diamond Watches, Grillz, Custom), each has a CTA, copy is claim-safe
 - [ ] PittsburghStory: outline typography renders correctly, dual CTAs present and functional
-- [ ] SocialTeaser: 3 cards render (Instagram, TikTok, WhatsApp), inline SVG icons readable at 390px, real platform links only, no fake follower counts or post images
+- [ ] SocialTeaser: heading is TAP IN WITH 2T., 3 cards render (Instagram, TikTok, WhatsApp), TikTok card reads “See what's dropping.”, inline SVG icons readable at 390px, real platform links only, no fake follower counts or post images
 - [ ] Material Preview: material chips render, no fake inventory or availability claims
-- [ ] FinalCTABar: headline “HAVE A PIECE IN MIND?” visible, Start the piece → /custom, Text 2T → WhatsApp link
+- [ ] FinalCTABar: heading is BUILD WITH 2T., Start the piece → /custom, Text 2T → WhatsApp link
 - [ ] header/nav works on desktop
 - [ ] mobile menu works
 - [ ] mobile CTA bar does not cover content
@@ -67,16 +67,22 @@ Section order to verify: Hero → ProofMarquee → Custom Entry Block → PICK Y
 
 ## Custom Page
 
-- [ ] custom flow is obvious in first screen
-- [ ] logo/sketch/photo/name/number/reference intent is obvious
+- [ ] hero is compact — START THE REQUEST → CTA is primary and visible above fold
+- [ ] Browse Ready-Made is absent
+- [ ] logo/sketch/photo/name/number/reference intent is obvious in first screen
+- [ ] piece type chips wrap cleanly on mobile 390px
+- [ ] upload zone appears above textarea on mobile
+- [ ] textarea is 4 rows (not too tall)
+- [ ] WHATSAPP OR PHONE label visible on phone field
+- [ ] gold-bordered trust callout visible
+- [ ] SEND REQUEST → is full-width on mobile
+- [ ] bypass CTA "Not sure yet? Hit us up on WhatsApp →" is present and links correctly
+- [ ] HowItWorks step 02: WE REVIEW THE DIRECTION
+- [ ] HowItWorks step 03: WE QUOTE FIRST
+- [ ] Material and Budget chips still present and functional
 - [ ] form is easy to reach
-- [ ] page is not too long/heavy
-- [ ] piece types are easy to select
-- [ ] upload/reference language is clear
-- [ ] form labels are readable
-- [ ] all required fields are clear
 - [ ] mock submit works
-- [ ] success message is safe
+- [ ] success message is claim-safe
 - [ ] FAQ supports confidence but does not over-explain
 - [ ] page does not feel like generic contact form
 
