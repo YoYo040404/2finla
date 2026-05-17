@@ -34,7 +34,7 @@ export function MobileCtaBar() {
       >
         {/* WhatsApp */}
         <a
-          href="https://wa.me/14124524343"
+          href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20build%20a%20piece."
           aria-label="WhatsApp"
           target="_blank"
           rel="noopener noreferrer"

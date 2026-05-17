@@ -145,6 +145,15 @@ export function CustomBuildFlow() {
           <a href="/" className="btn-outline-dim" style={{ display: 'inline-block' }}>
             ← Back to Home
           </a>
+          <a
+            href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bypass-cta"
+            style={{ display: 'block', marginTop: '1.5rem' }}
+          >
+            Questions while you wait? Hit us on WhatsApp →
+          </a>
         </div>
       </section>
     )
@@ -219,6 +228,20 @@ export function CustomBuildFlow() {
             </p>
           )}
         </div>
+
+        {/* ── Mid-form WhatsApp escape ─────────────────────────────────────── */}
+        <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.8125rem', color: 'var(--color-brand-muted)', marginBottom: 'clamp(1.5rem, 4vw, 2.5rem)', lineHeight: 1.5 }}>
+          Rather talk it through?{' '}
+          <a
+            href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bypass-cta"
+            style={{ display: 'inline', marginTop: 0 }}
+          >
+            Hit us on WhatsApp →
+          </a>
+        </p>
 
         {/* ── Field 02 — Send a reference or describe the idea ────────────── */}
         <div className="build-step-block">
@@ -412,7 +435,7 @@ export function CustomBuildFlow() {
             </button>
 
             <a
-              href="https://wa.me/14124524343"
+              href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
               target="_blank"
               rel="noopener noreferrer"
               className="bypass-cta"

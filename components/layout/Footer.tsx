@@ -34,7 +34,7 @@ export function Footer() {
               Call the store: +1 412-281-7072
             </a>
             <a
-              href="https://wa.me/14124524343"
+              href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20build%20a%20piece."
               target="_blank"
               rel="noopener noreferrer"
               style={{ fontSize: '0.78rem', color: 'var(--color-brand-gold)' }}
@@ -110,7 +110,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wa.me/14124524343"
+                  href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20build%20a%20piece."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="nav-link-footer"

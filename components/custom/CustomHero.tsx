@@ -197,12 +197,10 @@ export function CustomHero() {
               letterSpacing: '-0.035em',
             }}
           >
-            Bring the logo.
-            <br />
-            Bring the photo.
+            Tell us what
             <br />
             <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>
-              Bring the idea.
+              you want built.
             </em>
           </h1>
 
@@ -214,10 +212,10 @@ export function CustomHero() {
               color:      'var(--color-brand-muted)',
               lineHeight: 1.65,
               marginTop:  '1.75rem',
-              maxWidth:   '36ch',
+              maxWidth:   '40ch',
             }}
           >
-            Logo, sketch, photo, name — whatever you&apos;ve got. Send it. We guide from there.
+            Start with a logo, photo, sketch, name, number, or rough idea. We&apos;ll review the direction and quote first.
           </p>
 
           <div

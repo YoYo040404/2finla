@@ -21,7 +21,7 @@ export default function FinalCTABar() {
             START THE PIECE →
           </Link>
           <a
-            href="https://wa.me/14124524343"
+            href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20build%20a%20piece."
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline-gold final-cta-btn"
