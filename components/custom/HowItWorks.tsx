@@ -6,12 +6,12 @@ const STEPS = [
   },
   {
     num:   '02',
-    title: 'Choose the direction',
+    title: 'We review the direction',
     copy:  'Material, stone, width, budget — we map options from what you send.',
   },
   {
     num:   '03',
-    title: 'Get next-step details',
+    title: 'We quote first',
     copy:  'We review and follow up before anything moves to production.',
   },
 ]

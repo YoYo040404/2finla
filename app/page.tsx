@@ -71,12 +71,13 @@ function SectionHeading({ children, style }: { children: React.ReactNode; style?
   return (
     <h2
       style={{
-        fontFamily:    'var(--font-display)',
+        fontFamily:    'var(--font-body)',
         fontSize:      'clamp(1.7rem, 3.8vw, 2.7rem)',
-        fontWeight:    600,
+        fontWeight:    800,
+        textTransform: 'uppercase',
+        letterSpacing: '0.04em',
         color:         'var(--color-brand-white)',
-        lineHeight:    1.06,
-        letterSpacing: '-0.025em',
+        lineHeight:    1.0,
         ...style,
       }}
     >
@@ -456,18 +457,19 @@ export default function HomePage() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
           {[
             { title: 'Diamond Watches', sub: 'Iced bezels. Custom-set looks. High-end watch direction.', href: '/watches', cta: 'Ask About Watches' },
-            { title: 'Grillz',          sub: 'Top, bottom, or full set. Gold, silver, iced. Tell us the direction.', href: '/grillz', cta: 'Start Grillz Inquiry' },
+            { title: 'Grillz',          sub: 'Top, bottom, or full set. Gold, silver, iced. Let\'s build.', href: '/grillz', cta: 'Start Grillz Inquiry' },
             { title: 'Custom Jewelry',  sub: 'Logo, sketch, photo, or just an idea. We build from there.', href: '/custom',  cta: 'Start the Piece' },
           ].map((lane) => (
             <div key={lane.title} className="inquiry-power-lane">
               <div style={{ flex: '1 1 260px' }}>
                 <h3 style={{
-                  fontFamily:    'var(--font-display)',
+                  fontFamily:    'var(--font-body)',
                   fontSize:      'clamp(1.35rem, 2.5vw, 1.7rem)',
-                  fontWeight:    600,
+                  fontWeight:    700,
+                  textTransform: 'uppercase',
                   color:         'var(--color-brand-white)',
-                  letterSpacing: '-0.02em',
-                  lineHeight:    1.1,
+                  letterSpacing: '0.03em',
+                  lineHeight:    1.0,
                 }}>
                   {lane.title}
                 </h3>

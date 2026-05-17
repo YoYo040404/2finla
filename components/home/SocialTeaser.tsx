@@ -63,7 +63,7 @@ const SOCIALS: Social[] = [
   {
     platform: 'TIKTOK',
     handle:   '@2tjewelers',
-    copy:     "See what's moving at 2T.",
+    copy:     "See what's dropping.",
     href:     'https://www.tiktok.com/@2tjewelers',
     icon:     <TtIcon />,
     accent:   '#9fa8b3',
@@ -98,16 +98,17 @@ export default function SocialTeaser() {
         </span>
         <h2
           style={{
-            fontFamily:    'var(--font-display)',
+            fontFamily:    'var(--font-body)',
             fontSize:      'clamp(1.8rem, 3.5vw, 2.8rem)',
-            fontWeight:    400,
-            letterSpacing: '-0.02em',
+            fontWeight:    800,
+            textTransform: 'uppercase',
+            letterSpacing: '0.03em',
             color:         'var(--color-brand-white)',
             marginBottom:  '2.5rem',
-            lineHeight:    1.1,
+            lineHeight:    0.95,
           }}
         >
-          Follow the shine.
+          TAP IN WITH 2T.
         </h2>
 
         <div className="social-teaser-grid">

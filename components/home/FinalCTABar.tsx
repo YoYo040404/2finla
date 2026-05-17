@@ -10,7 +10,7 @@ export default function FinalCTABar() {
       <div aria-hidden="true" className="gold-rule" />
       <div className="final-cta-inner">
         <div>
-          <h2 className="final-cta-headline">HAVE A PIECE IN MIND?</h2>
+          <h2 className="final-cta-headline">BUILD WITH 2T.</h2>
           <p className="final-cta-body">
             Bring the logo. Bring the photo. Bring the idea.
             We&apos;ll shape the next move.

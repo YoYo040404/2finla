@@ -1,4 +1,3 @@
-import Link from 'next/link'
 
 const SPARKLES: { top: string; left: string; delay: string; size: number; ice: boolean }[] = [
   { top: '13%', left: '66%', delay: '0s',    size: 3, ice: true  },
@@ -18,7 +17,7 @@ export function CustomHero() {
     <section
       style={{
         position:   'relative',
-        minHeight:  'min(92vh, 760px)',
+        minHeight:  'min(65vh, 580px)',
         display:    'flex',
         alignItems: 'flex-end',
         overflow:   'hidden',
@@ -231,11 +230,8 @@ export function CustomHero() {
                 className="btn-primary"
                 style={{ padding: '0.9rem 1.875rem', fontSize: '0.875rem', letterSpacing: '0.07em' }}
               >
-                SEND THE IDEA →
+                START THE REQUEST →
               </a>
-              <Link href="/collections" className="btn-outline-dim">
-                Browse Ready-Made
-              </Link>
             </div>
           </div>
         </div>

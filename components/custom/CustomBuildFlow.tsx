@@ -25,15 +25,15 @@ const EMPTY: BuildData = {
 }
 
 const PIECES = [
-  { id: 'name-piece',    label: 'Name Piece',      helper: 'Names that hit' },
-  { id: 'logo-piece',    label: 'Logo Piece',       helper: 'Send your logo' },
-  { id: 'photo-pendant', label: 'Photo Pendant',    helper: 'Turn a photo into a piece' },
-  { id: 'number-piece',  label: 'Number Piece',     helper: 'Your number, your style' },
-  { id: 'iced-pendant',  label: 'Iced-Out Pendant', helper: 'Full iced, all the way' },
-  { id: 'custom-chain',  label: 'Custom Chain',     helper: 'Length, link, weight — your call' },
-  { id: 'grillz',        label: 'Grillz',           helper: 'Top, bottom, or both' },
-  { id: 'watch',         label: 'Watch',            helper: 'Custom face, band, or stones' },
-  { id: 'not-sure',      label: 'Not Sure Yet',     helper: "We'll figure it out" },
+  { id: 'name-piece',    label: 'Name'          },
+  { id: 'logo-piece',    label: 'Logo'          },
+  { id: 'photo-pendant', label: 'Photo Pendant' },
+  { id: 'number-piece',  label: 'Number'        },
+  { id: 'iced-pendant',  label: 'Iced Pendant'  },
+  { id: 'custom-chain',  label: 'Chain'         },
+  { id: 'grillz',        label: 'Grillz'        },
+  { id: 'watch',         label: 'Watch'         },
+  { id: 'not-sure',      label: 'Not Sure'      },
 ]
 
 const MATERIALS = ['Not Sure', 'Yellow Gold', 'White Gold', 'Silver', 'Moissanite', 'Diamonds', 'Two-Tone']
@@ -176,10 +176,10 @@ export function CustomBuildFlow() {
             letterSpacing: '-0.03em',
             marginBottom:  '1.25rem',
           }}>
-            Pick the piece.
+            Start with what
             <br />
             <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>
-              Drop the idea.
+              you got.
             </em>
           </h2>
           <p style={{
@@ -192,24 +192,23 @@ export function CustomBuildFlow() {
           </p>
         </div>
 
-        {/* ── STEP 01 — Pick the piece ─────────────────────────────────────── */}
+        {/* ── Field 01 — What are you building? ───────────────────────────── */}
         <div className="build-step-block">
-          <div className="build-step-label">
-            <span className="build-step-num">01</span>
-            <span>Pick the piece</span>
-          </div>
+          <p className="build-field-label" style={{ marginBottom: '0.75rem' }}>
+            WHAT ARE YOU BUILDING?
+          </p>
 
-          <div className="build-card-grid">
+          <div className="chip-row" style={{ flexWrap: 'wrap', gap: '0.5rem' }}>
             {PIECES.map(p => (
               <button
                 key={p.id}
                 type="button"
-                className={`build-card${data.pieceType === p.id ? ' build-card-active' : ''}`}
+                className={`direction-chip${data.pieceType === p.id ? ' direction-chip-active' : ''}`}
                 onClick={() => selectPiece(p.id)}
                 aria-pressed={data.pieceType === p.id}
+                style={{ minHeight: '44px' }}
               >
-                <span className="build-card-label">{p.label}</span>
-                <span className="build-card-helper">{p.helper}</span>
+                {p.label}
               </button>
             ))}
           </div>
@@ -221,17 +220,15 @@ export function CustomBuildFlow() {
           )}
         </div>
 
-        {/* ── STEP 02 — Drop the idea ──────────────────────────────────────── */}
+        {/* ── Field 02 — Send a reference or describe the idea ────────────── */}
         <div className="build-step-block">
-          <div className="build-step-label">
-            <span className="build-step-num">02</span>
-            <span>Send the idea</span>
-          </div>
+          <p className="build-field-label" style={{ marginBottom: '0.75rem' }}>
+            SEND A REFERENCE OR DESCRIBE THE IDEA
+          </p>
 
           <div className="build-idea-grid">
-            {/* Upload hero — left on desktop, bottom on mobile */}
+            {/* Upload hero — left on desktop, top on mobile */}
             <div className="build-idea-upload">
-              <label className="build-field-label">Drop your reference</label>
               <div
                 className={`upload-hero${dragOver ? ' drag-over' : ''}${data.uploadFileName ? ' has-file' : ''}`}
                 onDragOver={e => { e.preventDefault(); setDragOver(true) }}
@@ -279,25 +276,21 @@ export function CustomBuildFlow() {
                   </>
                 )}
               </div>
-              <p style={{ fontSize: '0.68rem', color: 'var(--color-brand-muted)', marginTop: '0.625rem', lineHeight: 1.5 }}>
-                Got a screenshot? Drop it. Got a logo? Drop it. Got just an idea? Type it.
-              </p>
             </div>
 
-            {/* Textarea — right on desktop, top on mobile */}
+            {/* Textarea — right on desktop, below on mobile */}
             <div className="build-idea-text">
-              <label htmlFor="cf-idea" className="build-field-label">Tell us the idea</label>
               <textarea
                 id="cf-idea"
                 className="form-input"
-                rows={7}
+                rows={4}
                 placeholder="Logo, photo, sketch, grillz, pendant, chain — start with whatever you got."
                 value={data.idea}
                 onChange={e => {
                   setData(d => ({ ...d, idea: e.target.value }))
                   setErrors(er => ({ ...er, idea: false }))
                 }}
-                style={{ resize: 'vertical', minHeight: 180 }}
+                style={{ resize: 'vertical', minHeight: 100 }}
               />
             </div>
           </div>
@@ -309,16 +302,11 @@ export function CustomBuildFlow() {
           )}
         </div>
 
-        {/* ── STEP 03 — Pick the direction ─────────────────────────────────── */}
+        {/* ── Field 03 — Material + Budget direction (optional) ───────────── */}
         <div className="build-step-block">
-          <div className="build-step-label">
-            <span className="build-step-num">03</span>
-            <span>Pick the direction</span>
-          </div>
-
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.375rem' }}>
             <div>
-              <p className="build-field-label" style={{ marginBottom: '0.625rem' }}>Material direction</p>
+              <p className="build-field-label" style={{ marginBottom: '0.625rem' }}>MATERIAL DIRECTION</p>
               <div className="chip-row">
                 {MATERIALS.map(m => (
                   <button
@@ -335,7 +323,7 @@ export function CustomBuildFlow() {
             </div>
 
             <div>
-              <p className="build-field-label" style={{ marginBottom: '0.625rem' }}>Budget range</p>
+              <p className="build-field-label" style={{ marginBottom: '0.625rem' }}>BUDGET RANGE</p>
               <div className="chip-row">
                 {BUDGETS.map(b => (
                   <button
@@ -353,20 +341,17 @@ export function CustomBuildFlow() {
           </div>
 
           <p style={{ fontSize: '0.7rem', color: 'var(--color-brand-muted)', marginTop: '1rem', lineHeight: 1.55 }}>
-            Not sure yet? That's fine. Pick a direction or leave it open. Material and budget are guide signals — not a final quote.
+            Not sure? Leave it open — that&apos;s fine.
           </p>
         </div>
 
-        {/* ── STEP 04 — Lock the contact ───────────────────────────────────── */}
+        {/* ── Field 04 — Contact ───────────────────────────────────────────── */}
         <div className="build-step-block">
-          <div className="build-step-label">
-            <span className="build-step-num">04</span>
-            <span>Leave your number</span>
-          </div>
+          <p className="build-field-label" style={{ marginBottom: '0.75rem' }}>YOUR CONTACT</p>
 
           <div className="build-contact-grid">
             <div>
-              <label htmlFor="cf-name" className="build-field-label">Name</label>
+              <label htmlFor="cf-name" className="build-field-label">Your name</label>
               <input
                 id="cf-name"
                 type="text"
@@ -381,7 +366,7 @@ export function CustomBuildFlow() {
               />
             </div>
             <div>
-              <label htmlFor="cf-phone" className="build-field-label">Phone</label>
+              <label htmlFor="cf-phone" className="build-field-label">WhatsApp or phone</label>
               <input
                 id="cf-phone"
                 type="tel"
@@ -404,6 +389,11 @@ export function CustomBuildFlow() {
           )}
 
           <div style={{ marginTop: '2rem' }}>
+            <div className="custom-trust-callout" style={{ marginBottom: '1.5rem' }}>
+              <span className="trust-diamond" aria-hidden="true">◆</span>
+              No deposit. No rush. We quote first.
+            </div>
+
             <button
               type="button"
               className="btn-primary"
@@ -420,9 +410,15 @@ export function CustomBuildFlow() {
             >
               {submitting ? 'Sending…' : 'SEND REQUEST →'}
             </button>
-            <p className="trust-signal" style={{ marginTop: '0.875rem', textAlign: 'center' }}>
-              No deposit. No rush. We quote first.
-            </p>
+
+            <a
+              href="https://wa.me/14124524343"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bypass-cta"
+            >
+              Not sure yet? Hit us up on WhatsApp →
+            </a>
           </div>
         </div>
 

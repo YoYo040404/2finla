@@ -278,13 +278,14 @@
 
   /* Material Direction section */
   .mat-heading {
-    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
-    font-weight: 700;
-    color: var(--color-brand-white);
+    font-family:    var(--font-body);
+    font-size:      clamp(1.4rem, 3.5vw, 2.2rem);
+    font-weight:    800;
+    color:          var(--color-brand-white);
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    line-height: 1.1;
-    margin-bottom: 0.875rem;
+    line-height:    1.0;
+    margin-bottom:  0.875rem;
   }
   .mat-subcopy {
     font-family: var(--font-body);
@@ -419,12 +420,86 @@
   }
 
 
-  /* Trust signal */
+  /* ─── Direction C: Hybrid Signature Typography ──────────────────── */
+  /* Sans/action: Outfit 800 + uppercase + tight tracking = street/brand moments */
+  .display-action {
+    font-family:    var(--font-body);
+    font-weight:    800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height:    0.95;
+    color:          var(--color-brand-white);
+  }
+  /* Section-level variant: slightly more open for legibility at 2–3rem sizes */
+  .display-action-sm {
+    font-family:    var(--font-body);
+    font-weight:    800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height:    1.0;
+    color:          var(--color-brand-white);
+  }
+  /* Craft: Cormorant minimum 600 — editorial / story moments only */
+  .display-craft {
+    font-family:    var(--font-display);
+    font-weight:    600;
+    letter-spacing: -0.025em;
+    line-height:    1.08;
+    color:          var(--color-brand-white);
+  }
+  /* Craft strong: Cormorant 700 — premium narrative headings */
+  .display-craft-strong {
+    font-family:    var(--font-display);
+    font-weight:    700;
+    letter-spacing: -0.025em;
+    line-height:    1.05;
+    color:          var(--color-brand-white);
+  }
+
+  /* Trust signal (legacy small text) */
   .trust-signal {
     font-family: var(--font-body);
     font-size: 0.72rem;
     color: var(--color-brand-muted);
     letter-spacing: 0.05em;
+  }
+
+  /* Prominent trust callout card */
+  .custom-trust-callout {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background-color: var(--color-brand-charcoal);
+    border-left: 3px solid var(--color-brand-gold);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--color-brand-white);
+  }
+  .custom-trust-callout .trust-diamond {
+    color: var(--color-brand-gold);
+    flex-shrink: 0;
+    font-size: 0.75rem;
+  }
+
+  /* WhatsApp bypass link below submit */
+  .bypass-cta {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    letter-spacing: 0.03em;
+    color: var(--color-brand-muted);
+    text-decoration: none;
+    transition: color 0.18s ease;
+  }
+  .bypass-cta:hover {
+    color: var(--color-brand-silver);
+    text-decoration: underline;
+    text-decoration-color: var(--color-brand-gold);
   }
 
   /* Card gold glow on hover */
@@ -707,13 +782,13 @@
   }
 }
 .pitt-story-headline {
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  font-weight: 400;
-  line-height: 1.05;
+  font-family:    var(--font-display);
+  font-size:      clamp(2.4rem, 5vw, 4rem);
+  font-weight:    500;
+  line-height:    1.05;
   letter-spacing: -0.03em;
-  color: var(--color-brand-white);
-  margin-bottom: 1.25rem;
+  color:          var(--color-brand-white);
+  margin-bottom:  1.25rem;
 }
 .pitt-story-body {
   font-family: var(--font-body);
@@ -896,13 +971,14 @@
   }
 }
 .final-cta-headline {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 400;
-  letter-spacing: -0.025em;
-  color: var(--color-brand-white);
-  line-height: 1.05;
-  margin-bottom: 0.875rem;
+  font-family:    var(--font-body);
+  font-size:      clamp(2rem, 4vw, 3.2rem);
+  font-weight:    800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color:          var(--color-brand-white);
+  line-height:    0.95;
+  margin-bottom:  0.875rem;
 }
 .final-cta-body {
   font-family: var(--font-body);
@@ -1280,7 +1356,7 @@
 /* Idea Grid (upload + textarea) */
 .build-idea-grid {
   display:        flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap:            1.25rem;
 }
 
