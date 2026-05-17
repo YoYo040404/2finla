@@ -23,67 +23,23 @@ const CUSTOM_SPARKLES = [
   { top: '80%', left: '10%', delay: '0.8s', size: 3, ice: false },
 ] as const
 
-const LANE_TILES = [
-  { label: 'CHAINS',   sub: 'Rope, Cuban, Tennis. Hit the neck.',           href: '/collections/chains'   },
-  { label: 'PENDANTS', sub: 'Logo, cross, iced-out. Made personal.',        href: '/collections/pendants' },
-  { label: 'GRILLZ',   sub: 'Top, bottom, full set. Built to show.',        href: '/grillz'               },
-  { label: 'WATCHES',  sub: 'Iced bezels. High-end watch direction.',       href: '/watches'              },
-  { label: 'CUSTOM',   sub: 'Logo, sketch, photo. Built from the idea up.', href: '/custom',  gold: true  },
+const GATEWAY_CARDS = [
+  { label: 'CHAINS',    sub: 'Cuban, rope, tennis — built to hit the neck.',    href: '/collections/chains',    cta: 'ASK ABOUT THIS PIECE'    },
+  { label: 'PENDANTS',  sub: 'Logo, cross, photo, iced-out direction.',          href: '/collections/pendants',  cta: 'ASK ABOUT THIS PIECE'    },
+  { label: 'GRILLZ',    sub: 'Top, bottom, full set.',                           href: '/grillz',                cta: 'ASK ABOUT THIS PIECE'    },
+  { label: 'WATCHES',   sub: 'Iced bezels. High-end watch direction.',           href: '/watches',               cta: 'ASK ABOUT THIS PIECE'    },
+  { label: 'RINGS',     sub: 'Clean hit. Heavy signal.',                         href: '/collections/rings',     cta: 'ASK ABOUT THIS PIECE'    },
+  { label: 'EARRINGS',  sub: 'Small piece. Loud shine.',                         href: '/collections/earrings',  cta: 'ASK ABOUT THIS PIECE'    },
+  { label: 'BRACELETS', sub: 'Wrist game with weight.',                          href: '/collections/bracelets', cta: 'ASK ABOUT THIS PIECE'    },
+  { label: 'CUSTOM',    sub: 'Logo, sketch, photo — built from the idea.',       href: '/custom',                cta: 'START THIS REQUEST', gold: true },
 ] as const
 
-
-/* ── Shared section wrapper ─────────────────────────────────────────────── */
-function Section({
-  children,
-  bg = 'var(--color-brand-black)',
-  border = true,
-  py = 'clamp(3rem, 7vw, 5rem)',
-}: {
-  children: React.ReactNode
-  bg?: string
-  border?: boolean
-  py?: string
-}) {
-  return (
-    <section
-      style={{
-        backgroundColor: bg,
-        borderTop:        border ? '1px solid var(--color-brand-border)' : 'none',
-        paddingTop:       py,
-        paddingBottom:    py,
-      }}
-    >
-      <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 1.5rem' }}>
-        {children}
-      </div>
-    </section>
-  )
-}
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <span className="section-eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>
       {children}
     </span>
-  )
-}
-
-function SectionHeading({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
-  return (
-    <h2
-      style={{
-        fontFamily:    'var(--font-body)',
-        fontSize:      'clamp(1.7rem, 3.8vw, 2.7rem)',
-        fontWeight:    800,
-        textTransform: 'uppercase',
-        letterSpacing: '0.04em',
-        color:         'var(--color-brand-white)',
-        lineHeight:    1.0,
-        ...style,
-      }}
-    >
-      {children}
-    </h2>
   )
 }
 
@@ -363,79 +319,36 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── 3. PICK YOUR LANE ────────────────────────────────────────── */}
-      <section className="pick-lane-section" aria-label="Shop by category">
-        <div className="pick-lane-inner">
+      {/* ─── 3. PRODUCT GATEWAY — WHAT ARE YOU BUILDING? ─────────────── */}
+      <section className="pg-section" aria-label="Shop by category">
+        <div className="pg-inner">
           <span className="section-eyebrow">SHOP BY PIECE</span>
-          <h2 className="pick-lane-heading">PICK YOUR LANE</h2>
+          <h2 className="pg-heading">WHAT ARE YOU BUILDING?</h2>
+          <p className="pg-subline">
+            Pick the piece. Send the idea. We&apos;ll point you in the right direction.
+          </p>
 
-          <div className="pick-lane-grid">
-            {LANE_TILES.map((tile) => (
+          <div className="pg-grid">
+            {GATEWAY_CARDS.map((card) => (
               <Link
-                key={tile.label}
-                href={tile.href}
-                className={`pick-lane-tile${'gold' in tile ? ' pick-lane-tile--custom' : ''}`}
+                key={card.label}
+                href={card.href}
+                className={`pg-card${'gold' in card ? ' pg-card--custom' : ''}`}
+                aria-label={card.label}
               >
-                <span className="pick-lane-tile-label">{tile.label}</span>
-                <span className="pick-lane-tile-sub">{tile.sub}</span>
-                <span className="pick-lane-tile-arrow" aria-hidden="true">→</span>
+                {/* Image slot — replace this div with <Image fill> when real photos arrive */}
+                <div className="pg-card__art" aria-hidden="true" />
+
+                <div className="pg-card__body">
+                  <span className="pg-card__label">{card.label}</span>
+                  <span className="pg-card__sub">{card.sub}</span>
+                  <span className="pg-card__cta" aria-hidden="true">{card.cta} →</span>
+                </div>
               </Link>
             ))}
           </div>
-
-          <div className="pick-lane-secondary" aria-label="More categories">
-            <Link href="/collections/bracelets" className="pick-lane-pill">Bracelets</Link>
-            <span aria-hidden="true">·</span>
-            <Link href="/collections/rings"     className="pick-lane-pill">Rings</Link>
-            <span aria-hidden="true">·</span>
-            <Link href="/collections/earrings"  className="pick-lane-pill">Earrings</Link>
-            <span aria-hidden="true">·</span>
-            <Link href="/collections" className="pick-lane-pill pick-lane-pill--all">Browse All →</Link>
-          </div>
         </div>
       </section>
-
-      {/* ─── 6. INQUIRY LANES ─────────────────────────────────────────── */}
-      <Section bg="var(--color-brand-charcoal)">
-        <Eyebrow>Inquiry Only</Eyebrow>
-        <SectionHeading style={{ marginBottom: '2rem', marginTop: '0.5rem' }}>
-          Ask before you buy.
-        </SectionHeading>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
-          {[
-            { title: 'Diamond Watches', sub: 'Iced bezels. Custom-set looks. High-end watch direction.', href: '/watches', cta: 'Ask About Watches' },
-            { title: 'Grillz',          sub: 'Top, bottom, or full set. Gold, silver, iced. Let\'s build.', href: '/grillz', cta: 'Start Grillz Inquiry' },
-            { title: 'Custom Jewelry',  sub: 'Logo, sketch, photo, or just an idea. We build from there.', href: '/custom',  cta: 'Start the Piece' },
-          ].map((lane) => (
-            <div key={lane.title} className="inquiry-power-lane">
-              <div style={{ flex: '1 1 260px' }}>
-                <h3 style={{
-                  fontFamily:    'var(--font-body)',
-                  fontSize:      'clamp(1.35rem, 2.5vw, 1.7rem)',
-                  fontWeight:    700,
-                  textTransform: 'uppercase',
-                  color:         'var(--color-brand-white)',
-                  letterSpacing: '0.03em',
-                  lineHeight:    1.0,
-                }}>
-                  {lane.title}
-                </h3>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-brand-muted)', lineHeight: 1.6, marginTop: '0.45rem' }}>
-                  {lane.sub}
-                </p>
-              </div>
-              <Link
-                href={lane.href}
-                className="btn-primary"
-                style={{ fontSize: '0.8125rem', letterSpacing: '0.07em', padding: '0.8rem 1.6rem', whiteSpace: 'nowrap', flexShrink: 0 }}
-              >
-                {lane.cta} →
-              </Link>
-            </div>
-          ))}
-        </div>
-      </Section>
 
       <PittsburghStory />
 

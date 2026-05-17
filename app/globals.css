@@ -149,132 +149,116 @@
   }
   .collection-card:hover { border-color: rgba(201, 168, 76, 0.55); transform: scale(1.018); }
 
-  /* Inquiry lane link */
-  .inquiry-link {
-    display: inline-block;
-    color: var(--color-brand-gold);
-    border-bottom: 1px solid var(--color-brand-gold-dim);
-    padding-bottom: 1px;
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.03em;
-    transition: border-color 0.18s ease;
+  /* ─── Product Gateway section ─────────────────────────────────── */
+  .pg-section {
+    background-color: var(--color-brand-black);
+    border-top: 1px solid var(--color-brand-border);
+    padding: clamp(3rem, 7vw, 5rem) 1.5rem;
   }
-  .inquiry-link:hover { border-color: var(--color-brand-gold); }
-
-  /* ─── Pick Your Lane section ──────────────────────────────────── */
-  .pick-lane-section {
-    background-color: var(--color-brand-charcoal);
-    border-bottom: 1px solid var(--color-brand-border);
-    padding: 3.5rem 1.5rem 2.5rem;
-  }
-  .pick-lane-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .pick-lane-heading {
+  .pg-inner { max-width: 1440px; margin: 0 auto; }
+  .pg-heading {
     font-family: var(--font-display);
-    font-size: clamp(2.25rem, 7vw, 5rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
     color: var(--color-brand-white);
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    margin: 0.5rem 0 2.5rem;
     line-height: 1;
+    margin: 0.5rem 0 0.75rem;
   }
-  .pick-lane-grid {
+  .pg-subline {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--color-brand-muted);
+    line-height: 1.6;
+    margin-bottom: 2.25rem;
+  }
+  .pg-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1px;
     background-color: var(--color-brand-border);
     border: 1px solid var(--color-brand-border);
-    margin-bottom: 2rem;
   }
-  .pick-lane-tile {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.625rem 1.375rem 2rem;
-    background-color: var(--color-brand-charcoal);
+  .pg-card {
     position: relative;
     overflow: hidden;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     text-decoration: none;
-    transition: background-color 0.22s ease;
-    min-height: 110px;
+    border: 1px solid transparent;
+    transition: border-color 0.25s ease;
   }
-  .pick-lane-tile::before {
+  .pg-card:hover { border-color: var(--color-brand-gold); }
+  .pg-card__art {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, #161616 0%, #0f0f0f 100%);
+    transition: transform 0.45s ease;
+  }
+  .pg-card:hover .pg-card__art { transform: scale(1.04); }
+  .pg-card::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at bottom left, rgba(201,168,76,0.13) 0%, transparent 65%);
-    opacity: 0;
-    transition: opacity 0.25s ease;
+    background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.35) 55%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
   }
-  .pick-lane-tile:hover { background-color: rgba(201,168,76,0.04); }
-  .pick-lane-tile:hover::before { opacity: 1; }
-  .pick-lane-tile--custom .pick-lane-tile-label { color: var(--color-brand-gold); }
-  .pick-lane-tile--custom::before { opacity: 0.6; }
-  .pick-lane-tile--custom:hover::before { opacity: 1; }
-  .pick-lane-tile-label {
+  .pg-card__body {
+    position: relative;
+    z-index: 2;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .pg-card__label {
     font-family: var(--font-display);
-    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
     font-weight: 700;
     color: var(--color-brand-white);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.5rem;
-    transition: color 0.2s ease;
-    position: relative;
+    line-height: 1;
   }
-  .pick-lane-tile:hover .pick-lane-tile-label { color: var(--color-brand-gold); }
-  .pick-lane-tile--custom:hover .pick-lane-tile-label { color: var(--color-brand-gold-light); }
-  .pick-lane-tile-sub {
+  .pg-card__sub {
     font-family: var(--font-body);
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     color: var(--color-brand-muted);
-    line-height: 1.5;
-    display: block;
-    position: relative;
+    line-height: 1.45;
   }
-  .pick-lane-tile-arrow {
-    position: absolute;
-    right: 1.125rem;
-    bottom: 1.125rem;
-    font-size: 0.9rem;
+  .pg-card__cta {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     color: var(--color-brand-gold-dim);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
     opacity: 0;
-    transform: translateX(-5px);
-    transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s ease;
+    transform: translateX(-4px);
+    transition: opacity 0.22s ease, transform 0.22s ease, color 0.22s ease;
   }
-  .pick-lane-tile:hover .pick-lane-tile-arrow {
+  .pg-card:hover .pg-card__cta {
     opacity: 1;
     transform: translateX(0);
     color: var(--color-brand-gold);
   }
-  .pick-lane-secondary {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    color: var(--color-brand-subtle);
-    font-family: var(--font-body);
-    font-size: 0.75rem;
+  .pg-card--custom {
+    grid-column: 1 / -1;
+    border-color: var(--color-brand-gold-dim);
   }
-  .pick-lane-pill {
-    color: var(--color-brand-muted);
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    letter-spacing: 0.04em;
-    text-decoration: none;
-    transition: color 0.15s ease;
+  .pg-card--custom .pg-card__art {
+    background: linear-gradient(160deg, #1a1507 0%, #110e04 100%);
   }
-  .pick-lane-pill:hover { color: var(--color-brand-white); }
-  .pick-lane-pill--all { color: var(--color-brand-gold-dim); }
-  .pick-lane-pill--all:hover { color: var(--color-brand-gold); }
+  .pg-card--custom .pg-card__label { color: var(--color-brand-gold); }
+  .pg-card--custom:hover {
+    border-color: var(--color-brand-gold);
+    box-shadow: 0 0 28px rgba(201,168,76,0.12);
+  }
 
   /* Material Direction section */
   .mat-heading {
@@ -663,25 +647,6 @@
   }
 }
 
-  /* Inquiry power lane — full-width strip treatment */
-  .inquiry-power-lane {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-    padding: 1.875rem 2.25rem;
-    background-color: var(--color-brand-surface);
-    border: 1px solid var(--color-brand-border);
-    border-left: 3px solid var(--color-brand-gold-dim);
-    position: relative;
-    transition: border-left-color 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease;
-  }
-  .inquiry-power-lane:hover {
-    border-left-color: var(--color-brand-gold);
-    background-color: #1e1e1e;
-    box-shadow: inset 4px 0 28px rgba(201, 168, 76, 0.07);
-  }
 
 
 /* Disable glint on touch / no-hover devices */
@@ -774,20 +739,10 @@
   gap: 2rem;
   align-items: center;
 }
-/* CUSTOM tile spans full width on mobile (5th item in 2-col grid) */
-.pick-lane-tile--custom {
-  grid-column: 1 / -1;
-}
 @media (min-width: 768px) {
-  .pick-lane-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-  .pick-lane-tile {
-    min-height: 140px;
-  }
-  .pick-lane-tile--custom {
-    grid-column: auto;
-  }
+  .pg-grid { grid-template-columns: repeat(4, 1fr); }
+  .pg-card { min-height: 300px; }
+  .pg-card--custom { grid-column: auto; }
 }
 @media (min-width: 768px) {
   .pitt-story-inner {
