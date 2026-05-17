@@ -194,10 +194,10 @@ export default function HomePage() {
         >
           <div style={{ maxWidth: '560px' }}>
 
-            {/* ── Brand stamp — 2T JEWELERS identity anchor ── */}
+            {/* ── Identity line — location · heritage ── */}
             <div
               className="reveal"
-              style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '0.625rem' }}
+              style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '0.375rem' }}
             >
               <span
                 aria-hidden="true"
@@ -211,7 +211,37 @@ export default function HomePage() {
                   opacity:         0.88,
                 }}
               />
-              <span className="hero-brand-stamp">2T JEWELERS</span>
+              <span
+                style={{
+                  fontFamily:    'var(--font-body)',
+                  fontSize:      '0.7rem',
+                  fontWeight:    600,
+                  letterSpacing: '0.17em',
+                  textTransform: 'uppercase',
+                  color:         'rgba(201,168,76,0.65)',
+                  lineHeight:    1,
+                }}
+              >
+                Downtown Pittsburgh&nbsp;·&nbsp;Over 30 Years
+              </span>
+            </div>
+
+            {/* ── BANG stamp — Effi's signature ── */}
+            <div className="reveal" style={{ marginBottom: '0.75rem' }}>
+              <em
+                style={{
+                  fontFamily:    'var(--font-display)',
+                  fontSize:      'clamp(2rem, 5.5vw, 3.2rem)',
+                  fontStyle:     'italic',
+                  fontWeight:    700,
+                  color:         'var(--color-brand-gold)',
+                  letterSpacing: '-0.01em',
+                  lineHeight:    1,
+                  display:       'block',
+                }}
+              >
+                BANG.
+              </em>
             </div>
 
             {/* ── Gold rule separator ── */}
@@ -237,7 +267,7 @@ export default function HomePage() {
                 marginBottom:  '1.1rem',
               }}
             >
-              Pittsburgh-built · Nearly 30 years in.
+              Pittsburgh-built · Over 30 years in.
             </p>
 
             <h1
