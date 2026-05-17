@@ -785,80 +785,195 @@
 }
 
 
-/* ─── Phase 2: SocialTeaser ─────────────────────────────────────────────── */
+/* ─── Effi / BANG Social Section ──────────────────────────────────────── */
 
-.social-teaser-grid {
+.effi-section {
+  background-color: var(--color-brand-black);
+  border-top: 1px solid var(--color-brand-border);
+  border-bottom: 1px solid var(--color-brand-border);
+}
+.effi-inner {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.75rem;
 }
-@media (min-width: 640px) {
-  .social-teaser-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+@media (min-width: 768px) {
+  .effi-inner { grid-template-columns: 5fr 7fr; }
+  .effi-art-slot { min-height: 560px; }
 }
-.social-card {
+.effi-art-slot {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #141414 0%, #0a0a0a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.effi-art-slot::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-brand-gold-dim) 25%, var(--color-brand-gold) 50%, var(--color-brand-gold-dim) 75%, transparent 100%);
+  z-index: 4;
+}
+.effi-art-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+.effi-bang-stamp {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.75rem;
+  z-index: 3;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-brand-gold);
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 50px rgba(201,168,76,0.7), 0 0 90px rgba(201,168,76,0.3);
+  line-height: 1;
+}
+.effi-art-sweep {
+  position: absolute;
+  top: -20%;
+  left: -15%;
+  width: 55%;
+  height: 160%;
+  background: linear-gradient(115deg, transparent 38%, rgba(201,168,76,0.045) 50%, transparent 62%);
+  pointer-events: none;
+  z-index: 2;
+  animation: hero-sweep 9s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+.effi-slot-frame {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 2.5rem;
+  border: 1px solid rgba(201,168,76,0.22);
+  outline: 1px solid rgba(201,168,76,0.07);
+  outline-offset: 6px;
+}
+.effi-slot-frame-line {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: rgba(201,168,76,0.38);
+  text-transform: uppercase;
+}
+.effi-slot-frame-sub {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  color: rgba(201,168,76,0.2);
+  text-transform: uppercase;
+}
+.effi-content {
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-brand-charcoal);
+}
+.effi-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 700;
+  color: var(--color-brand-white);
+  line-height: 0.93;
+  letter-spacing: -0.02em;
+  margin: 0.5rem 0 1.125rem;
+}
+.effi-subline {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-brand-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+.effi-links {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-brand-border);
+}
+.effi-link {
   display: flex;
   align-items: center;
   gap: 1.25rem;
   padding: 1.5rem 1.75rem;
-  background-color: var(--color-brand-surface);
-  border: 1px solid var(--color-brand-border);
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease;
+  border-bottom: 1px solid var(--color-brand-border);
+  border-left: 3px solid transparent;
+  text-decoration: none;
+  background-color: transparent;
+  transition: background-color 0.22s ease, border-left-color 0.22s ease;
 }
-.social-card:hover {
-  background-color: #1e1e1e;
-  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+.effi-link:last-child { border-bottom: none; }
+.effi-link:hover {
+  background-color: rgba(255,255,255,0.03);
+  border-left-color: var(--effi-accent, var(--color-brand-gold));
 }
-.social-card-icon {
-  width: 48px;
-  height: 48px;
+.effi-link-icon {
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid currentColor;
   flex-shrink: 0;
-  transition: box-shadow 0.22s ease;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  opacity: 0.8;
+  transition: opacity 0.22s ease, box-shadow 0.22s ease;
 }
-.social-card:hover .social-card-icon {
+.effi-link:hover .effi-link-icon {
+  opacity: 1;
   box-shadow: 0 0 14px currentColor;
 }
-.social-card-platform {
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  margin-bottom: 0.2rem;
+.effi-link-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
 }
-.social-card-handle {
+.effi-link-platform {
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.effi-link-handle {
+  font-family: var(--font-body);
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-brand-white);
   letter-spacing: 0.02em;
-  margin-bottom: 0.25rem;
 }
-.social-card-copy {
+.effi-link-copy {
   font-family: var(--font-body);
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: var(--color-brand-muted);
   line-height: 1.4;
 }
-.social-card-content {
-  flex: 1;
-  min-width: 0;
-}
-.social-card-arrow {
-  font-size: 1.1rem;
+.effi-link-arrow {
+  font-size: 1rem;
   color: var(--color-brand-subtle);
   flex-shrink: 0;
   transition: color 0.2s ease, transform 0.2s ease;
 }
-.social-card:hover .social-card-arrow {
+.effi-link:hover .effi-link-arrow {
   transform: translateX(3px);
+  color: var(--effi-accent, var(--color-brand-gold));
 }
+
 
 /* ─── Phase 2: FinalCTABar ──────────────────────────────────────────────── */
 

@@ -1,13 +1,12 @@
 // components/home/SocialTeaser.tsx
 //
-// Real links only. No fake thumbnails, follower counts, or post images.
-// Icon-style action cards: Instagram / TikTok / WhatsApp.
-
-import type { ReactNode } from 'react'
+// Effi / BANG social energy section.
+// Real links only. No fake images, follower counts, quotes, or screenshots.
+// Effi content slot is clearly a placeholder — replace with real photo/video when ready.
 
 const IgIcon = () => (
-  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
     <circle cx="12" cy="12" r="5" />
     <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
@@ -15,7 +14,7 @@ const IgIcon = () => (
 )
 
 const TtIcon = () => (
-  <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88
       2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32
       6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0
@@ -24,7 +23,7 @@ const TtIcon = () => (
 )
 
 const WaIcon = () => (
-  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15
       -.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39
       -1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298
@@ -42,103 +41,148 @@ const WaIcon = () => (
   </svg>
 )
 
-interface Social {
-  platform: string
-  handle:   string
-  copy:     string
-  href:     string
-  icon:     ReactNode
-  accent:   string
-}
-
-const SOCIALS: Social[] = [
+const SOCIALS = [
   {
     platform: 'INSTAGRAM',
     handle:   '@2tjewelers',
-    copy:     'Follow the shine.',
+    copy:     'See the work.',
     href:     'https://www.instagram.com/2tjewelers/',
     icon:     <IgIcon />,
     accent:   '#c9a84c',
+    label:    'Instagram: @2tjewelers',
   },
   {
     platform: 'TIKTOK',
     handle:   '@2tjewelers',
-    copy:     "See what's dropping.",
+    copy:     'Watch it get built.',
     href:     'https://www.tiktok.com/@2tjewelers',
     icon:     <TtIcon />,
     accent:   '#9fa8b3',
+    label:    'TikTok: @2tjewelers',
   },
   {
     platform: 'WHATSAPP',
     handle:   'HIT US UP',
-    copy:     "Text us when you're ready to build.",
+    copy:     'Tap in directly.',
     href:     'https://wa.me/14124524343',
     icon:     <WaIcon />,
     accent:   '#25D366',
+    label:    'WhatsApp: Hit us up',
   },
-]
+] as const
+
+const EFFI_SPARKLES = [
+  { top: '12%', left: '8%',  delay: '0s',   size: 5, ice: true  },
+  { top: '28%', left: '72%', delay: '1.1s', size: 4, ice: false },
+  { top: '18%', left: '42%', delay: '2.4s', size: 3, ice: true  },
+  { top: '55%', left: '88%', delay: '0.6s', size: 5, ice: false },
+  { top: '72%', left: '18%', delay: '1.8s', size: 4, ice: true  },
+  { top: '85%', left: '60%', delay: '3.1s', size: 3, ice: false },
+  { top: '42%', left: '28%', delay: '2.8s', size: 3, ice: true  },
+  { top: '65%', left: '50%', delay: '0.4s', size: 4, ice: false },
+] as const
 
 export default function SocialTeaser() {
   return (
-    <section
-      aria-label="Follow 2T Jewelers"
-      style={{
-        backgroundColor: 'var(--color-brand-charcoal)',
-        borderTop:       '1px solid var(--color-brand-border)',
-        borderBottom:    '1px solid var(--color-brand-border)',
-        padding:         '4rem 1.5rem',
-      }}
-    >
-      <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
-        <span
-          className="section-eyebrow"
-          style={{ display: 'block', marginBottom: '0.5rem' }}
-        >
-          STAY CONNECTED
-        </span>
-        <h2
-          style={{
-            fontFamily:    'var(--font-body)',
-            fontSize:      'clamp(1.8rem, 3.5vw, 2.8rem)',
-            fontWeight:    800,
-            textTransform: 'uppercase',
-            letterSpacing: '0.03em',
-            color:         'var(--color-brand-white)',
-            marginBottom:  '2.5rem',
-            lineHeight:    0.95,
-          }}
-        >
-          TAP IN WITH 2T.
-        </h2>
+    <section className="effi-section" aria-label="Follow 2T Jewelers">
+      <div className="effi-inner">
 
-        <div className="social-teaser-grid">
-          {SOCIALS.map((social) => (
-            <a
-              key={social.platform}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-card"
-              style={{ borderColor: 'var(--color-brand-border)' }}
-              aria-label={`${social.platform}: ${social.handle}`}
-            >
-              <div
-                className="social-card-icon"
-                style={{ color: social.accent, borderColor: social.accent }}
-              >
-                {social.icon}
-              </div>
-              <div className="social-card-content">
-                <p className="social-card-platform" style={{ color: social.accent }}>
-                  {social.platform}
-                </p>
-                <p className="social-card-handle">{social.handle}</p>
-                <p className="social-card-copy">{social.copy}</p>
-              </div>
-              <span className="social-card-arrow" aria-hidden="true">→</span>
-            </a>
+        {/* ── Left: Effi visual slot ─────────────────────────────────────── */}
+        {/*
+          CONTENT SLOT — replace this entire div with real Effi media when ready:
+            <div style={{ position:'relative', minHeight:'560px', overflow:'hidden' }}>
+              <video autoPlay muted loop playsInline style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }}>
+                <source src="/assets/effi-clip.mp4" type="video/mp4" />
+              </video>
+            </div>
+          Or: <Image fill style={{ objectFit:'cover' }} alt="Effi — 2T Jewelers" />
+        */}
+        <div className="effi-art-slot" aria-hidden="true">
+
+          {/* Gradient overlay — keep when real media is added */}
+          <div className="effi-art-overlay" />
+
+          {/* Diagonal gold sweep — cinematic energy */}
+          <div className="effi-art-sweep" />
+
+          {/* Premium media frame — replaces with real content */}
+          <div className="effi-slot-frame">
+            <span className="effi-slot-frame-line">EFFI CONTENT SLOT</span>
+            <span className="effi-slot-frame-sub">PHOTO · VIDEO · CLIP</span>
+          </div>
+
+          {/* BANG stamp — Effi's signature mark */}
+          <em className="effi-bang-stamp" aria-hidden="true">BANG.</em>
+
+          {/* Diamond / ice sparkle hits */}
+          {EFFI_SPARKLES.map((s, i) => (
+            <span
+              key={i}
+              aria-hidden="true"
+              style={{
+                position:        'absolute',
+                top:             s.top,
+                left:            s.left,
+                width:           `${s.size}px`,
+                height:          `${s.size}px`,
+                borderRadius:    '50%',
+                backgroundColor: s.ice ? 'rgba(208,238,255,0.92)' : 'rgba(255,248,220,0.88)',
+                boxShadow:       s.ice
+                  ? `0 0 ${s.size * 5}px ${s.size + 2}px rgba(208,238,255,0.45)`
+                  : `0 0 ${s.size * 5}px ${s.size + 2}px rgba(201,168,76,0.4)`,
+                animation:       'sparkle-hit 3.8s ease-in-out infinite',
+                animationDelay:  s.delay,
+                pointerEvents:   'none',
+                zIndex:          3,
+              }}
+            />
           ))}
         </div>
+
+        {/* ── Right: heading + social tap targets ───────────────────────── */}
+        <div className="effi-content">
+          <span className="section-eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>
+            2T × EFFI
+          </span>
+
+          <h2 className="effi-heading">
+            BANG.<br />
+            <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>
+              THAT&apos;S THE<br />SIGNATURE.
+            </em>
+          </h2>
+
+          <p className="effi-subline">Follow the work. Tap in directly.</p>
+
+          {/* Social tap targets — platform accent color per row */}
+          <div className="effi-links" role="list">
+            {SOCIALS.map((s) => (
+              <a
+                key={s.platform}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="effi-link"
+                style={{ '--effi-accent': s.accent } as React.CSSProperties}
+                aria-label={s.label}
+                role="listitem"
+              >
+                <div className="effi-link-icon" style={{ color: s.accent }}>
+                  {s.icon}
+                </div>
+                <div className="effi-link-body">
+                  <span className="effi-link-platform" style={{ color: s.accent }}>
+                    {s.platform}
+                  </span>
+                  <span className="effi-link-handle">{s.handle}</span>
+                  <span className="effi-link-copy">{s.copy}</span>
+                </div>
+                <span className="effi-link-arrow" aria-hidden="true">→</span>
+              </a>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   )
