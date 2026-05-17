@@ -1,11 +1,10 @@
 import Link from 'next/link'
 import ProofMarquee     from '@/components/home/ProofMarquee'
 import PittsburghStory  from '@/components/home/PittsburghStory'
-import BestSellersStrip from '@/components/home/BestSellersStrip'
 import SocialTeaser     from '@/components/home/SocialTeaser'
 import FinalCTABar      from '@/components/home/FinalCTABar'
 
-// Sparkles clustered around the right-side jewelry art
+// Sparkles: right side around jewelry art + left side near brand/identity area
 const HERO_SPARKLES = [
   { top: '24%', left: '66%', delay: '0s',    size: 5, ice: true  },
   { top: '40%', left: '80%', delay: '1.1s',  size: 6, ice: false },
@@ -13,6 +12,8 @@ const HERO_SPARKLES = [
   { top: '60%', left: '72%', delay: '0.7s',  size: 5, ice: false },
   { top: '32%', left: '90%', delay: '1.8s',  size: 4, ice: true  },
   { top: '72%', left: '85%', delay: '3.0s',  size: 3, ice: false },
+  { top: '43%', left: '3%',  delay: '2.2s',  size: 3, ice: true  },
+  { top: '38%', left: '32%', delay: '4.5s',  size: 2, ice: true  },
 ] as const
 
 const CUSTOM_SPARKLES = [
@@ -189,86 +190,15 @@ export default function HomePage() {
             margin:        '0 auto',
             width:         '100%',
             padding:       '0 1.5rem',
-            paddingBottom: 'clamp(3.5rem, 10vw, 6rem)',
+            paddingBottom: 'clamp(5.5rem, 14vw, 10rem)',
           }}
         >
           <div style={{ maxWidth: '560px' }}>
 
-            {/* ── Identity line — location · heritage ── */}
-            <div
-              className="reveal"
-              style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '0.375rem' }}
-            >
-              <span
-                aria-hidden="true"
-                style={{
-                  display:         'block',
-                  width:           '7px',
-                  height:          '7px',
-                  backgroundColor: 'var(--color-brand-gold)',
-                  transform:       'rotate(45deg)',
-                  flexShrink:      0,
-                  opacity:         0.88,
-                }}
-              />
-              <span
-                style={{
-                  fontFamily:    'var(--font-body)',
-                  fontSize:      '0.7rem',
-                  fontWeight:    600,
-                  letterSpacing: '0.17em',
-                  textTransform: 'uppercase',
-                  color:         'rgba(201,168,76,0.65)',
-                  lineHeight:    1,
-                }}
-              >
-                Downtown Pittsburgh&nbsp;·&nbsp;Over 30 Years
-              </span>
-            </div>
-
             {/* ── BANG stamp — Effi's signature ── */}
-            <div className="reveal" style={{ marginBottom: '0.75rem' }}>
-              <em
-                style={{
-                  fontFamily:    'var(--font-display)',
-                  fontSize:      'clamp(2rem, 5.5vw, 3.2rem)',
-                  fontStyle:     'italic',
-                  fontWeight:    700,
-                  color:         'var(--color-brand-gold)',
-                  letterSpacing: '-0.01em',
-                  lineHeight:    1,
-                  display:       'block',
-                }}
-              >
-                BANG.
-              </em>
+            <div style={{ marginBottom: '1rem' }}>
+              <em className="hero-bang-stamp">BANG.</em>
             </div>
-
-            {/* ── Gold rule separator ── */}
-            <div
-              aria-hidden="true"
-              style={{
-                width:      '52px',
-                height:     '1px',
-                background: 'linear-gradient(90deg, var(--color-brand-gold), transparent)',
-                marginBottom: '0.875rem',
-                opacity:    0.55,
-              }}
-            />
-
-            <p
-              className="reveal reveal-d1"
-              style={{
-                fontFamily:    'var(--font-body)',
-                fontSize:      '0.64rem',
-                letterSpacing: '0.2em',
-                textTransform: 'uppercase',
-                color:         'var(--color-brand-muted)',
-                marginBottom:  '1.1rem',
-              }}
-            >
-              Pittsburgh-built · Over 30 years in.
-            </p>
 
             <h1
               className="reveal reveal-d2"
@@ -285,24 +215,9 @@ export default function HomePage() {
               <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>HIT.</em>
             </h1>
 
-            <p
-              className="reveal reveal-d3"
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize:   '0.9375rem',
-                color:      'var(--color-brand-muted)',
-                lineHeight: 1.6,
-                marginTop:  '1.5rem',
-                maxWidth:   '40ch',
-              }}
-            >
-              Bring the logo. Bring the photo. Bring the idea.{' '}
-              {"We'll shape the next move."}
-            </p>
-
             <div
               className="reveal reveal-d4"
-              style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginTop: '2.25rem' }}
+              style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginTop: '2rem' }}
             >
               <Link
                 href="/custom"
@@ -311,9 +226,14 @@ export default function HomePage() {
               >
                 START THE PIECE →
               </Link>
-              <Link href="/collections" className="btn-outline-dim">
-                SEE THE SHINE
-              </Link>
+              <a
+                href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20build%20a%20piece."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline-dim"
+              >
+                TEXT US FIRST →
+              </a>
             </div>
           </div>
         </div>
@@ -475,8 +395,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <BestSellersStrip />
-
       {/* ─── 6. INQUIRY LANES ─────────────────────────────────────────── */}
       <Section bg="var(--color-brand-charcoal)">
         <Eyebrow>Inquiry Only</Eyebrow>
@@ -522,63 +440,6 @@ export default function HomePage() {
       <PittsburghStory />
 
       <SocialTeaser />
-
-      {/* ─── 9. MATERIAL DIRECTION ───────────────────────────────────── */}
-      <Section bg="var(--color-brand-black)" py="3rem">
-        <p className="section-eyebrow" style={{ marginBottom: '1rem' }}>MATERIAL DIRECTION</p>
-        <h2 className="mat-heading">PICK THE SHINE.</h2>
-        <p className="mat-subcopy">
-          Gold, silver, moissanite, lab diamond, natural diamond — tell us the look and we&rsquo;ll quote the build.
-        </p>
-
-        <div className="mat-grid">
-          {/* Metals */}
-          <div className="mat-col">
-            <p className="mat-col-label">Metals</p>
-            <div className="mat-tier">
-              <p className="mat-tier-name">925 Sterling Silver</p>
-              <p className="mat-tier-desc">Full weight. Clean detail. A strong start for custom.</p>
-            </div>
-            <div className="mat-tier">
-              <p className="mat-tier-name">Gold-Plated · Vermeil</p>
-              <p className="mat-tier-desc">Real gold look with a silver-base direction. Ask what fits the build.</p>
-            </div>
-            <div className="mat-tier">
-              <p className="mat-tier-name">Solid Gold <span className="mat-tier-sub">10K · 14K · 18K</span></p>
-              <p className="mat-tier-desc">For pieces made to stay in rotation.</p>
-            </div>
-          </div>
-
-          {/* Stones */}
-          <div className="mat-col">
-            <p className="mat-col-label">Stones</p>
-            <div className="mat-tier">
-              <p className="mat-tier-name">CZ</p>
-              <p className="mat-tier-desc">Bright, clean, and sharp when volume matters.</p>
-            </div>
-            <div className="mat-tier">
-              <p className="mat-tier-name">Moissanite</p>
-              <p className="mat-tier-desc">Big fire. Serious shine. Smart for iced-out custom work.</p>
-            </div>
-            <div className="mat-tier">
-              <p className="mat-tier-name">Lab Diamond · Natural Diamond</p>
-              <p className="mat-tier-desc">Both can be part of the conversation. Details are confirmed per piece.</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="mat-cta-row">
-          <span className="mat-cta-text">Choosing materials?</span>
-          <a
-            href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20build%20a%20piece."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outline-gold mat-cta-btn"
-          >
-            HIT US UP →
-          </a>
-        </div>
-      </Section>
 
       <FinalCTABar />
     </>

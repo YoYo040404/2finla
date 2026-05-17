@@ -41,9 +41,14 @@ export default function PittsburghStory() {
             <Link href="/custom" className="btn-primary">
               START THE PIECE →
             </Link>
-            <Link href="/collections" className="btn-outline-gold">
-              BROWSE ALL →
-            </Link>
+            <a
+              href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20build%20a%20piece."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline-gold"
+            >
+              TEXT US →
+            </a>
           </div>
         </div>
       </div>

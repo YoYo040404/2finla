@@ -593,18 +593,35 @@
     gap: 10px;
     text-decoration: none;
     cursor: pointer;
+    position: relative;
+  }
+  .brand-lockup::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(208, 238, 255, 0.85);
+    box-shadow: 0 0 5px 2px rgba(208, 238, 255, 0.4);
+    animation: sparkle-hit 5s ease-in-out infinite;
+    animation-delay: 3s;
+    pointer-events: none;
   }
   .brand-mark-css {
     display: inline-block;
-    width: 7px;
-    height: 7px;
+    width: 9px;
+    height: 9px;
     background: #c9a84c;
     transform: rotate(45deg);
     flex-shrink: 0;
     transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 5px 1px rgba(201, 168, 76, 0.28);
+    animation: mark-pulse 4s ease-in-out infinite;
   }
   .brand-lockup:hover .brand-mark-css {
-    box-shadow: 0 0 8px 2px rgba(201, 168, 76, 0.55);
+    box-shadow: 0 0 14px 5px rgba(201, 168, 76, 0.72);
   }
   .brand-mark-css-lg {
     width: 9px;
@@ -613,10 +630,10 @@
   .brand-wordmark {
     font-family: var(--font-body);
     font-weight: 600;
-    font-size: 1.0625rem;
-    letter-spacing: 0.16em;
+    font-size: 1.1875rem;
+    letter-spacing: 0.19em;
     text-transform: uppercase;
-    background: linear-gradient(135deg, #c9a84c 0%, #e2ce74 40%, #c9a84c 65%, #a87c2a 100%);
+    background: linear-gradient(135deg, #8a6418 0%, #c9a84c 22%, #edd57c 42%, #fff8d4 50%, #edd57c 58%, #c9a84c 78%, #8a6418 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -984,6 +1001,55 @@
   80%, 100%{ background-position: 100% center; }
 }
 
+/* ─── Hero BANG stamp — italic diamond glint, Effi's signature ──────────── */
+/* Gradient runs dark-gold → ice-blue at 0% end, dark at 100% end.
+   Sweep moves 100%→0%: resting state is moody gold, peak flash is ice+bright gold. */
+.hero-bang-stamp {
+  font-family:              var(--font-display);
+  font-size:                clamp(3rem, 9vw, 5.5rem);
+  font-style:               italic;
+  font-weight:              700;
+  letter-spacing:           -0.01em;
+  line-height:              1;
+  display:                  block;
+  background:               linear-gradient(
+    90deg,
+    #d0eeff  0%,
+    #e8f5ff  6%,
+    #fff8d4 14%,
+    #edd57c 26%,
+    #c9a84c 42%,
+    #9a7020 62%,
+    #6a4c10 80%,
+    #3a2808 100%
+  );
+  background-size:          300% 100%;
+  background-clip:          text;
+  -webkit-background-clip:  text;
+  -webkit-text-fill-color:  transparent;
+  color:                    #c9a84c;
+  animation:                bang-diamond 4.5s ease-in-out infinite;
+  animation-delay:          0.5s;
+}
+
+@keyframes bang-diamond {
+  0%, 12% {
+    background-position: 100% center;
+    filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.32))
+            drop-shadow(0 0 2px rgba(208, 238, 255, 0.18));
+  }
+  50%, 56% {
+    background-position: 0% center;
+    filter: drop-shadow(0 0 20px rgba(201, 168, 76, 0.58))
+            drop-shadow(0 0 12px rgba(208, 238, 255, 0.55));
+  }
+  88%, 100% {
+    background-position: 100% center;
+    filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.32))
+            drop-shadow(0 0 2px rgba(208, 238, 255, 0.18));
+  }
+}
+
 /* ─── Keyframes ──────────────────────────────────────────────────────────── */
 
 @keyframes reveal-up {
@@ -1006,6 +1072,11 @@
 @keyframes sparkle-hit {
   0%, 100% { opacity: 0; transform: scale(0.3); }
   45%, 55% { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes mark-pulse {
+  0%, 100% { box-shadow: 0 0 5px 1px rgba(201, 168, 76, 0.28); }
+  50%       { box-shadow: 0 0 10px 3px rgba(201, 168, 76, 0.52); }
 }
 
 @keyframes pulse-glow {

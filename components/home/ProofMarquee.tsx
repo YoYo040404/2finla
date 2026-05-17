@@ -7,13 +7,13 @@
 type ProofItem = { text: string; bang?: true }
 
 const PROOF_ITEMS: ProofItem[] = [
+  { text: 'BANG.', bang: true },
   { text: 'DOWNTOWN PITTSBURGH' },
   { text: 'OVER 30 YEARS' },
   { text: 'CUSTOM PIECES' },
   { text: 'REAL MATERIALS' },
   { text: 'WE QUOTE FIRST' },
   { text: 'ASK BEFORE YOU BUY' },
-  { text: 'BANG.', bang: true },
 ]
 
 export default function ProofMarquee() {
