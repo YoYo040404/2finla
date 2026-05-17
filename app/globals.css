@@ -1526,10 +1526,11 @@
   right:           1.75rem;
   z-index:         40;
   align-items:     center;
-  gap:             0.55rem;
-  padding:         0.75rem 1.3rem 0.75rem 1rem;
-  background:      var(--color-brand-charcoal);
-  border:          1px solid rgba(201, 168, 76, 0.35);
+  gap:             0.6rem;
+  padding:         0.8rem 1.4rem 0.8rem 1.1rem;
+  background:      linear-gradient(145deg, #141414 0%, #181510 100%);
+  border:          1.5px solid rgba(201, 168, 76, 0.5);
+  border-radius:   2px;
   color:           var(--color-brand-white);
   font-family:     var(--font-body);
   font-size:       0.7rem;
@@ -1537,19 +1538,43 @@
   letter-spacing:  0.13em;
   text-transform:  uppercase;
   text-decoration: none;
+  overflow:        hidden;
   transition:      border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+}
+.floating-wa-btn::after {
+  content:        '';
+  position:       absolute;
+  top:            0;
+  left:           -60%;
+  width:          40%;
+  height:         100%;
+  background:     linear-gradient(100deg, transparent 0%, rgba(201, 168, 76, 0.14) 50%, transparent 100%);
+  animation:      wa-glint 8s ease-in-out 1.5s infinite;
+  pointer-events: none;
+}
+@keyframes wa-glint {
+  0%   { left: -60%; opacity: 0; }
+  5%   { opacity: 1; }
+  30%  { left: 130%; opacity: 0; }
+  100% { left: 130%; opacity: 0; }
 }
 .floating-wa-btn svg {
   color:       #25D366;
   flex-shrink: 0;
+  filter:      drop-shadow(0 0 5px rgba(37, 211, 102, 0.35));
 }
 .floating-wa-btn:hover {
   border-color: var(--color-brand-gold);
-  box-shadow:   0 0 18px rgba(37, 211, 102, 0.12), 0 0 28px rgba(201, 168, 76, 0.1), 0 6px 28px rgba(0, 0, 0, 0.5);
-  transform:    translateY(-2px);
+  box-shadow:   0 0 14px rgba(37, 211, 102, 0.18), 0 0 26px rgba(201, 168, 76, 0.12), 0 8px 32px rgba(0, 0, 0, 0.6);
+  transform:    translateY(-3px);
 }
 @media (min-width: 768px) {
   .floating-wa-btn {
     display: flex;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .floating-wa-btn::after {
+    animation: none;
   }
 }
