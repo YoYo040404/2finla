@@ -2,7 +2,7 @@
 //
 // 2T BANG social energy section.
 // Real links only. No fake images, follower counts, quotes, or screenshots.
-// Media content slot is clearly a placeholder — replace with real photo/video when ready.
+// Left slot is a brand canvas — replace with real photo/video when ready.
 
 const IgIcon = () => (
   <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -50,6 +50,7 @@ const SOCIALS = [
     icon:     <IgIcon />,
     accent:   '#c9a84c',
     label:    'Instagram: @2tjewelers',
+    wa:       false,
   },
   {
     platform: 'TIKTOK',
@@ -59,15 +60,17 @@ const SOCIALS = [
     icon:     <TtIcon />,
     accent:   '#9fa8b3',
     label:    'TikTok: @2tjewelers',
+    wa:       false,
   },
   {
     platform: 'WHATSAPP',
     handle:   'HIT US UP',
-    copy:     'Tap in directly.',
+    copy:     'Start a conversation.',
     href:     'https://wa.me/14124524343',
     icon:     <WaIcon />,
     accent:   '#25D366',
     label:    'WhatsApp: Hit us up',
+    wa:       true,
   },
 ] as const
 
@@ -84,37 +87,32 @@ const SOCIAL_SPARKLES = [
 
 export default function SocialTeaser() {
   return (
-    <section className="effi-section" aria-label="Follow 2T Jewelers">
-      <div className="effi-inner">
+    <section className="social-section" aria-label="Follow 2T Jewelers">
+      <div className="social-inner">
 
-        {/* ── Left: 2T media slot ───────────────────────────────────────── */}
+        {/* ── Left: 2T brand canvas ─────────────────────────────────────── */}
         {/*
-          CONTENT SLOT — replace this entire div with real 2T media when ready:
-            <div style={{ position:'relative', minHeight:'560px', overflow:'hidden' }}>
-              <video autoPlay muted loop playsInline style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }}>
-                <source src="/assets/store/social-clip.mp4" type="video/mp4" />
-              </video>
-            </div>
+          CONTENT SLOT — replace this div with real 2T media when ready:
+            <video autoPlay muted loop playsInline style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }}>
+              <source src="/assets/store/social-clip.mp4" type="video/mp4" />
+            </video>
           Or: <Image fill style={{ objectFit:'cover' }} alt="2T Jewelers — @2tjewelers" />
         */}
-        <div className="effi-art-slot" aria-hidden="true">
+        <div className="social-art-slot" aria-hidden="true">
 
-          {/* Gradient overlay — keep when real media is added */}
-          <div className="effi-art-overlay" />
+          {/* Gradient overlay */}
+          <div className="social-art-overlay" />
 
-          {/* Diagonal gold sweep — cinematic energy */}
-          <div className="effi-art-sweep" />
+          {/* Diagonal gold sweep */}
+          <div className="social-art-sweep" />
 
-          {/* Premium media frame — replace with real content when ready */}
-          <div className="effi-slot-frame">
-            <span className="effi-slot-frame-line">2T CONTENT SLOT</span>
-            <span className="effi-slot-frame-sub">PHOTO · VIDEO · CLIP</span>
+          {/* Typographic brand canvas */}
+          <div className="social-art-lockup">
+            <span className="social-art-mark">2T</span>
+            <span className="social-art-handle">@2tjewelers</span>
           </div>
 
-          {/* BANG stamp — 2T brand signature */}
-          <em className="effi-bang-stamp" aria-hidden="true">BANG.</em>
-
-          {/* Diamond / ice sparkle hits */}
+          {/* Ice sparkles */}
           {SOCIAL_SPARKLES.map((s, i) => (
             <span
               key={i}
@@ -140,44 +138,43 @@ export default function SocialTeaser() {
         </div>
 
         {/* ── Right: heading + social tap targets ───────────────────────── */}
-        <div className="effi-content">
+        <div className="social-content">
           <span className="section-eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>
-            2T × BANG
+            FOLLOW THE WORK
           </span>
 
-          <h2 className="effi-heading">
-            BANG.<br />
+          <h2 className="social-heading">
+            BANG!<br />
             <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>
               THAT&apos;S THE<br />SIGNATURE.
             </em>
           </h2>
 
-          <p className="effi-subline">Follow the work. Tap in directly.</p>
+          <p className="social-subline">Tap in directly.</p>
 
-          {/* Social tap targets — platform accent color per row */}
-          <div className="effi-links" role="list">
+          <div className="social-links" role="list">
             {SOCIALS.map((s) => (
               <a
                 key={s.platform}
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="effi-link"
-                style={{ '--effi-accent': s.accent } as React.CSSProperties}
+                className={`social-link${s.wa ? ' social-link--wa' : ''}`}
+                style={{ '--social-accent': s.accent } as React.CSSProperties}
                 aria-label={s.label}
                 role="listitem"
               >
-                <div className="effi-link-icon" style={{ color: s.accent }}>
+                <div className="social-link-icon" style={{ color: s.accent }}>
                   {s.icon}
                 </div>
-                <div className="effi-link-body">
-                  <span className="effi-link-platform" style={{ color: s.accent }}>
+                <div className="social-link-body">
+                  <span className="social-link-platform" style={{ color: s.accent }}>
                     {s.platform}
                   </span>
-                  <span className="effi-link-handle">{s.handle}</span>
-                  <span className="effi-link-copy">{s.copy}</span>
+                  <span className="social-link-handle">{s.handle}</span>
+                  <span className="social-link-copy">{s.copy}</span>
                 </div>
-                <span className="effi-link-arrow" aria-hidden="true">→</span>
+                <span className="social-link-arrow" aria-hidden="true">→</span>
               </a>
             ))}
           </div>
