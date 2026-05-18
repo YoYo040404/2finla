@@ -3,9 +3,8 @@
 import { useEffect, useState } from 'react'
 
 const MESSAGES = [
-  'ICED-OUT PITTSBURGH ◆ CUSTOM ICE',
-  'ASK BEFORE YOU BUY ◆ BUILT TO HIT',
-  'CHAINS ◆ PENDANTS ◆ GRILLZ ◆ WATCHES ◆ CUSTOM',
+  'ICED-OUT PITTSBURGH  ◆  CUSTOM ICE  ◆  BUILT TO HIT',
+  'CHAINS  ◆  PENDANTS  ◆  GRILLZ  ◆  WATCHES  ◆  CUSTOM',
 ]
 
 export function PromoBar() {
@@ -19,7 +18,7 @@ export function PromoBar() {
         setIndex((i) => (i + 1) % MESSAGES.length)
         setVisible(true)
       }, 320)
-    }, 4800)
+    }, 5800)
     return () => clearInterval(interval)
   }, [])
 
@@ -29,8 +28,8 @@ export function PromoBar() {
       aria-label="Store announcements"
       style={{
         backgroundColor: 'var(--color-brand-charcoal)',
-        borderBottom:    '1px solid var(--color-brand-border)',
-        height:          '36px',
+        borderBottom:    '1px solid rgba(201,168,76,0.2)',
+        height:          '38px',
         display:         'flex',
         alignItems:      'center',
         justifyContent:  'center',
@@ -43,7 +42,7 @@ export function PromoBar() {
           fontSize:        '0.68rem',
           letterSpacing:   '0.12em',
           textTransform:   'uppercase',
-          color:           '#858585',
+          color:           '#a0a0a0',
           userSelect:      'none',
           transition:      'opacity 0.3s ease, transform 0.3s ease',
           opacity:         visible ? 1 : 0,

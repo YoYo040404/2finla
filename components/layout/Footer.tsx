@@ -20,7 +20,7 @@ export function Footer() {
             <span className="brand-wordmark brand-wordmark-lg">2T JEWELERS</span>
           </Link>
           <p style={{ marginTop: '1rem', fontSize: '0.8125rem', color: 'var(--color-brand-muted)', lineHeight: 1.65, maxWidth: '260px' }}>
-            Pittsburgh-built. Custom-first. Nearly 30 years.
+            Pittsburgh-built. Custom-first. Over 30 years.
           </p>
           <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
             <p style={{ fontSize: '0.78rem', color: 'var(--color-brand-muted)' }}>

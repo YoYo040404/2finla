@@ -1,8 +1,8 @@
 // components/home/SocialTeaser.tsx
 //
-// Effi / BANG social energy section.
+// 2T BANG social energy section.
 // Real links only. No fake images, follower counts, quotes, or screenshots.
-// Effi content slot is clearly a placeholder — replace with real photo/video when ready.
+// Media content slot is clearly a placeholder — replace with real photo/video when ready.
 
 const IgIcon = () => (
   <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -71,7 +71,7 @@ const SOCIALS = [
   },
 ] as const
 
-const EFFI_SPARKLES = [
+const SOCIAL_SPARKLES = [
   { top: '12%', left: '8%',  delay: '0s',   size: 5, ice: true  },
   { top: '28%', left: '72%', delay: '1.1s', size: 4, ice: false },
   { top: '18%', left: '42%', delay: '2.4s', size: 3, ice: true  },
@@ -87,15 +87,15 @@ export default function SocialTeaser() {
     <section className="effi-section" aria-label="Follow 2T Jewelers">
       <div className="effi-inner">
 
-        {/* ── Left: Effi visual slot ─────────────────────────────────────── */}
+        {/* ── Left: 2T media slot ───────────────────────────────────────── */}
         {/*
-          CONTENT SLOT — replace this entire div with real Effi media when ready:
+          CONTENT SLOT — replace this entire div with real 2T media when ready:
             <div style={{ position:'relative', minHeight:'560px', overflow:'hidden' }}>
               <video autoPlay muted loop playsInline style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }}>
-                <source src="/assets/effi-clip.mp4" type="video/mp4" />
+                <source src="/assets/store/social-clip.mp4" type="video/mp4" />
               </video>
             </div>
-          Or: <Image fill style={{ objectFit:'cover' }} alt="Effi — 2T Jewelers" />
+          Or: <Image fill style={{ objectFit:'cover' }} alt="2T Jewelers — @2tjewelers" />
         */}
         <div className="effi-art-slot" aria-hidden="true">
 
@@ -105,17 +105,17 @@ export default function SocialTeaser() {
           {/* Diagonal gold sweep — cinematic energy */}
           <div className="effi-art-sweep" />
 
-          {/* Premium media frame — replaces with real content */}
+          {/* Premium media frame — replace with real content when ready */}
           <div className="effi-slot-frame">
-            <span className="effi-slot-frame-line">EFFI CONTENT SLOT</span>
+            <span className="effi-slot-frame-line">2T CONTENT SLOT</span>
             <span className="effi-slot-frame-sub">PHOTO · VIDEO · CLIP</span>
           </div>
 
-          {/* BANG stamp — Effi's signature mark */}
+          {/* BANG stamp — 2T brand signature */}
           <em className="effi-bang-stamp" aria-hidden="true">BANG.</em>
 
           {/* Diamond / ice sparkle hits */}
-          {EFFI_SPARKLES.map((s, i) => (
+          {SOCIAL_SPARKLES.map((s, i) => (
             <span
               key={i}
               aria-hidden="true"
@@ -142,7 +142,7 @@ export default function SocialTeaser() {
         {/* ── Right: heading + social tap targets ───────────────────────── */}
         <div className="effi-content">
           <span className="section-eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>
-            2T × EFFI
+            2T × BANG
           </span>
 
           <h2 className="effi-heading">

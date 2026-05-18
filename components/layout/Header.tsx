@@ -12,11 +12,11 @@ export function Header() {
       className="sticky top-0 z-50 w-full"
       style={{
         backgroundColor: 'var(--color-brand-black)',
-        borderBottom:    '1px solid var(--color-brand-border)',
+        borderBottom:    '1px solid rgba(201,168,76,0.15)',
       }}
     >
       <div className="mx-auto px-6" style={{ maxWidth: '1440px' }}>
-        <div className="flex items-center justify-between" style={{ height: '64px' }}>
+        <div className="flex items-center justify-between" style={{ height: '68px' }}>
 
           {/* ── Brand lockup: CSS diamond mark + gradient gold wordmark ─────── */}
           <Link href="/" aria-label="2T Jewelers" className="brand-lockup">
@@ -97,7 +97,7 @@ export function Header() {
 
           {/* ── Desktop CTA (hidden on mobile) ──────────── */}
           <div className="hidden md:flex">
-            <Link href="/custom" className="btn-outline-gold" style={{ fontSize: '0.8125rem', padding: '0.55rem 1.1rem' }}>
+            <Link href="/custom" className="btn-outline-gold" style={{ fontSize: '0.8125rem', padding: '0.55rem 1.25rem', letterSpacing: '0.1em', boxShadow: '0 0 14px rgba(201,168,76,0.2), 0 0 0 0 transparent' }}>
               START THE PIECE →
             </Link>
           </div>

@@ -14,6 +14,7 @@ export const mainNav: NavItem[] = [
   { label: 'Grillz',  href: '/grillz' },
   { label: 'Watches', href: '/watches' },
   { label: 'Custom',  href: '/custom' },
+  { label: 'About',   href: '/#story' },
 ]
 
 export const shopCategories: NavItem[] = [

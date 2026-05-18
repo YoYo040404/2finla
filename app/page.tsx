@@ -51,7 +51,8 @@ export default function HomePage() {
       <section
         style={{
           position:  'relative',
-          minHeight: 'max(100dvh, 600px)',
+          minHeight: 'max(94vh, 560px)',
+          maxHeight: 'min(100dvh, 860px)',
           display:   'flex',
           alignItems: 'flex-end',
           overflow:  'hidden',
@@ -146,21 +147,17 @@ export default function HomePage() {
             margin:        '0 auto',
             width:         '100%',
             padding:       '0 1.5rem',
-            paddingBottom: 'clamp(5.5rem, 14vw, 10rem)',
+            paddingBottom: 'clamp(5.5rem, 12vw, 9rem)',
           }}
         >
-          <div style={{ maxWidth: '560px' }}>
+          <div style={{ maxWidth: '600px' }}>
 
-            {/* ── BANG stamp — Effi's signature ── */}
-            <div style={{ marginBottom: '1rem' }}>
-              <em className="hero-bang-stamp">BANG.</em>
-            </div>
-
+            {/* ── BUILT TO HIT — main headline, dominant ── */}
             <h1
-              className="reveal reveal-d2"
+              className="reveal reveal-d1"
               style={{
                 fontFamily:    'var(--font-display)',
-                fontSize:      'clamp(4.5rem, 11vw, 9.5rem)',
+                fontSize:      'clamp(4.2rem, 10.5vw, 9rem)',
                 fontWeight:    700,
                 lineHeight:    0.88,
                 color:         'var(--color-brand-white)',
@@ -171,9 +168,14 @@ export default function HomePage() {
               <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>HIT.</em>
             </h1>
 
+            {/* ── BANG! — urban punch signature, below the headline ── */}
+            <div className="reveal reveal-d2" style={{ marginTop: '0.5rem', marginBottom: '1.75rem' }}>
+              <span className="hero-bang-stamp">BANG!</span>
+            </div>
+
             <div
-              className="reveal reveal-d4"
-              style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginTop: '2rem' }}
+              className="reveal reveal-d3"
+              style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}
             >
               <Link
                 href="/custom"
