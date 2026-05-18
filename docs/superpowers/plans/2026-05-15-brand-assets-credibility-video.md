@@ -1,3 +1,8 @@
+> **[ARCHIVED — 2026-05-18]** This plan has been executed and is kept for historical reference only.
+> - "nearly 30 years" in this document is superseded by **"over 30 years"** (confirmed by user 2026-05-17).
+> - "family-owned" in trust strip copy is **not approved** — do not use unless user explicitly confirms.
+> - Any personal brand name references in this document are **deprecated** — removed from brand direction 2026-05-18. Use @2tjewelers / BANG. only.
+
 # Brand Assets + Business Credibility + Demo Video Integration
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.

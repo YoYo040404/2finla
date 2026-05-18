@@ -57,7 +57,7 @@ For execution tasks:
 Approved homepage section order:
 
 1. Hero — full-bleed, BUILT TO HIT., video slot wired
-2. ProofMarquee — CSS-only animated trust strip (Pittsburgh-built, family-owned, nearly 30 years)
+2. ProofMarquee — CSS-only animated trust strip (Pittsburgh-built, over 30 years)
 3. Custom Entry Block — bring the logo / photo / idea, CTA to /custom
 4. PICK YOUR LANE — 5 category tiles (Chains, Pendants, Grillz, Watches, Custom) + secondary pills
 5. BestSellersStrip — two editorial lanes (Best Sellers / New Arrivals), inline SVG shape cards, no real product data
@@ -110,25 +110,23 @@ Do not install final logo until user provides the SVG/2x file.
 
 ---
 
-## Brand Personality — Effi
+## Brand Personality — BANG.
 
-**Effi** is the visible face and personality of 2T Jewelers on TikTok and Instagram.
+**"BANG."** is the owned brand signature of 2T Jewelers.
 
-- Effi's signature catchphrase / slogan: **"BANG."**
-- Future About, Store, and Social sections must treat Effi and "BANG" as real, owned brand personality elements — not placeholder copy.
-- The site should eventually feature the real downtown Pittsburgh store and real Effi / social media footage.
+- Do not use personal names in visible website copy or comments.
+- Use **@2tjewelers** as the social handle reference in all visible copy.
+- Future About, Store, and Social sections must treat BANG as a real, owned brand element — not placeholder copy.
+- The site should eventually feature the real downtown Pittsburgh store and real social media footage.
 
 **Asset rules (strict):**
-- Do not use fake Effi images.
 - Do not use fake store images.
 - Do not use fake social clips.
-- Do not write invented Effi quotes.
-
-**Spelling:** Always write **Effi**. Never write "Effie."
+- Do not write invented quotes or testimonials.
 
 **Tenure language guard:**
-Current approved wording is **"nearly 30 years"**.
-Do not change to "over 30 years" or any other formulation unless the user explicitly confirms the exact language.
+Current approved wording is **"over 30 years"** — confirmed by user 2026-05-17.
+Do not change to "nearly 30 years" or any other formulation unless the user explicitly confirms the exact language.
 
 ---
 

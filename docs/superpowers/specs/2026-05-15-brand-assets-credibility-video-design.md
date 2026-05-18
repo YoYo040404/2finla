@@ -1,3 +1,8 @@
+> **[ARCHIVED — 2026-05-18]** This design spec has been executed and is kept for historical reference only.
+> - "nearly 30 years" in this document is superseded by **"over 30 years"** (confirmed by user 2026-05-17).
+> - "Family-owned" in trust strip copy is **not approved** — do not use unless user explicitly confirms.
+> - Any personal brand name references in this document are **deprecated** — removed from brand direction 2026-05-18. Use @2tjewelers / BANG. only.
+
 # Design Spec: Brand Assets + Business Credibility + Demo Video Integration
 
 **Date:** 2026-05-15  

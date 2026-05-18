@@ -27,16 +27,18 @@ Next step: visual QA of /custom. Stop and wait for user approval before any furt
 
 ---
 
-## Brand Personality — Effi
+## Brand Personality — BANG.
 
-**Effi** is the real, visible face and personality of 2T Jewelers on TikTok and Instagram.
+**BANG.** is the owned brand signature of 2T Jewelers.
 
-- Signature catchphrase: **"BANG."**
-- Future About, Store, and Social sections must treat Effi and "BANG" as real owned brand elements.
-- The site will eventually use the real downtown Pittsburgh store and real Effi / social media footage.
-- Never generate or place fake Effi images, fake store images, fake social clips, or invented Effi quotes.
-- Spelling: **Effi** only — never "Effie."
-- Tenure copy: currently approved as **"nearly 30 years"** — do not change without user confirmation.
+> **Note (updated 2026-05-18):** A personal brand name was previously listed here as the face of 2T on TikTok and Instagram. That direction has been **removed**. Do not reference that name in any visible website copy, documentation, planning prompts, or code comments.
+
+- Signature brand mark: **"BANG."** — real, owned. Not a placeholder.
+- Social handle in all visible copy: **@2tjewelers**
+- Future About, Store, and Social sections must use BANG. and real @2tjewelers content.
+- The site will eventually use the real downtown Pittsburgh store and real store/product media footage.
+- Never generate or place fake store images, fake social clips, or invented quotes.
+- Tenure copy: approved as **"over 30 years"** — confirmed by user 2026-05-17. Do not change without user confirmation.
 
 ---
 

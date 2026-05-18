@@ -53,7 +53,7 @@ npm run dev
 ### Not Yet 🚫
 
 - Real product/category images
-- Real hero/custom entry/Effi/store photo and video assets
+- Real hero/custom entry/store photo and video assets
 - Instagram/TikTok feed strategy and dynamic feed
 - WhatsApp floating desktop button
 - Formspree backend / lead capture
@@ -181,11 +181,11 @@ Only after user approves:
 - real custom gallery/assets
 - copywriting pass with final brand voice
 - no fake products, reviews, or UGC
-- **Effi integration:** About, Store, and Social sections use real Effi footage and identity — "BANG." catchphrase may appear as owned brand voice
+- **BANG. brand voice:** About, Store, and Social sections use BANG. as real owned brand signature — @2tjewelers social handle only
 - **Real store footage:** real downtown Pittsburgh store images/video replace all placeholder slots
 - **Real social clips:** real TikTok/Instagram content replaces any placeholder social cards
-- **Tenure copy:** verify exact language ("nearly 30 years" vs "over 30 years") with user before publishing any About or brand-story copy
-- **Spelling rule:** Effi — never "Effie"
+- **Tenure copy:** approved wording is **"over 30 years"** — confirmed by user 2026-05-17. Do not revert to "nearly 30 years."
+- ~~Effi integration~~ — removed from brand direction 2026-05-18. Do not reference in copy, code comments, or planning prompts.
 
 ### Phase 9 — Vercel Preview
 
@@ -199,6 +199,44 @@ Only if user explicitly approves:
 - decide whether to pay Shopify
 - migrate approved design logic back into Shopify
 - map Next components to Shopify sections
+
+---
+
+## Approved Roadmap Order (updated 2026-05-18)
+
+1. Finish Hero/Header approval and commit
+2. MD sync — documentation alignment (this task)
+3. About / Pittsburgh / Store research + redesign plan
+4. Social / Instagram / TikTok planning
+5. Custom page UX research + simplification
+6. Category pages / Grillz / Watches — after homepage and custom flow are stable
+7. Backend / form integration — only after design approval
+
+---
+
+## Future: About / Pittsburgh Direction
+
+The current About section is **not approved**. It feels too robotic, too factual, and not iced-out enough.
+
+Future direction:
+- Smaller, sharper, more visual
+- Less corporate / less "30 years on Fifth Ave" information block
+- More custom ice / real store / BANG energy
+- Short streetwise copy
+- Real store and product media slot
+- No personal brand name references — @2tjewelers / BANG. only
+
+Do not build the About redesign until research is completed and user approves a plan.
+
+---
+
+## Future: Social / Instagram / TikTok Direction
+
+- Use **@2tjewelers** only in all visible copy
+- Plan real links or real embeds if technically safe
+- Do not fake social posts, followers, thumbnails, screenshots, or engagement numbers
+- If a dynamic feed is not feasible, create reserved real-content slots (structural placeholders)
+- No fake UGC, no invented testimonials, no fake screenshots
 
 ---
 

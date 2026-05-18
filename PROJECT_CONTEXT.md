@@ -112,26 +112,27 @@ Core funnel principle:
 
 ---
 
-## Brand Personality — Effi
+## Brand Personality — BANG.
 
-**Effi** is the visible face and personality of 2T Jewelers on TikTok and Instagram.
+**BANG.** is the owned brand signature of 2T Jewelers.
 
-- Effi's signature catchphrase / slogan: **"BANG."**
-- Future About, Store, and Social sections must use Effi and "BANG" as real brand personality elements, not as placeholders or invented copy.
-- The site should eventually feature the real downtown Pittsburgh store and real Effi / social media footage.
+> **Note (updated 2026-05-18):** A personal brand name ("Effi") was previously referenced here as the face of 2T on TikTok and Instagram. That direction has been removed. Do not reference that name in any visible website copy, documentation, planning prompts, or code comments. Use **@2tjewelers** as the social handle reference in all visible copy.
+
+Brand personality rules:
+- BANG. is real and owned. Use it as a brand signature, not as placeholder copy.
+- Social handle in all visible copy: **@2tjewelers**
+- Future About, Store, and Social sections must use BANG. and real @2tjewelers content — not invented copy.
+- The site should eventually feature the real downtown Pittsburgh store and real store/product media footage.
 
 **Asset rules (strict — no exceptions):**
-- Do not use fake Effi images.
 - Do not use fake store images.
 - Do not use fake social clips.
-- Do not write invented Effi quotes.
-- Until real assets are provided, use structural placeholders (CSS/layout slots) and note "real Effi footage pending" in code comments.
-
-**Spelling:** Always write **Effi**. Never write "Effie."
+- Do not write invented quotes or testimonials.
+- Until real assets are provided, use structural placeholders (CSS/layout slots).
 
 **Tenure language guard:**
-Current approved wording on site is **"nearly 30 years"** (used in ProofMarquee, PittsburghStory, and related copy).
-Do not change to "over 30 years" or any alternate phrasing unless the user explicitly confirms the correct number.
+Current approved wording is **"over 30 years"** — confirmed by user 2026-05-17.
+Do not change to "nearly 30 years" or any other formulation unless the user explicitly confirms the exact language.
 
 ---
 
@@ -350,7 +351,7 @@ Visual QA and user approval still required. **Do not mark /custom as final.**
 
 **Priority 2:** Full global UX/UI audit follow-up decisions (audit was run; decisions pending).
 
-**Priority 3:** Real photo/video assets — hero, custom entry, Effi footage, store footage.
+**Priority 3:** Real photo/video assets — hero, custom entry, real store footage, product footage.
 
 **Pending (not started):** Instagram/TikTok feed strategy, lead capture/backend, Vercel preview deploy, Watches/Grillz pages.
 
