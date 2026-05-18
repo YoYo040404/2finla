@@ -3,60 +3,44 @@
 import React, { useState, useRef } from 'react'
 
 type BuildData = {
-  pieceType:         string
-  idea:              string
-  materialDirection: string
-  budget:            string
-  name:              string
-  phone:             string
-  uploadFile:        File | null
-  uploadFileName:    string
+  pieceType:      string
+  idea:           string
+  name:           string
+  phone:          string
+  uploadFile:     File | null
+  uploadFileName: string
 }
 
 const EMPTY: BuildData = {
-  pieceType:         '',
-  idea:              '',
-  materialDirection: '',
-  budget:            '',
-  name:              '',
-  phone:             '',
-  uploadFile:        null,
-  uploadFileName:    '',
+  pieceType:      '',
+  idea:           '',
+  name:           '',
+  phone:          '',
+  uploadFile:     null,
+  uploadFileName: '',
 }
 
 const PIECES = [
-  { id: 'name-piece',    label: 'Name'          },
-  { id: 'logo-piece',    label: 'Logo'          },
-  { id: 'photo-pendant', label: 'Photo Pendant' },
-  { id: 'number-piece',  label: 'Number'        },
-  { id: 'iced-pendant',  label: 'Iced Pendant'  },
-  { id: 'custom-chain',  label: 'Chain'         },
-  { id: 'grillz',        label: 'Grillz'        },
-  { id: 'watch',         label: 'Watch'         },
-  { id: 'not-sure',      label: 'Not Sure'      },
+  { id: 'custom-pendant', label: 'Custom Pendant',  sub: 'logo, name, or custom artwork in metal' },
+  { id: 'grillz',         label: 'Grillz',          sub: 'custom fit, full set or single' },
+  { id: 'custom-chain',   label: 'Custom Chain',    sub: 'custom length, style, and stone' },
+  { id: 'watch',          label: 'Watch',           sub: 'iced bezel, dial, or custom band' },
+  { id: 'bracelet-ring',  label: 'Bracelet / Ring', sub: 'custom shape, stone, or engraving' },
+  { id: 'not-sure',       label: 'Not Sure',        sub: "describe what you're imagining" },
 ]
 
-const MATERIALS = ['Not Sure', 'Yellow Gold', 'White Gold', 'Silver', 'Moissanite', 'Diamonds', 'Two-Tone']
-const BUDGETS   = ['Not Sure', 'Under $500', '$500–1K', '$1K–2.5K', '$2.5K–5K', '$5K+']
-
 export function CustomBuildFlow() {
-  const [data, setData]           = useState<BuildData>(EMPTY)
+  const [data, setData]             = useState<BuildData>(EMPTY)
   const [submitting, setSubmitting] = useState(false)
-  const [submitted, setSubmitted]  = useState(false)
-  const [dragOver, setDragOver]    = useState(false)
-  const [errors, setErrors]        = useState({ pieceType: false, contact: false, idea: false })
-  const fileInputRef               = useRef<HTMLInputElement>(null)
+  const [submitted, setSubmitted]   = useState(false)
+  const [dragOver, setDragOver]     = useState(false)
+  const [errors, setErrors]         = useState({ pieceType: false, contact: false, idea: false })
+  const fileInputRef                = useRef<HTMLInputElement>(null)
 
   const selectPiece = (id: string) => {
     setData(d => ({ ...d, pieceType: id }))
     setErrors(e => ({ ...e, pieceType: false }))
   }
-
-  const toggleMaterial = (m: string) =>
-    setData(d => ({ ...d, materialDirection: d.materialDirection === m ? '' : m }))
-
-  const toggleBudget = (b: string) =>
-    setData(d => ({ ...d, budget: d.budget === b ? '' : b }))
 
   const applyFile = (file: File | null) => {
     if (!file) return
@@ -85,14 +69,12 @@ export function CustomBuildFlow() {
 
     setSubmitting(true)
     console.log('[2T Jewelers] Custom request payload:', {
-      pieceType:         data.pieceType,
-      idea:              data.idea,
-      materialDirection: data.materialDirection,
-      budget:            data.budget,
-      name:              data.name,
-      phone:             data.phone,
-      uploadFileName:    data.uploadFileName,
-      submittedAt:       new Date().toISOString(),
+      pieceType:      data.pieceType,
+      idea:           data.idea,
+      name:           data.name,
+      phone:          data.phone,
+      uploadFileName: data.uploadFileName,
+      submittedAt:    new Date().toISOString(),
     })
     setTimeout(() => { setSubmitting(false); setSubmitted(true) }, 600)
   }
@@ -130,7 +112,7 @@ export function CustomBuildFlow() {
             marginBottom:  '0.875rem',
             lineHeight:    1.05,
           }}>
-            Request received.
+            Your request is in.
           </h2>
           <p style={{
             fontSize:     '0.9375rem',
@@ -140,19 +122,19 @@ export function CustomBuildFlow() {
             maxWidth:     '38ch',
             margin:       '0 auto 2.5rem',
           }}>
-            We'll review the details and follow up with next-step information.
+            We&apos;ll review the details and follow up with next steps.
           </p>
           <a href="/" className="btn-outline-dim" style={{ display: 'inline-block' }}>
             ← Back to Home
           </a>
           <a
-            href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
+            href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20just%20sent%20a%20request%20and%20have%20something%20to%20add."
             target="_blank"
             rel="noopener noreferrer"
             className="bypass-cta"
             style={{ display: 'block', marginTop: '1.5rem' }}
           >
-            Questions while you wait? Hit us on WhatsApp →
+            Have something to add? Hit us on WhatsApp →
           </a>
         </div>
       </section>
@@ -172,9 +154,9 @@ export function CustomBuildFlow() {
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
 
         {/* ── Section header ──────────────────────────────────────────────── */}
-        <div style={{ marginBottom: 'clamp(2.5rem, 6vw, 4rem)' }}>
+        <div style={{ marginBottom: 'clamp(2rem, 5vw, 3.5rem)' }}>
           <p className="section-eyebrow" style={{ marginBottom: '1.125rem' }}>
-            Custom Build
+            CUSTOM BUILD
           </p>
           <h2 style={{
             fontFamily:    'var(--font-display)',
@@ -183,41 +165,42 @@ export function CustomBuildFlow() {
             color:         'var(--color-brand-white)',
             lineHeight:    0.9,
             letterSpacing: '-0.03em',
-            marginBottom:  '1.25rem',
           }}>
-            Start with what
+            Send the idea.
             <br />
             <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>
-              you got.
+              We build the direction.
             </em>
           </h2>
-          <p style={{
-            fontSize:  '0.9375rem',
-            color:     'var(--color-brand-muted)',
-            maxWidth:  '46ch',
-            lineHeight: 1.6,
-          }}>
-            Logo, photo, sketch, name, number — start with whatever you got.
-          </p>
         </div>
 
         {/* ── Field 01 — What are you building? ───────────────────────────── */}
         <div className="build-step-block">
-          <p className="build-field-label" style={{ marginBottom: '0.75rem' }}>
+          <p className="build-field-label" style={{ marginBottom: '0.875rem' }}>
             WHAT ARE YOU BUILDING?
           </p>
 
-          <div className="chip-row" style={{ flexWrap: 'wrap', gap: '0.5rem' }}>
+          <div className="build-card-grid">
             {PIECES.map(p => (
               <button
                 key={p.id}
                 type="button"
-                className={`direction-chip${data.pieceType === p.id ? ' direction-chip-active' : ''}`}
+                className={`build-card${data.pieceType === p.id ? ' build-card-active' : ''}${p.id === 'not-sure' ? ' build-card-not-sure' : ''}`}
                 onClick={() => selectPiece(p.id)}
                 aria-pressed={data.pieceType === p.id}
-                style={{ minHeight: '44px' }}
+                style={{ minHeight: '56px' }}
               >
-                {p.label}
+                <span className="build-card-label">{p.label}</span>
+                <span style={{
+                  fontSize:   '0.65rem',
+                  color:      data.pieceType === p.id ? 'var(--color-brand-gold)' : 'var(--color-brand-muted)',
+                  lineHeight: 1.3,
+                  marginTop:  '0.2rem',
+                  letterSpacing: '0.01em',
+                  transition: 'color 160ms ease',
+                }}>
+                  {p.sub}
+                </span>
               </button>
             ))}
           </div>
@@ -243,10 +226,10 @@ export function CustomBuildFlow() {
           </a>
         </p>
 
-        {/* ── Field 02 — Send a reference or describe the idea ────────────── */}
+        {/* ── Field 02 — Show us your vision ──────────────────────────────── */}
         <div className="build-step-block">
           <p className="build-field-label" style={{ marginBottom: '0.75rem' }}>
-            SEND A REFERENCE OR DESCRIBE THE IDEA
+            SHOW US THE IDEA
           </p>
 
           <div className="build-idea-grid">
@@ -262,6 +245,7 @@ export function CustomBuildFlow() {
                 tabIndex={0}
                 onKeyDown={e => e.key === 'Enter' && !data.uploadFileName && fileInputRef.current?.click()}
                 aria-label="Upload reference file"
+                style={{ boxShadow: '0 0 0 1px var(--color-brand-gold-dim)' }}
               >
                 <input
                   ref={fileInputRef}
@@ -294,8 +278,8 @@ export function CustomBuildFlow() {
                         <line x1="12" y1="3" x2="12" y2="15" />
                       </svg>
                     </span>
-                    <span className="upload-hero-label">Drop your reference</span>
-                    <span className="upload-hero-sub">Sketch · Photo · Logo · PDF · Max 5MB</span>
+                    <span className="upload-hero-label">Drop a logo, sketch, or photo</span>
+                    <span className="upload-hero-sub">Image · PDF · Max 5MB</span>
                   </>
                 )}
               </div>
@@ -307,7 +291,7 @@ export function CustomBuildFlow() {
                 id="cf-idea"
                 className="form-input"
                 rows={4}
-                placeholder="Logo, photo, sketch, grillz, pendant, chain — start with whatever you got."
+                placeholder="Drop a logo, sketch, or photo — or just describe what you're imagining."
                 value={data.idea}
                 onChange={e => {
                   setData(d => ({ ...d, idea: e.target.value }))
@@ -325,52 +309,36 @@ export function CustomBuildFlow() {
           )}
         </div>
 
-        {/* ── Field 03 — Material + Budget direction (optional) ───────────── */}
-        <div className="build-step-block">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.375rem' }}>
+        {/* ── Approval / Proof process strip ──────────────────────────────── */}
+        <div className="custom-proof-strip">
+          <div className="custom-proof-step">
+            <span className="custom-proof-num" aria-hidden="true">01</span>
             <div>
-              <p className="build-field-label" style={{ marginBottom: '0.625rem' }}>MATERIAL DIRECTION</p>
-              <div className="chip-row">
-                {MATERIALS.map(m => (
-                  <button
-                    key={m}
-                    type="button"
-                    className={`direction-chip${data.materialDirection === m ? ' direction-chip-active' : ''}`}
-                    onClick={() => toggleMaterial(m)}
-                    aria-pressed={data.materialDirection === m}
-                  >
-                    {m}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <p className="build-field-label" style={{ marginBottom: '0.625rem' }}>BUDGET RANGE</p>
-              <div className="chip-row">
-                {BUDGETS.map(b => (
-                  <button
-                    key={b}
-                    type="button"
-                    className={`direction-chip${data.budget === b ? ' direction-chip-active' : ''}`}
-                    onClick={() => toggleBudget(b)}
-                    aria-pressed={data.budget === b}
-                  >
-                    {b}
-                  </button>
-                ))}
-              </div>
+              <p className="custom-proof-label">SEND THE IDEA</p>
+              <p className="custom-proof-body">Logo, sketch, photo, or rough idea.</p>
             </div>
           </div>
-
-          <p style={{ fontSize: '0.7rem', color: 'var(--color-brand-muted)', marginTop: '1rem', lineHeight: 1.55 }}>
-            Not sure? Leave it open — that&apos;s fine.
-          </p>
+          <div className="custom-proof-divider" aria-hidden="true" />
+          <div className="custom-proof-step">
+            <span className="custom-proof-num" aria-hidden="true">02</span>
+            <div>
+              <p className="custom-proof-label">WE REVIEW THE DIRECTION</p>
+              <p className="custom-proof-body">Piece type, material, and visual direction.</p>
+            </div>
+          </div>
+          <div className="custom-proof-divider" aria-hidden="true" />
+          <div className="custom-proof-step">
+            <span className="custom-proof-num" aria-hidden="true">03</span>
+            <div>
+              <p className="custom-proof-label">WE QUOTE FIRST</p>
+              <p className="custom-proof-body">We confirm the direction with you before production.</p>
+            </div>
+          </div>
         </div>
 
-        {/* ── Field 04 — Contact ───────────────────────────────────────────── */}
+        {/* ── Field 03 — Contact ───────────────────────────────────────────── */}
         <div className="build-step-block">
-          <p className="build-field-label" style={{ marginBottom: '0.75rem' }}>YOUR CONTACT</p>
+          <p className="build-field-label" style={{ marginBottom: '0.75rem' }}>HOW DO WE REACH YOU?</p>
 
           <div className="build-contact-grid">
             <div>
@@ -414,7 +382,7 @@ export function CustomBuildFlow() {
           <div style={{ marginTop: '2rem' }}>
             <div className="custom-trust-callout" style={{ marginBottom: '1.5rem' }}>
               <span className="trust-diamond" aria-hidden="true">◆</span>
-              No deposit. No rush. We quote first.
+              Ask before you build. We quote first.
             </div>
 
             <button
@@ -440,7 +408,7 @@ export function CustomBuildFlow() {
               rel="noopener noreferrer"
               className="bypass-cta"
             >
-              Not sure yet? Hit us up on WhatsApp →
+              Not sure yet? Hit us on WhatsApp →
             </a>
           </div>
         </div>

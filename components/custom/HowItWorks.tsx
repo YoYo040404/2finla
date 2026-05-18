@@ -29,13 +29,13 @@ export function HowItWorks() {
         style={{
           maxWidth: '1440px',
           margin:   '0 auto',
-          padding:  '2rem 1.5rem',
+          padding:  '2.5rem 1.5rem',
           display:  'grid',
-          gap:      '1.5rem',
+          gap:      '1.75rem',
         }}
         className="md:grid-cols-3"
       >
-        {STEPS.map((step) => (
+        {STEPS.map((step, i) => (
           <div
             key={step.num}
             style={{
@@ -44,21 +44,33 @@ export function HowItWorks() {
               gap:        '1rem',
             }}
           >
-            <span
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize:   '1.6rem',
-                fontWeight: 400,
-                color:      'var(--color-brand-gold)',
-                lineHeight: 1,
-                opacity:    0.6,
-                flexShrink: 0,
-                paddingTop: '2px',
-              }}
-            >
-              {step.num}
-            </span>
-            <div>
+            <div style={{ flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.3rem' }}>
+              <span
+                aria-hidden="true"
+                style={{
+                  display:         'block',
+                  width:           '18px',
+                  height:          '2px',
+                  backgroundColor: 'var(--color-brand-gold)',
+                  opacity:         0.55,
+                  animation:       `sparkle-hit 3.8s ease-in-out infinite`,
+                  animationDelay:  `${i * 0.9}s`,
+                }}
+              />
+              <span
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize:   'clamp(2rem, 4vw, 2.8rem)',
+                  fontWeight: 400,
+                  color:      'var(--color-brand-gold)',
+                  lineHeight: 1,
+                  opacity:    0.65,
+                }}
+              >
+                {step.num}
+              </span>
+            </div>
+            <div style={{ paddingTop: '4px' }}>
               <p
                 style={{
                   fontFamily:    'var(--font-body)',
@@ -67,7 +79,7 @@ export function HowItWorks() {
                   letterSpacing: '0.06em',
                   textTransform: 'uppercase',
                   color:         'var(--color-brand-white)',
-                  marginBottom:  '0.2rem',
+                  marginBottom:  '0.25rem',
                 }}
               >
                 {step.title}

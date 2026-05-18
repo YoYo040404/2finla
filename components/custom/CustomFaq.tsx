@@ -1,23 +1,23 @@
 const FAQS = [
   {
-    q: 'What do I need to start?',
-    a: "A description is enough. A sketch, photo, logo, or reference image helps — but it's not required.",
+    q: 'What can I send?',
+    a: "Anything works — a logo file, photo, sketch, name, number, or a written description of what you want built. The more detail the better, but a rough idea is enough to start.",
   },
   {
-    q: 'What materials can you work with?',
+    q: 'What materials do you work with?',
     a: '925 Silver, Gold-Plated, Vermeil, 10K and 14K Gold, Moissanite, Lab Diamond, CZ, and natural diamond on verified pieces. Ask about what fits your budget.',
   },
   {
-    q: 'What happens after I submit?',
-    a: "We review the request and follow up with next-step information — available directions, material options, or questions we need answered before any quote or production decision.",
+    q: 'What happens after I send the idea?',
+    a: "We review the request and come back with the piece direction — available options, material directions, and any questions before anything is quoted or moved to production. We confirm the direction with you before production.",
   },
   {
-    q: 'Can I upload my own logo or artwork?',
-    a: "Yes. Upload it in the form. We'll review and advise on how the design translates to the piece type you're requesting.",
+    q: 'Can I send a logo, photo, or sketch?',
+    a: "Yes. Upload it directly in the form. We'll review the design and advise on how it translates to the piece type you're requesting.",
   },
   {
-    q: "What if I don't know the material or budget?",
-    a: 'Select "Not Sure" — it helps to know, but it\'s not required to start the conversation.',
+    q: 'How does the quote step work?',
+    a: 'Send the idea first. We review the direction, ask any needed questions, and quote before production.',
   },
 ]
 
@@ -86,6 +86,18 @@ export function CustomFaq() {
               </p>
             </details>
           ))}
+
+          <div style={{ marginTop: '2.5rem' }}>
+            <a
+              href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bypass-cta"
+              style={{ display: 'inline-block' }}
+            >
+              Still thinking? Hit us on WhatsApp →
+            </a>
+          </div>
         </div>
       </div>
     </section>

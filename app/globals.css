@@ -462,6 +462,86 @@
     letter-spacing: 0.05em;
   }
 
+  /* Custom form scroll anchor — clears sticky header (68px) */
+  #custom-form {
+    scroll-margin-top: 76px;
+  }
+
+  /* Not Sure card — full width on 2-col mobile, auto on 3-col desktop */
+  .build-card-not-sure {
+    grid-column: 1 / -1;
+  }
+  @media (min-width: 520px) {
+    .build-card-not-sure { grid-column: auto; }
+  }
+
+  /* Approval / Proof process strip */
+  .custom-proof-strip {
+    display:         flex;
+    flex-direction:  column;
+    background:      var(--color-brand-charcoal);
+    border-left:     3px solid var(--color-brand-gold);
+    border-radius:   4px;
+    padding:         1.25rem 1.5rem;
+    margin-bottom:   clamp(1.5rem, 4vw, 2.5rem);
+    gap:             1rem;
+  }
+  @media (min-width: 600px) {
+    .custom-proof-strip {
+      flex-direction: row;
+      gap:            0;
+      align-items:    flex-start;
+    }
+    .custom-proof-divider {
+      display:          block;
+      width:            1px;
+      align-self:       stretch;
+      background-color: var(--color-brand-border);
+      margin:           0 1.25rem;
+      flex-shrink:      0;
+    }
+  }
+
+  .custom-proof-step {
+    display:     flex;
+    align-items: flex-start;
+    gap:         0.75rem;
+    flex:        1;
+  }
+
+  .custom-proof-num {
+    font-family: var(--font-display);
+    font-size:   1.4rem;
+    font-weight: 400;
+    color:       var(--color-brand-gold);
+    opacity:     0.7;
+    line-height: 1;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .custom-proof-label {
+    font-family:    var(--font-body);
+    font-size:      0.7rem;
+    font-weight:    700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color:          var(--color-brand-white);
+    margin-bottom:  0.2rem;
+    line-height:    1.2;
+  }
+
+  .custom-proof-body {
+    font-family: var(--font-body);
+    font-size:   0.72rem;
+    color:       var(--color-brand-muted);
+    line-height: 1.5;
+  }
+
+  .custom-proof-divider {
+    display: none;
+  }
+
   /* Prominent trust callout card */
   .custom-trust-callout {
     display: flex;
@@ -1736,3 +1816,6 @@
     animation: none;
   }
 }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.custom-hero-wa { display:inline-flex;align-items:center;gap:0.45rem;padding:0.9rem 1.5rem;border:1px solid rgba(37,209,102,0.45);border-radius:2px;font-size:0.8125rem;letter-spacing:0.06em;font-weight:600;color:#25D366;text-decoration:none;transition:border-color 180ms ease,background 180ms ease; } .custom-hero-wa:hover { border-color:rgba(37,209,102,0.75);background:rgba(37,209,102,0.07); }
