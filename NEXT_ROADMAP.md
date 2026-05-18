@@ -66,6 +66,21 @@ npm run dev
 
 ---
 
+## Audience-First Research Rule
+
+For every major UX, copy, visual, or conversion decision:
+
+- Do not rely only on internal taste.
+- Research a broader set of relevant competitor and audience examples first.
+- Include major brands (GLD, Moses NYC, King Ice, etc.) and smaller mom-and-pop custom jewelry stores.
+- Understand the target buyer's language, motivation, friction, and visual expectations.
+- 2T must speak the audience's language: iced-out, flashy, custom-first, streetwise, clear, direct.
+- Avoid fake slang, parody, generic luxury, corporate tone, wedding/boutique tone, and unverified claims.
+- The target buyer wants a piece that hits visually and an easy path to send an idea, logo, photo, name, number, sketch, or reference.
+- Research output should influence copy, UX, SEO, CTA wording, and visual direction before implementation.
+
+---
+
 ## Benchmarks
 
 ### GLD.com
