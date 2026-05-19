@@ -1857,3 +1857,141 @@
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .custom-hero-wa { display:inline-flex;align-items:center;gap:0.45rem;padding:0.9rem 1.5rem;border:1px solid rgba(37,209,102,0.45);border-radius:2px;font-size:0.8125rem;letter-spacing:0.06em;font-weight:600;color:#25D366;text-decoration:none;transition:border-color 180ms ease,background 180ms ease; } .custom-hero-wa:hover { border-color:rgba(37,209,102,0.75);background:rgba(37,209,102,0.07); }
+
+/* ─── Pass A — Iced-Out Custom Funnel Additions ──────────────────────────── */
+
+/* Funnel section wrapper — chain-grid texture + dark bg */
+.custom-funnel-section {
+  background:   var(--color-brand-black);
+  border-top:   1px solid var(--color-brand-border);
+  padding:      clamp(3.5rem, 8vw, 6rem) 1.5rem;
+  position:     relative;
+  overflow:     hidden;
+}
+.custom-funnel-section::before {
+  content:          '';
+  position:         absolute;
+  inset:            0;
+  background-image: repeating-linear-gradient(45deg,  rgba(201,168,76,0.04) 0px, transparent 1px, transparent 20px),
+                    repeating-linear-gradient(-45deg, rgba(201,168,76,0.04) 0px, transparent 1px, transparent 20px);
+  background-size:  28px 28px;
+  animation:        chain-drift 18s linear infinite;
+  pointer-events:   none;
+  z-index:          0;
+}
+.custom-funnel-section > div {
+  position: relative;
+  z-index:  1;
+}
+
+/* Cormorant step numerals (01 / 02 / 03) */
+.step-numeral {
+  display:        block;
+  font-family:    var(--font-display);
+  font-size:      1.75rem;
+  font-weight:    400;
+  color:          var(--color-brand-gold);
+  opacity:        0.55;
+  line-height:    1;
+  margin-bottom:  0.2rem;
+  letter-spacing: -0.01em;
+}
+
+/* Permission strip — "Logo · Photo · Name · Number · Sketch · Reference" */
+.permission-strip {
+  font-family:    var(--font-body);
+  font-size:      0.7rem;
+  color:          var(--color-brand-muted);
+  letter-spacing: 0.06em;
+  margin-top:     0.875rem;
+  text-align:     center;
+  line-height:    1.6;
+}
+@media (min-width: 768px) {
+  .permission-strip { text-align: left; }
+}
+
+/* Field micro-copy (below phone field) */
+.field-micro {
+  font-family: var(--font-body);
+  font-size:   0.7rem;
+  color:       var(--color-brand-muted);
+  margin-top:  0.3rem;
+  line-height: 1.4;
+}
+
+/* Piece type chip grid */
+.piece-chip-grid {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       0.5rem;
+}
+
+/* Piece type chip */
+.piece-chip {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  height:          44px;
+  padding:         0 1.125rem;
+  font-family:     var(--font-body);
+  font-size:       0.775rem;
+  font-weight:     500;
+  letter-spacing:  0.04em;
+  text-transform:  uppercase;
+  background:      var(--color-brand-charcoal);
+  border:          1px solid var(--color-brand-border);
+  color:           var(--color-brand-muted);
+  border-radius:   2px;
+  cursor:          pointer;
+  transition:      border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  user-select:     none;
+  white-space:     nowrap;
+}
+.piece-chip:hover {
+  border-color: var(--color-brand-gold-dim);
+  color:        var(--color-brand-white);
+}
+.piece-chip.active {
+  border-color: var(--color-brand-gold);
+  color:        var(--color-brand-white);
+  background:   rgba(201, 168, 76, 0.08);
+  box-shadow:   0 0 12px rgba(201, 168, 76, 0.2);
+}
+
+/* Budget chip — same shape, slightly smaller text */
+.budget-chip {
+  height:    38px;
+  padding:   0 0.875rem;
+  font-size: 0.72rem;
+}
+
+/* Upload zone gold glint on hover (controlled sweep, not a flash) */
+.upload-hero {
+  position: relative;
+  overflow: hidden;
+}
+.upload-hero::after {
+  content:       '';
+  position:      absolute;
+  top:           0;
+  left:          -80%;
+  width:         55%;
+  height:        100%;
+  background:    linear-gradient(
+                   105deg,
+                   transparent 35%,
+                   rgba(201, 168, 76, 0.1) 50%,
+                   transparent 65%
+                 );
+  transform:     skewX(-10deg);
+  opacity:       0;
+  pointer-events: none;
+}
+.upload-hero:hover::after {
+  animation: upload-glint 0.55s ease forwards;
+}
+@keyframes upload-glint {
+  0%   { left: -80%; opacity: 1; }
+  100% { left: 140%; opacity: 0; }
+}

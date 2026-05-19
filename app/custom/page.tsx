@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
-import { CustomHero }    from '@/components/custom/CustomHero'
+import { CustomHero }     from '@/components/custom/CustomHero'
 import { CustomBuildFlow } from '@/components/custom/CustomBuildFlow'
-import { HowItWorks }    from '@/components/custom/HowItWorks'
-import { CustomFaq }     from '@/components/custom/CustomFaq'
+import { HowItWorks }     from '@/components/custom/HowItWorks'
+import { CustomFaq }      from '@/components/custom/CustomFaq'
+import { WorkPlaceholder } from '@/components/custom/WorkPlaceholder'
 
 export const metadata: Metadata = {
   title:       'Custom Jewelry Pittsburgh | Grillz, Pendants & Iced Chains — 2T Jewelers',
@@ -13,8 +14,9 @@ export default function CustomPage() {
   return (
     <>
       <CustomHero />
-      <HowItWorks />
       <CustomBuildFlow />
+      <HowItWorks />
+      <WorkPlaceholder />
       <CustomFaq />
     </>
   )

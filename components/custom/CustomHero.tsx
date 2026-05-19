@@ -230,7 +230,7 @@ export function CustomHero() {
                 className="btn-primary"
                 style={{ padding: '0.9rem 1.875rem', fontSize: '0.875rem', letterSpacing: '0.07em' }}
               >
-                START YOUR PIECE →
+                START MY PIECE →
               </a>
               <a
                 href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
@@ -245,6 +245,9 @@ export function CustomHero() {
                 TEXT US ON WHATSAPP →
               </a>
             </div>
+            <p className="permission-strip" aria-hidden="true">
+              Logo&nbsp;·&nbsp;Photo&nbsp;·&nbsp;Name&nbsp;·&nbsp;Number&nbsp;·&nbsp;Sketch&nbsp;·&nbsp;Reference
+            </p>
           </div>
         </div>
       </div>

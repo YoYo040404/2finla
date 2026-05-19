@@ -7,6 +7,7 @@ type BuildData = {
   idea:           string
   name:           string
   phone:          string
+  budget:         string
   uploadFile:     File | null
   uploadFileName: string
 }
@@ -16,62 +17,26 @@ const EMPTY: BuildData = {
   idea:           '',
   name:           '',
   phone:          '',
+  budget:         '',
   uploadFile:     null,
   uploadFileName: '',
 }
 
-const PIECE_ICONS: Record<string, React.ReactNode> = {
-  'custom-pendant': (
-    <svg width="28" height="28" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M36 16 C36 16 52 30 52 46 A16 16 0 0 1 20 46 C20 30 36 16 36 16Z"/>
-      <line x1="36" y1="8" x2="36" y2="16"/>
-    </svg>
-  ),
-  'grillz': (
-    <svg width="28" height="28" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect x="8" y="26" width="56" height="20" rx="4"/>
-      <line x1="22" y1="26" x2="22" y2="46"/>
-      <line x1="36" y1="26" x2="36" y2="46"/>
-      <line x1="50" y1="26" x2="50" y2="46"/>
-    </svg>
-  ),
-  'custom-chain': (
-    <svg width="28" height="28" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect x="4" y="28" width="27" height="16" rx="8"/>
-      <rect x="41" y="28" width="27" height="16" rx="8"/>
-      <line x1="31" y1="36" x2="41" y2="36"/>
-    </svg>
-  ),
-  'watch': (
-    <svg width="28" height="28" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="36" cy="36" r="20"/>
-      <line x1="36" y1="36" x2="36" y2="20"/>
-      <line x1="36" y1="36" x2="50" y2="36"/>
-      <rect x="30" y="12" width="12" height="6" rx="2"/>
-      <rect x="30" y="54" width="12" height="6" rx="2"/>
-    </svg>
-  ),
-  'bracelet-ring': (
-    <svg width="28" height="28" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="36" cy="40" r="20" strokeWidth="5"/>
-      <ellipse cx="36" cy="40" rx="20" ry="8" strokeWidth="2"/>
-    </svg>
-  ),
-  'not-sure': (
-    <svg width="28" height="28" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <polygon points="36,8 64,36 36,64 8,36"/>
-      <polygon points="36,22 50,36 36,50 22,36"/>
-    </svg>
-  ),
-}
-
 const PIECES = [
-  { id: 'custom-pendant', label: 'Custom Pendant',  sub: 'logo, name, or custom artwork in metal' },
-  { id: 'grillz',         label: 'Grillz',          sub: 'custom fit, full set or single' },
-  { id: 'custom-chain',   label: 'Custom Chain',    sub: 'custom length, style, and stone' },
-  { id: 'watch',          label: 'Watch',           sub: 'iced bezel, dial, or custom band' },
-  { id: 'bracelet-ring',  label: 'Bracelet / Ring', sub: 'custom shape, stone, or engraving' },
-  { id: 'not-sure',       label: 'Not Sure',        sub: "describe what you're imagining" },
+  { id: 'custom-pendant', label: 'Custom Pendant' },
+  { id: 'grillz',         label: 'Grillz' },
+  { id: 'custom-chain',   label: 'Custom Chain' },
+  { id: 'watch',          label: 'Watch' },
+  { id: 'bracelet-ring',  label: 'Bracelet / Ring' },
+  { id: 'not-sure',       label: 'Not Sure' },
+]
+
+const BUDGET_OPTIONS = [
+  { id: 'not-sure-budget', label: 'Not sure yet' },
+  { id: 'under-500',       label: 'Under $500' },
+  { id: '500-1500',        label: '$500–$1,500' },
+  { id: '1500-5000',       label: '$1,500–$5,000' },
+  { id: '5000-plus',       label: '$5,000+' },
 ]
 
 export function CustomBuildFlow() {
@@ -85,6 +50,10 @@ export function CustomBuildFlow() {
   const selectPiece = (id: string) => {
     setData(d => ({ ...d, pieceType: id }))
     setErrors(e => ({ ...e, pieceType: false }))
+  }
+
+  const selectBudget = (id: string) => {
+    setData(d => ({ ...d, budget: d.budget === id ? '' : id }))
   }
 
   const applyFile = (file: File | null) => {
@@ -103,6 +72,9 @@ export function CustomBuildFlow() {
   const clearFile = () =>
     setData(d => ({ ...d, uploadFile: null, uploadFileName: '' }))
 
+  const truncateFilename = (name: string, max = 24) =>
+    name.length > max ? name.slice(0, max - 1) + '…' : name
+
   const handleSubmit = () => {
     const next = {
       pieceType: !data.pieceType,
@@ -118,6 +90,7 @@ export function CustomBuildFlow() {
       idea:           data.idea,
       name:           data.name,
       phone:          data.phone,
+      budget:         data.budget,
       uploadFileName: data.uploadFileName,
       submittedAt:    new Date().toISOString(),
     })
@@ -130,9 +103,9 @@ export function CustomBuildFlow() {
       <section
         id="custom-form"
         style={{
-          background:  'var(--color-brand-black)',
-          borderTop:   '1px solid var(--color-brand-border)',
-          padding:     'clamp(5rem, 12vw, 9rem) 1.5rem',
+          background: 'var(--color-brand-black)',
+          borderTop:  '1px solid var(--color-brand-border)',
+          padding:    'clamp(5rem, 12vw, 9rem) 1.5rem',
         }}
       >
         <div style={{ maxWidth: 520, margin: '0 auto', textAlign: 'center' }}>
@@ -163,7 +136,6 @@ export function CustomBuildFlow() {
             fontSize:     '0.9375rem',
             color:        'var(--color-brand-muted)',
             lineHeight:   1.65,
-            marginBottom: '2.5rem',
             maxWidth:     '38ch',
             margin:       '0 auto 2.5rem',
           }}>
@@ -190,11 +162,7 @@ export function CustomBuildFlow() {
   return (
     <section
       id="custom-form"
-      style={{
-        background: 'var(--color-brand-black)',
-        borderTop:  '1px solid var(--color-brand-border)',
-        padding:    'clamp(3.5rem, 8vw, 6rem) 1.5rem',
-      }}
+      className="custom-funnel-section"
     >
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
 
@@ -219,43 +187,23 @@ export function CustomBuildFlow() {
           </h2>
         </div>
 
-        {/* ── Field 01 — What are you building? ───────────────────────────── */}
+        {/* ── Step 01 — What are you building? ────────────────────────────── */}
         <div className="build-step-block">
+          <span className="step-numeral" aria-hidden="true">01</span>
           <p className="build-field-label" style={{ marginBottom: '0.875rem' }}>
             WHAT ARE YOU BUILDING?
           </p>
 
-          <div className="build-card-grid">
+          <div className="piece-chip-grid">
             {PIECES.map(p => (
               <button
                 key={p.id}
                 type="button"
-                className={`build-card${data.pieceType === p.id ? ' build-card-active' : ''}${p.id === 'not-sure' ? ' build-card-not-sure' : ''}`}
+                className={`piece-chip${data.pieceType === p.id ? ' active' : ''}`}
                 onClick={() => selectPiece(p.id)}
                 aria-pressed={data.pieceType === p.id}
-                style={{ minHeight: '80px' }}
               >
-                {PIECE_ICONS[p.id] && (
-                  <span className="build-card-icon" aria-hidden="true" style={{
-                    color:         'rgba(201,168,76,0.35)',
-                    marginBottom:  '0.3rem',
-                    display:       'block',
-                    transition:    'color 160ms ease',
-                  }}>
-                    {PIECE_ICONS[p.id]}
-                  </span>
-                )}
-                <span className="build-card-label">{p.label}</span>
-                <span style={{
-                  fontSize:   '0.65rem',
-                  color:      data.pieceType === p.id ? 'var(--color-brand-gold)' : 'var(--color-brand-muted)',
-                  lineHeight: 1.3,
-                  marginTop:  '0.2rem',
-                  letterSpacing: '0.01em',
-                  transition: 'color 160ms ease',
-                }}>
-                  {p.sub}
-                </span>
+                {p.label}
               </button>
             ))}
           </div>
@@ -269,7 +217,7 @@ export function CustomBuildFlow() {
 
         {/* ── Mid-form WhatsApp escape ─────────────────────────────────────── */}
         <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.8125rem', color: 'var(--color-brand-muted)', marginBottom: 'clamp(1.5rem, 4vw, 2.5rem)', lineHeight: 1.5 }}>
-          Rather talk it through?{' '}
+          Rather text it through?{' '}
           <a
             href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
             target="_blank"
@@ -281,14 +229,15 @@ export function CustomBuildFlow() {
           </a>
         </p>
 
-        {/* ── Field 02 — Show us your vision ──────────────────────────────── */}
+        {/* ── Step 02 — Show us the idea ──────────────────────────────────── */}
         <div className="build-step-block">
+          <span className="step-numeral" aria-hidden="true">02</span>
           <p className="build-field-label" style={{ marginBottom: '0.75rem' }}>
             SHOW US THE IDEA
           </p>
 
           <div className="build-idea-grid">
-            {/* Upload hero — left on desktop, top on mobile */}
+            {/* Upload hero — top on mobile, left on desktop */}
             <div className="build-idea-upload">
               <div
                 className={`upload-hero${dragOver ? ' drag-over' : ''}${data.uploadFileName ? ' has-file' : ''}`}
@@ -300,7 +249,6 @@ export function CustomBuildFlow() {
                 tabIndex={0}
                 onKeyDown={e => e.key === 'Enter' && !data.uploadFileName && fileInputRef.current?.click()}
                 aria-label="Upload reference file"
-                style={{ boxShadow: '0 0 0 1px var(--color-brand-gold-dim)' }}
               >
                 <input
                   ref={fileInputRef}
@@ -314,7 +262,7 @@ export function CustomBuildFlow() {
                 {data.uploadFileName ? (
                   <div className="upload-hero-file">
                     <span className="upload-hero-icon" style={{ fontSize: '1.1rem' }}>✓</span>
-                    <span className="upload-hero-filename">{data.uploadFileName}</span>
+                    <span className="upload-hero-filename">{truncateFilename(data.uploadFileName)}&nbsp;—&nbsp;nice.</span>
                     <button
                       type="button"
                       className="upload-hero-clear"
@@ -333,8 +281,8 @@ export function CustomBuildFlow() {
                         <line x1="12" y1="3" x2="12" y2="15" />
                       </svg>
                     </span>
-                    <span className="upload-hero-label">Drop a logo, sketch, or photo</span>
-                    <span className="upload-hero-sub">Image · PDF · Max 5MB</span>
+                    <span className="upload-hero-label">DROP YOUR PHOTO, LOGO, OR SKETCH</span>
+                    <span className="upload-hero-sub">Or describe it below — anything works.</span>
                   </>
                 )}
               </div>
@@ -346,7 +294,7 @@ export function CustomBuildFlow() {
                 id="cf-idea"
                 className="form-input"
                 rows={4}
-                placeholder="Drop a logo, sketch, or photo — or just describe what you're imagining."
+                placeholder="Describe the piece — a name, idea, reference, or anything you're imagining."
                 value={data.idea}
                 onChange={e => {
                   setData(d => ({ ...d, idea: e.target.value }))
@@ -391,8 +339,9 @@ export function CustomBuildFlow() {
           </div>
         </div>
 
-        {/* ── Field 03 — Contact ───────────────────────────────────────────── */}
+        {/* ── Step 03 — Contact ───────────────────────────────────────────── */}
         <div className="build-step-block">
+          <span className="step-numeral" aria-hidden="true">03</span>
           <p className="build-field-label" style={{ marginBottom: '0.75rem' }}>HOW DO WE REACH YOU?</p>
 
           <div className="build-contact-grid">
@@ -425,6 +374,7 @@ export function CustomBuildFlow() {
                   setErrors(er => ({ ...er, contact: false }))
                 }}
               />
+              <p className="field-micro">Best number for this build.</p>
             </div>
           </div>
 
@@ -434,10 +384,30 @@ export function CustomBuildFlow() {
             </p>
           )}
 
+          {/* ── Budget direction (optional) ──────────────────────────────── */}
+          <div style={{ marginTop: '1.5rem' }}>
+            <p className="build-field-label" style={{ marginBottom: '0.5rem' }}>
+              Budget direction (optional):
+            </p>
+            <div className="piece-chip-grid">
+              {BUDGET_OPTIONS.map(b => (
+                <button
+                  key={b.id}
+                  type="button"
+                  className={`piece-chip budget-chip${data.budget === b.id ? ' active' : ''}`}
+                  onClick={() => selectBudget(b.id)}
+                  aria-pressed={data.budget === b.id}
+                >
+                  {b.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div style={{ marginTop: '2rem' }}>
             <div className="custom-trust-callout" style={{ marginBottom: '1.5rem' }}>
               <span className="trust-diamond" aria-hidden="true">◆</span>
-              Ask before you build. We quote first.
+              Send the idea first. No deposit. We quote before the build.
             </div>
 
             <button
@@ -454,7 +424,7 @@ export function CustomBuildFlow() {
                 cursor:        submitting ? 'not-allowed' : 'pointer',
               }}
             >
-              {submitting ? 'Sending…' : 'SEND REQUEST →'}
+              {submitting ? 'Sending…' : 'SEND THE IDEA →'}
             </button>
 
             <a
@@ -463,7 +433,7 @@ export function CustomBuildFlow() {
               rel="noopener noreferrer"
               className="bypass-cta"
             >
-              Not sure yet? Hit us on WhatsApp →
+              Rather text it in? WhatsApp us →
             </a>
           </div>
         </div>
