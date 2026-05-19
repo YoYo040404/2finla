@@ -221,6 +221,23 @@
     z-index: 1;
     pointer-events: none;
   }
+  .pg-card__silhouette {
+    position:        absolute;
+    top:             50%;
+    left:            50%;
+    transform:       translate(-50%, -50%);
+    z-index:         2;
+    color:           rgba(201,168,76,0.1);
+    transition:      color 0.25s ease;
+    pointer-events:  none;
+    display:         flex;
+    align-items:     center;
+    justify-content: center;
+  }
+  .pg-card:hover .pg-card__silhouette {
+    color: rgba(201,168,76,0.2);
+  }
+
   .pg-card__body {
     position: relative;
     z-index: 2;
@@ -465,6 +482,22 @@
   /* Custom form scroll anchor — clears sticky header (68px) */
   #custom-form {
     scroll-margin-top: 76px;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        rgba(201,168,76,0.03) 0px,
+        rgba(201,168,76,0.03) 1px,
+        transparent 1px,
+        transparent 32px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(201,168,76,0.03) 0px,
+        rgba(201,168,76,0.03) 1px,
+        transparent 1px,
+        transparent 32px
+      ),
+      radial-gradient(ellipse 70% 40% at 50% 0%, rgba(201,168,76,0.04) 0%, transparent 60%);
   }
 
   /* Not Sure card — full width on 2-col mobile, auto on 3-col desktop */
@@ -627,6 +660,11 @@
   details summary::marker { display: none; }
   .faq-toggle::before { content: '+'; color: var(--color-brand-gold); font-size: 1rem; line-height: 1; }
   details[open] .faq-toggle::before { content: '−'; }
+  details[open] > p { animation: faq-open 0.22s ease both; }
+  @keyframes faq-open {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 
   /* Upload drop zone */
   .form-dropzone {
@@ -765,7 +803,7 @@
   background: var(--color-brand-charcoal);
   border-top: 1px solid var(--color-brand-border);
   border-bottom: 1px solid var(--color-brand-border);
-  padding: 11px 0;
+  padding: 14px 0;
   cursor: default;
 }
 .proof-marquee-track {
@@ -779,7 +817,7 @@
 }
 .proof-marquee-item {
   font-family: var(--font-body);
-  font-size: 0.68rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.17em;
   color: var(--color-brand-muted);
@@ -797,7 +835,7 @@
 }
 .proof-marquee-bang {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   font-style: italic;
   font-weight: 700;
   color: var(--color-brand-gold);
@@ -1573,7 +1611,7 @@
 .build-card-active {
   border-color: var(--color-brand-gold) !important;
   background:   rgba(201, 168, 76, 0.07) !important;
-  box-shadow:   0 0 0 1px var(--color-brand-gold), 0 0 18px rgba(201, 168, 76, 0.2);
+  box-shadow:   0 0 0 1.5px var(--color-brand-gold), 0 0 18px rgba(201,168,76,0.2), inset 0 0 18px rgba(201,168,76,0.07);
 }
 
 .build-card-active::before {

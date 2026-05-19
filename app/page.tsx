@@ -24,16 +24,74 @@ const CUSTOM_SPARKLES = [
 ] as const
 
 const GATEWAY_CARDS = [
-  { label: 'CHAINS',    sub: 'Cuban, rope, tennis — built to hit the neck.',    href: '/collections/chains',    cta: 'ASK ABOUT THIS PIECE'    },
-  { label: 'PENDANTS',  sub: 'Logo, cross, photo, iced-out direction.',          href: '/collections/pendants',  cta: 'ASK ABOUT THIS PIECE'    },
-  { label: 'GRILLZ',    sub: 'Top, bottom, full set.',                           href: '/grillz',                cta: 'ASK ABOUT THIS PIECE'    },
-  { label: 'WATCHES',   sub: 'Iced bezels. High-end watch direction.',           href: '/watches',               cta: 'ASK ABOUT THIS PIECE'    },
-  { label: 'RINGS',     sub: 'Clean hit. Heavy signal.',                         href: '/collections/rings',     cta: 'ASK ABOUT THIS PIECE'    },
-  { label: 'EARRINGS',  sub: 'Small piece. Loud shine.',                         href: '/collections/earrings',  cta: 'ASK ABOUT THIS PIECE'    },
-  { label: 'BRACELETS', sub: 'Wrist game with weight.',                          href: '/collections/bracelets', cta: 'ASK ABOUT THIS PIECE'    },
-  { label: 'CUSTOM',    sub: 'Logo, sketch, photo — built from the idea.',       href: '/custom',                cta: 'START THIS REQUEST', gold: true },
+  { label: 'CHAINS',    sub: 'Cuban, rope, tennis — built to hit the neck.',    href: '/collections/chains',    cta: 'BUILD A CHAIN'      },
+  { label: 'PENDANTS',  sub: 'Logo, cross, photo, iced-out direction.',          href: '/collections/pendants',  cta: 'DESIGN A PENDANT'   },
+  { label: 'GRILLZ',    sub: 'Top, bottom, full set.',                           href: '/grillz',                cta: 'GET GRILLZ'         },
+  { label: 'WATCHES',   sub: 'Iced bezels. High-end watch direction.',           href: '/watches',               cta: 'START A WATCH'      },
+  { label: 'RINGS',     sub: 'Clean hit. Heavy signal.',                         href: '/collections/rings',     cta: 'DESIGN A RING'      },
+  { label: 'EARRINGS',  sub: 'Small piece. Loud shine.',                         href: '/collections/earrings',  cta: 'BUILD EARRINGS'     },
+  { label: 'BRACELETS', sub: 'Wrist game with weight.',                          href: '/collections/bracelets', cta: 'BUILD A BRACELET'   },
+  { label: 'CUSTOM',    sub: 'Logo, sketch, photo — built from the idea.',       href: '/custom',                cta: 'START THE PIECE', gold: true },
 ] as const
 
+
+/* Subtle category silhouettes — abstract gold shapes, aria-hidden, low opacity */
+const PG_ICONS = {
+  CHAINS: (
+    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="4" y="28" width="27" height="16" rx="8"/>
+      <rect x="41" y="28" width="27" height="16" rx="8"/>
+      <line x1="31" y1="36" x2="41" y2="36"/>
+    </svg>
+  ),
+  PENDANTS: (
+    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M36 16 C36 16 52 30 52 46 A16 16 0 0 1 20 46 C20 30 36 16 36 16Z"/>
+      <line x1="36" y1="8" x2="36" y2="16"/>
+    </svg>
+  ),
+  GRILLZ: (
+    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="8" y="26" width="56" height="20" rx="4"/>
+      <line x1="22" y1="26" x2="22" y2="46"/>
+      <line x1="36" y1="26" x2="36" y2="46"/>
+      <line x1="50" y1="26" x2="50" y2="46"/>
+    </svg>
+  ),
+  WATCHES: (
+    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="36" cy="36" r="20"/>
+      <line x1="36" y1="36" x2="36" y2="20"/>
+      <line x1="36" y1="36" x2="50" y2="36"/>
+      <rect x="30" y="12" width="12" height="6" rx="2"/>
+      <rect x="30" y="54" width="12" height="6" rx="2"/>
+    </svg>
+  ),
+  RINGS: (
+    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="36" cy="40" r="20" strokeWidth="5"/>
+      <ellipse cx="36" cy="40" rx="20" ry="8" strokeWidth="2"/>
+    </svg>
+  ),
+  EARRINGS: (
+    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M36 10 a8 8 0 0 1 8 0"/>
+      <line x1="36" y1="10" x2="36" y2="24"/>
+      <ellipse cx="36" cy="46" rx="10" ry="18"/>
+    </svg>
+  ),
+  BRACELETS: (
+    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M14 22 Q14 60 36 60 Q58 60 58 22"/>
+    </svg>
+  ),
+  CUSTOM: (
+    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <polygon points="36,8 64,36 36,64 8,36"/>
+      <polygon points="36,22 50,36 36,50 22,36"/>
+    </svg>
+  ),
+} as const
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
@@ -315,7 +373,7 @@ export default function HomePage() {
               >
                 SEND THE IDEA →
               </Link>
-              <p className="trust-signal">No deposit. No rush. We quote first.</p>
+              <p className="trust-signal">Send the idea first. We quote before the build.</p>
             </div>
           </div>
         </div>
@@ -327,7 +385,7 @@ export default function HomePage() {
           <span className="section-eyebrow">SHOP BY PIECE</span>
           <h2 className="pg-heading">WHAT ARE YOU BUILDING?</h2>
           <p className="pg-subline">
-            Pick the piece. Send the idea. We&apos;ll point you in the right direction.
+            Pick the piece. Send the idea. We quote before the build.
           </p>
 
           <div className="pg-grid">
@@ -340,6 +398,11 @@ export default function HomePage() {
               >
                 {/* Image slot — replace this div with <Image fill> when real photos arrive */}
                 <div className="pg-card__art" aria-hidden="true" />
+
+                {/* Abstract silhouette — low-opacity gold shape, not a product photo */}
+                <div className="pg-card__silhouette" aria-hidden="true">
+                  {PG_ICONS[card.label as keyof typeof PG_ICONS]}
+                </div>
 
                 <div className="pg-card__body">
                   <span className="pg-card__label">{card.label}</span>

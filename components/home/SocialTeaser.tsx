@@ -65,7 +65,7 @@ const SOCIALS = [
   {
     platform: 'WHATSAPP',
     handle:   'HIT US UP',
-    copy:     'Start a conversation.',
+    copy:     'HIT US UP',
     href:     'https://wa.me/14124524343',
     icon:     <WaIcon />,
     accent:   '#25D366',

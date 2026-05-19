@@ -2,10 +2,12 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { mainNav, shopCategories } from '@/data/nav'
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <header
@@ -87,8 +89,15 @@ export function Header() {
                 )
               }
 
+              const isActive = pathname === item.href
               return (
-                <Link key={item.label} href={item.href} className="nav-link">
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="nav-link"
+                  style={isActive ? { color: 'var(--color-brand-gold)' } : undefined}
+                  aria-current={isActive ? 'page' : undefined}
+                >
                   {item.label}
                 </Link>
               )

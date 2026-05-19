@@ -70,7 +70,7 @@ export function HowItWorks() {
                 {step.num}
               </span>
             </div>
-            <div style={{ paddingTop: '4px' }}>
+            <div style={{ paddingTop: '4px', minWidth: 0 }}>
               <p
                 style={{
                   fontFamily:    'var(--font-body)',

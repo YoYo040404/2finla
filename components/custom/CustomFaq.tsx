@@ -46,7 +46,7 @@ export function CustomFaq() {
             marginTop:    '0.5rem',
           }}
         >
-          Common questions
+          QUESTIONS BEFORE YOU BUILD
         </h2>
 
         <div style={{ maxWidth: '720px' }}>
@@ -95,7 +95,7 @@ export function CustomFaq() {
               className="bypass-cta"
               style={{ display: 'inline-block' }}
             >
-              Still thinking? Hit us on WhatsApp →
+              Not ready yet? Text us first. →
             </a>
           </div>
         </div>

@@ -20,6 +20,51 @@ const EMPTY: BuildData = {
   uploadFileName: '',
 }
 
+const PIECE_ICONS: Record<string, React.ReactNode> = {
+  'custom-pendant': (
+    <svg width="28" height="28" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M36 16 C36 16 52 30 52 46 A16 16 0 0 1 20 46 C20 30 36 16 36 16Z"/>
+      <line x1="36" y1="8" x2="36" y2="16"/>
+    </svg>
+  ),
+  'grillz': (
+    <svg width="28" height="28" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="8" y="26" width="56" height="20" rx="4"/>
+      <line x1="22" y1="26" x2="22" y2="46"/>
+      <line x1="36" y1="26" x2="36" y2="46"/>
+      <line x1="50" y1="26" x2="50" y2="46"/>
+    </svg>
+  ),
+  'custom-chain': (
+    <svg width="28" height="28" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="4" y="28" width="27" height="16" rx="8"/>
+      <rect x="41" y="28" width="27" height="16" rx="8"/>
+      <line x1="31" y1="36" x2="41" y2="36"/>
+    </svg>
+  ),
+  'watch': (
+    <svg width="28" height="28" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="36" cy="36" r="20"/>
+      <line x1="36" y1="36" x2="36" y2="20"/>
+      <line x1="36" y1="36" x2="50" y2="36"/>
+      <rect x="30" y="12" width="12" height="6" rx="2"/>
+      <rect x="30" y="54" width="12" height="6" rx="2"/>
+    </svg>
+  ),
+  'bracelet-ring': (
+    <svg width="28" height="28" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="36" cy="40" r="20" strokeWidth="5"/>
+      <ellipse cx="36" cy="40" rx="20" ry="8" strokeWidth="2"/>
+    </svg>
+  ),
+  'not-sure': (
+    <svg width="28" height="28" viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <polygon points="36,8 64,36 36,64 8,36"/>
+      <polygon points="36,22 50,36 36,50 22,36"/>
+    </svg>
+  ),
+}
+
 const PIECES = [
   { id: 'custom-pendant', label: 'Custom Pendant',  sub: 'logo, name, or custom artwork in metal' },
   { id: 'grillz',         label: 'Grillz',          sub: 'custom fit, full set or single' },
@@ -169,7 +214,7 @@ export function CustomBuildFlow() {
             Send the idea.
             <br />
             <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>
-              We build the direction.
+              We shape the piece.
             </em>
           </h2>
         </div>
@@ -188,8 +233,18 @@ export function CustomBuildFlow() {
                 className={`build-card${data.pieceType === p.id ? ' build-card-active' : ''}${p.id === 'not-sure' ? ' build-card-not-sure' : ''}`}
                 onClick={() => selectPiece(p.id)}
                 aria-pressed={data.pieceType === p.id}
-                style={{ minHeight: '56px' }}
+                style={{ minHeight: '80px' }}
               >
+                {PIECE_ICONS[p.id] && (
+                  <span className="build-card-icon" aria-hidden="true" style={{
+                    color:         'rgba(201,168,76,0.35)',
+                    marginBottom:  '0.3rem',
+                    display:       'block',
+                    transition:    'color 160ms ease',
+                  }}>
+                    {PIECE_ICONS[p.id]}
+                  </span>
+                )}
                 <span className="build-card-label">{p.label}</span>
                 <span style={{
                   fontSize:   '0.65rem',
