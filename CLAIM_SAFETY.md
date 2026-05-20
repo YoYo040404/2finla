@@ -28,14 +28,14 @@ Do not claim or imply:
 
 ### Policies / Service
 
-- warranty
-- lifetime guarantee
-- guarantee
-- free shipping
+- warranty (unless policy is confirmed — see Allowed When Verified section)
+- lifetime guarantee (unless policy is confirmed — see Allowed When Verified section)
+- guarantee (unless scoped to a real policy — see Allowed When Verified section)
+- free shipping (unless confirmed — see Allowed When Verified section)
 - fast shipping
-- returns
-- exchanges
-- financing
+- returns (unless policy is confirmed)
+- exchanges (unless policy is confirmed)
+- financing (use Acima safe wording only)
 - response time
 - 24/7 availability
 - “No automated systems — a real conversation”
@@ -54,18 +54,18 @@ Do not claim or imply:
 - “family-owned” unless verified
 - founding year unless verified
 
-### Product Claims
+### Product Claims (Blanket / Unscoped)
 
 - Rolex / authentic Rolex / official dealer
-- GIA
-- VVS / VS / SI
-- natural diamond unless product-level verified
-- solid gold unless product-level verified
+- watch authentication claims
+- box and papers
+- factory-set diamonds
 - exact karat unless product-level verified
 - exact carat unless product-level verified
-- factory-set diamonds
-- box and papers
-- watch authentication claims
+- GIA certificate (unless the cert exists for that specific product)
+- VVS / VS / SI as a blanket site claim
+- natural diamond as a blanket site claim
+- solid gold as a blanket site claim
 
 ### Grillz / Dental
 
@@ -77,6 +77,31 @@ Do not claim or imply:
 - impression kit
 - free mold kit
 - dental / medical claims
+
+---
+
+## Allowed When Verified and Scoped
+
+The following stronger claims are **permitted** if and only if they are:
+
+1. **True and verified** (confirmed product data, policy doc, or supplier certificate)
+2. **Scoped** to the correct product, category, promo, or policy — not blanket site-wide
+3. **Approved** by the user before publishing
+
+| Claim | Scope required |
+|---|---|
+| Solid gold | Product-level — confirm alloy and karat |
+| Real diamonds | Product-level — confirm supplier |
+| Natural diamonds | Product-level — confirm supplier |
+| VVS / VS / SI | Product-level — confirm grade source |
+| GIA certificate | Product-level — confirm the cert exists |
+| Free shipping | Policy-level — confirm shipping policy |
+| Lifetime warranty | Policy-level — confirm warranty policy |
+| Guaranteed | Policy-level — confirm what exactly is guaranteed |
+| In stock | Product-level — confirm actual inventory |
+
+**Do NOT** use any of these as global blanket claims across the whole site.  
+**Do NOT** publish any of these without product-level, category-level, or policy-level verification.
 
 ---
 
@@ -147,6 +172,45 @@ Before we make your CAD
 Before your free render
 Before production starts in X days
 ```
+
+---
+
+---
+
+## Promotions + Verified Claims Policy
+
+2T Jewelers does run promotions and sales. The site should support promotional architecture as a planned capability.
+
+### Planned Promotional Features (Not Yet Built)
+
+- Special of the Week — featured deal/product module
+- Sale strip / promo bar
+- Percentage-off campaign banners
+- Bundle or buy-one-get-one style campaigns
+- Seasonal campaign modules
+- Offer modules on collection/category pages
+
+### Competitor Research Rule for Promotions
+
+When researching competitors, include:
+- How GLD, King Ice, and similar brands handle promotions, deals, and sales
+- Promo bar patterns, deal-of-the-week mechanics, urgency patterns
+- What the target buyer expects to see in terms of sales and deals
+
+### Fallback When Product or Policy Data Is Missing
+
+If product details or policy are not yet confirmed:
+- Ask the user what is available or what the actual policy is
+- Default to safe fallback copy: "Product details are confirmed per piece."
+- For promos: "Promo terms shown on eligible items only."
+- For availability: "Availability may vary."
+
+### Current Prototype Rule
+
+For current prototype pages:
+- Do not add fake product cards or fake discounts
+- If a placeholder is needed for layout purposes, mark it clearly in code as a placeholder
+- Get user approval before any placeholder content goes into a real preview
 
 ---
 

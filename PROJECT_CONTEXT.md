@@ -402,6 +402,39 @@ Visual QA and user approval still required. **Do not mark /custom as final.**
 
 ---
 
+## Promotions + Verified Claims Policy
+
+2T Jewelers does run promotions and sales. The site should support promotional architecture as a planned future capability.
+
+### Planned Promotional Features (Not Yet Built)
+- Special of the Week — featured deal/product module
+- Sale strip / promo bar
+- Percentage-off campaign banners
+- Bundle or BOGO-style campaigns
+- Seasonal campaign modules
+- Offer modules on collection/category pages
+
+### Stronger Claims — Allowed When Verified and Scoped
+
+These claims are **permitted** only when verified (confirmed product data, real policy, supplier cert) and scoped to the correct product, category, or policy — not as blanket site-wide statements:
+
+- solid gold (product-level)
+- real diamonds (product-level)
+- natural diamonds (product-level)
+- VVS / VS / SI (product-level, confirmed grade)
+- GIA certificate (product-level, cert must exist)
+- free shipping (policy-level, confirmed)
+- lifetime warranty (policy-level, confirmed)
+- guaranteed (scoped to a real policy)
+- in stock (product-level, confirmed inventory)
+
+**Never** use these as global blanket claims across the site.  
+**Never** publish without product-level, category-level, or policy-level verification.
+
+For details see `CLAIM_SAFETY.md`.
+
+---
+
 ## Do Not Do Yet
 
 Do not:
@@ -415,7 +448,7 @@ Do not:
 - install logo (unless user provides files)
 - deploy to Vercel
 - add fake products/reviews/UGC/press
-- add unverified discounts, shipping, warranty, timelines, policies
+- add unverified or blanket discounts, shipping, warranty, timelines, or policies (verified and scoped claims are allowed — see Promotions + Verified Claims Policy above)
 - use GLD copy/assets
 - use Moses copy/assets
 - promise CAD/render/free mockup

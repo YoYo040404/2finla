@@ -4,9 +4,10 @@
 
 1. Read `PROJECT_CONTEXT.md`.
 2. Read `CLAUDE.md`.
-3. Read `CUSTOM_UX_REWRITE_BRIEF.md`.
-4. Do not work in the Shopify folder.
-5. Do not build before approval.
+3. Read `CLAIM_SAFETY.md`.
+4. Read `CUSTOM_UX_REWRITE_BRIEF.md`.
+5. Do not work in the Shopify folder.
+6. Do not build before approval.
 
 ---
 
@@ -124,6 +125,19 @@ Next step is to plan a simplified `/custom` redesign. Key direction:
 - Claim-safe. Street-luxury tone.
 
 Do NOT execute until user approves the new plan.
+
+---
+
+## Promotions + Verified Claims Policy
+
+2T Jewelers runs promotions and sales. The site will eventually support promotional architecture (Special of the Week, sale strip, percentage-off modules, seasonal campaigns, offer modules on category pages).
+
+Stronger product and policy claims (solid gold, natural diamonds, VVS/GIA, free shipping, lifetime warranty, in stock, guaranteed) are **allowed when verified and scoped** — confirmed per product, category, or policy. Never blanket site-wide. Never invented. See `CLAIM_SAFETY.md` for the full allowed/forbidden breakdown.
+
+If product data or policy details are missing, default to safe fallback:
+- "Product details are confirmed per piece."
+- "Promo terms shown on eligible items only."
+- "Availability may vary."
 
 ---
 

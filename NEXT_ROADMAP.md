@@ -196,6 +196,24 @@ Only after user approves:
 - **Tenure copy:** approved wording is **"over 30 years"** — confirmed by user 2026-05-17. Do not revert to "nearly 30 years."
 - ~~Effi integration~~ — removed from brand direction 2026-05-18. Do not reference in copy, code comments, or planning prompts.
 
+### Phase 8b — Promotions + Verified Claims Architecture (Planned)
+
+2T Jewelers runs promotions and sales. These features should be planned and researched before building.
+
+Planned promotional features:
+- Special of the Week — featured deal/product module
+- Sale strip or promo bar
+- Percentage-off campaign banners
+- Bundle or BOGO-style campaign modules
+- Seasonal campaign modules
+- Offer modules on collection/category pages
+
+Research requirement:
+- When researching competitors (GLD, King Ice, etc.), include how they handle promotions, sale mechanics, promo bars, and urgency patterns.
+- Understand what the target buyer expects to see in terms of deals and sales before designing promotional UX.
+
+Verified claims for eligible products/policies (solid gold, natural diamonds, VVS/GIA, free shipping, lifetime warranty, in stock, guaranteed) may be used **only when verified and scoped**. Never blanket. Never invented. See `CLAIM_SAFETY.md`.
+
 ### Phase 9 — Vercel Preview
 
 - deploy preview
