@@ -33,10 +33,17 @@ export const metadata: Metadata = {
     title:       '2T Jewelers',
     description: 'Custom pieces. Real materials. Build the piece around your look.',
     type:        'website',
+    images: [{
+      url:    '/assets/brand/2t-og-image-1200x630.png',
+      width:  1731,
+      height: 909,
+      alt:    '2T Jewelers — Grillz, Watches, Chains & Custom Jewelry in Pittsburgh',
+    }],
   },
   twitter: {
-    card:  'summary_large_image',
-    title: '2T Jewelers',
+    card:   'summary_large_image',
+    title:  '2T Jewelers',
+    images: ['/assets/brand/2t-og-image-1200x630.png'],
   },
 }
 
