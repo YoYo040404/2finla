@@ -68,7 +68,7 @@ export function MobileCtaBar() {
         {/* Primary CTA — full remaining width */}
         <a
           href="/custom"
-          aria-label="Start the piece"
+          aria-label="Build custom"
           className="flex items-center justify-center active:opacity-80 transition-opacity duration-100"
           style={{
             backgroundColor: 'var(--color-brand-gold)',
@@ -81,7 +81,7 @@ export function MobileCtaBar() {
             gap:             '0.4rem',
           }}
         >
-          Start the Piece
+          Build Custom
           <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
             <path d="M2 6.5h9M7.5 3l3.5 3.5-3.5 3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>

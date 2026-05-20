@@ -1,7 +1,7 @@
 // components/home/SocialTeaser.tsx
 //
-// 2T BANG social energy section.
 // Real links only. No fake images, follower counts, quotes, or screenshots.
+// TikTok primary. Instagram secondary. WhatsApp as direct-contact option.
 // Left slot is a brand canvas — replace with real photo/video when ready.
 
 const IgIcon = () => (
@@ -41,17 +41,8 @@ const WaIcon = () => (
   </svg>
 )
 
+// TikTok first — primary social proof. Instagram second. WhatsApp as direct contact.
 const SOCIALS = [
-  {
-    platform: 'INSTAGRAM',
-    handle:   '@2tjewelers',
-    copy:     'See the work.',
-    href:     'https://www.instagram.com/2tjewelers/',
-    icon:     <IgIcon />,
-    accent:   '#c9a84c',
-    label:    'Instagram: @2tjewelers',
-    wa:       false,
-  },
   {
     platform: 'TIKTOK',
     handle:   '@2tjewelers',
@@ -63,9 +54,19 @@ const SOCIALS = [
     wa:       false,
   },
   {
+    platform: 'INSTAGRAM',
+    handle:   '@2tjewelers',
+    copy:     'See the finished work.',
+    href:     'https://www.instagram.com/2tjewelers/',
+    icon:     <IgIcon />,
+    accent:   '#c9a84c',
+    label:    'Instagram: @2tjewelers',
+    wa:       false,
+  },
+  {
     platform: 'WHATSAPP',
     handle:   'HIT US UP',
-    copy:     'HIT US UP',
+    copy:     'Text directly. We respond.',
     href:     'https://wa.me/14124524343',
     icon:     <WaIcon />,
     accent:   '#25D366',
@@ -90,29 +91,20 @@ export default function SocialTeaser() {
     <section className="social-section" aria-label="Follow 2T Jewelers">
       <div className="social-inner">
 
-        {/* ── Left: 2T brand canvas ─────────────────────────────────────── */}
+        {/* ── Left: brand canvas — real media when ready ──────────────── */}
         {/*
           CONTENT SLOT — replace this div with real 2T media when ready:
             <video autoPlay muted loop playsInline style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }}>
               <source src="/assets/store/social-clip.mp4" type="video/mp4" />
             </video>
-          Or: <Image fill style={{ objectFit:'cover' }} alt="2T Jewelers — @2tjewelers" />
         */}
         <div className="social-art-slot" aria-hidden="true">
-
-          {/* Gradient overlay */}
           <div className="social-art-overlay" />
-
-          {/* Diagonal gold sweep */}
           <div className="social-art-sweep" />
-
-          {/* Typographic brand canvas */}
           <div className="social-art-lockup">
             <span className="social-art-mark">2T</span>
             <span className="social-art-handle">@2tjewelers</span>
           </div>
-
-          {/* Ice sparkles */}
           {SOCIAL_SPARKLES.map((s, i) => (
             <span
               key={i}
@@ -137,20 +129,22 @@ export default function SocialTeaser() {
           ))}
         </div>
 
-        {/* ── Right: heading + social tap targets ───────────────────────── */}
+        {/* ── Right: heading + social links ──────────────────────────── */}
         <div className="social-content">
           <span className="section-eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>
-            FOLLOW THE WORK
+            WATCH THE WORK
           </span>
 
           <h2 className="social-heading">
-            BANG!<br />
+            SEE WHAT<br />
             <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>
-              THAT&apos;S THE<br />SIGNATURE.
+              2T IS BUILDING.
             </em>
           </h2>
 
-          <p className="social-subline">Tap in directly.</p>
+          <p className="social-subline">
+            Grillz, watches, chains, and custom builds — @2tjewelers on TikTok and Instagram.
+          </p>
 
           <div className="social-links" role="list">
             {SOCIALS.map((s) => (

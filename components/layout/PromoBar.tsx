@@ -3,8 +3,9 @@
 import { useEffect, useState } from 'react'
 
 const MESSAGES = [
-  'ICED-OUT PITTSBURGH  ◆  CUSTOM ICE  ◆  BUILT TO HIT',
-  'CHAINS  ◆  PENDANTS  ◆  GRILLZ  ◆  WATCHES  ◆  CUSTOM',
+  'GRILLZ  ◆  WATCHES  ◆  CHAINS  ◆  RINGS  ◆  BRACELETS  ◆  CUSTOM',
+  'PITTSBURGH STREET LUXURY  ◆  REAL JEWELER  ◆  OVER 30 YEARS',
+  'NO DEPOSIT TO START  ◆  WE QUOTE BEFORE THE BUILD',
 ]
 
 export function PromoBar() {

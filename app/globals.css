@@ -1291,22 +1291,19 @@
    Gold fill is always visible at rest — no gradient-clip dark-end trap.
    White edge + glow gives ice/diamond pendant edge. Animation pulses glow only. */
 .hero-bang-stamp {
-  font-family:         var(--font-body);
-  font-weight:         700;
-  font-size:           clamp(2rem, 5vw, 4.2rem);
-  letter-spacing:      0.18em;
-  text-transform:      uppercase;
-  line-height:         1;
-  display:             inline-block;
-  color:               #c9a84c;
-  -webkit-text-stroke: 1px rgba(240,240,240,0.55);
-  text-shadow:
-    0 0 20px rgba(208,238,255,0.35),
-    0 0 40px rgba(208,238,255,0.15),
-    0 0 55px rgba(201,168,76,0.32),
-    0 2px  8px rgba(0,0,0,0.7);
-  animation:           bang-ice-shine 4.5s ease-in-out infinite;
-  animation-delay:     0.8s;
+  font-family:    var(--font-body);
+  font-weight:    700;
+  font-size:      clamp(0.8rem, 1.6vw, 1.15rem);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  line-height:    1;
+  display:        inline-block;
+  color:          var(--color-brand-gold);
+  padding:        0.42em 0.9em;
+  border:         1px solid rgba(201,168,76,0.45);
+  box-shadow:     0 0 14px rgba(201,168,76,0.14), inset 0 0 6px rgba(201,168,76,0.06);
+  animation:      bang-ice-shine 4.5s ease-in-out infinite;
+  animation-delay: 0.8s;
 }
 
 @keyframes bang-ice-shine {

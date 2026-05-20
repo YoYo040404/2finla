@@ -107,7 +107,7 @@ export function Header() {
           {/* ── Desktop CTA (hidden on mobile) ──────────── */}
           <div className="hidden md:flex">
             <Link href="/custom" className="btn-outline-gold" style={{ fontSize: '0.8125rem', padding: '0.55rem 1.25rem', letterSpacing: '0.1em', boxShadow: '0 0 14px rgba(201,168,76,0.2), 0 0 0 0 transparent' }}>
-              START THE PIECE →
+              BUILD CUSTOM →
             </Link>
           </div>
 
@@ -168,7 +168,7 @@ export function Header() {
             onClick={() => setMobileOpen(false)}
             className="btn-outline-gold text-center mt-5"
           >
-            START THE PIECE →
+            BUILD CUSTOM →
           </Link>
         </nav>
       )}
