@@ -11,13 +11,15 @@
 
 ---
 
-## Before Writing 2T Copy
+## Before Homepage, SEO, CRO, Copy, Promo, or Category Work
 
-Before writing category, promo, homepage, custom, product, or WhatsApp copy, read:
-- `docs/2t-voice-of-customer-copy-system.md`
-- `docs/2t-copy-swipe-map.md`
+Before working on homepage, SEO, CRO, copy, promo, or any category page, read:
+- `docs/2t-growth-strategy-seo-cro-90day.md` — official sitewide growth, SEO, and CRO strategy
+- `docs/2t-voc-copy-system.md` — voice-of-customer copy system
+- `docs/2t-copy-swipe-map.md` — copy swipe map
 
 Do not write new 2T copy from general taste. Use the Voice-of-Customer system first.  
+Do not make major SEO, CRO, or homepage decisions without reviewing the growth strategy doc.  
 Keep language: direct, product-aware, street-luxury, text-first, claim-safe.
 
 **Core lines to preserve:**

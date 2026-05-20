@@ -236,9 +236,14 @@ Only if user explicitly approves:
 3. ✅ MD sync — documentation alignment pass (this task)
 4. Visual QA of `/custom` → user approval gate
 5. Visual QA of `/grillz` and `/watches` → user approval gate
-6. About / Pittsburgh / Store — research + redesign plan (after QA gates)
-7. Social / Instagram / TikTok planning
-8. Backend / form integration — only after design approval
+6. **Sitewide copy + SEO + homepage audit** — run using all three strategy docs:
+   - `docs/2t-growth-strategy-seo-cro-90day.md` (growth strategy)
+   - `docs/2t-voc-copy-system.md` (VOC copy system)
+   - `docs/2t-copy-swipe-map.md` (copy swipe map)
+   - Do not start this pass until QA gates in steps 4–5 are cleared.
+7. About / Pittsburgh / Store — research + redesign plan (after QA gates)
+8. Social / Instagram / TikTok planning
+9. Backend / form integration — only after design approval
 
 ---
 
