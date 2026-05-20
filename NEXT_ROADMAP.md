@@ -33,7 +33,9 @@ npm run dev
 ### Complete ✅
 
 - Next.js prototype scaffold
-- Homepage Phase 2 — all sections approved (see Phase 2 below)
+- Homepage reset — product store + custom lane (commit 8fd4497)
+- Grillz landing page `/grillz` (commit 200e5a1)
+- Watches landing page `/watches` (commit 200e5a1)
 - Layout components: PromoBar, Header, Footer, MobileCtaBar
 - Navigation data
 - Design tokens
@@ -46,21 +48,20 @@ npm run dev
 ### WIP / Approval Pending ⚠️
 
 - `/custom` page — compact revision applied in 84af600; build passes; visual QA and user approval still pending
-- Material Preview section — renders, audit still pending
+- `/grillz` — committed 200e5a1; visual QA and user approval still pending
+- `/watches` — committed 200e5a1; visual QA and user approval still pending
 - Typography — hybrid prototype applied in 84af600; watching for wedding/boutique feel; final decision pending
 - Global UX/UI audit — audit was run; follow-up decisions still pending
 
 ### Not Yet 🚫
 
 - Real product/category images
-- Real hero/custom entry/store photo and video assets
+- Real hero/grillz/watches/store photo and video assets
 - Instagram/TikTok feed strategy and dynamic feed
 - WhatsApp floating desktop button
 - Formspree backend / lead capture
 - Real upload backend
 - Final logo SVG/2x/favicon
-- Watches page
-- Grillz page
 - Vercel preview deploy
 - Shopify recalibration
 
@@ -109,25 +110,20 @@ Do not copy: assets, videos, copy, product names, claims, layout exactly, or res
 - Simplified UX plan defined
 - Target mobile flow confirmed (3 steps)
 
-### Phase 2b — Homepage Phase 2 ✅ Complete and user-approved
+### Phase 2b — Homepage Reset ✅ Committed (8fd4497)
 
-All 10 homepage sections built, QA'd, and approved:
+Homepage reset to product store + custom lane. NOT custom-only.
 
 | Section | Component | Notes |
 |---------|-----------|-------|
-| Hero | inline `app/page.tsx` | BUILT TO HIT., video slot wired |
-| ProofMarquee | `components/home/ProofMarquee.tsx` | CSS marquee, 8 trust facts |
-| Custom Entry Block | inline `app/page.tsx` | bring logo/photo/idea, CTA to /custom |
-| PICK YOUR LANE | inline `app/page.tsx` | 5 tiles + secondary pills |
-| BestSellersStrip | `components/home/BestSellersStrip.tsx` | editorial lanes, inline SVG shapes |
-| Inquiry Lanes | inline `app/page.tsx` | Diamond Watches, Grillz, Custom |
-| PittsburghStory | `components/home/PittsburghStory.tsx` | outline type, brand story |
-| SocialTeaser | `components/home/SocialTeaser.tsx` | inline SVG icons, real links only |
-| Material Preview | inline `app/page.tsx` | ⚠️ audit still pending |
-| FinalCTABar | `components/home/FinalCTABar.tsx` | HAVE A PIECE IN MIND? |
+| Hero — BUILT TO HIT. + BANG! | inline `app/page.tsx` | Dual CTAs: SHOP JEWELRY + BUILD CUSTOM →. Video slot wired. Sparkle hits. |
+| ProofMarquee | `components/home/ProofMarquee.tsx` | CSS marquee, trust facts, accessible |
+| SHOP JEWELRY | inline `app/page.tsx` | 8-card gateway: Grillz, Watches, Chains, Rings, Bracelets, Pendants, Earrings, Custom. Priority order. SVG silhouettes. |
+| CUSTOM BUILT HERE | inline `app/page.tsx` | Compressed fast lane. Logo / Name / Photo / Grillz / Watch direction. BUILD CUSTOM → + TEXT 2T →. Keyword chips. |
+| PittsburghStory (REAL STORE. REAL WORK.) | `components/home/PittsburghStory.tsx` | Brand story, dual CTAs |
+| SocialTeaser (TAP IN WITH 2T.) | `components/home/SocialTeaser.tsx` | Inline SVG icons, real links only |
 
-Removed: old Trust Strip, old Shop by Category / Collection Grid.
-Build: TypeScript clean, 15 static pages generated.
+Removed: PICK YOUR LANE, BestSellersStrip, old Inquiry Lanes, Material Preview, FinalCTABar, old Custom Entry Block, old Trust Strip.
 
 ### Phase 2c — Custom Page Revision ⚠️ WIP — Build passes. NOT user-approved as final.
 
@@ -168,13 +164,11 @@ Still needed:
 Still needed: real footage at `public/assets/hero-loop-demo.mp4`  
 Specs: 8–10 seconds, MP4, muted, loopable, 16:9/21:9 desktop, 9:16 mobile backup if possible.
 
-### Phase 5 — Watches / Grillz Prototype Pages
+### Phase 5 — Watches / Grillz Prototype Pages ✅ Committed (200e5a1)
 
-After custom flow and brand basics:
-- `/watches`
-- `/grillz`
-- inquiry forms
-- claim-safe copy
+- `/grillz` — committed. Visual QA and user approval still pending.
+- `/watches` — committed. Visual QA and user approval still pending.
+- Do not redesign either page unless specifically approved.
 
 ### Phase 6 — Form Backend + Upload Handling
 
@@ -217,15 +211,16 @@ Only if user explicitly approves:
 
 ---
 
-## Approved Roadmap Order (updated 2026-05-18)
+## Approved Roadmap Order (updated 2026-05-20)
 
-1. Finish Hero/Header approval and commit
-2. MD sync — documentation alignment (this task)
-3. About / Pittsburgh / Store research + redesign plan
-4. Social / Instagram / TikTok planning
-5. Custom page UX research + simplification
-6. Category pages / Grillz / Watches — after homepage and custom flow are stable
-7. Backend / form integration — only after design approval
+1. ✅ Homepage reset — product store + custom lane (8fd4497)
+2. ✅ Grillz and Watches pages committed (200e5a1)
+3. ✅ MD sync — documentation alignment pass (this task)
+4. Visual QA of `/custom` → user approval gate
+5. Visual QA of `/grillz` and `/watches` → user approval gate
+6. About / Pittsburgh / Store — research + redesign plan (after QA gates)
+7. Social / Instagram / TikTok planning
+8. Backend / form integration — only after design approval
 
 ---
 

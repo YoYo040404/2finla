@@ -15,15 +15,20 @@
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
 Old Shopify folder is archive only. Do not touch it.
 
-**Milestone reached: Homepage Phase 2 complete and user-approved.**
+**Latest committed state (as of 2026-05-20):**
 
-Current focus: `/custom` visual QA after the latest refinement (commit 84af600 — 2026-05-17). Build passes technically. NOT user-approved as final.
+| Commit | Description |
+|---|---|
+| `8fd4497` | Homepage reset — product store + custom lane. NOT custom-only. |
+| `200e5a1` | Grillz and Watches landing pages upgraded and committed. |
+
+**Current strategic direction:** 2T Jewelers is a real Pittsburgh street-luxury jewelry store. It sells real jewelry AND has a custom lane. The homepage must not feel custom-only. Two equal paths: SHOP JEWELRY + BUILD CUSTOM.
+
+**Current focus:** `/custom` visual QA after the latest refinement (commit 84af600 — 2026-05-17). Build passes technically. NOT user-approved as final.
 
 Latest /custom changes: compact hero, START THE REQUEST → CTA, Browse Ready-Made removed, upload zone above textarea on mobile, textarea 4 rows, gold-bordered trust callout, full-width SEND REQUEST →, bypass WhatsApp CTA, HowItWorks steps updated.
 
-Also in 84af600: homepage polish — hybrid typography applied, SocialTeaser heading → TAP IN WITH 2T., TikTok copy → See what's dropping., FinalCTABar heading → BUILD WITH 2T., Grillz lane → Let's build.
-
-Next step: visual QA of /custom. Stop and wait for user approval before any further /custom changes.
+Next step: visual QA of /custom. Stop and wait for user approval before any further /custom, /grillz, or /watches changes.
 
 ---
 
@@ -44,19 +49,18 @@ Next step: visual QA of /custom. Stop and wait for user approval before any furt
 
 ## Last Known Visual Feedback
 
-Homepage Phase 2 (approved):
-- Full-bleed immersive hero — BUILT TO HIT. headline, video slot wired
-- ProofMarquee — CSS-only animated trust strip, 8 facts, accessible
-- Custom Entry Block — Bring the logo / photo / idea, CTA to /custom
-- PICK YOUR LANE — 5 category tiles + secondary category pills
-- BestSellersStrip — two editorial lanes (Best Sellers / New Arrivals), inline SVG shape cards, no real product data
-- Inquiry Lanes — 3 inquiry lanes with CTAs (Diamond Watches, Grillz, Custom)
-- PittsburghStory — outline typography brand story, dual CTAs
-- SocialTeaser — inline SVG icons for Instagram / TikTok / WhatsApp, real links only, no fake data
-- Material Preview — chips render, audit still pending
-- FinalCTABar — HAVE A PIECE IN MIND? + Start the piece + Text 2T
+Homepage reset (committed 8fd4497 — approved):
+- Full-bleed hero — BUILT TO HIT. + BANG! stamp + dual CTAs: SHOP JEWELRY + BUILD CUSTOM →, video slot wired, sparkle hits
+- ProofMarquee — CSS-only animated trust strip, trust facts, accessible
+- SHOP JEWELRY — product gateway with 8 cards in priority order: Grillz, Watches, Chains, Rings, Bracelets, Pendants, Earrings, Custom. SVG silhouette icons.
+- CUSTOM BUILT HERE — compressed fast lane. Logo / Name / Photo / Grillz / Watch direction. BUILD CUSTOM → + TEXT 2T →. What-we-build keyword chips.
+- PittsburghStory (`REAL STORE. REAL WORK.`) — brand story, dual CTAs
+- SocialTeaser (`TAP IN WITH 2T.` / `WATCH THE WORK`) — inline SVG icons for Instagram / TikTok / WhatsApp, real links only, no fake data
 
-Old Trust Strip removed. Old Shop by Category / Collection Grid removed.
+Removed from homepage: PICK YOUR LANE, BestSellersStrip, old Inquiry Lanes, Material Preview, FinalCTABar, old Custom Entry Block.
+
+Grillz page (committed 200e5a1): `/grillz` — street-luxury, direct, inquiry-led.
+Watches page (committed 200e5a1): `/watches` — high-ticket, direct, claim-safe.
 
 Header:
 - logo: `2t-logo-wide-transparent.png` via next/image (numeric width/height, TODO for final SVG/2x)
@@ -85,15 +89,16 @@ Custom page (as of commit 84af600 — 2026-05-17):
 
 | Area | Status |
 |---|---|
-| Homepage Phase 2 | ✅ Complete and user-approved |
+| Homepage reset | ✅ Committed — 8fd4497. Product store + custom lane. |
 | Hero video | ✅ Slot wired — `public/assets/hero-loop-demo.mp4` (file pending) |
 | ProofMarquee | ✅ Live |
-| BestSellersStrip | ✅ Live (no real product data) |
+| SHOP JEWELRY gateway | ✅ 8-card product grid, priority order |
+| CUSTOM BUILT HERE lane | ✅ Live — compressed fast lane |
 | PittsburghStory | ✅ Live |
 | SocialTeaser | ✅ Live (inline SVG icons, real links) |
-| FinalCTABar | ✅ Live |
-| Material Preview | ⚠️ Renders — audit still pending |
-| Custom page | ⚠️ WIP — build passes, NOT user-approved. Compact revision applied in 84af600. Visual QA pending. |
+| Grillz page `/grillz` | ✅ Committed — 200e5a1. Visual QA and user approval still pending. |
+| Watches page `/watches` | ✅ Committed — 200e5a1. Visual QA and user approval still pending. |
+| Custom page `/custom` | ⚠️ WIP — build passes, NOT user-approved. Compact revision applied in 84af600. Visual QA pending. |
 | Logo (temporary) | ✅ Transparent logo in header, black-bg logo in footer — final SVG/2x pending |
 | Contact / social | ✅ Address, phone, WhatsApp, Instagram, TikTok, Acima all wired in Footer |
 | Real product images | 🚫 Not yet |
@@ -101,7 +106,6 @@ Custom page (as of commit 84af600 — 2026-05-17):
 | Instagram/TikTok dynamic feed | 🚫 Not yet |
 | WhatsApp floating desktop button | 🚫 Not yet |
 | Backend / Formspree | 🚫 Not yet |
-| Watches / Grillz pages | 🚫 Not yet |
 | Vercel deploy | 🚫 Not yet |
 | Shopify | 🚫 Paused |
 

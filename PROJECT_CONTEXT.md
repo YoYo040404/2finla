@@ -57,7 +57,7 @@ Main duties:
 1. Keep the project focused.
 2. Prevent generic AI-looking output.
 3. Keep GLD.com as the ecommerce benchmark without copying it.
-4. Keep custom orders as the main business engine.
+4. Catalog creates desire. Custom creates margin. Trust creates action. Text/DM removes friction.
 5. Use competitor research before major UX changes.
 6. Use Playwright/WebFetch/WebSearch/frontend-design/planning mode if available.
 7. Give exact prompts for Claude Code.
@@ -96,7 +96,7 @@ Buyer psychology:
 
 Positioning:
 
-> A real jeweler with street-luxury energy, direct access, clear material options, and a custom-first path.
+> A real Pittsburgh street-luxury jewelry store — real products, real custom work, direct access.
 
 Strategic one-liner:
 
@@ -104,11 +104,25 @@ Strategic one-liner:
 
 Internal anchor:
 
-> Get the look now. Build the custom piece next.
+> I can shop jewelry here. I can build custom here. I can text 2T directly. This is a real Pittsburgh jeweler.
 
 Core funnel principle:
 
 > Catalog creates desire. Custom creates margin. Trust creates action. Text/DM removes friction.
+
+**The site must not feel custom-only.** Two equal paths: SHOP JEWELRY and BUILD CUSTOM.
+
+Product priority (Grillz → Watches → Chains → Rings → Bracelets → Custom Jewelry → Pendants / Earrings):
+
+| Priority | Category | Notes |
+|---|---|---|
+| 1 | Grillz | Top set / bottom set / full mouth. Also an intake path for custom grillz. |
+| 2 | Watches | High-ticket. Iced bezels. Diamond-set direction. |
+| 3 | Chains | Cuban, rope, tennis — built to hit the neck. |
+| 4 | Rings | Big face, heavy statement. |
+| 5 | Bracelets | Wrist game with weight. |
+| 6 | Custom Jewelry | Logo, name, photo, sketch, reference, number idea. |
+| 7 | Pendants / Earrings | Built from the idea. |
 
 ---
 
@@ -286,24 +300,30 @@ Body font: Outfit
 
 Note: Cormorant Garamond may feel too aristocratic / wedding / boutique. If too soft, test stronger display fonts such as Archivo, Sora, or similar. Typography audit is pending.
 
-### Homepage Phase 2 — Complete and user-approved ✅
+### Homepage Reset — Complete and committed ✅
+
+**Committed in:** `8fd4497 — feat: reset homepage to product store and custom lane`
+
+Homepage is now a product-first store with a custom lane — NOT custom-only. Hero dual CTAs: SHOP JEWELRY + BUILD CUSTOM →.
 
 Approved section order:
 
 | # | Section | Component | Status |
 |---|---------|-----------|--------|
-| 1 | Hero | inline in `app/page.tsx` | ✅ Full-bleed, BUILT TO HIT., video slot wired |
-| 2 | ProofMarquee | `components/home/ProofMarquee.tsx` | ✅ CSS-only marquee, 8 trust facts, accessible |
-| 3 | Custom Entry Block | inline in `app/page.tsx` | ✅ Bring the logo / photo / idea, CTA to /custom |
-| 4 | PICK YOUR LANE | inline in `app/page.tsx` | ✅ 5 category tiles + secondary category pills |
-| 5 | BestSellersStrip | `components/home/BestSellersStrip.tsx` | ✅ Two editorial lanes, inline SVG shape cards, no real product data |
-| 6 | Inquiry Lanes | inline in `app/page.tsx` | ✅ 3 inquiry lanes (Diamond Watches, Grillz, Custom), each with CTA |
-| 7 | PittsburghStory | `components/home/PittsburghStory.tsx` | ✅ Outline typography brand story, dual CTAs |
-| 8 | SocialTeaser | `components/home/SocialTeaser.tsx` | ✅ Inline SVG icons (IG/TT/WA), real links only, no fake data |
-| 9 | Material Preview | inline in `app/page.tsx` | ⚠️ Chips render; audit still pending |
-| 10 | FinalCTABar | `components/home/FinalCTABar.tsx` | ✅ HAVE A PIECE IN MIND? + two CTAs |
+| 1 | Hero — BUILT TO HIT. + BANG! stamp | inline in `app/page.tsx` | ✅ Full-bleed, dual CTAs, video slot wired, sparkle hits |
+| 2 | ProofMarquee | `components/home/ProofMarquee.tsx` | ✅ CSS-only marquee, trust facts, accessible |
+| 3 | SHOP JEWELRY | inline in `app/page.tsx` | ✅ Product gateway — 8 cards: Grillz, Watches, Chains, Rings, Bracelets, Pendants, Earrings, Custom. Priority order applied. |
+| 4 | CUSTOM BUILT HERE | inline in `app/page.tsx` | ✅ Compressed fast lane. Logo / Name / Photo / Grillz / Watch direction. BUILD CUSTOM → + TEXT 2T →. What-we-build keyword chips. |
+| 5 | REAL STORE. REAL WORK. | `components/home/PittsburghStory.tsx` | ✅ Pittsburgh brand story, dual CTAs |
+| 6 | WATCH THE WORK / TAP IN WITH 2T. | `components/home/SocialTeaser.tsx` | ✅ Inline SVG icons (IG/TT/WA), real links only, no fake data |
 
-Removed from homepage: old Trust Strip, old Shop by Category / Collection Grid.
+Removed from homepage: PICK YOUR LANE (old 5-tile row), BestSellersStrip, old Inquiry Lanes (Diamond Watches / Grillz / Custom), Material Preview chips, FinalCTABar, old Custom Entry Block, old Trust Strip, old Shop by Category / Collection Grid.
+
+Do not drift back to:
+- custom-only homepage
+- too many repeated CTA sections
+- stacked duplicate product grids
+- generic black/gold landing page
 
 ### Demo Video (slot wired — file pending)
 
@@ -366,9 +386,19 @@ Visual QA and user approval still required. **Do not mark /custom as final.**
 
 **Priority 2:** Full global UX/UI audit follow-up decisions (audit was run; decisions pending).
 
-**Priority 3:** Real photo/video assets — hero, custom entry, real store footage, product footage.
+**Priority 3:** Real photo/video assets — hero, grillz, watches, store footage, product footage.
 
-**Pending (not started):** Instagram/TikTok feed strategy, lead capture/backend, Vercel preview deploy, Watches/Grillz pages.
+**Pending (not started):** Instagram/TikTok feed strategy, lead capture/backend, Vercel preview deploy.
+
+---
+
+## Committed Work (as of 2026-05-20)
+
+| Commit | Description |
+|---|---|
+| `84af600` | /custom compact revision: compact hero, START THE REQUEST →, Browse Ready-Made removed, upload above textarea mobile, textarea 4 rows, gold-bordered trust callout, full-width SEND REQUEST →, WhatsApp bypass CTA, updated HowItWorks steps |
+| `8fd4497` | Homepage reset — product store + custom lane. SHOP JEWELRY gateway (8 cards, priority order). CUSTOM BUILT HERE fast lane. |
+| `200e5a1` | Grillz and Watches landing pages upgraded — `/grillz` and `/watches` committed. |
 
 ---
 
@@ -382,7 +412,6 @@ Do not:
 - wire Formspree
 - add backend
 - integrate Cloudinary/Supabase upload
-- build Watches or Grillz pages
 - install logo (unless user provides files)
 - deploy to Vercel
 - add fake products/reviews/UGC/press
@@ -391,6 +420,8 @@ Do not:
 - use Moses copy/assets
 - promise CAD/render/free mockup
 - turn `/custom` into a generic intake form
+- redesign `/grillz` or `/watches` unless specifically approved
+- redesign `/custom` unless specifically approved
 
 ---
 
