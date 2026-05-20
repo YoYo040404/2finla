@@ -11,6 +11,36 @@
 
 ---
 
+## Before Writing 2T Copy
+
+Before writing category, promo, homepage, custom, product, or WhatsApp copy, read:
+- `docs/2t-voice-of-customer-copy-system.md`
+- `docs/2t-copy-swipe-map.md`
+
+Do not write new 2T copy from general taste. Use the Voice-of-Customer system first.  
+Keep language: direct, product-aware, street-luxury, text-first, claim-safe.
+
+**Core lines to preserve:**
+- "Text 2T"
+- "Send the photo / logo / name"
+- "Ask what's in stock"
+- "Product details confirmed per piece"
+- "We quote before the build"
+- "No deposit to start"
+- "Real Pittsburgh Store. Direct Text Access. Product Details Confirmed Per Piece."
+
+**Do not publish as active claims unless verified:**  
+solid gold, real diamonds, natural diamonds, VVS/GIA, free shipping, lifetime warranty, in stock, ships fast, BOGO, percentage-off, weekly deal
+
+**Safe placeholders:**
+- "Ask what's running now."
+- "Ask what's in stock now."
+- "Promo terms shown on eligible pieces only."
+- "Product details confirmed per piece."
+- "Material and stone details confirmed per piece."
+
+---
+
 ## Current User Intent
 
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
