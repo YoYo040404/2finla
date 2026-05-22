@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 type BuildData = {
   pieceType:      string
@@ -46,6 +46,13 @@ export function CustomBuildFlow() {
   const [dragOver, setDragOver]     = useState(false)
   const [errors, setErrors]         = useState({ pieceType: false, contact: false, idea: false })
   const fileInputRef                = useRef<HTMLInputElement>(null)
+  const successRef                  = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    if (submitted) {
+      successRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [submitted])
 
   const selectPiece = (id: string) => {
     setData(d => ({ ...d, pieceType: id }))
@@ -102,6 +109,7 @@ export function CustomBuildFlow() {
     return (
       <section
         id="custom-form"
+        ref={successRef}
         style={{
           background: 'var(--color-brand-black)',
           borderTop:  '1px solid var(--color-brand-border)',
@@ -160,6 +168,12 @@ export function CustomBuildFlow() {
 
   /* ── Main flow ──────────────────────────────────────────────────────────── */
   return (
+    <>
+    <style>{`
+      @media (max-width: 767px) {
+        .custom-proof-strip { display: none; }
+      }
+    `}</style>
     <section
       id="custom-form"
       className="custom-funnel-section"
@@ -397,6 +411,7 @@ export function CustomBuildFlow() {
                   className={`piece-chip budget-chip${data.budget === b.id ? ' active' : ''}`}
                   onClick={() => selectBudget(b.id)}
                   aria-pressed={data.budget === b.id}
+                  style={{ minHeight: '44px' }}
                 >
                   {b.label}
                 </button>
@@ -440,5 +455,6 @@ export function CustomBuildFlow() {
 
       </div>
     </section>
+    </>
   )
 }
