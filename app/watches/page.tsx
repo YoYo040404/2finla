@@ -257,7 +257,6 @@ export default function WatchesPage() {
               }}
             >
               Product details are confirmed per piece. Ask about current availability.
-              Natural diamond on verified pieces.
             </p>
           </div>
         </div>
