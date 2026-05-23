@@ -213,6 +213,41 @@ Only after user approves:
 - **Tenure copy:** approved wording is **"over 30 years"** — confirmed by user 2026-05-17. Do not revert to "nearly 30 years."
 - ~~Effi integration~~ — removed from brand direction 2026-05-18. Do not reference in copy, code comments, or planning prompts.
 
+### Phase 5A — Weekly Promo Module Elevation ✅ Complete (35eda1f)
+
+Weekly promo module elevated structurally. Component committed. Copy still placeholder-level (Pass 5C will upgrade it).
+
+### Phase 5B — Competitor-Backed Copy / Promo / Hero Research ✅ Complete (2026-05-23)
+
+Research-only pass. No code written. No files modified during research.
+
+- 13 brands deep-dived via live page scrape (GLD, Icebox, Johnny Dang, TraxNYC, King Ice, Frost NYC, Aporro, IceCartel, HelloIce, JAXXON, Avianne, Gold Presidents, ItsHot, Moses NYC) + 11 Tier-2 sources including all local Pittsburgh competitors
+- Key findings: "BUILT TO HIT." is the strongest hero in the competitive set; Pittsburgh is 2T's uncontested asymmetric advantage (zero local hip-hop/street-luxury competitors); BANG. deployment model confirmed (JAXXON "OUTLAST. OUTSHINE.™" as functional parallel); JAXXON flash sale module is the strongest promo copy model; 3-state promo system defined; category CTA logic confirmed correct; VOC phrase map (use/avoid) documented; verified claims risk table defined
+- Full research registered at: `docs/2t-pass5b-competitor-backed-copy-research.md`
+
+### Phase 5C — Copy Sharpening + Promo Upgrade ⚠️ PENDING USER APPROVAL
+
+Do not start until user explicitly approves.
+
+**Scope — 5 files only:**
+- `app/page.tsx`
+- `components/home/ProofMarquee.tsx`
+- `components/home/WeeklyPromo.tsx`
+- `components/home/PittsburghStory.tsx`
+- `components/home/SocialTeaser.tsx`
+
+**Changes:**
+1. Hero secondary copy (Option D recommended: "Grillz. Watches. Chains. Pendants. Custom. / Real Pittsburgh jeweler. Text 2T.")
+2. BANG. stamp — small gold all-caps mark near hero headline, not replacing it
+3. Promo module — 3-state copy system (State A: no promo / State B: category signal / State C: active verified offer); WhatsApp prefill CTA; category badge
+4. Category gateway cards — one-line descriptor per card (8 cards × 1 line)
+5. Social cards — TikTok: "Watch the build. @2tjewelers"; WhatsApp: "Text before you buy. Ask anything."
+6. Pittsburgh block — tighten to "REAL PITTSBURGH STORE. OVER 30 YEARS. TEXT OR COME THROUGH."
+
+**What stays exactly as-is:** "BUILT TO HIT." headline, "SHOP JEWELRY" / "BUILD CUSTOM →" CTAs, section order, layout, grid, spacing, visual system, no new verified claims.
+
+**Full spec:** `docs/2t-pass5b-competitor-backed-copy-research.md` Section 11
+
 ### Phase 8b — Promotions + Verified Claims Architecture (Planned)
 
 2T Jewelers runs promotions and sales. These features should be planned and researched before building.
@@ -246,14 +281,21 @@ Only if user explicitly approves:
 
 ---
 
-## Approved Roadmap Order (updated 2026-05-20)
+## Approved Roadmap Order (updated 2026-05-23)
 
 1. ✅ Homepage reset — product store + custom lane (8fd4497)
 2. ✅ Grillz and Watches pages committed (200e5a1)
-3. ✅ MD sync — documentation alignment pass (this task)
-4. Visual QA of `/custom` → user approval gate
-5. Visual QA of `/grillz` and `/watches` → user approval gate
-6. **Sitewide copy + SEO + homepage audit** — run using all three strategy docs:
+3. ✅ MD sync — documentation alignment pass
+4. ✅ Pass 5A — Weekly promo module elevated structurally (35eda1f)
+5. ✅ Pass 5B — Competitor-backed copy/promo/hero research complete (2026-05-23). No code. Research registered at `docs/2t-pass5b-competitor-backed-copy-research.md`. 13 brands deep-dived. Hero, BANG., promo module, category CTAs, social copy, VOC map, and verified claims strategy defined. Ready for Pass 5C after user approval.
+6. Visual QA of `/custom` → user approval gate (independent of Pass 5C — can run in parallel)
+7. Visual QA of `/grillz` and `/watches` → user approval gate
+8. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL
+   - Scope: 5 files only — `app/page.tsx`, `components/home/ProofMarquee.tsx`, `components/home/WeeklyPromo.tsx`, `components/home/PittsburghStory.tsx`, `components/home/SocialTeaser.tsx`
+   - Changes: hero secondary copy, BANG. stamp, 3-state promo module, category one-liners, social card copy, Pittsburgh block tightening
+   - Do NOT start until user explicitly approves Pass 5C
+   - Full spec in `docs/2t-pass5b-competitor-backed-copy-research.md` Section 11
+9. **Sitewide copy + SEO + homepage audit** — run using all three strategy docs:
    - **Read `docs/2t-homepage-master-direction.md` first. Do not run the SEO pass before homepage visual direction is applied.**
    - `docs/2t-growth-strategy-seo-cro-90day.md` (growth strategy)
    - `docs/2t-voc-copy-system.md` (VOC copy system)

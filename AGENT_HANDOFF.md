@@ -18,6 +18,18 @@
 > This is the controlling strategic document for all homepage and visual-language decisions.
 > Do not skip it. Do not rely on memory of its contents — read the current file.
 
+> **REQUIRED FIRST READ for any homepage copy, promo module, hero secondary copy, BANG. deployment, social section copy, category CTA language, or product/category copy work:**
+> Read `docs/2t-pass5b-competitor-backed-copy-research.md` before any planning or code.
+> This is the evidence-backed copy research document (Pass 5B). It contains the confirmed competitor matrix (13 brands deep-dived), hero secondary copy options, BANG. stamp rules, 3-state promo module system, category one-line descriptors, social card copy upgrades, VOC phrase map (use/avoid), verified claims risk table, and the full Pass 5C implementation spec.
+> Do not invent copy from general taste. Do not use this doc's copy strings as approved — they are directional drafts. User approval is required before Pass 5C execution.
+
+**Copy/language rules confirmed by Pass 5B research:**
+- "Build" language is only for custom flows. "Shop / See / Ask / Text 2T" is for normal product/category shopping.
+- Verified claims (real diamonds, solid gold, VVS, GIA, free shipping, warranty, natural diamonds) may be promoted when true and scoped — never invented, never blanket sitewide.
+- BANG. is a controlled brand stamp — not a headline replacement. Never use BANG. as H1 or section heading.
+- "BUILT TO HIT." stays as the primary hero headline. Do not change it.
+- "SHOP JEWELRY" and "BUILD CUSTOM →" hero CTAs stay as-is.
+
 Before working on homepage, SEO, CRO, copy, promo, or any category page, read:
 - `docs/2t-growth-strategy-seo-cro-90day.md` — official sitewide growth, SEO, and CRO strategy
 - `docs/2t-voc-copy-system.md` — voice-of-customer copy system
