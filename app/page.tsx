@@ -20,16 +20,16 @@ const HERO_SPARKLES = [
 
 // Product priority: Grillz → Watches → Chains (featured) → Pendants → Rings → Bracelets → Earrings (secondary) → Custom (full-width)
 const LARGE_TILES = [
-  { label: 'GRILLZ',  sub: 'Top set, bottom set, full mouth.',    href: '/grillz',             cta: 'GET GRILLZ'  },
-  { label: 'WATCHES', sub: 'Bezel direction. Iced-out look.',      href: '/watches',            cta: 'SEE WATCHES' },
-  { label: 'CHAINS',  sub: 'Cuban, rope, tennis — made to hit.',  href: '/collections/chains', cta: 'SHOP CHAINS' },
+  { label: 'GRILLZ',  sub: 'Custom fit direction. Ask 2T first.',                href: '/grillz',             cta: 'ASK ABOUT GRILLZ'  },
+  { label: 'WATCHES', sub: "Iced bezels and bold faces. Ask what's available.",  href: '/watches',            cta: 'ASK ABOUT WATCHES' },
+  { label: 'CHAINS',  sub: "Cuban, rope, and tennis. Ask what's in stock.",      href: '/collections/chains', cta: 'SHOP CHAINS'       },
 ] as const
 
 const SMALL_TILES = [
-  { label: 'PENDANTS',  sub: 'Logo, name, photo. Send the idea, we quote first.', href: '/collections/pendants',  cta: 'SHOP PENDANTS'  },
-  { label: 'RINGS',     sub: 'Big face. Heavy statement.',               href: '/collections/rings',     cta: 'SHOP RINGS'     },
-  { label: 'BRACELETS', sub: 'Wrist game with weight.',                  href: '/collections/bracelets', cta: 'SHOP BRACELETS' },
-  { label: 'EARRINGS',  sub: 'Small piece. Real shine.',                 href: '/collections/earrings',  cta: 'SHOP EARRINGS'  },
+  { label: 'PENDANTS',  sub: 'Photo, logo, name, or number. Send the idea.',     href: '/collections/pendants',  cta: 'SHOP PENDANTS'  },
+  { label: 'RINGS',     sub: 'Big face. Heavy statement. Details per piece.',     href: '/collections/rings',     cta: 'SHOP RINGS'     },
+  { label: 'BRACELETS', sub: 'Wrist game with weight. Text to ask.',              href: '/collections/bracelets', cta: 'SHOP BRACELETS' },
+  { label: 'EARRINGS',  sub: "Iced and clean. Ask what's available.",             href: '/collections/earrings',  cta: 'SHOP EARRINGS'  },
 ] as const
 
 const CUSTOM_TILE = {
@@ -156,7 +156,26 @@ export default function HomePage() {
               <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic', fontFamily: 'var(--font-display-accent)' }}>HIT.</em>
             </h1>
 
-            {/* BANG! — brand signature stamp, intentional and controlled */}
+            {/* Hero secondary copy — product density + Pittsburgh trust anchor */}
+            <p
+              className="reveal reveal-d2"
+              style={{
+                fontFamily:    'var(--font-body)',
+                fontSize:      'clamp(0.8rem, 1.6vw, 1rem)',
+                fontWeight:    500,
+                letterSpacing: '0.05em',
+                color:         'var(--color-brand-silver)',
+                lineHeight:    1.55,
+                marginTop:     '1.1rem',
+              }}
+            >
+              Grillz. Watches. Chains. Pendants. Custom.<br />
+              <span style={{ color: 'var(--color-brand-muted)', fontSize: '0.9em' }}>
+                Pittsburgh-built. Text 2T.
+              </span>
+            </p>
+
+            {/* BANG. — brand signature stamp, intentional and controlled */}
             <style>{`
               .hero-bang-stamp {
                 font-size: clamp(1rem, 2vw, 1.4rem) !important;
@@ -166,12 +185,12 @@ export default function HomePage() {
                 box-shadow: 0 0 22px rgba(201,168,76,0.22), inset 0 0 10px rgba(201,168,76,0.07) !important;
               }
             `}</style>
-            <div className="reveal reveal-d2" style={{ marginTop: '0.75rem', marginBottom: '1.75rem' }}>
-              <span className="hero-bang-stamp">BANG!</span>
+            <div className="reveal reveal-d3" style={{ marginTop: '0.75rem', marginBottom: '1.75rem' }}>
+              <span className="hero-bang-stamp">BANG.</span>
             </div>
 
             {/* Hero CTAs — equal weight: product first, custom second */}
-            <div className="reveal reveal-d3" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+            <div className="reveal reveal-d4" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
               <a
                 href="#shop-jewelry"
                 className="btn-primary"
@@ -430,6 +449,25 @@ export default function HomePage() {
               <span className="section-eyebrow">THIS WEEK AT 2T</span>
             </div>
 
+            {/* WEEKLY SPECIAL badge */}
+            <span
+              style={{
+                display:       'inline-block',
+                fontFamily:    'var(--font-body)',
+                fontSize:      '0.58rem',
+                fontWeight:    700,
+                letterSpacing: '0.18em',
+                textTransform: 'uppercase',
+                color:         'var(--color-brand-gold)',
+                border:        '1px solid rgba(201,168,76,0.4)',
+                borderRadius:  '2px',
+                padding:       '0.28rem 0.65rem',
+                marginBottom:  '0.85rem',
+              }}
+            >
+              WEEKLY SPECIAL
+            </span>
+
             {/* Headline — big, hard */}
             <h2
               style={{
@@ -465,7 +503,7 @@ export default function HomePage() {
                 marginBottom: '0.5rem',
               }}
             >
-              Chains, pendants, watches, grillz &mdash; promo terms shown on eligible pieces only.
+              Chains, pendants, watches, grillz &mdash; promo terms confirmed on eligible pieces.
             </p>
 
             {/* Terms fine print */}

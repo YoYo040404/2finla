@@ -7,7 +7,7 @@
 type ProofItem = { text: string; bang?: true }
 
 const PROOF_ITEMS: ProofItem[] = [
-  { text: 'BANG!', bang: true },
+  { text: 'BANG.', bang: true },
   { text: 'GRILLZ' },
   { text: 'WATCHES' },
   { text: 'DOWNTOWN PITTSBURGH' },

@@ -25,7 +25,7 @@ export default function PittsburghStory() {
           <div className="pitt-story-media-label">
             PITTSBURGH
           </div>
-          <div className="pitt-story-media-watermark">BANG!</div>
+          <div className="pitt-story-media-watermark">BANG.</div>
         </div>
 
         <div className="pitt-story-content">
@@ -44,8 +44,8 @@ export default function PittsburghStory() {
           </div>
 
           <p className="pitt-story-body">
-            Real Pittsburgh store. Over 30 years in the game.
-            Downtown Pittsburgh &mdash; text or come through.
+            Downtown Pittsburgh. 30+ years in the game.
+            Text or come through.
           </p>
 
           <p className="pitt-story-body" style={{ marginTop: '0.9rem' }}>
