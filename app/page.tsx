@@ -145,7 +145,7 @@ export default function HomePage() {
         ))}
 
         {/* Text — bottom-left */}
-        <div style={{ position: 'relative', zIndex: 10, maxWidth: '1440px', margin: '0 auto', width: '100%', padding: '0 1.5rem', paddingBottom: 'clamp(5.5rem, 12vw, 9rem)' }}>
+        <div style={{ position: 'relative', zIndex: 10, maxWidth: '1440px', margin: '0 auto', width: '100%', padding: '0 1.5rem', paddingBottom: 'max(clamp(5.5rem, 12vw, 9rem), calc(env(safe-area-inset-bottom, 0px) + 8rem))' }}>
           <div style={{ maxWidth: '600px' }}>
 
             <h1

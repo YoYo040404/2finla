@@ -276,7 +276,7 @@ export default function GrillzPage() {
                 marginBottom:  '0.35rem',
               }}
             >
-              REAL PITTSBURGH STORE
+              DOWNTOWN PITTSBURGH
             </p>
             <p
               style={{
