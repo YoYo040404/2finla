@@ -46,7 +46,7 @@ const SOCIALS = [
   {
     platform: 'TIKTOK',
     handle:   '@2tjewelers',
-    copy:     'Watch it get built.',
+    copy:     "See what's getting built",
     href:     'https://www.tiktok.com/@2tjewelers',
     icon:     <TtIcon />,
     accent:   '#9fa8b3',
@@ -56,7 +56,7 @@ const SOCIALS = [
   {
     platform: 'INSTAGRAM',
     handle:   '@2tjewelers',
-    copy:     'See the finished work.',
+    copy:     'See the finished work',
     href:     'https://www.instagram.com/2tjewelers/',
     icon:     <IgIcon />,
     accent:   '#c9a84c',
@@ -66,7 +66,7 @@ const SOCIALS = [
   {
     platform: 'WHATSAPP',
     handle:   'HIT US UP',
-    copy:     'Text directly. We respond.',
+    copy:     'Text about a piece',
     href:     'https://wa.me/14124524343',
     icon:     <WaIcon />,
     accent:   '#25D366',

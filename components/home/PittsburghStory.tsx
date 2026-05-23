@@ -23,7 +23,7 @@ export default function PittsburghStory() {
         <div className="pitt-story-media" aria-hidden="true">
           <div className="pitt-story-media-glint" />
           <div className="pitt-story-media-label">
-            REAL STORE FOOTAGE COMING
+            PITTSBURGH
           </div>
           <div className="pitt-story-media-watermark">BANG!</div>
         </div>
@@ -44,15 +44,13 @@ export default function PittsburghStory() {
           </div>
 
           <p className="pitt-story-body">
-            Built in Pittsburgh. Made for people who don&rsquo;t wear quiet pieces.
+            Real Pittsburgh store. Over 30 years in the game.
+            Downtown Pittsburgh &mdash; text or come through.
           </p>
 
           <p className="pitt-story-body" style={{ marginTop: '0.9rem' }}>
-            2T Jewelers has been part of the city&rsquo;s jewelry scene for over 30 years — creating custom pendants, grillz, watches, chains, rings, and statement pieces with real street energy. This isn&rsquo;t the cold luxury-store experience. People come to 2T because it feels personal, direct, and real.
-          </p>
-
-          <p className="pitt-story-body" style={{ marginTop: '0.9rem' }}>
-            Solid work. Fair pricing. Real pieces. And relationships that last long after the sale.
+            We quote before the build.
+            Product details confirmed per piece.
           </p>
 
           <div className="pitt-story-cta">

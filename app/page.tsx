@@ -3,7 +3,8 @@ import ProofMarquee    from '@/components/home/ProofMarquee'
 import PittsburghStory from '@/components/home/PittsburghStory'
 import SocialTeaser    from '@/components/home/SocialTeaser'
 
-const WA_BUILD = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20want%20to%20build%20something%20custom.'
+const WA_BUILD  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20want%20to%20build%20something%20custom.'
+const WA_PROMO  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%20promos%20are%20running%20right%20now%3F'
 
 // Sparkles: right side around jewelry art + left side near brand/identity area
 const HERO_SPARKLES = [
@@ -17,17 +18,26 @@ const HERO_SPARKLES = [
   { top: '38%', left: '32%', delay: '4.5s',  size: 2, ice: true  },
 ] as const
 
-// Product priority: Grillz → Watches → Chains → Rings → Bracelets → Pendants → Earrings → Custom
-const GATEWAY_CARDS = [
-  { label: 'GRILLZ',    sub: 'Top set, bottom set, full mouth. Custom fit.',          href: '/grillz',                cta: 'GET GRILLZ'       },
-  { label: 'WATCHES',   sub: 'Iced bezels. Diamond-set direction.',                   href: '/watches',               cta: 'SEE WATCHES'      },
-  { label: 'CHAINS',    sub: 'Cuban, rope, tennis — built to hit the neck.',          href: '/collections/chains',    cta: 'BUILD A CHAIN'    },
-  { label: 'RINGS',     sub: 'Big face. Heavy statement.',                            href: '/collections/rings',     cta: 'BUILD A RING'     },
-  { label: 'BRACELETS', sub: 'Wrist game with weight.',                               href: '/collections/bracelets', cta: 'BUILD A BRACELET' },
-  { label: 'PENDANTS',  sub: 'Logo, name, photo, cross — built from the idea.',      href: '/collections/pendants',  cta: 'BUILD A PENDANT'  },
-  { label: 'EARRINGS',  sub: 'Small piece. Real shine.',                              href: '/collections/earrings',  cta: 'BUILD EARRINGS'   },
-  { label: 'CUSTOM',    sub: 'Logo, name, grillz, watch direction — send the idea.', href: '/custom',                cta: 'START CUSTOM', gold: true },
+// Product priority: Grillz → Watches → Chains (featured) → Pendants → Rings → Bracelets → Earrings (secondary) → Custom (full-width)
+const LARGE_TILES = [
+  { label: 'GRILLZ',  sub: 'Top set, bottom set, full mouth.',    href: '/grillz',             cta: 'GET GRILLZ'    },
+  { label: 'WATCHES', sub: 'Bezel direction. Iced-out look.',      href: '/watches',            cta: 'SEE WATCHES'   },
+  { label: 'CHAINS',  sub: 'Cuban, rope, tennis — built to hit.', href: '/collections/chains', cta: 'BUILD A CHAIN' },
 ] as const
+
+const SMALL_TILES = [
+  { label: 'PENDANTS',  sub: 'Logo, name, photo — built from the idea.', href: '/collections/pendants',  cta: 'BUILD A PENDANT'  },
+  { label: 'RINGS',     sub: 'Big face. Heavy statement.',               href: '/collections/rings',     cta: 'BUILD A RING'     },
+  { label: 'BRACELETS', sub: 'Wrist game with weight.',                  href: '/collections/bracelets', cta: 'BUILD A BRACELET' },
+  { label: 'EARRINGS',  sub: 'Small piece. Real shine.',                 href: '/collections/earrings',  cta: 'BUILD EARRINGS'   },
+] as const
+
+const CUSTOM_TILE = {
+  label: 'CUSTOM BUILT',
+  sub:   'Logo, name, photo, grillz, watch direction — send the idea.',
+  href:  '/custom',
+  cta:   'START CUSTOM',
+} as const
 
 const CUSTOM_WHAT = [
   'LOGO PIECE', 'NAME PIECE', 'PHOTO PENDANT',
@@ -174,22 +184,33 @@ export default function HomePage() {
 
       <ProofMarquee />
 
-      {/* ─── 2. SHOP JEWELRY — product gateway ───────────────────────── */}
+      {/* ─── 2. SHOP JEWELRY — 3-tier hybrid product gateway ────────────── */}
       <section id="shop-jewelry" className="pg-section" aria-label="Shop jewelry by category">
         <div className="pg-inner">
           <span className="section-eyebrow">SHOP BY PIECE</span>
           <h2 className="pg-heading">SHOP JEWELRY</h2>
           <p className="pg-subline">
-            Grillz. Watches. Chains. Rings. Bracelets. Custom pieces built to stand out.
+            Grillz. Watches. Chains. Custom pieces built to stand out.
           </p>
 
-          <div className="pg-grid">
-            {GATEWAY_CARDS.map((card) => (
+          {/* ── LARGE TILES: Grillz / Watches / Chains ── */}
+          <div
+            style={{
+              display:             'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap:                 '1px',
+              backgroundColor:     'var(--color-brand-border)',
+              border:              '1px solid var(--color-brand-border)',
+              marginBottom:        '1px',
+            }}
+          >
+            {LARGE_TILES.map((card) => (
               <Link
                 key={card.label}
                 href={card.href}
-                className={`pg-card${'gold' in card ? ' pg-card--custom' : ''}`}
+                className="pg-card"
                 aria-label={card.label}
+                style={{ minHeight: 'clamp(220px, 30vw, 340px)' }}
               >
                 <div className="pg-card__art" aria-hidden="true" />
                 <div className="pg-card__silhouette" aria-hidden="true">
@@ -201,6 +222,101 @@ export default function HomePage() {
                   <span className="pg-card__cta" aria-hidden="true">{card.cta} →</span>
                 </div>
               </Link>
+            ))}
+          </div>
+
+          {/* ── SMALL TILES: Pendants / Rings / Bracelets / Earrings ── */}
+          <div
+            style={{
+              display:             'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+              gap:                 '1px',
+              backgroundColor:     'var(--color-brand-border)',
+              border:              '1px solid var(--color-brand-border)',
+              marginBottom:        '1px',
+            }}
+          >
+            {SMALL_TILES.map((card) => (
+              <Link
+                key={card.label}
+                href={card.href}
+                className="pg-card"
+                aria-label={card.label}
+                style={{ minHeight: '170px' }}
+              >
+                <div className="pg-card__art" aria-hidden="true" />
+                <div className="pg-card__silhouette" aria-hidden="true">
+                  {PG_ICONS[card.label as keyof typeof PG_ICONS]}
+                </div>
+                <div className="pg-card__body">
+                  <span className="pg-card__label" style={{ fontSize: 'clamp(0.95rem, 2vw, 1.2rem)' }}>
+                    {card.label}
+                  </span>
+                  <span className="pg-card__sub">{card.sub}</span>
+                  <span className="pg-card__cta" aria-hidden="true">{card.cta} →</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* ── CUSTOM TILE: full-width ── */}
+          <div
+            style={{
+              border:       '1px solid var(--color-brand-border)',
+              borderTop:    'none',
+              marginBottom: '1.5rem',
+            }}
+          >
+            <Link
+              href={CUSTOM_TILE.href}
+              className="pg-card pg-card--custom"
+              aria-label={CUSTOM_TILE.label}
+              style={{ minHeight: '140px' }}
+            >
+              <div className="pg-card__art" aria-hidden="true" />
+              <div className="pg-card__body">
+                <span className="pg-card__label">{CUSTOM_TILE.label}</span>
+                <span className="pg-card__sub">{CUSTOM_TILE.sub}</span>
+                <span className="pg-card__cta" aria-hidden="true">{CUSTOM_TILE.cta} →</span>
+              </div>
+            </Link>
+          </div>
+
+          {/* ── UTILITY CTA RAIL ── */}
+          <style>{`.util-cta:hover { color: var(--color-brand-gold) !important; }`}</style>
+          <div
+            style={{
+              display:    'flex',
+              flexWrap:   'wrap',
+              gap:        '0.25rem 0',
+              borderTop:  '1px solid var(--color-brand-border)',
+              paddingTop: '0.875rem',
+            }}
+          >
+            {[
+              { label: "Ask what's in stock now →", href: 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%20do%20you%20have%20in%20stock%20right%20now%3F' },
+              { label: "Ask what's running now →",  href: 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%20promos%20are%20running%20right%20now%3F' },
+              { label: 'Text 2T →',                 href: 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20ask%20about%20a%20piece.' },
+            ].map((cta) => (
+              <a
+                key={cta.label}
+                href={cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="util-cta"
+                style={{
+                  fontFamily:     'var(--font-body)',
+                  fontSize:       '0.75rem',
+                  fontWeight:     600,
+                  letterSpacing:  '0.06em',
+                  color:          'var(--color-brand-muted)',
+                  textDecoration: 'none',
+                  padding:        '0.375rem 1.25rem 0.375rem 0',
+                  transition:     'color 0.18s ease',
+                }}
+              >
+                {cta.label}
+              </a>
             ))}
           </div>
         </div>
@@ -292,6 +408,55 @@ export default function HomePage() {
               </span>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ─── 3b. PROMO PLACEHOLDER ───────────────────────────────────────── */}
+      <section
+        aria-label="Current promotions"
+        style={{
+          borderTop:  '1px solid var(--color-brand-border)',
+          background: 'var(--color-brand-charcoal)',
+          padding:    'clamp(2rem, 5vw, 3rem) 1.5rem',
+        }}
+      >
+        <div
+          style={{
+            maxWidth:       '1200px',
+            margin:         '0 auto',
+            display:        'flex',
+            flexWrap:       'wrap',
+            alignItems:     'center',
+            justifyContent: 'space-between',
+            gap:            '1.25rem',
+          }}
+        >
+          <div>
+            <span className="section-eyebrow" style={{ display: 'block', marginBottom: '0.5rem' }}>
+              SPECIAL OF THE WEEK
+            </span>
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize:   '0.875rem',
+                color:      'var(--color-brand-muted)',
+                lineHeight: 1.55,
+                margin:     0,
+                maxWidth:   '46ch',
+              }}
+            >
+              Ask what&rsquo;s running now &mdash; promo terms shown on eligible pieces only.
+            </p>
+          </div>
+          <a
+            href={WA_PROMO}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline-gold"
+            style={{ fontSize: '0.8125rem', letterSpacing: '0.1em', whiteSpace: 'nowrap' }}
+          >
+            TEXT 2T →
+          </a>
         </div>
       </section>
 

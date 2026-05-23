@@ -48,10 +48,56 @@ export function Header() {
       <div className="mx-auto px-6" style={{ maxWidth: '1440px' }}>
         <div className="flex items-center justify-between" style={{ height: '68px' }}>
 
-          {/* ── Brand lockup: CSS diamond mark + gradient gold wordmark ─────── */}
-          <Link href="/" aria-label="2T Jewelers" className="brand-lockup">
-            <span className="brand-mark-css" aria-hidden="true" />
-            <span className="brand-wordmark">2T JEWELERS</span>
+          {/* ── Brand masthead: clean inline — no CSS jewel, no gradient, no class ── */}
+          <Link
+            href="/"
+            aria-label="2T Jewelers"
+            style={{
+              display:        'inline-flex',
+              alignItems:     'center',
+              gap:            '10px',
+              textDecoration: 'none',
+              cursor:         'pointer',
+            }}
+          >
+            <span
+              aria-hidden="true"
+              style={{
+                fontFamily:    'var(--font-body)',
+                fontWeight:    800,
+                fontSize:      '1.15rem',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                color:         'var(--color-brand-white)',
+                lineHeight:    1,
+              }}
+            >
+              2T
+            </span>
+            <span
+              aria-hidden="true"
+              style={{
+                display:    'inline-block',
+                width:      '1px',
+                height:     '16px',
+                background: 'rgba(201,168,76,0.5)',
+                flexShrink: 0,
+                alignSelf:  'center',
+              }}
+            />
+            <span
+              style={{
+                fontFamily:    'var(--font-body)',
+                fontWeight:    600,
+                fontSize:      '0.68rem',
+                letterSpacing: '0.32em',
+                textTransform: 'uppercase',
+                color:         'var(--color-brand-gold)',
+                lineHeight:    1,
+              }}
+            >
+              JEWELERS
+            </span>
           </Link>
 
           {/* ── Desktop Nav (hidden on mobile) ──────────── */}
