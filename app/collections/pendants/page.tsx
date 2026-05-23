@@ -1,4 +1,10 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title:       '2T Jewelers | Custom Pendants — Logo, Photo & Name — Pittsburgh, PA',
+  description: 'Custom pendants from your logo, photo, name, or idea. Pittsburgh jeweler. Over 30 years. Send the idea — we quote before the build.',
+}
 
 const WA_PENDANTS = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20for%20a%20pendant.%20I%20have%20a%20logo%2C%20photo%2C%20or%20name%20idea.'
 

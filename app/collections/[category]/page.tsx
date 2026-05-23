@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -124,6 +125,17 @@ export function generateStaticParams() {
 }
 
 type Props = { params: Promise<{ category: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { category } = await params
+  const data = CATEGORY_DATA[category]
+  if (!data) return {}
+  const label = data.title
+  return {
+    title:       `2T Jewelers | ${label} — Pittsburgh, PA`,
+    description: `Shop ${label.toLowerCase()} at 2T Jewelers in Pittsburgh, PA. Real store. Over 30 years. Ask about availability and material details. Text to ask.`,
+  }
+}
 
 export default async function CategoryPage({ params }: Props) {
   const { category } = await params

@@ -1,4 +1,10 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title:       '2T Jewelers | Iced-Out Watches — Pittsburgh, PA',
+  description: 'Iced-out watch direction in Pittsburgh, PA. Ask 2T about style and pricing — details confirmed per piece. Real store. Over 30 years. Text to ask.',
+}
 
 const WA_WATCHES = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20ask%20about%20a%20watch.'
 

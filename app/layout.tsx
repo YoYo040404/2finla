@@ -34,6 +34,7 @@ const outfit = Outfit({
 /* ─── Metadata ───────────────────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://2tjewelers.com'),
   title:       '2T Jewelers | Custom Jewelry, Watches & Grillz',
   description: 'Custom chains, pendants, grillz, diamond watches, and fine jewelry. Real materials. Direct inquiry. Build the piece around your look.',
   openGraph: {
