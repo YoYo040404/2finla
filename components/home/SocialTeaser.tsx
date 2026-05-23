@@ -132,18 +132,18 @@ export default function SocialTeaser() {
         {/* ── Right: heading + social links ──────────────────────────── */}
         <div className="social-content">
           <span className="section-eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>
-            WATCH THE WORK
+            TAP IN WITH 2T.
           </span>
 
           <h2 className="social-heading">
-            SEE WHAT<br />
+            TAP IN<br />
             <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>
-              2T IS BUILDING.
+              WITH 2T.
             </em>
           </h2>
 
           <p className="social-subline">
-            Grillz, watches, chains, and custom builds — @2tjewelers on TikTok and Instagram.
+            See the work. Text about a piece. @2tjewelers on TikTok and Instagram.
           </p>
 
           <div className="social-links" role="list">

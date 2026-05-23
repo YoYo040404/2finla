@@ -26,7 +26,7 @@ const LARGE_TILES = [
 ] as const
 
 const SMALL_TILES = [
-  { label: 'PENDANTS',  sub: 'Logo, name, photo — built from the idea.', href: '/collections/pendants',  cta: 'SHOP PENDANTS'  },
+  { label: 'PENDANTS',  sub: 'Logo, name, photo. Send the idea, we quote first.', href: '/collections/pendants',  cta: 'SHOP PENDANTS'  },
   { label: 'RINGS',     sub: 'Big face. Heavy statement.',               href: '/collections/rings',     cta: 'SHOP RINGS'     },
   { label: 'BRACELETS', sub: 'Wrist game with weight.',                  href: '/collections/bracelets', cta: 'SHOP BRACELETS' },
   { label: 'EARRINGS',  sub: 'Small piece. Real shine.',                 href: '/collections/earrings',  cta: 'SHOP EARRINGS'  },
@@ -153,7 +153,7 @@ export default function HomePage() {
               style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(4.5rem, 11vw, 9.5rem)', fontWeight: 700, lineHeight: 0.88, color: 'var(--color-brand-white)', letterSpacing: '-0.03em' }}
             >
               BUILT TO{' '}
-              <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>HIT.</em>
+              <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic', fontFamily: 'var(--font-display-accent)' }}>HIT.</em>
             </h1>
 
             {/* BANG! — brand signature stamp, intentional and controlled */}
@@ -211,7 +211,7 @@ export default function HomePage() {
           <span className="section-eyebrow">SHOP BY PIECE</span>
           <h2 className="pg-heading">SHOP JEWELRY</h2>
           <p className="pg-subline">
-            Grillz. Watches. Chains. Custom pieces built to stand out.
+            Grillz. Watches. Chains. Pendants. Pieces that hit.
           </p>
 
           {/* ── LARGE TILES: Grillz / Watches / Chains ── */}
@@ -401,7 +401,7 @@ export default function HomePage() {
           >
             Logo. Name. Photo.
             <br />
-            <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>
+            <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic', fontFamily: 'var(--font-display-accent)' }}>
               Grillz. Watch direction.
             </em>
           </h2>

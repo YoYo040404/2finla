@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Outfit } from 'next/font/google'
+import { Barlow_Condensed, Cormorant_Garamond, Outfit } from 'next/font/google'
 import './globals.css'
 import { PromoBar }      from '@/components/layout/PromoBar'
 import { Header }        from '@/components/layout/Header'
@@ -8,6 +8,13 @@ import { MobileCtaBar }           from '@/components/layout/MobileCtaBar'
 import { FloatingWhatsAppButton } from '@/components/layout/FloatingWhatsAppButton'
 
 /* ─── Fonts ─────────────────────────────────────────────────────────────── */
+
+const barlowCondensed = Barlow_Condensed({
+  variable: '--font-barlow-condensed',
+  subsets:  ['latin'],
+  weight:   ['600', '700'],
+  display:  'swap',
+})
 
 const cormorant = Cormorant_Garamond({
   variable:  '--font-cormorant',
@@ -55,7 +62,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${outfit.variable}`}
+      className={`${barlowCondensed.variable} ${cormorant.variable} ${outfit.variable}`}
     >
       {/*
         pb-[54px] reserves space so page content isn't hidden behind
