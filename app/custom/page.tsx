@@ -16,8 +16,8 @@ export default function CustomPage() {
       <CustomHero />
       <CustomBuildFlow />
       <HowItWorks />
-      <WorkPlaceholder />
       <CustomFaq />
+      <WorkPlaceholder />
     </>
   )
 }

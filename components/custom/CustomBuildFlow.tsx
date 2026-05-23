@@ -125,10 +125,24 @@ export function CustomBuildFlow() {
             height:         56,
             borderRadius:   '50%',
             border:         '1px solid var(--color-brand-gold)',
-            marginBottom:   '2rem',
+            marginBottom:   '1.25rem',
           }}>
             <span style={{ fontSize: '1.2rem', color: 'var(--color-brand-gold)' }}>✦</span>
           </div>
+          <p
+            aria-hidden="true"
+            style={{
+              fontFamily:    'var(--font-body)',
+              fontSize:      '0.6rem',
+              fontWeight:    700,
+              letterSpacing: '0.18em',
+              color:         'var(--color-brand-gold)',
+              opacity:       0.7,
+              marginBottom:  '1rem',
+            }}
+          >
+            BANG.
+          </p>
           <h2 style={{
             fontFamily:    'var(--font-display)',
             fontSize:      'clamp(2rem, 5vw, 3rem)',
@@ -171,7 +185,13 @@ export function CustomBuildFlow() {
     <>
     <style>{`
       @media (max-width: 767px) {
-        .custom-proof-strip { display: none; }
+        .custom-proof-strip {
+          flex-direction: column;
+          gap: 0.875rem;
+        }
+        .custom-proof-divider {
+          display: none;
+        }
       }
     `}</style>
     <section
@@ -196,7 +216,7 @@ export function CustomBuildFlow() {
             Send the idea.
             <br />
             <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>
-              We shape the piece.
+              We quote before the build.
             </em>
           </h2>
         </div>
@@ -231,7 +251,7 @@ export function CustomBuildFlow() {
 
         {/* ── Mid-form WhatsApp escape ─────────────────────────────────────── */}
         <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.8125rem', color: 'var(--color-brand-muted)', marginBottom: 'clamp(1.5rem, 4vw, 2.5rem)', lineHeight: 1.5 }}>
-          Rather text it through?{' '}
+          Skip the form.{' '}
           <a
             href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
             target="_blank"
@@ -239,7 +259,7 @@ export function CustomBuildFlow() {
             className="bypass-cta"
             style={{ display: 'inline', marginTop: 0 }}
           >
-            Hit us on WhatsApp →
+            Text 2T on WhatsApp →
           </a>
         </p>
 
@@ -316,6 +336,19 @@ export function CustomBuildFlow() {
                 }}
                 style={{ resize: 'vertical', minHeight: 100 }}
               />
+              {data.pieceType === 'grillz' && (
+                <p style={{
+                  fontFamily:    'var(--font-body)',
+                  fontSize:      '0.75rem',
+                  color:         'var(--color-brand-gold)',
+                  lineHeight:    1.55,
+                  marginTop:     '0.625rem',
+                  opacity:       0.9,
+                  letterSpacing: '0.01em',
+                }}>
+                  For grillz: tell us top set, bottom set, or full mouth. Gold, stones, or both? We&apos;ll walk you through the next step.
+                </p>
+              )}
             </div>
           </div>
 
@@ -417,6 +450,16 @@ export function CustomBuildFlow() {
                 </button>
               ))}
             </div>
+            <p style={{
+              fontFamily:    'var(--font-body)',
+              fontSize:      '0.75rem',
+              color:         'var(--color-brand-muted)',
+              lineHeight:    1.5,
+              marginTop:     '0.625rem',
+              opacity:       0.8,
+            }}>
+              Budget range helps guide the conversation. It is not a final quote.
+            </p>
           </div>
 
           <div style={{ marginTop: '2rem' }}>
@@ -439,7 +482,7 @@ export function CustomBuildFlow() {
                 cursor:        submitting ? 'not-allowed' : 'pointer',
               }}
             >
-              {submitting ? 'Sending…' : 'SEND THE IDEA →'}
+              {submitting ? 'Sending…' : 'SEND REQUEST →'}
             </button>
 
             <a
@@ -448,7 +491,7 @@ export function CustomBuildFlow() {
               rel="noopener noreferrer"
               className="bypass-cta"
             >
-              Rather text it in? WhatsApp us →
+              Skip the form. Text 2T on WhatsApp →
             </a>
           </div>
         </div>

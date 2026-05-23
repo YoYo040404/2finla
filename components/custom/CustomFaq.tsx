@@ -5,7 +5,7 @@ const FAQS = [
   },
   {
     q: 'What materials do you work with?',
-    a: '925 Silver, Gold-Plated, Vermeil, 10K and 14K Gold, Moissanite, Lab Diamond, CZ, and natural diamond on verified pieces. Ask about what fits your budget.',
+    a: '925 Silver, Gold-Plated, Vermeil, 10K and 14K Gold, Moissanite, Lab Diamond, and CZ. Stone and material details are confirmed per piece. Ask 2T for details on the specific build.',
   },
   {
     q: 'What happens after I send the idea?',

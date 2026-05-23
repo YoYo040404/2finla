@@ -77,7 +77,7 @@ export function WorkPlaceholder() {
             className="btn-primary"
             style={{ fontSize: '0.8125rem', letterSpacing: '0.07em', padding: '0.75rem 1.5rem' }}
           >
-            START MY PIECE →
+            START THE REQUEST →
           </a>
           <a
             href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
