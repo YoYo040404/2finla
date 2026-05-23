@@ -20,16 +20,16 @@ const HERO_SPARKLES = [
 
 // Product priority: Grillz → Watches → Chains (featured) → Pendants → Rings → Bracelets → Earrings (secondary) → Custom (full-width)
 const LARGE_TILES = [
-  { label: 'GRILLZ',  sub: 'Top set, bottom set, full mouth.',    href: '/grillz',             cta: 'GET GRILLZ'    },
-  { label: 'WATCHES', sub: 'Bezel direction. Iced-out look.',      href: '/watches',            cta: 'SEE WATCHES'   },
-  { label: 'CHAINS',  sub: 'Cuban, rope, tennis — built to hit.', href: '/collections/chains', cta: 'BUILD A CHAIN' },
+  { label: 'GRILLZ',  sub: 'Top set, bottom set, full mouth.',    href: '/grillz',             cta: 'GET GRILLZ'  },
+  { label: 'WATCHES', sub: 'Bezel direction. Iced-out look.',      href: '/watches',            cta: 'SEE WATCHES' },
+  { label: 'CHAINS',  sub: 'Cuban, rope, tennis — made to hit.',  href: '/collections/chains', cta: 'SHOP CHAINS' },
 ] as const
 
 const SMALL_TILES = [
-  { label: 'PENDANTS',  sub: 'Logo, name, photo — built from the idea.', href: '/collections/pendants',  cta: 'BUILD A PENDANT'  },
-  { label: 'RINGS',     sub: 'Big face. Heavy statement.',               href: '/collections/rings',     cta: 'BUILD A RING'     },
-  { label: 'BRACELETS', sub: 'Wrist game with weight.',                  href: '/collections/bracelets', cta: 'BUILD A BRACELET' },
-  { label: 'EARRINGS',  sub: 'Small piece. Real shine.',                 href: '/collections/earrings',  cta: 'BUILD EARRINGS'   },
+  { label: 'PENDANTS',  sub: 'Logo, name, photo — built from the idea.', href: '/collections/pendants',  cta: 'SHOP PENDANTS'  },
+  { label: 'RINGS',     sub: 'Big face. Heavy statement.',               href: '/collections/rings',     cta: 'SHOP RINGS'     },
+  { label: 'BRACELETS', sub: 'Wrist game with weight.',                  href: '/collections/bracelets', cta: 'SHOP BRACELETS' },
+  { label: 'EARRINGS',  sub: 'Small piece. Real shine.',                 href: '/collections/earrings',  cta: 'SHOP EARRINGS'  },
 ] as const
 
 const CUSTOM_TILE = {
@@ -133,15 +133,15 @@ export default function HomePage() {
         </video>
 
         {/* Reading gradients */}
-        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #080808 0%, rgba(8,8,8,0.88) 38%, rgba(8,8,8,0.3) 65%, transparent 100%)', pointerEvents: 'none' }} />
-        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #080808 0%, rgba(8,8,8,0.75) 18%, rgba(8,8,8,0.35) 42%, transparent 62%)', pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #080808 0%, rgba(8,8,8,0.93) 42%, rgba(8,8,8,0.4) 68%, transparent 100%)', pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #080808 0%, rgba(8,8,8,0.85) 22%, rgba(8,8,8,0.48) 46%, transparent 68%)', pointerEvents: 'none' }} />
 
         {/* Diagonal sweep ray */}
         <div aria-hidden="true" style={{ position: 'absolute', top: '-30%', left: '-10%', width: '35%', height: '200%', background: 'linear-gradient(108deg, transparent 40%, rgba(201,168,76,0.055) 50%, transparent 60%)', pointerEvents: 'none', animation: 'hero-sweep 8s ease-in-out infinite', animationDelay: '2s' }} />
 
         {/* Sparkle hits */}
         {HERO_SPARKLES.map((s, i) => (
-          <span key={i} aria-hidden="true" style={{ position: 'absolute', top: s.top, left: s.left, width: `${s.size}px`, height: `${s.size}px`, borderRadius: '50%', backgroundColor: s.ice ? 'rgba(208,238,255,0.95)' : 'rgba(255,248,220,0.9)', boxShadow: s.ice ? `0 0 ${s.size * 5}px ${s.size + 2}px rgba(208,238,255,0.45)` : `0 0 ${s.size * 5}px ${s.size + 2}px rgba(201,168,76,0.4)`, animation: 'sparkle-hit 3.8s ease-in-out infinite', animationDelay: s.delay, pointerEvents: 'none' }} />
+          <span key={i} aria-hidden="true" style={{ position: 'absolute', top: s.top, left: s.left, width: `${s.size}px`, height: `${s.size}px`, borderRadius: '50%', backgroundColor: s.ice ? 'rgba(208,238,255,0.95)' : 'rgba(255,248,220,0.9)', boxShadow: s.ice ? `0 0 ${s.size * 6}px ${s.size + 2}px rgba(208,238,255,0.55), 0 0 ${s.size * 14}px ${s.size + 4}px rgba(208,238,255,0.18)` : `0 0 ${s.size * 6}px ${s.size + 2}px rgba(201,168,76,0.52), 0 0 ${s.size * 14}px ${s.size + 4}px rgba(201,168,76,0.16)`, animation: 'sparkle-hit 3.8s ease-in-out infinite', animationDelay: s.delay, pointerEvents: 'none' }} />
         ))}
 
         {/* Text — bottom-left */}
@@ -150,13 +150,22 @@ export default function HomePage() {
 
             <h1
               className="reveal reveal-d1"
-              style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(4.2rem, 10.5vw, 9rem)', fontWeight: 700, lineHeight: 0.88, color: 'var(--color-brand-white)', letterSpacing: '-0.03em' }}
+              style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(4.5rem, 11vw, 9.5rem)', fontWeight: 700, lineHeight: 0.88, color: 'var(--color-brand-white)', letterSpacing: '-0.03em' }}
             >
               BUILT TO{' '}
               <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>HIT.</em>
             </h1>
 
             {/* BANG! — brand signature stamp, intentional and controlled */}
+            <style>{`
+              .hero-bang-stamp {
+                font-size: clamp(1rem, 2vw, 1.4rem) !important;
+                padding: 0.45em 1.15em !important;
+                border-color: rgba(201,168,76,0.55) !important;
+                letter-spacing: 0.24em !important;
+                box-shadow: 0 0 22px rgba(201,168,76,0.22), inset 0 0 10px rgba(201,168,76,0.07) !important;
+              }
+            `}</style>
             <div className="reveal reveal-d2" style={{ marginTop: '0.75rem', marginBottom: '1.75rem' }}>
               <span className="hero-bang-stamp">BANG!</span>
             </div>
@@ -187,6 +196,18 @@ export default function HomePage() {
       {/* ─── 2. SHOP JEWELRY — 3-tier hybrid product gateway ────────────── */}
       <section id="shop-jewelry" className="pg-section" aria-label="Shop jewelry by category">
         <div className="pg-inner">
+          {/* Enhanced hover states — supplement globals.css pg-card rules */}
+          <style>{`
+            .pg-card:hover {
+              box-shadow: inset 0 0 40px rgba(201,168,76,0.04);
+            }
+            .pg-card:hover .pg-card__silhouette {
+              color: rgba(201,168,76,0.28) !important;
+            }
+            .pg-card--custom:hover {
+              box-shadow: 0 0 32px rgba(201,168,76,0.14) !important;
+            }
+          `}</style>
           <span className="section-eyebrow">SHOP BY PIECE</span>
           <h2 className="pg-heading">SHOP JEWELRY</h2>
           <p className="pg-subline">
@@ -201,6 +222,7 @@ export default function HomePage() {
               gap:                 '1px',
               backgroundColor:     'var(--color-brand-border)',
               border:              '1px solid var(--color-brand-border)',
+              borderTop:           '3px solid var(--color-brand-gold)',
               marginBottom:        '1px',
             }}
           >
@@ -223,6 +245,31 @@ export default function HomePage() {
                 </div>
               </Link>
             ))}
+          </div>
+
+          {/* Featured / secondary visual separator */}
+          <div
+            aria-hidden="true"
+            style={{
+              display:         'flex',
+              alignItems:      'center',
+              gap:             '0.75rem',
+              padding:         '0.6rem 0',
+              backgroundColor: 'var(--color-brand-black)',
+            }}
+          >
+            <span style={{
+              fontFamily:    'var(--font-body)',
+              fontSize:      '0.6rem',
+              fontWeight:    600,
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              color:         'var(--color-brand-subtle)',
+              whiteSpace:    'nowrap',
+            }}>
+              MORE PIECES
+            </span>
+            <div style={{ flex: 1, height: '1px', backgroundColor: 'var(--color-brand-border)' }} />
           </div>
 
           {/* ── SMALL TILES: Pendants / Rings / Bracelets / Earrings ── */}
@@ -288,9 +335,9 @@ export default function HomePage() {
             style={{
               display:    'flex',
               flexWrap:   'wrap',
-              gap:        '0.25rem 0',
+              gap:        '0.5rem 0',
               borderTop:  '1px solid var(--color-brand-border)',
-              paddingTop: '0.875rem',
+              paddingTop: '1rem',
             }}
           >
             {[
@@ -309,9 +356,10 @@ export default function HomePage() {
                   fontSize:       '0.75rem',
                   fontWeight:     600,
                   letterSpacing:  '0.06em',
-                  color:          'var(--color-brand-muted)',
+                  color:          'var(--color-brand-silver)',
                   textDecoration: 'none',
-                  padding:        '0.375rem 1.25rem 0.375rem 0',
+                  padding:        '0.375rem 1.5rem 0.375rem 0.875rem',
+                  borderLeft:     '1px solid var(--color-brand-border)',
                   transition:     'color 0.18s ease',
                 }}
               >
@@ -415,11 +463,25 @@ export default function HomePage() {
       <section
         aria-label="Current promotions"
         style={{
+          position:   'relative',
           borderTop:  '1px solid var(--color-brand-border)',
-          background: 'var(--color-brand-charcoal)',
+          background: 'linear-gradient(135deg, #141414 0%, #100f08 100%)',
           padding:    'clamp(2rem, 5vw, 3rem) 1.5rem',
+          overflow:   'hidden',
         }}
       >
+        {/* Gold accent top — signals "special slot" */}
+        <div
+          aria-hidden="true"
+          style={{
+            position:   'absolute',
+            top:        0,
+            left:       0,
+            right:      0,
+            height:     '2px',
+            background: 'linear-gradient(90deg, transparent 0%, var(--color-brand-gold-dim) 20%, var(--color-brand-gold) 50%, var(--color-brand-gold-dim) 80%, transparent 100%)',
+          }}
+        />
         <div
           style={{
             maxWidth:       '1200px',
@@ -432,9 +494,21 @@ export default function HomePage() {
           }}
         >
           <div>
-            <span className="section-eyebrow" style={{ display: 'block', marginBottom: '0.5rem' }}>
-              SPECIAL OF THE WEEK
-            </span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+              <span
+                aria-hidden="true"
+                style={{
+                  display:         'inline-block',
+                  width:           '6px',
+                  height:          '6px',
+                  borderRadius:    '50%',
+                  backgroundColor: 'var(--color-brand-gold)',
+                  flexShrink:      0,
+                  animation:       'pulse-glow 2.2s ease-in-out infinite',
+                }}
+              />
+              <span className="section-eyebrow">SPECIAL OF THE WEEK</span>
+            </div>
             <p
               style={{
                 fontFamily: 'var(--font-body)',

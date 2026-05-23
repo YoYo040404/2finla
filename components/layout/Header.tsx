@@ -65,11 +65,12 @@ export function Header() {
               style={{
                 fontFamily:    'var(--font-body)',
                 fontWeight:    800,
-                fontSize:      '1.15rem',
-                letterSpacing: '0.08em',
+                fontSize:      'clamp(1.35rem, 2vw, 1.55rem)',
+                letterSpacing: '0.06em',
                 textTransform: 'uppercase',
                 color:         'var(--color-brand-white)',
                 lineHeight:    1,
+                textShadow:    '0 0 20px rgba(201,168,76,0.28)',
               }}
             >
               2T
@@ -79,8 +80,8 @@ export function Header() {
               style={{
                 display:    'inline-block',
                 width:      '1px',
-                height:     '16px',
-                background: 'rgba(201,168,76,0.5)',
+                height:     '20px',
+                background: 'rgba(201,168,76,0.65)',
                 flexShrink: 0,
                 alignSelf:  'center',
               }}
@@ -90,7 +91,7 @@ export function Header() {
                 fontFamily:    'var(--font-body)',
                 fontWeight:    600,
                 fontSize:      '0.68rem',
-                letterSpacing: '0.32em',
+                letterSpacing: '0.38em',
                 textTransform: 'uppercase',
                 color:         'var(--color-brand-gold)',
                 lineHeight:    1,
