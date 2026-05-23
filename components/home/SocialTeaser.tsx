@@ -46,10 +46,10 @@ const SOCIALS = [
   {
     platform: 'TIKTOK',
     handle:   '@2tjewelers',
-    copy:     'See the work.',
+    copy:     "See what's hitting.",
     href:     'https://www.tiktok.com/@2tjewelers',
     icon:     <TtIcon />,
-    accent:   '#9fa8b3',
+    accent:   '#e8e8e8',
     label:    'TikTok: @2tjewelers',
     wa:       false,
   },
@@ -132,7 +132,7 @@ export default function SocialTeaser() {
         {/* ── Right: heading + social links ──────────────────────────── */}
         <div className="social-content">
           <span className="section-eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>
-            TAP IN WITH 2T.
+            FOLLOW @2TJEWELERS
           </span>
 
           <h2 className="social-heading">
@@ -143,7 +143,7 @@ export default function SocialTeaser() {
           </h2>
 
           <p className="social-subline">
-            See the work. Text before you buy. @2tjewelers on TikTok and Instagram.
+            TikTok for what&apos;s hitting. Instagram for the finished pieces. WhatsApp to ask anything.
           </p>
 
           <div className="social-links" role="list">
