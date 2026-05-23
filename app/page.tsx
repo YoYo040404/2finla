@@ -370,7 +370,181 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── 3. CUSTOM BUILT HERE — compressed fast lane ─────────────── */}
+      {/* ─── 3. SPECIAL OF THE WEEK — promo surface ─────────────────── */}
+      {/*
+       * CLAIM SAFETY: do not add %, BOGO, free shipping, inventory,
+       * material, or urgency claims without verification.
+       * Placeholder copy is intentional. Replace headline/body only
+       * when a real verified offer exists.
+       */}
+      <section
+        aria-label="This week's promotion"
+        style={{
+          position:   'relative',
+          borderTop:  '1px solid var(--color-brand-border)',
+          background: 'linear-gradient(150deg, #0e0d0b 0%, #13110a 55%, #0a0908 100%)',
+          padding:    'clamp(2.75rem, 6vw, 4.25rem) 1.5rem',
+          overflow:   'hidden',
+        }}
+      >
+        {/* Diagonal gold ray — subtle, matches hero language */}
+        <div
+          aria-hidden="true"
+          style={{
+            position:   'absolute',
+            top:        '-20%',
+            right:      '-5%',
+            width:      '40%',
+            height:     '160%',
+            background: 'linear-gradient(112deg, transparent 38%, rgba(201,168,76,0.045) 50%, transparent 62%)',
+            pointerEvents: 'none',
+          }}
+        />
+
+        <div
+          style={{
+            maxWidth:    '1200px',
+            margin:      '0 auto',
+            display:     'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap:         'clamp(1.5rem, 4vw, 3rem)',
+            alignItems:  'center',
+          }}
+        >
+          {/* ── LEFT: copy ── */}
+          <div>
+            {/* Eyebrow + live dot */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.9rem' }}>
+              <span
+                aria-hidden="true"
+                style={{
+                  display:         'inline-block',
+                  width:           '7px',
+                  height:          '7px',
+                  borderRadius:    '50%',
+                  backgroundColor: 'var(--color-brand-gold)',
+                  flexShrink:      0,
+                  animation:       'pulse-glow 2.4s ease-in-out infinite',
+                }}
+              />
+              <span className="section-eyebrow">THIS WEEK AT 2T</span>
+            </div>
+
+            {/* Headline — big, hard */}
+            <h2
+              style={{
+                fontFamily:    'var(--font-display)',
+                fontSize:      'clamp(2.6rem, 5.5vw, 4.5rem)',
+                fontWeight:    700,
+                lineHeight:    0.9,
+                letterSpacing: '-0.03em',
+                color:         'var(--color-brand-white)',
+                marginBottom:  '1.25rem',
+              }}
+            >
+              ASK WHAT&rsquo;S{' '}
+              <em
+                style={{
+                  color:      'var(--color-brand-gold)',
+                  fontStyle:  'italic',
+                  fontFamily: 'var(--font-display-accent)',
+                }}
+              >
+                RUNNING.
+              </em>
+            </h2>
+
+            {/* Body */}
+            <p
+              style={{
+                fontFamily:   'var(--font-body)',
+                fontSize:     '0.875rem',
+                color:        'var(--color-brand-muted)',
+                lineHeight:   1.6,
+                maxWidth:     '44ch',
+                marginBottom: '0.5rem',
+              }}
+            >
+              Chains, pendants, watches, grillz &mdash; promo terms shown on eligible pieces only.
+            </p>
+
+            {/* Terms fine print */}
+            <p
+              aria-hidden="true"
+              style={{
+                fontFamily:   'var(--font-body)',
+                fontSize:     '0.6rem',
+                color:        'var(--color-brand-subtle)',
+                letterSpacing:'0.08em',
+                textTransform:'uppercase',
+                marginBottom: '1.75rem',
+              }}
+            >
+              Details confirmed per piece
+            </p>
+
+            {/* CTA */}
+            <a
+              href={WA_PROMO}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+              style={{
+                display:       'inline-block',
+                fontSize:      '0.875rem',
+                letterSpacing: '0.09em',
+                padding:       '0.9rem 2rem',
+                minWidth:      '180px',
+                textAlign:     'center',
+              }}
+            >
+              TEXT 2T &rarr;
+            </a>
+          </div>
+
+          {/* ── RIGHT: visual panel placeholder ── */}
+          {/*
+           * IMAGE SLOT: replace background/content here when a real
+           * product photo or verified offer visual is available.
+           * Do NOT add fake product images, fake prices, or fake labels.
+           */}
+          <div
+            aria-hidden="true"
+            style={{
+              position:     'relative',
+              minHeight:    'clamp(160px, 22vw, 240px)',
+              borderRadius: '3px',
+              border:       '1px solid rgba(201,168,76,0.18)',
+              background:   'linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(201,168,76,0.02) 60%, transparent 100%)',
+              overflow:     'hidden',
+              display:      'flex',
+              alignItems:   'center',
+              justifyContent: 'center',
+            }}
+          >
+            {/* Corner accent lines */}
+            <div style={{ position: 'absolute', top: 12, left: 12, width: 28, height: 28, borderTop: '1.5px solid rgba(201,168,76,0.5)', borderLeft: '1.5px solid rgba(201,168,76,0.5)' }} />
+            <div style={{ position: 'absolute', bottom: 12, right: 12, width: 28, height: 28, borderBottom: '1.5px solid rgba(201,168,76,0.5)', borderRight: '1.5px solid rgba(201,168,76,0.5)' }} />
+
+            {/* Label */}
+            <span
+              style={{
+                fontFamily:    'var(--font-body)',
+                fontSize:      '0.6rem',
+                fontWeight:    600,
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                color:         'rgba(201,168,76,0.38)',
+                userSelect:    'none',
+              }}
+            >
+              DETAILS CONFIRMED PER PIECE
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 4. CUSTOM BUILT HERE — compressed fast lane ─────────────── */}
       <section
         aria-label="Custom jewelry"
         style={{
@@ -456,81 +630,6 @@ export default function HomePage() {
               </span>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ─── 3b. PROMO PLACEHOLDER ───────────────────────────────────────── */}
-      <section
-        aria-label="Current promotions"
-        style={{
-          position:   'relative',
-          borderTop:  '1px solid var(--color-brand-border)',
-          background: 'linear-gradient(135deg, #141414 0%, #100f08 100%)',
-          padding:    'clamp(2rem, 5vw, 3rem) 1.5rem',
-          overflow:   'hidden',
-        }}
-      >
-        {/* Gold accent top — signals "special slot" */}
-        <div
-          aria-hidden="true"
-          style={{
-            position:   'absolute',
-            top:        0,
-            left:       0,
-            right:      0,
-            height:     '2px',
-            background: 'linear-gradient(90deg, transparent 0%, var(--color-brand-gold-dim) 20%, var(--color-brand-gold) 50%, var(--color-brand-gold-dim) 80%, transparent 100%)',
-          }}
-        />
-        <div
-          style={{
-            maxWidth:       '1200px',
-            margin:         '0 auto',
-            display:        'flex',
-            flexWrap:       'wrap',
-            alignItems:     'center',
-            justifyContent: 'space-between',
-            gap:            '1.25rem',
-          }}
-        >
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-              <span
-                aria-hidden="true"
-                style={{
-                  display:         'inline-block',
-                  width:           '6px',
-                  height:          '6px',
-                  borderRadius:    '50%',
-                  backgroundColor: 'var(--color-brand-gold)',
-                  flexShrink:      0,
-                  animation:       'pulse-glow 2.2s ease-in-out infinite',
-                }}
-              />
-              <span className="section-eyebrow">SPECIAL OF THE WEEK</span>
-            </div>
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize:   '0.875rem',
-                color:      'var(--color-brand-muted)',
-                lineHeight: 1.55,
-                margin:     0,
-                maxWidth:   '46ch',
-              }}
-            >
-              Ask what&rsquo;s running now &mdash; promo terms shown on eligible pieces only.
-            </p>
-          </div>
-          <a
-            href={WA_PROMO}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outline-gold"
-            style={{ fontSize: '0.8125rem', letterSpacing: '0.1em', whiteSpace: 'nowrap' }}
-          >
-            TEXT 2T →
-          </a>
         </div>
       </section>
 
