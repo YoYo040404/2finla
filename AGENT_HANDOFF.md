@@ -13,6 +13,11 @@
 
 ## Before Homepage, SEO, CRO, Copy, Promo, or Category Work
 
+> **REQUIRED FIRST READ for any homepage, header, logo, visual-language, CTA, CRO, or SEO work:**
+> Read `docs/2t-homepage-master-direction.md` before any planning or code.
+> This is the controlling strategic document for all homepage and visual-language decisions.
+> Do not skip it. Do not rely on memory of its contents — read the current file.
+
 Before working on homepage, SEO, CRO, copy, promo, or any category page, read:
 - `docs/2t-growth-strategy-seo-cro-90day.md` — official sitewide growth, SEO, and CRO strategy
 - `docs/2t-voc-copy-system.md` — voice-of-customer copy system

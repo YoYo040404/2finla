@@ -95,6 +95,23 @@ Do not copy: assets, videos, copy, product names, claims, layout exactly, or res
 
 ---
 
+## Homepage Master Direction
+
+`docs/2t-homepage-master-direction.md` is the **controlling document** for all homepage, header, and visual-language work.
+
+**Do not start SEO implementation before homepage visual/language direction is applied.**
+
+Approved order for the next homepage/header pass:
+
+1. Register homepage master direction ← current task
+2. Plan homepage/header implementation pass
+3. User approves the plan
+4. Implement controlled homepage visual/action pass
+5. QA (Playwright screenshots: 390px + 1280px, claim-safety scan)
+6. Only then: SEO/metadata/internal-linking pass
+
+---
+
 ## Phase Status
 
 ### Phase 1 — Scaffold ✅ Complete
@@ -237,6 +254,7 @@ Only if user explicitly approves:
 4. Visual QA of `/custom` → user approval gate
 5. Visual QA of `/grillz` and `/watches` → user approval gate
 6. **Sitewide copy + SEO + homepage audit** — run using all three strategy docs:
+   - **Read `docs/2t-homepage-master-direction.md` first. Do not run the SEO pass before homepage visual direction is applied.**
    - `docs/2t-growth-strategy-seo-cro-90day.md` (growth strategy)
    - `docs/2t-voc-copy-system.md` (VOC copy system)
    - `docs/2t-copy-swipe-map.md` (copy swipe map)
