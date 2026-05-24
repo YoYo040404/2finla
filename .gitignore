@@ -39,3 +39,27 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# dev session logs
+dev-*.log
+dev3003*.log
+pass2-dev*.log
+pass4-dev*.log
+
+# playwright mcp runtime
+.playwright-mcp/
+
+# superpowers plugin cache
+.superpowers/
+
+# screenshot artifacts
+pass*.png
+screenshot-pass*.cjs
+screenshot-pass*.mjs
+
+# session artifacts
+2t_jewelers_next_md_alignment_pack/
+samples/
+backup-*.patch
+review-diff.txt
+public/lockup-preview.html
