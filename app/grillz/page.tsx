@@ -157,7 +157,7 @@ export default function GrillzPage() {
               letterSpacing: '0.02em',
             }}
           >
-            Tell us which set when you text — 2T guides the style and material from there.
+            Tell us top, bottom, or full set when you text. We review and quote before anything starts.
           </p>
         </div>
       </section>
@@ -182,7 +182,7 @@ export default function GrillzPage() {
               marginBottom: '2.5rem',
             }}
           >
-            Simple start. No pressure.
+            Real jeweler. Real grillz. Text first.
           </p>
 
           <div
@@ -303,7 +303,7 @@ export default function GrillzPage() {
                 marginTop:  '0.25rem',
               }}
             >
-              Over 30 years. Real jeweler. No pressure to commit.
+              Over 30 years. Real jeweler. Text first or walk in.
             </p>
           </div>
         </div>

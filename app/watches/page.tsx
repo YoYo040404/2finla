@@ -20,7 +20,7 @@ const DIRECTION_CHIPS = [
 const WHAT_TO_TELL = [
   {
     label: 'BUDGET RANGE',
-    body: 'A rough number helps guide the conversation. Not a commitment.',
+    body: 'A budget range helps 2T quote the right direction. Not a final price.',
   },
   {
     label: 'WATCH DIRECTION',
@@ -95,8 +95,8 @@ export default function WatchesPage() {
               marginBottom: '0.5rem',
             }}
           >
-            Ask about diamond bezel direction, iced watch looks, and current availability.
-            Product details are confirmed per piece.
+            Diamond bezels. Iced directions. High-end watch looks.
+            Ask what 2T has right now.
           </p>
 
           <p
@@ -165,7 +165,7 @@ export default function WatchesPage() {
               letterSpacing: '0.02em',
             }}
           >
-            Text 2T the direction — we guide the conversation before quote or production.
+            Text 2T the direction — we review before the quote, quote before the build.
           </p>
         </div>
       </section>
@@ -190,7 +190,7 @@ export default function WatchesPage() {
               marginBottom: '2.5rem',
             }}
           >
-            Give us the picture. We handle the rest.
+            Tell us the direction. We review and quote first.
           </p>
 
           <div

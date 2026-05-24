@@ -217,7 +217,7 @@ export function CustomHero() {
               maxWidth:   '44ch',
             }}
           >
-            Send the logo, photo, sketch, name, number, or rough idea. We&apos;ll review the direction before quote or production.
+            Logo, photo, name, number, sketch. Send it. We quote before the build.
           </p>
 
           <div

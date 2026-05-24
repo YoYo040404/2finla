@@ -46,7 +46,7 @@ const SOCIALS = [
   {
     platform: 'TIKTOK',
     handle:   '@2tjewelers',
-    copy:     "See what's hitting.",
+    copy:     'Watch the build. @2tjewelers',
     href:     'https://www.tiktok.com/@2tjewelers',
     icon:     <TtIcon />,
     accent:   '#e8e8e8',
@@ -56,7 +56,7 @@ const SOCIALS = [
   {
     platform: 'INSTAGRAM',
     handle:   '@2tjewelers',
-    copy:     'See the finished work',
+    copy:     'The pieces. @2tjewelers',
     href:     'https://www.instagram.com/2tjewelers/',
     icon:     <IgIcon />,
     accent:   '#c9a84c',
@@ -143,7 +143,7 @@ export default function SocialTeaser() {
           </h2>
 
           <p className="social-subline">
-            TikTok for what&apos;s hitting. Instagram for the finished pieces. WhatsApp to ask anything.
+            TikTok for the build. Instagram for the pieces. WhatsApp to ask anything.
           </p>
 
           <div className="social-links" role="list">

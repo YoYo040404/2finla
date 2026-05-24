@@ -49,7 +49,7 @@ export default function PittsburghStory() {
           </p>
 
           <p className="pitt-story-body" style={{ marginTop: '0.9rem' }}>
-            We quote before the build.
+            Real jeweler. Real store.
             Product details confirmed per piece.
           </p>
 
@@ -63,7 +63,7 @@ export default function PittsburghStory() {
               rel="noopener noreferrer"
               className="pitt-story-text-link"
             >
-              Or text us →
+              TEXT OR COME THROUGH →
             </a>
           </div>
         </div>

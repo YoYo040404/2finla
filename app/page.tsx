@@ -20,8 +20,8 @@ const HERO_SPARKLES = [
 
 // Product priority: Grillz → Watches → Chains (featured) → Pendants → Rings → Bracelets → Earrings (secondary) → Custom (full-width)
 const LARGE_TILES = [
-  { label: 'GRILLZ',  sub: 'Custom fit direction. Ask 2T first.',                href: '/grillz',             cta: 'ASK ABOUT GRILLZ'  },
-  { label: 'WATCHES', sub: "Iced bezels and bold faces. Ask what's available.",  href: '/watches',            cta: 'ASK ABOUT WATCHES' },
+  { label: 'GRILLZ',  sub: 'Top, bottom, or full set. Gold or iced. Text the look.',  href: '/grillz',             cta: 'ASK ABOUT GRILLZ'  },
+  { label: 'WATCHES', sub: "Iced bezels. Diamond faces. Ask what's in.",             href: '/watches',            cta: 'ASK ABOUT WATCHES' },
   { label: 'CHAINS',  sub: "Cuban, rope, and tennis. Ask what's in stock.",      href: '/collections/chains', cta: 'SHOP CHAINS'       },
 ] as const
 
@@ -29,12 +29,12 @@ const SMALL_TILES = [
   { label: 'PENDANTS',  sub: 'Photo, logo, name, or number. Send the idea.',     href: '/collections/pendants',  cta: 'SHOP PENDANTS'  },
   { label: 'RINGS',     sub: 'Big face. Heavy statement. Details per piece.',     href: '/collections/rings',     cta: 'SHOP RINGS'     },
   { label: 'BRACELETS', sub: 'Wrist game with weight. Text to ask.',              href: '/collections/bracelets', cta: 'SHOP BRACELETS' },
-  { label: 'EARRINGS',  sub: "Iced and clean. Ask what's available.",             href: '/collections/earrings',  cta: 'SHOP EARRINGS'  },
+  { label: 'EARRINGS',  sub: 'Iced studs and hoops. Ask what\'s in stock.',       href: '/collections/earrings',  cta: 'SHOP EARRINGS'  },
 ] as const
 
 const CUSTOM_TILE = {
   label: 'CUSTOM BUILT',
-  sub:   'Logo, name, photo, grillz, watch direction — send the idea.',
+  sub:   'Your logo. Your name. Your piece. Send it.',
   href:  '/custom',
   cta:   'START CUSTOM',
 } as const
@@ -480,7 +480,7 @@ export default function HomePage() {
                 marginBottom:  '1.25rem',
               }}
             >
-              ASK WHAT&rsquo;S{' '}
+              WHAT&rsquo;S{' '}
               <em
                 style={{
                   color:      'var(--color-brand-gold)',
@@ -488,7 +488,7 @@ export default function HomePage() {
                   fontFamily: 'var(--font-display-accent)',
                 }}
               >
-                RUNNING.
+                RUNNING THIS WEEK.
               </em>
             </h2>
 
@@ -628,7 +628,7 @@ export default function HomePage() {
               marginBottom: '2rem',
             }}
           >
-            Send the idea first. No deposit. We quote before the build.
+            Send the idea. No deposit. We quote before the build.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1.5rem' }}>
