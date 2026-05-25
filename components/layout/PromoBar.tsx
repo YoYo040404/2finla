@@ -1,57 +1,42 @@
-'use client'
-
-import { useEffect, useState } from 'react'
-
-const MESSAGES = [
-  'GRILLZ  ◆  WATCHES  ◆  CHAINS  ◆  RINGS  ◆  BRACELETS  ◆  CUSTOM',
-  'PITTSBURGH STREET LUXURY  ◆  REAL JEWELER  ◆  OVER 30 YEARS',
-  'NO DEPOSIT TO START  ◆  WE QUOTE BEFORE THE BUILD',
-]
+// Swap promo copy here when a new promotion runs — two lines to change.
+// Desktop: full promotional sentence. Mobile: compressed to one short line.
 
 export function PromoBar() {
-  const [index, setIndex]   = useState(0)
-  const [visible, setVisible] = useState(true)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setVisible(false)
-      setTimeout(() => {
-        setIndex((i) => (i + 1) % MESSAGES.length)
-        setVisible(true)
-      }, 320)
-    }, 5800)
-    return () => clearInterval(interval)
-  }, [])
-
   return (
     <div
       role="banner"
-      aria-label="Store announcements"
+      aria-label="Store promotion"
       style={{
         backgroundColor: 'var(--color-brand-charcoal)',
-        borderBottom:    '1px solid rgba(201,168,76,0.2)',
+        borderBottom:    '1px solid rgba(201,168,76,0.25)',
         height:          '38px',
         display:         'flex',
         alignItems:      'center',
         justifyContent:  'center',
         overflow:        'hidden',
+        padding:         '0 1rem',
       }}
     >
       <p
         style={{
-          fontFamily:      'var(--font-body)',
-          fontSize:        '0.68rem',
-          letterSpacing:   '0.12em',
-          textTransform:   'uppercase',
-          color:           '#a0a0a0',
-          userSelect:      'none',
-          transition:      'opacity 0.3s ease, transform 0.3s ease',
-          opacity:         visible ? 1 : 0,
-          transform:       visible ? 'translateY(0)' : 'translateY(-5px)',
+          fontFamily:    'var(--font-body)',
+          fontSize:      '0.72rem',
+          letterSpacing: '0.12em',
+          textTransform: 'uppercase',
+          fontWeight:    600,
+          color:         'var(--color-brand-gold)',
+          userSelect:    'none',
+          margin:        0,
+          whiteSpace:    'nowrap',
+          overflow:      'hidden',
+          textOverflow:  'ellipsis',
         }}
       >
         <span style={{ color: 'var(--color-brand-gold)', marginRight: '0.6em' }}>◆</span>
-        {MESSAGES[index]}
+        {/* Desktop copy — hidden on narrow viewports via CSS */}
+        <span className="promo-bar-full">20% OFF YOUR FIRST CUSTOM ORDER &nbsp;◆&nbsp; START YOUR PIECE TODAY</span>
+        {/* Mobile copy — shown only on narrow viewports via CSS */}
+        <span className="promo-bar-short">20% OFF FIRST CUSTOM ORDER</span>
         <span style={{ color: 'var(--color-brand-gold)', marginLeft: '0.6em' }}>◆</span>
       </p>
     </div>
