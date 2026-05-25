@@ -65,20 +65,21 @@ solid gold, real diamonds, natural diamonds, VVS/GIA, free shipping, lifetime wa
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
 Old Shopify folder is archive only. Do not touch it.
 
-**Latest committed state (as of 2026-05-20):**
+**Latest committed state (as of 2026-05-25):**
 
 | Commit | Description |
 |---|---|
-| `8fd4497` | Homepage reset — product store + custom lane. NOT custom-only. |
-| `200e5a1` | Grillz and Watches landing pages upgraded and committed. |
+| `af7f20d` | Homepage Midnight Icebox Pass 3 — full visual direction applied and committed. |
+| `b049d30` | 2T voice hardening across core pages. |
+| `84af600` | /custom compact revision — build passes, NOT user-approved. |
+| `8fd4497` | Homepage reset — product store + custom lane. |
+| `200e5a1` | Grillz and Watches pages. |
 
-**Current strategic direction:** 2T Jewelers is a real Pittsburgh street-luxury jewelry store. It sells real jewelry AND has a custom lane. The homepage must not feel custom-only. Two equal paths: SHOP JEWELRY + BUILD CUSTOM.
+**Current strategic direction:** 2T Jewelers is a real Pittsburgh street-luxury jewelry store. Midnight Icebox visual system applied to homepage. Visual direction: hard hip-hop / hood street-luxury — loud, flashy, bling-heavy, ice/diamond/gold shine, rapper/athlete energy. NOT quiet luxury, NOT boutique, NOT over-clean ecommerce.
 
-**Current focus:** `/custom` visual QA after the latest refinement (commit 84af600 — 2026-05-17). Build passes technically. NOT user-approved as final.
+**Open concern:** Even after Pass 3, a Strategic Visual Reset Audit / Deep Research pass may be needed before further major build work to confirm the direction is hard enough for the target audience.
 
-Latest /custom changes: compact hero, START THE REQUEST → CTA, Browse Ready-Made removed, upload zone above textarea on mobile, textarea 4 rows, gold-bordered trust callout, full-width SEND REQUEST →, bypass WhatsApp CTA, HowItWorks steps updated.
-
-Next step: visual QA of /custom. Stop and wait for user approval before any further /custom, /grillz, or /watches changes.
+**Current focus:** Visual QA of `/custom`. Build passes technically. NOT user-approved as final. Stop and wait for user approval before any further /custom, /grillz, or /watches changes.
 
 ---
 
@@ -99,15 +100,25 @@ Next step: visual QA of /custom. Stop and wait for user approval before any furt
 
 ## Last Known Visual Feedback
 
-Homepage reset (committed 8fd4497 — approved):
-- Full-bleed hero — BUILT TO HIT. + BANG! stamp + dual CTAs: SHOP JEWELRY + BUILD CUSTOM →, video slot wired, sparkle hits
-- ProofMarquee — CSS-only animated trust strip, trust facts, accessible
-- SHOP JEWELRY — product gateway with 8 cards in priority order: Grillz, Watches, Chains, Rings, Bracelets, Pendants, Earrings, Custom. SVG silhouette icons.
-- CUSTOM BUILT HERE — compressed fast lane. Logo / Name / Photo / Grillz / Watch direction. BUILD CUSTOM → + TEXT 2T →. What-we-build keyword chips.
-- PittsburghStory (`REAL STORE. REAL WORK.`) — brand story, dual CTAs
-- SocialTeaser (`TAP IN WITH 2T.` / `WATCH THE WORK`) — inline SVG icons for Instagram / TikTok / WhatsApp, real links only, no fake data
+### Midnight Icebox Homepage Pass 3 (committed af7f20d — 2026-05-25 — user-approved for commit)
 
-Removed from homepage: PICK YOUR LANE, BestSellersStrip, old Inquiry Lanes, Material Preview, FinalCTABar, old Custom Entry Block.
+**Visual direction locked:** Midnight Icebox through hard hip-hop / hood street-luxury energy.
+
+**Active design system:**
+- Fonts: Anton (display) / Archivo (body) / JetBrains Mono (mono) / Cormorant Garamond (italic gold accent)
+- Palette: obsidian `#050505` / bone `#F3F0EA` / gold `#C9A449` / ice `#D8EBFF` / charcoal `#0E0E0E` / border `#1F1D1A`
+
+**Section-by-section state:**
+- Hero: full-bleed campaign media (video opacity 0.60), BANG. as borderless gold text stamp (no button chrome), BUILT TO HIT. dominant, dual CTAs: SHOP JEWELRY + BUILD CUSTOM →
+- ProofMarquee: gold top/bottom borders, trust facts, CSS marquee
+- SHOP JEWELRY: vitrine display-case tiles, anchor row 1.4fr/1fr/1fr (GRILLZ dominant), inline mono text direction labels (no spec-box pill borders), secondary 4-tile row
+- Weekly Promo: two-column, vitrine slot right, gleam moment (no fake offers, claim-safe)
+- Custom lane: vitrine left, text right, keyword chips
+- PittsburghStory: stat ledger 30+ YEARS / 5TH AVE with gold left-border rules, no fake claims
+- SocialTeaser: channel-map rows (TikTok / Instagram / WhatsApp), WhatsApp gold-bordered, diamond glyphs, real links only
+
+**Gleam budget:** 2 of 3 used (GRILLZ anchor + promo vitrine).
+**Not redesigned in Pass 3:** `/custom`, `/grillz`, `/watches`.
 
 Grillz page (committed 200e5a1): `/grillz` — street-luxury, direct, inquiry-led.
 Watches page (committed 200e5a1): `/watches` — high-ticket, direct, claim-safe.
@@ -139,20 +150,22 @@ Custom page (as of commit 84af600 — 2026-05-17):
 
 | Area | Status |
 |---|---|
-| Homepage reset | ✅ Committed — 8fd4497. Product store + custom lane. |
+| Homepage Midnight Icebox Pass 3 | ✅ Committed — af7f20d. Anton/Archivo/JetBrains Mono. Vitrine system. Gold/ice palette. |
+| Hero | ✅ Full-bleed campaign. Video opacity 0.60. BANG. brand text stamp. |
+| ProofMarquee | ✅ Live — gold borders |
+| SHOP JEWELRY gateway | ✅ Vitrine display-case tiles, anchor row 1.4fr/1fr/1fr, inline text labels |
+| Weekly Promo module | ✅ Live — claim-safe, no fake offers |
+| Custom lane (homepage) | ✅ Live — vitrine left, text right, keyword chips |
+| PittsburghStory | ✅ Stat ledger: 30+ / 5TH AVE with gold left-border rules |
+| SocialTeaser | ✅ Channel-map rows, WhatsApp gold-bordered, real links only |
 | Hero video | ✅ Slot wired — `public/assets/hero-loop-demo.mp4` (file pending) |
-| ProofMarquee | ✅ Live |
-| SHOP JEWELRY gateway | ✅ 8-card product grid, priority order |
-| CUSTOM BUILT HERE lane | ✅ Live — compressed fast lane |
-| PittsburghStory | ✅ Live |
-| SocialTeaser | ✅ Live (inline SVG icons, real links) |
 | Grillz page `/grillz` | ✅ Committed — 200e5a1. Visual QA and user approval still pending. |
 | Watches page `/watches` | ✅ Committed — 200e5a1. Visual QA and user approval still pending. |
-| Custom page `/custom` | ⚠️ WIP — build passes, NOT user-approved. Compact revision applied in 84af600. Visual QA pending. |
+| Custom page `/custom` | ⚠️ WIP — build passes, NOT user-approved. Visual QA pending. |
 | Logo (temporary) | ✅ Transparent logo in header, black-bg logo in footer — final SVG/2x pending |
 | Contact / social | ✅ Address, phone, WhatsApp, Instagram, TikTok, Acima all wired in Footer |
+| Strategic Visual Reset Audit | ⚠️ OPEN CONCERN — may need deep research before further major build work |
 | Real product images | 🚫 Not yet |
-| Typography audit | 🚫 Not yet |
 | Instagram/TikTok dynamic feed | 🚫 Not yet |
 | WhatsApp floating desktop button | 🚫 Not yet |
 | Backend / Formspree | 🚫 Not yet |
@@ -163,17 +176,13 @@ Custom page (as of commit 84af600 — 2026-05-17):
 
 ## Default Next Prompt
 
-**Current `/custom` build is WIP. Do not treat it as complete or commit it as an approved milestone.**
+**Step 1 — Strategic Visual Reset Audit (open concern):**
+The Midnight Icebox system is active, but it may not yet feel loud/flashy/bling-heavy enough for the hard hip-hop / hood street-luxury target. Before further major build work, run a Strategic Visual Reset Audit: deep-research the target visual energy (GLD, King Ice, Johnny Dang, Icebox, TraxNYC) and confirm whether the current direction needs deeper reset or can be intensified through real media + copy.
 
-User feedback: too card-heavy, too form-like, especially on mobile.
+**Step 2 — `/custom` visual QA:**
+Current `/custom` build is WIP. NOT user-approved as final. Run visual QA at 390px and 1280px, present screenshots, wait for explicit approval.
 
-Next step is to plan a simplified `/custom` redesign. Key direction:
-- Compact selectors: dropdown or bottom-sheet style instead of large chip/card grids
-- Faster, cleaner, more mobile-native feel
-- Keep strategic direction: piece selection → upload/reference → budget → name + phone
-- Claim-safe. Street-luxury tone.
-
-Do NOT execute until user approves the new plan.
+Do NOT execute any redesign until user approves a plan.
 
 ---
 

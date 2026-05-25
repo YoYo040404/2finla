@@ -152,7 +152,16 @@ Do not change to "nearly 30 years" or any other formulation unless the user expl
 
 ## Visual Direction
 
-**Dark Shine / Loud Luxury** — committed aesthetic direction.
+**Midnight Icebox — interpreted through hard hip-hop / hood street-luxury energy.**
+
+This is not restrained luxury. The site must feel:
+- black, urban, hood/street
+- loud, flashy, bling-heavy
+- ice / diamond / gold shine
+- rapper / athlete / big-car energy
+- real Pittsburgh jeweler
+- product-dominant, shop-ready and custom-ready
+- high-visibility, direct and street-commercial
 
 The homepage must create an immediate BAM effect:
 - full-bleed immersive hero
@@ -162,36 +171,50 @@ The homepage must create an immediate BAM effect:
 - big custom piece energy
 - street-luxury motion
 
-Avoid:
-- quiet luxury
-- wedding jewelry / boutique luxury
-- corporate
-- generic Shopify look
-- static brochure feel
+**Active design system (as of commit `af7f20d` — 2026-05-25):**
+
+| Token | Value |
+|---|---|
+| Obsidian (bg) | `#050505` |
+| Charcoal (card) | `#0E0E0E` |
+| Border | `#1F1D1A` |
+| Bone (text) | `#F3F0EA` |
+| Silver (dim) | `#9B958A` |
+| Muted (faint) | `#5B554C` |
+| Gold (accent) | `#C9A449` |
+| Ice (accent) | `#D8EBFF` |
+| Display font | Anton |
+| Body font | Archivo |
+| Mono font | JetBrains Mono |
+| Italic accent | Cormorant Garamond |
 
 ## Visual Guardrails
 
 2T must feel:
 
+- black, urban, hood/street
+- loud, flashy, bling-heavy
+- ice / diamond / gold shine energy
+- rapper / athlete / big-car energy
+- real Pittsburgh jeweler
+- product-dominant, shop-ready and custom-ready
 - street-luxury
 - custom-first
-- Dark Shine / Loud Luxury
 - product/category dense
 - mobile-first
-- direct
-- commercial
-- trustworthy
-- dark cinematic
-- controlled, not flashy
+- direct, commercial, high-visibility
 
 2T must **not** feel:
 
-- generic luxury jeweler
-- wedding/boutique jewelry brand
-- cheap dropship jewelry site
-- NFT/crypto site
-- AI-generated business-card landing page
-- nightclub flyer
+- quiet luxury
+- boutique jewelry / wedding jewelry brand
+- corporate
+- generic dark luxury
+- SaaS / spec-sheet UI
+- over-clean ecommerce
+- fake streetwear / parody AAVE
+- cheap nightclub flyer
+- NFT/Web3 / fake AI jewelry brand
 - cheap black/gold template
 - generic Shopify/ecommerce template
 - copied from GLD
@@ -290,40 +313,40 @@ components/layout/MobileCtaBar.tsx
 
 ### Design tokens
 
-```text
-Dark base: #080808
-Charcoal card: #141414
-Gold accent: #c9a84c
-Display font: Cormorant Garamond
-Body font: Outfit
-```
+See Visual Direction section above for the full Midnight Icebox token table (updated 2026-05-25).
 
-Note: Cormorant Garamond may feel too aristocratic / wedding / boutique. If too soft, test stronger display fonts such as Archivo, Sora, or similar. Typography audit is pending.
+### Homepage — Midnight Icebox Pass 3 ✅ Committed
 
-### Homepage Reset — Complete and committed ✅
+**Latest commit:** `af7f20d — feat: apply Midnight Icebox homepage visual pass` (2026-05-25)
 
-**Committed in:** `8fd4497 — feat: reset homepage to product store and custom lane`
+Homepage is a product-first store with a custom lane — NOT custom-only. Hero dual CTAs: SHOP JEWELRY + BUILD CUSTOM →.
 
-Homepage is now a product-first store with a custom lane — NOT custom-only. Hero dual CTAs: SHOP JEWELRY + BUILD CUSTOM →.
-
-Approved section order:
+**Midnight Icebox system active:**
 
 | # | Section | Component | Status |
 |---|---------|-----------|--------|
-| 1 | Hero — BUILT TO HIT. + BANG! stamp | inline in `app/page.tsx` | ✅ Full-bleed, dual CTAs, video slot wired, sparkle hits |
-| 2 | ProofMarquee | `components/home/ProofMarquee.tsx` | ✅ CSS-only marquee, trust facts, accessible |
-| 3 | SHOP JEWELRY | inline in `app/page.tsx` | ✅ Product gateway — 8 cards: Grillz, Watches, Chains, Rings, Bracelets, Pendants, Earrings, Custom. Priority order applied. |
-| 4 | CUSTOM BUILT HERE | inline in `app/page.tsx` | ✅ Compressed fast lane. Logo / Name / Photo / Grillz / Watch direction. BUILD CUSTOM → + TEXT 2T →. What-we-build keyword chips. |
-| 5 | REAL STORE. REAL WORK. | `components/home/PittsburghStory.tsx` | ✅ Pittsburgh brand story, dual CTAs |
-| 6 | WATCH THE WORK / TAP IN WITH 2T. | `components/home/SocialTeaser.tsx` | ✅ Inline SVG icons (IG/TT/WA), real links only, no fake data |
+| 1 | Hero — BUILT TO HIT. + BANG. stamp | inline in `app/page.tsx` | ✅ Full-bleed campaign media, video opacity 0.60, BANG. as borderless gold brand text stamp |
+| 2 | ProofMarquee | `components/home/ProofMarquee.tsx` | ✅ CSS-only marquee, gold borders, trust facts, accessible |
+| 3 | SHOP JEWELRY — vitrine gateway | inline in `app/page.tsx` | ✅ Anchor row 1.4fr/1fr/1fr (GRILLZ dominant), vitrine display-case tiles, inline mono text direction labels (no border-box pills) |
+| 4 | WHAT'S RUNNING THIS WEEK — promo | inline in `app/page.tsx` | ✅ Two-column, vitrine slot right, gleam moment |
+| 5 | LOGO. NAME. PHOTO. — custom lane | inline in `app/page.tsx` | ✅ Vitrine left, text right, keyword chips |
+| 6 | REAL STORE. REAL WORK. | `components/home/PittsburghStory.tsx` | ✅ Stat ledger: 30+ YEARS / 5TH AVE with gold left-border rules |
+| 7 | TAP IN WITH 2T. | `components/home/SocialTeaser.tsx` | ✅ Channel-map rows with diamond glyphs, WhatsApp gold-bordered |
 
-Removed from homepage: PICK YOUR LANE (old 5-tile row), BestSellersStrip, old Inquiry Lanes (Diamond Watches / Grillz / Custom), Material Preview chips, FinalCTABar, old Custom Entry Block, old Trust Strip, old Shop by Category / Collection Grid.
+**Vitrine system:** Striped diagonal-pattern CSS placeholder wells with corner crop marks. Replace with real `<img>` or `<video>` when media assets arrive.
+
+**Gleam budget:** 2 of 3 used (GRILLZ anchor tile + promo vitrine). One remaining.
+
+**No fake products, claims, prices, testimonials, social metrics, celebrity proof, or inventory introduced.**
+
+**Not redesigned in this pass:** `/custom`, `/grillz`, `/watches`.
 
 Do not drift back to:
 - custom-only homepage
 - too many repeated CTA sections
 - stacked duplicate product grids
-- generic black/gold landing page
+- generic dark luxury / SaaS-spec-sheet UI
+- border-box pill spec labels on shop tiles
 
 ### Demo Video (slot wired — file pending)
 
@@ -382,20 +405,25 @@ Visual QA and user approval still required. **Do not mark /custom as final.**
 
 ## Current Next Task
 
-**Priority 1:** Visual QA of `/custom` after commit 84af600 — wait for user approval before further changes.
+**Priority 1 — Strategic Visual Reset Audit (OPEN CONCERN):**
+Even after Midnight Icebox Pass 3, the project may still need a larger strategic visual reset to reach the desired hood / hard hip-hop / flashy bling energy. The current system is Midnight Icebox (dark, gold, structured, vitrine display-case) — which reads as controlled dark luxury. It may not yet feel loud/flashy/bling-heavy enough for the target audience.
 
-**Priority 2:** Full global UX/UI audit follow-up decisions (audit was run; decisions pending).
+**Before any further major build work**, run a Strategic Visual Reset Audit / Deep Research pass. Do not keep polishing blindly. Research the target energy (GLD, King Ice, TraxNYC, Johnny Dang, Icebox) and confirm whether the current direction is hard enough, or whether a deeper reset is needed.
 
-**Priority 3:** Real photo/video assets — hero, grillz, watches, store footage, product footage.
+**Priority 2:** Visual QA of `/custom` — wait for user approval before further changes.
+
+**Priority 3:** Real photo/video assets — hero, grillz, watches, store footage, product footage. Real media will be the single biggest upgrade to the bling/shine feeling.
 
 **Pending (not started):** Instagram/TikTok feed strategy, lead capture/backend, Vercel preview deploy.
 
 ---
 
-## Committed Work (as of 2026-05-20)
+## Committed Work (as of 2026-05-25)
 
 | Commit | Description |
 |---|---|
+| `af7f20d` | Homepage Midnight Icebox Pass 3 — Anton/Archivo/JetBrains Mono font system, obsidian/bone/gold/ice palette, full-bleed campaign hero (BANG. as brand stamp), vitrine Shop Jewelry gateway, Pittsburgh stat ledger, Social channel-map rows |
+| `b049d30` | 2T voice hardening across core pages |
 | `84af600` | /custom compact revision: compact hero, START THE REQUEST →, Browse Ready-Made removed, upload above textarea mobile, textarea 4 rows, gold-bordered trust callout, full-width SEND REQUEST →, WhatsApp bypass CTA, updated HowItWorks steps |
 | `8fd4497` | Homepage reset — product store + custom lane. SHOP JEWELRY gateway (8 cards, priority order). CUSTOM BUILT HERE fast lane. |
 | `200e5a1` | Grillz and Watches landing pages upgraded — `/grillz` and `/watches` committed. |

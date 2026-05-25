@@ -44,6 +44,14 @@ npm run dev
 - Temporary logos installed (header + footer)
 - Contact info wired (address, phone, WhatsApp, Instagram, TikTok, Acima)
 - Hero video slot wired (file pending)
+- **Homepage Midnight Icebox Pass 3** (commit af7f20d — 2026-05-25)
+  - Anton / Archivo / JetBrains Mono / Cormorant Garamond font system
+  - Obsidian / bone / gold `#C9A449` / ice palette
+  - Full-bleed campaign hero, BANG. as borderless gold brand text stamp
+  - Shop Jewelry: vitrine display-case gateway, anchor row 1.4fr/1fr/1fr
+  - Pittsburgh: stat ledger 30+ / 5TH AVE with gold left-border rules
+  - Social: channel-map rows, WhatsApp gold-bordered
+  - No fake products, claims, or inventory introduced
 
 ### WIP / Approval Pending ⚠️
 
@@ -79,6 +87,18 @@ For every major UX, copy, visual, or conversion decision:
 - Avoid fake slang, parody, generic luxury, corporate tone, wedding/boutique tone, and unverified claims.
 - The target buyer wants a piece that hits visually and an easy path to send an idea, logo, photo, name, number, sketch, or reference.
 - Research output should influence copy, UX, SEO, CTA wording, and visual direction before implementation.
+
+---
+
+## Visual Direction — Locked (2026-05-25)
+
+**Midnight Icebox — interpreted through hard hip-hop / hood street-luxury energy.**
+
+Must feel: black, urban, hood/street, loud, flashy, bling-heavy, ice/diamond/gold shine, rapper/athlete/big-car energy, real Pittsburgh jeweler, product-dominant, shop-ready and custom-ready, high-visibility, direct and street-commercial.
+
+Must NOT feel: quiet luxury, boutique jewelry, wedding jewelry, corporate, generic dark luxury, SaaS/spec-sheet UI, over-clean ecommerce, fake streetwear, parody AAVE, cheap nightclub flyer, NFT/Web3, fake AI jewelry brand.
+
+**Open concern:** Real media (hero jewelry footage, product shots, store footage) will be the single biggest lever to reach the hard bling/shine energy. CSS vitrines are placeholder. Until real assets arrive, deeper visual reset research may be needed.
 
 ---
 
@@ -281,16 +301,18 @@ Only if user explicitly approves:
 
 ---
 
-## Approved Roadmap Order (updated 2026-05-23)
+## Approved Roadmap Order (updated 2026-05-25)
 
 1. ✅ Homepage reset — product store + custom lane (8fd4497)
 2. ✅ Grillz and Watches pages committed (200e5a1)
 3. ✅ MD sync — documentation alignment pass
 4. ✅ Pass 5A — Weekly promo module elevated structurally (35eda1f)
-5. ✅ Pass 5B — Competitor-backed copy/promo/hero research complete (2026-05-23). No code. Research registered at `docs/2t-pass5b-competitor-backed-copy-research.md`. 13 brands deep-dived. Hero, BANG., promo module, category CTAs, social copy, VOC map, and verified claims strategy defined. Ready for Pass 5C after user approval.
-6. Visual QA of `/custom` → user approval gate (independent of Pass 5C — can run in parallel)
-7. Visual QA of `/grillz` and `/watches` → user approval gate
-8. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL
+5. ✅ Pass 5B — Competitor-backed copy/promo/hero research complete (2026-05-23)
+6. ✅ **Homepage Midnight Icebox Pass 3** — visual direction applied and committed (af7f20d, 2026-05-25)
+7. ⚠️ **Strategic Visual Reset Audit** — OPEN CONCERN. Even after Pass 3, the site may not yet feel hard/flashy/bling-heavy enough for the hard hip-hop / hood street-luxury target. Deep-research GLD, King Ice, Johnny Dang, Icebox, TraxNYC before further major build work. Confirm: does current direction need a deeper visual reset, or can it be intensified through real media and copy sharpening?
+8. Visual QA of `/custom` → user approval gate (independent — can run in parallel)
+9. Visual QA of `/grillz` and `/watches` → user approval gate
+10. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL
    - Scope: 5 files only — `app/page.tsx`, `components/home/ProofMarquee.tsx`, `components/home/WeeklyPromo.tsx`, `components/home/PittsburghStory.tsx`, `components/home/SocialTeaser.tsx`
    - Changes: hero secondary copy, BANG. stamp, 3-state promo module, category one-liners, social card copy, Pittsburgh block tightening
    - Do NOT start until user explicitly approves Pass 5C
