@@ -399,30 +399,33 @@ Latest update (commit 84af600 — 2026-05-17):
 - HowItWorks step 02: WE REVIEW THE DIRECTION
 - HowItWorks step 03: WE QUOTE FIRST
 
+**Pass A simplification (commit 03991f5 — 2026-05-25):**
+- Repetition removed; page is shorter and simpler
+- HowItWorks and WorkPlaceholder unmounted from the /custom page flow
+- Component files preserved (not deleted)
+
 Visual QA and user approval still required. **Do not mark /custom as final.**
 
 ---
 
 ## Current Next Task
 
-**Priority 1 — Strategic Visual Reset Audit (COMPLETE — read the findings):**
-The audit has been completed and registered at:
-→ `docs/2t-strategic-visual-reset-audit-pittsburgh-bang-2026-05-25.md`
+**Active branch / state:** `main` — Pittsburgh BANG homepage merged and pushed.
 
-**Audit verdict:**
-- Evolve Midnight Icebox into **Pittsburgh BANG** — do not keep it as-is, do not replace it entirely.
-- Next implementation must be a **homepage-only experimental branch**, not another polish pass on main.
-- Do NOT rollback to `b049d30`. Do NOT start a full-site rebuild.
-- Branch target: harder masthead, real product wall, BANG as a hallmark system, compressed Pittsburgh proof, alive social scaffold. No fake claims.
-- Biggest blocker confirmed: missing real media assets. Typography and copy cannot carry the bling energy alone.
+**Completed milestones (as of 2026-05-25):**
+- Pittsburgh BANG homepage merged into main (PR #1 — commit `39a3b70`).
+- Repo QA cleanup — screenshot artifacts gitignored, QA utility added (commit `854c15e`).
+- `/custom` Pass A simplification — repetition removed, flow shortened, HowItWorks and WorkPlaceholder unmounted from `/custom` page (component files preserved) (commit `03991f5`).
+- `/grillz` and `/watches` read-only QA completed — both structurally acceptable for demo; no build blocker.
+- `/watches` duplicate hero copy fixed (commit `c485b83`).
 
-**Before any further major build work**, read the full audit. It contains the direction decision, 6-phase roadmap, and exact Claude Code handoff prompt.
+**Next immediate priority:** Pre-Vercel readiness check → Vercel import/deploy as demo preview → send link for business owner review.
 
-**Priority 2:** Visual QA of `/custom` — wait for user approval before further changes.
+**After demo:** Collect feedback → integrate temporary/demo or real media assets → refine `/grillz`, `/watches`, category/product pages based on assets.
 
-**Priority 3:** Real photo/video assets — hero, grillz, watches, store footage, product footage. Real media will be the single biggest upgrade to the bling/shine feeling.
+**Do not reopen homepage redesign** unless a clear blocker is found during demo review.
 
-**Pending (not started):** Instagram/TikTok feed strategy, lead capture/backend, Vercel preview deploy.
+**Remaining gap:** Real media assets (hero footage, product shots, grillz/watches photos, store footage) are the single biggest lever for the bling/shine energy. CSS vitrines are structural placeholders until real assets arrive.
 
 ---
 
@@ -430,11 +433,17 @@ The audit has been completed and registered at:
 
 | Commit | Description |
 |---|---|
+| `c485b83` | fix: remove duplicate watches hero copy |
+| `03991f5` | /custom Pass A — repetition removed, HowItWorks + WorkPlaceholder unmounted from /custom flow, page shorter |
+| `854c15e` | Repo cleanup — screenshot QA artifacts gitignored, QA utility added |
+| `39a3b70` | Merge PR #1 — Pittsburgh BANG homepage branch merged into main |
+| `f58d26d` | Pittsburgh BANG — align about, social, and nav with new direction |
+| `b912851` | Pittsburgh BANG — homepage direction refinement |
 | `af7f20d` | Homepage Midnight Icebox Pass 3 — Anton/Archivo/JetBrains Mono font system, obsidian/bone/gold/ice palette, full-bleed campaign hero (BANG. as brand stamp), vitrine Shop Jewelry gateway, Pittsburgh stat ledger, Social channel-map rows |
 | `b049d30` | 2T voice hardening across core pages |
 | `84af600` | /custom compact revision: compact hero, START THE REQUEST →, Browse Ready-Made removed, upload above textarea mobile, textarea 4 rows, gold-bordered trust callout, full-width SEND REQUEST →, WhatsApp bypass CTA, updated HowItWorks steps |
-| `8fd4497` | Homepage reset — product store + custom lane. SHOP JEWELRY gateway (8 cards, priority order). CUSTOM BUILT HERE fast lane. |
-| `200e5a1` | Grillz and Watches landing pages upgraded — `/grillz` and `/watches` committed. |
+| `8fd4497` | Homepage reset — product store + custom lane. |
+| `200e5a1` | Grillz and Watches landing pages — `/grillz` and `/watches` committed. |
 
 ---
 
@@ -482,7 +491,7 @@ Do not:
 - add backend
 - integrate Cloudinary/Supabase upload
 - install logo (unless user provides files)
-- deploy to Vercel
+- deploy to Vercel production (pre-Vercel demo readiness check and business owner approval of the demo preview required first)
 - add fake products/reviews/UGC/press
 - add unverified or blanket discounts, shipping, warranty, timelines, or policies (verified and scoped claims are allowed — see Promotions + Verified Claims Policy above)
 - use GLD copy/assets

@@ -212,6 +212,16 @@ For current prototype pages:
 - If a placeholder is needed for layout purposes, mark it clearly in code as a placeholder
 - Get user approval before any placeholder content goes into a real preview
 
+### Approved Demo Promo — Business-Owner Confirmed
+
+**"20% OFF YOUR FIRST CUSTOM ORDER"** is business-owner approved for the current demo promo bar placement.
+
+- Scope: promo bar only. Do not extend this wording to other page sections, hero copy, category pages, or popups.
+- Do not add urgency, countdown timers, expiry, scarcity, or conditions to this claim unless confirmed.
+- Do not expand into related discount or policy claims (free shipping, warranty, VVS/GIA, Rolex/authenticity, celebrity proof, guarantee, inventory) without product/policy-level confirmation.
+- Wording is locked to the approved phrase. Do not rephrase or broaden without user confirmation.
+- This approval is for demo preview only. Confirm with business owner before any public launch.
+
 ---
 
 ## QA Checklist

@@ -52,14 +52,17 @@ npm run dev
   - Pittsburgh: stat ledger 30+ / 5TH AVE with gold left-border rules
   - Social: channel-map rows, WhatsApp gold-bordered
   - No fake products, claims, or inventory introduced
+- **Pittsburgh BANG homepage merged into main** (PR #1 — commit 39a3b70 — 2026-05-25)
+- **Repo QA cleanup** — screenshot artifacts gitignored, QA utility added (commit 854c15e)
+- **`/custom` Pass A simplification** — repetition removed, page shorter, HowItWorks and WorkPlaceholder unmounted from /custom flow, component files preserved (commit 03991f5)
+- **`/grillz` and `/watches` read-only QA** — both structurally acceptable for demo; no build blocker
+- **`/watches` duplicate hero copy fixed** (commit c485b83)
 
 ### WIP / Approval Pending ⚠️
 
-- `/custom` page — compact revision applied in 84af600; build passes; visual QA and user approval still pending
-- `/grillz` — committed 200e5a1; visual QA and user approval still pending
-- `/watches` — committed 200e5a1; visual QA and user approval still pending
-- Typography — hybrid prototype applied in 84af600; watching for wedding/boutique feel; final decision pending
-- Global UX/UI audit — audit was run; follow-up decisions still pending
+- `/custom` page — Pass A simplified (03991f5); build passes; visual QA and user approval still pending
+- `/grillz` — read-only QA done; structurally acceptable for demo; deeper visual work held until real/demo assets
+- `/watches` — duplicate hero copy fixed (c485b83); read-only QA done; structurally acceptable for demo; deeper visual work held until real/demo assets
 
 ### Not Yet 🚫
 
@@ -70,8 +73,16 @@ npm run dev
 - Formspree backend / lead capture
 - Real upload backend
 - Final logo SVG/2x/favicon
-- Vercel preview deploy
 - Shopify recalibration
+
+### Next Milestone 🎯
+
+- Pre-Vercel readiness check
+- Vercel import/deploy as demo preview
+- Send demo link for business owner review
+- Collect feedback
+- Prepare and integrate temporary/demo or real media assets
+- Refine `/grillz`, `/watches`, category/product pages based on assets and feedback
 
 ---
 
@@ -309,27 +320,21 @@ Only if user explicitly approves:
 4. ✅ Pass 5A — Weekly promo module elevated structurally (35eda1f)
 5. ✅ Pass 5B — Competitor-backed copy/promo/hero research complete (2026-05-23)
 6. ✅ **Homepage Midnight Icebox Pass 3** — visual direction applied and committed (af7f20d, 2026-05-25)
-7. ✅ **Strategic Visual Reset Audit** — COMPLETE (2026-05-25). Full findings at `docs/2t-strategic-visual-reset-audit-pittsburgh-bang-2026-05-25.md`.
-   - Direction: evolve Midnight Icebox → **Pittsburgh BANG**
-   - Next build: homepage-only experimental branch — NOT another pass on main, NOT a rollback
-   - Branch target: harder masthead, real product wall, BANG hallmark system, compressed Pittsburgh proof, alive social scaffold, no fake claims
-   - Biggest blocker: real media assets (shot list in audit)
-8. Visual QA of `/custom` → user approval gate (independent — can run in parallel)
-9. Visual QA of `/grillz` and `/watches` → user approval gate
-10. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL
-   - Scope: 5 files only — `app/page.tsx`, `components/home/ProofMarquee.tsx`, `components/home/WeeklyPromo.tsx`, `components/home/PittsburghStory.tsx`, `components/home/SocialTeaser.tsx`
-   - Changes: hero secondary copy, BANG. stamp, 3-state promo module, category one-liners, social card copy, Pittsburgh block tightening
-   - Do NOT start until user explicitly approves Pass 5C
-   - Full spec in `docs/2t-pass5b-competitor-backed-copy-research.md` Section 11
-9. **Sitewide copy + SEO + homepage audit** — run using all three strategy docs:
-   - **Read `docs/2t-homepage-master-direction.md` first. Do not run the SEO pass before homepage visual direction is applied.**
-   - `docs/2t-growth-strategy-seo-cro-90day.md` (growth strategy)
-   - `docs/2t-voc-copy-system.md` (VOC copy system)
-   - `docs/2t-copy-swipe-map.md` (copy swipe map)
-   - Do not start this pass until QA gates in steps 4–5 are cleared.
-7. About / Pittsburgh / Store — research + redesign plan (after QA gates)
-8. Social / Instagram / TikTok planning
-9. Backend / form integration — only after design approval
+7. ✅ **Pittsburgh BANG homepage** — merged into main via PR #1 (39a3b70, 2026-05-25)
+8. ✅ **Repo QA cleanup** — screenshot artifacts gitignored, QA utility added (854c15e)
+9. ✅ **`/custom` Pass A simplification** — repetition removed, page shorter (03991f5)
+10. ✅ **`/grillz` and `/watches` read-only QA** — structurally acceptable for demo
+11. ✅ **`/watches` duplicate hero copy fix** (c485b83)
+12. 🎯 **Pre-Vercel readiness check → Vercel demo deploy → business owner review** ← CURRENT
+13. ⏳ Collect demo feedback → integrate media assets → refine /grillz, /watches, category pages
+14. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL (after demo feedback)
+    - Scope: 5 files only — `app/page.tsx`, `components/home/ProofMarquee.tsx`, `components/home/WeeklyPromo.tsx`, `components/home/PittsburghStory.tsx`, `components/home/SocialTeaser.tsx`
+    - Do NOT start until user explicitly approves Pass 5C
+    - Full spec in `docs/2t-pass5b-competitor-backed-copy-research.md` Section 11
+15. Sitewide copy + SEO pass — only after demo QA gates cleared
+16. About / Pittsburgh / Store — research + redesign plan (after QA gates)
+17. Social / Instagram / TikTok planning
+18. Backend / form integration — only after design approval
 
 ---
 

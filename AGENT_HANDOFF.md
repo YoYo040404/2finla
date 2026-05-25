@@ -69,17 +69,19 @@ Old Shopify folder is archive only. Do not touch it.
 
 | Commit | Description |
 |---|---|
-| `af7f20d` | Homepage Midnight Icebox Pass 3 — full visual direction applied and committed. |
-| `b049d30` | 2T voice hardening across core pages. |
-| `84af600` | /custom compact revision — build passes, NOT user-approved. |
-| `8fd4497` | Homepage reset — product store + custom lane. |
-| `200e5a1` | Grillz and Watches pages. |
+| `c485b83` | fix: remove duplicate watches hero copy |
+| `03991f5` | /custom Pass A — repetition removed, page shorter, HowItWorks + WorkPlaceholder unmounted |
+| `854c15e` | Repo cleanup — QA artifacts gitignored, QA utility added |
+| `39a3b70` | Merge PR #1 — Pittsburgh BANG homepage merged into main |
+| `f58d26d` | Pittsburgh BANG — align about, social, and nav |
+| `b912851` | Pittsburgh BANG — homepage refinement |
+| `af7f20d` | Homepage Midnight Icebox Pass 3 (pre-Pittsburgh BANG branch) |
+| `b049d30` | 2T voice hardening across core pages |
+| `84af600` | /custom compact revision — build passes, NOT user-approved |
 
-**Current strategic direction:** 2T Jewelers is a real Pittsburgh street-luxury jewelry store. Midnight Icebox visual system applied to homepage. Visual direction: hard hip-hop / hood street-luxury — loud, flashy, bling-heavy, ice/diamond/gold shine, rapper/athlete energy. NOT quiet luxury, NOT boutique, NOT over-clean ecommerce.
+**Current strategic direction:** 2T Jewelers is a real Pittsburgh street-luxury jewelry store. Pittsburgh BANG homepage is merged into main. Visual direction: hard hip-hop / hood street-luxury — loud, flashy, bling-heavy, ice/diamond/gold shine, rapper/athlete energy. NOT quiet luxury, NOT boutique, NOT over-clean ecommerce.
 
-**Open concern:** Even after Pass 3, a Strategic Visual Reset Audit / Deep Research pass may be needed before further major build work to confirm the direction is hard enough for the target audience.
-
-**Current focus:** Visual QA of `/custom`. Build passes technically. NOT user-approved as final. Stop and wait for user approval before any further /custom, /grillz, or /watches changes.
+**Current focus:** Pre-Vercel demo readiness check → Vercel import/deploy as preview → send demo link for business owner review. Do not reopen broad homepage redesign.
 
 ---
 
@@ -159,37 +161,38 @@ Custom page (as of commit 84af600 — 2026-05-17):
 | PittsburghStory | ✅ Stat ledger: 30+ / 5TH AVE with gold left-border rules |
 | SocialTeaser | ✅ Channel-map rows, WhatsApp gold-bordered, real links only |
 | Hero video | ✅ Slot wired — `public/assets/hero-loop-demo.mp4` (file pending) |
-| Grillz page `/grillz` | ✅ Committed — 200e5a1. Visual QA and user approval still pending. |
-| Watches page `/watches` | ✅ Committed — 200e5a1. Visual QA and user approval still pending. |
-| Custom page `/custom` | ⚠️ WIP — build passes, NOT user-approved. Visual QA pending. |
+| Grillz page `/grillz` | ✅ Read-only QA done — structurally acceptable for demo. Hold deeper visual work until real/demo assets arrive. |
+| Watches page `/watches` | ✅ Duplicate hero copy fixed (c485b83). Read-only QA done — structurally acceptable for demo. Hold deeper visual work until real/demo assets arrive. |
+| Custom page `/custom` | ⚠️ Pass A simplified (03991f5) — build passes, NOT user-approved. Visual QA pending. |
 | Logo (temporary) | ✅ Transparent logo in header, black-bg logo in footer — final SVG/2x pending |
 | Contact / social | ✅ Address, phone, WhatsApp, Instagram, TikTok, Acima all wired in Footer |
-| Strategic Visual Reset Audit | ⚠️ OPEN CONCERN — may need deep research before further major build work |
+| Pittsburgh BANG merge | ✅ Complete — merged into main (39a3b70) |
 | Real product images | 🚫 Not yet |
 | Instagram/TikTok dynamic feed | 🚫 Not yet |
 | WhatsApp floating desktop button | 🚫 Not yet |
 | Backend / Formspree | 🚫 Not yet |
-| Vercel deploy | 🚫 Not yet |
+| Vercel deploy | 🎯 Next milestone — pre-Vercel readiness check → deploy as demo preview → business owner review |
 | Shopify | 🚫 Paused |
 
 ---
 
 ## Default Next Prompt
 
-**Step 1 — Strategic Visual Reset Audit (COMPLETE — read before building):**
-Audit registered at: `docs/2t-strategic-visual-reset-audit-pittsburgh-bang-2026-05-25.md`
+**Current milestone: Vercel demo readiness.**
 
-Key findings:
-- Direction: evolve Midnight Icebox into **Pittsburgh BANG** — harder, louder, more jewelry-physical.
-- Next build: **homepage-only experimental branch**. Do NOT continue polishing main. Do NOT rollback to `b049d30`.
-- Branch scope: masthead, hero, shop wall, BANG hallmark system, Pittsburgh proof, social scaffold. Homepage only.
-- Biggest blocker: real media assets. Shot list and priority order documented in audit.
-- Full Claude Code handoff prompt is in the audit file — use it to brief the next implementation agent.
+1. Do not reopen broad homepage redesign. Pittsburgh BANG is merged and is the current direction.
+2. Do not re-polish homepage unless there is a clear blocker found during demo review.
+3. Immediate task: pre-Vercel readiness check → Vercel import/deploy as preview → send demo link.
+4. After demo: collect business owner feedback → integrate temporary/demo or real media assets.
+5. Next refinement after demo feedback: `/grillz`, `/watches`, category/product pages (asset-dependent).
 
-**Step 2 — `/custom` visual QA:**
-Current `/custom` build is WIP. NOT user-approved as final. Run visual QA at 390px and 1280px, present screenshots, wait for explicit approval.
+**Keep untouched until explicitly approved:**
+- `public/assets/logo-to-use.png` — do not rename, move, or wire unless user provides final asset and approves.
+- `/custom`, `/grillz`, `/watches` — no further redesign until demo feedback is received.
 
-Do NOT execute any redesign until user approves a plan.
+**Tools to use for major UX/UI passes:** Playwright MCP, frontend-design, UI UX Pro Max (if available), visual-critique, design-ops QA, verification-before-completion.
+
+**Language rule:** Main chat with user can be Hebrew. Claude Code implementation prompts must be English.
 
 ---
 
