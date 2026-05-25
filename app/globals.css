@@ -8,9 +8,9 @@
   --color-brand-charcoal:   #0E0E0E;
   --color-brand-surface:    #141414;
   --color-brand-border:     #1F1D1A;
-  --color-brand-subtle:     #2A2723;
-  --color-brand-muted:      #5B554C;
-  --color-brand-silver:     #9B958A;
+  --color-brand-subtle:     #3A3630;
+  --color-brand-muted:      #7A7468;
+  --color-brand-silver:     #ADA69D;
   --color-brand-white:      #F3F0EA;
   --color-brand-gold:       #C9A449;
   --color-brand-gold-light: #E9D289;
@@ -120,7 +120,7 @@
     display: inline-block;
     padding: 0.75rem 1.5rem;
     border: 1px solid var(--color-brand-border);
-    color: var(--color-brand-muted);
+    color: var(--color-brand-silver);
     font-family: var(--font-body);
     font-weight: 500;
     font-size: 0.875rem;
@@ -134,7 +134,7 @@
 
   /* Nav links */
   .nav-link {
-    color: #8a8a8a;
+    color: #9E9890;
     font-family: var(--font-body);
     font-weight: 500;
     font-size: 0.875rem;
@@ -144,7 +144,7 @@
   .nav-link:hover { color: var(--color-brand-white); }
 
   .nav-link-footer {
-    color: var(--color-brand-muted);
+    color: var(--color-brand-silver);
     font-size: 0.875rem;
     line-height: 1.5;
     transition: color 0.18s ease;
@@ -822,7 +822,7 @@
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.17em;
-  color: var(--color-brand-muted);
+  color: var(--color-brand-silver);
   white-space: nowrap;
   padding: 0 1.5rem;
   transition: color 0.2s ease;
@@ -1182,7 +1182,7 @@
 }
 .social-link-arrow {
   font-size: 1rem;
-  color: var(--color-brand-subtle);
+  color: var(--color-brand-muted);
   flex-shrink: 0;
   transition: color 0.2s ease, transform 0.2s ease;
 }
@@ -1288,18 +1288,17 @@
   80%, 100%{ background-position: 100% center; }
 }
 
-/* ─── Hero BANG! stamp — secondary punch signature below BUILT TO HIT ───── */
-/* Outfit 700 (max loaded weight) with open tracking reads as an urban tag/stamp.
-   Gold fill is always visible at rest — no gradient-clip dark-end trap.
-   White edge + glow gives ice/diamond pendant edge. Animation pulses glow only. */
+/* ─── Hero BANG! stamp — brand hallmark below BUILT TO HIT ─────────────── */
+/* Anton display at large size. Block-level so it reads as a standalone mark.
+   Gold fill always visible at rest. Glow pulse is the only animation — subtle. */
 .hero-bang-stamp {
-  font-family:    var(--font-body);
-  font-weight:    700;
-  font-size:      clamp(1.1rem, 2vw, 1.5rem);
-  letter-spacing: 0.28em;
+  font-family:    var(--font-display);
+  font-weight:    400;
+  font-size:      clamp(2.4rem, 4.5vw, 3.8rem);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   line-height:    1;
-  display:        inline-block;
+  display:        block;
   color:          var(--color-brand-gold);
   animation:      bang-ice-shine 4.5s ease-in-out infinite;
   animation-delay: 0.8s;
@@ -1799,18 +1798,19 @@
   z-index:         40;
   align-items:     center;
   gap:             0.6rem;
-  padding:         0.8rem 1.4rem 0.8rem 1.1rem;
+  padding:         0.85rem 1.5rem 0.85rem 1.15rem;
   background:      linear-gradient(145deg, #141414 0%, #181510 100%);
-  border:          1.5px solid rgba(201, 168, 76, 0.5);
+  border:          1.5px solid rgba(201, 168, 76, 0.65);
   border-radius:   2px;
   color:           var(--color-brand-white);
   font-family:     var(--font-body);
-  font-size:       0.7rem;
+  font-size:       0.72rem;
   font-weight:     700;
-  letter-spacing:  0.13em;
+  letter-spacing:  0.14em;
   text-transform:  uppercase;
   text-decoration: none;
   overflow:        hidden;
+  box-shadow:      0 0 18px rgba(201, 168, 76, 0.12), 0 4px 20px rgba(0, 0, 0, 0.5);
   transition:      border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
 }
 .floating-wa-btn::after {
@@ -1837,7 +1837,7 @@
 }
 .floating-wa-btn:hover {
   border-color: var(--color-brand-gold);
-  box-shadow:   0 0 14px rgba(37, 211, 102, 0.18), 0 0 26px rgba(201, 168, 76, 0.12), 0 8px 32px rgba(0, 0, 0, 0.6);
+  box-shadow:   0 0 22px rgba(201, 168, 76, 0.28), 0 0 12px rgba(37, 211, 102, 0.18), 0 8px 32px rgba(0, 0, 0, 0.65);
   transform:    translateY(-3px);
 }
 @media (min-width: 768px) {
@@ -2173,21 +2173,28 @@
   color: inherit;
   transition: border-color 0.2s var(--ease-smooth);
 }
-.mi-channel-row:hover { border-color: var(--color-brand-gold); }
-.mi-channel-row--wa   { border-color: var(--color-brand-gold); }
+.mi-channel-row:hover { border-color: rgba(201,168,76,0.55); }
+.mi-channel-row--wa   { border-color: rgba(37,211,102,0.3); }
+.mi-channel-row--wa:hover { border-color: rgba(37,211,102,0.6); }
 
-/* Channel icon diamond box */
+/* Channel icon box — platform-colored border, dark background */
 .mi-channel-icon {
-  width: 34px; height: 34px;
-  border: 1px solid var(--color-brand-gold);
+  width: 36px; height: 36px;
+  border: 1px solid rgba(201,168,76,0.45);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
+  background: rgba(255,255,255,0.03);
+  transition: border-color 0.2s ease;
+}
+.mi-channel-row:hover .mi-channel-icon {
+  border-color: var(--color-brand-gold);
 }
 .mi-channel-icon--wa {
-  background: var(--color-brand-gold);
+  border-color: rgba(37,211,102,0.45);
+  background: rgba(37,211,102,0.05);
 }
-.mi-channel-icon--wa .mi-diamond {
-  background: #0a0700;
+.mi-channel-row--wa:hover .mi-channel-icon--wa {
+  border-color: #25D366;
 }
 
 /* Stat ledger — Pittsburgh */
@@ -2254,4 +2261,437 @@
 @keyframes upload-glint {
   0%   { left: -80%; opacity: 1; }
   100% { left: 140%; opacity: 0; }
+}
+
+/* ─── Pittsburgh BANG — header brand lockup ────────────────────────────── */
+
+.header-brand-lockup {
+  display:        inline-flex;
+  align-items:    center;
+  gap:            10px;
+  text-decoration: none;
+  cursor:         pointer;
+  transition:     opacity 0.2s ease;
+}
+.header-brand-lockup:hover { opacity: 0.85; }
+
+/* 2T — Anton display mark, ice-white: reads as diamond/cold against the dark header */
+.header-2t-mark {
+  font-family:    var(--font-display);
+  font-weight:    400;
+  font-size:      2.2rem;
+  letter-spacing: 0.02em;
+  line-height:    1;
+  color:          var(--color-brand-white);
+  flex-shrink:    0;
+}
+
+/* Two-tone: ice-white 2T + gold JEWELERS = diamond mark + precious metal descriptor */
+.header-brand-wordmark {
+  font-family:    var(--font-body);
+  font-weight:    600;
+  font-size:      0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color:          var(--color-brand-gold);
+  line-height:    1;
+}
+
+/* ─── Pittsburgh BANG — product wall tile system ────────────────────────── */
+
+/* Tile link — hover lifts the foot bar */
+.pb-tile-link {
+  transition: none;
+}
+.pb-tile-link:hover .pb-tile-foot {
+  border-top-color: rgba(201,164,73,0.45);
+}
+.pb-tile-link:hover .pb-tile-label {
+  color: var(--color-brand-gold-light);
+}
+
+/* Tile foot bar */
+.pb-tile-foot {
+  padding: 11px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 8px;
+  background: var(--color-brand-charcoal);
+  border-top: 1px solid var(--color-brand-border);
+  transition: border-top-color 0.2s ease;
+}
+.pb-tile-label {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+  margin: 0;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  color: var(--color-brand-white);
+  transition: color 0.2s ease;
+}
+.pb-tile-cta {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-brand-gold);
+  white-space: nowrap;
+}
+
+/* Tile pills row */
+.pb-tile-pills {
+  padding: 0 14px 10px;
+  background: var(--color-brand-charcoal);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* Custom interrupt band */
+.pb-custom-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  background: #0a0703;
+  border: 1px solid var(--color-brand-gold);
+  padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1rem, 2.5vw, 1.75rem);
+  margin-top: 1px;
+  margin-bottom: 1rem;
+}
+.pb-custom-band-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-weight: 400;
+  line-height: 0.9;
+  margin: 0 0 6px;
+  color: var(--color-brand-white);
+}
+
+/* Utility rail */
+.pb-utility-rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-top: 1px solid var(--color-brand-border);
+  padding-top: 1rem;
+}
+
+/* ─── Pittsburgh BANG — vitrine tile tones ──────────────────────────────── */
+
+/* GRILLZ — gold warm, mouth/body energy */
+.pb-vitrine-pb-grillz {
+  background:
+    radial-gradient(110% 75% at 35% 40%, rgba(201,164,73,.18), transparent 58%),
+    radial-gradient(60% 50% at 65% 70%, rgba(201,164,73,.08), transparent 60%),
+    repeating-linear-gradient(135deg, rgba(201,164,73,.04) 0 12px, rgba(0,0,0,0) 12px 24px),
+    #0d0900;
+}
+
+/* WATCHES — ice-cold mechanical */
+.pb-vitrine-pb-watches {
+  background:
+    radial-gradient(100% 70% at 65% 35%, rgba(216,235,255,.10), transparent 55%),
+    radial-gradient(50% 40% at 30% 65%, rgba(216,235,255,.05), transparent 60%),
+    repeating-linear-gradient(135deg, rgba(216,235,255,.025) 0 12px, rgba(0,0,0,0) 12px 24px),
+    #04080e;
+}
+
+/* CHAINS — rope/link texture, slightly warmer */
+.pb-vitrine-pb-chains {
+  background:
+    radial-gradient(90% 65% at 50% 50%, rgba(255,255,255,.07), transparent 60%),
+    radial-gradient(45% 35% at 50% 20%, rgba(201,164,73,.10), transparent 65%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,.02) 0 8px, rgba(0,0,0,0) 8px 16px),
+    #090909;
+}
+
+/* Secondary tiles — understated, compressed */
+.pb-vitrine-pb-secondary {
+  background:
+    radial-gradient(80% 60% at 50% 50%, rgba(255,255,255,.03), transparent 60%),
+    #050505;
+}
+
+/* Promo slot — spot light center */
+.pb-vitrine-promo {
+  background:
+    radial-gradient(80% 60% at 50% 55%, rgba(255,255,255,.09), transparent 60%),
+    radial-gradient(40% 30% at 50% 45%, rgba(201,164,73,.15), transparent 65%),
+    #060606;
+}
+
+/* Custom lane art — warm gold-haze */
+.pb-vitrine-custom {
+  background:
+    radial-gradient(90% 70% at 50% 52%, rgba(201,164,73,.16), transparent 58%),
+    radial-gradient(50% 40% at 70% 25%, rgba(216,235,255,.07), transparent 55%),
+    repeating-linear-gradient(135deg, rgba(201,164,73,.03) 0 14px, rgba(0,0,0,0) 14px 28px),
+    #090602;
+}
+
+/* Store/Pittsburgh vitrine — dark, atmospheric */
+.pb-vitrine-store {
+  background:
+    radial-gradient(80% 60% at 40% 45%, rgba(201,164,73,.08), transparent 60%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,.015) 0 14px, rgba(0,0,0,0) 14px 28px),
+    #050505;
+}
+
+/* Social canvas — deep with gold top accent via border */
+.pb-vitrine-social {
+  background:
+    linear-gradient(160deg, #0c0c0c 0%, #080808 100%);
+  overflow: hidden;
+  border-top: 1px solid var(--color-brand-gold-dim) !important;
+}
+
+/* ─── PromoBar — responsive copy visibility ─────────────────────────────── */
+/* Mobile (<640px): show short copy, hide full copy. Desktop: vice versa.    */
+.promo-bar-short { display: none; }
+.promo-bar-full  { display: inline; }
+@media (max-width: 639px) {
+  .promo-bar-short { display: inline; }
+  .promo-bar-full  { display: none; }
+}
+
+/* ─── Product Wall — scroll offset + mobile top clearance ─────────────────
+   scroll-margin-top: header is ~56px on mobile; add 16px breathing room.
+   Mobile padding-top bump ensures the heading reads cleanly below the bar.  */
+#shop-jewelry {
+  scroll-margin-top: 72px;
+}
+@media (max-width: 639px) {
+  #shop-jewelry {
+    padding-top: 3.5rem;
+  }
+}
+
+/* ─── Floating TEXT 2T — desktop vertical position ────────────────────────
+   Raise from 1.75rem to 5rem on desktop so it clears the custom band CTA   */
+@media (min-width: 768px) {
+  .floating-wa-btn {
+    bottom: 5rem;
+  }
+}
+
+/* ─── Footer brand lockup — two-tone, larger than old diamond mark ─────── */
+
+.footer-brand-lockup {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             12px;
+  text-decoration: none;
+  cursor:          pointer;
+  transition:      opacity 0.2s ease;
+}
+.footer-brand-lockup:hover { opacity: 0.85; }
+
+.footer-2t-mark {
+  font-family:    var(--font-display);
+  font-weight:    400;
+  font-size:      2.2rem;
+  letter-spacing: 0.02em;
+  line-height:    1;
+  color:          var(--color-brand-white);
+  flex-shrink:    0;
+}
+
+.footer-brand-wordmark {
+  font-family:    var(--font-body);
+  font-weight:    600;
+  font-size:      0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color:          var(--color-brand-gold);
+  line-height:    1;
+}
+
+/* ─── Pittsburgh story BANG. signature stamp (legacy — prefer .bang-signature) */
+.pb-bang-stamp {
+  display:         block;
+  font-family:     var(--font-display);
+  font-weight:     400;
+  font-size:       clamp(2.4rem, 4vw, 3.4rem);
+  letter-spacing:  0.06em;
+  line-height:     1;
+  color:           var(--color-brand-gold);
+  margin-bottom:   1.5rem;
+  animation:       bang-ice-shine 5.5s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+/* ─── BANG. Brand Signature System ─────────────────────────────────────────
+   Reusable across hero, Pittsburgh story, and future brand moments.
+   CSS-only — no JS, no packages.
+   prefers-reduced-motion: falls back to static gold, no sparkles.          */
+
+.bang-signature {
+  position:                relative;
+  display:                 inline-block;
+  font-family:             var(--font-display);
+  font-weight:             400;
+  font-size:               clamp(2.8rem, 5.5vw, 4.5rem);
+  letter-spacing:          0.06em;
+  line-height:             1;
+  /* Metallic gold gradient — dark gold → ice-white hot spot → dark gold */
+  background: linear-gradient(
+    90deg,
+    #6b4f10 0%,
+    #9e7522 15%,
+    #c9a44c 28%,
+    #edd97a 38%,
+    #fff5d4 46%,
+    #ffffff 50%,
+    #fff5d4 54%,
+    #edd97a 62%,
+    #c9a44c 72%,
+    #9e7522 85%,
+    #6b4f10 100%
+  );
+  background-size:         300% 100%;
+  background-clip:         text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color:                   #c9a44c; /* fallback for non-clip browsers */
+  animation:               bang-sig-shine 5.5s ease-in-out infinite;
+  animation-delay:         1.8s;
+}
+
+/* Ice-blue 4-point diamond sparkle — top-right corner */
+.bang-signature::before {
+  content:        '';
+  position:       absolute;
+  top:            -4px;
+  right:          -6px;
+  width:          5px;
+  height:         5px;
+  background:     rgba(216, 235, 255, 0.95);
+  transform:      rotate(45deg) scale(0);
+  box-shadow:
+    0 0 5px 2px rgba(216, 235, 255, 0.65),
+    0 0 12px 3px rgba(216, 235, 255, 0.25);
+  animation:      bang-sparkle 5.5s ease-in-out infinite;
+  animation-delay: 2.4s;
+  pointer-events: none;
+}
+
+/* Gold 4-point diamond sparkle — bottom-left corner */
+.bang-signature::after {
+  content:        '';
+  position:       absolute;
+  bottom:         0;
+  left:           -4px;
+  width:          4px;
+  height:         4px;
+  background:     rgba(201, 168, 76, 0.9);
+  transform:      rotate(45deg) scale(0);
+  box-shadow:     0 0 5px 2px rgba(201, 168, 76, 0.5);
+  animation:      bang-sparkle 5.5s ease-in-out infinite;
+  animation-delay: 3.6s;
+  pointer-events: none;
+}
+
+/* Hero variant — diamond-stamped brand mark. Straight, no rotation.         */
+/* Larger sparkles, bottom gold rule to read as intentional mark not text.   */
+.bang-signature--hero {
+  font-size:        clamp(3.8rem, 7.5vw, 6.5rem);
+  display:          block;
+  width:            fit-content;
+  transform:        none;
+  animation-delay:  0.8s;
+  padding-bottom:   0.12em;
+  border-bottom:    1px solid rgba(201,168,76,0.28);
+}
+/* Slightly larger sparkle diamonds on hero scale */
+.bang-signature--hero::before {
+  width:  7px;
+  height: 7px;
+  top:    -6px;
+  right:  -9px;
+  animation-delay: 1.4s;
+}
+.bang-signature--hero::after {
+  width:  5px;
+  height: 5px;
+  bottom: 2px;
+  left:   -6px;
+  animation-delay: 2.6s;
+}
+/* Mobile: keep BANG above the floating sticky CTA bar */
+@media (max-width: 639px) {
+  .bang-signature--hero {
+    font-size:     clamp(3rem, 14vw, 4rem);
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* Section variant — Pittsburgh story, about moments */
+.bang-signature--section {
+  font-size:       clamp(2.2rem, 3.8vw, 3.2rem);
+  animation-delay: 2s;
+}
+.bang-signature--section::before { animation-delay: 2.8s; }
+.bang-signature--section::after  { animation-delay: 4s; }
+
+@keyframes bang-sig-shine {
+  0%, 15%  { background-position: 100% center; }
+  50%      { background-position:   0% center; }
+  80%, 100%{ background-position: 100% center; }
+}
+
+@keyframes bang-sparkle {
+  0%, 30%  { transform: rotate(45deg) scale(0); opacity: 0; }
+  42%, 58% { transform: rotate(45deg) scale(1.15); opacity: 1; }
+  70%, 100%{ transform: rotate(45deg) scale(0); opacity: 0; }
+}
+
+/* Reduced motion: static gold, no sparkle marks */
+@media (prefers-reduced-motion: reduce) {
+  .bang-signature {
+    background: none !important;
+    -webkit-text-fill-color: var(--color-brand-gold) !important;
+    color: var(--color-brand-gold) !important;
+  }
+  .bang-signature::before,
+  .bang-signature::after {
+    display: none;
+  }
+}
+
+/* ─── Footer Acima card — mobile-first responsive layout ─────────────────── */
+
+.footer-acima-card {
+  margin-bottom:  2.5rem;
+  padding:        1.5rem 1.75rem;
+  border:         1px solid rgba(201,168,76,0.3);
+  border-left:    3px solid var(--color-brand-gold-dim);
+  background:     rgba(201,168,76,0.035);
+  display:        flex;
+  flex-direction: column;
+  gap:            1rem;
+}
+@media (min-width: 600px) {
+  .footer-acima-card {
+    flex-direction: row;
+    align-items:    center;
+    gap:            1.25rem;
+  }
+}
+
+/* Acima button: full-width on mobile, auto on desktop */
+.footer-acima-btn {
+  display:    block;
+  text-align: center;
+  box-sizing: border-box;
+}
+@media (min-width: 600px) {
+  .footer-acima-btn {
+    display:     inline-block;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
 }

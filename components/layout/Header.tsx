@@ -48,57 +48,25 @@ export function Header() {
       <div className="mx-auto px-6" style={{ maxWidth: '1440px' }}>
         <div className="flex items-center justify-between" style={{ height: '68px' }}>
 
-          {/* ── Brand masthead: clean inline — no CSS jewel, no gradient, no class ── */}
+          {/* ── Brand masthead: Anton 2T mark + JEWELERS wordmark ── */}
           <Link
             href="/"
             aria-label="2T Jewelers"
-            style={{
-              display:        'inline-flex',
-              alignItems:     'center',
-              gap:            '10px',
-              textDecoration: 'none',
-              cursor:         'pointer',
-            }}
+            className="header-brand-lockup"
           >
-            <span
-              aria-hidden="true"
-              style={{
-                fontFamily:    'var(--font-body)',
-                fontWeight:    800,
-                fontSize:      'clamp(1.35rem, 2vw, 1.55rem)',
-                letterSpacing: '0.06em',
-                textTransform: 'uppercase',
-                color:         'var(--color-brand-white)',
-                lineHeight:    1,
-                textShadow:    '0 0 20px rgba(201,168,76,0.28)',
-              }}
-            >
-              2T
-            </span>
+            <span className="header-2t-mark" aria-hidden="true">2T</span>
             <span
               aria-hidden="true"
               style={{
                 display:    'inline-block',
                 width:      '1px',
-                height:     '20px',
-                background: 'rgba(201,168,76,0.65)',
+                height:     '22px',
+                background: 'rgba(201,168,76,0.45)',
                 flexShrink: 0,
                 alignSelf:  'center',
               }}
             />
-            <span
-              style={{
-                fontFamily:    'var(--font-body)',
-                fontWeight:    600,
-                fontSize:      '0.68rem',
-                letterSpacing: '0.38em',
-                textTransform: 'uppercase',
-                color:         'var(--color-brand-gold)',
-                lineHeight:    1,
-              }}
-            >
-              JEWELERS
-            </span>
+            <span className="header-brand-wordmark">JEWELERS</span>
           </Link>
 
           {/* ── Desktop Nav (hidden on mobile) ──────────── */}
@@ -268,7 +236,7 @@ export function Header() {
               className="block py-3.5"
               style={{
                 borderBottom: '1px solid var(--color-brand-border)',
-                color:        item.label === 'Custom' ? 'var(--color-brand-gold)' : 'var(--color-brand-muted)',
+                color:        item.label === 'Custom' ? 'var(--color-brand-gold)' : 'var(--color-brand-silver)',
                 fontFamily:   'var(--font-body)',
                 fontSize:     '0.9375rem',
                 fontWeight:   item.label === 'Custom' ? 600 : undefined,

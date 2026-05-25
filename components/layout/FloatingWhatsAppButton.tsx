@@ -30,7 +30,7 @@ export function FloatingWhatsAppButton() {
       className="floating-wa-btn"
     >
       <WaIcon />
-      <span>HIT US UP</span>
+      <span>TEXT 2T</span>
     </a>
   )
 }

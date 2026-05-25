@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import ProofMarquee    from '@/components/home/ProofMarquee'
 import PittsburghStory from '@/components/home/PittsburghStory'
 import SocialTeaser    from '@/components/home/SocialTeaser'
 
@@ -8,39 +7,42 @@ const WA_PROMO  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%20
 const WA_STOCK  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%20do%20you%20have%20in%20stock%20right%20now%3F'
 const WA_ASK    = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20ask%20about%20a%20piece.'
 
-// Anchor tiles — Variation A structure, 1.4fr 1fr 1fr from Variation B
+// Anchor tiles — 1.4fr 1fr 1fr, GRILLZ dominant
 const ANCHOR_TILES = [
   {
-    label:    'GRILLZ.',
-    tone:     'gold',
-    gleam:    true,
-    pills:    ['TOP', 'BOTTOM', 'FULL SET', 'DIAMOND'],
-    pillGold: 'DIAMOND',
-    href:     '/grillz',
+    label:       'GRILLZ.',
+    tone:        'pb-grillz',
+    gleam:       true,
+    pills:       ['TOP SET', 'BOTTOM SET', 'FULL MOUTH', 'DIAMOND'],
+    pillGold:    'DIAMOND',
+    cornerL:     'GOLD TEETH',
+    href:        '/grillz',
   },
   {
-    label:   'WATCHES.',
-    tone:    'ice',
-    gleam:   false,
-    pills:   ['ICED BEZEL', 'BUST DOWN'],
-    pillIce: 'ICED BEZEL',
-    href:    '/watches',
+    label:       'WATCHES.',
+    tone:        'pb-watches',
+    gleam:       false,
+    pills:       ['ICED BEZEL', 'BUST DOWN', 'DIAMOND-SET'],
+    pillIce:     'ICED BEZEL',
+    cornerL:     'ICE BEZEL',
+    href:        '/watches',
   },
   {
-    label: 'CHAINS.',
-    tone:  'spot',
-    gleam: false,
-    pills: ['CUBAN', 'ROPE', 'TENNIS'],
-    href:  '/collections/chains',
+    label:       'CHAINS.',
+    tone:        'pb-chains',
+    gleam:       false,
+    pills:       ['CUBAN', 'ROPE', 'TENNIS'],
+    cornerL:     'NECK GAME',
+    href:        '/collections/chains',
   },
 ] as const
 
 // Secondary tiles
 const SECONDARY_TILES = [
-  { label: 'PENDANTS.',  tone: 'deep', sub: 'Photo, logo, name, or number.',  href: '/collections/pendants'  },
-  { label: 'RINGS.',     tone: 'deep', sub: 'Big face. Heavy statement.',      href: '/collections/rings'     },
-  { label: 'BRACELETS.', tone: 'deep', sub: 'Wrist game. Ask what\'s in.',   href: '/collections/bracelets' },
-  { label: 'EARRINGS.',  tone: 'deep', sub: 'Iced studs and hoops.',          href: '/collections/earrings'  },
+  { label: 'PENDANTS.',  tone: 'pb-secondary', sub: 'Logo. Photo. Name. Number.',  href: '/collections/pendants'  },
+  { label: 'RINGS.',     tone: 'pb-secondary', sub: 'Big face. Heavy statement.',  href: '/collections/rings'     },
+  { label: 'BRACELETS.', tone: 'pb-secondary', sub: 'Wrist weight. Ask what\'s in.', href: '/collections/bracelets' },
+  { label: 'EARRINGS.',  tone: 'pb-secondary', sub: 'Iced studs. Diamond hoops.',  href: '/collections/earrings'  },
 ] as const
 
 const CUSTOM_CHIPS = [
@@ -96,34 +98,16 @@ export default function HomePage() {
             padding: '0 clamp(1.25rem, 3vw, 2.5rem)',
           }}
         >
-          {/* Eyebrow — direct, gold, readable */}
-          <div
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '0.72rem',
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              color: 'var(--color-brand-gold)',
-              marginBottom: '1.25rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-            }}
-          >
-            <span className="mi-diamond-sm" aria-hidden="true" />
-            PITTSBURGH · 30+ YEARS · GRILLZ · WATCHES · CHAINS · CUSTOM
-          </div>
-
           <h1
             className="reveal reveal-d1"
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(5rem, 13vw, 11rem)',
+              fontSize: 'clamp(4.5rem, 12vw, 10.5rem)',
               fontWeight: 400,
               lineHeight: 0.85,
               letterSpacing: '0.01em',
               color: 'var(--color-brand-white)',
-              margin: '0 0 1.25rem',
+              margin: '0 0 1rem',
             }}
           >
             BUILT TO{' '}
@@ -132,27 +116,23 @@ export default function HomePage() {
             </em>
           </h1>
 
+          {/* Product stack — immediate category signal */}
           <p
             className="reveal reveal-d2"
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize: 'clamp(0.9rem, 1.6vw, 1.05rem)',
+              fontSize: 'clamp(0.9rem, 1.5vw, 1rem)',
               color: 'var(--color-brand-silver)',
-              lineHeight: 1.6,
-              marginBottom: '1.75rem',
-              maxWidth: '48ch',
+              lineHeight: 1.55,
+              marginBottom: '1.5rem',
+              maxWidth: '44ch',
             }}
           >
-            Grillz. Watches. Chains. Pendants. Custom.{' '}
-            <span style={{ color: 'var(--color-brand-muted)' }}>Pittsburgh-built. Over 30 years.</span>
+            Grillz. Watches. Chains. Rings. Custom pendants.{' '}
+            <span style={{ color: 'var(--color-brand-muted)' }}>Shop it or build it. Text before you buy.</span>
           </p>
 
-          {/* BANG. — brand stamp */}
-          <div className="reveal reveal-d3" style={{ marginBottom: '1.75rem' }}>
-            <span className="hero-bang-stamp">BANG.</span>
-          </div>
-
-          <div className="reveal reveal-d4" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1.5rem' }}>
+          <div className="reveal reveal-d3" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center', marginBottom: '1.25rem' }}>
             <a
               href="#shop-jewelry"
               className="btn-primary"
@@ -169,49 +149,66 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <span className="mi-mono mi-faint">
-            <span className="mi-diamond-sm" aria-hidden="true" />
-            NO DEPOSIT · WE QUOTE FIRST · DETAILS CONFIRMED PER PIECE
-          </span>
+          {/* BANG. — owned brand hallmark, stands alone */}
+          <div className="reveal reveal-d4" style={{ marginTop: '0.5rem' }}>
+            <span className="bang-signature bang-signature--hero">BANG.</span>
+          </div>
         </div>
 
       </section>
 
-      <ProofMarquee />
+      {/* ─── Hero → Product Wall transition — breathing space, no content ── */}
+      <div
+        aria-hidden="true"
+        style={{
+          background:    'linear-gradient(to bottom, #030303 0%, var(--color-brand-black) 100%)',
+          height:        'clamp(1.5rem, 3vw, 2.5rem)',
+          borderBottom:  '1px solid rgba(201,168,76,0.12)',
+          position:      'relative',
+          overflow:      'hidden',
+        }}
+      >
+        {/* Faint centered gold glow — depth cue, not decorative text */}
+        <div style={{
+          position:    'absolute',
+          left:        '50%',
+          top:         '50%',
+          transform:   'translate(-50%, -50%)',
+          width:       '280px',
+          height:      '1px',
+          background:  'radial-gradient(ellipse 100% 100% at 50% 50%, rgba(201,168,76,0.22) 0%, transparent 70%)',
+          pointerEvents: 'none',
+        }} />
+      </div>
 
-      {/* ─── 2. SHOP JEWELRY — Midnight Icebox vitrine gateway ──────────── */}
+      {/* ─── 2. SHOP JEWELRY — Pittsburgh BANG product wall ────────────── */}
       <section
         id="shop-jewelry"
         aria-label="Shop jewelry by category"
         style={{
           background: 'var(--color-brand-black)',
           borderTop: '1px solid var(--color-brand-border)',
-          padding: 'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 3vw, 2.5rem)',
+          padding: 'clamp(2.5rem, 5vw, 4.5rem) clamp(1.25rem, 3vw, 2.5rem)',
         }}
       >
         <div style={{ maxWidth: '1360px', margin: '0 auto' }}>
-          {/* Masthead */}
-          <div className="mi-eyebrow" style={{ marginBottom: '6px' }}>
-            <span className="mi-diamond-sm" aria-hidden="true" />
-            SHOP BY PIECE
+          {/* Masthead — hard, commercial */}
+          <div style={{ marginBottom: '1.25rem' }}>
+            <h2
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(2.8rem, 5.5vw, 4.5rem)',
+                fontWeight: 400,
+                lineHeight: 0.88,
+                margin: 0,
+              }}
+            >
+              PICK THE{' '}
+              <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold)', fontFamily: 'var(--font-display)' }}>
+                PIECE.
+              </em>
+            </h2>
           </div>
-          <h2
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(3rem, 6vw, 5rem)',
-              fontWeight: 400,
-              lineHeight: 0.9,
-              marginBottom: '0.5rem',
-            }}
-          >
-            SHOP{' '}
-            <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold)', fontFamily: 'var(--font-display)' }}>
-              JEWELRY.
-            </em>
-          </h2>
-          <p className="mi-mono mi-faint" style={{ marginBottom: '1.75rem' }}>
-            GRILLZ · WATCHES · CHAINS · PENDANTS · RINGS · BRACELETS · EARRINGS · CUSTOM
-          </p>
 
           {/* ── ANCHOR ROW: 1.4fr 1fr 1fr — GRILLZ dominant ── */}
           <div className="mi-anchor-row">
@@ -219,38 +216,34 @@ export default function HomePage() {
               <Link
                 key={tile.label}
                 href={tile.href}
+                className="pb-tile-link"
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
-                  minHeight: 'clamp(300px, 32vw, 440px)',
+                  minHeight: 'clamp(280px, 30vw, 420px)',
                   textDecoration: 'none',
                   color: 'inherit',
                 }}
               >
                 <div
-                  className={`mi-vitrine mi-vitrine-${tile.tone}`}
+                  className={`mi-vitrine pb-vitrine-${tile.tone}`}
                   style={{ flex: 1, position: 'relative' }}
                 >
                   {tile.gleam && <div className="mi-gleam" />}
+                  {/* Corner label — category identity */}
+                  <span className="mi-corner">{tile.cornerL}</span>
                 </div>
-                <div
-                  className="mi-vitrine-foot"
-                  style={{ background: 'var(--color-brand-charcoal)' }}
-                >
-                  <h5>{tile.label}</h5>
-                  <span className="mi-ask">ASK 2T</span>
+                <div className="pb-tile-foot">
+                  <h5 className="pb-tile-label">{tile.label}</h5>
                 </div>
-                <div
-                  className="mi-vitrine-pills"
-                  style={{ background: 'var(--color-brand-charcoal)', gap: '10px' }}
-                >
+                <div className="pb-tile-pills">
                   {tile.pills.map((p) => (
                     <span
                       key={p}
                       style={{
                         fontFamily: 'var(--font-mono)',
-                        fontSize: '0.6rem',
-                        letterSpacing: '0.12em',
+                        fontSize: '0.72rem',
+                        letterSpacing: '0.1em',
                         textTransform: 'uppercase',
                         color: ('pillGold' in tile && tile.pillGold === p)
                           ? 'var(--color-brand-gold)'
@@ -267,122 +260,61 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Thin rule between anchor and secondary */}
-          <div aria-hidden="true" style={{ height: '1px', background: 'var(--color-brand-border)', marginBottom: '1px' }} />
-
-          {/* ── SECONDARY TILES: 4-col ── */}
+          {/* ── SECONDARY TILES: 4-col, compressed ── */}
           <div className="mi-secondary-row">
             {SECONDARY_TILES.map((tile) => (
               <Link
                 key={tile.label}
                 href={tile.href}
-                style={{ display: 'flex', flexDirection: 'column', minHeight: '200px', textDecoration: 'none', color: 'inherit' }}
+                className="pb-tile-link"
+                style={{ display: 'flex', flexDirection: 'column', minHeight: '230px', textDecoration: 'none', color: 'inherit' }}
               >
                 <div
-                  className={`mi-vitrine mi-vitrine-${tile.tone}`}
+                  className={`mi-vitrine pb-vitrine-${tile.tone}`}
                   style={{ flex: 1, position: 'relative' }}
                 />
-                <div
-                  className="mi-vitrine-foot"
-                  style={{ background: 'var(--color-brand-charcoal)' }}
-                >
-                  <h5 style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.2rem)' }}>{tile.label}</h5>
+                <div className="pb-tile-foot">
+                  <h5 style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 'clamp(0.95rem, 1.8vw, 1.1rem)', margin: 0, lineHeight: 0.9 }}>{tile.label}</h5>
                 </div>
-                <div
-                  className="mi-vitrine-pills"
-                  style={{ background: 'var(--color-brand-charcoal)' }}
-                >
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-brand-muted)' }}>{tile.sub}</span>
+                <div className="pb-tile-pills">
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-brand-silver)' }}>{tile.sub}</span>
                 </div>
               </Link>
             ))}
           </div>
 
-          {/* ── CUSTOM BAND: full-width gold-bordered ── */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '1.5rem',
-              flexWrap: 'wrap',
-              background: '#0a0703',
-              border: '1px solid var(--color-brand-gold)',
-              padding: 'clamp(1rem, 2.5vw, 1.5rem) clamp(1rem, 2.5vw, 1.75rem)',
-              marginTop: '1px',
-              marginBottom: '1.25rem',
-            }}
-          >
+          {/* ── CUSTOM INTERRUPT BAND ── */}
+          <div className="pb-custom-band">
             <div>
-              <span className="mi-eyebrow" style={{ marginBottom: '4px' }}>
-                <span className="mi-diamond-sm" aria-hidden="true" />
-                CUSTOM BUILT HERE
-              </span>
-              <h3
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(1.6rem, 3vw, 2.5rem)',
-                  fontWeight: 400,
-                  lineHeight: 0.9,
-                  margin: '0 0 6px',
-                }}
-              >
-                YOUR LOGO. YOUR NAME.{' '}
+              <h3 className="pb-custom-band-headline">
+                SEND THE PHOTO.{' '}
                 <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold)', fontFamily: 'var(--font-display)' }}>
-                  YOUR PIECE.
+                  SEND THE IDEA.
                 </em>
               </h3>
-              <span className="mi-mono mi-faint">SEND THE IDEA · WE QUOTE FIRST · NO DEPOSIT</span>
+              <span className="mi-mono mi-faint" style={{ fontSize: '0.58rem' }}>WE QUOTE FIRST · NO DEPOSIT · DETAILS CONFIRMED PER PIECE</span>
             </div>
-            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+            <div style={{ flexShrink: 0 }}>
               <Link href="/custom" className="btn-primary" style={{ fontSize: '0.8rem', letterSpacing: '0.08em', padding: '0.8rem 1.5rem' }}>
                 BUILD CUSTOM →
               </Link>
-              <a href={WA_BUILD} target="_blank" rel="noopener noreferrer" className="btn-outline-gold" style={{ fontSize: '0.8rem', letterSpacing: '0.08em' }}>
-                TEXT 2T →
-              </a>
             </div>
           </div>
 
-          {/* ── UTILITY RAIL ── */}
-          <div
-            style={{
-              display: 'flex', flexWrap: 'wrap', gap: '0.5rem',
-              borderTop: '1px solid var(--color-brand-border)',
-              paddingTop: '1rem',
-            }}
-          >
-            {[
-              { label: 'ASK WHAT\'S IN STOCK NOW →', href: WA_STOCK,  gold: true },
-              { label: 'ASK WHAT\'S RUNNING NOW →',  href: WA_PROMO,  gold: false },
-              { label: 'TEXT 2T →',                   href: WA_ASK,   gold: false },
-            ].map((cta) => (
-              <a
-                key={cta.label}
-                href={cta.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cta.gold ? 'mi-pill mi-pill-gold' : 'mi-pill'}
-                style={{ textDecoration: 'none', transition: 'border-color 0.18s, color 0.18s' }}
-              >
-                {cta.label}
-              </a>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* ─── 3. WEEKLY SPECIAL — Midnight Icebox promo surface ──────────── */}
+      {/* ─── 3. ASK WHAT'S RUNNING — promo slot (claim-safe) ─────────── */}
       {/*
        * CLAIM SAFETY: no %, BOGO, free shipping, material, or inventory
-       * claims without per-piece verification. Placeholder copy is intentional.
+       * claims. Placeholder copy is intentional. Terms confirmed per piece.
        */}
       <section
-        aria-label="This week's promotion"
+        aria-label="Ask what's running this week"
         style={{
           background: '#070707',
           borderTop: '1px solid var(--color-brand-border)',
-          padding: 'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 3vw, 2.5rem)',
+          padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 3vw, 2.5rem)',
         }}
       >
         <div
@@ -390,14 +322,14 @@ export default function HomePage() {
             maxWidth: '1360px',
             margin: '0 auto',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: 'clamp(2rem, 5vw, 4rem)',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: 'clamp(1.75rem, 4vw, 3.5rem)',
             alignItems: 'center',
           }}
         >
           {/* Left — copy */}
           <div>
-            <div className="mi-eyebrow" style={{ marginBottom: '1rem' }}>
+            <div className="mi-eyebrow" style={{ marginBottom: '0.75rem' }}>
               <span className="mi-diamond-sm" aria-hidden="true" />
               THIS WEEK AT 2T
             </div>
@@ -405,47 +337,100 @@ export default function HomePage() {
             <h2
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(2.8rem, 5.5vw, 5rem)',
+                fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
                 fontWeight: 400,
-                lineHeight: 0.9,
-                marginBottom: '1.25rem',
+                lineHeight: 0.88,
+                marginBottom: '1rem',
               }}
             >
-              WHAT&rsquo;S<br />
+              ASK WHAT&rsquo;S{' '}
               <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold)', fontFamily: 'var(--font-display)' }}>
-                RUNNING
+                RUNNING.
               </em>
-              <br />
-              THIS WEEK.
             </h2>
 
             <p
               style={{
                 fontFamily: 'var(--font-body)',
-                fontSize: '0.9rem',
+                fontSize: '0.875rem',
                 color: 'var(--color-brand-silver)',
-                lineHeight: 1.65,
-                maxWidth: '42ch',
-                marginBottom: '1.75rem',
+                lineHeight: 1.6,
+                maxWidth: '40ch',
+                marginBottom: '1.5rem',
               }}
             >
-              Chains, pendants, watches, grillz. Ask what&rsquo;s running &mdash; terms confirmed per piece.
+              Chains, grillz, watches, pendants. Promos confirmed per piece &mdash; ask what&rsquo;s live right now.
             </p>
 
-            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+            <div>
               <a href={WA_PROMO} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: '0.85rem', letterSpacing: '0.08em', padding: '0.875rem 1.75rem' }}>
                 ASK WHAT&rsquo;S RUNNING →
-              </a>
-              <a href="#shop-jewelry" className="btn-outline-gold" style={{ fontSize: '0.85rem', letterSpacing: '0.08em' }}>
-                SHOP JEWELRY →
               </a>
             </div>
           </div>
 
-          {/* Right — promo vitrine (gleam #2 of 3) */}
+          {/* Right — featured drop slot (gleam #2 of 3) */}
           <div
             aria-hidden="true"
-            className="mi-vitrine mi-vitrine-spot"
+            className="mi-vitrine pb-vitrine-promo"
+            style={{
+              aspectRatio: '4/3',
+              position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-end',
+              border: '1px solid rgba(201,168,76,0.38)',
+            }}
+          >
+            <div className="mi-gleam" />
+            {/* Top-left: THIS WEEK tag */}
+            <span style={{ position: 'absolute', top: '14px', left: '14px', fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.18em', color: 'var(--color-brand-gold)', userSelect: 'none' }}>
+              THIS WEEK
+            </span>
+            {/* Top-right: brand tag */}
+            <span style={{ position: 'absolute', top: '14px', right: '14px', fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.14em', color: 'rgba(201,168,76,0.38)', userSelect: 'none' }}>
+              ◆ 2T
+            </span>
+            {/* Center: promo message — strong, readable, swappable */}
+            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', textAlign: 'center', userSelect: 'none', pointerEvents: 'none', width: '80%' }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.4rem, 5.5vw, 3.8rem)', color: 'rgba(201,168,76,0.82)', letterSpacing: '0.04em', lineHeight: 0.88, marginBottom: '8px' }}>20% OFF</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'rgba(201,168,76,0.58)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '10px' }}>YOUR FIRST CUSTOM ORDER</div>
+              <div style={{ width: '28px', height: '1px', background: 'rgba(201,168,76,0.3)', margin: '0 auto 10px' }} />
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.52rem', color: 'rgba(243,240,234,0.38)', letterSpacing: '0.14em', textTransform: 'uppercase' }}>START YOUR PIECE TODAY</div>
+            </div>
+            {/* Footer */}
+            <div style={{ padding: '10px 14px', borderTop: '1px solid rgba(201,168,76,0.2)', background: 'rgba(201,168,76,0.025)' }}>
+              <span className="mi-mono" style={{ fontSize: '0.55rem', color: 'rgba(201,168,76,0.6)' }}>
+                ASK WHAT&rsquo;S RUNNING
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 4. BUILD CUSTOM — identity flex lane ──────────────────────── */}
+      <section
+        aria-label="Custom jewelry"
+        style={{
+          background: 'var(--color-brand-black)',
+          borderTop: '1px solid var(--color-brand-border)',
+          padding: 'clamp(2.5rem, 5vw, 4.5rem) clamp(1.25rem, 3vw, 2.5rem)',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1360px',
+            margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: 'clamp(1.75rem, 4vw, 3.5rem)',
+            alignItems: 'center',
+          }}
+        >
+          {/* Left — custom art vitrine */}
+          <div
+            aria-hidden="true"
+            className="mi-vitrine pb-vitrine-custom"
             style={{
               aspectRatio: '4/3',
               position: 'relative',
@@ -454,51 +439,32 @@ export default function HomePage() {
               justifyContent: 'flex-end',
             }}
           >
-            <div className="mi-gleam" />
-            <div style={{ padding: '10px 14px', borderTop: '1px solid var(--color-brand-border)' }}>
-              <span className="mi-mono mi-faint" style={{ fontSize: '0.6rem' }}>
-                WEEKLY SLOT · ASK WHAT&rsquo;S RUNNING
-              </span>
+            {/* Identity objects inside the frame */}
+            <div style={{ padding: '14px', borderTop: '1px solid rgba(201,168,76,0.18)' }}>
+              <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                {['LOGO', 'PHOTO', 'NAME', 'SKETCH'].map((tag) => (
+                  <span
+                    key={tag}
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.55rem',
+                      letterSpacing: '0.16em',
+                      padding: '3px 7px',
+                      border: '1px solid rgba(201,168,76,0.28)',
+                      color: 'rgba(201,168,76,0.72)',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* ─── 4. CUSTOM BUILT HERE — two-column vitrine + text ───────────── */}
-      <section
-        aria-label="Custom jewelry"
-        style={{
-          background: 'var(--color-brand-black)',
-          borderTop: '1px solid var(--color-brand-border)',
-          padding: 'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 3vw, 2.5rem)',
-        }}
-      >
-        <div
-          style={{
-            maxWidth: '1360px',
-            margin: '0 auto',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: 'clamp(2rem, 5vw, 4rem)',
-            alignItems: 'center',
-          }}
-        >
-          {/* Left — vitrine (no gleam) */}
-          <div
-            aria-hidden="true"
-            className="mi-vitrine mi-vitrine-gold"
-            style={{
-              aspectRatio: '4/3',
-              position: 'relative',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'flex-end',
-            }}
-          />
-
-          {/* Right — text */}
+          {/* Right — identity copy, direct and fast */}
           <div>
-            <div className="mi-eyebrow" style={{ marginBottom: '1rem' }}>
+            <div className="mi-eyebrow" style={{ marginBottom: '0.75rem' }}>
               <span className="mi-diamond-sm" aria-hidden="true" />
               CUSTOM BUILT HERE
             </div>
@@ -508,11 +474,11 @@ export default function HomePage() {
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
                 fontWeight: 400,
-                lineHeight: 0.9,
-                marginBottom: '1.25rem',
+                lineHeight: 0.88,
+                marginBottom: '1rem',
               }}
             >
-              LOGO. NAME.<br />PHOTO.<br />
+              YOUR LOGO.<br />YOUR NAME.<br />
               <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold)', fontFamily: 'var(--font-display)' }}>
                 YOUR PIECE.
               </em>
@@ -521,26 +487,32 @@ export default function HomePage() {
             <p
               style={{
                 fontFamily: 'var(--font-body)',
-                fontSize: '0.9rem',
+                fontSize: '0.875rem',
                 color: 'var(--color-brand-silver)',
-                lineHeight: 1.65,
-                maxWidth: '44ch',
-                marginBottom: '1.5rem',
+                lineHeight: 1.6,
+                maxWidth: '40ch',
+                marginBottom: '1.25rem',
               }}
             >
-              Send the logo, photo, name, number, or sketch.
-              We review before the quote. We quote before the build. No deposit to start.
+              Send the logo, photo, name, sketch, or reference.
+              We review before the quote. We quote before the build.
             </p>
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1.5rem' }}>
               {CUSTOM_CHIPS.map((chip) => (
                 <span key={chip} className="mi-pill">{chip}</span>
               ))}
             </div>
 
+            {/* Trust line — clean, direct */}
+            <p className="mi-mono mi-faint" style={{ marginBottom: '1.5rem', fontSize: '0.58rem' }}>
+              <span className="mi-diamond-sm" aria-hidden="true" />
+              NO DEPOSIT TO START · WE QUOTE FIRST
+            </p>
+
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
               <Link href="/custom" className="btn-primary" style={{ fontSize: '0.85rem', letterSpacing: '0.08em', padding: '0.875rem 1.75rem' }}>
-                BUILD CUSTOM →
+                START THE REQUEST →
               </Link>
               <a href={WA_BUILD} target="_blank" rel="noopener noreferrer" className="btn-outline-gold" style={{ fontSize: '0.85rem', letterSpacing: '0.08em' }}>
                 TEXT 2T →
