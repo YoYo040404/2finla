@@ -176,8 +176,15 @@ Custom page (as of commit 84af600 — 2026-05-17):
 
 ## Default Next Prompt
 
-**Step 1 — Strategic Visual Reset Audit (open concern):**
-The Midnight Icebox system is active, but it may not yet feel loud/flashy/bling-heavy enough for the hard hip-hop / hood street-luxury target. Before further major build work, run a Strategic Visual Reset Audit: deep-research the target visual energy (GLD, King Ice, Johnny Dang, Icebox, TraxNYC) and confirm whether the current direction needs deeper reset or can be intensified through real media + copy.
+**Step 1 — Strategic Visual Reset Audit (COMPLETE — read before building):**
+Audit registered at: `docs/2t-strategic-visual-reset-audit-pittsburgh-bang-2026-05-25.md`
+
+Key findings:
+- Direction: evolve Midnight Icebox into **Pittsburgh BANG** — harder, louder, more jewelry-physical.
+- Next build: **homepage-only experimental branch**. Do NOT continue polishing main. Do NOT rollback to `b049d30`.
+- Branch scope: masthead, hero, shop wall, BANG hallmark system, Pittsburgh proof, social scaffold. Homepage only.
+- Biggest blocker: real media assets. Shot list and priority order documented in audit.
+- Full Claude Code handoff prompt is in the audit file — use it to brief the next implementation agent.
 
 **Step 2 — `/custom` visual QA:**
 Current `/custom` build is WIP. NOT user-approved as final. Run visual QA at 390px and 1280px, present screenshots, wait for explicit approval.

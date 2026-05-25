@@ -309,7 +309,11 @@ Only if user explicitly approves:
 4. ✅ Pass 5A — Weekly promo module elevated structurally (35eda1f)
 5. ✅ Pass 5B — Competitor-backed copy/promo/hero research complete (2026-05-23)
 6. ✅ **Homepage Midnight Icebox Pass 3** — visual direction applied and committed (af7f20d, 2026-05-25)
-7. ⚠️ **Strategic Visual Reset Audit** — OPEN CONCERN. Even after Pass 3, the site may not yet feel hard/flashy/bling-heavy enough for the hard hip-hop / hood street-luxury target. Deep-research GLD, King Ice, Johnny Dang, Icebox, TraxNYC before further major build work. Confirm: does current direction need a deeper visual reset, or can it be intensified through real media and copy sharpening?
+7. ✅ **Strategic Visual Reset Audit** — COMPLETE (2026-05-25). Full findings at `docs/2t-strategic-visual-reset-audit-pittsburgh-bang-2026-05-25.md`.
+   - Direction: evolve Midnight Icebox → **Pittsburgh BANG**
+   - Next build: homepage-only experimental branch — NOT another pass on main, NOT a rollback
+   - Branch target: harder masthead, real product wall, BANG hallmark system, compressed Pittsburgh proof, alive social scaffold, no fake claims
+   - Biggest blocker: real media assets (shot list in audit)
 8. Visual QA of `/custom` → user approval gate (independent — can run in parallel)
 9. Visual QA of `/grillz` and `/watches` → user approval gate
 10. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL

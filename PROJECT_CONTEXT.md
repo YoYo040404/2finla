@@ -405,10 +405,18 @@ Visual QA and user approval still required. **Do not mark /custom as final.**
 
 ## Current Next Task
 
-**Priority 1 — Strategic Visual Reset Audit (OPEN CONCERN):**
-Even after Midnight Icebox Pass 3, the project may still need a larger strategic visual reset to reach the desired hood / hard hip-hop / flashy bling energy. The current system is Midnight Icebox (dark, gold, structured, vitrine display-case) — which reads as controlled dark luxury. It may not yet feel loud/flashy/bling-heavy enough for the target audience.
+**Priority 1 — Strategic Visual Reset Audit (COMPLETE — read the findings):**
+The audit has been completed and registered at:
+→ `docs/2t-strategic-visual-reset-audit-pittsburgh-bang-2026-05-25.md`
 
-**Before any further major build work**, run a Strategic Visual Reset Audit / Deep Research pass. Do not keep polishing blindly. Research the target energy (GLD, King Ice, TraxNYC, Johnny Dang, Icebox) and confirm whether the current direction is hard enough, or whether a deeper reset is needed.
+**Audit verdict:**
+- Evolve Midnight Icebox into **Pittsburgh BANG** — do not keep it as-is, do not replace it entirely.
+- Next implementation must be a **homepage-only experimental branch**, not another polish pass on main.
+- Do NOT rollback to `b049d30`. Do NOT start a full-site rebuild.
+- Branch target: harder masthead, real product wall, BANG as a hallmark system, compressed Pittsburgh proof, alive social scaffold. No fake claims.
+- Biggest blocker confirmed: missing real media assets. Typography and copy cannot carry the bling energy alone.
+
+**Before any further major build work**, read the full audit. It contains the direction decision, 6-phase roadmap, and exact Claude Code handoff prompt.
 
 **Priority 2:** Visual QA of `/custom` — wait for user approval before further changes.
 
