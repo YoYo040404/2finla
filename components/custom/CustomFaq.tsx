@@ -1,7 +1,7 @@
 const FAQS = [
   {
     q: 'What can I send?',
-    a: "Anything works — a logo file, photo, sketch, name, number, or a written description of what you want built. The more detail the better, but a rough idea is enough to start.",
+    a: "Anything works — a logo file, photo, sketch, name, number, or a written description of what you want built. Upload it directly in the form. We'll review the design and advise on how it translates to the piece type you're requesting. A rough idea is enough to start.",
   },
   {
     q: 'What materials do you work with?',
@@ -10,10 +10,6 @@ const FAQS = [
   {
     q: 'What happens after I send the idea?',
     a: "We review the request and come back with the piece direction — available options, material directions, and any questions before anything is quoted or moved to production. We confirm the direction with you before production.",
-  },
-  {
-    q: 'Can I send a logo, photo, or sketch?',
-    a: "Yes. Upload it directly in the form. We'll review the design and advise on how it translates to the piece type you're requesting.",
   },
   {
     q: 'How does the quote step work?',

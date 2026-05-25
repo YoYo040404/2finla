@@ -259,25 +259,6 @@ export function CustomHero() {
                 TEXT 2T ON WHATSAPP →
               </a>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginTop: '1.25rem' }}>
-              <p className="permission-strip" aria-hidden="true" style={{ margin: 0 }}>
-                Logo&nbsp;·&nbsp;Photo&nbsp;·&nbsp;Name&nbsp;·&nbsp;Number&nbsp;·&nbsp;Sketch&nbsp;·&nbsp;Reference
-              </p>
-              <span
-                aria-hidden="true"
-                style={{
-                  fontFamily:    'var(--font-body)',
-                  fontSize:      '0.625rem',
-                  fontWeight:    700,
-                  letterSpacing: '0.14em',
-                  color:         'var(--color-brand-gold)',
-                  opacity:       0.72,
-                  flexShrink:    0,
-                }}
-              >
-                BANG.
-              </span>
-            </div>
           </div>
         </div>
       </div>

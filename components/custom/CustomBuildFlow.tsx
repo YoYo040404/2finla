@@ -201,24 +201,19 @@ export function CustomBuildFlow() {
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
 
         {/* ── Section header ──────────────────────────────────────────────── */}
-        <div style={{ marginBottom: 'clamp(2rem, 5vw, 3.5rem)' }}>
-          <p className="section-eyebrow" style={{ marginBottom: '1.125rem' }}>
-            CUSTOM BUILD
+        <div style={{ marginBottom: 'clamp(1.5rem, 4vw, 2.5rem)' }}>
+          <p className="section-eyebrow" style={{ marginBottom: '0.5rem' }}>
+            START YOUR BUILD
           </p>
-          <h2 style={{
-            fontFamily:    'var(--font-display)',
-            fontSize:      'clamp(2.4rem, 7vw, 4.5rem)',
-            fontWeight:    400,
-            color:         'var(--color-brand-white)',
-            lineHeight:    0.9,
-            letterSpacing: '-0.03em',
+          <p style={{
+            fontFamily:    'var(--font-body)',
+            fontSize:      '0.9375rem',
+            color:         'var(--color-brand-muted)',
+            lineHeight:    1.6,
+            maxWidth:      '52ch',
           }}>
-            Send the idea.
-            <br />
-            <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>
-              We quote before the build.
-            </em>
-          </h2>
+            Send the logo, photo, name, number, sketch, or idea. We&apos;ll review it before the quote.
+          </p>
         </div>
 
         {/* ── Step 01 — What are you building? ────────────────────────────── */}
@@ -251,7 +246,7 @@ export function CustomBuildFlow() {
 
         {/* ── Mid-form WhatsApp escape ─────────────────────────────────────── */}
         <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.8125rem', color: 'var(--color-brand-muted)', marginBottom: 'clamp(1.5rem, 4vw, 2.5rem)', lineHeight: 1.5 }}>
-          Skip the form.{' '}
+          Rather text it?{' '}
           <a
             href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
             target="_blank"
@@ -259,7 +254,7 @@ export function CustomBuildFlow() {
             className="bypass-cta"
             style={{ display: 'inline', marginTop: 0 }}
           >
-            Text 2T on WhatsApp →
+            Text 2T →
           </a>
         </p>
 
@@ -389,7 +384,7 @@ export function CustomBuildFlow() {
         {/* ── Step 03 — Contact ───────────────────────────────────────────── */}
         <div className="build-step-block">
           <span className="step-numeral" aria-hidden="true">03</span>
-          <p className="build-field-label" style={{ marginBottom: '0.75rem' }}>HOW DO WE REACH YOU?</p>
+          <p className="build-field-label" style={{ marginBottom: '0.75rem' }}>YOUR CONTACT</p>
 
           <div className="build-contact-grid">
             <div>
@@ -491,7 +486,7 @@ export function CustomBuildFlow() {
               rel="noopener noreferrer"
               className="bypass-cta"
             >
-              Skip the form. Text 2T on WhatsApp →
+              Rather text it? Text 2T on WhatsApp →
             </a>
           </div>
         </div>
