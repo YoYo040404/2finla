@@ -63,3 +63,13 @@ samples/
 backup-*.patch
 review-diff.txt
 public/lockup-preview.html
+
+# claude code local config
+.claude/
+
+# qa screenshot output
+qa-screenshots/
+
+# design direction reference screenshots (local only)
+mi-*.png
+pb-*.png
