@@ -95,8 +95,7 @@ export default function WatchesPage() {
               marginBottom: '0.5rem',
             }}
           >
-            Diamond bezels. Iced directions. High-end watch looks.
-            Ask what 2T has right now.
+            Ask what 2T has available now. Details, condition, and pricing are confirmed per piece.
           </p>
 
           <p
