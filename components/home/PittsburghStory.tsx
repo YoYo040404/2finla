@@ -1,73 +1,112 @@
 // components/home/PittsburghStory.tsx
 //
-// Copy rules enforced:
-// - Approved tenure wording: "over 30 years" — confirmed by user 2026-05-17
-// - No "family-owned" — unconfirmed, omitted by design
-// - No address chip — address lives in the Footer only
-// - Media slot is a CSS placeholder — replace inner div with <img> or <video> when store assets arrive
+// Midnight Icebox — Variation B stat ledger layout
+// Tenure wording: "over 30 years" confirmed 2026-05-17
+// Media slot: swap mi-vitrine div for <img>/<video> when store assets arrive
 //   Asset convention: public/assets/store/store-interior.jpg or store-loop.mp4
-import Link from 'next/link'
 
 const WHATSAPP_URL =
   'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20build%20a%20piece.'
 
-const CHIPS = ['OVER 30 YEARS', 'DOWNTOWN PITTSBURGH']
-
 export default function PittsburghStory() {
   return (
-    <section id="story" className="pitt-story-section" aria-label="About 2T Jewelers">
-      <div className="pitt-story-inner">
+    <section
+      id="story"
+      aria-label="About 2T Jewelers"
+      style={{
+        background: '#070707',
+        borderTop: '1px solid var(--color-brand-border)',
+        padding: 'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 3vw, 2.5rem)',
+      }}
+    >
+      <div
+        style={{
+          maxWidth: '1360px',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: 'clamp(2rem, 5vw, 4rem)',
+          alignItems: 'center',
+        }}
+      >
+        {/* Left — vitrine placeholder for storefront photo */}
+        {/* Replace this div with <img src="/assets/store/store-interior.jpg" ...> when asset arrives */}
+        <div
+          aria-hidden="true"
+          className="mi-vitrine mi-vitrine-deep"
+          style={{
+            aspectRatio: '16/9',
+            position: 'relative',
+          }}
+        />
 
-        {/* Media slot — swap this div for <img> or <video> when real store assets arrive.
-            Asset convention: public/assets/store/store-interior.jpg or store-loop.mp4 */}
-        <div className="pitt-story-media" aria-hidden="true">
-          <div className="pitt-story-media-glint" />
-          <div className="pitt-story-media-label">
-            PITTSBURGH
+        {/* Right — text + stat ledger */}
+        <div>
+          <div className="mi-eyebrow" style={{ marginBottom: '1rem' }}>
+            <span className="mi-diamond-sm" aria-hidden="true" />
+            BUILT IN PITTSBURGH · REAL STORE · 5TH AVE
           </div>
-          <div className="pitt-story-media-watermark">BANG.</div>
-        </div>
 
-        <div className="pitt-story-content">
-          <span className="section-eyebrow" style={{ marginBottom: '1rem', display: 'block' }}>
-            BUILT IN PITTSBURGH.
-          </span>
-
-          <h2 className="pitt-story-headline">
-            REAL STORE.<br />REAL WORK.
+          <h2
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+              fontWeight: 400,
+              lineHeight: 0.9,
+              marginBottom: '1.25rem',
+            }}
+          >
+            REAL STORE.<br />
+            <em
+              style={{
+                fontStyle: 'italic',
+                color: 'var(--color-brand-gold)',
+                fontFamily: 'var(--font-display)',
+              }}
+            >
+              REAL WORK.
+            </em>
           </h2>
 
-          <div className="pitt-story-chips">
-            {CHIPS.map((chip) => (
-              <span key={chip} className="pitt-story-chip">{chip}</span>
-            ))}
+          {/* Stat ledger — Variation B */}
+          <div className="mi-stat-ledger">
+            <div className="mi-stat-col">
+              <p className="mi-stat-number">30+</p>
+              <p className="mi-stat-label">YEARS IN THE GAME</p>
+            </div>
+            <div className="mi-stat-col">
+              <p className="mi-stat-number">5TH</p>
+              <p className="mi-stat-label">AVE · DOWNTOWN PGH</p>
+            </div>
           </div>
 
-          <p className="pitt-story-body">
-            Downtown Pittsburgh. 30+ years in the game.
-            Text or come through.
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '0.9rem',
+              color: 'var(--color-brand-silver)',
+              lineHeight: 1.65,
+              marginBottom: '0.5rem',
+            }}
+          >
+            Real jeweler. Real store. Text or come through.
           </p>
 
-          <p className="pitt-story-body" style={{ marginTop: '0.9rem' }}>
-            Real jeweler. Real store.
-            Product details confirmed per piece.
+          <p className="mi-mono mi-faint" style={{ marginBottom: '1.75rem' }}>
+            <span className="mi-diamond-sm" aria-hidden="true" />
+            PRODUCT DETAILS CONFIRMED PER PIECE
           </p>
 
-          <div className="pitt-story-cta">
-            <Link href="/custom" className="btn-primary">
-              BUILD CUSTOM →
-            </Link>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pitt-story-text-link"
-            >
-              TEXT OR COME THROUGH →
-            </a>
-          </div>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+            style={{ fontSize: '0.85rem', letterSpacing: '0.08em', padding: '0.875rem 1.75rem', display: 'inline-block' }}
+          >
+            TEXT OR COME THROUGH →
+          </a>
         </div>
-
       </div>
     </section>
   )

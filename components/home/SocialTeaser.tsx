@@ -1,179 +1,160 @@
 // components/home/SocialTeaser.tsx
 //
+// Midnight Icebox — channel-map row layout
 // Real links only. No fake images, follower counts, quotes, or screenshots.
-// TikTok primary. Instagram secondary. WhatsApp as direct-contact option.
-// Left slot is a brand canvas — replace with real photo/video when ready.
+// Left slot: brand canvas placeholder — replace with real media when ready.
 
-const IgIcon = () => (
-  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-    <circle cx="12" cy="12" r="5" />
-    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-  </svg>
-)
-
-const TtIcon = () => (
-  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88
-      2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32
-      6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0
-      0 0 6.33-6.34V8.69a8.28 8.28 0 0 0 4.84 1.55V6.79a4.85 4.85 0 0 1-1.07-.1z" />
-  </svg>
-)
-
-const WaIcon = () => (
-  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15
-      -.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39
-      -1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298
-      -.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669
-      -1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52
-      .074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149
-      .198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118
-      .571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198
-      -.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378L2 22l1.538-4.786A9.86
-      9.86 0 0 1 2.111 12.1C2.114 6.535 6.657 2 12.06 2c2.614 0 5.073 1.016 6.919 2.862
-      A9.715 9.715 0 0 1 22 11.772c-.003 5.414-4.548 9.016-9.949 9.013zm0-18.5C6.523
-      3.285 3.614 6.21 3.614 12.063a8.55 8.55 0 0 0 1.403 4.697l-1.517 4.74 3.852-1.51
-      a8.572 8.572 0 0 0 4.697 1.4c5.449 0 8.354-2.925 8.354-8.779A8.578 8.578 0 0 0
-      17.905 6.582 8.578 8.578 0 0 0 12.051 3.285z" />
-  </svg>
-)
-
-// TikTok first — primary social proof. Instagram second. WhatsApp as direct contact.
-const SOCIALS = [
+const CHANNELS = [
   {
     platform: 'TIKTOK',
+    copy:     'Watch us build. Drop in.',
     handle:   '@2tjewelers',
-    copy:     'Watch the build. @2tjewelers',
     href:     'https://www.tiktok.com/@2tjewelers',
-    icon:     <TtIcon />,
-    accent:   '#e8e8e8',
-    label:    'TikTok: @2tjewelers',
     wa:       false,
+    label:    'TikTok: @2tjewelers',
   },
   {
     platform: 'INSTAGRAM',
+    copy:     'Real pieces. Real shots.',
     handle:   '@2tjewelers',
-    copy:     'The pieces. @2tjewelers',
     href:     'https://www.instagram.com/2tjewelers/',
-    icon:     <IgIcon />,
-    accent:   '#c9a84c',
-    label:    'Instagram: @2tjewelers',
     wa:       false,
+    label:    'Instagram: @2tjewelers',
   },
   {
     platform: 'WHATSAPP',
-    handle:   'HIT US UP',
-    copy:     'Text before you buy. Ask anything.',
+    copy:     'Hit us up. Ask before you buy.',
+    handle:   'TEXT 2T',
     href:     'https://wa.me/14124524343',
-    icon:     <WaIcon />,
-    accent:   '#25D366',
-    label:    'WhatsApp: Hit us up',
     wa:       true,
+    label:    'WhatsApp: Text 2T',
   },
-] as const
-
-const SOCIAL_SPARKLES = [
-  { top: '12%', left: '8%',  delay: '0s',   size: 5, ice: true  },
-  { top: '28%', left: '72%', delay: '1.1s', size: 4, ice: false },
-  { top: '18%', left: '42%', delay: '2.4s', size: 3, ice: true  },
-  { top: '55%', left: '88%', delay: '0.6s', size: 5, ice: false },
-  { top: '72%', left: '18%', delay: '1.8s', size: 4, ice: true  },
-  { top: '85%', left: '60%', delay: '3.1s', size: 3, ice: false },
-  { top: '42%', left: '28%', delay: '2.8s', size: 3, ice: true  },
-  { top: '65%', left: '50%', delay: '0.4s', size: 4, ice: false },
 ] as const
 
 export default function SocialTeaser() {
   return (
-    <section className="social-section" aria-label="Follow 2T Jewelers">
-      <div className="social-inner">
-
-        {/* ── Left: brand canvas — real media when ready ──────────────── */}
+    <section
+      aria-label="Follow 2T Jewelers"
+      style={{
+        background: 'var(--color-brand-black)',
+        borderTop: '1px solid var(--color-brand-border)',
+        padding: 'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 3vw, 2.5rem)',
+      }}
+    >
+      <div
+        style={{
+          maxWidth: '1360px',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: 'clamp(2rem, 5vw, 4rem)',
+          alignItems: 'center',
+        }}
+      >
+        {/* Left — brand canvas: replace with real social media clip when available */}
         {/*
-          CONTENT SLOT — replace this div with real 2T media when ready:
-            <video autoPlay muted loop playsInline style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }}>
-              <source src="/assets/store/social-clip.mp4" type="video/mp4" />
-            </video>
+          <video autoPlay muted loop playsInline style={{ position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover' }}>
+            <source src="/assets/store/social-clip.mp4" type="video/mp4" />
+          </video>
         */}
-        <div className="social-art-slot" aria-hidden="true">
-          <div className="social-art-overlay" />
-          <div className="social-art-sweep" />
-          <div className="social-art-lockup">
-            <span className="social-art-mark">2T</span>
-            <span className="social-art-handle">@2tjewelers</span>
+        <div
+          aria-hidden="true"
+          className="mi-vitrine mi-vitrine-deep"
+          style={{
+            aspectRatio: '4/3',
+            position: 'relative',
+          }}
+        />
+
+        {/* Right — heading + channel-map rows */}
+        <div>
+          <div className="mi-eyebrow" style={{ marginBottom: '1rem' }}>
+            <span className="mi-diamond-sm" aria-hidden="true" />
+            @2TJEWELERS · FOLLOW THE WORK
           </div>
-          {SOCIAL_SPARKLES.map((s, i) => (
-            <span
-              key={i}
-              aria-hidden="true"
-              style={{
-                position:        'absolute',
-                top:             s.top,
-                left:            s.left,
-                width:           `${s.size}px`,
-                height:          `${s.size}px`,
-                borderRadius:    '50%',
-                backgroundColor: s.ice ? 'rgba(208,238,255,0.92)' : 'rgba(255,248,220,0.88)',
-                boxShadow:       s.ice
-                  ? `0 0 ${s.size * 5}px ${s.size + 2}px rgba(208,238,255,0.45)`
-                  : `0 0 ${s.size * 5}px ${s.size + 2}px rgba(201,168,76,0.4)`,
-                animation:       'sparkle-hit 3.8s ease-in-out infinite',
-                animationDelay:  s.delay,
-                pointerEvents:   'none',
-                zIndex:          3,
-              }}
-            />
-          ))}
-        </div>
 
-        {/* ── Right: heading + social links ──────────────────────────── */}
-        <div className="social-content">
-          <span className="section-eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>
-            FOLLOW @2TJEWELERS
-          </span>
-
-          <h2 className="social-heading">
+          <h2
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+              fontWeight: 400,
+              lineHeight: 0.9,
+              marginBottom: '0.75rem',
+            }}
+          >
             TAP IN<br />
-            <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>
+            <em
+              style={{
+                fontStyle: 'italic',
+                color: 'var(--color-brand-gold)',
+                fontFamily: 'var(--font-display)',
+              }}
+            >
               WITH 2T.
             </em>
           </h2>
 
-          <p className="social-subline">
-            TikTok for the build. Instagram for the pieces. WhatsApp to ask anything.
+          <p
+            className="mi-mono mi-faint"
+            style={{ marginBottom: '1.75rem', lineHeight: 1.6 }}
+          >
+            WATCH THE BUILD. SEE THE WORK. TEXT BEFORE YOU BUY.
           </p>
 
-          <div className="social-links" role="list">
-            {SOCIALS.map((s) => (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
+            {CHANNELS.map((ch) => (
               <a
-                key={s.platform}
-                href={s.href}
+                key={ch.platform}
+                href={ch.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`social-link${s.wa ? ' social-link--wa' : ''}`}
-                style={{ '--social-accent': s.accent } as React.CSSProperties}
-                aria-label={s.label}
-                role="listitem"
+                className={`mi-channel-row${ch.wa ? ' mi-channel-row--wa' : ''}`}
+                aria-label={ch.label}
+                style={{ textDecoration: 'none' }}
               >
-                <div className="social-link-icon" style={{ color: s.accent }}>
-                  {s.icon}
+                {/* Diamond icon box */}
+                <div className={`mi-channel-icon${ch.wa ? ' mi-channel-icon--wa' : ''}`}>
+                  <span
+                    className="mi-diamond"
+                    aria-hidden="true"
+                    style={{ margin: 0 }}
+                  />
                 </div>
-                <div className="social-link-body">
-                  <span className="social-link-platform" style={{ color: s.accent }}>
-                    {s.platform}
-                  </span>
-                  <span className="social-link-handle">{s.handle}</span>
-                  <span className="social-link-copy">{s.copy}</span>
+
+                {/* Text */}
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <p
+                    className="mi-mono mi-gold"
+                    style={{ margin: 0, marginBottom: '3px' }}
+                  >
+                    {ch.platform}
+                  </p>
+                  <p
+                    style={{
+                      margin: 0,
+                      fontFamily: 'var(--font-display)',
+                      fontSize: 'clamp(0.95rem, 2vw, 1.1rem)',
+                      fontWeight: 400,
+                      lineHeight: 1.1,
+                      color: 'var(--color-brand-white)',
+                    }}
+                  >
+                    {ch.copy}{' '}
+                    <span style={{ color: 'var(--color-brand-muted)' }}>{ch.handle}</span>
+                  </p>
                 </div>
-                <span className="social-link-arrow" aria-hidden="true">→</span>
+
+                {/* Arrow */}
+                <span
+                  aria-hidden="true"
+                  className={`mi-mono ${ch.wa ? 'mi-gold' : 'mi-faint'}`}
+                >
+                  →
+                </span>
               </a>
             ))}
           </div>
         </div>
-
       </div>
     </section>
   )

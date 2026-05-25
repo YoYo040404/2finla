@@ -3,24 +3,25 @@
 /* ─── 2T Jewelers Design System ─────────────────────────────────────────── */
 
 @theme {
-  /* Brand Colors */
-  --color-brand-black:      #080808;
-  --color-brand-charcoal:   #141414;
-  --color-brand-surface:    #1c1c1c;
-  --color-brand-border:     #252525;
-  --color-brand-subtle:     #363636;
-  --color-brand-muted:      #686868;
-  --color-brand-silver:     #9fa8b3;
-  --color-brand-white:      #f0f0f0;
-  --color-brand-gold:       #c9a84c;
-  --color-brand-gold-light: #d9bc74;
-  --color-brand-gold-dim:   #6b581c;
-  --color-ice-blue:         #d0eeff;
+  /* Brand Colors — Midnight Icebox */
+  --color-brand-black:      #050505;
+  --color-brand-charcoal:   #0E0E0E;
+  --color-brand-surface:    #141414;
+  --color-brand-border:     #1F1D1A;
+  --color-brand-subtle:     #2A2723;
+  --color-brand-muted:      #5B554C;
+  --color-brand-silver:     #9B958A;
+  --color-brand-white:      #F3F0EA;
+  --color-brand-gold:       #C9A449;
+  --color-brand-gold-light: #E9D289;
+  --color-brand-gold-dim:   #8C6F23;
+  --color-ice-blue:         #D8EBFF;
 
-  /* Typography */
-  --font-display:        var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  /* Typography — Midnight Icebox */
+  --font-display:        var(--font-anton), 'Anton', sans-serif;
   --font-display-accent: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
-  --font-body:           var(--font-outfit), 'Outfit', sans-serif;
+  --font-body:           var(--font-archivo), 'Archivo', sans-serif;
+  --font-mono:           var(--font-jetbrains), 'JetBrains Mono', ui-monospace, monospace;
 
   /* Easing */
   --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -46,8 +47,8 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family:    var(--font-display);
-    font-weight:    700;
-    line-height:    1.0;
+    font-weight:    400;
+    line-height:    0.92;
     letter-spacing: 0.01em;
   }
 
@@ -1294,15 +1295,12 @@
 .hero-bang-stamp {
   font-family:    var(--font-body);
   font-weight:    700;
-  font-size:      clamp(0.8rem, 1.6vw, 1.15rem);
+  font-size:      clamp(1.1rem, 2vw, 1.5rem);
   letter-spacing: 0.28em;
   text-transform: uppercase;
   line-height:    1;
   display:        inline-block;
   color:          var(--color-brand-gold);
-  padding:        0.42em 0.9em;
-  border:         1px solid rgba(201,168,76,0.45);
-  box-shadow:     0 0 14px rgba(201,168,76,0.14), inset 0 0 6px rgba(201,168,76,0.06);
   animation:      bang-ice-shine 4.5s ease-in-out infinite;
   animation-delay: 0.8s;
 }
@@ -1963,6 +1961,270 @@
   padding:   0 0.875rem;
   font-size: 0.72rem;
 }
+
+/* ─── Midnight Icebox responsive grid helpers ───────────────────────────── */
+
+/* Hero two-column — collapses to 1-col on mobile */
+.mi-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .mi-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .mi-hero-vitrine { display: none; }
+}
+
+/* Shop anchor row — 1.4fr 1fr 1fr → 1fr on mobile */
+.mi-anchor-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 1px;
+  background-color: var(--color-brand-border);
+  margin-bottom: 1px;
+}
+@media (max-width: 767px) {
+  .mi-anchor-row { grid-template-columns: 1fr; }
+}
+
+/* Secondary tiles — 4-col → 2-col on mobile */
+.mi-secondary-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background-color: var(--color-brand-border);
+  margin-bottom: 1px;
+}
+@media (max-width: 767px) {
+  .mi-secondary-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ─── Midnight Icebox utility system ────────────────────────────────────── */
+
+.mi-mono  { font-family: var(--font-mono); letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.65rem; line-height: 1.4; }
+.mi-gold  { color: var(--color-brand-gold); }
+.mi-dim   { color: var(--color-brand-silver); }
+.mi-faint { color: var(--color-brand-muted); }
+
+/* Four-point diamond glyph */
+.mi-diamond {
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--color-brand-gold);
+  transform: rotate(45deg);
+  vertical-align: middle;
+  margin: 0 8px 2px;
+  flex-shrink: 0;
+}
+.mi-diamond-sm {
+  display: inline-block;
+  width: 5px; height: 5px;
+  background: var(--color-brand-gold);
+  transform: rotate(45deg);
+  vertical-align: middle;
+  margin: 0 6px 2px;
+  flex-shrink: 0;
+}
+
+/* Vitrine — striped photo placeholder well */
+.mi-vitrine {
+  position: relative;
+  background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,.02) 0 14px, rgba(255,255,255,0) 14px 28px),
+    #0a0a0a;
+  border: 1px solid var(--color-brand-border);
+  overflow: hidden;
+  isolation: isolate;
+}
+.mi-vitrine::before,
+.mi-vitrine::after {
+  content: '';
+  position: absolute;
+  width: 14px; height: 14px;
+  border: 1px solid var(--color-brand-muted);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
+}
+.mi-vitrine::before { top: 8px;    left: 8px;    border-right: 0; border-bottom: 0; }
+.mi-vitrine::after  { bottom: 8px; right: 8px;   border-left:  0; border-top:    0; }
+
+/* Vitrine tones */
+.mi-vitrine-gold {
+  background:
+    radial-gradient(120% 80% at 30% 30%, rgba(201,164,73,.12), transparent 60%),
+    repeating-linear-gradient(135deg, rgba(201,164,73,.03) 0 14px, rgba(0,0,0,0) 14px 28px),
+    #0a0703;
+}
+.mi-vitrine-ice {
+  background:
+    radial-gradient(120% 80% at 70% 30%, rgba(216,235,255,.07), transparent 60%),
+    repeating-linear-gradient(135deg, rgba(216,235,255,.02) 0 14px, rgba(0,0,0,0) 14px 28px),
+    #050a10;
+}
+.mi-vitrine-spot {
+  background:
+    radial-gradient(80% 60% at 50% 60%, rgba(255,255,255,.08), transparent 60%),
+    radial-gradient(40% 30% at 50% 50%, rgba(201,164,73,.14), transparent 70%),
+    #060606;
+}
+.mi-vitrine-deep {
+  background:
+    radial-gradient(80% 60% at 60% 40%, rgba(255,255,255,.03), transparent 60%),
+    #030303;
+}
+
+/* Vitrine foot bar */
+.mi-vitrine-foot {
+  padding: 12px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 8px;
+  border-top: 1px solid var(--color-brand-border);
+}
+.mi-vitrine-foot h5 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  margin: 0;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+}
+.mi-vitrine-foot .mi-ask {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-brand-gold);
+  white-space: nowrap;
+}
+
+/* Vitrine pills row */
+.mi-vitrine-pills {
+  padding: 0 14px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* Gleam sweep — max 3 per page */
+.mi-gleam {
+  position: absolute; inset: 0; pointer-events: none; z-index: 2;
+  background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.14) 50%, transparent 65%);
+  mix-blend-mode: overlay;
+  opacity: 0.55;
+}
+
+/* Corner labels inside vitrine */
+.mi-corner {
+  position: absolute; top: 10px; left: 10px;
+  font-family: var(--font-mono); font-size: 0.55rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--color-brand-muted); z-index: 3;
+}
+.mi-corner-r {
+  position: absolute; top: 10px; right: 10px; left: auto;
+  font-family: var(--font-mono); font-size: 0.55rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--color-brand-muted); z-index: 3;
+}
+
+/* Pill chip — MI style */
+.mi-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--font-mono); font-size: 0.58rem;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  padding: 5px 9px;
+  border: 1px solid var(--color-brand-border);
+  color: var(--color-brand-silver);
+  line-height: 1;
+}
+.mi-pill-gold { color: var(--color-brand-gold); border-color: var(--color-brand-gold); }
+.mi-pill-ice  { color: var(--color-ice-blue);   border-color: var(--color-ice-blue); }
+
+/* Section eyebrow stripe */
+.mi-eyebrow {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 0.6rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--color-brand-gold);
+  margin-bottom: 10px;
+}
+
+/* Gold stripe rule */
+.mi-rule {
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-brand-gold), rgba(201,164,73,0.2));
+  margin: 0;
+  border: none;
+}
+
+/* Channel-map social row */
+.mi-channel-row {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 18px;
+  border: 1px solid var(--color-brand-border);
+  background: #0a0a0a;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s var(--ease-smooth);
+}
+.mi-channel-row:hover { border-color: var(--color-brand-gold); }
+.mi-channel-row--wa   { border-color: var(--color-brand-gold); }
+
+/* Channel icon diamond box */
+.mi-channel-icon {
+  width: 34px; height: 34px;
+  border: 1px solid var(--color-brand-gold);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.mi-channel-icon--wa {
+  background: var(--color-brand-gold);
+}
+.mi-channel-icon--wa .mi-diamond {
+  background: #0a0700;
+}
+
+/* Stat ledger — Pittsburgh */
+.mi-stat-ledger {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 18px 0;
+}
+.mi-stat-col {
+  border-left: 1px solid var(--color-brand-gold);
+  padding-left: 12px;
+}
+.mi-stat-number {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  line-height: 1;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+.mi-stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand-muted);
+  margin: 4px 0 0;
+}
+
+/* Update proof marquee to gold border */
+.proof-marquee {
+  border-top-color: var(--color-brand-gold) !important;
+  border-bottom-color: var(--color-brand-gold) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
 
 /* Upload zone gold glint on hover (controlled sweep, not a flash) */
 .upload-hero {

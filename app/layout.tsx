@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Barlow_Condensed, Cormorant_Garamond, Outfit } from 'next/font/google'
+import { Anton, Archivo, JetBrains_Mono, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
 import { PromoBar }      from '@/components/layout/PromoBar'
 import { Header }        from '@/components/layout/Header'
@@ -9,10 +9,24 @@ import { FloatingWhatsAppButton } from '@/components/layout/FloatingWhatsAppButt
 
 /* ─── Fonts ─────────────────────────────────────────────────────────────── */
 
-const barlowCondensed = Barlow_Condensed({
-  variable: '--font-barlow-condensed',
+const anton = Anton({
+  variable: '--font-anton',
   subsets:  ['latin'],
-  weight:   ['600', '700'],
+  weight:   ['400'],
+  display:  'swap',
+})
+
+const archivo = Archivo({
+  variable: '--font-archivo',
+  subsets:  ['latin'],
+  weight:   ['400', '500', '600', '700'],
+  display:  'swap',
+})
+
+const jetBrainsMono = JetBrains_Mono({
+  variable: '--font-jetbrains',
+  subsets:  ['latin'],
+  weight:   ['400', '500'],
   display:  'swap',
 })
 
@@ -22,13 +36,6 @@ const cormorant = Cormorant_Garamond({
   weight:    ['300', '400', '500', '600', '700'],
   style:     ['normal', 'italic'],
   display:   'swap',
-})
-
-const outfit = Outfit({
-  variable: '--font-outfit',
-  subsets:  ['latin'],
-  weight:   ['300', '400', '500', '600', '700'],
-  display:  'swap',
 })
 
 /* ─── Metadata ───────────────────────────────────────────────────────────── */
@@ -63,7 +70,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${barlowCondensed.variable} ${cormorant.variable} ${outfit.variable}`}
+      className={`${anton.variable} ${archivo.variable} ${jetBrainsMono.variable} ${cormorant.variable}`}
     >
       {/*
         pb-[54px] reserves space so page content isn't hidden behind
