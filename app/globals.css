@@ -2299,15 +2299,25 @@
 
 /* ─── Pittsburgh BANG — product wall tile system ────────────────────────── */
 
-/* Tile link — hover lifts the foot bar */
+/* Tile link — hover lifts with gold edge signal */
 .pb-tile-link {
-  transition: none;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.pb-tile-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.25);
+  z-index: 1;
+  position: relative;
 }
 .pb-tile-link:hover .pb-tile-foot {
-  border-top-color: rgba(201,164,73,0.45);
+  border-top-color: rgba(201,164,73,0.55);
 }
 .pb-tile-link:hover .pb-tile-label {
   color: var(--color-brand-gold-light);
+}
+@media (prefers-reduced-motion: reduce) {
+  .pb-tile-link { transition: none; }
+  .pb-tile-link:hover { transform: none; box-shadow: 0 0 0 1px rgba(201,168,76,0.25); }
 }
 
 /* Tile foot bar */
@@ -2595,16 +2605,23 @@
   pointer-events: none;
 }
 
-/* Hero variant — diamond-stamped brand mark. Straight, no rotation.         */
-/* Larger sparkles, bottom gold rule to read as intentional mark not text.   */
+/* Hero variant — diamond-stamped brand mark. One-time slam entrance + shine. */
+@keyframes bang-slam {
+  0%   { transform: scale(1.28); opacity: 0; }
+  55%  { transform: scale(0.97); opacity: 1; }
+  75%  { transform: scale(1.01); }
+  100% { transform: scale(1);    opacity: 1; }
+}
 .bang-signature--hero {
   font-size:        clamp(3.8rem, 7.5vw, 6.5rem);
   display:          block;
   width:            fit-content;
-  transform:        none;
-  animation-delay:  0.8s;
   padding-bottom:   0.12em;
   border-bottom:    1px solid rgba(201,168,76,0.28);
+  /* One-time slam on load, then shine loops after 1.4s */
+  animation:
+    bang-slam      0.55s cubic-bezier(0.22, 0.61, 0.36, 1) 0.15s both,
+    bang-sig-shine 5.5s ease-in-out 1.4s infinite;
 }
 /* Slightly larger sparkle diamonds on hero scale */
 .bang-signature--hero::before {
@@ -2649,12 +2666,18 @@
   70%, 100%{ transform: rotate(45deg) scale(0); opacity: 0; }
 }
 
-/* Reduced motion: static gold, no sparkle marks */
+/* Reduced motion: static gold, no slam, no sparkle marks */
 @media (prefers-reduced-motion: reduce) {
   .bang-signature {
     background: none !important;
     -webkit-text-fill-color: var(--color-brand-gold) !important;
     color: var(--color-brand-gold) !important;
+    animation: none !important;
+  }
+  .bang-signature--hero {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
   .bang-signature::before,
   .bang-signature::after {
@@ -2694,4 +2717,139 @@
     white-space: nowrap;
     flex-shrink: 0;
   }
+}
+
+/* ─── B+ Premium: Promo Ticker — slim commercial strip ──────────────────── */
+
+.promo-ticker {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(201,164,73,0.05) 15%,
+    rgba(201,164,73,0.10) 50%,
+    rgba(201,164,73,0.05) 85%,
+    transparent 100%
+  );
+  border-top:    1px solid rgba(201,164,73,0.45);
+  border-bottom: 1px solid rgba(201,164,73,0.45);
+  padding:       12px clamp(1.25rem, 3vw, 2.5rem);
+  position:      relative;
+  overflow:      hidden;
+}
+.promo-ticker::before {
+  content:        '';
+  position:       absolute;
+  top:            -10%;
+  left:           -25%;
+  width:          38%;
+  height:         120%;
+  background:     linear-gradient(105deg, transparent 35%, rgba(201,164,73,0.09) 50%, transparent 65%);
+  animation:      hero-sweep 14s ease-in-out 3s infinite;
+  pointer-events: none;
+}
+.promo-ticker-inner {
+  max-width:      1360px;
+  margin:         0 auto;
+  display:        flex;
+  align-items:    center;
+  justify-content: center;
+  gap:            0.75rem;
+  flex-wrap:      wrap;
+}
+.promo-ticker-item {
+  font-family:    var(--font-mono);
+  font-size:      0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color:          rgba(201,164,73,0.80);
+  white-space:    nowrap;
+}
+.promo-ticker-sep {
+  font-size:   0.4rem;
+  color:       rgba(201,164,73,0.45);
+  flex-shrink: 0;
+}
+.promo-ticker-cta {
+  font-family:    var(--font-mono);
+  font-size:      0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color:          var(--color-brand-gold);
+  text-decoration: none;
+  white-space:    nowrap;
+  transition:     color 0.18s ease;
+}
+.promo-ticker-cta:hover { color: var(--color-brand-gold-light); }
+@media (max-width: 639px) {
+  .promo-ticker-wide { display: none; }
+}
+
+/* ─── B+ Premium: Proof + Contact Zone (merged Pittsburgh + Social) ──────── */
+
+.pb-proof-zone {
+  background: var(--color-brand-charcoal);
+  border-top: 1px solid rgba(201,164,73,0.28);
+}
+.pb-proof-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.25rem, 3vw, 2.5rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: start;
+}
+@media (min-width: 768px) {
+  .pb-proof-inner { grid-template-columns: 5fr 7fr; }
+}
+.pb-proof-left {
+  display:        flex;
+  flex-direction: column;
+  gap:            1.25rem;
+}
+.pb-proof-right {}
+
+/* Store brand card — layout shell; background comes from pb-vitrine-store */
+.pb-store-card {
+  height:          200px;
+  position:        relative;
+  border:          1px solid rgba(201,164,73,0.22);
+  overflow:        hidden;
+  display:         flex;
+  flex-direction:  column;
+  justify-content: space-between;
+  padding:         1.5rem 1.5rem 0;
+}
+
+/* ─── B+ Premium: Enhanced vitrine tile tones ────────────────────────────── */
+
+/* GRILLZ — warm gold, bottom-glow suggests mouth/body energy */
+.pb-vitrine-pb-grillz {
+  background:
+    radial-gradient(110% 70% at 50% 105%, rgba(201,164,73,.24), transparent 52%),
+    radial-gradient(90% 65% at 28% 35%,   rgba(201,164,73,.18), transparent 55%),
+    radial-gradient(50% 40% at 72% 70%,   rgba(201,164,73,.10), transparent 55%),
+    repeating-linear-gradient(135deg, rgba(201,164,73,.055) 0 10px, rgba(0,0,0,0) 10px 20px),
+    #100900;
+}
+
+/* WATCHES — ice-cold, circular catch-light suggests watch face */
+.pb-vitrine-pb-watches {
+  background:
+    radial-gradient(38% 38% at 62% 36%, rgba(216,235,255,.22), transparent 55%),
+    radial-gradient(85% 58% at 62% 30%, rgba(216,235,255,.10), transparent 52%),
+    radial-gradient(55% 42% at 28% 68%, rgba(216,235,255,.05), transparent 58%),
+    repeating-linear-gradient(  0deg, rgba(216,235,255,.018) 0 7px, rgba(0,0,0,0) 7px 14px),
+    repeating-linear-gradient( 90deg, rgba(216,235,255,.018) 0 7px, rgba(0,0,0,0) 7px 14px),
+    #030810;
+}
+
+/* CHAINS — chrome warmth, rope-link density */
+.pb-vitrine-pb-chains {
+  background:
+    radial-gradient(75% 55% at 50% 30%, rgba(255,255,255,.12), transparent 56%),
+    radial-gradient(42% 32% at 50% 12%, rgba(201,164,73,.14), transparent 58%),
+    radial-gradient(48% 38% at 50% 88%, rgba(201,164,73,.09), transparent 58%),
+    repeating-linear-gradient( 45deg, rgba(255,255,255,.032) 0 5px, rgba(0,0,0,0) 5px 10px),
+    repeating-linear-gradient(-45deg, rgba(255,255,255,.022) 0 5px, rgba(0,0,0,0) 5px 10px),
+    #070707;
 }

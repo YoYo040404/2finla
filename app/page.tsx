@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import PittsburghStory from '@/components/home/PittsburghStory'
-import SocialTeaser    from '@/components/home/SocialTeaser'
+import ProofContactZone from '@/components/home/ProofContactZone'
 
 const WA_BUILD  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20want%20to%20build%20something%20custom.'
 const WA_PROMO  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%20promos%20are%20running%20right%20now%3F'
@@ -292,7 +291,7 @@ export default function HomePage() {
                   SEND THE IDEA.
                 </em>
               </h3>
-              <span className="mi-mono mi-faint" style={{ fontSize: '0.58rem' }}>WE QUOTE FIRST · NO DEPOSIT · DETAILS CONFIRMED PER PIECE</span>
+              <span className="mi-mono mi-faint" style={{ fontSize: '0.58rem' }}>DETAILS CONFIRMED PER PIECE</span>
             </div>
             <div style={{ flexShrink: 0 }}>
               <Link href="/custom" className="btn-primary" style={{ fontSize: '0.8rem', letterSpacing: '0.08em', padding: '0.8rem 1.5rem' }}>
@@ -304,116 +303,36 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── 3. ASK WHAT'S RUNNING — promo slot (claim-safe) ─────────── */}
+      {/* ─── 3. PROMO TICKER — slim commercial strip (claim-safe) ──────── */}
       {/*
        * CLAIM SAFETY: no %, BOGO, free shipping, material, or inventory
-       * claims. Placeholder copy is intentional. Terms confirmed per piece.
+       * claims. Safe phrases only. Promo terms confirmed per piece.
        */}
-      <section
-        aria-label="Ask what's running this week"
-        style={{
-          background: '#070707',
-          borderTop: '1px solid var(--color-brand-border)',
-          padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 3vw, 2.5rem)',
-        }}
-      >
-        <div
-          style={{
-            maxWidth: '1360px',
-            margin: '0 auto',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: 'clamp(1.75rem, 4vw, 3.5rem)',
-            alignItems: 'center',
-          }}
-        >
-          {/* Left — copy */}
-          <div>
-            <div className="mi-eyebrow" style={{ marginBottom: '0.75rem' }}>
-              <span className="mi-diamond-sm" aria-hidden="true" />
-              THIS WEEK AT 2T
-            </div>
-
-            <h2
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
-                fontWeight: 400,
-                lineHeight: 0.88,
-                marginBottom: '1rem',
-              }}
-            >
-              ASK WHAT&rsquo;S{' '}
-              <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold)', fontFamily: 'var(--font-display)' }}>
-                RUNNING.
-              </em>
-            </h2>
-
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.875rem',
-                color: 'var(--color-brand-silver)',
-                lineHeight: 1.6,
-                maxWidth: '40ch',
-                marginBottom: '1.5rem',
-              }}
-            >
-              Chains, grillz, watches, pendants. Promos confirmed per piece &mdash; ask what&rsquo;s live right now.
-            </p>
-
-            <div>
-              <a href={WA_PROMO} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: '0.85rem', letterSpacing: '0.08em', padding: '0.875rem 1.75rem' }}>
-                ASK WHAT&rsquo;S RUNNING →
-              </a>
-            </div>
-          </div>
-
-          {/* Right — featured drop slot (gleam #2 of 3) */}
-          <div
-            aria-hidden="true"
-            className="mi-vitrine pb-vitrine-promo"
-            style={{
-              aspectRatio: '4/3',
-              position: 'relative',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'flex-end',
-              border: '1px solid rgba(201,168,76,0.38)',
-            }}
+      <div className="promo-ticker" role="complementary" aria-label="What's running at 2T">
+        <div className="promo-ticker-inner">
+          <span className="promo-ticker-item">ASK WHAT&rsquo;S RUNNING NOW</span>
+          <span className="promo-ticker-sep" aria-hidden="true">◆</span>
+          <span className="promo-ticker-item">DETAILS CONFIRMED PER PIECE</span>
+          <span className="promo-ticker-sep promo-ticker-wide" aria-hidden="true">◆</span>
+          <span className="promo-ticker-item promo-ticker-wide">PROMO TERMS SHOWN ON ELIGIBLE PIECES</span>
+          <span className="promo-ticker-sep" aria-hidden="true">◆</span>
+          <a
+            href={WA_PROMO}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="promo-ticker-cta"
           >
-            <div className="mi-gleam" />
-            {/* Top-left: THIS WEEK tag */}
-            <span style={{ position: 'absolute', top: '14px', left: '14px', fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.18em', color: 'var(--color-brand-gold)', userSelect: 'none' }}>
-              THIS WEEK
-            </span>
-            {/* Top-right: brand tag */}
-            <span style={{ position: 'absolute', top: '14px', right: '14px', fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.14em', color: 'rgba(201,168,76,0.38)', userSelect: 'none' }}>
-              ◆ 2T
-            </span>
-            {/* Center: promo message — strong, readable, swappable */}
-            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', textAlign: 'center', userSelect: 'none', pointerEvents: 'none', width: '80%' }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.4rem, 5.5vw, 3.8rem)', color: 'rgba(201,168,76,0.82)', letterSpacing: '0.04em', lineHeight: 0.88, marginBottom: '8px' }}>20% OFF</div>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'rgba(201,168,76,0.58)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '10px' }}>YOUR FIRST CUSTOM ORDER</div>
-              <div style={{ width: '28px', height: '1px', background: 'rgba(201,168,76,0.3)', margin: '0 auto 10px' }} />
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.52rem', color: 'rgba(243,240,234,0.38)', letterSpacing: '0.14em', textTransform: 'uppercase' }}>START YOUR PIECE TODAY</div>
-            </div>
-            {/* Footer */}
-            <div style={{ padding: '10px 14px', borderTop: '1px solid rgba(201,168,76,0.2)', background: 'rgba(201,168,76,0.025)' }}>
-              <span className="mi-mono" style={{ fontSize: '0.55rem', color: 'rgba(201,168,76,0.6)' }}>
-                ASK WHAT&rsquo;S RUNNING
-              </span>
-            </div>
-          </div>
+            TEXT 2T →
+          </a>
         </div>
-      </section>
+      </div>
 
       {/* ─── 4. BUILD CUSTOM — identity flex lane ──────────────────────── */}
       <section
         aria-label="Custom jewelry"
         style={{
-          background: 'var(--color-brand-black)',
-          borderTop: '1px solid var(--color-brand-border)',
+          background: '#0A0702',
+          borderTop: '1px solid rgba(201,164,73,0.18)',
           padding: 'clamp(2.5rem, 5vw, 4.5rem) clamp(1.25rem, 3vw, 2.5rem)',
         }}
       >
@@ -522,9 +441,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <PittsburghStory />
-
-      <SocialTeaser />
+      <ProofContactZone />
     </>
   )
 }
