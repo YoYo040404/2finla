@@ -67,7 +67,7 @@ export default function WatchesPage() {
               marginBottom:  '1.25rem',
             }}
           >
-            WATCHES<br />
+            WATCHES{' '}<br />
             <em style={{ color: 'var(--color-ice-blue)', fontStyle: 'italic' }}>THAT HIT.</em>
           </h1>
 

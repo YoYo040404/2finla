@@ -70,7 +70,7 @@ export default function GrillzPage() {
               marginBottom:  '1.25rem',
             }}
           >
-            GRILLZ<br />
+            GRILLZ{' '}<br />
             <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>BUILT TO HIT.</em>
           </h1>
 

@@ -197,7 +197,8 @@ export function Header() {
             onClick={() => setMobileOpen((o) => !o)}
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
-            className="flex md:hidden flex-col gap-[5px] p-2 bg-transparent border-0 cursor-pointer"
+            className="flex md:hidden flex-col items-center justify-center gap-[5px] p-2 bg-transparent border-0 cursor-pointer"
+            style={{ minHeight: '44px', minWidth: '44px' }}
           >
             {[0, 1, 2].map((i) => (
               <span
