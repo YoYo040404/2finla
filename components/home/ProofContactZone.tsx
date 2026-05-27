@@ -1,9 +1,10 @@
 // components/home/ProofContactZone.tsx
 //
-// Merged Pittsburgh store proof + social channel map — single compact zone.
-// Replaces separate PittsburghStory + SocialTeaser on the homepage.
+// Unified store identity (left) + story/social (right).
+// Left card: 2T mark, stats, address, BANG. stamp — all in one block.
+// Right column: eyebrow → headline → one paragraph → material line → CTA → social rows.
 // Tenure wording: "over 30 years" confirmed 2026-05-17.
-// Left store card: swap pb-vitrine-store div for <img> when store photo arrives.
+// Store photo: swap pb-vitrine-store div for <img> when asset arrives.
 
 import type { ReactNode } from 'react'
 
@@ -88,10 +89,8 @@ export default function ProofContactZone() {
     >
       <div className="pb-proof-inner">
 
-        {/* ── Left: Pittsburgh store identity ───────────────────────── */}
+        {/* ── Left: unified store identity card ─────────────────────── */}
         <div className="pb-proof-left">
-
-          {/* Brand identity card — swap outer div for <img> when store photo arrives */}
           <div
             aria-hidden="true"
             className="pb-vitrine-store pb-store-card"
@@ -125,12 +124,32 @@ export default function ProofContactZone() {
               }}>
                 2T
               </p>
-              <p
-                className="mi-mono"
-                style={{ color: 'rgba(201,168,76,0.42)', margin: '6px 0 0', fontSize: '0.52rem', letterSpacing: '0.28em' }}
-              >
-                JEWELERS
-              </p>
+            </div>
+
+            {/* Stat row — 30+ YEARS · 5TH AVE PITTSBURGH */}
+            <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-end' }}>
+              <div style={{ borderLeft: '1px solid var(--color-brand-gold)', paddingLeft: '10px' }}>
+                <p style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)',
+                  fontWeight: 400,
+                  lineHeight: 1,
+                  color: 'var(--color-brand-white)',
+                  margin: 0,
+                }}>30+</p>
+                <p className="mi-mono mi-faint" style={{ margin: '3px 0 0', fontSize: '0.55rem' }}>YEARS</p>
+              </div>
+              <div style={{ borderLeft: '1px solid rgba(201,168,76,0.38)', paddingLeft: '10px' }}>
+                <p style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(1rem, 2.2vw, 1.4rem)',
+                  fontWeight: 400,
+                  lineHeight: 1,
+                  color: 'var(--color-brand-gold)',
+                  margin: 0,
+                }}>5TH AVE</p>
+                <p className="mi-mono mi-faint" style={{ margin: '3px 0 0', fontSize: '0.55rem' }}>PITTSBURGH</p>
+              </div>
             </div>
 
             {/* Address footer */}
@@ -149,23 +168,30 @@ export default function ProofContactZone() {
                 DOWNTOWN PITTSBURGH · TEXT OR WALK IN
               </p>
             </div>
-          </div>
 
-          {/* Stat ledger */}
-          <div className="mi-stat-ledger">
-            <div className="mi-stat-col">
-              <p className="mi-stat-number" style={{ color: 'var(--color-brand-white)' }}>30+</p>
-              <p className="mi-stat-label">YEARS</p>
-            </div>
-            <div className="mi-stat-col">
-              <p
-                className="mi-stat-number"
-                style={{ color: 'var(--color-brand-gold)', fontSize: 'clamp(1.4rem, 3vw, 1.9rem)' }}
-              >
-                5TH AVE
-              </p>
-              <p className="mi-stat-label">PITTSBURGH</p>
-            </div>
+            {/* BANG. — brand stamp, bottom-right corner */}
+            <span
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                bottom: '1rem',
+                right: '1.25rem',
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+                fontWeight: 400,
+                letterSpacing: '0.06em',
+                lineHeight: 1,
+                background: 'linear-gradient(90deg, #9e7522 0%, #c9a44c 35%, #edd97a 50%, #c9a44c 65%, #9e7522 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                opacity: 0.88,
+                userSelect: 'none',
+                pointerEvents: 'none',
+              }}
+            >
+              BANG.
+            </span>
           </div>
         </div>
 
@@ -200,26 +226,16 @@ export default function ProofContactZone() {
             color: 'var(--color-brand-silver)',
             lineHeight: 1.68,
             maxWidth: '40ch',
-            marginBottom: '0.875rem',
+            marginBottom: '0.75rem',
           }}>
             For over 30 years, 2T Jewelers has been a downtown Pittsburgh stop for chains, watches, grillz, pendants, repairs, and custom pieces built to stand out.
           </p>
 
-          <p style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '0.875rem',
-            color: 'var(--color-brand-muted)',
-            lineHeight: 1.65,
-            maxWidth: '40ch',
-            marginBottom: '1.5rem',
-          }}>
-            Shop what&rsquo;s available. Bring the idea. Text 2T before you buy or build.
+          {/* Material/stone directions — scoped, claim-safe, no downgrade language */}
+          <p className="mi-mono mi-faint" style={{ marginBottom: '1.75rem', fontSize: '0.57rem' }}>
+            <span className="mi-diamond-sm" aria-hidden="true" />
+            GOLD · SILVER · DIAMONDS · MOISSANITE · DETAILS CONFIRMED PER PIECE
           </p>
-
-          {/* BANG. — brand hallmark */}
-          <div style={{ marginBottom: '1.5rem' }}>
-            <span className="bang-signature bang-signature--section">BANG.</span>
-          </div>
 
           <a
             href={WHATSAPP_URL}
@@ -237,7 +253,7 @@ export default function ProofContactZone() {
             TEXT OR COME THROUGH →
           </a>
 
-          {/* Social channel map — compact under story */}
+          {/* Social channel map — platform label removed (icon identifies platform) */}
           <div style={{ borderTop: '1px solid var(--color-brand-border)', paddingTop: '1.5rem' }}>
             <div className="mi-eyebrow" style={{ marginBottom: '0.875rem' }}>
               <span className="mi-diamond-sm" aria-hidden="true" />
@@ -263,9 +279,6 @@ export default function ProofContactZone() {
                   </div>
 
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <p className="mi-mono mi-gold" style={{ margin: 0, marginBottom: '2px', fontSize: '0.58rem' }}>
-                      {ch.platform}
-                    </p>
                     <p style={{
                       margin: 0,
                       fontFamily: 'var(--font-display)',

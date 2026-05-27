@@ -2786,7 +2786,9 @@
 /* ─── B+ Premium: Proof + Contact Zone (merged Pittsburgh + Social) ──────── */
 
 .pb-proof-zone {
-  background: var(--color-brand-charcoal);
+  background:
+    radial-gradient(ellipse 70% 55% at 18% 50%, rgba(201,164,73,0.055) 0%, transparent 58%),
+    #0d0c0b;
   border-top: 1px solid rgba(201,164,73,0.28);
 }
 .pb-proof-inner {
@@ -2810,7 +2812,7 @@
 
 /* Store brand card — layout shell; background comes from pb-vitrine-store */
 .pb-store-card {
-  height:          200px;
+  min-height:      260px;
   position:        relative;
   border:          1px solid rgba(201,164,73,0.22);
   overflow:        hidden;
