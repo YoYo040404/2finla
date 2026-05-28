@@ -41,9 +41,10 @@ const BUDGET_OPTIONS = [
 
 export function CustomBuildFlow() {
   const [data, setData]             = useState<BuildData>(EMPTY)
-  const [submitting, setSubmitting] = useState(false)
-  const [submitted, setSubmitted]   = useState(false)
-  const [dragOver, setDragOver]     = useState(false)
+  const [submitting, setSubmitting]   = useState(false)
+  const [submitted, setSubmitted]     = useState(false)
+  const [submitError, setSubmitError] = useState(false)
+  const [dragOver, setDragOver]       = useState(false)
   const [errors, setErrors]         = useState({ pieceType: false, contact: false, idea: false })
   const fileInputRef                = useRef<HTMLInputElement>(null)
   const successRef                  = useRef<HTMLElement>(null)
@@ -82,7 +83,9 @@ export function CustomBuildFlow() {
   const truncateFilename = (name: string, max = 24) =>
     name.length > max ? name.slice(0, max - 1) + '…' : name
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    setSubmitError(false)
+
     const next = {
       pieceType: !data.pieceType,
       contact:   !data.name.trim() || !data.phone.trim(),
@@ -92,16 +95,28 @@ export function CustomBuildFlow() {
     if (Object.values(next).some(Boolean)) return
 
     setSubmitting(true)
-    console.log('[2T Jewelers] Custom request payload:', {
-      pieceType:      data.pieceType,
-      idea:           data.idea,
-      name:           data.name,
-      phone:          data.phone,
-      budget:         data.budget,
-      uploadFileName: data.uploadFileName,
-      submittedAt:    new Date().toISOString(),
-    })
-    setTimeout(() => { setSubmitting(false); setSubmitted(true) }, 600)
+    try {
+      const body = new FormData()
+      body.append('pieceType', data.pieceType)
+      body.append('idea',      data.idea)
+      body.append('name',      data.name)
+      body.append('phone',     data.phone)
+      body.append('budget',    data.budget)
+      if (data.uploadFile) {
+        body.append('uploadFile', data.uploadFile, data.uploadFileName)
+      }
+
+      const res = await fetch('/api/custom-request', { method: 'POST', body })
+      if (!res.ok) {
+        setSubmitError(true)
+        return
+      }
+      setSubmitted(true)
+    } catch {
+      setSubmitError(true)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   /* ── Success state ──────────────────────────────────────────────────────── */
@@ -479,6 +494,26 @@ export function CustomBuildFlow() {
             >
               {submitting ? 'Sending…' : 'SEND REQUEST →'}
             </button>
+
+            {submitError && (
+              <p style={{
+                color:         '#c0392b',
+                fontSize:      '0.8125rem',
+                marginTop:     '0.875rem',
+                lineHeight:    1.5,
+                letterSpacing: '0.01em',
+              }}>
+                Something went wrong.{' '}
+                <a
+                  href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: 'inherit', textDecoration: 'underline' }}
+                >
+                  Text 2T on WhatsApp →
+                </a>
+              </p>
+            )}
 
             <a
               href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
