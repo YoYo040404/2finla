@@ -16,6 +16,8 @@ const ANCHOR_TILES = [
     pillGold:    'DIAMOND',
     cornerL:     'GOLD TEETH',
     href:        '/grillz',
+    image:       '/assets/demo/phase3a/2t-demo-grillz-flat-01.png',
+    imageAlt:    'Grillz — demo concept visual',
   },
   {
     label:       'WATCHES.',
@@ -25,6 +27,8 @@ const ANCHOR_TILES = [
     pillIce:     'ICED BEZEL',
     cornerL:     'ICE BEZEL',
     href:        '/watches',
+    image:       '/assets/demo/phase3a/2t-demo-watch-face-01.png',
+    imageAlt:    'Watch — demo concept visual',
   },
   {
     label:       'CHAINS.',
@@ -33,6 +37,8 @@ const ANCHOR_TILES = [
     pills:       ['CUBAN', 'ROPE', 'TENNIS'],
     cornerL:     'NECK GAME',
     href:        '/collections/chains',
+    image:       '/assets/demo/phase3a/2t-demo-chains-01.png',
+    imageAlt:    'Chain — demo concept visual',
   },
 ] as const
 
@@ -43,6 +49,11 @@ const SECONDARY_TILES = [
   { label: 'BRACELETS.', tone: 'pb-secondary', sub: 'Wrist weight. Ask what\'s in.', href: '/collections/bracelets' },
   { label: 'EARRINGS.',  tone: 'pb-secondary', sub: 'Iced studs. Diamond hoops.',  href: '/collections/earrings'  },
 ] as const
+
+// Demo concept visuals for secondary tiles — replace with real 2T product media when available
+const SECONDARY_DEMO_IMAGES: Record<string, { src: string; alt: string }> = {
+  'PENDANTS.': { src: '/assets/demo/phase3a/2t-demo-pendants-01.png', alt: 'Pendant — demo concept visual' },
+}
 
 const CUSTOM_CHIPS = [
   'LOGO PIECE', 'NAME PENDANT', 'PHOTO PENDANT',
@@ -70,6 +81,7 @@ export default function HomePage() {
         {/* Campaign video — jewelry media is the visual */}
         <video
           autoPlay muted loop playsInline preload="metadata"
+          poster="/assets/demo/phase3a/2t-demo-hero-chain-pendant-01.png"
           style={{
             position: 'absolute', inset: 0,
             width: '100%', height: '100%',
@@ -226,8 +238,22 @@ export default function HomePage() {
               >
                 <div
                   className={`mi-vitrine pb-vitrine-${tile.tone}`}
-                  style={{ flex: 1, position: 'relative' }}
+                  style={{ flex: 1, position: 'relative', overflow: 'hidden' }}
                 >
+                  {/* Demo concept visual — replace with real 2T product media when available */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={tile.image}
+                    alt={tile.imageAlt}
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      opacity: 0.88,
+                    }}
+                  />
                   {tile.gleam && <div className="mi-gleam" />}
                   {/* Corner label — category identity */}
                   <span className="mi-corner">{tile.cornerL}</span>
@@ -270,8 +296,25 @@ export default function HomePage() {
               >
                 <div
                   className={`mi-vitrine pb-vitrine-${tile.tone}`}
-                  style={{ flex: 1, position: 'relative' }}
-                />
+                  style={{ flex: 1, position: 'relative', overflow: 'hidden' }}
+                >
+                  {/* Demo concept visual — replace with real 2T product media when available */}
+                  {SECONDARY_DEMO_IMAGES[tile.label] && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={SECONDARY_DEMO_IMAGES[tile.label].src}
+                      alt={SECONDARY_DEMO_IMAGES[tile.label].alt}
+                      style={{
+                        position: 'absolute',
+                        inset: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        opacity: 0.88,
+                      }}
+                    />
+                  )}
+                </div>
                 <div className="pb-tile-foot">
                   <h5 style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 'clamp(0.95rem, 1.8vw, 1.1rem)', margin: 0, lineHeight: 0.9 }}>{tile.label}</h5>
                 </div>
