@@ -224,6 +224,37 @@ Approved safe copy:
 - “No deposit. No rush. We quote first.”
 - “Lease-to-own options may be available through Acima.”
 - “Apply with Acima →”
+- “Gold or silver. Diamond or moissanite. Different shine. Different direction.”
+- “Material and stone details confirmed per piece.”
+- “Ask what fits the piece.”
+
+---
+
+## Material & Stone Rules
+
+2T sells gold, silver, diamonds, and moissanite. All four are equal product directions.
+
+**Never write:**
+- “moissanite diamond” or “VVS moissanite diamonds”
+- “diamond alternative,” “diamond substitute,” or “diamond simulant”
+- “fake diamond” for any 2T product
+- “looks like a diamond” in reference to moissanite
+- silver described as cheaper than gold or inferior to gold
+- “budget moissanite” or “affordable alternative to diamonds”
+
+**Material/stone claims require per-piece verification before publishing:**
+- “925 sterling silver” — confirm per piece
+- “D-color moissanite” / “VVS moissanite” — confirm per piece
+- “GRA-certified moissanite” — confirm GRA cert ships with piece
+- “GIA-graded diamond” — confirm GIA report exists per stone
+- “Lab-grown diamond” / “Natural diamond” — confirm per piece
+- “Solid gold” / “14K / 10K / 18K gold” — confirm per piece
+- “Gold-plated over 925 sterling silver” — confirm per piece
+
+Until confirmed: “Material and stone details confirmed per piece.”
+
+Full rules: `CLAIM_SAFETY.md` → Material & Stone Language Rules.
+Architecture planning: `PROJECT_CONTEXT.md` → Material & Stone Strategy.
 
 ---
 

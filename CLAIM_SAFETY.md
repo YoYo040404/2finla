@@ -66,6 +66,14 @@ Do not claim or imply:
 - VVS / VS / SI as a blanket site claim
 - natural diamond as a blanket site claim
 - solid gold as a blanket site claim
+- "925 sterling silver" as a blanket site claim (must be confirmed per piece)
+- "GRA-certified moissanite" as a blanket site claim (certificate must ship with the piece)
+- "D-color moissanite" / "VVS moissanite" as a blanket site claim (must be confirmed per piece)
+- "moissanite diamond" or "VVS moissanite diamonds" (moissanite is a distinct stone — not a diamond)
+- "diamond alternative" / "diamond substitute" / "diamond simulant" applied to moissanite (forbidden in public-facing copy)
+- "looks like a diamond" in reference to moissanite (FTC deception-by-implication risk)
+- "fake diamond" as a descriptor for any product 2T sells
+- silver described through price comparison to gold ("cheaper," "budget," "affordable alternative to gold")
 
 ### Grillz / Dental
 
@@ -105,6 +113,98 @@ The following stronger claims are **permitted** if and only if they are:
 
 ---
 
+## Material & Stone Language Rules
+
+### Business Fact
+
+2T Jewelers sells gold, silver, diamonds, and moissanite.
+Silver and moissanite are legitimate material and stone directions — not budget options, not downgrade options, not second-class alternatives.
+
+### Positioning Rule — No Hierarchy
+
+Treat gold, silver, diamonds, and moissanite as parallel directions of equal standing.
+Do NOT frame silver as inferior to gold.
+Do NOT frame moissanite as inferior to or a substitute for diamond.
+Do NOT rank the four options by price or status in any public-facing copy.
+
+Approved framing:
+> Gold or silver. Diamond or moissanite. Different shine. Different direction.
+
+### Forbidden Language — Material & Stone
+
+Do NOT write:
+- "moissanite diamond" or "VVS moissanite diamonds"
+- "fake diamond"
+- "diamond alternative" (in public-facing copy)
+- "diamond substitute"
+- "diamond simulant"
+- "affordable alternative to diamond"
+- "budget moissanite"
+- "cheaper than a diamond"
+- "looks like a diamond" (FTC deception-by-implication risk)
+- "almost as good as a diamond"
+- "cheap silver" / "cheaper metal" / "budget silver"
+- silver described through its relationship to gold
+
+### Approved Language — Material & Stone
+
+Approved for use at any level (category, homepage, custom flow):
+- "Gold or silver."
+- "Diamond or moissanite."
+- "Different shine. Different direction."
+- "Material and stone details confirmed per piece."
+- "Details confirmed per piece."
+- "Ask what fits the piece."
+- "Material direction helps guide the conversation." *(already in Approved Safe Phrases)*
+
+### Material/Stone Claim Verification Gates
+
+The following claims are ONLY safe when confirmed at the product or business-policy level:
+
+| Claim | Gate before use |
+|---|---|
+| "925 sterling silver" | Confirm purity/hallmark per piece |
+| "D-color moissanite" | Confirm stone grade per piece |
+| "VVS moissanite" | Confirm stone grade per piece |
+| "GRA-certified moissanite" | Confirm GRA certificate ships with the piece |
+| "GIA-graded diamond" | Confirm GIA report exists for the specific stone |
+| "Lab-grown diamond" | Confirm stone origin per piece |
+| "Natural diamond" | Confirm natural origin per piece |
+| "14K / 10K / 18K gold" | Confirm karat per piece |
+| "Gold-plated over 925 sterling silver" | Confirm base metal and plating per piece |
+| "Solid gold" | Confirm not plated per piece |
+
+Until any of the above is confirmed: use "Material and stone details confirmed per piece."
+
+### Moissanite Rule
+
+Moissanite is a distinct gemstone — not a diamond.
+- Do not describe it as a diamond substitute, alternative, or simulant.
+- Do not apply GIA grading language to moissanite. GIA grades diamonds. Moissanite uses GRA grading (or equivalent brand grading).
+- If grading language (D-color, VVS) is used for moissanite, it must refer to moissanite-specific grading and must be confirmed per piece.
+
+### Lab-Grown Diamond Rule
+
+When writing about lab-grown diamonds:
+- Always write "lab-grown diamond" — never shorten to just "diamond" without the qualifier in commercial copy.
+- Approved: "Lab-grown diamond. Same stone. Different origin."
+- Do not write "synthetic diamond" (negative consumer connotation; FTC has flagged this framing as potentially misleading in isolation).
+
+### Silver Rule
+
+925 sterling silver is a primary material direction for 2T — not a lesser option.
+- Never describe silver through price comparison to gold.
+- "Silver" alone is acceptable at the category or homepage level.
+- "925 sterling silver" requires per-piece purity confirmation before use as a specific claim.
+
+### Plated vs. Solid Rule
+
+Gold-plated pieces must be clearly identified as plated.
+- Write: "14K gold-plated" or "gold-plated over 925 sterling silver" — never just "gold" for a plated piece.
+- FTC violation risk if plated pieces are presented or implied to be solid gold.
+
+---
+
 ## Approved Safe Phrases
 
 Use these:
@@ -124,6 +224,12 @@ Use these:
 > Availability may vary.
 
 > Material direction helps guide the conversation.
+
+> Gold or silver. Diamond or moissanite. Different shine. Different direction.
+
+> Material and stone details confirmed per piece.
+
+> Ask what fits the piece.
 
 ### Acima / Financing
 
@@ -234,6 +340,11 @@ Before approving any page:
 - [ ] No fake reviews
 - [ ] No fake celebrity/press
 - [ ] No unverified materials
+- [ ] No moissanite described as "diamond alternative," "diamond substitute," "diamond simulant," or "fake diamond"
+- [ ] No silver described as inferior, cheaper, or lesser than gold
+- [ ] No "moissanite diamond" or "VVS moissanite diamonds" wording
+- [ ] No material/stone grade claims (D-color, VVS, GRA, GIA, 925, karat) without per-piece verification
+- [ ] No plated pieces described as "gold" without plating qualifier
 - [ ] No shipping/warranty/returns language
 - [ ] No timeline
 - [ ] No deposit/payment promises

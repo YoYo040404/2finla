@@ -150,6 +150,78 @@ Do not change to "nearly 30 years" or any other formulation unless the user expl
 
 ---
 
+## Material & Stone Strategy
+
+### Business Fact
+
+2T Jewelers sells gold, silver, diamonds, and moissanite.
+
+Silver and moissanite are legitimate material and stone directions — not downgrade options, not second-class alternatives, not budget substitutes. They must never be framed that way in copy, planning, or prompts.
+
+### Positioning — Parallel Directions, No Hierarchy
+
+Gold, silver, diamonds, and moissanite are four equal directions. The buyer chooses based on preference, aesthetic, and purpose — not because one is better than the other.
+
+Approved framing:
+> Gold or silver. Diamond or moissanite. Different shine. Different direction.
+> Details confirmed per piece.
+> Ask what fits the piece.
+
+Do NOT write:
+- "moissanite diamond" or "VVS moissanite diamonds"
+- "diamond alternative," "diamond substitute," or "diamond simulant"
+- "fake diamond" for any product 2T sells
+- "budget silver," "cheaper than gold," or any downgrade language for silver
+- any language implying moissanite or silver are lesser choices
+
+### Claim-Safety — Material & Stone
+
+Material and stone claims require per-piece verification before publishing. The following are NOT safe as blanket site claims:
+
+- "925 sterling silver" — requires per-piece confirmation
+- "D-color moissanite" / "VVS moissanite" — requires per-piece confirmation
+- "GRA-certified moissanite" — requires GRA certificate to ship with the piece
+- "GIA-graded diamond" — requires actual GIA report per stone
+- "Lab-grown diamond" / "Natural diamond" — must be confirmed per piece
+- "14K / 10K / 18K gold" — must be confirmed per piece
+- "Solid gold" — must be confirmed as not plated per piece
+- "Gold-plated over 925 sterling silver" — must be confirmed per piece
+
+Until confirmed: use "Material and stone details confirmed per piece."
+
+For full rules see `CLAIM_SAFETY.md` → **Material & Stone Language Rules** section.
+
+### Future Category Architecture
+
+When category/product pages are built, the material/stone architecture should run as parallel top-level directions — no nesting, no hierarchy:
+
+```
+GOLD  |  SILVER  |  DIAMONDS  |  MOISSANITE
+```
+
+Combined with product categories:
+```
+Chains | Pendants | Grillz | Watches | Custom
+```
+
+Material/stone filtering belongs at the product or category level — not as the primary top-level navigation door.
+
+### /custom Page — Material & Stone Selector (Planned)
+
+Future `/custom` material/stone selector should use two separate choice groups — "METAL DIRECTION" and "STONE DIRECTION":
+
+**Metal options:** Gold / Silver / Not sure yet
+**Stone options:** Diamond / Moissanite / No stones / Not sure yet
+
+Rules for the selector:
+- Do NOT rank options by price or status
+- Do NOT label any option as "(cheaper)," "(premium)," or "(most popular)" in a way that implies hierarchy
+- Supporting copy: "Different shine. Different direction. Details confirmed per piece."
+- Close copy: "Material and stone details confirmed before production. Budget range helps guide the conversation. Not a final quote."
+- Natural diamond vs. lab-grown diamond sub-options: add only when 2T confirms how they want to handle this distinction
+
+---
+
 ## Visual Direction
 
 **Midnight Icebox — interpreted through hard hip-hop / hood street-luxury energy.**

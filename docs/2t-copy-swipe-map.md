@@ -328,13 +328,69 @@ Summarized from public review content, forum posts, YouTube comment sections, an
 - Over-polished luxury phrases
 - Imitation AAVE / parody street slang
 - Hiding material details (plated labeled as gold, CZ labeled as diamond)
+- Calling moissanite a "diamond alternative," "diamond substitute," or "diamond simulant" — moissanite is its own stone and a legitimate 2T product; it must be named clearly and never positioned as inferior
+- Framing silver as inferior to gold or as a budget option — silver is a primary 2T material direction
+- "Moissanite diamond" or "VVS moissanite diamonds" — moissanite is not a diamond; do not conflate the two
 - Identical card grids that look AI-generated
 - Invented UGC or fake customer photos
 - Fake reviews
 
 ---
 
-## 10. Approved Directional Copy Examples
+## 10. Material & Stone Language Map
+
+*(Added 2026-05-28 — based on 21-source market research pass)*
+
+### The Rule
+
+2T sells gold, silver, diamonds, and moissanite as parallel directions. No hierarchy. No downgrade framing.
+
+### What to Use
+
+| Context | Approved copy |
+|---|---|
+| Category or homepage mention | "Gold or silver. Diamond or moissanite." |
+| Positioning separator | "Different shine. Different direction." |
+| Stone/material fallback | "Material and stone details confirmed per piece." |
+| Custom flow close | "Ask what fits the piece." |
+| Moissanite standalone | "Moissanite — its own stone." |
+| Silver standalone | "925 sterling silver." *(when confirmed per piece)* |
+
+### What to Avoid
+
+| Phrase | Why avoid |
+|---|---|
+| "diamond alternative" | Positions moissanite as runner-up |
+| "diamond substitute" | Same — implies inferiority |
+| "diamond simulant" | Legal/GIA term with negative consumer connotation |
+| "moissanite diamond" | Moissanite is not a diamond — FTC risk |
+| "fake diamond" | Self-defeating; never write this |
+| "looks like a diamond" | FTC deception-by-implication risk |
+| "affordable alternative to diamond" | Re-introduces hierarchy through price |
+| "cheap silver" / "cheaper than gold" | Downgrade framing — forbidden |
+| "budget option" | Forbidden for any 2T material or stone |
+
+### Claim Verification Required Before Publishing
+
+These claims must be confirmed per piece before use:
+- "925 sterling silver"
+- "D-color moissanite" / "VVS moissanite"
+- "GRA-certified moissanite"
+- "GIA-graded diamond"
+- "Lab-grown diamond" / "Natural diamond"
+- "14K / 10K / 18K gold"
+- "Gold-plated over 925 sterling silver"
+- "Solid gold"
+
+Safe default until confirmed: "Material and stone details confirmed per piece."
+
+### CZ Note
+
+CZ is NOT a 2T product. Do not include CZ in any 2T copy, category, or selector context.
+
+---
+
+## 11. Approved Directional Copy Examples
 
 These are directionally approved lines. They follow voice and claim rules. Use as inspiration for new category and promo copy.
 

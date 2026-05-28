@@ -30,6 +30,17 @@
 - "BUILT TO HIT." stays as the primary hero headline. Do not change it.
 - "SHOP JEWELRY" and "BUILD CUSTOM →" hero CTAs stay as-is.
 
+**Material & Stone Language Rules (added 2026-05-28):**
+- 2T sells gold, silver, diamonds, and moissanite. All four are legitimate product directions. No hierarchy.
+- Do NOT call moissanite a "diamond alternative," "diamond substitute," "diamond simulant," or "fake diamond."
+- Do NOT frame silver as inferior, cheaper, or lesser than gold.
+- Do NOT write "moissanite diamond" or "VVS moissanite diamonds."
+- Do NOT use D-color, VVS, GRA-certified, GIA, 925, karat, solid/plated claims without per-piece verification.
+- Approved framing: "Gold or silver. Diamond or moissanite. Different shine. Different direction."
+- Safe default: "Material and stone details confirmed per piece."
+- Full rules: `CLAIM_SAFETY.md` → Material & Stone Language Rules section.
+- Category/custom architecture planning: `PROJECT_CONTEXT.md` → Material & Stone Strategy section.
+
 Before working on homepage, SEO, CRO, copy, promo, or any category page, read:
 - `docs/2t-growth-strategy-seo-cro-90day.md` — official sitewide growth, SEO, and CRO strategy
 - `docs/2t-voc-copy-system.md` — voice-of-customer copy system
@@ -44,9 +55,12 @@ Keep language: direct, product-aware, street-luxury, text-first, claim-safe.
 - "Send the photo / logo / name"
 - "Ask what's in stock"
 - "Product details confirmed per piece"
+- "Material and stone details confirmed per piece."
 - "We quote before the build"
 - "No deposit to start"
 - "Real Pittsburgh Store. Direct Text Access. Product Details Confirmed Per Piece."
+- "Gold or silver. Diamond or moissanite. Different shine. Different direction."
+- "Ask what fits the piece."
 
 **Do not publish as active claims unless verified:**  
 solid gold, real diamonds, natural diamonds, VVS/GIA, free shipping, lifetime warranty, in stock, ships fast, BOGO, percentage-off, weekly deal

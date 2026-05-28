@@ -302,7 +302,7 @@ Claims around watches must be handled very carefully.
 
 ### Fake Diamonds
 
-The buyer is worried that “diamond” may actually mean CZ, moissanite, lab-grown, or another simulant.
+The buyer is worried that “diamond” may actually mean CZ, moissanite, lab-grown, or another simulant when the seller said “diamond.”
 
 Copy response:
 
@@ -313,6 +313,14 @@ Do not say:
 > All pieces are real diamonds.
 
 Unless that is verified for every eligible piece.
+
+**Important 2T positioning note:**
+Moissanite is a legitimate product 2T sells — not a fake option. The buyer fear above is about DECEPTION: being sold one stone while being told it is another. 2T's response is transparency, not avoidance of moissanite. When a buyer asks “is this moissanite?”, the correct answer is honest and confident: “Yes — moissanite is its own stone. Details confirmed per piece.”
+
+CZ is NOT listed as a 2T product. Do not imply 2T sells CZ. Do not lump moissanite and CZ together in any copy context.
+
+Approved moissanite framing:
+> Diamond or moissanite. Different shine. Different direction. Details confirmed per piece.
 
 ### Plated vs Solid
 
@@ -1792,6 +1800,85 @@ Use instead:
 > We quote before the build.
 
 > No deposit to start.
+
+---
+
+## 17. Material & Stone Copy Rules
+
+*(Added 2026-05-28 — based on 21-source market research pass)*
+
+### Business Fact
+
+2T Jewelers sells gold, silver, diamonds, and moissanite. All four are legitimate product directions with equal standing. No hierarchy.
+
+### The Core Rule
+
+Do not write about 2T's materials or stones in a way that creates a ranking: diamond over moissanite, gold over silver, expensive over affordable.
+
+Approved mental model:
+> Gold or silver. Diamond or moissanite. Different shine. Different direction.
+
+### How to Write About Moissanite
+
+Moissanite is a distinct gemstone. It has its own identity, its own properties, and its own buyer.
+
+Write:
+- "Moissanite" — named directly, no qualifications needed
+- "Diamond or moissanite" — two equal directions
+- "Different shine. Different direction." — the strategic separator
+
+Do not write:
+- "diamond alternative"
+- "diamond substitute"
+- "diamond simulant"
+- "moissanite diamond"
+- "fake diamond"
+- "looks like a diamond"
+- "almost as good as a diamond"
+- "affordable alternative to diamonds"
+
+Do not apply GIA grading to moissanite. GIA grades diamonds. If moissanite grading language is used (D-color, VVS), it refers to moissanite-specific grading and must be confirmed per piece.
+
+### How to Write About Silver
+
+Silver is a primary material direction at 2T — not a fallback from gold.
+
+Write:
+- "Silver" or "925 sterling silver" (925 requires per-piece confirmation)
+- "Gold or silver." — two equal directions
+- Focus on visual qualities: clean, iced, bold, direct
+
+Do not write:
+- "cheaper than gold"
+- "budget option"
+- "entry-level metal"
+- "affordable alternative to gold"
+- "not gold, but..."
+
+### How to Write About Gold
+
+Gold language stays the same as before — confirmed per piece, karat-qualified when stated, plated vs. solid distinction required.
+
+### How to Write About Diamonds
+
+"Diamond" without a qualifier means natural diamond in most buyer contexts. Be specific:
+- "Natural diamond" (requires per-piece confirmation)
+- "Lab-grown diamond" (requires per-piece confirmation — always use the full qualifier)
+
+Do not shorten "lab-grown diamond" to just "diamond" in commercial copy.
+
+### Safe Defaults for All Material/Stone Copy
+
+When specific material or stone details are not confirmed per piece:
+> Material and stone details confirmed per piece.
+> Ask what fits the piece.
+> Details confirmed per piece.
+
+These are the safe fallback lines. Use them at category level, in custom flow copy, and in any copy where the specific stone or metal has not been confirmed.
+
+### What CZ Is NOT
+
+CZ is NOT listed as a 2T product. Do not suggest, imply, or include CZ as a 2T material or stone option in any copy, selector, or category context.
 
 ---
 

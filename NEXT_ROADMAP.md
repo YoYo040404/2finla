@@ -74,6 +74,9 @@ npm run dev
 - Real upload backend
 - Final logo SVG/2x/favicon
 - Shopify recalibration
+- Material/stone category pages (Gold / Silver / Diamonds / Moissanite as parallel top-level sections)
+- Material/stone filtering on product/category pages
+- /custom metal + stone direction selector (planned — see PROJECT_CONTEXT.md → Material & Stone Strategy)
 
 ### Next Milestone 🎯
 
@@ -335,6 +338,8 @@ Only if user explicitly approves:
 16. About / Pittsburgh / Store — research + redesign plan (after QA gates)
 17. Social / Instagram / TikTok planning
 18. Backend / form integration — only after design approval
+19. Material/stone category architecture — Gold / Silver / Diamonds / Moissanite as parallel sections (research + plan required first; see PROJECT_CONTEXT.md → Material & Stone Strategy)
+20. /custom metal + stone direction selector upgrade (planned — no ranking by price/status; see PROJECT_CONTEXT.md → Material & Stone Strategy)
 
 ---
 
