@@ -23,7 +23,7 @@ export const shopCategories: NavItem[] = [
   { label: 'Bracelets',        href: '/collections/bracelets' },
   { label: 'Rings',            href: '/collections/rings' },
   { label: 'Earrings',         href: '/collections/earrings' },
-  { label: 'Diamond Watches',  href: '/watches' },
+  { label: 'Watches',          href: '/watches' },
   { label: 'Grillz',           href: '/grillz' },
   { label: 'Custom Jewelry',   href: '/custom' },
   { label: 'New Arrivals',     href: '/collections/new-arrivals', tag: 'New' },
@@ -57,6 +57,8 @@ export const footerNav: NavGroup[] = [
     title: 'Inquire',
     links: [
       { label: 'Custom Jewelry', href: '/custom' },
+      { label: 'Grillz',         href: '/grillz' },
+      { label: 'Watches',        href: '/watches' },
     ],
   },
   {
