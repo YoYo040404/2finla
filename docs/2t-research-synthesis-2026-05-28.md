@@ -248,34 +248,41 @@ Avoid:
 
 ---
 
-### Phase 7 — Claim / Product Data Architecture
-Use three claim levels:
+### Phase 7 — Verified Claim Architecture (Updated 2026-05-29)
 
-1. Sitewide safe defaults:
-   - Product details confirmed per piece.
-   - Material and stone details confirmed per piece.
-   - Availability may vary.
-   - Ask what’s in stock now.
-   - We quote before the build.
+Strong commercial claims are a key commercial asset for 2T Jewelers. The architecture must support all three tiers as product data and policies become available.
 
-2. Collection-level claims:
-   Only if every product in that collection actually shares the claim.
+**Tier 1 — Sitewide policy claims (publish when policy is confirmed):**
+- Free shipping on eligible orders (requires written policy)
+- Lifetime warranty on eligible pieces (requires written policy with defined coverage)
+- Over 30 years — Pittsburgh (confirmed)
 
-3. Product-level claims:
-   Only when verified for that exact product:
-   - solid gold
-   - natural diamonds
-   - lab diamonds
-   - moissanite
-   - VVS
-   - GIA
-   - authenticated watch
-   - factory-set diamonds
-   - in stock
-   - shipping terms
-   - warranty terms
+**Tier 2 — Collection-level claims (publish when entire collection qualifies):**
+- Solid gold collection / 14K gold collection
+- Real diamond jewelry
+- 925 sterling silver
+- Moissanite jewelry
 
-Never use strong claims as blanket sitewide copy unless confirmed and approved.
+**Tier 3 — Product-level claims (publish on PDPs and badges when confirmed per piece):**
+- Solid gold + specific karat (`14K SOLID GOLD`, `10K SOLID GOLD`)
+- Natural diamond (explicit "natural" label)
+- Lab-grown diamond (explicit "lab-grown" qualifier)
+- VVS / VS / SI clarity grade
+- GIA certificate (cert number + scan)
+- GRA-certified moissanite
+- 925 sterling silver (hallmark confirmed)
+- Factory-set diamonds (watches)
+- Authenticated watch (condition + source confirmed)
+- In stock / ships now (live inventory)
+- Warranty terms (as confirmed per product category)
+
+**Build direction:**
+- Product card badge layer: `[14K GOLD]` `[VVS MOISSANITE]` `[REAL DIAMOND]` `[GIA CERT]` `[IN STOCK]`
+- PDP spec block: full material + stone + grade + condition + availability + warranty + cert
+- Collection filters: by material (Gold / Silver) and stone type (Diamond / Moissanite)
+- ProofMarquee: add confirmed policy-level claims when policies exist
+
+**Rule:** Verify first, then publish prominently at the correct scope. Do not use product-level claims as sitewide defaults. Do not invent or fabricate. Safe fallback until verified: "Product details confirmed per piece."
 
 ---
 
@@ -331,14 +338,18 @@ Do not:
 - add fake testimonials
 - add fake social proof
 - add fake celebrity proof
-- add unverified inventory claims
-- add unverified shipping/warranty claims
-- add unverified diamond/gold/VVS/GIA claims
-- publish “D-color VVS moissanite” unless product-level proof exists
-- publish “GRA-certified” unless certificate proof exists
+- publish inventory claims without confirmed stock
+- publish shipping/warranty claims without written policy
+- publish diamond/gold/VVS/GIA claims without product-level verification
+- publish “D-color VVS moissanite” without per-piece grade confirmation
+- publish “GRA-certified” without certificate confirmation
+- publish “natural diamond” without supplier confirmation per piece
+- publish “solid gold” without karat confirmation per piece
 - touch `logo-to-use.png` without confirmation
 - touch `/grillz` or `/watches` deeply before asset/business-model clarity
-- overbuild ecommerce before proof and product data exist
+- overbuild ecommerce before product data exists
+
+Note: verified real diamonds, VVS, GIA, solid gold, authenticated watches, and similar claims are **approved** and should appear prominently when the verification conditions above are met. The restriction is on unverified publishing, not on the claims themselves.
 
 ---
 

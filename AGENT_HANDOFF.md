@@ -62,10 +62,23 @@ Keep language: direct, product-aware, street-luxury, text-first, claim-safe.
 - "Gold or silver. Diamond or moissanite. Different shine. Different direction."
 - "Ask what fits the piece."
 
-**Do not publish as active claims unless verified:**  
-solid gold, real diamonds, natural diamonds, VVS/GIA, free shipping, lifetime warranty, in stock, ships fast, BOGO, percentage-off, weekly deal
+**Verified claim directive (updated 2026-05-29):**  
+The following are **approved commercial claims** to use prominently when verified at product, collection, certificate, or policy level:
+- Solid gold / karat — when confirmed per piece
+- Real diamonds / natural diamonds / lab-grown diamonds — when confirmed per piece, with explicit type labeling
+- VVS / VS / SI — when confirmed clarity grade per piece
+- GIA certificate — when physical cert exists per stone
+- 925 sterling silver — when confirmed per piece
+- Factory-set diamonds — when confirmed per watch/piece
+- Authenticated watches — when condition and source confirmed
+- In stock / available now — when live inventory confirmed
+- Free shipping — when written policy confirmed
+- Lifetime warranty — when written policy confirmed
 
-**Safe placeholders:**
+**These are goals to publish when verified, not risks to suppress.**  
+Do not publish as blanket sitewide claims without verification. Do not invent them.
+
+**Safe placeholders when not yet verified:**
 - "Ask what's running now."
 - "Ask what's in stock now."
 - "Promo terms shown on eligible pieces only."
@@ -212,14 +225,18 @@ Custom page (as of commit 84af600 — 2026-05-17):
 
 ## Promotions + Verified Claims Policy
 
-2T Jewelers runs promotions and sales. The site will eventually support promotional architecture (Special of the Week, sale strip, percentage-off modules, seasonal campaigns, offer modules on category pages).
+2T Jewelers sells real gold, real diamonds, moissanite, silver, and authenticated watches. Strong product and policy claims (solid gold, natural diamonds, VVS/GIA, free shipping, lifetime warranty, in stock, authenticated watches) are **commercial assets** — use them prominently when verified at product, collection, or policy level.
 
-Stronger product and policy claims (solid gold, natural diamonds, VVS/GIA, free shipping, lifetime warranty, in stock, guaranteed) are **allowed when verified and scoped** — confirmed per product, category, or policy. Never blanket site-wide. Never invented. See `CLAIM_SAFETY.md` for the full allowed/forbidden breakdown.
+The verification rule: confirm the claim is true for the specific product, collection, or policy being published. Then publish it. Do not suppress strong claims when they are true.
 
-If product data or policy details are missing, default to safe fallback:
+Architecture to build when product data arrives: product card badges, PDP spec blocks, collection filters, trust strip updates, promo module with product-level badges.
+
+If product data or policy details are not yet confirmed, use safe fallbacks:
 - "Product details are confirmed per piece."
 - "Promo terms shown on eligible items only."
 - "Availability may vary."
+
+Full verification gate table: `CLAIM_SAFETY.md` → Verified Claim Architecture.
 
 ---
 

@@ -1005,40 +1005,44 @@ Promo copy should always include:
 
 ---
 
-## 9. Trust / Claim Copy Rules
+## 9. Trust / Claim Copy Rules (Updated 2026-05-29)
 
-| Claim | Allowed when verified | Unsafe unless verified | Safe fallback copy |
+Strong verified claims are commercial assets. Use them prominently when verified. Do not suppress them. The column “Use when verified” describes the goal — not a rare exception.
+
+| Claim | Use when verified | Do not use without verification | Safe fallback copy |
 |---|---|---|---|
-| solid gold | Product has verified karat/material details | Category-wide “solid gold” claims | Material confirmed per piece. |
-| real diamonds | Product stones are verified as diamonds | “All diamonds are real” | Stone details confirmed per piece. |
-| natural diamonds | Product stones are verified as natural diamonds | Using natural for lab-grown, CZ, or moissanite | Ask us for stone details before purchase. |
-| VVS | Product has verified clarity grading | Generic VVS claims across category | Stone grade shown on eligible pieces only. |
-| GIA | Specific GIA certificate exists | “GIA certified” without certificate | Certificate shown when available. |
-| free shipping | Written shipping policy confirms it | Blanket free shipping claim | Shipping terms confirmed before checkout. |
-| lifetime warranty | Written active policy exists | All-products lifetime warranty claim | Coverage varies by piece. |
-| guaranteed | Guarantee is clearly defined | Vague “guaranteed real” | We confirm product details before you buy. |
-| in stock | Live inventory confirms availability | Fake urgency or old inventory | Ask what is in stock now. |
-| ships fast | Real fulfillment window exists | Generic “fast shipping” | Text us for current timing. |
-| made custom | Custom service is active for that category | Promising impossible custom builds | Send the idea for review and quote. |
-| deposit/no deposit | Approved lead policy applies | “No deposit” for all production stages | No deposit to start. We quote before the build. |
+| Solid gold + karat | Product badge, PDP, collection intro — confirmed alloy + karat | Blanket “all solid gold” across unchecked products | “Material confirmed per piece.” |
+| Real diamonds | Product badge, PDP — confirmed per piece | “All diamonds are real” as sitewide claim | “Stone details confirmed per piece.” |
+| Natural diamonds | PDP with explicit “natural” label — confirmed per piece | Using “natural” for lab-grown or moissanite | “Ask us for stone details before purchase.” |
+| Lab-grown diamonds | PDP with explicit “lab-grown” qualifier — confirmed per piece | Shortened to “diamond” without qualifier | “Stone type confirmed per piece.” |
+| VVS / VS / SI | Product badge and PDP spec block — confirmed grade per piece | Generic VVS claims across unchecked products | “Stone grade confirmed per piece.” |
+| GIA certificate | PDP with cert number + scan — confirmed cert per stone | “GIA certified” without certificate | “Certificate available on request.” |
+| GRA-certified moissanite | Product badge, PDP — cert ships with piece | “GRA certified” without certificate | “Stone details confirmed per piece.” |
+| 925 sterling silver | Product badge, PDP — confirmed purity per piece | Blanket “925 silver” across unchecked products | “Material confirmed per piece.” |
+| Authenticated watches | Watches PDP — condition, stones, source confirmed | Authentication claim without confirmed sourcing | “Details confirmed per piece.” |
+| Factory-set diamonds | Watches PDP — confirmed as factory-set | Implying factory-set without confirmation | “Stone setting details confirmed per piece.” |
+| In stock / available | Product badge, promo module — live inventory confirmed | Fake urgency or stale inventory | “Ask what is in stock now.” |
+| Free shipping | Promo bar, trust strip — written policy confirmed | Blanket free shipping without policy | “Shipping terms confirmed before checkout.” |
+| Lifetime warranty | Trust strip, PDP — written policy confirmed | All-products warranty without policy | “Coverage confirmed per piece.” |
+| Made custom | Custom page, category cards — process is active | Promising builds outside current capability | “Send the idea for review and quote.” |
+| No deposit to start | Custom page, grillz, watches — policy confirmed | Blanket “no deposit” for all production stages | “No deposit to start. We quote before the build.” |
+| Acima financing | Footer, checkout — partnership active | Guaranteed approval or specific rate/term | “Lease-to-own options may be available through Acima.” |
 
-### Product-Level Wording
+### Product-Level Wording (use on PDPs and product cards)
 
-Use for exact products:
+> This piece: [14K SOLID GOLD] · [REAL DIAMOND] · [VVS] · [GIA CERT #XXXXXXXX]
 
-> This piece: [material], [stone type], [size], [availability], [price], confirmed before purchase.
+### Collection-Level Wording (use when entire collection qualifies)
 
-### Category-Level Wording
+> All pieces in this collection are [claim]. Details confirmed per piece.
 
-Use when not every product in the category shares the same specs:
+### Category-Level Wording (use when not every product shares specs)
 
 > Materials, stones, and availability vary by piece. Text 2T to confirm details.
 
-### Policy-Level Wording
+### Policy-Level Wording (use when written policy exists)
 
-Use only after written policy is confirmed:
-
-> Warranty, shipping, returns, and promo terms apply to eligible pieces only and are confirmed before purchase.
+> [Free shipping / Warranty / Returns] apply to eligible pieces. Terms confirmed at purchase.
 
 ---
 

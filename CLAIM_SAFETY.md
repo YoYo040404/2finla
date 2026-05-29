@@ -2,9 +2,40 @@
 
 ## Purpose
 
-This file prevents unverified claims, fake proof, unsafe promises, and misleading product/service language.
+This file governs how 2T Jewelers uses strong commercial claims on the website. Its job is not to suppress claims — it is to ensure every claim published is true.
+
+2T Jewelers sells real gold, real silver, real diamonds, moissanite, and authenticated watches. Strong product claims are a commercial asset and should be used prominently when verified. The rules here define the verification gate required before publishing, not a preference for avoiding strong language.
 
 Apply before every build, copy change, QA pass, and deployment.
+
+---
+
+## Commercial Claim Directive (Updated 2026-05-29)
+
+The following claim categories are **approved for prominent use on the website** when verified at the appropriate level. They are not forbidden categories. They are commercial goals.
+
+| Claim | Approved use | Where |
+|---|---|---|
+| Real diamonds | Yes — when confirmed per piece or per collection | Product card, PDP, collection intro, trust strip |
+| Natural diamonds | Yes — when confirmed per piece (natural vs lab-grown labeling required) | PDP, collection page, product badge |
+| Lab-grown diamonds | Yes — when confirmed per piece | PDP, product badge, with explicit "lab-grown" qualifier |
+| VVS / VS / SI | Yes — when confirmed clarity grade per piece | Product card badge, PDP spec block |
+| GIA certificate | Yes — when physical cert exists per stone | PDP, trust strip, product badge |
+| Solid gold / karat | Yes — when confirmed alloy and karat per piece | Product card badge, PDP, collection intro |
+| 925 sterling silver | Yes — when confirmed purity per piece | Product card badge, PDP |
+| Authenticated watches | Yes — when condition, stones, and authentication details are confirmed | Watches page, high-ticket product listing |
+| Factory-set diamonds | Yes — when confirmed as factory-set per watch/piece | Watches page, product-level |
+| In stock / available now | Yes — when live inventory confirms availability | Product card badge, promo module, category page |
+| Free shipping | Yes — when written shipping policy confirms it | Promo bar, trust strip, footer |
+| Lifetime warranty | Yes — when written policy exists with defined coverage | Trust strip, product page, FAQ |
+
+**The rule is not "avoid these claims." The rule is: verify first, then publish prominently.**
+
+Verification gate: product-level supplier confirmation, GIA/GRA certificate, written policy document, or inventory confirmation — depending on claim type.
+
+Safe fallback when not yet verified: "Material and stone details confirmed per piece." / "Ask before you buy."
+
+---
 
 ---
 
@@ -88,28 +119,47 @@ Do not claim or imply:
 
 ---
 
-## Allowed When Verified and Scoped
+## Verified Claim Architecture
 
-The following stronger claims are **permitted** if and only if they are:
+These claims are **commercial assets** and should be built into product data, badges, filters, category pages, and trust strips as verified information becomes available. The architecture should actively support them.
 
-1. **True and verified** (confirmed product data, policy doc, or supplier certificate)
-2. **Scoped** to the correct product, category, promo, or policy — not blanket site-wide
-3. **Approved** by the user before publishing
+### Verification Gates (what is required before publishing)
 
-| Claim | Scope required |
-|---|---|
-| Solid gold | Product-level — confirm alloy and karat |
-| Real diamonds | Product-level — confirm supplier |
-| Natural diamonds | Product-level — confirm supplier |
-| VVS / VS / SI | Product-level — confirm grade source |
-| GIA certificate | Product-level — confirm the cert exists |
-| Free shipping | Policy-level — confirm shipping policy |
-| Lifetime warranty | Policy-level — confirm warranty policy |
-| Guaranteed | Policy-level — confirm what exactly is guaranteed |
-| In stock | Product-level — confirm actual inventory |
+| Claim | Verification required | Scope |
+|---|---|---|
+| Solid gold | Karat and alloy confirmed per piece | Product card, PDP, collection intro |
+| Real diamonds | Stone identity confirmed per piece | Product card badge, PDP |
+| Natural diamonds | Natural vs lab-grown confirmed per piece | PDP — always use explicit "natural" qualifier |
+| Lab-grown diamonds | Origin confirmed per piece | PDP — always use "lab-grown" qualifier |
+| VVS / VS / SI | Clarity grade confirmed per piece | Product badge, PDP spec block |
+| GIA certificate | Physical cert confirmed per stone | PDP, cert badge, downloadable scan |
+| GRA-certified moissanite | Certificate confirmed to ship with piece | Product badge, PDP |
+| 925 sterling silver | Purity confirmed per piece | Product badge, PDP |
+| Gold-plated (karat + base) | Base metal and plating confirmed | Product card — required disclosure if plated |
+| Free shipping | Written policy confirmed | Promo bar, trust strip, footer |
+| Lifetime warranty | Written policy with defined coverage | Trust strip, PDP, FAQ |
+| In stock | Live inventory confirmed | Product card badge, promo module |
+| Factory-set diamonds | Confirmed as factory-set per watch | Watches PDP |
+| Authenticated watches | Condition, stones, and source confirmed | Watches listing, high-ticket PDP |
 
-**Do NOT** use any of these as global blanket claims across the whole site.  
-**Do NOT** publish any of these without product-level, category-level, or policy-level verification.
+### Scope rule
+
+These may be used at the tightest confirmed scope:
+- **Product-level** — visible only on that specific product's card/PDP
+- **Collection-level** — only if every product in the collection shares the claim
+- **Policy-level** — site-wide (free shipping, warranty) only when the written policy covers all eligible products and exceptions are disclosed
+
+**Do not** use product-level claims as sitewide defaults.  
+**Do not** use collection-level claims on categories where not every piece qualifies.
+
+### Future architecture to build
+
+When product data is available:
+- Product card badge layer: `[14K GOLD]` `[VVS MOISSANITE]` `[REAL DIAMOND]` `[IN STOCK]` `[GIA CERT]`
+- PDP spec block: material / stone type / stone grade / carat / karat / condition / availability / warranty / cert
+- Collection filters: by material (Gold / Silver) and stone (Diamond / Moissanite)
+- Trust strip: update ProofMarquee with verified policy-level claims as they are confirmed
+- Promo module State C: active verified offer with material and stone badges
 
 ---
 
@@ -334,21 +384,23 @@ For current prototype pages:
 
 Before approving any page:
 
-- [ ] No forbidden claims
-- [ ] No fake proof
-- [ ] No fake products
-- [ ] No fake reviews
-- [ ] No fake celebrity/press
-- [ ] No unverified materials
+**Verified claims present → check they are scoped correctly:**
+- [ ] Any material/stone grade claim (VVS, GIA, GRA, 925, karat, solid gold) is scoped to the correct product or collection
+- [ ] "Natural diamond" is explicitly labeled as natural (not shortened to "diamond")
+- [ ] "Lab-grown diamond" always carries the "lab-grown" qualifier
+- [ ] "In stock" reflects confirmed live inventory
+- [ ] Free shipping / warranty claims reference a written policy
+- [ ] No claim appears as a blanket sitewide statement covering products not yet confirmed
+
+**Unverified content → block:**
+- [ ] No fake proof, fake reviews, fake celebrity/press, fake UGC
+- [ ] No fake products or fake prices
 - [ ] No moissanite described as "diamond alternative," "diamond substitute," "diamond simulant," or "fake diamond"
 - [ ] No silver described as inferior, cheaper, or lesser than gold
 - [ ] No "moissanite diamond" or "VVS moissanite diamonds" wording
-- [ ] No material/stone grade claims (D-color, VVS, GRA, GIA, 925, karat) without per-piece verification
 - [ ] No plated pieces described as "gold" without plating qualifier
-- [ ] No shipping/warranty/returns language
-- [ ] No timeline
-- [ ] No deposit/payment promises
-- [ ] No technical CAD/render promise
-- [ ] No grillz safety/dental claims
+- [ ] No grillz dental/fit/FDA/dental-approval claims
+- [ ] No CAD/render/free-mockup promise
+- [ ] No deposit/payment/timeline promises without confirmed policy
 - [ ] Upload/file language is prototype-safe if backend is not wired
 - [ ] Success message is safe

@@ -233,35 +233,38 @@ Summarized from public review content, forum posts, YouTube comment sections, an
 
 ---
 
-## 6. Claim Map
+## 6. Claim Map (Updated 2026-05-29)
 
-### Allowed When Verified (per product/category/policy)
+Strong verified claims are commercial assets. The goal is to publish them prominently as product data and policies are confirmed — not to minimize them.
 
-| Claim | Verification required |
+### Approved Claims — Use Prominently When Verified
+
+| Claim | Verification required | Where to publish |
+|---|---|---|
+| Solid gold + karat | Alloy and karat confirmed per piece | Product badge, PDP, collection intro |
+| Real diamonds | Stone identity confirmed per piece | Product badge, PDP |
+| Natural diamonds | Natural origin confirmed per piece (label as "natural") | PDP — explicit "natural" required |
+| Lab-grown diamonds | Origin confirmed per piece (label as "lab-grown") | PDP — explicit "lab-grown" required |
+| VVS / VS / SI | Clarity grade confirmed per piece | Product badge, PDP spec block |
+| GIA certificate | Physical cert confirmed per stone | PDP, cert badge, downloadable scan |
+| 925 sterling silver | Purity confirmed per piece | Product badge, PDP |
+| Factory-set diamonds | Confirmed per watch | Watches PDP |
+| Authenticated watch | Condition and source confirmed | Watches listing, high-ticket PDP |
+| In stock / ships now | Live inventory confirmed | Product card badge, promo module |
+| Free shipping | Written policy confirmed | Promo bar, trust strip, footer |
+| Lifetime warranty | Written policy confirmed | Trust strip, PDP, FAQ |
+| BOGO / percentage-off | Active offer with confirmed terms, dates, eligible products | Promo bar, promo module |
+
+### Safe Placeholder Copy (use when not yet verified)
+
+| Not yet confirmed | Placeholder |
 |---|---|
-| Solid gold | Karat, product-level confirmation |
-| Real diamonds | Stone identity, not lab-grown/CZ/moissanite unless stated |
-| Natural diamonds | Natural vs. lab-grown verified per piece |
-| VVS | Clarity grade per product |
-| GIA certificate | Specific certificate exists for that product |
-| Free shipping | Written policy with eligible orders, exclusions, locations |
-| Lifetime warranty | Written policy with exact coverage and exclusions |
-| In stock | Live inventory confirms availability |
-| Ships fast | Real fulfillment timeline confirmed |
-| BOGO | Active offer with written terms, dates, eligible products |
-| Percentage-off | Active offer with dates, exclusions, eligible products |
-
-### Not Active Yet / Safe Placeholder
-
-| Future capability | Placeholder copy |
-|---|---|
-| Solid gold product line | Material confirmed per piece. |
-| Diamond product line | Stone details confirmed per piece. |
-| Free shipping policy | Shipping terms confirmed before checkout. |
-| Lifetime warranty | Coverage is confirmed per piece. |
-| In-stock drops | Ask what's in stock now. |
-| Weekly specials | Text 2T to ask what's running this week. |
-| BOGO / percentage-off | Promo terms shown on eligible pieces only. |
+| Specific material/stone on a product | "Material and stone details confirmed per piece." |
+| Free shipping policy | "Shipping terms confirmed before checkout." |
+| Warranty policy | "Coverage confirmed per piece." |
+| Live inventory | "Ask what's in stock now." |
+| Active promo | "Text 2T to ask what's running this week." |
+| BOGO / percentage-off | "Promo terms shown on eligible pieces only." |
 
 ---
 

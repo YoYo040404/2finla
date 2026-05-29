@@ -534,51 +534,48 @@ Strengthen with a specific hook line: "Text before you buy. Ask anything." — m
 
 ---
 
-## 10. Verified Claims Strategy
+## 10. Verified Claims Strategy (Updated 2026-05-29)
 
-### How 2T should use these claims WHEN verified
+Strong verified claims are commercial assets for 2T Jewelers. Use them prominently when verified. The following table describes how and where — not a minimum-use policy but an active build target.
 
-| Claim | Risk level | Where to place | Safe placeholder now | Proof required |
-|---|---|---|---|---|
-| Solid gold | HIGH | Product card, product page, collection page intro, promo module badge | "Material confirmed per piece. Ask 2T." | Per-piece supplier confirmation, karat stated |
-| Real diamonds | VERY HIGH | Product page only, product card badge when certified | "Stone details confirmed per piece." | Per-piece supplier confirmation, not moissanite/CZ |
-| Natural diamonds | VERY HIGH | Product page only with explicit "natural" vs "lab" labeling | "Ask about stone type per piece." | Per-piece confirmation + natural vs lab distinction |
-| VVS | HIGH | Product card badge ("VVS MOISSANITE" or "VVS DIAMOND" — type must be stated), product page | "Stone grade confirmed per piece." | Per-piece grade confirmation from supplier |
-| GIA | VERY HIGH | Product page only, PDF cert linkable | "Certificate shown when available." | Physical GIA certificate per piece |
-| Free shipping | MEDIUM | Promo bar, trust strip, footer | "Shipping terms confirmed before checkout." | Written policy: eligible orders, exclusions, locations |
-| Lifetime warranty | HIGH | Trust strip, product page, FAQ | "Coverage confirmed per piece. Ask before purchase." | Written policy: exact coverage, exclusions, categories |
-| Financing (Acima) | LOW | Footer, checkout, promo modules | "Lease-to-own options may be available through Acima." | Current Acima partnership active |
-| In-stock / ready-to-ship | HIGH | Product card badge only | "Ask what's in stock now." | Live inventory confirmed |
-| Custom-made | LOW | Custom page, category cards | "Custom starts with the idea. Text 2T." | Process already exists |
+| Claim | Directive | Where to publish | Verification required |
+|---|---|---|---|
+| Solid gold + karat | **Use prominently** | Product badge, PDP, collection intro, promo module | Alloy + karat per piece |
+| Real diamonds | **Use prominently** | Product badge, PDP | Stone identity per piece |
+| Natural diamonds | **Use prominently with "natural" label** | PDP — always with explicit "natural" qualifier | Per-piece, natural vs lab-grown confirmed |
+| Lab-grown diamonds | **Use prominently with "lab-grown" label** | PDP — always with "lab-grown" qualifier | Per-piece, explicit qualifier required |
+| VVS / VS / SI | **Use prominently** | Product badge, PDP spec block | Per-piece clarity grade from supplier |
+| GIA certificate | **Use prominently** | PDP, cert badge, downloadable cert | Physical cert per stone |
+| GRA-certified moissanite | **Use prominently** | Product badge, PDP | Cert ships with piece |
+| 925 sterling silver | **Use prominently** | Product badge, PDP | Purity per piece |
+| Factory-set diamonds | **Use prominently** | Watches PDP, product badge | Confirmed per watch |
+| Authenticated watch | **Use prominently** | Watches listing, high-ticket PDP | Condition + source confirmed |
+| In stock / available | **Use prominently** | Product card badge, promo module | Live inventory confirmed |
+| Free shipping | **Use prominently** | Promo bar, trust strip, footer | Written policy confirmed |
+| Lifetime warranty | **Use prominently** | Trust strip, PDP, FAQ | Written policy confirmed |
+| Acima financing | **Use prominently** | Footer, checkout | Partnership active (already confirmed) |
 
-### Placement architecture (for when claims are verified)
+### Placement architecture
 
 ```
 Product card badge layer:
-[14K GOLD] [VVS MOISSANITE] [REAL DIAMOND] [IN STOCK] [GIA]
-→ Only show badges that are verified for THAT SPECIFIC product
+[14K GOLD] [VVS MOISSANITE] [REAL DIAMOND] [IN STOCK] [GIA CERT]
+→ Show all verified badges for that specific product
 
-Category page intro:
-"[Category] at 2T. Material and stone details confirmed per piece. Text 2T to ask about specifics."
+PDP spec block:
+Material · Stone type · Stone grade · Carat · Karat · Condition · Availability · Warranty · Cert
 
-Trust strip (ProofMarquee):
-"REAL PITTSBURGH STORE · OVER 30 YEARS · PRODUCT DETAILS CONFIRMED PER PIECE · [FREE SHIPPING when verified] · [WARRANTY when verified]"
+Collection page intro (when full collection qualifies):
+"All pieces in this collection: [verified claim]. Details confirmed per piece."
 
-Promo module:
-"[Product name] — [Material if verified] — [Stone if verified] — Text 2T to confirm availability."
+Trust strip (ProofMarquee) — update as policies are confirmed:
+"REAL PITTSBURGH STORE · OVER 30 YEARS · FREE SHIPPING ON ELIGIBLE ORDERS · WARRANTY ON ELIGIBLE PIECES"
 
-Product page:
-Full spec block: material / stone type / stone grade / carat weight / karat / availability / warranty status per piece
+Promo module State C (active offer with verified product):
+"[Product name] — [14K GOLD] — [REAL DIAMOND] — Available now. Text 2T."
 ```
 
-### Risk-level notes by claim
-
-**Lowest risk (deploy first when verified):** Solid gold (specific karat), custom-made  
-**Medium risk (requires written policy):** Free shipping, Acima financing  
-**High risk (requires per-piece proof):** VVS, real diamonds, in-stock, lifetime warranty  
-**Highest risk (requires certifications):** GIA, natural diamonds, specific clarity grades  
-
-The Aporro "VVS | VERIFIED" stamp model is the most defensible approach: product-level badge only, visible only on eligible products, with certification logos in the trust section. 2T should build toward this architecture.
+The Aporro `VVS | VERIFIED` badge model is the right architecture: product-level badge, visible on eligible products, certification logos in the trust section. Build toward this as verified product data arrives.
 
 ---
 

@@ -521,34 +521,54 @@ Visual QA and user approval still required. **Do not mark /custom as final.**
 
 ## Promotions + Verified Claims Policy
 
-2T Jewelers does run promotions and sales. The site should support promotional architecture as a planned future capability.
+2T Jewelers sells real gold, real diamonds, moissanite, silver, and authenticated watches. Strong product claims are a commercial asset and must be built into the product architecture as verified data becomes available.
+
+### Commercial Claim Directive (Updated 2026-05-29)
+
+The following claim categories are **approved for prominent use** when verified:
+
+- Real diamonds — product-level, per-piece confirmation
+- Natural diamonds — product-level, with explicit "natural" labeling
+- Lab-grown diamonds — product-level, with explicit "lab-grown" qualifier
+- VVS / VS / SI — product-level clarity grade confirmation
+- GIA certificate — physical cert confirmed per stone
+- Solid gold / karat — alloy and karat confirmed per piece
+- 925 sterling silver — purity confirmed per piece
+- Factory-set diamonds — confirmed per watch/piece
+- Authenticated watches — condition, stones, and source confirmed
+- In stock / available now — live inventory confirmed
+- Free shipping — written policy confirmed
+- Lifetime warranty — written policy with defined coverage
+
+**Use these prominently when verified. Do not suppress them. Do not treat them as risks.**
+
+### Verification Scope Rule
+
+Claims may appear at the tightest scope they are confirmed for:
+- Product-level: visible only on that specific product
+- Collection-level: only when every product in the collection qualifies
+- Policy-level (shipping, warranty): site-wide only with written policy and disclosed exceptions
+
+Never use product-level claims as blanket sitewide copy.
 
 ### Planned Promotional Features (Not Yet Built)
-- Special of the Week — featured deal/product module
-- Sale strip / promo bar
-- Percentage-off campaign banners
+- Special of the Week — featured deal/product module with verified product badge
+- Sale strip / promo bar with specific verified offer
+- Percentage-off campaign banners (when active with confirmed terms)
 - Bundle or BOGO-style campaigns
 - Seasonal campaign modules
+- Product card badge layer: `[14K GOLD]` `[VVS MOISSANITE]` `[REAL DIAMOND]` `[GIA CERT]` `[IN STOCK]`
 - Offer modules on collection/category pages
 
-### Stronger Claims — Allowed When Verified and Scoped
+### Safe Fallbacks (when not yet verified)
 
-These claims are **permitted** only when verified (confirmed product data, real policy, supplier cert) and scoped to the correct product, category, or policy — not as blanket site-wide statements:
+Use until product data or policies are confirmed:
+- "Product details confirmed per piece."
+- "Material and stone details confirmed per piece."
+- "Ask before you buy."
+- "Promo terms shown on eligible pieces only."
 
-- solid gold (product-level)
-- real diamonds (product-level)
-- natural diamonds (product-level)
-- VVS / VS / SI (product-level, confirmed grade)
-- GIA certificate (product-level, cert must exist)
-- free shipping (policy-level, confirmed)
-- lifetime warranty (policy-level, confirmed)
-- guaranteed (scoped to a real policy)
-- in stock (product-level, confirmed inventory)
-
-**Never** use these as global blanket claims across the site.  
-**Never** publish without product-level, category-level, or policy-level verification.
-
-For details see `CLAIM_SAFETY.md`.
+For full verification gate details see `CLAIM_SAFETY.md`.
 
 ---
 

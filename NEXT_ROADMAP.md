@@ -282,23 +282,38 @@ Do not start until user explicitly approves.
 
 **Full spec:** `docs/2t-pass5b-competitor-backed-copy-research.md` Section 11
 
-### Phase 8b — Promotions + Verified Claims Architecture (Planned)
+### Phase 8b — Verified Claim Architecture + Promotions (Planned)
 
-2T Jewelers runs promotions and sales. These features should be planned and researched before building.
+2T Jewelers sells real gold, real diamonds, moissanite, silver, and authenticated watches. Strong verified product claims are a commercial asset and must be built into the product architecture.
 
-Planned promotional features:
-- Special of the Week — featured deal/product module
-- Sale strip or promo bar
-- Percentage-off campaign banners
+**Verified claim categories to build into the site:**
+- Real diamonds / Natural diamonds / Lab-grown diamonds
+- VVS / VS / SI clarity grades
+- GIA certificates
+- Solid gold / karat labels
+- 925 sterling silver
+- Factory-set diamonds (watches)
+- Authenticated watches (condition and source)
+- In stock / available now
+- Free shipping (when written policy exists)
+- Lifetime warranty (when written policy exists)
+
+**Architecture to build:**
+- Product card badge layer: `[14K GOLD]` `[VVS MOISSANITE]` `[REAL DIAMOND]` `[GIA CERT]` `[IN STOCK]`
+- PDP spec block: material / stone type / grade / carat / karat / condition / availability / warranty / cert
+- Collection-level filters: by material (Gold / Silver) and stone (Diamond / Moissanite)
+- ProofMarquee update: add verified policy-level claims as they are confirmed (free shipping, warranty)
+- Promo module State C: active offer with material/stone badge on featured product
+
+**Promotional features:**
+- Special of the Week — featured product module with verified product badge
+- Sale strip or promo bar with specific verified offer
+- Percentage-off campaign banners (when active with confirmed terms)
 - Bundle or BOGO-style campaign modules
 - Seasonal campaign modules
 - Offer modules on collection/category pages
 
-Research requirement:
-- When researching competitors (GLD, King Ice, etc.), include how they handle promotions, sale mechanics, promo bars, and urgency patterns.
-- Understand what the target buyer expects to see in terms of deals and sales before designing promotional UX.
-
-Verified claims for eligible products/policies (solid gold, natural diamonds, VVS/GIA, free shipping, lifetime warranty, in stock, guaranteed) may be used **only when verified and scoped**. Never blanket. Never invented. See `CLAIM_SAFETY.md`.
+The rule: verify at product, collection, or policy level — then publish prominently. Do not suppress strong claims when true. See `CLAIM_SAFETY.md` for verification gates.
 
 ### Phase 9 — Vercel Preview
 
