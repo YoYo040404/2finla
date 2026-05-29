@@ -11,6 +11,23 @@ function htmlEscape(str: string): string {
     .replace(/"/g, '&quot;')
 }
 
+const METAL_LABELS: Record<string, string> = {
+  gold:             'Gold',
+  silver:           'Silver',
+  'not-sure-metal': 'Not sure yet',
+}
+
+const STONE_LABELS: Record<string, string> = {
+  diamond:          'Diamond',
+  moissanite:       'Moissanite',
+  'no-stones':      'No stones',
+  'not-sure-stone': 'Not sure yet',
+}
+
+function resolveLabel(map: Record<string, string>, raw: string): string {
+  return map[raw] ?? raw
+}
+
 export async function POST(req: NextRequest) {
   // Parse multipart/form-data
   let formData: FormData
@@ -24,8 +41,10 @@ export async function POST(req: NextRequest) {
   const idea       = (formData.get('idea')        as string | null)?.trim() ?? ''
   const name       = (formData.get('name')        as string | null)?.trim() ?? ''
   const phone      = (formData.get('phone')       as string | null)?.trim() ?? ''
-  const budget     = (formData.get('budget')      as string | null)?.trim() ?? ''
-  const uploadFile = formData.get('uploadFile') as File | null
+  const budget          = (formData.get('budget')          as string | null)?.trim() ?? ''
+  const metalDirection  = (formData.get('metalDirection')  as string | null)?.trim() ?? ''
+  const stoneDirection  = (formData.get('stoneDirection')  as string | null)?.trim() ?? ''
+  const uploadFile      = formData.get('uploadFile') as File | null
 
   // Server-side validation (mirrors client rules)
   if (!pieceType)                        return NextResponse.json({ error: 'pieceType required.' }, { status: 400 })
@@ -68,8 +87,10 @@ export async function POST(req: NextRequest) {
   <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">Piece type</td><td>${htmlEscape(pieceType)}</td></tr>
   <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">Name</td>      <td>${htmlEscape(name)}</td></tr>
   <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">Phone</td>     <td>${htmlEscape(phone)}</td></tr>
-  <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">Budget</td>    <td>${budget ? htmlEscape(budget) : '—'}</td></tr>
-  <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">Idea</td>      <td style="white-space:pre-wrap">${idea ? htmlEscape(idea) : '—'}</td></tr>
+  <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">Budget</td>           <td>${budget ? htmlEscape(budget) : '—'}</td></tr>
+  <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">Metal direction</td>  <td>${metalDirection ? htmlEscape(resolveLabel(METAL_LABELS, metalDirection)) : '—'}</td></tr>
+  <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">Stone direction</td>  <td>${stoneDirection ? htmlEscape(resolveLabel(STONE_LABELS, stoneDirection)) : '—'}</td></tr>
+  <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">Idea</td>             <td style="white-space:pre-wrap">${idea ? htmlEscape(idea) : '—'}</td></tr>
   <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">File</td>      <td>${uploadFile?.name ? htmlEscape(uploadFile.name) : 'None'}</td></tr>
   <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">Submitted</td> <td>${submittedAt}</td></tr>
 </table>

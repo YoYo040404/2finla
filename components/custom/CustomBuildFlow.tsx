@@ -10,6 +10,8 @@ type BuildData = {
   budget:         string
   uploadFile:     File | null
   uploadFileName: string
+  metalDirection: '' | 'gold' | 'silver' | 'not-sure-metal'
+  stoneDirection: '' | 'diamond' | 'moissanite' | 'no-stones' | 'not-sure-stone'
 }
 
 const EMPTY: BuildData = {
@@ -20,7 +22,22 @@ const EMPTY: BuildData = {
   budget:         '',
   uploadFile:     null,
   uploadFileName: '',
+  metalDirection: '',
+  stoneDirection: '',
 }
+
+const METAL_OPTIONS = [
+  { value: 'gold',           label: 'Gold' },
+  { value: 'silver',         label: 'Silver' },
+  { value: 'not-sure-metal', label: 'Not sure yet' },
+] as const
+
+const STONE_OPTIONS = [
+  { value: 'diamond',        label: 'Diamond' },
+  { value: 'moissanite',     label: 'Moissanite' },
+  { value: 'no-stones',      label: 'No stones' },
+  { value: 'not-sure-stone', label: 'Not sure yet' },
+] as const
 
 const PIECES = [
   { id: 'custom-pendant', label: 'Custom Pendant' },
@@ -102,6 +119,8 @@ export function CustomBuildFlow() {
       body.append('name',      data.name)
       body.append('phone',     data.phone)
       body.append('budget',    data.budget)
+      if (data.metalDirection) body.append('metalDirection', data.metalDirection)
+      if (data.stoneDirection) body.append('stoneDirection', data.stoneDirection)
       if (data.uploadFile) {
         body.append('uploadFile', data.uploadFile, data.uploadFileName)
       }
@@ -257,6 +276,98 @@ export function CustomBuildFlow() {
               Select a piece type to continue.
             </p>
           )}
+        </div>
+
+        {/* ── Metal direction (optional) ──────────────────────────────────── */}
+        <div style={{ marginBottom: '1.75rem' }}>
+          <p
+            className="mi-mono"
+            style={{
+              fontSize:      '0.6rem',
+              letterSpacing: '0.14em',
+              color:         '#9B958A',
+              marginBottom:  '0.75rem',
+            }}
+          >
+            METAL DIRECTION
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+            {METAL_OPTIONS.map(({ value, label }) => {
+              const selected = data.metalDirection === value
+              return (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() =>
+                    setData(d => ({ ...d, metalDirection: selected ? '' : value }))
+                  }
+                  style={{
+                    minHeight:   '44px',
+                    padding:     '0.4rem 0.85rem',
+                    fontSize:    '0.7rem',
+                    letterSpacing: '0.08em',
+                    fontFamily:  'var(--font-mono, monospace)',
+                    background:  selected ? '#C9A449' : 'transparent',
+                    color:       selected ? '#050505' : '#9B958A',
+                    border:      `1px solid ${selected ? '#C9A449' : '#1F1D1A'}`,
+                    cursor:      'pointer',
+                    transition:  'all 0.15s ease',
+                  }}
+                >
+                  {label}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* ── Stone direction (optional) ──────────────────────────────────── */}
+        <div style={{ marginBottom: 'clamp(1.5rem, 4vw, 2.5rem)' }}>
+          <p
+            className="mi-mono"
+            style={{
+              fontSize:      '0.6rem',
+              letterSpacing: '0.14em',
+              color:         '#9B958A',
+              marginBottom:  '0.75rem',
+            }}
+          >
+            STONE DIRECTION
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+            {STONE_OPTIONS.map(({ value, label }) => {
+              const selected = data.stoneDirection === value
+              return (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() =>
+                    setData(d => ({ ...d, stoneDirection: selected ? '' : value }))
+                  }
+                  style={{
+                    minHeight:   '44px',
+                    padding:     '0.4rem 0.85rem',
+                    fontSize:    '0.7rem',
+                    letterSpacing: '0.08em',
+                    fontFamily:  'var(--font-mono, monospace)',
+                    background:  selected ? '#C9A449' : 'transparent',
+                    color:       selected ? '#050505' : '#9B958A',
+                    border:      `1px solid ${selected ? '#C9A449' : '#1F1D1A'}`,
+                    cursor:      'pointer',
+                    transition:  'all 0.15s ease',
+                  }}
+                >
+                  {label}
+                </button>
+              )
+            })}
+          </div>
+          <p
+            className="mi-mono mi-faint"
+            style={{ fontSize: '0.55rem', letterSpacing: '0.06em', marginTop: '0.75rem', marginBottom: 0 }}
+          >
+            Different shine. Different direction. Details confirmed per piece.
+          </p>
         </div>
 
         {/* ── Mid-form WhatsApp escape ─────────────────────────────────────── */}

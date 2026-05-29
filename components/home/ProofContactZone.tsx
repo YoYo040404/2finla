@@ -231,11 +231,31 @@ export default function ProofContactZone() {
             For over 30 years, 2T Jewelers has been a downtown Pittsburgh stop for chains, watches, grillz, pendants, repairs, and custom pieces built to stand out.
           </p>
 
-          {/* Material/stone directions — scoped, claim-safe, no downgrade language */}
-          <p className="mi-mono mi-faint" style={{ marginBottom: '1.75rem', fontSize: '0.57rem' }}>
-            <span className="mi-diamond-sm" aria-hidden="true" />
-            GOLD · SILVER · DIAMONDS · MOISSANITE · DETAILS CONFIRMED PER PIECE
-          </p>
+          {/* Material/stone direction strip — claim-safe, no grade/purity/cert claims */}
+          <div style={{ marginBottom: '2rem' }}>
+            <div
+              className="mi-mono"
+              style={{
+                display:       'flex',
+                gap:           '1.5rem',
+                flexWrap:      'wrap',
+                fontSize:      '0.65rem',
+                letterSpacing: '0.12em',
+                color:         '#C9A449',
+                marginBottom:  '0.4rem',
+              }}
+            >
+              <span>GOLD · SILVER</span>
+              <span style={{ color: '#1F1D1A' }} aria-hidden="true">·</span>
+              <span>DIAMOND · MOISSANITE</span>
+            </div>
+            <p
+              className="mi-mono mi-faint"
+              style={{ fontSize: '0.55rem', letterSpacing: '0.08em', margin: 0 }}
+            >
+              Different shine. Different direction. Details confirmed per piece.
+            </p>
+          </div>
 
           <a
             href={WHATSAPP_URL}
