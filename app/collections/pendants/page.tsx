@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Custom pendants from your logo, photo, name, or idea. Pittsburgh jeweler. Over 30 years. Send the idea — we quote before the build.',
 }
 
-const WA_PENDANTS = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20for%20a%20pendant.%20I%20have%20a%20logo%2C%20photo%2C%20or%20name%20idea.'
+const WA_PENDANTS = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20for%20a%20pendant.%20I%20have%20a%20logo%2C%20photo%2C%20or%20name%20idea.%20Gold%20or%20silver%2C%20diamond%20or%20moissanite%20if%20iced.'
 
 const STYLE_CHIPS = [
   'Logo',
@@ -28,7 +28,7 @@ const WHAT_TO_SEND = [
   },
   {
     label: 'THE LOOK',
-    body: 'Iced-out, clean gold, white gold, rose gold direction — tell us what finish you\'re going for.',
+    body: 'Iced-out, clean, gold or silver — tell us the finish direction. Diamond or moissanite if iced. Details confirmed per piece.',
   },
   {
     label: 'THE CHAIN',
@@ -170,6 +170,86 @@ export default function PendantsPage() {
             }}
           >
             Text 2T the type — we guide the size, finish, and chain pairing from there.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Material Direction ──────────────────────────────────────── */}
+      <section
+        style={{
+          padding:      'clamp(3rem, 6vw, 4.5rem) 1.5rem',
+          borderBottom: '1px solid var(--color-brand-border)',
+          background:   'var(--color-brand-charcoal)',
+        }}
+      >
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <span className="section-eyebrow" style={{ marginBottom: '0.75rem' }}>MATERIAL DIRECTION</span>
+          <p
+            style={{
+              fontFamily:   'var(--font-display)',
+              fontSize:     'clamp(1.5rem, 3.5vw, 2.6rem)',
+              fontWeight:   400,
+              color:        'var(--color-brand-white)',
+              lineHeight:   1.1,
+              marginBottom: '1.75rem',
+            }}
+          >
+            Gold or silver. Diamond or moissanite.
+          </p>
+
+          <div style={{ marginBottom: '1.25rem' }}>
+            <p
+              style={{
+                fontFamily:    'var(--font-body)',
+                fontSize:      '0.65rem',
+                fontWeight:    600,
+                letterSpacing: '0.13em',
+                textTransform: 'uppercase',
+                color:         'var(--color-brand-gold)',
+                marginBottom:  '0.6rem',
+                opacity:       0.85,
+              }}
+            >
+              METAL
+            </p>
+            <div className="chip-row">
+              {['Gold', 'Silver', 'Not Sure Yet'].map((chip) => (
+                <span key={chip} className="direction-chip">{chip}</span>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ marginBottom: '1.5rem' }}>
+            <p
+              style={{
+                fontFamily:    'var(--font-body)',
+                fontSize:      '0.65rem',
+                fontWeight:    600,
+                letterSpacing: '0.13em',
+                textTransform: 'uppercase',
+                color:         'var(--color-brand-gold)',
+                marginBottom:  '0.6rem',
+                opacity:       0.85,
+              }}
+            >
+              STONE
+            </p>
+            <div className="chip-row">
+              {['Diamond', 'Moissanite', 'No Stones', 'Not Sure Yet'].map((chip) => (
+                <span key={chip} className="direction-chip">{chip}</span>
+              ))}
+            </div>
+          </div>
+
+          <p
+            style={{
+              fontFamily:    'var(--font-body)',
+              fontSize:      '0.82rem',
+              color:         'var(--color-brand-subtle)',
+              letterSpacing: '0.02em',
+            }}
+          >
+            Different shine. Different direction. Details confirmed per piece.
           </p>
         </div>
       </section>

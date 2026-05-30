@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Cuban, rope, tennis, and Franco chains in Pittsburgh, PA. Ask 2T what\'s in stock and available. Real Pittsburgh store. Over 30 years.',
 }
 
-const WA_CHAINS = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20for%20a%20chain.%20I%20have%20a%20style%20and%20direction%20in%20mind.'
+const WA_CHAINS = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20for%20a%20chain.%20I%20have%20a%20style%20and%20direction%20in%20mind.%20Gold%20or%20silver%2C%20iced%20or%20clean.'
 
 const STYLE_CHIPS = [
   'Cuban',
@@ -18,6 +18,7 @@ const STYLE_CHIPS = [
   'Yellow Gold',
   'White Gold',
   'Rose Gold',
+  'Silver',
   'Not Sure Yet',
 ]
 
@@ -170,6 +171,86 @@ export default function ChainsPage() {
             }}
           >
             Text 2T the style — we guide width, length, and finish from there.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Material Direction ──────────────────────────────────────── */}
+      <section
+        style={{
+          padding:      'clamp(3rem, 6vw, 4.5rem) 1.5rem',
+          borderBottom: '1px solid var(--color-brand-border)',
+          background:   'var(--color-brand-charcoal)',
+        }}
+      >
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <span className="section-eyebrow" style={{ marginBottom: '0.75rem' }}>MATERIAL DIRECTION</span>
+          <p
+            style={{
+              fontFamily:   'var(--font-display)',
+              fontSize:     'clamp(1.5rem, 3.5vw, 2.6rem)',
+              fontWeight:   400,
+              color:        'var(--color-brand-white)',
+              lineHeight:   1.1,
+              marginBottom: '1.75rem',
+            }}
+          >
+            Gold or silver. Diamond or moissanite.
+          </p>
+
+          <div style={{ marginBottom: '1.25rem' }}>
+            <p
+              style={{
+                fontFamily:    'var(--font-body)',
+                fontSize:      '0.65rem',
+                fontWeight:    600,
+                letterSpacing: '0.13em',
+                textTransform: 'uppercase',
+                color:         'var(--color-brand-gold)',
+                marginBottom:  '0.6rem',
+                opacity:       0.85,
+              }}
+            >
+              METAL
+            </p>
+            <div className="chip-row">
+              {['Gold', 'Silver', 'Not Sure Yet'].map((chip) => (
+                <span key={chip} className="direction-chip">{chip}</span>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ marginBottom: '1.5rem' }}>
+            <p
+              style={{
+                fontFamily:    'var(--font-body)',
+                fontSize:      '0.65rem',
+                fontWeight:    600,
+                letterSpacing: '0.13em',
+                textTransform: 'uppercase',
+                color:         'var(--color-brand-gold)',
+                marginBottom:  '0.6rem',
+                opacity:       0.85,
+              }}
+            >
+              STONE
+            </p>
+            <div className="chip-row">
+              {['Diamond', 'Moissanite', 'No Stones', 'Not Sure Yet'].map((chip) => (
+                <span key={chip} className="direction-chip">{chip}</span>
+              ))}
+            </div>
+          </div>
+
+          <p
+            style={{
+              fontFamily:    'var(--font-body)',
+              fontSize:      '0.82rem',
+              color:         'var(--color-brand-subtle)',
+              letterSpacing: '0.02em',
+            }}
+          >
+            Different shine. Different direction. Details confirmed per piece.
           </p>
         </div>
       </section>

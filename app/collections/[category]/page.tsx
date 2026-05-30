@@ -3,15 +3,18 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 type CategoryData = {
-  title:       string
-  headline:    string
-  body:        string
-  note:        string
-  glow:        string
-  svg:         React.ReactNode
-  chips?:      string[]
-  waMessage:   string
-  primaryCta:  string
+  title:          string
+  headline:       string
+  body:           string
+  note:           string
+  glow:           string
+  svg:            React.ReactNode
+  chips?:         string[]
+  materialChips?: string[]
+  stoneChips?:    string[]
+  directionNote?: string
+  waMessage:      string
+  primaryCta:     string
 }
 
 const CATEGORY_DATA: Record<string, CategoryData> = {
@@ -58,9 +61,11 @@ const CATEGORY_DATA: Record<string, CategoryData> = {
     body:       'Cuban link, tennis, iced bangle. Ask what\'s available or start a custom piece — budget range helps guide the conversation.',
     note:       'No deposit. No rush. We quote first.',
     glow:       'rgba(201,168,76,0.07)',
-    waMessage:  "Hey 2T — I'm looking to ask about bracelets.",
-    primaryCta: 'TEXT 2T ABOUT BRACELETS →',
-    chips:      ['Cuban Link', 'Tennis', 'Bangle', 'Iced-Out', 'Gold Direction', 'Not Sure Yet'],
+    waMessage:     "Hey 2T — I'm looking to ask about bracelets. Gold or silver, diamond or moissanite direction.",
+    primaryCta:    'TEXT 2T ABOUT BRACELETS →',
+    chips:         ['Cuban Link', 'Tennis', 'Bangle', 'Iced-Out', 'Not Sure Yet'],
+    materialChips: ['Gold', 'Silver', 'Not Sure Yet'],
+    stoneChips:    ['Diamond', 'Moissanite', 'No Stones', 'Not Sure Yet'],
     svg: (
       <svg width="70" height="60" viewBox="0 0 70 60" fill="none">
         <path d="M8 52 A31 31 0 1 1 62 52" stroke="rgba(201,168,76,0.55)" strokeWidth="2.5" strokeLinecap="round"/>
@@ -76,9 +81,11 @@ const CATEGORY_DATA: Record<string, CategoryData> = {
     body:       'Stack or solo. Custom sizing and stone work available — ask first and we\'ll guide what\'s possible before anything is quoted or produced.',
     note:       'Ask before you buy.',
     glow:       'rgba(208,238,255,0.07)',
-    waMessage:  "Hey 2T — I'm looking to ask about rings.",
-    primaryCta: 'TEXT 2T ABOUT RINGS →',
-    chips:      ['Pinky Ring', 'Statement Ring', 'Signet', 'Iced-Out', 'Gold Direction', 'Not Sure Yet'],
+    waMessage:     "Hey 2T — I'm looking to ask about rings. Gold or silver, diamond or moissanite direction.",
+    primaryCta:    'TEXT 2T ABOUT RINGS →',
+    chips:         ['Pinky Ring', 'Statement Ring', 'Signet', 'Iced-Out', 'Not Sure Yet'],
+    materialChips: ['Gold', 'Silver', 'Not Sure Yet'],
+    stoneChips:    ['Diamond', 'Moissanite', 'No Stones', 'Not Sure Yet'],
     svg: (
       <svg width="60" height="68" viewBox="0 0 60 68" fill="none">
         <circle cx="30" cy="44" r="20" stroke="rgba(208,238,255,0.55)" strokeWidth="2.5"/>
@@ -93,9 +100,11 @@ const CATEGORY_DATA: Record<string, CategoryData> = {
     body:       'Iced or brushed. Have a reference image or style direction? Text us and we\'ll talk through what\'s possible.',
     note:       'Lease-to-own options may be available through Acima.',
     glow:       'rgba(208,238,255,0.06)',
-    waMessage:  "Hey 2T — I'm looking to ask about earrings.",
-    primaryCta: 'TEXT 2T ABOUT EARRINGS →',
-    chips:      ['Studs', 'Hoops', 'Drop Earrings', 'Iced-Out', 'Gold Direction', 'Not Sure Yet'],
+    waMessage:     "Hey 2T — I'm looking to ask about earrings. Gold or silver, diamond or moissanite direction.",
+    primaryCta:    'TEXT 2T ABOUT EARRINGS →',
+    chips:         ['Studs', 'Hoops', 'Drop Earrings', 'Iced-Out', 'Not Sure Yet'],
+    materialChips: ['Gold', 'Silver', 'Not Sure Yet'],
+    stoneChips:    ['Diamond', 'Moissanite', 'No Stones', 'Not Sure Yet'],
     svg: (
       <svg width="60" height="68" viewBox="0 0 60 68" fill="none">
         <line x1="16" y1="5"  x2="16" y2="18" stroke="rgba(208,238,255,0.5)"  strokeWidth="1.5" strokeLinecap="round"/>
@@ -113,9 +122,10 @@ const CATEGORY_DATA: Record<string, CategoryData> = {
     body:       'Chains, pendants, grillz, watches — text 2T to ask what people are getting and what\'s available now. Product details confirmed per piece.',
     note:       'Ask about current availability. Details confirmed per piece.',
     glow:       'rgba(201,168,76,0.10)',
-    waMessage:  "Hey 2T — I want to ask what pieces are popular right now.",
-    primaryCta: 'TEXT 2T WHAT\'S MOVING →',
-    chips:      ['Chains', 'Pendants', 'Grillz', 'Watches', 'Custom Pieces'],
+    waMessage:     "Hey 2T — I want to ask what pieces are popular right now.",
+    primaryCta:    'TEXT 2T WHAT\'S MOVING →',
+    chips:         ['Chains', 'Pendants', 'Grillz', 'Watches', 'Custom Pieces'],
+    directionNote: 'Gold or silver direction. Diamond or moissanite. Text 2T to ask what\'s available.',
     svg: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
         <polygon points="32,4 38,24 60,24 43,37 49,58 32,45 15,58 21,37 4,24 26,24" stroke="rgba(201,168,76,0.65)" strokeWidth="1.5" fill="none"/>
@@ -129,9 +139,10 @@ const CATEGORY_DATA: Record<string, CategoryData> = {
     body:       'New pieces and directions as they come in. Text 2T to ask what\'s available and what\'s coming next. Product details confirmed per piece.',
     note:       'Availability changes. Text us to confirm.',
     glow:       'rgba(208,238,255,0.07)',
-    waMessage:  "Hey 2T — I want to ask what's new or just came in.",
-    primaryCta: 'TEXT 2T WHAT\'S NEW →',
-    chips:      ['Chains', 'Pendants', 'Grillz', 'Watches', 'Custom Direction'],
+    waMessage:     "Hey 2T — I want to ask what's new or just came in.",
+    primaryCta:    'TEXT 2T WHAT\'S NEW →',
+    chips:         ['Chains', 'Pendants', 'Grillz', 'Watches', 'Custom Direction'],
+    directionNote: 'Gold or silver direction. Diamond or moissanite. Text 2T to ask what\'s available.',
     svg: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
         <circle cx="32" cy="32" r="24" stroke="rgba(208,238,255,0.35)" strokeWidth="1.5" strokeDasharray="4 3"/>
@@ -316,6 +327,115 @@ export default async function CategoryPage({ params }: Props) {
               }}
             >
               Tell us the direction when you text. We guide from there.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* ── Material & Stone Direction ──────────────────────────── */}
+      {(data.materialChips || data.stoneChips) && (
+        <section
+          style={{
+            padding:      'clamp(2.5rem, 5vw, 3.5rem) clamp(1.25rem, 3vw, 2.5rem)',
+            borderBottom: '1px solid var(--color-brand-border)',
+            background:   'var(--color-brand-charcoal)',
+          }}
+        >
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <span className="section-eyebrow" style={{ marginBottom: '0.75rem' }}>MATERIAL DIRECTION</span>
+            <p
+              style={{
+                fontFamily:   'var(--font-display)',
+                fontSize:     'clamp(1.4rem, 3vw, 2.2rem)',
+                fontWeight:   400,
+                color:        'var(--color-brand-white)',
+                lineHeight:   1.1,
+                marginBottom: '1.75rem',
+              }}
+            >
+              Gold or silver. Diamond or moissanite.
+            </p>
+
+            {data.materialChips && (
+              <div style={{ marginBottom: '1.25rem' }}>
+                <p
+                  style={{
+                    fontFamily:    'var(--font-body)',
+                    fontSize:      '0.65rem',
+                    fontWeight:    600,
+                    letterSpacing: '0.13em',
+                    textTransform: 'uppercase',
+                    color:         'var(--color-brand-gold)',
+                    marginBottom:  '0.6rem',
+                    opacity:       0.85,
+                  }}
+                >
+                  METAL
+                </p>
+                <div className="chip-row">
+                  {data.materialChips.map((chip) => (
+                    <span key={chip} className="direction-chip">{chip}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {data.stoneChips && (
+              <div style={{ marginBottom: '1.5rem' }}>
+                <p
+                  style={{
+                    fontFamily:    'var(--font-body)',
+                    fontSize:      '0.65rem',
+                    fontWeight:    600,
+                    letterSpacing: '0.13em',
+                    textTransform: 'uppercase',
+                    color:         'var(--color-brand-gold)',
+                    marginBottom:  '0.6rem',
+                    opacity:       0.85,
+                  }}
+                >
+                  STONE
+                </p>
+                <div className="chip-row">
+                  {data.stoneChips.map((chip) => (
+                    <span key={chip} className="direction-chip">{chip}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <p
+              style={{
+                fontFamily:    'var(--font-body)',
+                fontSize:      '0.82rem',
+                color:         'var(--color-brand-subtle)',
+                letterSpacing: '0.02em',
+              }}
+            >
+              Different shine. Different direction. Details confirmed per piece.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* ── Direction Note (best-sellers / new-arrivals) ─────────── */}
+      {data.directionNote && !data.materialChips && (
+        <section
+          style={{
+            padding:      'clamp(1.5rem, 3vw, 2rem) clamp(1.25rem, 3vw, 2.5rem)',
+            borderBottom: '1px solid var(--color-brand-border)',
+          }}
+        >
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <p
+              style={{
+                fontFamily:    'var(--font-body)',
+                fontSize:      '0.82rem',
+                color:         'var(--color-brand-subtle)',
+                letterSpacing: '0.03em',
+              }}
+            >
+              {data.directionNote}
             </p>
           </div>
         </section>

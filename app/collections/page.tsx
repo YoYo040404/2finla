@@ -188,14 +188,27 @@ export default function CollectionsPage() {
           <p
             style={{
               fontFamily:    'var(--font-mono)',
+              fontSize:      '0.62rem',
+              letterSpacing: '0.13em',
+              textTransform: 'uppercase',
+              color:         'var(--color-brand-gold)',
+              marginTop:     '0.75rem',
+              opacity:       0.7,
+            }}
+          >
+            Gold or Silver&nbsp;·&nbsp;Diamond or Moissanite
+          </p>
+          <p
+            style={{
+              fontFamily:    'var(--font-mono)',
               fontSize:      '0.6rem',
               letterSpacing: '0.1em',
               textTransform: 'uppercase',
               color:         'var(--color-brand-subtle)',
-              marginTop:     '0.75rem',
+              marginTop:     '0.3rem',
             }}
           >
-            Product details confirmed per piece.
+            Material and stone details confirmed per piece. Text 2T to ask what fits.
           </p>
         </div>
       </section>
