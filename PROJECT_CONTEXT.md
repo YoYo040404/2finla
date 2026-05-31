@@ -476,49 +476,55 @@ Voice rules: no N-word, no parody Ebonics, no fake rapper imitation. Voice is co
 
 ### Custom Flow Status
 
-The `/custom` page is **WIP — build passes (TypeScript + static generation clean), but NOT user-approved as final.**
+The `/custom` page is **user-approved and live on Vercel.**
 
-Flow: CustomHero → CustomForm (5 fields: piece type chip, idea textarea, reference upload, name, phone, budget) → HowItWorks → CustomFaq
+Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone selectors as 3 numbered decision blocks; CONTACT: name + phone; THE IDEA: upload + textarea; BUDGET optional) → CustomFaq
 
-Latest update (commit 84af600 — 2026-05-17):
-- Hero is more compact; primary CTA is START THE REQUEST →
-- Browse Ready-Made removed
-- Piece type chips wrap cleanly
-- Upload zone appears above textarea on mobile
-- Textarea reduced to 4 rows; Material + Budget chips remain
-- WHATSAPP OR PHONE label; gold-bordered trust callout
-- SEND REQUEST → full-width
-- Bypass CTA: Not sure yet? Hit us up on WhatsApp →
-- HowItWorks step 02: WE REVIEW THE DIRECTION
-- HowItWorks step 03: WE QUOTE FIRST
+**CRO pass (commit 60c7d06 — 2026-05-31):**
+- Lead funnel flow tightened; selector clarity improved
+- metalDirection and stoneDirection wired end-to-end (form → API → Resend email)
 
-**Pass A simplification (commit 03991f5 — 2026-05-25):**
-- Repetition removed; page is shorter and simpler
-- HowItWorks and WorkPlaceholder unmounted from the /custom page flow
-- Component files preserved (not deleted)
+**Sitewide contrast + selector grouping pass (commit 2303850 — 2026-05-31):**
+- THE BUILD section restructured into 3 numbered decision blocks (01 PICK THE PIECE / 02 PICK THE METAL / 03 PICK THE STONE)
+- 10 body/copy classes corrected from `--color-brand-muted` to `--color-brand-silver` sitewide
+- MobileCtaBar bottom clearance added to `<main>` on mobile (`padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px))`)
 
-Visual QA and user approval still required. **Do not mark /custom as final.**
+**Resend lead capture — verified live (2026-05-31):**
+- API route: `app/api/custom-request/route.ts`
+- All 9 fields delivered in email: piece type, metal direction, stone direction, name, phone, budget, idea, file attachment, timestamp
+- File attachments confirmed working (up to 5 MB)
+- Success screen appears only after Resend confirms delivery
+- WhatsApp fallback visible on error
+- Current sender: `onboarding@resend.dev` (testing mode — acceptable now)
+- Production polish needed later: verified sender domain (`leads@2tjewelers.com` or similar)
+- Env vars: `RESEND_API_KEY`, `LEAD_EMAIL_TO`, `LEAD_EMAIL_FROM` — all server-side only, gitignored, no `NEXT_PUBLIC_` exposure
 
 ---
 
 ## Current Next Task
 
-**Active branch / state:** `main` — Pittsburgh BANG homepage merged and pushed.
+**Active branch / state:** `main` — all recent passes committed and live on Vercel.
 
-**Completed milestones (as of 2026-05-25):**
+**Completed milestones (as of 2026-05-31):**
 - Pittsburgh BANG homepage merged into main (PR #1 — commit `39a3b70`).
 - Repo QA cleanup — screenshot artifacts gitignored, QA utility added (commit `854c15e`).
-- `/custom` Pass A simplification — repetition removed, flow shortened, HowItWorks and WorkPlaceholder unmounted from `/custom` page (component files preserved) (commit `03991f5`).
-- `/grillz` and `/watches` read-only QA completed — both structurally acceptable for demo; no build blocker.
+- `/custom` Pass A simplification — repetition removed, flow shortened (commit `03991f5`).
+- `/grillz` and `/watches` read-only QA completed — both structurally acceptable for demo.
 - `/watches` duplicate hero copy fixed (commit `c485b83`).
+- Material & stone direction system — homepage + categories (commits `a4f5298` → `0e85b35`).
+- Homepage visual depth and shine surface refinement (commit `5f4afd7`).
+- `/custom` CRO pass — lead funnel tightened, selector clarity improved (commit `60c7d06`).
+- Sitewide contrast + /custom selector grouping + mobile CTA clearance (commit `2303850`).
+- **Resend lead capture verified live** — all 9 fields including metal/stone direction, file attachments confirmed working.
 
-**Next immediate priority:** Pre-Vercel readiness check → Vercel import/deploy as demo preview → send link for business owner review.
+**Next phase:**
+1. Production sender/domain polish — configure verified Resend domain (`leads@2tjewelers.com` or similar) before real traffic.
+2. Custom Hero / media proof / real asset planning — hero footage, product shots, grillz/watches photos, store footage.
+3. Category/product proof pages — build only after media and proof planning is done.
 
-**After demo:** Collect feedback → integrate temporary/demo or real media assets → refine `/grillz`, `/watches`, category/product pages based on assets.
+**Do not reopen homepage redesign** unless a clear blocker is found.
 
-**Do not reopen homepage redesign** unless a clear blocker is found during demo review.
-
-**Remaining gap:** Real media assets (hero footage, product shots, grillz/watches photos, store footage) are the single biggest lever for the bling/shine energy. CSS vitrines are structural placeholders until real assets arrive.
+**Remaining gap:** Real media assets are the single biggest lever for bling/shine energy. CSS vitrines are structural placeholders until real assets arrive.
 
 ---
 
@@ -526,19 +532,20 @@ Visual QA and user approval still required. **Do not mark /custom as final.**
 
 | Commit | Description |
 |---|---|
-| `0e85b35` | feat: add homepage material and stone direction system — ShineDirectionBand, product wall cue, "Gold · Silver · Diamonds · Moissanite / Pick the piece. Then pick the shine." |
+| `2303850` | feat: improve sitewide contrast and custom selector grouping — 10 contrast fixes, THE BUILD numbered blocks (01/02/03), MobileCtaBar bottom clearance |
+| `60c7d06` | feat: improve custom lead funnel flow and selector clarity — CRO pass, metalDirection + stoneDirection wired end-to-end |
+| `5f4afd7` | feat: refine homepage visual depth and shine surfaces |
+| `f29c856` | docs: sync material and stone strategy after homepage update |
+| `0e85b35` | feat: add homepage material and stone direction system — ShineDirectionBand, product wall cue |
 | `a5e61ee` | docs: add architecture CRO VOC audit (2026-05-30) |
 | `e674bee` | feat: add material and stone direction to shop categories |
 | `a07c2cf` | feat: add material and stone direction capture |
 | `a4f5298` | docs: add silver moissanite verified claims strategy |
 | `c485b83` | fix: remove duplicate watches hero copy |
-| `03991f5` | /custom Pass A — repetition removed, HowItWorks + WorkPlaceholder unmounted from /custom flow, page shorter |
+| `03991f5` | /custom Pass A — repetition removed, HowItWorks + WorkPlaceholder unmounted, page shorter |
 | `854c15e` | Repo cleanup — screenshot QA artifacts gitignored, QA utility added |
 | `39a3b70` | Merge PR #1 — Pittsburgh BANG homepage branch merged into main |
-| `f58d26d` | Pittsburgh BANG — align about, social, and nav with new direction |
-| `b912851` | Pittsburgh BANG — homepage direction refinement |
-| `af7f20d` | Homepage Midnight Icebox Pass 3 — Anton/Archivo/JetBrains Mono font system, obsidian/bone/gold/ice palette, full-bleed campaign hero (BANG. as brand stamp), vitrine Shop Jewelry gateway, Pittsburgh stat ledger, Social channel-map rows |
-| `b049d30` | 2T voice hardening across core pages |
+| `af7f20d` | Homepage Midnight Icebox Pass 3 — Anton/Archivo/JetBrains Mono font system, obsidian/bone/gold/ice palette, full-bleed campaign hero, vitrine Shop Jewelry gateway, Pittsburgh stat ledger, Social channel-map rows |
 | `84af600` | /custom compact revision: compact hero, START THE REQUEST →, Browse Ready-Made removed, upload above textarea mobile, textarea 4 rows, gold-bordered trust callout, full-width SEND REQUEST →, WhatsApp bypass CTA, updated HowItWorks steps |
 | `8fd4497` | Homepage reset — product store + custom lane. |
 | `200e5a1` | Grillz and Watches landing pages — `/grillz` and `/watches` committed. |
@@ -605,8 +612,8 @@ Do not:
 - continue Shopify
 - run Shopify CLI
 - edit Shopify files
-- wire Formspree
-- add backend
+- wire Formspree (Resend is live — do not replace)
+- replace or rebuild the Resend backend
 - integrate Cloudinary/Supabase upload
 - install logo (unless user provides files)
 - deploy to Vercel production (pre-Vercel demo readiness check and business owner approval of the demo preview required first)
@@ -627,11 +634,10 @@ Do not build yet:
 
 - real logo files: final SVG transparent (2x/retina), favicon, OG/social image
 - email address (not yet provided)
-- lead capture backend (Formspree or similar)
-- reference upload handling (real backend)
+- production Resend sender domain (future polish — `leads@2tjewelers.com` or similar; `onboarding@resend.dev` is acceptable for testing)
 - analytics / Meta Pixel / TikTok Pixel
 - real custom gallery/assets (photography)
 - copywriting pass (final brand voice)
-- full QA before Vercel preview
-- Watches page
-- Grillz page
+- Watches page deeper redesign (hold until real/demo assets)
+- Grillz page deeper redesign (hold until real/demo assets)
+- category/product proof pages (after media/proof planning)

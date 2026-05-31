@@ -64,9 +64,13 @@ npm run dev
   - Architecture, CRO, and VOC audit docs committed
   - No per-tile material chips. No claim-safety regressions.
 
+- **`/custom` CRO pass** (commit 60c7d06 — 2026-05-31): lead funnel tightened, metalDirection + stoneDirection wired end-to-end
+- **Sitewide contrast + selector grouping + mobile CTA clearance** (commit 2303850 — 2026-05-31): THE BUILD as 3 numbered decision blocks, 10 body contrast fixes, MobileCtaBar `padding-bottom` clearance
+- **Resend lead capture verified live** (2026-05-31): all 9 fields confirmed in email (piece type, metal direction, stone direction, name, phone, budget, idea, file, timestamp); file attachments working; success screen gated on Resend response; WhatsApp fallback on error; env vars server-side only
+- **Vercel live**: https://2finla.vercel.app
+
 ### WIP / Approval Pending ⚠️
 
-- `/custom` page — Pass A simplified (03991f5); build passes; visual QA and user approval still pending
 - `/grillz` — read-only QA done; structurally acceptable for demo; deeper visual work held until real/demo assets
 - `/watches` — duplicate hero copy fixed (c485b83); read-only QA done; structurally acceptable for demo; deeper visual work held until real/demo assets
 
@@ -76,23 +80,19 @@ npm run dev
 - Real hero/grillz/watches/store photo and video assets
 - Instagram/TikTok feed strategy and dynamic feed
 - WhatsApp floating desktop button
-- Formspree backend / lead capture
-- Real upload backend
+- Production Resend sender domain (`leads@2tjewelers.com` or similar) — current `onboarding@resend.dev` is acceptable for testing
 - Final logo SVG/2x/favicon
 - Shopify recalibration
 - Material/stone SEO landing pages (build only when real inventory + assets + proof exists)
 - Material/stone filtering on product/category pages (later, Shopify)
-- /custom metal + stone direction selector — METAL: Gold/Silver/Not sure · STONE: Diamond/Moissanite/No stones/Not sure (planned — do not rank by price/status; see PROJECT_CONTEXT.md → Material & Stone Strategy)
 - Per-piece product badge layer: `[14K GOLD]` `[925 STERLING]` `[GRA VVS MOISSANITE]` `[NATURAL DIAMOND]` `[GIA CERT]` `[IN STOCK]` — build only with verified per-piece data
 
 ### Next Milestone 🎯
 
-- Pre-Vercel readiness check
-- Vercel import/deploy as demo preview
-- Send demo link for business owner review
-- Collect feedback
-- Prepare and integrate temporary/demo or real media assets
-- Refine `/grillz`, `/watches`, category/product pages based on assets and feedback
+- Production Resend sender domain polish (low priority — before real traffic)
+- Custom Hero / media proof / real asset planning
+- Category/product proof pages (after media/proof planning)
+- Refine `/grillz`, `/watches` based on assets and feedback
 
 ---
 
@@ -183,22 +183,18 @@ Homepage reset to product store + custom lane. NOT custom-only.
 
 Removed: PICK YOUR LANE, BestSellersStrip, old Inquiry Lanes, Material Preview, FinalCTABar, old Custom Entry Block, old Trust Strip.
 
-### Phase 2c — Custom Page Revision ⚠️ WIP — Build passes. NOT user-approved as final.
+### Phase 2c — Custom Page Revision ✅ Complete
 
-- Removed: IdeaTypeStrip, PieceTiles, piece type dropdown, material, stone, email, notes
-- Kept: CustomHero, CustomForm (5 fields), HowItWorks, CustomFaq
-- Refined in commit 84af600 (2026-05-17): compact hero, START THE REQUEST → CTA, Browse Ready-Made removed, upload above textarea on mobile, textarea 4 rows, gold-bordered trust callout, full-width SEND REQUEST →, WhatsApp bypass CTA, updated HowItWorks steps
-- Do not commit or push as an approved milestone
-- Next: visual QA → user approval
+- Simplified to compact funnel flow (commit 84af600 / 03991f5)
+- CRO pass — funnel tightened, metalDirection + stoneDirection wired end-to-end (commit 60c7d06)
+- Sitewide contrast + THE BUILD numbered decision blocks + mobile CTA clearance (commit 2303850)
+- User-approved and live on Vercel
 
-### Phase 2d — Custom Visual Approval Gate 🚧 Open
+### Phase 2d — Custom Visual Approval Gate ✅ Complete
 
-Steps:
-1. Run visual QA of /custom at 390px and 1280px
-2. Present screenshots to user
-3. Wait for explicit approval
-4. Mark /custom as complete only after user signs off
-5. QA: desktop 1280px + mobile 390px + no horizontal scroll + claim-safety scan
+- Visual QA passed at 390px and 1280px
+- User approved /custom as milestone
+- Lead capture verified live via Resend
 
 ### Phase 3 — Brand Asset Setup ✅ Partial
 
@@ -228,13 +224,14 @@ Specs: 8–10 seconds, MP4, muted, loopable, 16:9/21:9 desktop, 9:16 mobile back
 - `/watches` — committed. Visual QA and user approval still pending.
 - Do not redesign either page unless specifically approved.
 
-### Phase 6 — Form Backend + Upload Handling
+### Phase 6 — Form Backend + Upload Handling ✅ Complete
 
-Only after design approval:
-- Formspree or similar for lead capture
-- reference upload handling
-- test submissions
-- no real upload unless backend chosen
+- Resend API route live: `app/api/custom-request/route.ts`
+- All 9 fields delivered: piece type, metal direction, stone direction, name, phone, budget, idea, file attachment (up to 5 MB), timestamp
+- File attachments confirmed working
+- Server-side env vars only (`RESEND_API_KEY`, `LEAD_EMAIL_TO`, `LEAD_EMAIL_FROM`) — gitignored, no browser exposure
+- Verified live 2026-05-31
+- **Remaining:** production sender domain (`leads@2tjewelers.com` or similar) — configure before real traffic
 
 ### Phase 7 — Analytics Setup
 
@@ -337,7 +334,7 @@ Only if user explicitly approves:
 
 ---
 
-## Approved Roadmap Order (updated 2026-05-25)
+## Approved Roadmap Order (updated 2026-05-31)
 
 1. ✅ Homepage reset — product store + custom lane (8fd4497)
 2. ✅ Grillz and Watches pages committed (200e5a1)
@@ -350,20 +347,25 @@ Only if user explicitly approves:
 9. ✅ **`/custom` Pass A simplification** — repetition removed, page shorter (03991f5)
 10. ✅ **`/grillz` and `/watches` read-only QA** — structurally acceptable for demo
 11. ✅ **`/watches` duplicate hero copy fix** (c485b83)
-12. ✅ **Material & Stone direction system — docs + homepage + categories** (a4f5298 → a07c2cf → e674bee → a5e61ee → 0e85b35) — ShineDirectionBand live, business facts confirmed, VOC/arch audit committed
-13. 🎯 **Pre-Vercel readiness check → Vercel demo deploy → business owner review** ← CURRENT
-13. ⏳ Collect demo feedback → integrate media assets → refine /grillz, /watches, category pages
-14. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL (after demo feedback)
+12. ✅ **Material & Stone direction system — docs + homepage + categories** (a4f5298 → a07c2cf → e674bee → a5e61ee → 0e85b35)
+13. ✅ **Homepage visual depth and shine refinement** (5f4afd7, f29c856)
+14. ✅ **`/custom` CRO pass** — funnel tightened, metalDirection + stoneDirection wired (60c7d06, 2026-05-31)
+15. ✅ **Sitewide contrast + selector grouping + mobile CTA clearance** — THE BUILD numbered blocks, 10 contrast fixes, MobileCtaBar clearance (2303850, 2026-05-31)
+16. ✅ **Resend lead capture verified live** — all 9 fields, file attachments, server-side env vars (2026-05-31)
+17. ✅ **Vercel deploy** — live at https://2finla.vercel.app
+18. 🎯 **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic ← LOW PRIORITY NEXT
+19. 🎯 **Custom Hero / media proof / real asset planning** ← NEXT PHASE
+20. 🎯 **Category/product proof pages** — after media/proof planning
+21. ⏳ Collect demo feedback → refine /grillz, /watches based on assets
+22. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL
     - Scope: 5 files only — `app/page.tsx`, `components/home/ProofMarquee.tsx`, `components/home/WeeklyPromo.tsx`, `components/home/PittsburghStory.tsx`, `components/home/SocialTeaser.tsx`
     - Do NOT start until user explicitly approves Pass 5C
     - Full spec in `docs/2t-pass5b-competitor-backed-copy-research.md` Section 11
-15. Sitewide copy + SEO pass — only after demo QA gates cleared
-16. About / Pittsburgh / Store — research + redesign plan (after QA gates)
-17. Social / Instagram / TikTok planning
-18. Backend / form integration — only after design approval
-19. Material/stone SEO landing pages + per-category filtering (only after real inventory + assets + proof; see PROJECT_CONTEXT.md → Material & Stone Strategy)
-20. /custom metal + stone direction selector: METAL Gold/Silver/Not sure · STONE Diamond/Moissanite/No stones/Not sure (planned; no ranking by price/status; no "(cheaper)"/"(premium)" labels; see PROJECT_CONTEXT.md → Material & Stone Strategy)
-21. Per-piece product badge layer — only with verified per-piece data (GRA cert, GIA cert, hallmark, etc.)
+23. Sitewide copy + SEO pass — only after demo QA gates cleared
+24. About / Pittsburgh / Store — research + redesign plan (after QA gates)
+25. Social / Instagram / TikTok planning
+26. Material/stone SEO landing pages + per-category filtering (only after real inventory + assets + proof)
+27. Per-piece product badge layer — only with verified per-piece data (GRA cert, GIA cert, hallmark, etc.)
 
 ---
 

@@ -2,15 +2,23 @@
 
 ## Current Status
 
-**WIP — build passes technically, but NOT user-approved as final.**
+**✅ User-approved and live on Vercel (2026-05-31).**
 
-The `/custom` page has been simplified to a single mobile-first 5-field flow.
+The `/custom` page has been through a full CRO pass and is approved as the current production form.
 
-**User feedback:** The current build feels too card-heavy and too form-like, especially on mobile. It is directionally better than the previous version, but it is not the final UX.
+**Approved state (commits 60c7d06 + 2303850):**
+- THE BUILD section: 3 numbered decision blocks (01 PICK THE PIECE / 02 PICK THE METAL / 03 PICK THE STONE)
+- Metal direction and stone direction selectors wired to Resend lead email
+- CONTACT: name + WhatsApp or phone
+- THE IDEA: upload zone + textarea
+- BUDGET: optional chips
+- SEND REQUEST → full-width primary CTA
+- TEXT 2T ON WHATSAPP → bypass CTA
+- Resend lead capture live — all 9 fields including file attachments
 
-**Do not commit or push this as an approved milestone.**
+**Do not redesign or restructure `/custom` without user approval.**
 
-**Future direction:** Next iteration should use compact selectors — dropdown or bottom-sheet style — instead of large chip/card grids. The goal is a faster, cleaner, and more mobile-native feel.
+Previous note (now resolved): _The current build felt too card-heavy and too form-like on mobile. The selector grouping pass resolved this with numbered decision blocks._
 
 Current route:
 
