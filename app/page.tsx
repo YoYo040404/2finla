@@ -68,6 +68,7 @@ export default function HomePage() {
       {/* ─── 1. HERO — Full-bleed campaign ──────────────────────────────── */}
       <section
         aria-label="Hero"
+        className="homepage-hero"
         style={{
           position:       'relative',
           minHeight:      'max(90vh, 600px)',
@@ -266,7 +267,6 @@ export default function HomePage() {
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover',
-                      opacity: 0.88,
                     }}
                   />
                   {tile.gleam && <div className="mi-gleam" />}

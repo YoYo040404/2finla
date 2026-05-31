@@ -15,7 +15,12 @@ export default function ShineDirectionBand() {
     >
       <div className="sdb-inner">
 
-        <p className="sdb-headline">CHOOSE THE SHINE.</p>
+        <p className="sdb-headline">
+          CHOOSE THE{' '}
+          <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold)', fontFamily: 'var(--font-display)' }}>
+            SHINE.
+          </em>
+        </p>
 
         <div className="sdb-row">
 
