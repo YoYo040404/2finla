@@ -165,9 +165,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category } = await params
   const data = CATEGORY_DATA[category]
   if (!data) return {}
+
+  const noIndexCategories = ['best-sellers', 'new-arrivals']
+  const robotsMeta = noIndexCategories.includes(category)
+    ? { robots: { index: false, follow: true } }
+    : {}
+
   return {
     title:       `2T Jewelers | ${data.title} — Pittsburgh, PA`,
     description: `Shop ${data.title.toLowerCase()} at 2T Jewelers in Pittsburgh, PA. Real store. 25 years. Ask about availability and material details. Text to ask.`,
+    ...robotsMeta,
   }
 }
 

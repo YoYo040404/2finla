@@ -42,8 +42,8 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://2tjewelers.com'),
-  title:       '2T Jewelers | Custom Jewelry, Watches & Grillz',
-  description: 'Custom chains, pendants, grillz, diamond watches, and fine jewelry. Real materials. Direct inquiry. Build the piece around your look.',
+  title:       '2T Jewelers — Grillz, Watches & Custom Jewelry | Pittsburgh, PA',
+  description: 'Shop grillz, watches, chains, pendants, and custom jewelry from 2T Jewelers in Pittsburgh. Text 2T before you buy. Product details confirmed per piece.',
   openGraph: {
     title:       '2T Jewelers',
     description: 'Custom pieces. Real materials. Build the piece around your look.',
@@ -77,6 +77,28 @@ export default function RootLayout({
         the fixed MobileCtaBar on small screens.
       */}
       <body className="min-h-screen flex flex-col pb-[56px] md:pb-0">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'JewelryStore',
+            name: '2T Jewelers',
+            url: 'https://2finla.vercel.app',
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: '332 Fifth Ave',
+              addressLocality: 'Pittsburgh',
+              addressRegion: 'PA',
+              postalCode: '15222',
+              addressCountry: 'US',
+            },
+            telephone: '+1 412-281-7072',
+            sameAs: [
+              'https://www.instagram.com/2tjewelers/',
+              'https://www.tiktok.com/@2tjewelers',
+            ],
+          }) }}
+        />
         <PromoBar />
         <Header />
         <main className="flex-1">
