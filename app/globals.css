@@ -185,7 +185,7 @@
   .pg-subline {
     font-family: var(--font-body);
     font-size: 0.875rem;
-    color: var(--color-brand-muted);
+    color: var(--color-brand-silver);
     line-height: 1.6;
     margin-bottom: 2.25rem;
   }
@@ -307,7 +307,7 @@
   .mat-subcopy {
     font-family: var(--font-body);
     font-size: 0.875rem;
-    color: var(--color-brand-muted);
+    color: var(--color-brand-silver);
     line-height: 1.65;
     max-width: 560px;
     margin-bottom: 1.75rem;
@@ -355,7 +355,7 @@
   .mat-tier-desc {
     font-family: var(--font-body);
     font-size: 0.8125rem;
-    color: #a8a8a8;
+    color: var(--color-brand-silver);
     line-height: 1.6;
   }
   .mat-cta-row {
@@ -367,7 +367,7 @@
   .mat-cta-text {
     font-family: var(--font-body);
     font-size: 0.875rem;
-    color: var(--color-brand-muted);
+    color: var(--color-brand-silver);
   }
   .mat-cta-btn {
     font-size: 0.8rem;
@@ -605,7 +605,7 @@
     font-family: var(--font-body);
     font-size: 0.8125rem;
     letter-spacing: 0.03em;
-    color: var(--color-brand-muted);
+    color: var(--color-brand-silver);
     text-decoration: none;
     transition: color 0.18s ease;
   }
@@ -971,7 +971,7 @@
 .pitt-story-body {
   font-family: var(--font-body);
   font-size: 0.9375rem;
-  color: var(--color-brand-muted);
+  color: var(--color-brand-silver);
   line-height: 1.65;
   max-width: 38ch;
   margin-bottom: 1.1rem;
@@ -1104,7 +1104,7 @@
 .social-subline {
   font-family: var(--font-body);
   font-size: 0.875rem;
-  color: var(--color-brand-muted);
+  color: var(--color-brand-silver);
   line-height: 1.6;
   margin-bottom: 2rem;
 }
@@ -1177,7 +1177,7 @@
 .social-link-copy {
   font-family: var(--font-body);
   font-size: 0.74rem;
-  color: var(--color-brand-muted);
+  color: var(--color-brand-silver);
   line-height: 1.4;
 }
 .social-link-arrow {
@@ -1228,7 +1228,7 @@
 .final-cta-body {
   font-family: var(--font-body);
   font-size: 0.9375rem;
-  color: var(--color-brand-muted);
+  color: var(--color-brand-silver);
   line-height: 1.65;
   max-width: 46ch;
 }
@@ -1632,7 +1632,7 @@
 .build-card-helper {
   font-family: var(--font-body);
   font-size:   0.67rem;
-  color:       var(--color-brand-muted);
+  color:       var(--color-brand-silver);
   line-height: 1.4;
 }
 
@@ -3192,4 +3192,48 @@
   .custom-proof-strip { padding: 0.875rem 1rem; gap: 0.625rem; }
   .custom-proof-num   { font-size: 1rem; padding-top: 1px; }
   .custom-proof-step  { gap: 0.5rem; }
+}
+
+/* ─── THE BUILD — numbered decision blocks ───────────────────────────────── */
+
+.build-decision-block {
+  padding:      0.875rem 1rem 1rem;
+  background:   rgba(0, 0, 0, 0.25);
+  border:       1px solid var(--color-brand-border);
+  border-top:   2px solid rgba(201, 168, 76, 0.2);
+  margin-bottom: 0.5rem;
+}
+
+.build-decision-header {
+  display:       flex;
+  align-items:   center;
+  gap:           0.625rem;
+  margin-bottom: 0.75rem;
+}
+
+.build-decision-num {
+  font-family:    var(--font-mono);
+  font-size:      0.58rem;
+  color:          var(--color-brand-gold);
+  opacity:        0.6;
+  letter-spacing: 0.14em;
+  flex-shrink:    0;
+  line-height:    1;
+}
+
+.build-decision-text {
+  font-family:    var(--font-body);
+  font-size:      0.7rem;
+  font-weight:    700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color:          var(--color-brand-white);
+  line-height:    1;
+}
+
+/* ─── MobileCtaBar clearance — prevents fixed bar from overlapping content ── */
+@media (max-width: 767px) {
+  main {
+    padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+  }
 }

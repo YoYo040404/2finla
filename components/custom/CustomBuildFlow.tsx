@@ -255,74 +255,88 @@ export function CustomBuildFlow() {
         <div className="cf-group">
           <p className="cf-group-label">THE BUILD</p>
 
-          {/* A — PICK THE PIECE */}
-          <p className="pick-label" style={{ marginTop: 0 }}>PICK THE PIECE</p>
-          <div className="piece-select-grid">
-            {PIECES.map(p => (
-              <button
-                key={p.id}
-                type="button"
-                className={`piece-chip${data.pieceType === p.id ? ' active' : ''}`}
-                onClick={() => selectPiece(p.id)}
-                aria-pressed={data.pieceType === p.id}
-              >
-                {p.label}
-              </button>
-            ))}
-          </div>
-          {errors.pieceType && (
-            <p className="cf-error">Select a piece type to continue.</p>
-          )}
-
-          {/* B — PICK THE METAL */}
-          <p className="pick-label">PICK THE METAL</p>
-          <div className="metal-chip-row">
-            {METAL_OPTIONS.map(({ value, label }) => {
-              const sel = data.metalDirection === value
-              return (
+          {/* 01 — PICK THE PIECE */}
+          <div className="build-decision-block">
+            <div className="build-decision-header">
+              <span className="build-decision-num">01</span>
+              <span className="build-decision-text">PICK THE PIECE</span>
+            </div>
+            <div className="piece-select-grid">
+              {PIECES.map(p => (
                 <button
-                  key={value}
+                  key={p.id}
                   type="button"
-                  className="material-chip"
-                  style={sel ? metalActiveStyle(value) : undefined}
-                  onClick={() => setData(d => ({
-                    ...d,
-                    metalDirection: (d.metalDirection === value ? '' : value) as BuildData['metalDirection'],
-                  }))}
-                  aria-pressed={sel}
+                  className={`piece-chip${data.pieceType === p.id ? ' active' : ''}`}
+                  onClick={() => selectPiece(p.id)}
+                  aria-pressed={data.pieceType === p.id}
                 >
-                  {label}
+                  {p.label}
                 </button>
-              )
-            })}
+              ))}
+            </div>
+            {errors.pieceType && (
+              <p className="cf-error" style={{ marginTop: '0.625rem', marginBottom: 0 }}>Select a piece type to continue.</p>
+            )}
           </div>
 
-          {/* C — PICK THE STONE */}
-          <p className="pick-label">PICK THE STONE</p>
-          <div className="stone-chip-grid">
-            {STONE_OPTIONS.map(({ value, label }) => {
-              const sel = data.stoneDirection === value
-              return (
-                <button
-                  key={value}
-                  type="button"
-                  className="material-chip"
-                  style={sel ? stoneActiveStyle(value) : undefined}
-                  onClick={() => setData(d => ({
-                    ...d,
-                    stoneDirection: (d.stoneDirection === value ? '' : value) as BuildData['stoneDirection'],
-                  }))}
-                  aria-pressed={sel}
-                >
-                  {label}
-                </button>
-              )
-            })}
+          {/* 02 — PICK THE METAL */}
+          <div className="build-decision-block">
+            <div className="build-decision-header">
+              <span className="build-decision-num">02</span>
+              <span className="build-decision-text">PICK THE METAL</span>
+            </div>
+            <div className="metal-chip-row">
+              {METAL_OPTIONS.map(({ value, label }) => {
+                const sel = data.metalDirection === value
+                return (
+                  <button
+                    key={value}
+                    type="button"
+                    className="material-chip"
+                    style={sel ? metalActiveStyle(value) : undefined}
+                    onClick={() => setData(d => ({
+                      ...d,
+                      metalDirection: (d.metalDirection === value ? '' : value) as BuildData['metalDirection'],
+                    }))}
+                    aria-pressed={sel}
+                  >
+                    {label}
+                  </button>
+                )
+              })}
+            </div>
           </div>
 
-          <p className="cf-hint" style={{ marginTop: '1rem' }}>
-            Gold or silver. Diamonds or moissanite. Details confirmed per piece.
-          </p>
+          {/* 03 — PICK THE STONE */}
+          <div className="build-decision-block">
+            <div className="build-decision-header">
+              <span className="build-decision-num">03</span>
+              <span className="build-decision-text">PICK THE STONE</span>
+            </div>
+            <div className="stone-chip-grid">
+              {STONE_OPTIONS.map(({ value, label }) => {
+                const sel = data.stoneDirection === value
+                return (
+                  <button
+                    key={value}
+                    type="button"
+                    className="material-chip"
+                    style={sel ? stoneActiveStyle(value) : undefined}
+                    onClick={() => setData(d => ({
+                      ...d,
+                      stoneDirection: (d.stoneDirection === value ? '' : value) as BuildData['stoneDirection'],
+                    }))}
+                    aria-pressed={sel}
+                  >
+                    {label}
+                  </button>
+                )
+              })}
+            </div>
+            <p className="cf-hint" style={{ marginTop: '0.875rem' }}>
+              Gold or silver. Diamonds or moissanite. Details confirmed per piece.
+            </p>
+          </div>
         </div>
 
         {/* ── CONTACT ─────────────────────────────────────────────────────── */}
