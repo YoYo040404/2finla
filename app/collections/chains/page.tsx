@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title:       '2T Jewelers | Chains — Cuban, Rope & Tennis — Pittsburgh, PA',
-  description: 'Cuban, rope, tennis, and Franco chains in Pittsburgh, PA. Ask 2T what\'s in stock and available. Real Pittsburgh store. Over 30 years.',
+  description: 'Cuban, rope, tennis, and Franco chains in Pittsburgh, PA. Ask 2T what\'s in stock and available. Real Pittsburgh store. 25 years.',
 }
 
 const WA_CHAINS = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20for%20a%20chain.%20I%20have%20a%20style%20and%20direction%20in%20mind.%20Gold%20or%20silver%2C%20iced%20or%20clean.'

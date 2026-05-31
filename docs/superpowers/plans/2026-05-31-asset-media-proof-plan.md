@@ -45,8 +45,8 @@
 Based on the 2026-05-30 live audit and project commit history:
 
 - **The hero text system** — "BUILT TO HIT." with BANG. stamp reads authentic and hard. The Anton/Archivo font system is correct for the brand.
-- **The ProofMarquee** — CSS-only trust strip with gold borders. Claim-safe facts (Pittsburgh-built, over 30 years). Reads as real because it does not overclaim.
-- **The PittsburghStory ledger** — "30+ YEARS / 5TH AVE / 332 FIFTH AVE" with gold left-border rules. Small and factual. Believable because it is specific.
+- **The ProofMarquee** — CSS-only trust strip with gold borders. Claim-safe facts (Pittsburgh-built, 25 years). Reads as real because it does not overclaim.
+- **The PittsburghStory ledger** — "25 YEARS / 5TH AVE / 332 FIFTH AVE" with gold left-border rules. Small and factual. Believable because it is specific.
 - **The SocialTeaser channel map** — Real @2tjewelers links on TikTok/Instagram/WhatsApp. No fake counts. Correct structure.
 - **The /custom flow** — The selector system and form work. Lead capture is live. The "NO DEPOSIT TO START · WE QUOTE FIRST" trust callout is claim-safe and direct.
 - **Footer** — Real address, real phone, real WhatsApp, real Instagram, real TikTok. Acima safe wording. All verifiable.
@@ -233,7 +233,7 @@ Each asset below is complete and self-contained. "Orientation" = primary crop di
 - Photo or video: **Photo** (short ambient loop at P2)
 - Real asset required: **Yes — critical, no AI/generated store image allowed**
 - Claim-safety risk: Low. The image itself carries no claim. Do not overlay "100% authentic" or authentication language on the store photo.
-- Notes: Even a single honest counter-angle photo unlocks the PittsburghStory trust claim. It is more trust-building than any copy. The "over 30 years" and "332 Fifth Ave" claims on the page are only fully credible when a real store image exists alongside them.
+- Notes: Even a single honest counter-angle photo unlocks the PittsburghStory trust claim. It is more trust-building than any copy. The "25 years" and "332 Fifth Ave" claims on the page are only fully credible when a real store image exists alongside them.
 
 ---
 
@@ -948,7 +948,7 @@ This requires one small wire in `/custom` to read the `?type` query param and pr
 From the live `components/home/ProofContactZone.tsx` code read, the section currently contains **seven distinct content zones in one component:**
 
 1. The `2T` brand mark in large gold type (left card)
-2. The "30+ YEARS / 5TH AVE" stat ledger (left card)
+2. The "25 YEARS / 5TH AVE" stat ledger (left card)
 3. The "332 FIFTH AVE." address (left card)
 4. The `BANG.` stamp (bottom-right of left card)
 5. "BUILT IN PITTSBURGH." heading + 30-year paragraph (right)
@@ -976,7 +976,7 @@ One job: "This is a real store and you can reach us directly."
 ```
 REAL STORE. PITTSBURGH.
 
-30+ YEARS  ·  5TH AVE  ·  332 FIFTH AVE, DOWNTOWN PITTSBURGH
+25 YEARS  ·  5TH AVE  ·  332 FIFTH AVE, DOWNTOWN PITTSBURGH
 
 [ store photo slot — CSS vitrine now, ASSET 007 later ]
 
@@ -992,7 +992,7 @@ REAL STORE. PITTSBURGH.
 - "TEXT OR COME THROUGH →" — single CTA, `btn-primary` style
 - `BANG.` stamp: **remove from this section** — third placement dilutes the mark
 - Large `2T` gold brand mark: **remove** — already in header and hero; Pittsburgh block should read as fact, not brand personality
-- Long body paragraph ("For over 30 years, 2T Jewelers has been..."): **replace with the stat ledger alone** — facts speak louder than the paragraph
+- Long body paragraph ("For 25 years, 2T Jewelers has been..."): **replace with the stat ledger alone** — facts speak louder than the paragraph
 - "ABOUT 2T" eyebrow: **replace** with "PITTSBURGH STORE" or remove entirely
 
 **What is explicitly removed from Module A vs current ProofContactZone:**
@@ -1012,7 +1012,7 @@ The existing channel-map rows (TikTok / Instagram / WhatsApp) are **already well
 
 **What changes:**
 - **Section heading:** `TAP IN WITH 2T.` (already the approved copy)
-- **Remove:** Any material/stone copy, any address repetition, any "30 years" repeat
+- **Remove:** Any material/stone copy, any address repetition, any "25 years" repeat
 - **Keep:** TikTok row, Instagram row, WhatsApp row (gold-bordered), `@2tjewelers` handle on each
 - **Upgrade path (when ASSET 014/015 arrive):** Each channel row expands to include a 3-thumbnail strip on the right side of the row before the "FOLLOW →" action
 

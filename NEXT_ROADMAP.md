@@ -49,7 +49,7 @@ npm run dev
   - Obsidian / bone / gold `#C9A449` / ice palette
   - Full-bleed campaign hero, BANG. as borderless gold brand text stamp
   - Shop Jewelry: vitrine display-case gateway, anchor row 1.4fr/1fr/1fr
-  - Pittsburgh: stat ledger 30+ / 5TH AVE with gold left-border rules
+  - Pittsburgh: stat ledger 25 / 5TH AVE with gold left-border rules
   - Social: channel-map rows, WhatsApp gold-bordered
   - No fake products, claims, or inventory introduced
 - **Pittsburgh BANG homepage merged into main** (PR #1 — commit 39a3b70 — 2026-05-25)
@@ -248,7 +248,7 @@ Only after user approves:
 - **BANG. brand voice:** About, Store, and Social sections use BANG. as real owned brand signature — @2tjewelers social handle only
 - **Real store footage:** real downtown Pittsburgh store images/video replace all placeholder slots
 - **Real social clips:** real TikTok/Instagram content replaces any placeholder social cards
-- **Tenure copy:** approved wording is **"over 30 years"** — confirmed by user 2026-05-17. Do not revert to "nearly 30 years."
+- **Tenure copy:** approved wording is **"25 years"** — confirmed by user 2026-05-31. Do not use any other formulation.
 - ~~Effi integration~~ — removed from brand direction 2026-05-18. Do not reference in copy, code comments, or planning prompts.
 
 ### Phase 5A — Weekly Promo Module Elevation ✅ Complete (35eda1f)

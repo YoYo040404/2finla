@@ -255,7 +255,7 @@ Strong commercial claims are a key commercial asset for 2T Jewelers. The archite
 **Tier 1 — Sitewide policy claims (publish when policy is confirmed):**
 - Free shipping on eligible orders (requires written policy)
 - Lifetime warranty on eligible pieces (requires written policy with defined coverage)
-- Over 30 years — Pittsburgh (confirmed)
+- 25 years — Pittsburgh (confirmed)
 
 **Tier 2 — Collection-level claims (publish when entire collection qualifies):**
 - Solid gold collection / 14K gold collection

@@ -183,7 +183,7 @@ Strong claims (real diamonds, VVS, GIA, solid gold, 925, authenticated watches, 
 > `Different shine. Different direction. Details confirmed per piece.`
 This frames all four as parallel (consistent with [PROJECT_CONTEXT]) without any specific claim.
 
-**Badges/trust strip on homepage [recommendation]:** **Not now.** ProofMarquee should remain limited to verified claims only (Pittsburgh, over 30 years, text-first). A sitewide material/stone claim on the homepage = scope violation. When a written policy exists (shipping/warranty), it can be added to the strip.
+**Badges/trust strip on homepage [recommendation]:** **Not now.** ProofMarquee should remain limited to verified claims only (Pittsburgh, 25 years, text-first). A sitewide material/stone claim on the homepage = scope violation. When a written policy exists (shipping/warranty), it can be added to the strip.
 
 **Why this fits 2T and the current stage:** It preserves the Hero/SHOP/BUILD as-is (cannot be reopened — [project files]), does not bloat navigation, and leverages an asset already on screen.
 

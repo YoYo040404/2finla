@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title:       '2T Jewelers | Shop Jewelry — Chains, Pendants & More — Pittsburgh, PA',
-  description: 'Shop chains, pendants, bracelets, rings, and earrings at 2T Jewelers in Pittsburgh, PA. Real store. Over 30 years. Ask about availability. Text 2T before you buy.',
+  description: 'Shop chains, pendants, bracelets, rings, and earrings at 2T Jewelers in Pittsburgh, PA. Real store. 25 years. Ask about availability. Text 2T before you buy.',
 }
 
 const WA_STOCK = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%20do%20you%20have%20in%20stock%20right%20now%3F'

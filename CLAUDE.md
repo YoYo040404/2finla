@@ -57,7 +57,7 @@ For execution tasks:
 Approved homepage section order:
 
 1. Hero — full-bleed, BUILT TO HIT., video slot wired
-2. ProofMarquee — CSS-only animated trust strip (Pittsburgh-built, over 30 years)
+2. ProofMarquee — CSS-only animated trust strip (Pittsburgh-built, 25 years)
 3. Custom Entry Block — bring the logo / photo / idea, CTA to /custom
 4. PICK YOUR LANE — 5 category tiles (Chains, Pendants, Grillz, Watches, Custom) + secondary pills
 5. BestSellersStrip — two editorial lanes (Best Sellers / New Arrivals), inline SVG shape cards, no real product data
@@ -125,8 +125,8 @@ Do not install final logo until user provides the SVG/2x file.
 - Do not write invented quotes or testimonials.
 
 **Tenure language guard:**
-Current approved wording is **"over 30 years"** — confirmed by user 2026-05-17.
-Do not change to "nearly 30 years" or any other formulation unless the user explicitly confirms the exact language.
+Current approved wording is **"25 years"** — confirmed by user 2026-05-31.
+Do not change to any other formulation unless the user explicitly confirms the exact language.
 
 ---
 

@@ -104,7 +104,7 @@ The hero is strong. BANG. is underused. The social section is correct in concept
 | Chain Swagger | chainswagger.com | Review/affiliate | "15 Best Hip Hop Jewelry Websites in 2025" coverage |
 
 ### Key Pittsburgh-Specific Finding
-**Every local Pittsburgh jeweler is bridal/engagement/traditional fine jewelry.** Zero hip-hop, zero street-luxury, zero iced-out, zero grillz, zero custom pendant competitors in the Pittsburgh market with a real physical store. This is 2T's uncontested local SEO + trust opening. "Real Pittsburgh store. Over 30 years." is a unique claim no online competitor can match and no local competitor serves with hip-hop product.
+**Every local Pittsburgh jeweler is bridal/engagement/traditional fine jewelry.** Zero hip-hop, zero street-luxury, zero iced-out, zero grillz, zero custom pendant competitors in the Pittsburgh market with a real physical store. This is 2T's uncontested local SEO + trust opening. "Real Pittsburgh store. 25 years." is a unique claim no online competitor can match and no local competitor serves with hip-hop product.
 
 ---
 
@@ -152,7 +152,7 @@ Pittsburgh-built. Text 2T.
 
 Option B (trust anchor):
 BUILT TO HIT.
-Real Pittsburgh store. Over 30 years.
+Real Pittsburgh store. 25 years.
 Shop the shine or build the piece.
 
 Option C (process anchor):
@@ -449,7 +449,7 @@ Strengthen with a specific hook line: "Text before you buy. Ask anything." — m
 
 **Trust:**
 - "real Pittsburgh store"
-- "over 30 years"
+- "25 years"
 - "product details confirmed per piece"
 - "ask before you buy"
 - "speak to a real jeweler"
@@ -526,7 +526,7 @@ Strengthen with a specific hook line: "Text before you buy. Ask anything." — m
 
 ### Trust phrase hierarchy
 
-1. "Real Pittsburgh Store. Over 30 Years." — primary trust anchor
+1. "Real Pittsburgh Store. 25 Years." — primary trust anchor
 2. "Product details confirmed per piece." — universal safety phrase
 3. "We quote before the build." — custom trust anchor
 4. "No deposit to start." — custom friction removal

@@ -65,7 +65,7 @@ Call the final direction **Pittsburgh BANG**.
 
 Core idea: **a real downtown jeweler after dark, where the product hits first, the store feels local and lived-in, and the site sells identity as much as jewelry.**
 
-Why it fits 2T: hip-hop jewelry culture is not just about cataloging materials. It is about status, one-of-one identity, visible shine, and named symbolic pieces. The AMNH "Ice Cold" exhibition coverage frames hip-hop jewelry as a cultural language of success and identity, not just accessory merchandising. Current mainstream grillz coverage also reinforces that custom mouth jewelry still functions as spectacle, signature, and conversation piece. 2T should lean into that identity logic, but root it in its own facts: Downtown Pittsburgh, 5th Ave, over 30 years, direct text access, and shop/custom dual entry.
+Why it fits 2T: hip-hop jewelry culture is not just about cataloging materials. It is about status, one-of-one identity, visible shine, and named symbolic pieces. The AMNH "Ice Cold" exhibition coverage frames hip-hop jewelry as a cultural language of success and identity, not just accessory merchandising. Current mainstream grillz coverage also reinforces that custom mouth jewelry still functions as spectacle, signature, and conversation piece. 2T should lean into that identity logic, but root it in its own facts: Downtown Pittsburgh, 5th Ave, 25 years, direct text access, and shop/custom dual entry.
 
 How it should feel: black lacquer, hard light, metal reflections, gold stamps, ice flashes, dense category access, and direct contact. Not clean luxury. Not boutique. Not fake streetwear. Not influencer merch. Not "for the culture" cosplay.
 
@@ -83,7 +83,7 @@ First visual hit: **one dominant jewelry image or motion crop** that can only be
 
 Headline impression: **BUILT TO HIT.** stays. It is still the best line on the site.
 
-Trust signal: one line, fast: **Downtown Pittsburgh. Real store. Over 30 years.**
+Trust signal: one line, fast: **Downtown Pittsburgh. Real store. 25 years.**
 
 CTA clarity: two immediate paths visible without thinking: **SHOP JEWELRY** first, **BUILD CUSTOM** second. Then **TEXT 2T** as the no-friction escape hatch.
 
@@ -197,7 +197,7 @@ This is a trust weapon. Use it like one.
 You have four high-value trust facts:
 - **332 Fifth Ave**
 - **Downtown Pittsburgh**
-- **Over 30 years**
+- **25 years**
 - **Text or come through**
 
 Those should appear in four places total:
@@ -211,7 +211,7 @@ That frequency is enough to feel real without sounding repetitive. The current r
 Make these lines street-commercial, not civic:
 - **Downtown Pittsburgh. Real store.**
 - **332 Fifth Ave. Text first or walk in.**
-- **Over 30 years. Product details confirmed per piece.**
+- **25 years. Product details confirmed per piece.**
 
 Do not write this section like a chamber-of-commerce About page. Do not over-explain the history. Make it proof, not biography.
 

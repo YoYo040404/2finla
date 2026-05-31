@@ -1,7 +1,7 @@
 // components/home/PittsburghStory.tsx
 //
 // Pittsburgh BANG — compressed real-store proof block
-// Tenure wording: "over 30 years" confirmed 2026-05-17
+// Tenure wording: "25 years" confirmed 2026-05-31
 // Left slot: swap mi-vitrine div for <img>/<video> when store assets arrive
 //   Asset convention: public/assets/store/store-interior.jpg or store-loop.mp4
 
@@ -131,7 +131,7 @@ export default function PittsburghStory() {
               marginBottom: '1rem',
             }}
           >
-            For over 30 years, 2T Jewelers has been a downtown Pittsburgh stop for chains, watches, grillz, pendants, repairs, and custom pieces built to stand out.
+            For 25 years, 2T Jewelers has been a downtown Pittsburgh stop for chains, watches, grillz, pendants, repairs, and custom pieces built to stand out.
           </p>
           <p
             style={{

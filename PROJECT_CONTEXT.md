@@ -145,8 +145,8 @@ Brand personality rules:
 - Until real assets are provided, use structural placeholders (CSS/layout slots).
 
 **Tenure language guard:**
-Current approved wording is **"over 30 years"** — confirmed by user 2026-05-17.
-Do not change to "nearly 30 years" or any other formulation unless the user explicitly confirms the exact language.
+Current approved wording is **"25 years"** — confirmed by user 2026-05-31.
+Do not change to any other formulation unless the user explicitly confirms the exact language.
 
 ---
 
@@ -423,7 +423,7 @@ Homepage is a product-first store with a custom lane — NOT custom-only. Hero d
 | 4 | ShineDirectionBand — material/stone direction | inline in `app/page.tsx` | ✅ METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite — Details confirmed per piece. No per-tile chips. |
 | 5 | Promo strip — ASK WHAT'S RUNNING NOW | inline in `app/page.tsx` | ✅ Claim-safe, WhatsApp prefill, promo terms note |
 | 6 | Custom lane — YOUR LOGO. YOUR NAME. YOUR PIECE. | inline in `app/page.tsx` | ✅ Keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST |
-| 7 | REAL STORE. REAL WORK. | `components/home/PittsburghStory.tsx` | ✅ Stat ledger: 30+ YEARS / 5TH AVE with gold left-border rules |
+| 7 | REAL STORE. REAL WORK. | `components/home/PittsburghStory.tsx` | ✅ Stat ledger: 25 YEARS / 5TH AVE with gold left-border rules |
 | 8 | TAP IN WITH 2T. | `components/home/SocialTeaser.tsx` | ✅ Channel-map rows with diamond glyphs, WhatsApp gold-bordered |
 
 **Vitrine system:** Striped diagonal-pattern CSS placeholder wells with corner crop marks. Replace with real `<img>` or `<video>` when media assets arrive.

@@ -130,7 +130,7 @@ Old Shopify folder is archive only. Do not touch it.
 - Future About, Store, and Social sections must use BANG. and real @2tjewelers content.
 - The site will eventually use the real downtown Pittsburgh store and real store/product media footage.
 - Never generate or place fake store images, fake social clips, or invented quotes.
-- Tenure copy: approved as **"over 30 years"** — confirmed by user 2026-05-17. Do not change without user confirmation.
+- Tenure copy: approved as **"25 years"** — confirmed by user 2026-05-31. Do not change without user confirmation.
 
 ---
 
@@ -150,7 +150,7 @@ Old Shopify folder is archive only. Do not touch it.
 - SHOP JEWELRY: vitrine display-case tiles, anchor row 1.4fr/1fr/1fr (GRILLZ dominant), inline mono text direction labels (no spec-box pill borders), secondary 4-tile row
 - Weekly Promo: two-column, vitrine slot right, gleam moment (no fake offers, claim-safe)
 - Custom lane: vitrine left, text right, keyword chips
-- PittsburghStory: stat ledger 30+ YEARS / 5TH AVE with gold left-border rules, no fake claims
+- PittsburghStory: stat ledger 25 YEARS / 5TH AVE with gold left-border rules, no fake claims
 - SocialTeaser: channel-map rows (TikTok / Instagram / WhatsApp), WhatsApp gold-bordered, diamond glyphs, real links only
 
 **Gleam budget:** 2 of 3 used (GRILLZ anchor + promo vitrine).
@@ -193,7 +193,7 @@ Custom page (as of commit 84af600 — 2026-05-17):
 | ShineDirectionBand | ✅ Live — METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite — Details confirmed per piece |
 | Promo module | ✅ Live — claim-safe, no fake offers |
 | Custom lane (homepage) | ✅ Live — keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST |
-| PittsburghStory | ✅ Stat ledger: 30+ / 5TH AVE with gold left-border rules |
+| PittsburghStory | ✅ Stat ledger: 25 / 5TH AVE with gold left-border rules |
 | SocialTeaser | ✅ Channel-map rows, WhatsApp gold-bordered, real links only |
 | Hero video | ✅ Slot wired — `public/assets/hero-loop-demo.mp4` (file pending) |
 | Grillz page `/grillz` | ✅ Read-only QA done — structurally acceptable for demo. Hold deeper visual work until real/demo assets arrive. |

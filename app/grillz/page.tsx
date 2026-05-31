@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title:       '2T Jewelers | Custom Grillz — Pittsburgh, PA',
-  description: 'Custom gold and iced grillz in Pittsburgh, PA. Top, bottom, or full set. Ask 2T first — no deposit to start. Over 30 years.',
+  description: 'Custom gold and iced grillz in Pittsburgh, PA. Top, bottom, or full set. Ask 2T first — no deposit to start. 25 years.',
 }
 
 const WA_GRILLZ = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20ask%20about%20grillz.'
@@ -303,7 +303,7 @@ export default function GrillzPage() {
                 marginTop:  '0.25rem',
               }}
             >
-              Over 30 years. Real jeweler. Text first or walk in.
+              25 years. Real jeweler. Text first or walk in.
             </p>
           </div>
         </div>

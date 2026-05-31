@@ -167,7 +167,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!data) return {}
   return {
     title:       `2T Jewelers | ${data.title} — Pittsburgh, PA`,
-    description: `Shop ${data.title.toLowerCase()} at 2T Jewelers in Pittsburgh, PA. Real store. Over 30 years. Ask about availability and material details. Text to ask.`,
+    description: `Shop ${data.title.toLowerCase()} at 2T Jewelers in Pittsburgh, PA. Real store. 25 years. Ask about availability and material details. Text to ask.`,
   }
 }
 

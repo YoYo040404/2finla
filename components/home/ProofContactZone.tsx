@@ -1,9 +1,9 @@
 // components/home/ProofContactZone.tsx
 //
-// Left: stat-dominant proof ledger (30+ YEARS / 332 FIFTH AVE. / DOWNTOWN PITTSBURGH).
+// Left: stat-dominant proof ledger (25 YEARS / 332 FIFTH AVE. / DOWNTOWN PITTSBURGH).
 // Right: BUILT IN PITTSBURGH. headline → body → social channel rows (TikTok/IG/WA).
 // No standalone CTA button — MobileCtaBar handles persistent contact access.
-// Tenure wording: "over 30 years" confirmed 2026-05-17.
+// Tenure wording: "25 years" confirmed 2026-05-31.
 
 import type { ReactNode } from 'react'
 
@@ -94,7 +94,7 @@ export default function ProofContactZone() {
             flexDirection: 'column',
             gap: '0',
           }}>
-            {/* 30+ YEARS — large, dominant */}
+            {/* 25 YEARS — large, dominant */}
             <div style={{ marginBottom: '1.5rem' }}>
               <p style={{
                 fontFamily: 'var(--font-display)',
@@ -105,7 +105,7 @@ export default function ProofContactZone() {
                 margin: 0,
                 letterSpacing: '0.01em',
               }}>
-                30+
+                25
               </p>
               <p className="mi-mono mi-faint" style={{ margin: '6px 0 0', fontSize: '0.6rem', letterSpacing: '0.18em' }}>
                 YEARS
@@ -160,7 +160,7 @@ export default function ProofContactZone() {
             maxWidth: '40ch',
             marginBottom: '1.75rem',
           }}>
-            Over 30 years in downtown Pittsburgh. Chains, watches, grillz, pendants, repairs, and custom work.
+            25 years in downtown Pittsburgh. Chains, watches, grillz, pendants, repairs, and custom work.
           </p>
 
           {/* Social channel map — platform label removed (icon identifies platform) */}
