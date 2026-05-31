@@ -158,6 +158,12 @@ Do not change to "nearly 30 years" or any other formulation unless the user expl
 
 Silver and moissanite are legitimate material and stone directions — not downgrade options, not second-class alternatives, not budget substitutes. They must never be framed that way in copy, planning, or prompts.
 
+**User-confirmed business-level facts (confirmed 2026-05-31):**
+- All 2T silver is **925 Sterling Silver**.
+- All 2T moissanite is **D-color and VVS**.
+
+These are confirmed at the business level. "925 Sterling Silver" and "D-color VVS Moissanite" may appear in homepage-level and category-level direction copy (e.g., ShineDirectionBand) as secondary proof. Individual product-card badge use still requires per-piece verification. GRA-certified and GIA are still not confirmed.
+
 ### Positioning — Parallel Directions, No Hierarchy
 
 Gold, silver, diamonds, and moissanite are four equal directions. The buyer chooses based on preference, aesthetic, and purpose — not because one is better than the other.
@@ -176,18 +182,32 @@ Do NOT write:
 
 ### Claim-Safety — Material & Stone
 
-Material and stone claims require per-piece verification before publishing. The following are NOT safe as blanket site claims:
+**Public-facing hierarchy rule:**
+Use simple buyer labels first: Gold / Silver / Diamonds / Moissanite.
+Use specs as secondary proof: 925 Sterling Silver / D-color VVS Moissanite / Details confirmed per piece.
 
-- "925 sterling silver" — requires per-piece confirmation
-- "D-color moissanite" / "VVS moissanite" — requires per-piece confirmation
-- "GRA-certified moissanite" — requires GRA certificate to ship with the piece
-- "GIA-graded diamond" — requires actual GIA report per stone
-- "Lab-grown diamond" / "Natural diamond" — must be confirmed per piece
-- "14K / 10K / 18K gold" — must be confirmed per piece
-- "Solid gold" — must be confirmed as not plated per piece
-- "Gold-plated over 925 sterling silver" — must be confirmed per piece
+The following claims are gated by scope:
 
-Until confirmed: use "Material and stone details confirmed per piece."
+| Claim | Status | Approved scope |
+|---|---|---|
+| "925 Sterling Silver" | ✅ Business-level confirmed (2026-05-31) | Homepage direction copy, ShineDirectionBand, category level. Per-piece badge still requires hallmark verification. |
+| "D-color VVS Moissanite" | ✅ Business-level confirmed (2026-05-31) | Homepage direction copy, ShineDirectionBand, category level. Per-piece badge still requires verification. |
+| "GRA-certified moissanite" | ❌ Not confirmed | Requires GRA certificate to ship with the piece. |
+| "GIA-graded diamond" | ❌ Not confirmed | Requires actual GIA report per stone. |
+| "Lab-grown diamond" / "Natural diamond" | ❌ Not confirmed | Must be confirmed per piece. |
+| "14K / 10K / 18K gold" | ❌ Not confirmed | Must be confirmed per piece. |
+| "Solid gold" | ❌ Not confirmed | Must be confirmed as not plated per piece. |
+| "Gold-plated over 925 sterling silver" | ❌ Not confirmed | Must be confirmed per piece. |
+
+Until confirmed at the correct scope: use "Material and stone details confirmed per piece."
+
+Approved homepage/category-level phrases (safe now):
+- "Gold · Silver · Diamonds · Moissanite"
+- "Pick the piece. Then pick the shine."
+- "Gold or silver. Diamond or moissanite. Different shine. Different direction."
+- "METAL: GOLD · SILVER — 925 Sterling Silver"
+- "STONE: DIAMONDS · MOISSANITE — D-color VVS Moissanite"
+- "Details confirmed per piece."
 
 For full rules see `CLAIM_SAFETY.md` → **Material & Stone Language Rules** section.
 
@@ -387,9 +407,9 @@ components/layout/MobileCtaBar.tsx
 
 See Visual Direction section above for the full Midnight Icebox token table (updated 2026-05-25).
 
-### Homepage — Midnight Icebox Pass 3 ✅ Committed
+### Homepage — Material & Stone Direction Pass ✅ Committed
 
-**Latest commit:** `af7f20d — feat: apply Midnight Icebox homepage visual pass` (2026-05-25)
+**Latest commit:** `0e85b35 — feat: add homepage material and stone direction system` (2026-05-31)
 
 Homepage is a product-first store with a custom lane — NOT custom-only. Hero dual CTAs: SHOP JEWELRY + BUILD CUSTOM →.
 
@@ -399,15 +419,16 @@ Homepage is a product-first store with a custom lane — NOT custom-only. Hero d
 |---|---------|-----------|--------|
 | 1 | Hero — BUILT TO HIT. + BANG. stamp | inline in `app/page.tsx` | ✅ Full-bleed campaign media, video opacity 0.60, BANG. as borderless gold brand text stamp |
 | 2 | ProofMarquee | `components/home/ProofMarquee.tsx` | ✅ CSS-only marquee, gold borders, trust facts, accessible |
-| 3 | SHOP JEWELRY — vitrine gateway | inline in `app/page.tsx` | ✅ Anchor row 1.4fr/1fr/1fr (GRILLZ dominant), vitrine display-case tiles, inline mono text direction labels (no border-box pills) |
-| 4 | WHAT'S RUNNING THIS WEEK — promo | inline in `app/page.tsx` | ✅ Two-column, vitrine slot right, gleam moment |
-| 5 | LOGO. NAME. PHOTO. — custom lane | inline in `app/page.tsx` | ✅ Vitrine left, text right, keyword chips |
-| 6 | REAL STORE. REAL WORK. | `components/home/PittsburghStory.tsx` | ✅ Stat ledger: 30+ YEARS / 5TH AVE with gold left-border rules |
-| 7 | TAP IN WITH 2T. | `components/home/SocialTeaser.tsx` | ✅ Channel-map rows with diamond glyphs, WhatsApp gold-bordered |
+| 3 | PICK THE PIECE — shop gateway | inline in `app/page.tsx` | ✅ Anchor row (GRILLZ dominant), vitrine display-case tiles, inline mono text direction labels + material cue: "Gold · Silver · Diamonds · Moissanite / Pick the piece. Then pick the shine." |
+| 4 | ShineDirectionBand — material/stone direction | inline in `app/page.tsx` | ✅ METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite — Details confirmed per piece. No per-tile chips. |
+| 5 | Promo strip — ASK WHAT'S RUNNING NOW | inline in `app/page.tsx` | ✅ Claim-safe, WhatsApp prefill, promo terms note |
+| 6 | Custom lane — YOUR LOGO. YOUR NAME. YOUR PIECE. | inline in `app/page.tsx` | ✅ Keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST |
+| 7 | REAL STORE. REAL WORK. | `components/home/PittsburghStory.tsx` | ✅ Stat ledger: 30+ YEARS / 5TH AVE with gold left-border rules |
+| 8 | TAP IN WITH 2T. | `components/home/SocialTeaser.tsx` | ✅ Channel-map rows with diamond glyphs, WhatsApp gold-bordered |
 
 **Vitrine system:** Striped diagonal-pattern CSS placeholder wells with corner crop marks. Replace with real `<img>` or `<video>` when media assets arrive.
 
-**Gleam budget:** 2 of 3 used (GRILLZ anchor tile + promo vitrine). One remaining.
+**ShineDirectionBand:** Committed in `0e85b35`. Presents METAL (Gold/Silver + 925 Sterling Silver spec) and STONE (Diamonds/Moissanite + D-color VVS Moissanite spec) as parallel directions with "Details confirmed per piece." footer. No per-tile material chips. No claim-safety regressions. Uses user-confirmed business facts.
 
 **No fake products, claims, prices, testimonials, social metrics, celebrity proof, or inventory introduced.**
 
@@ -501,10 +522,15 @@ Visual QA and user approval still required. **Do not mark /custom as final.**
 
 ---
 
-## Committed Work (as of 2026-05-25)
+## Committed Work (as of 2026-05-31)
 
 | Commit | Description |
 |---|---|
+| `0e85b35` | feat: add homepage material and stone direction system — ShineDirectionBand, product wall cue, "Gold · Silver · Diamonds · Moissanite / Pick the piece. Then pick the shine." |
+| `a5e61ee` | docs: add architecture CRO VOC audit (2026-05-30) |
+| `e674bee` | feat: add material and stone direction to shop categories |
+| `a07c2cf` | feat: add material and stone direction capture |
+| `a4f5298` | docs: add silver moissanite verified claims strategy |
 | `c485b83` | fix: remove duplicate watches hero copy |
 | `03991f5` | /custom Pass A — repetition removed, HowItWorks + WorkPlaceholder unmounted from /custom flow, page shorter |
 | `854c15e` | Repo cleanup — screenshot QA artifacts gitignored, QA utility added |
@@ -533,7 +559,7 @@ The following claim categories are **approved for prominent use** when verified:
 - VVS / VS / SI — product-level clarity grade confirmation
 - GIA certificate — physical cert confirmed per stone
 - Solid gold / karat — alloy and karat confirmed per piece
-- 925 sterling silver — purity confirmed per piece
+- 925 sterling silver — ✅ user-confirmed at business level (2026-05-31); homepage/category-level use approved; per-piece badge still requires hallmark verification
 - Factory-set diamonds — confirmed per watch/piece
 - Authenticated watches — condition, stones, and source confirmed
 - In stock / available now — live inventory confirmed

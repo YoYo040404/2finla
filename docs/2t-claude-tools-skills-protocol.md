@@ -469,7 +469,7 @@ Before Claude says a task is complete:
 - Do not touch Shopify unless explicitly reopened.
 - Do not invent products, inventory, reviews, celebrity proof, store footage, or social proof.
 - Do not use strong material/stone claims unless verified and scoped.
-- Do not publish “D-color VVS moissanite” without product-level proof.
+- “D-color VVS Moissanite” is approved at homepage/ShineDirectionBand level (business-level confirmed 2026-05-31). Do NOT use it as a per-piece product badge without verification.
 - Do not publish “GRA-certified” without certificate proof.
 - Do not treat Moissanite as fake diamond.
 - Do not position Silver as cheap.

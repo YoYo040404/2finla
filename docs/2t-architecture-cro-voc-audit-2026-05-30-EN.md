@@ -14,6 +14,9 @@
 
 > **Missing-file note:** The brief lists `2t-phaseb-shop-material-stone-architecture-2026-05-29.md` as a source. It was **not** in the uploaded set. Where Phase B1 detail is needed it is reconstructed from [live demo] + [project files]; this is flagged, not fabricated.
 
+> **Update (2026-05-31 — post-commit 0e85b35):**
+> User-confirmed business-level facts now on record: All 2T silver is 925 Sterling Silver. All 2T moissanite is D-color and VVS. These allow "925 Sterling Silver" and "D-color VVS Moissanite" in homepage direction copy (ShineDirectionBand). The homepage now includes the ShineDirectionBand and Product Wall cue under PICK THE PIECE. GRA-certified and GIA are still not confirmed. Per-piece badge layer still requires per-piece verification.
+
 ---
 
 ## 1. Executive recommendation
@@ -327,7 +330,7 @@ Keep Option A's category-first taxonomy and add **one homepage module** that let
 
 **Forbidden language (reaffirmed, now with fresh market confirmation that this IS the differentiator):** `moissanite diamond`, `VVS moissanite diamonds`, `diamond alternative/substitute/simulant`, `fake diamond`, `looks like a diamond`, `passes the diamond tester` (as a trust claim), `fraction of diamond cost`, `rival natural diamonds`, `cheap/budget/affordable silver`, silver framed via gold, plated labeled `gold`, GIA on moissanite, blanket VVS/GIA/925/solid-gold/real-diamond, grillz dental/fit/FDA claims, CAD/free-render/mockup promises, fake reviews/UGC/celebrity/press/counts. **The entire moissanite hip-hop segment uses these [§4]; 2T's refusal is a visible trust asset.**
 
-**What can be said now (no new data):** Pittsburgh real store · over 30 years · text-first access · `Gold or silver. Diamond or moissanite. Different shine. Different direction.` · `Material and stone details confirmed per piece.` · `Ask what's in stock now.` · `We quote before the build.` · `No deposit to start.` · `Promo terms shown on eligible pieces only.` · the approved `20% OFF YOUR FIRST CUSTOM ORDER` (promo bar only).
+**What can be said now (updated 2026-05-31):** Pittsburgh real store · over 30 years · text-first access · `Gold · Silver · Diamonds · Moissanite` · `Pick the piece. Then pick the shine.` · `Gold or silver. Diamond or moissanite. Different shine. Different direction.` · `925 Sterling Silver` (homepage/ShineDirectionBand — business-level confirmed) · `D-color VVS Moissanite` (homepage/ShineDirectionBand — business-level confirmed) · `Material and stone details confirmed per piece.` · `Details confirmed per piece.` · `Ask what's in stock now.` · `We quote before the build.` · `No deposit to start.` · `Promo terms shown on eligible pieces only.` · the approved `20% OFF YOUR FIRST CUSTOM ORDER` (promo bar only).
 
 **What waits for proof:** every per-piece material/stone/grade/cert claim; in-stock; free shipping; warranty; watch authentication/factory-set; any new promo.
 

@@ -1809,11 +1809,16 @@ Use instead:
 
 ## 17. Material & Stone Copy Rules
 
-*(Added 2026-05-28 — based on 21-source market research pass)*
+*(Added 2026-05-28 — updated 2026-05-31 with user-confirmed business facts)*
 
 ### Business Fact
 
 2T Jewelers sells gold, silver, diamonds, and moissanite. All four are legitimate product directions with equal standing. No hierarchy.
+
+**User-confirmed (2026-05-31):**
+- All 2T silver is 925 Sterling Silver.
+- All 2T moissanite is D-color and VVS.
+These may be published at homepage/category direction level. GRA-certified and GIA are not confirmed. Per-piece badge still requires verification.
 
 ### The Core Rule
 
@@ -1871,14 +1876,37 @@ Gold language stays the same as before — confirmed per piece, karat-qualified 
 
 Do not shorten "lab-grown diamond" to just "diamond" in commercial copy.
 
+### Approved Homepage / Category Direction Copy (safe now — 2026-05-31)
+
+Public-facing hierarchy: simple buyer labels first, specs as secondary proof.
+
+```
+Gold · Silver · Diamonds · Moissanite
+Pick the piece. Then pick the shine.
+```
+
+ShineDirectionBand approved structure:
+```
+METAL: GOLD · SILVER
+925 Sterling Silver
+STONE: DIAMONDS · MOISSANITE
+D-color VVS Moissanite
+Details confirmed per piece.
+```
+
+Other approved framing at category/homepage level:
+- "Gold or silver. Diamond or moissanite. Different shine. Different direction."
+- "Different shine. Different direction."
+- "Details confirmed per piece."
+
 ### Safe Defaults for All Material/Stone Copy
 
-When specific material or stone details are not confirmed per piece:
+When specific material or stone details are not confirmed at the product/badge level:
 > Material and stone details confirmed per piece.
 > Ask what fits the piece.
 > Details confirmed per piece.
 
-These are the safe fallback lines. Use them at category level, in custom flow copy, and in any copy where the specific stone or metal has not been confirmed.
+These are the safe fallback lines. Use them on product cards, PDP spec blocks, and in any copy where the per-piece stone or metal has not been verified.
 
 ### What CZ Is NOT
 

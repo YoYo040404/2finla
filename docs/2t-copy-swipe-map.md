@@ -342,22 +342,29 @@ Strong verified claims are commercial assets. The goal is to publish them promin
 
 ## 10. Material & Stone Language Map
 
-*(Added 2026-05-28 — based on 21-source market research pass)*
+*(Added 2026-05-28 — updated 2026-05-31 with user-confirmed business facts)*
 
 ### The Rule
 
 2T sells gold, silver, diamonds, and moissanite as parallel directions. No hierarchy. No downgrade framing.
 
+**User-confirmed (2026-05-31):** All 2T silver is 925 Sterling Silver. All 2T moissanite is D-color and VVS. These specs are approved at homepage/ShineDirectionBand level. GRA-certified and GIA are not confirmed. Per-piece badge still requires verification.
+
 ### What to Use
 
 | Context | Approved copy |
 |---|---|
-| Category or homepage mention | "Gold or silver. Diamond or moissanite." |
+| Category or homepage mention | "Gold or silver. Diamond or moissanite." / "Gold · Silver · Diamonds · Moissanite" |
+| Homepage product wall cue | "Pick the piece. Then pick the shine." |
 | Positioning separator | "Different shine. Different direction." |
-| Stone/material fallback | "Material and stone details confirmed per piece." |
+| ShineDirectionBand — metal | "METAL: GOLD · SILVER — 925 Sterling Silver" |
+| ShineDirectionBand — stone | "STONE: DIAMONDS · MOISSANITE — D-color VVS Moissanite" |
+| ShineDirectionBand — footer | "Details confirmed per piece." |
+| Stone/material fallback (product level) | "Material and stone details confirmed per piece." |
 | Custom flow close | "Ask what fits the piece." |
 | Moissanite standalone | "Moissanite — its own stone." |
-| Silver standalone | "925 sterling silver." *(when confirmed per piece)* |
+| Silver standalone | "925 Sterling Silver" *(homepage/category: user-confirmed; per-piece badge: hallmark required)* |
+| Moissanite spec | "D-color VVS Moissanite" *(homepage/category: user-confirmed; per-piece badge: grade verification required)* |
 
 ### What to Avoid
 
@@ -375,17 +382,19 @@ Strong verified claims are commercial assets. The goal is to publish them promin
 
 ### Claim Verification Required Before Publishing
 
-These claims must be confirmed per piece before use:
-- "925 sterling silver"
-- "D-color moissanite" / "VVS moissanite"
-- "GRA-certified moissanite"
-- "GIA-graded diamond"
-- "Lab-grown diamond" / "Natural diamond"
-- "14K / 10K / 18K gold"
-- "Gold-plated over 925 sterling silver"
-- "Solid gold"
+| Claim | Status |
+|---|---|
+| "925 Sterling Silver" | ✅ Business-level confirmed. Homepage/ShineDirectionBand approved. Per-piece badge: hallmark still required. |
+| "D-color VVS Moissanite" | ✅ Business-level confirmed. Homepage/ShineDirectionBand approved. Per-piece badge: grade verification still required. |
+| "GRA-certified moissanite" | ❌ Not confirmed — certificate handling must be confirmed. |
+| "GIA-graded diamond" | ❌ Not confirmed — GIA report required per stone. |
+| "Lab-grown diamond" / "Natural diamond" | ❌ Not confirmed — origin must be confirmed per piece. |
+| "14K / 10K / 18K gold" | ❌ Not confirmed — karat must be confirmed per piece. |
+| "Gold-plated over 925 sterling silver" | ❌ Not confirmed — plating must be confirmed per piece. |
+| "Solid gold" | ❌ Not confirmed — must be confirmed as not plated per piece. |
+| "Solid silver" | ❌ Not confirmed — construction must be confirmed per piece. |
 
-Safe default until confirmed: "Material and stone details confirmed per piece."
+Safe default at product/badge level: "Material and stone details confirmed per piece."
 
 ### CZ Note
 

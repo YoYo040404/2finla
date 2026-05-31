@@ -12,6 +12,12 @@
 > - **[recommendation]** = strategic judgment based on all sources.
 > - All copy strings, badge labels, navigation items, form fields, and SEO titles are written in **English** (U.S. website assets for Claude Code handoff).
 
+> **Update (2026-05-31 — post-commit 0e85b35):**
+> User-confirmed business-level facts:
+> - All 2T silver is **925 Sterling Silver**.
+> - All 2T moissanite is **D-color and VVS**.
+> These are now confirmed at the business level. "925 Sterling Silver" and "D-color VVS Moissanite" are approved for homepage direction copy (ShineDirectionBand). Per-piece badge still requires verification. GRA-certified and GIA are still not confirmed. The homepage now has: Product Wall cue under "PICK THE PIECE." with "Gold · Silver · Diamonds · Moissanite / Pick the piece. Then pick the shine." and a ShineDirectionBand (METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite — Details confirmed per piece.).
+
 ---
 
 ## 1. Executive recommendation

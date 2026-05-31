@@ -57,6 +57,12 @@ npm run dev
 - **`/custom` Pass A simplification** — repetition removed, page shorter, HowItWorks and WorkPlaceholder unmounted from /custom flow, component files preserved (commit 03991f5)
 - **`/grillz` and `/watches` read-only QA** — both structurally acceptable for demo; no build blocker
 - **`/watches` duplicate hero copy fixed** (commit c485b83)
+- **Material & Stone direction system — homepage** (commits a4f5298 → a07c2cf → e674bee → a5e61ee → 0e85b35):
+  - ShineDirectionBand live: METAL GOLD/SILVER (925 Sterling Silver) · STONE DIAMONDS/MOISSANITE (D-color VVS Moissanite) · Details confirmed per piece
+  - Product Wall cue under PICK THE PIECE: "Gold · Silver · Diamonds · Moissanite / Pick the piece. Then pick the shine."
+  - Material and stone direction chips added to shop categories
+  - Architecture, CRO, and VOC audit docs committed
+  - No per-tile material chips. No claim-safety regressions.
 
 ### WIP / Approval Pending ⚠️
 
@@ -74,9 +80,10 @@ npm run dev
 - Real upload backend
 - Final logo SVG/2x/favicon
 - Shopify recalibration
-- Material/stone category pages (Gold / Silver / Diamonds / Moissanite as parallel top-level sections)
-- Material/stone filtering on product/category pages
-- /custom metal + stone direction selector (planned — see PROJECT_CONTEXT.md → Material & Stone Strategy)
+- Material/stone SEO landing pages (build only when real inventory + assets + proof exists)
+- Material/stone filtering on product/category pages (later, Shopify)
+- /custom metal + stone direction selector — METAL: Gold/Silver/Not sure · STONE: Diamond/Moissanite/No stones/Not sure (planned — do not rank by price/status; see PROJECT_CONTEXT.md → Material & Stone Strategy)
+- Per-piece product badge layer: `[14K GOLD]` `[925 STERLING]` `[GRA VVS MOISSANITE]` `[NATURAL DIAMOND]` `[GIA CERT]` `[IN STOCK]` — build only with verified per-piece data
 
 ### Next Milestone 🎯
 
@@ -343,7 +350,8 @@ Only if user explicitly approves:
 9. ✅ **`/custom` Pass A simplification** — repetition removed, page shorter (03991f5)
 10. ✅ **`/grillz` and `/watches` read-only QA** — structurally acceptable for demo
 11. ✅ **`/watches` duplicate hero copy fix** (c485b83)
-12. 🎯 **Pre-Vercel readiness check → Vercel demo deploy → business owner review** ← CURRENT
+12. ✅ **Material & Stone direction system — docs + homepage + categories** (a4f5298 → a07c2cf → e674bee → a5e61ee → 0e85b35) — ShineDirectionBand live, business facts confirmed, VOC/arch audit committed
+13. 🎯 **Pre-Vercel readiness check → Vercel demo deploy → business owner review** ← CURRENT
 13. ⏳ Collect demo feedback → integrate media assets → refine /grillz, /watches, category pages
 14. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL (after demo feedback)
     - Scope: 5 files only — `app/page.tsx`, `components/home/ProofMarquee.tsx`, `components/home/WeeklyPromo.tsx`, `components/home/PittsburghStory.tsx`, `components/home/SocialTeaser.tsx`
@@ -353,8 +361,9 @@ Only if user explicitly approves:
 16. About / Pittsburgh / Store — research + redesign plan (after QA gates)
 17. Social / Instagram / TikTok planning
 18. Backend / form integration — only after design approval
-19. Material/stone category architecture — Gold / Silver / Diamonds / Moissanite as parallel sections (research + plan required first; see PROJECT_CONTEXT.md → Material & Stone Strategy)
-20. /custom metal + stone direction selector upgrade (planned — no ranking by price/status; see PROJECT_CONTEXT.md → Material & Stone Strategy)
+19. Material/stone SEO landing pages + per-category filtering (only after real inventory + assets + proof; see PROJECT_CONTEXT.md → Material & Stone Strategy)
+20. /custom metal + stone direction selector: METAL Gold/Silver/Not sure · STONE Diamond/Moissanite/No stones/Not sure (planned; no ranking by price/status; no "(cheaper)"/"(premium)" labels; see PROJECT_CONTEXT.md → Material & Stone Strategy)
+21. Per-piece product badge layer — only with verified per-piece data (GRA cert, GIA cert, hallmark, etc.)
 
 ---
 

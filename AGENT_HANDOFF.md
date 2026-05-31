@@ -30,14 +30,17 @@
 - "BUILT TO HIT." stays as the primary hero headline. Do not change it.
 - "SHOP JEWELRY" and "BUILD CUSTOM →" hero CTAs stay as-is.
 
-**Material & Stone Language Rules (added 2026-05-28):**
+**Material & Stone Language Rules (updated 2026-05-31):**
 - 2T sells gold, silver, diamonds, and moissanite. All four are legitimate product directions. No hierarchy.
+- **User-confirmed (2026-05-31):** All 2T silver is 925 Sterling Silver. All 2T moissanite is D-color and VVS.
+- "925 Sterling Silver" and "D-color VVS Moissanite" are approved for homepage direction copy (ShineDirectionBand). Per-piece badge still requires verification. GRA-certified and GIA are still NOT confirmed.
 - Do NOT call moissanite a "diamond alternative," "diamond substitute," "diamond simulant," or "fake diamond."
 - Do NOT frame silver as inferior, cheaper, or lesser than gold.
 - Do NOT write "moissanite diamond" or "VVS moissanite diamonds."
-- Do NOT use D-color, VVS, GRA-certified, GIA, 925, karat, solid/plated claims without per-piece verification.
-- Approved framing: "Gold or silver. Diamond or moissanite. Different shine. Different direction."
-- Safe default: "Material and stone details confirmed per piece."
+- Do NOT use GRA-certified, GIA, karat, solid/plated claims without per-piece verification.
+- Approved homepage framing: "Gold · Silver · Diamonds · Moissanite" / "Pick the piece. Then pick the shine." / "Gold or silver. Diamond or moissanite. Different shine. Different direction."
+- ShineDirectionBand structure: METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite — Details confirmed per piece.
+- Safe default for product/badge level: "Material and stone details confirmed per piece."
 - Full rules: `CLAIM_SAFETY.md` → Material & Stone Language Rules section.
 - Category/custom architecture planning: `PROJECT_CONTEXT.md` → Material & Stone Strategy section.
 
@@ -92,18 +95,20 @@ Do not publish as blanket sitewide claims without verification. Do not invent th
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
 Old Shopify folder is archive only. Do not touch it.
 
-**Latest committed state (as of 2026-05-25):**
+**Latest committed state (as of 2026-05-31):**
 
 | Commit | Description |
 |---|---|
+| `0e85b35` | feat: add homepage material and stone direction system — ShineDirectionBand, product wall cue |
+| `a5e61ee` | docs: add architecture CRO VOC audit |
+| `e674bee` | feat: add material and stone direction to shop categories |
+| `a07c2cf` | feat: add material and stone direction capture |
+| `a4f5298` | docs: add silver moissanite verified claims strategy |
 | `c485b83` | fix: remove duplicate watches hero copy |
 | `03991f5` | /custom Pass A — repetition removed, page shorter, HowItWorks + WorkPlaceholder unmounted |
 | `854c15e` | Repo cleanup — QA artifacts gitignored, QA utility added |
 | `39a3b70` | Merge PR #1 — Pittsburgh BANG homepage merged into main |
-| `f58d26d` | Pittsburgh BANG — align about, social, and nav |
-| `b912851` | Pittsburgh BANG — homepage refinement |
-| `af7f20d` | Homepage Midnight Icebox Pass 3 (pre-Pittsburgh BANG branch) |
-| `b049d30` | 2T voice hardening across core pages |
+| `af7f20d` | Homepage Midnight Icebox Pass 3 |
 | `84af600` | /custom compact revision — build passes, NOT user-approved |
 
 **Current strategic direction:** 2T Jewelers is a real Pittsburgh street-luxury jewelry store. Pittsburgh BANG homepage is merged into main. Visual direction: hard hip-hop / hood street-luxury — loud, flashy, bling-heavy, ice/diamond/gold shine, rapper/athlete energy. NOT quiet luxury, NOT boutique, NOT over-clean ecommerce.
@@ -182,9 +187,10 @@ Custom page (as of commit 84af600 — 2026-05-17):
 | Homepage Midnight Icebox Pass 3 | ✅ Committed — af7f20d. Anton/Archivo/JetBrains Mono. Vitrine system. Gold/ice palette. |
 | Hero | ✅ Full-bleed campaign. Video opacity 0.60. BANG. brand text stamp. |
 | ProofMarquee | ✅ Live — gold borders |
-| SHOP JEWELRY gateway | ✅ Vitrine display-case tiles, anchor row 1.4fr/1fr/1fr, inline text labels |
-| Weekly Promo module | ✅ Live — claim-safe, no fake offers |
-| Custom lane (homepage) | ✅ Live — vitrine left, text right, keyword chips |
+| PICK THE PIECE gateway | ✅ Vitrine display-case tiles, anchor row, inline text labels + material cue |
+| ShineDirectionBand | ✅ Live — METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite — Details confirmed per piece |
+| Promo module | ✅ Live — claim-safe, no fake offers |
+| Custom lane (homepage) | ✅ Live — keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST |
 | PittsburghStory | ✅ Stat ledger: 30+ / 5TH AVE with gold left-border rules |
 | SocialTeaser | ✅ Channel-map rows, WhatsApp gold-bordered, real links only |
 | Hero video | ✅ Slot wired — `public/assets/hero-loop-demo.mp4` (file pending) |
