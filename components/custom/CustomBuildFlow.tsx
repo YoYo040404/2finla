@@ -29,15 +29,32 @@ const EMPTY: BuildData = {
 const METAL_OPTIONS = [
   { value: 'gold',           label: 'Gold' },
   { value: 'silver',         label: 'Silver' },
-  { value: 'not-sure-metal', label: 'Not sure yet' },
+  { value: 'not-sure-metal', label: 'Not Sure' },
 ] as const
 
 const STONE_OPTIONS = [
-  { value: 'diamond',        label: 'Diamond' },
+  { value: 'diamond',        label: 'Diamonds' },
   { value: 'moissanite',     label: 'Moissanite' },
-  { value: 'no-stones',      label: 'No stones' },
-  { value: 'not-sure-stone', label: 'Not sure yet' },
+  { value: 'no-stones',      label: 'No Stones' },
+  { value: 'not-sure-stone', label: 'Not Sure' },
 ] as const
+
+function metalActiveStyle(value: string): React.CSSProperties {
+  switch (value) {
+    case 'gold':   return { background: '#C9A449', borderColor: '#C9A449', color: '#050505' }
+    case 'silver': return { background: '#DDE6ED', borderColor: '#DDE6ED', color: '#050505' }
+    default:       return { background: 'rgba(201,168,76,0.1)', borderColor: 'rgba(201,168,76,0.45)', color: '#C9A449' }
+  }
+}
+
+function stoneActiveStyle(value: string): React.CSSProperties {
+  switch (value) {
+    case 'diamond':    return { background: '#D0EEFF', borderColor: '#D0EEFF', color: '#050505' }
+    case 'moissanite': return { background: '#BDE0FF', borderColor: '#BDE0FF', color: '#050505' }
+    case 'no-stones':  return { background: '#1E1E1E', borderColor: '#3C3C3C', color: '#888888' }
+    default:           return { background: 'rgba(201,168,76,0.1)', borderColor: 'rgba(201,168,76,0.45)', color: '#C9A449' }
+  }
+}
 
 const PIECES = [
   { id: 'custom-pendant', label: 'Custom Pendant' },
@@ -57,14 +74,14 @@ const BUDGET_OPTIONS = [
 ]
 
 export function CustomBuildFlow() {
-  const [data, setData]             = useState<BuildData>(EMPTY)
-  const [submitting, setSubmitting]   = useState(false)
-  const [submitted, setSubmitted]     = useState(false)
+  const [data, setData]              = useState<BuildData>(EMPTY)
+  const [submitting, setSubmitting]  = useState(false)
+  const [submitted, setSubmitted]    = useState(false)
   const [submitError, setSubmitError] = useState(false)
-  const [dragOver, setDragOver]       = useState(false)
-  const [errors, setErrors]         = useState({ pieceType: false, contact: false, idea: false })
-  const fileInputRef                = useRef<HTMLInputElement>(null)
-  const successRef                  = useRef<HTMLElement>(null)
+  const [dragOver, setDragOver]      = useState(false)
+  const [errors, setErrors]          = useState({ pieceType: false, contact: false, idea: false })
+  const fileInputRef                 = useRef<HTMLInputElement>(null)
+  const successRef                   = useRef<HTMLElement>(null)
 
   useEffect(() => {
     if (submitted) {
@@ -126,10 +143,7 @@ export function CustomBuildFlow() {
       }
 
       const res = await fetch('/api/custom-request', { method: 'POST', body })
-      if (!res.ok) {
-        setSubmitError(true)
-        return
-      }
+      if (!res.ok) { setSubmitError(true); return }
       setSubmitted(true)
     } catch {
       setSubmitError(true)
@@ -138,7 +152,7 @@ export function CustomBuildFlow() {
     }
   }
 
-  /* ── Success state ──────────────────────────────────────────────────────── */
+  /* ── Success ────────────────────────────────────────────────────────────── */
   if (submitted) {
     return (
       <section
@@ -152,48 +166,28 @@ export function CustomBuildFlow() {
       >
         <div style={{ maxWidth: 520, margin: '0 auto', textAlign: 'center' }}>
           <div style={{
-            display:        'inline-flex',
-            alignItems:     'center',
-            justifyContent: 'center',
-            width:          56,
-            height:         56,
-            borderRadius:   '50%',
-            border:         '1px solid var(--color-brand-gold)',
-            marginBottom:   '1.25rem',
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            width: 56, height: 56, borderRadius: '50%',
+            border: '1px solid var(--color-brand-gold)', marginBottom: '1.25rem',
           }}>
             <span style={{ fontSize: '1.2rem', color: 'var(--color-brand-gold)' }}>✦</span>
           </div>
-          <p
-            aria-hidden="true"
-            style={{
-              fontFamily:    'var(--font-body)',
-              fontSize:      '0.6rem',
-              fontWeight:    700,
-              letterSpacing: '0.18em',
-              color:         'var(--color-brand-gold)',
-              opacity:       0.7,
-              marginBottom:  '1rem',
-            }}
-          >
+          <p aria-hidden="true" style={{
+            fontFamily: 'var(--font-body)', fontSize: '0.6rem', fontWeight: 700,
+            letterSpacing: '0.18em', color: 'var(--color-brand-gold)', opacity: 0.7, marginBottom: '1rem',
+          }}>
             BANG.
           </p>
           <h2 style={{
-            fontFamily:    'var(--font-display)',
-            fontSize:      'clamp(2rem, 5vw, 3rem)',
-            fontWeight:    400,
-            color:         'var(--color-brand-white)',
-            letterSpacing: '-0.02em',
-            marginBottom:  '0.875rem',
-            lineHeight:    1.05,
+            fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 5vw, 3rem)',
+            fontWeight: 400, color: 'var(--color-brand-white)',
+            letterSpacing: '-0.02em', marginBottom: '0.875rem', lineHeight: 1.05,
           }}>
             Your request is in.
           </h2>
           <p style={{
-            fontSize:     '0.9375rem',
-            color:        'var(--color-brand-muted)',
-            lineHeight:   1.65,
-            maxWidth:     '38ch',
-            margin:       '0 auto 2.5rem',
+            fontSize: '0.9375rem', color: 'var(--color-brand-muted)',
+            lineHeight: 1.65, maxWidth: '38ch', margin: '0 auto 2.5rem',
           }}>
             We&apos;ll review the details and follow up with next steps.
           </p>
@@ -202,10 +196,8 @@ export function CustomBuildFlow() {
           </a>
           <a
             href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20just%20sent%20a%20request%20and%20have%20something%20to%20add."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bypass-cta"
-            style={{ display: 'block', marginTop: '1.5rem' }}
+            target="_blank" rel="noopener noreferrer"
+            className="bypass-cta" style={{ display: 'block', marginTop: '1.5rem' }}
           >
             Have something to add? Hit us on WhatsApp →
           </a>
@@ -216,48 +208,56 @@ export function CustomBuildFlow() {
 
   /* ── Main flow ──────────────────────────────────────────────────────────── */
   return (
-    <>
-    <style>{`
-      @media (max-width: 767px) {
-        .custom-proof-strip {
-          flex-direction: column;
-          gap: 0.875rem;
-        }
-        .custom-proof-divider {
-          display: none;
-        }
-      }
-    `}</style>
-    <section
-      id="custom-form"
-      className="custom-funnel-section"
-    >
-      <div style={{ maxWidth: 820, margin: '0 auto' }}>
+    <section id="custom-form" className="custom-funnel-section">
+      <div style={{ maxWidth: 760, margin: '0 auto' }}>
 
-        {/* ── Section header ──────────────────────────────────────────────── */}
-        <div style={{ marginBottom: 'clamp(1.5rem, 4vw, 2.5rem)' }}>
+        {/* ── Header + process strip ─────────────────────────────────────── */}
+        <div style={{ marginBottom: 'clamp(2rem, 5vw, 3rem)' }}>
           <p className="section-eyebrow" style={{ marginBottom: '0.5rem' }}>
             START YOUR BUILD
           </p>
           <p style={{
-            fontFamily:    'var(--font-body)',
-            fontSize:      '0.9375rem',
-            color:         'var(--color-brand-muted)',
-            lineHeight:    1.6,
-            maxWidth:      '52ch',
+            fontFamily: 'var(--font-body)', fontSize: '0.9375rem',
+            color: 'var(--color-brand-silver)', lineHeight: 1.6,
+            maxWidth: '48ch', marginBottom: 'clamp(1.25rem, 3vw, 1.75rem)',
           }}>
-            Send the logo, photo, name, number, sketch, or idea. We&apos;ll review it before the quote.
+            Send the idea first. We quote before the build.
           </p>
+
+          <div className="custom-proof-strip">
+            <div className="custom-proof-step">
+              <span className="custom-proof-num" aria-hidden="true">01</span>
+              <div>
+                <p className="custom-proof-label">SEND THE IDEA</p>
+                <p className="custom-proof-body">Logo, sketch, photo, or rough idea.</p>
+              </div>
+            </div>
+            <div className="custom-proof-divider" aria-hidden="true" />
+            <div className="custom-proof-step">
+              <span className="custom-proof-num" aria-hidden="true">02</span>
+              <div>
+                <p className="custom-proof-label">WE REVIEW THE DIRECTION</p>
+                <p className="custom-proof-body">Piece type, material, and visual direction.</p>
+              </div>
+            </div>
+            <div className="custom-proof-divider" aria-hidden="true" />
+            <div className="custom-proof-step">
+              <span className="custom-proof-num" aria-hidden="true">03</span>
+              <div>
+                <p className="custom-proof-label">WE QUOTE FIRST</p>
+                <p className="custom-proof-body">We confirm the direction with you before production.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* ── Step 01 — What are you building? ────────────────────────────── */}
-        <div className="build-step-block">
-          <span className="step-numeral" aria-hidden="true">01</span>
-          <p className="build-field-label" style={{ marginBottom: '0.875rem' }}>
-            WHAT ARE YOU BUILDING?
-          </p>
+        {/* ── THE BUILD ───────────────────────────────────────────────────── */}
+        <div className="cf-group">
+          <p className="cf-group-label">THE BUILD</p>
 
-          <div className="piece-chip-grid">
+          {/* A — PICK THE PIECE */}
+          <p className="pick-label" style={{ marginTop: 0 }}>PICK THE PIECE</p>
+          <div className="piece-select-grid">
             {PIECES.map(p => (
               <button
                 key={p.id}
@@ -270,251 +270,68 @@ export function CustomBuildFlow() {
               </button>
             ))}
           </div>
-
           {errors.pieceType && (
-            <p style={{ color: '#c0392b', fontSize: '0.75rem', marginTop: '0.75rem', letterSpacing: '0.03em' }}>
-              Select a piece type to continue.
-            </p>
+            <p className="cf-error">Select a piece type to continue.</p>
           )}
-        </div>
 
-        {/* ── Metal direction (optional) ──────────────────────────────────── */}
-        <div style={{ marginBottom: '1.75rem' }}>
-          <p
-            className="mi-mono"
-            style={{
-              fontSize:      '0.6rem',
-              letterSpacing: '0.14em',
-              color:         '#9B958A',
-              marginBottom:  '0.75rem',
-            }}
-          >
-            METAL DIRECTION
-          </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+          {/* B — PICK THE METAL */}
+          <p className="pick-label">PICK THE METAL</p>
+          <div className="metal-chip-row">
             {METAL_OPTIONS.map(({ value, label }) => {
-              const selected = data.metalDirection === value
+              const sel = data.metalDirection === value
               return (
                 <button
                   key={value}
                   type="button"
-                  onClick={() =>
-                    setData(d => ({ ...d, metalDirection: selected ? '' : value }))
-                  }
-                  style={{
-                    minHeight:   '44px',
-                    padding:     '0.4rem 0.85rem',
-                    fontSize:    '0.7rem',
-                    letterSpacing: '0.08em',
-                    fontFamily:  'var(--font-mono, monospace)',
-                    background:  selected ? '#C9A449' : 'transparent',
-                    color:       selected ? '#050505' : '#9B958A',
-                    border:      `1px solid ${selected ? '#C9A449' : '#1F1D1A'}`,
-                    cursor:      'pointer',
-                    transition:  'all 0.15s ease',
-                  }}
+                  className="material-chip"
+                  style={sel ? metalActiveStyle(value) : undefined}
+                  onClick={() => setData(d => ({
+                    ...d,
+                    metalDirection: (d.metalDirection === value ? '' : value) as BuildData['metalDirection'],
+                  }))}
+                  aria-pressed={sel}
                 >
                   {label}
                 </button>
               )
             })}
           </div>
-        </div>
 
-        {/* ── Stone direction (optional) ──────────────────────────────────── */}
-        <div style={{ marginBottom: 'clamp(1.5rem, 4vw, 2.5rem)' }}>
-          <p
-            className="mi-mono"
-            style={{
-              fontSize:      '0.6rem',
-              letterSpacing: '0.14em',
-              color:         '#9B958A',
-              marginBottom:  '0.75rem',
-            }}
-          >
-            STONE DIRECTION
-          </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+          {/* C — PICK THE STONE */}
+          <p className="pick-label">PICK THE STONE</p>
+          <div className="stone-chip-grid">
             {STONE_OPTIONS.map(({ value, label }) => {
-              const selected = data.stoneDirection === value
+              const sel = data.stoneDirection === value
               return (
                 <button
                   key={value}
                   type="button"
-                  onClick={() =>
-                    setData(d => ({ ...d, stoneDirection: selected ? '' : value }))
-                  }
-                  style={{
-                    minHeight:   '44px',
-                    padding:     '0.4rem 0.85rem',
-                    fontSize:    '0.7rem',
-                    letterSpacing: '0.08em',
-                    fontFamily:  'var(--font-mono, monospace)',
-                    background:  selected ? '#C9A449' : 'transparent',
-                    color:       selected ? '#050505' : '#9B958A',
-                    border:      `1px solid ${selected ? '#C9A449' : '#1F1D1A'}`,
-                    cursor:      'pointer',
-                    transition:  'all 0.15s ease',
-                  }}
+                  className="material-chip"
+                  style={sel ? stoneActiveStyle(value) : undefined}
+                  onClick={() => setData(d => ({
+                    ...d,
+                    stoneDirection: (d.stoneDirection === value ? '' : value) as BuildData['stoneDirection'],
+                  }))}
+                  aria-pressed={sel}
                 >
                   {label}
                 </button>
               )
             })}
           </div>
-          <p
-            className="mi-mono mi-faint"
-            style={{ fontSize: '0.55rem', letterSpacing: '0.06em', marginTop: '0.75rem', marginBottom: 0 }}
-          >
-            Different shine. Different direction. Details confirmed per piece.
+
+          <p className="cf-hint" style={{ marginTop: '1rem' }}>
+            Gold or silver. Diamonds or moissanite. Details confirmed per piece.
           </p>
         </div>
 
-        {/* ── Mid-form WhatsApp escape ─────────────────────────────────────── */}
-        <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.8125rem', color: 'var(--color-brand-muted)', marginBottom: 'clamp(1.5rem, 4vw, 2.5rem)', lineHeight: 1.5 }}>
-          Rather text it?{' '}
-          <a
-            href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bypass-cta"
-            style={{ display: 'inline', marginTop: 0 }}
-          >
-            Text 2T →
-          </a>
-        </p>
+        {/* ── CONTACT ─────────────────────────────────────────────────────── */}
+        <div className="cf-group">
+          <p className="cf-group-label">CONTACT</p>
 
-        {/* ── Step 02 — Show us the idea ──────────────────────────────────── */}
-        <div className="build-step-block">
-          <span className="step-numeral" aria-hidden="true">02</span>
-          <p className="build-field-label" style={{ marginBottom: '0.75rem' }}>
-            SHOW US THE IDEA
-          </p>
-
-          <div className="build-idea-grid">
-            {/* Upload hero — top on mobile, left on desktop */}
-            <div className="build-idea-upload">
-              <div
-                className={`upload-hero${dragOver ? ' drag-over' : ''}${data.uploadFileName ? ' has-file' : ''}`}
-                onDragOver={e => { e.preventDefault(); setDragOver(true) }}
-                onDragLeave={() => setDragOver(false)}
-                onDrop={handleDrop}
-                onClick={() => !data.uploadFileName && fileInputRef.current?.click()}
-                role="button"
-                tabIndex={0}
-                onKeyDown={e => e.key === 'Enter' && !data.uploadFileName && fileInputRef.current?.click()}
-                aria-label="Upload reference file"
-              >
-                <input
-                  ref={fileInputRef}
-                  type="file"
-                  accept="image/*,.pdf"
-                  style={{ display: 'none' }}
-                  onChange={e => applyFile(e.target.files?.[0] ?? null)}
-                  aria-hidden="true"
-                />
-
-                {data.uploadFileName ? (
-                  <div className="upload-hero-file">
-                    <span className="upload-hero-icon" style={{ fontSize: '1.1rem' }}>✓</span>
-                    <span className="upload-hero-filename">{truncateFilename(data.uploadFileName)}&nbsp;—&nbsp;nice.</span>
-                    <button
-                      type="button"
-                      className="upload-hero-clear"
-                      onClick={e => { e.stopPropagation(); clearFile() }}
-                      aria-label="Remove file"
-                    >
-                      ✕
-                    </button>
-                  </div>
-                ) : (
-                  <>
-                    <span className="upload-hero-icon" aria-hidden="true">
-                      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="17 8 12 3 7 8" />
-                        <line x1="12" y1="3" x2="12" y2="15" />
-                      </svg>
-                    </span>
-                    <span className="upload-hero-label">DROP YOUR PHOTO, LOGO, OR SKETCH</span>
-                    <span className="upload-hero-sub">Or describe it below — anything works.</span>
-                  </>
-                )}
-              </div>
-            </div>
-
-            {/* Textarea — right on desktop, below on mobile */}
-            <div className="build-idea-text">
-              <textarea
-                id="cf-idea"
-                className="form-input"
-                rows={4}
-                placeholder="Describe the piece — a name, idea, reference, or anything you're imagining."
-                value={data.idea}
-                onChange={e => {
-                  setData(d => ({ ...d, idea: e.target.value }))
-                  setErrors(er => ({ ...er, idea: false }))
-                }}
-                style={{ resize: 'vertical', minHeight: 100 }}
-              />
-              {data.pieceType === 'grillz' && (
-                <p style={{
-                  fontFamily:    'var(--font-body)',
-                  fontSize:      '0.75rem',
-                  color:         'var(--color-brand-gold)',
-                  lineHeight:    1.55,
-                  marginTop:     '0.625rem',
-                  opacity:       0.9,
-                  letterSpacing: '0.01em',
-                }}>
-                  For grillz: tell us top set, bottom set, or full mouth. Gold, stones, or both? We&apos;ll walk you through the next step.
-                </p>
-              )}
-            </div>
-          </div>
-
-          {errors.idea && (
-            <p style={{ color: '#c0392b', fontSize: '0.75rem', marginTop: '0.75rem', letterSpacing: '0.03em' }}>
-              Add an idea or drop a reference — either works.
-            </p>
-          )}
-        </div>
-
-        {/* ── Approval / Proof process strip ──────────────────────────────── */}
-        <div className="custom-proof-strip">
-          <div className="custom-proof-step">
-            <span className="custom-proof-num" aria-hidden="true">01</span>
+          <div className="build-contact-grid" style={{ marginBottom: '1.25rem' }}>
             <div>
-              <p className="custom-proof-label">SEND THE IDEA</p>
-              <p className="custom-proof-body">Logo, sketch, photo, or rough idea.</p>
-            </div>
-          </div>
-          <div className="custom-proof-divider" aria-hidden="true" />
-          <div className="custom-proof-step">
-            <span className="custom-proof-num" aria-hidden="true">02</span>
-            <div>
-              <p className="custom-proof-label">WE REVIEW THE DIRECTION</p>
-              <p className="custom-proof-body">Piece type, material, and visual direction.</p>
-            </div>
-          </div>
-          <div className="custom-proof-divider" aria-hidden="true" />
-          <div className="custom-proof-step">
-            <span className="custom-proof-num" aria-hidden="true">03</span>
-            <div>
-              <p className="custom-proof-label">WE QUOTE FIRST</p>
-              <p className="custom-proof-body">We confirm the direction with you before production.</p>
-            </div>
-          </div>
-        </div>
-
-        {/* ── Step 03 — Contact ───────────────────────────────────────────── */}
-        <div className="build-step-block">
-          <span className="step-numeral" aria-hidden="true">03</span>
-          <p className="build-field-label" style={{ marginBottom: '0.75rem' }}>YOUR CONTACT</p>
-
-          <div className="build-contact-grid">
-            <div>
-              <label htmlFor="cf-name" className="build-field-label">Your name</label>
+              <label htmlFor="cf-name" className="cf-field-label">YOUR NAME</label>
               <input
                 id="cf-name"
                 type="text"
@@ -529,7 +346,7 @@ export function CustomBuildFlow() {
               />
             </div>
             <div>
-              <label htmlFor="cf-phone" className="build-field-label">WhatsApp or phone</label>
+              <label htmlFor="cf-phone" className="cf-field-label">WHATSAPP OR PHONE</label>
               <input
                 id="cf-phone"
                 type="tel"
@@ -545,19 +362,101 @@ export function CustomBuildFlow() {
               <p className="field-micro">Best number for this build.</p>
             </div>
           </div>
-
           {errors.contact && (
-            <p style={{ color: '#c0392b', fontSize: '0.75rem', marginTop: '0.75rem', letterSpacing: '0.03em' }}>
+            <p className="cf-error" style={{ marginTop: '-0.5rem', marginBottom: '1rem' }}>
               Name and phone are required.
             </p>
           )}
+        </div>
 
-          {/* ── Budget direction (optional) ──────────────────────────────── */}
-          <div style={{ marginTop: '1.5rem' }}>
-            <p className="build-field-label" style={{ marginBottom: '0.5rem' }}>
-              Budget direction (optional):
+        {/* ── THE IDEA ────────────────────────────────────────────────────── */}
+        <div className="cf-group">
+          <p className="cf-group-label">THE IDEA</p>
+
+          <div
+            className={`upload-hero${dragOver ? ' drag-over' : ''}${data.uploadFileName ? ' has-file' : ''}`}
+            style={{ marginBottom: '0.875rem' }}
+            onDragOver={e => { e.preventDefault(); setDragOver(true) }}
+            onDragLeave={() => setDragOver(false)}
+            onDrop={handleDrop}
+            onClick={() => !data.uploadFileName && fileInputRef.current?.click()}
+            role="button"
+            tabIndex={0}
+            onKeyDown={e => e.key === 'Enter' && !data.uploadFileName && fileInputRef.current?.click()}
+            aria-label="Upload reference file"
+          >
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*,.pdf"
+              style={{ display: 'none' }}
+              onChange={e => applyFile(e.target.files?.[0] ?? null)}
+              aria-hidden="true"
+            />
+            {data.uploadFileName ? (
+              <div className="upload-hero-file">
+                <span className="upload-hero-icon" style={{ fontSize: '1.1rem' }}>✓</span>
+                <span className="upload-hero-filename">{truncateFilename(data.uploadFileName)}&nbsp;—&nbsp;nice.</span>
+                <button
+                  type="button"
+                  className="upload-hero-clear"
+                  onClick={e => { e.stopPropagation(); clearFile() }}
+                  aria-label="Remove file"
+                >
+                  ✕
+                </button>
+              </div>
+            ) : (
+              <>
+                <span className="upload-hero-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="17 8 12 3 7 8" />
+                    <line x1="12" y1="3" x2="12" y2="15" />
+                  </svg>
+                </span>
+                <span className="upload-hero-label">DROP YOUR PHOTO, LOGO, OR SKETCH</span>
+                <span className="upload-hero-sub">Or describe it below — anything works.</span>
+              </>
+            )}
+          </div>
+
+          <textarea
+            id="cf-idea"
+            className="form-input"
+            rows={4}
+            placeholder="Describe the piece — a name, idea, reference, or anything you're imagining."
+            value={data.idea}
+            onChange={e => {
+              setData(d => ({ ...d, idea: e.target.value }))
+              setErrors(er => ({ ...er, idea: false }))
+            }}
+            style={{ resize: 'vertical', minHeight: 100 }}
+          />
+          {data.pieceType === 'grillz' && (
+            <p style={{
+              fontFamily: 'var(--font-body)', fontSize: '0.75rem',
+              color: 'var(--color-brand-gold)', lineHeight: 1.55,
+              marginTop: '0.5rem', opacity: 0.9, letterSpacing: '0.01em',
+            }}>
+              For grillz: tell us top set, bottom set, or full mouth. Gold, stones, or both? We&apos;ll walk you through the next step.
             </p>
-            <div className="piece-chip-grid">
+          )}
+          {errors.idea && (
+            <p className="cf-error">Add an idea or drop a reference — either works.</p>
+          )}
+        </div>
+
+        {/* ── BUDGET + SUBMIT ──────────────────────────────────────────────── */}
+        <div className="cf-group">
+          <div style={{ marginBottom: '1.75rem' }}>
+            <p className="cf-field-label" style={{ marginBottom: '0.5rem' }}>
+              BUDGET{' '}
+              <span style={{ fontWeight: 400, opacity: 0.5, textTransform: 'lowercase', letterSpacing: 0, fontSize: '0.65rem' }}>
+                optional
+              </span>
+            </p>
+            <div className="piece-chip-grid" style={{ marginBottom: '0.5rem' }}>
               {BUDGET_OPTIONS.map(b => (
                 <button
                   key={b.id}
@@ -565,80 +464,70 @@ export function CustomBuildFlow() {
                   className={`piece-chip budget-chip${data.budget === b.id ? ' active' : ''}`}
                   onClick={() => selectBudget(b.id)}
                   aria-pressed={data.budget === b.id}
-                  style={{ minHeight: '44px' }}
                 >
                   {b.label}
                 </button>
               ))}
             </div>
+            <p className="cf-hint">Budget helps guide the conversation. Not a final quote.</p>
+          </div>
+
+          <div className="custom-trust-callout" style={{ marginBottom: '1.25rem' }}>
+            <span className="trust-diamond" aria-hidden="true">◆</span>
+            Send the idea first. No deposit to start. We quote before the build.
+          </div>
+
+          <button
+            type="button"
+            className="btn-primary"
+            onClick={handleSubmit}
+            disabled={submitting}
+            style={{
+              width: '100%', padding: '1rem 1.5rem',
+              opacity: submitting ? 0.7 : 1, fontSize: '0.8125rem',
+              letterSpacing: '0.1em', cursor: submitting ? 'not-allowed' : 'pointer',
+              marginBottom: '0.75rem',
+            }}
+          >
+            {submitting ? 'Sending…' : 'SEND REQUEST →'}
+          </button>
+
+          <a
+            href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
+            target="_blank" rel="noopener noreferrer"
+            style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              gap: '0.45rem', width: '100%', padding: '0.9rem 1.5rem',
+              fontFamily: 'var(--font-body)', fontSize: '0.8125rem',
+              fontWeight: 600, letterSpacing: '0.07em', color: '#25D366',
+              border: '1px solid rgba(37,211,102,0.35)', borderRadius: '2px',
+              textDecoration: 'none', boxSizing: 'border-box',
+            }}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style={{ flexShrink: 0 }}>
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            TEXT 2T ON WHATSAPP →
+          </a>
+
+          {submitError && (
             <p style={{
-              fontFamily:    'var(--font-body)',
-              fontSize:      '0.75rem',
-              color:         'var(--color-brand-muted)',
-              lineHeight:    1.5,
-              marginTop:     '0.625rem',
-              opacity:       0.8,
+              color: '#c0392b', fontSize: '0.8125rem',
+              marginTop: '0.875rem', lineHeight: 1.5, letterSpacing: '0.01em',
             }}>
-              Budget range helps guide the conversation. It is not a final quote.
+              Something went wrong.{' '}
+              <a
+                href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
+                target="_blank" rel="noopener noreferrer"
+                style={{ color: 'inherit', textDecoration: 'underline' }}
+              >
+                Text 2T on WhatsApp →
+              </a>
             </p>
-          </div>
-
-          <div style={{ marginTop: '2rem' }}>
-            <div className="custom-trust-callout" style={{ marginBottom: '1.5rem' }}>
-              <span className="trust-diamond" aria-hidden="true">◆</span>
-              Send the idea first. No deposit. We quote before the build.
-            </div>
-
-            <button
-              type="button"
-              className="btn-primary"
-              onClick={handleSubmit}
-              disabled={submitting}
-              style={{
-                width:         '100%',
-                padding:       '1rem 1.5rem',
-                opacity:       submitting ? 0.7 : 1,
-                fontSize:      '0.8125rem',
-                letterSpacing: '0.1em',
-                cursor:        submitting ? 'not-allowed' : 'pointer',
-              }}
-            >
-              {submitting ? 'Sending…' : 'SEND REQUEST →'}
-            </button>
-
-            {submitError && (
-              <p style={{
-                color:         '#c0392b',
-                fontSize:      '0.8125rem',
-                marginTop:     '0.875rem',
-                lineHeight:    1.5,
-                letterSpacing: '0.01em',
-              }}>
-                Something went wrong.{' '}
-                <a
-                  href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: 'inherit', textDecoration: 'underline' }}
-                >
-                  Text 2T on WhatsApp →
-                </a>
-              </p>
-            )}
-
-            <a
-              href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bypass-cta"
-            >
-              Rather text it? Text 2T on WhatsApp →
-            </a>
-          </div>
+          )}
         </div>
 
       </div>
     </section>
-    </>
   )
 }
