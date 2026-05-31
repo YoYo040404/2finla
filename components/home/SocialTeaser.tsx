@@ -9,7 +9,7 @@ import type { ReactNode } from 'react'
 const CHANNELS = [
   {
     platform: 'TIKTOK',
-    copy:     'See what\'s dropping.',
+    copy:     'Watch the shine.',
     handle:   '@2tjewelers',
     href:     'https://www.tiktok.com/@2tjewelers',
     wa:       false,
@@ -19,7 +19,7 @@ const CHANNELS = [
   },
   {
     platform: 'INSTAGRAM',
-    copy:     'Real pieces. Real shots.',
+    copy:     'See the finished work.',
     handle:   '@2tjewelers',
     href:     'https://www.instagram.com/2tjewelers/',
     wa:       false,
@@ -29,7 +29,7 @@ const CHANNELS = [
   },
   {
     platform: 'WHATSAPP',
-    copy:     'Hit us up. Ask before you buy.',
+    copy:     'Text before you buy. Ask anything.',
     handle:   'TEXT 2T',
     href:     'https://wa.me/14124524343',
     wa:       true,

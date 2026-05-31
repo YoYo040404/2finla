@@ -131,7 +131,7 @@ export default function PittsburghStory() {
               marginBottom: '1rem',
             }}
           >
-            For 25 years, 2T Jewelers has been a downtown Pittsburgh stop for chains, watches, grillz, pendants, repairs, and custom pieces built to stand out.
+            25 years in downtown Pittsburgh. Chains, watches, grillz, pendants, repairs, and custom pieces built to stand out.
           </p>
           <p
             style={{
@@ -143,7 +143,7 @@ export default function PittsburghStory() {
               marginBottom: '1.75rem',
             }}
           >
-            Shop what&rsquo;s available. Bring the idea. Text 2T before you buy or build.
+            Shop what&rsquo;s available or bring the idea. Text 2T before you buy or build.
           </p>
 
           {/* BANG. — brand signature */}

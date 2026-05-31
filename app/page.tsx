@@ -13,8 +13,9 @@ const ANCHOR_TILES = [
     label:       'GRILLZ.',
     tone:        'pb-grillz',
     gleam:       true,
-    pills:       ['TOP SET', 'BOTTOM SET', 'FULL MOUTH', 'DIAMOND'],
-    pillGold:    'DIAMOND',
+    sub:         'Custom fit. Gold or stones. Ask 2T first.',
+    pills:       ['TOP SET', 'BOTTOM SET', 'FULL MOUTH', 'ICE'],
+    pillGold:    'ICE',
     cornerL:     'GOLD TEETH',
     href:        '/grillz',
     image:       '/assets/demo/phase3a/2t-demo-grillz-flat-01.png',
@@ -24,7 +25,8 @@ const ANCHOR_TILES = [
     label:       'WATCHES.',
     tone:        'pb-watches',
     gleam:       true,
-    pills:       ['ICED BEZEL', 'BUST DOWN', 'DIAMOND-SET'],
+    sub:         'Iced looks. Details confirmed per piece.',
+    pills:       ['ICED BEZEL', 'BUST DOWN', 'ICED OUT'],
     pillIce:     'ICED BEZEL',
     cornerL:     'ICE BEZEL',
     href:        '/watches',
@@ -35,6 +37,7 @@ const ANCHOR_TILES = [
     label:       'CHAINS.',
     tone:        'pb-chains',
     gleam:       true,
+    sub:         "Cuban, rope, and tennis. Ask what's in.",
     pills:       ['CUBAN', 'ROPE', 'TENNIS'],
     cornerL:     'NECK GAME',
     href:        '/collections/chains',
@@ -45,10 +48,10 @@ const ANCHOR_TILES = [
 
 // Secondary tiles — each tone maps to a per-category vitrine surface in globals.css
 const SECONDARY_TILES = [
-  { label: 'PENDANTS.',  tone: 'pb-pendants',  sub: 'Logo. Photo. Name. Number.',  href: '/collections/pendants'  },
-  { label: 'RINGS.',     tone: 'pb-rings',     sub: 'Big face. Heavy statement.',  href: '/collections/rings'     },
-  { label: 'BRACELETS.', tone: 'pb-bracelets', sub: 'Wrist weight. Ask what\'s in.', href: '/collections/bracelets' },
-  { label: 'EARRINGS.',  tone: 'pb-earrings',  sub: 'Iced studs. Diamond hoops.',  href: '/collections/earrings'  },
+  { label: 'PENDANTS.',  tone: 'pb-pendants',  sub: 'Photo, logo, name. Send the idea.',           href: '/collections/pendants'  },
+  { label: 'RINGS.',     tone: 'pb-rings',     sub: 'Big face. Heavy statement. Details per piece.', href: '/collections/rings'     },
+  { label: 'BRACELETS.', tone: 'pb-bracelets', sub: 'Wrist shine with weight. Text to ask.',        href: '/collections/bracelets' },
+  { label: 'EARRINGS.',  tone: 'pb-earrings',  sub: "Iced and clean. Ask what's available.",        href: '/collections/earrings'  },
 ] as const
 
 // Demo concept visuals for secondary tiles — replace with real 2T product media when available
@@ -137,8 +140,8 @@ export default function HomePage() {
               maxWidth: '44ch',
             }}
           >
-            Grillz. Watches. Chains. Rings. Custom pendants.{' '}
-            <span style={{ color: 'var(--color-brand-muted)' }}>Shop it or build it. Text before you buy.</span>
+            Grillz. Watches. Chains. Pendants. Custom.{' '}
+            <span style={{ color: 'var(--color-brand-muted)' }}>Real Pittsburgh jeweler. Text 2T.</span>
           </p>
 
           <div className="reveal reveal-d3" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center', marginBottom: '1.25rem' }}>
@@ -274,6 +277,9 @@ export default function HomePage() {
                   <h5 className="pb-tile-label">{tile.label}</h5>
                 </div>
                 <div className="pb-tile-pills">
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.63rem', letterSpacing: '0.04em', textTransform: 'uppercase', color: 'var(--color-brand-muted)', display: 'block', paddingBottom: '0.3rem', borderBottom: '1px solid rgba(201,168,76,0.10)', marginBottom: '0.3rem', lineHeight: 1.4 }}>
+                    {tile.sub}
+                  </span>
                   {tile.pills.map((p) => (
                     <span
                       key={p}
@@ -368,11 +374,11 @@ export default function HomePage() {
        */}
       <div className="promo-ticker" role="complementary" aria-label="What's running at 2T">
         <div className="promo-ticker-inner">
-          <span className="promo-ticker-item">ASK WHAT&rsquo;S RUNNING NOW</span>
+          <span className="promo-ticker-item">ASK WHAT&rsquo;S RUNNING THIS WEEK</span>
           <span className="promo-ticker-sep" aria-hidden="true">◆</span>
           <span className="promo-ticker-item">DETAILS CONFIRMED PER PIECE</span>
           <span className="promo-ticker-sep promo-ticker-wide" aria-hidden="true">◆</span>
-          <span className="promo-ticker-item promo-ticker-wide">PROMO TERMS SHOWN ON ELIGIBLE PIECES</span>
+          <span className="promo-ticker-item promo-ticker-wide">TEXT 2T FOR CURRENT DEALS</span>
           <span className="promo-ticker-sep" aria-hidden="true">◆</span>
           <a
             href={WA_PROMO}

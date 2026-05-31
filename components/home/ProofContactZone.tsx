@@ -10,7 +10,7 @@ import type { ReactNode } from 'react'
 const CHANNELS = [
   {
     platform:  'TIKTOK',
-    copy:      'Watch the build.',
+    copy:      'Watch the shine.',
     handle:    '@2tjewelers',
     href:      'https://www.tiktok.com/@2tjewelers',
     wa:        false,

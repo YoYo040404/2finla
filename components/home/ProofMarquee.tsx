@@ -13,9 +13,10 @@ type ProofItem = { text: string; bang?: true }
 
 const PROOF_ITEMS: ProofItem[] = [
   { text: 'PITTSBURGH-BUILT' },
-  { text: 'SHOP JEWELRY' },
-  { text: 'BUILD CUSTOM' },
+  { text: '25 YEARS' },
+  { text: '332 FIFTH AVE.' },
   { text: 'TEXT 2T' },
+  { text: 'DETAILS CONFIRMED PER PIECE' },
   { text: 'BANG.', bang: true },
 ]
 
@@ -27,7 +28,7 @@ export default function ProofMarquee() {
   return (
     <div
       className="proof-marquee"
-      aria-label="2T Jewelers: Pittsburgh-built, shop jewelry, build custom, text 2T"
+      aria-label="2T Jewelers: Pittsburgh-built, 25 years, 332 Fifth Ave, text 2T"
     >
       <div className="proof-marquee-track" aria-hidden="true">
         {items.map((item, i) => (
