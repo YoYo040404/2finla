@@ -23,7 +23,7 @@ const ANCHOR_TILES = [
   {
     label:       'WATCHES.',
     tone:        'pb-watches',
-    gleam:       false,
+    gleam:       true,
     pills:       ['ICED BEZEL', 'BUST DOWN', 'DIAMOND-SET'],
     pillIce:     'ICED BEZEL',
     cornerL:     'ICE BEZEL',
@@ -34,7 +34,7 @@ const ANCHOR_TILES = [
   {
     label:       'CHAINS.',
     tone:        'pb-chains',
-    gleam:       false,
+    gleam:       true,
     pills:       ['CUBAN', 'ROPE', 'TENNIS'],
     cornerL:     'NECK GAME',
     href:        '/collections/chains',
@@ -43,12 +43,12 @@ const ANCHOR_TILES = [
   },
 ] as const
 
-// Secondary tiles
+// Secondary tiles — each tone maps to a per-category vitrine surface in globals.css
 const SECONDARY_TILES = [
-  { label: 'PENDANTS.',  tone: 'pb-secondary', sub: 'Logo. Photo. Name. Number.',  href: '/collections/pendants'  },
-  { label: 'RINGS.',     tone: 'pb-secondary', sub: 'Big face. Heavy statement.',  href: '/collections/rings'     },
-  { label: 'BRACELETS.', tone: 'pb-secondary', sub: 'Wrist weight. Ask what\'s in.', href: '/collections/bracelets' },
-  { label: 'EARRINGS.',  tone: 'pb-secondary', sub: 'Iced studs. Diamond hoops.',  href: '/collections/earrings'  },
+  { label: 'PENDANTS.',  tone: 'pb-pendants',  sub: 'Logo. Photo. Name. Number.',  href: '/collections/pendants'  },
+  { label: 'RINGS.',     tone: 'pb-rings',     sub: 'Big face. Heavy statement.',  href: '/collections/rings'     },
+  { label: 'BRACELETS.', tone: 'pb-bracelets', sub: 'Wrist weight. Ask what\'s in.', href: '/collections/bracelets' },
+  { label: 'EARRINGS.',  tone: 'pb-earrings',  sub: 'Iced studs. Diamond hoops.',  href: '/collections/earrings'  },
 ] as const
 
 // Demo concept visuals for secondary tiles — replace with real 2T product media when available
@@ -259,6 +259,7 @@ export default function HomePage() {
                   <img
                     src={tile.image}
                     alt={tile.imageAlt}
+                    className="pb-anchor-img"
                     style={{
                       position: 'absolute',
                       inset: 0,
@@ -392,7 +393,7 @@ export default function HomePage() {
         aria-label="Custom jewelry"
         style={{
           background: '#0A0702',
-          borderTop: '1px solid rgba(201,164,73,0.18)',
+          borderTop: '1px solid rgba(201,164,73,0.30)',
           padding: 'clamp(2.5rem, 5vw, 4.5rem) clamp(1.25rem, 3vw, 2.5rem)',
         }}
       >
@@ -418,19 +419,23 @@ export default function HomePage() {
               justifyContent: 'flex-end',
             }}
           >
-            {/* Identity objects inside the frame */}
-            <div style={{ padding: '14px', borderTop: '1px solid rgba(201,168,76,0.18)' }}>
+            {/* Identity objects inside the frame — display shelf */}
+            <div style={{
+              padding: '14px 16px 16px',
+              borderTop: '1px solid rgba(201,168,76,0.32)',
+              background: 'linear-gradient(180deg, transparent 0%, rgba(201,168,76,0.06) 100%)',
+            }}>
               <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
                 {['LOGO', 'PHOTO', 'NAME', 'SKETCH'].map((tag) => (
                   <span
                     key={tag}
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: '0.55rem',
+                      fontSize: '0.58rem',
                       letterSpacing: '0.16em',
-                      padding: '3px 7px',
-                      border: '1px solid rgba(201,168,76,0.28)',
-                      color: 'rgba(201,168,76,0.72)',
+                      padding: '4px 9px',
+                      border: '1px solid rgba(201,168,76,0.40)',
+                      color: 'rgba(201,168,76,0.88)',
                       textTransform: 'uppercase',
                     }}
                   >
