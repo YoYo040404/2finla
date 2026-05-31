@@ -56,10 +56,7 @@ const SECONDARY_DEMO_IMAGES: Record<string, { src: string; alt: string }> = {
   'PENDANTS.': { src: '/assets/demo/phase3a/2t-demo-pendants-01.png', alt: 'Pendant — demo concept visual' },
 }
 
-const CUSTOM_CHIPS = [
-  'LOGO PIECE', 'NAME PENDANT', 'PHOTO PENDANT',
-  'CUSTOM GRILLZ', 'WATCH DIRECTION', 'CUSTOM CHAIN',
-]
+const CUSTOM_CHIPS = ['LOGO PIECE', 'NAME PENDANT', 'PHOTO PENDANT']
 
 /* ── Page ─────────────────────────────────────────────────────────────────── */
 export default function HomePage() {
@@ -407,42 +404,49 @@ export default function HomePage() {
             alignItems: 'center',
           }}
         >
-          {/* Left — custom art vitrine */}
+          {/* Left — abstract media-ready custom vitrine */}
           <div
             aria-hidden="true"
             className="mi-vitrine pb-vitrine-custom"
             style={{
               aspectRatio: '4/3',
-              position: 'relative',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'flex-end',
+              justifyContent: 'space-between',
+              padding: '1rem 1.125rem 0.875rem',
             }}
           >
-            {/* Identity objects inside the frame — display shelf */}
-            <div style={{
-              padding: '14px 16px 16px',
-              borderTop: '1px solid rgba(201,168,76,0.32)',
-              background: 'linear-gradient(180deg, transparent 0%, rgba(201,168,76,0.06) 100%)',
-            }}>
-              <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                {['LOGO', 'PHOTO', 'NAME', 'SKETCH'].map((tag) => (
-                  <span
-                    key={tag}
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '0.58rem',
-                      letterSpacing: '0.16em',
-                      padding: '4px 9px',
-                      border: '1px solid rgba(201,168,76,0.40)',
-                      color: 'rgba(201,168,76,0.88)',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+            {/* Diamond outline depth marks — ambient accent, not headline */}
+            <div aria-hidden="true" style={{
+              position: 'absolute', top: '50%', left: '50%',
+              transform: 'translate(-50%, -54%) rotate(45deg)',
+              width: 'clamp(100px, 22vw, 140px)', height: 'clamp(100px, 22vw, 140px)',
+              border: '1px solid rgba(201,168,76,0.16)', pointerEvents: 'none',
+            }} />
+            <div aria-hidden="true" style={{
+              position: 'absolute', top: '50%', left: '50%',
+              transform: 'translate(-50%, -54%) rotate(45deg)',
+              width: 'clamp(58px, 12vw, 80px)', height: 'clamp(58px, 12vw, 80px)',
+              border: '1px solid rgba(201,168,76,0.28)', pointerEvents: 'none',
+            }} />
+            {/* Ice catch-light — top right */}
+            <div aria-hidden="true" style={{
+              position: 'absolute', top: '10%', right: '12%',
+              width: 'clamp(32px, 6vw, 52px)', height: 'clamp(32px, 6vw, 52px)',
+              background: 'radial-gradient(circle, rgba(216,235,255,0.15) 0%, transparent 70%)',
+              pointerEvents: 'none',
+            }} />
+
+            {/* Top identity label */}
+            <p className="mi-mono mi-faint" style={{ fontSize: '0.5rem', letterSpacing: '0.24em', margin: 0, position: 'relative', zIndex: 1 }}>
+              CUSTOM WORK
+            </p>
+
+            {/* Bottom rail — compact entry hint */}
+            <div style={{ borderTop: '1px solid rgba(201,168,76,0.20)', paddingTop: '0.625rem', position: 'relative', zIndex: 1 }}>
+              <p className="mi-mono" style={{ fontSize: '0.55rem', letterSpacing: '0.18em', color: 'rgba(201,168,76,0.68)', margin: 0 }}>
+                LOGO · PHOTO · NAME · SKETCH
+              </p>
             </div>
           </div>
 
@@ -494,14 +498,9 @@ export default function HomePage() {
               NO DEPOSIT TO START · WE QUOTE FIRST
             </p>
 
-            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-              <Link href="/custom" className="btn-primary" style={{ fontSize: '0.85rem', letterSpacing: '0.08em', padding: '0.875rem 1.75rem' }}>
-                START THE REQUEST →
-              </Link>
-              <a href={WA_BUILD} target="_blank" rel="noopener noreferrer" className="btn-outline-gold" style={{ fontSize: '0.85rem', letterSpacing: '0.08em' }}>
-                TEXT 2T →
-              </a>
-            </div>
+            <Link href="/custom" className="btn-primary" style={{ fontSize: '0.85rem', letterSpacing: '0.08em', padding: '0.875rem 1.75rem' }}>
+              START THE REQUEST →
+            </Link>
           </div>
         </div>
       </section>

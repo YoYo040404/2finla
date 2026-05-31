@@ -1,20 +1,16 @@
 // components/home/ProofContactZone.tsx
 //
-// Unified store identity (left) + story/social (right).
-// Left card: 2T mark, stats, address, BANG. stamp — all in one block.
-// Right column: eyebrow → headline → one paragraph → material line → CTA → social rows.
+// Left: stat-dominant proof ledger (30+ YEARS / 332 FIFTH AVE. / DOWNTOWN PITTSBURGH).
+// Right: BUILT IN PITTSBURGH. headline → body → social channel rows (TikTok/IG/WA).
+// No standalone CTA button — MobileCtaBar handles persistent contact access.
 // Tenure wording: "over 30 years" confirmed 2026-05-17.
-// Store photo: swap pb-vitrine-store div for <img> when asset arrives.
 
 import type { ReactNode } from 'react'
-
-const WHATSAPP_URL =
-  'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20build%20a%20piece.'
 
 const CHANNELS = [
   {
     platform:  'TIKTOK',
-    copy:      "See what's dropping.",
+    copy:      'Watch the build.',
     handle:    '@2tjewelers',
     href:      'https://www.tiktok.com/@2tjewelers',
     wa:        false,
@@ -89,119 +85,55 @@ export default function ProofContactZone() {
     >
       <div className="pb-proof-inner">
 
-        {/* ── Left: unified store identity card ─────────────────────── */}
+        {/* ── Left: stat-dominant proof ledger ─────────────────────── */}
         <div className="pb-proof-left">
-          <div
-            aria-hidden="true"
-            className="pb-vitrine-store pb-store-card"
-          >
-            {/* Corner registration marks */}
-            <div style={{
-              position: 'absolute', top: 8, left: 8,
-              width: 12, height: 12,
-              borderTop: '1px solid rgba(201,164,73,0.45)',
-              borderLeft: '1px solid rgba(201,164,73,0.45)',
-              pointerEvents: 'none',
-            }} />
-            <div style={{
-              position: 'absolute', bottom: 8, right: 8,
-              width: 12, height: 12,
-              borderBottom: '1px solid rgba(201,164,73,0.45)',
-              borderRight: '1px solid rgba(201,164,73,0.45)',
-              pointerEvents: 'none',
-            }} />
-
-            {/* 2T brand mark */}
-            <div>
+          <div style={{
+            paddingLeft: '1.5rem',
+            borderLeft: '1px solid rgba(201,164,73,0.28)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0',
+          }}>
+            {/* 30+ YEARS — large, dominant */}
+            <div style={{ marginBottom: '1.5rem' }}>
               <p style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(3rem, 6vw, 4.5rem)',
+                fontSize: 'clamp(4rem, 8vw, 6rem)',
                 fontWeight: 400,
-                lineHeight: 1,
-                letterSpacing: '0.04em',
-                color: 'var(--color-brand-gold)',
+                lineHeight: 0.86,
+                color: 'var(--color-brand-white)',
                 margin: 0,
+                letterSpacing: '0.01em',
               }}>
-                2T
+                30+
+              </p>
+              <p className="mi-mono mi-faint" style={{ margin: '6px 0 0', fontSize: '0.6rem', letterSpacing: '0.18em' }}>
+                YEARS
               </p>
             </div>
 
-            {/* Stat row — 30+ YEARS · 5TH AVE PITTSBURGH */}
-            <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-end' }}>
-              <div style={{ borderLeft: '1px solid var(--color-brand-gold)', paddingLeft: '10px' }}>
-                <p style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)',
-                  fontWeight: 400,
-                  lineHeight: 1,
-                  color: 'var(--color-brand-white)',
-                  margin: 0,
-                }}>30+</p>
-                <p className="mi-mono mi-faint" style={{ margin: '3px 0 0', fontSize: '0.55rem' }}>YEARS</p>
-              </div>
-              <div style={{ borderLeft: '1px solid rgba(201,168,76,0.38)', paddingLeft: '10px' }}>
-                <p style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(1rem, 2.2vw, 1.4rem)',
-                  fontWeight: 400,
-                  lineHeight: 1,
-                  color: 'var(--color-brand-gold)',
-                  margin: 0,
-                }}>5TH AVE</p>
-                <p className="mi-mono mi-faint" style={{ margin: '3px 0 0', fontSize: '0.55rem' }}>PITTSBURGH</p>
-              </div>
-            </div>
-
-            {/* Address footer */}
-            <div style={{ borderTop: '1px solid rgba(201,168,76,0.18)', padding: '12px 0 14px' }}>
+            {/* 332 FIFTH AVE. — gold, address weight */}
+            <div style={{ borderTop: '1px solid rgba(201,164,73,0.16)', paddingTop: '1.25rem' }}>
               <p style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(1rem, 2vw, 1.3rem)',
+                fontSize: 'clamp(1.4rem, 3vw, 2.2rem)',
                 fontWeight: 400,
-                lineHeight: 1,
-                color: 'var(--color-brand-white)',
+                lineHeight: 0.92,
+                color: 'var(--color-brand-gold)',
                 margin: '0 0 5px',
+                letterSpacing: '0.025em',
               }}>
                 332 FIFTH AVE.
               </p>
-              <p className="mi-mono mi-faint" style={{ margin: 0, fontSize: '0.55rem' }}>
-                DOWNTOWN PITTSBURGH · TEXT OR WALK IN
+              <p className="mi-mono mi-faint" style={{ margin: 0, fontSize: '0.58rem', letterSpacing: '0.14em' }}>
+                DOWNTOWN PITTSBURGH
               </p>
             </div>
-
-            {/* BANG. — brand stamp, bottom-right corner */}
-            <span
-              aria-hidden="true"
-              style={{
-                position: 'absolute',
-                bottom: '1rem',
-                right: '1.25rem',
-                fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(1.5rem, 3vw, 2rem)',
-                fontWeight: 400,
-                letterSpacing: '0.06em',
-                lineHeight: 1,
-                background: 'linear-gradient(90deg, #9e7522 0%, #c9a44c 35%, #edd97a 50%, #c9a44c 65%, #9e7522 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                opacity: 0.88,
-                userSelect: 'none',
-                pointerEvents: 'none',
-              }}
-            >
-              BANG.
-            </span>
           </div>
         </div>
 
         {/* ── Right: Pittsburgh story + Social channels ──────────────── */}
         <div className="pb-proof-right">
-
-          <div className="mi-eyebrow" style={{ marginBottom: '0.75rem' }}>
-            <span className="mi-diamond-sm" aria-hidden="true" />
-            ABOUT 2T
-          </div>
 
           <h2 style={{
             fontFamily: 'var(--font-display)',
@@ -226,50 +158,16 @@ export default function ProofContactZone() {
             color: 'var(--color-brand-silver)',
             lineHeight: 1.68,
             maxWidth: '40ch',
-            marginBottom: '0.75rem',
+            marginBottom: '1.75rem',
           }}>
-            For over 30 years, 2T Jewelers has been a downtown Pittsburgh stop for chains, watches, grillz, pendants, repairs, and custom pieces built to stand out.
+            Over 30 years in downtown Pittsburgh. Chains, watches, grillz, pendants, repairs, and custom work.
           </p>
-
-          {/* Material/stone direction — two parallel directions, claim-safe */}
-          <div style={{ marginBottom: '2rem' }}>
-            {/* METAL row */}
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.42rem', marginBottom: '0.28rem', flexWrap: 'wrap' }}>
-              <span className="mi-mono" style={{ fontSize: '0.5rem', letterSpacing: '0.2em', color: 'var(--color-brand-muted)', flexShrink: 0 }}>METAL —</span>
-              <span className="mi-mono" style={{ fontSize: '0.72rem', letterSpacing: '0.12em', color: 'var(--color-brand-gold)' }}>GOLD · SILVER</span>
-            </div>
-            {/* STONE row */}
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.42rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
-              <span className="mi-mono" style={{ fontSize: '0.5rem', letterSpacing: '0.2em', color: 'var(--color-brand-muted)', flexShrink: 0 }}>STONE —</span>
-              <span className="mi-mono" style={{ fontSize: '0.72rem', letterSpacing: '0.12em', color: 'var(--color-ice-blue)' }}>DIAMONDS · MOISSANITE</span>
-            </div>
-            {/* Spec + footer — secondary proof, not primary label */}
-            <p className="mi-mono mi-faint" style={{ fontSize: '0.55rem', letterSpacing: '0.08em', margin: 0 }}>
-              925 Sterling Silver · D-color VVS Moissanite · Details confirmed per piece.
-            </p>
-          </div>
-
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-            style={{
-              fontSize: '0.85rem',
-              letterSpacing: '0.08em',
-              padding: '0.875rem 1.75rem',
-              display: 'inline-block',
-              marginBottom: '2.25rem',
-            }}
-          >
-            TEXT OR COME THROUGH →
-          </a>
 
           {/* Social channel map — platform label removed (icon identifies platform) */}
           <div style={{ borderTop: '1px solid var(--color-brand-border)', paddingTop: '1.5rem' }}>
             <div className="mi-eyebrow" style={{ marginBottom: '0.875rem' }}>
               <span className="mi-diamond-sm" aria-hidden="true" />
-              @2TJEWELERS · TAP IN
+              TAP IN WITH 2T.
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
