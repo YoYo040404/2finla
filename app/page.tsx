@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import ProofContactZone from '@/components/home/ProofContactZone'
+import ShineDirectionBand from '@/components/home/ShineDirectionBand'
 
 const WA_BUILD  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20want%20to%20build%20something%20custom.'
 const WA_PROMO  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%20promos%20are%20running%20right%20now%3F'
@@ -211,7 +212,7 @@ export default function HomePage() {
                 fontSize: 'clamp(2.8rem, 5.5vw, 4.5rem)',
                 fontWeight: 400,
                 lineHeight: 0.88,
-                margin: 0,
+                margin: '0 0 0.75rem',
               }}
             >
               PICK THE{' '}
@@ -219,6 +220,19 @@ export default function HomePage() {
                 PIECE.
               </em>
             </h2>
+            {/* Material direction cue — all categories, all directions. Not a filter. */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.22rem', marginBottom: '0.3rem' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', letterSpacing: '0.13em', color: 'var(--color-brand-gold)' }}>GOLD</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--color-brand-muted)' }}>·</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', letterSpacing: '0.13em', color: 'var(--color-brand-silver)' }}>SILVER</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'rgba(201,168,76,0.35)', padding: '0 0.15rem' }}>◆</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', letterSpacing: '0.13em', color: 'var(--color-ice-blue)' }}>DIAMONDS</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--color-brand-muted)' }}>·</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', letterSpacing: '0.13em', color: 'var(--color-ice-blue)' }}>MOISSANITE</span>
+            </div>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--color-brand-muted)', margin: 0, letterSpacing: '0.01em' }}>
+              Pick the piece. Then pick the shine.
+            </p>
           </div>
 
           {/* ── ANCHOR ROW: 1.4fr 1fr 1fr — GRILLZ dominant ── */}
@@ -345,6 +359,9 @@ export default function HomePage() {
 
         </div>
       </section>
+
+      {/* ─── 2b. SHINE DIRECTION BAND — compact material/stone signal ──── */}
+      <ShineDirectionBand />
 
       {/* ─── 3. PROMO TICKER — slim commercial strip (claim-safe) ──────── */}
       {/*

@@ -231,29 +231,21 @@ export default function ProofContactZone() {
             For over 30 years, 2T Jewelers has been a downtown Pittsburgh stop for chains, watches, grillz, pendants, repairs, and custom pieces built to stand out.
           </p>
 
-          {/* Material/stone direction strip — claim-safe, no grade/purity/cert claims */}
+          {/* Material/stone direction — two parallel directions, claim-safe */}
           <div style={{ marginBottom: '2rem' }}>
-            <div
-              className="mi-mono"
-              style={{
-                display:       'flex',
-                gap:           '1.5rem',
-                flexWrap:      'wrap',
-                fontSize:      '0.65rem',
-                letterSpacing: '0.12em',
-                color:         '#C9A449',
-                marginBottom:  '0.4rem',
-              }}
-            >
-              <span>GOLD · SILVER</span>
-              <span style={{ color: '#1F1D1A' }} aria-hidden="true">·</span>
-              <span>DIAMOND · MOISSANITE</span>
+            {/* METAL row */}
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.42rem', marginBottom: '0.28rem', flexWrap: 'wrap' }}>
+              <span className="mi-mono" style={{ fontSize: '0.5rem', letterSpacing: '0.2em', color: 'var(--color-brand-muted)', flexShrink: 0 }}>METAL —</span>
+              <span className="mi-mono" style={{ fontSize: '0.72rem', letterSpacing: '0.12em', color: 'var(--color-brand-gold)' }}>GOLD · SILVER</span>
             </div>
-            <p
-              className="mi-mono mi-faint"
-              style={{ fontSize: '0.55rem', letterSpacing: '0.08em', margin: 0 }}
-            >
-              Different shine. Different direction. Details confirmed per piece.
+            {/* STONE row */}
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.42rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
+              <span className="mi-mono" style={{ fontSize: '0.5rem', letterSpacing: '0.2em', color: 'var(--color-brand-muted)', flexShrink: 0 }}>STONE —</span>
+              <span className="mi-mono" style={{ fontSize: '0.72rem', letterSpacing: '0.12em', color: 'var(--color-ice-blue)' }}>DIAMONDS · MOISSANITE</span>
+            </div>
+            {/* Spec + footer — secondary proof, not primary label */}
+            <p className="mi-mono mi-faint" style={{ fontSize: '0.55rem', letterSpacing: '0.08em', margin: 0 }}>
+              925 Sterling Silver · D-color VVS Moissanite · Details confirmed per piece.
             </p>
           </div>
 
