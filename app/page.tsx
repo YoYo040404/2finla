@@ -100,6 +100,11 @@ export default function HomePage() {
         {/* Subtle gold bloom — low-key richness */}
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 55% 70% at 72% 38%, rgba(201,164,73,0.11) 0%, transparent 60%)', zIndex: 1, pointerEvents: 'none' }} />
 
+        {/* BANG. cinematic overlay — one-time title-card flash on load, fades permanently */}
+        <div className="bang-cinematic-overlay" aria-hidden="true">
+          <span className="bang-cinematic-text">BANG.</span>
+        </div>
+
         {/* Single-column content — text anchored left, campaign breathes right */}
         <div
           style={{
@@ -124,7 +129,7 @@ export default function HomePage() {
             }}
           >
             BUILT TO{' '}
-            <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic', fontFamily: 'var(--font-display)' }}>
+            <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic', fontFamily: 'var(--font-display)', textShadow: '0 0 20px rgba(201,168,76,0.55), 0 0 44px rgba(201,168,76,0.24)' }}>
               HIT.
             </em>
           </h1>
@@ -162,8 +167,8 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* BANG. — owned brand hallmark, stands alone */}
-          <div className="reveal reveal-d4" style={{ marginTop: '0.5rem' }}>
+          {/* BANG. — permanent brand signature, settles in after cinematic overlay clears */}
+          <div style={{ marginTop: '1.25rem' }}>
             <span className="bang-signature bang-signature--hero">BANG.</span>
           </div>
         </div>
@@ -217,7 +222,7 @@ export default function HomePage() {
               }}
             >
               PICK THE{' '}
-              <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold)', fontFamily: 'var(--font-display)' }}>
+              <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold)', fontFamily: 'var(--font-display)', textShadow: '0 0 16px rgba(201,168,76,0.48), 0 0 36px rgba(201,168,76,0.20)' }}>
                 PIECE.
               </em>
             </h2>
@@ -274,7 +279,7 @@ export default function HomePage() {
                   <span className="mi-corner">{tile.cornerL}</span>
                 </div>
                 <div className="pb-tile-foot">
-                  <h5 className="pb-tile-label">{tile.label}</h5>
+                  <h5 className="pb-tile-label pb-tile-title">{tile.label}</h5>
                 </div>
                 <div className="pb-tile-pills">
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.63rem', letterSpacing: '0.04em', textTransform: 'uppercase', color: 'var(--color-brand-muted)', display: 'block', paddingBottom: '0.3rem', borderBottom: '1px solid rgba(201,168,76,0.10)', marginBottom: '0.3rem', lineHeight: 1.4 }}>
@@ -310,7 +315,7 @@ export default function HomePage() {
                 key={tile.label}
                 href={tile.href}
                 className="pb-tile-link"
-                style={{ display: 'flex', flexDirection: 'column', minHeight: '230px', textDecoration: 'none', color: 'inherit' }}
+                style={{ display: 'flex', flexDirection: 'column', minHeight: '288px', textDecoration: 'none', color: 'inherit' }}
               >
                 <div
                   className={`mi-vitrine pb-vitrine-${tile.tone}`}
@@ -334,7 +339,7 @@ export default function HomePage() {
                   )}
                 </div>
                 <div className="pb-tile-foot">
-                  <h5 style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 'clamp(0.95rem, 1.8vw, 1.1rem)', margin: 0, lineHeight: 0.9 }}>{tile.label}</h5>
+                  <h5 className="pb-tile-title" style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 'clamp(1.08rem, 2.1vw, 1.35rem)', margin: 0, lineHeight: 0.9 }}>{tile.label}</h5>
                 </div>
                 <div className="pb-tile-pills">
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-brand-silver)' }}>{tile.sub}</span>

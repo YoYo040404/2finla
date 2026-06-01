@@ -2434,8 +2434,64 @@
   border-top-color: rgba(201,164,73,0.60);
 }
 .pb-tile-link:hover .pb-tile-label {
-  color: var(--color-brand-gold-light);
+  color: #FFFFFF;
 }
+/* Lock tile titles to crisp white across all link states — no warm/gold bleed */
+.pb-tile-link:visited,
+.pb-tile-link:active,
+.pb-tile-link:focus,
+.pb-tile-link:focus-visible {
+  color: #FFFFFF;
+}
+.pb-tile-link:visited .pb-tile-label,
+.pb-tile-link:active .pb-tile-label,
+.pb-tile-link:focus .pb-tile-label,
+.pb-tile-link:focus-visible .pb-tile-label {
+  color: #FFFFFF;
+}
+/* Secondary tiles — h5 without pb-tile-label: lock crisp white */
+.pb-tile-link h5 {
+  color: #FFFFFF;
+}
+.pb-tile-link:visited h5,
+.pb-tile-link:active h5,
+.pb-tile-link:focus h5,
+.pb-tile-link:focus-visible h5 {
+  color: #FFFFFF;
+}
+
+/* ─── Product wall: title word flash effect ───────────────────────────────── */
+/* Applied to all 7 category tile h5 elements (anchor + secondary rows).       */
+/* Rest: faint icy edge-light, cool white — reads as metal, not warm/gold.     */
+/* Hover: bright icy spotlight — white core + ice-blue halo. No gold bleed.    */
+.pb-tile-title {
+  color: #FFFFFF;
+  text-shadow:
+    0 0 18px rgba(216,235,255,0.13),
+    0 1px 2px rgba(0,0,0,0.78);
+  transition: text-shadow 0.28s ease, filter 0.28s ease, color 0.2s ease;
+}
+.pb-tile-link:hover       .pb-tile-title,
+.pb-tile-link:focus-visible .pb-tile-title,
+.pb-tile-link:active      .pb-tile-title {
+  color: #FFFFFF;
+  text-shadow:
+    0 0  8px rgba(255,255,255,0.95),
+    0 0 26px rgba(216,235,255,0.58),
+    0 0 48px rgba(216,235,255,0.20),
+    0 1px 0  rgba(0,0,0,0.22);
+  filter: brightness(1.08);
+}
+@media (prefers-reduced-motion: reduce) {
+  .pb-tile-title { transition: none; }
+  .pb-tile-link:hover .pb-tile-title,
+  .pb-tile-link:focus-visible .pb-tile-title,
+  .pb-tile-link:active .pb-tile-title {
+    text-shadow: 0 0 12px rgba(255,255,255,0.55), 0 1px 0 rgba(0,0,0,0.4);
+    filter: none;
+  }
+}
+
 /* Vitrine surface brightens on hover — works for image tiles and texture-only tiles */
 @media (hover: hover) {
   .pb-tile-link:hover .mi-vitrine {
@@ -2483,8 +2539,8 @@
   margin: 0;
   letter-spacing: 0.02em;
   line-height: 0.9;
-  color: var(--color-brand-white);
-  transition: color 0.2s ease;
+  color: #FFFFFF;
+  transition: color 0.2s ease, text-shadow 0.28s ease, filter 0.28s ease;
 }
 .pb-tile-cta {
   font-family: var(--font-mono);
@@ -2727,26 +2783,33 @@
   font-size:               clamp(2.8rem, 5.5vw, 4.5rem);
   letter-spacing:          0.06em;
   line-height:             1;
-  /* Metallic gold gradient — dark gold → ice-white hot spot → dark gold */
+  /* Metallic gold gradient — deep darks + ice-white hot spot, high contrast */
   background: linear-gradient(
     90deg,
-    #6b4f10 0%,
-    #9e7522 15%,
-    #c9a44c 28%,
-    #edd97a 38%,
-    #fff5d4 46%,
-    #ffffff 50%,
-    #fff5d4 54%,
-    #edd97a 62%,
-    #c9a44c 72%,
-    #9e7522 85%,
-    #6b4f10 100%
+    #2e2006 0%,
+    #6b4f10 10%,
+    #c9a44c 24%,
+    #edd97a 35%,
+    #fff8e6 44%,
+    #ffffff 49%,
+    #f0f8ff 51%,
+    #ffffff 53%,
+    #fff8e6 57%,
+    #edd97a 65%,
+    #c9a44c 76%,
+    #6b4f10 90%,
+    #2e2006 100%
   );
   background-size:         300% 100%;
   background-clip:         text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color:                   #c9a44c; /* fallback for non-clip browsers */
+  /* Gold glow aura — warm core, faint ice outer ring */
+  text-shadow:
+    0 0 18px rgba(201,168,76,0.60),
+    0 0 38px rgba(201,168,76,0.28),
+    0 0 62px rgba(216,235,255,0.09);
   animation:               bang-sig-shine 5.5s ease-in-out infinite;
   animation-delay:         1.8s;
 }
@@ -2787,42 +2850,69 @@
 
 /* Hero variant — diamond-stamped brand mark. One-time slam entrance + shine. */
 @keyframes bang-slam {
-  0%   { transform: scale(1.28); opacity: 0; }
-  55%  { transform: scale(0.97); opacity: 1; }
-  75%  { transform: scale(1.01); }
-  100% { transform: scale(1);    opacity: 1; }
+  0%   { transform: scale(1.58) translateY(-4px); opacity: 0; }
+  38%  { transform: scale(0.94) translateY(0);    opacity: 1; filter: brightness(1.55); }
+  60%  { transform: scale(1.02);                  filter: brightness(1.06); }
+  100% { transform: scale(1);                     opacity: 1; filter: brightness(1); }
 }
 .bang-signature--hero {
-  font-size:        clamp(3.8rem, 7.5vw, 6.5rem);
-  display:          block;
-  width:            fit-content;
-  padding-bottom:   0.12em;
-  border-bottom:    1px solid rgba(201,168,76,0.28);
-  /* One-time slam on load, then shine loops after 1.4s */
+  font-size:               clamp(2.8rem, 4.4vw, 4.1rem);
+  display:                 block;
+  width:                   fit-content;
+  padding-bottom:          0.14em;
+  border-bottom:           1px solid rgba(201,164,73,0.18);
+  /* Ice-dominant gradient — steel → bright ice → warm-white peak → gold accent */
+  background: linear-gradient(
+    90deg,
+    #0c1520 0%,
+    #1e3a58 8%,
+    #3d7aa0 18%,
+    #7db5d8 28%,
+    #d0eaf8 40%,
+    #fffef4 46%,
+    #ffffff 50%,
+    #fffef4 54%,
+    #d0eaf8 60%,
+    #8ab8d0 67%,
+    #d4a83a 74%,
+    #8a6018 86%,
+    #0c1520 100%
+  );
+  background-size:         300% 100%;
+  background-clip:         text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color:                   #a0c0d8;
+  /* Warm-white inner core → ice middle ring → gold outer bloom */
+  text-shadow:
+    0 0 12px rgba(255,248,210,0.45),
+    0 0 28px rgba(216,235,255,0.52),
+    0 0 55px rgba(201,168,76,0.22);
+  /* Settle in after cinematic overlay → ice shine sweep → ice glow breathe */
   animation:
-    bang-slam      0.55s cubic-bezier(0.22, 0.61, 0.36, 1) 0.15s both,
-    bang-sig-shine 5.5s ease-in-out 1.4s infinite;
+    bang-stamp-settle 0.7s ease-out 1.8s both,
+    bang-sig-shine    5.5s ease-in-out 2.6s infinite,
+    bang-hero-glow    4.8s ease-in-out 3.0s infinite;
 }
-/* Slightly larger sparkle diamonds on hero scale */
+/* Slightly larger sparkle diamonds on hero scale — appear sooner after slam */
 .bang-signature--hero::before {
-  width:  7px;
-  height: 7px;
-  top:    -6px;
-  right:  -9px;
-  animation-delay: 1.4s;
+  width:  8px;
+  height: 8px;
+  top:    -7px;
+  right:  -10px;
+  animation-delay: 0.9s;
 }
 .bang-signature--hero::after {
-  width:  5px;
-  height: 5px;
+  width:  6px;
+  height: 6px;
   bottom: 2px;
-  left:   -6px;
-  animation-delay: 2.6s;
+  left:   -7px;
+  animation-delay: 2.0s;
 }
-/* Mobile: keep BANG above the floating sticky CTA bar */
+/* Mobile: signature scale — full word visible, no MobileCtaBar conflict */
 @media (max-width: 639px) {
   .bang-signature--hero {
-    font-size:     clamp(3rem, 14vw, 4rem);
-    margin-bottom: 1.25rem;
+    font-size: clamp(2.5rem, 10vw, 3.2rem);
   }
 }
 
@@ -2846,12 +2936,81 @@
   70%, 100%{ transform: rotate(45deg) scale(0); opacity: 0; }
 }
 
-/* Reduced motion: static gold, no slam, no sparkle marks */
+/* Hero-only ice glow breathe — cold pulse with faint gold warmth at edges */
+@keyframes bang-hero-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 14px rgba(216,235,255,0.58),
+      0 0 32px rgba(216,235,255,0.24),
+      0 0 56px rgba(201,168,76,0.09);
+  }
+  50% {
+    text-shadow:
+      0 0 22px rgba(216,235,255,0.82),
+      0 0 46px rgba(216,235,255,0.40),
+      0 0 80px rgba(216,235,255,0.16),
+      0 0 110px rgba(201,168,76,0.08);
+  }
+}
+
+/* ─── Cinematic BANG. overlay + permanent stamp settle ───────────────────── */
+
+/* Overlay fills the hero absolutely — fires once, opacity 0 after animation */
+.bang-cinematic-overlay {
+  position:       absolute;
+  inset:          0;
+  z-index:        15;
+  pointer-events: none;
+  overflow:       hidden; /* clip glow shadows — prevents horizontal scroll */
+  display:        flex;
+  align-items:    center;
+  padding-left:   clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.bang-cinematic-text {
+  font-family:    var(--font-display);
+  font-weight:    400;
+  font-size:      clamp(5.5rem, 16vw, 13rem);
+  line-height:    1;
+  letter-spacing: 0.04em;
+  color:          #f2f9ff;
+  text-shadow:
+    0 0  18px rgba(255,255,255,0.98),
+    0 0  48px rgba(216,235,255,0.85),
+    0 0  96px rgba(201,168,76,0.50),
+    0 0 165px rgba(201,168,76,0.22);
+  opacity:        0;
+  animation:      bang-cinematic 1.7s ease-out 0.7s forwards;
+}
+
+@keyframes bang-cinematic {
+  0%   { opacity: 0;    transform: scale(1.52) translateY(-8px); filter: brightness(1.6); }
+  16%  { opacity: 1;    transform: scale(0.97) translateY(0);    filter: brightness(2.0); }
+  34%  { opacity: 0.97; transform: scale(1.00);                  filter: brightness(1.4); }
+  58%  { opacity: 0.94;                                          filter: brightness(1.05); }
+  84%  { opacity: 0.70;                                          filter: brightness(1.0); }
+  100% { opacity: 0;                                             filter: brightness(1.0); }
+}
+
+/* Permanent stamp enter — gentle settle after cinematic overlay clears */
+@keyframes bang-stamp-settle {
+  0%   { opacity: 0; transform: translateY(5px) scale(1.05); }
+  55%  { opacity: 1; transform: translateY(0) scale(0.99); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Reduced motion: no flash, no slam, no sweep, no sparkles — static only */
 @media (prefers-reduced-motion: reduce) {
+  .bang-cinematic-overlay {
+    display: none; /* suppress entire overlay flash */
+  }
   .bang-signature {
     background: none !important;
     -webkit-text-fill-color: var(--color-brand-gold) !important;
     color: var(--color-brand-gold) !important;
+    text-shadow:
+      0 0 16px rgba(201,168,76,0.48),
+      0 0 34px rgba(201,168,76,0.22) !important;
     animation: none !important;
   }
   .bang-signature--hero {
