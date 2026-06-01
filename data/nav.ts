@@ -10,11 +10,12 @@ export type NavGroup = {
 }
 
 export const mainNav: NavItem[] = [
-  { label: 'Shop',    href: '/collections' },
-  { label: 'Custom',  href: '/custom' },
-  { label: 'Grillz',  href: '/grillz' },
-  { label: 'Watches', href: '/watches' },
-  { label: 'About',   href: '/#story' },
+  { label: 'Shop',     href: '/collections' },
+  { label: 'Pendants', href: '/collections/pendants' },
+  { label: 'Grillz',   href: '/grillz' },
+  { label: 'Watches',  href: '/watches' },
+  { label: 'Custom',   href: '/custom' },
+  { label: 'About',    href: '/#story' },
 ]
 
 export const shopCategories: NavItem[] = [

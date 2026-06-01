@@ -37,6 +37,12 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
 
+  // Shop is active for /collections and any collection EXCEPT /collections/pendants
+  // (Pendants has its own top-level nav entry)
+  const isShopActive =
+    pathname === '/collections' ||
+    (pathname.startsWith('/collections/') && pathname !== '/collections/pendants')
+
   return (
     <header
       className="sticky top-0 z-50 w-full"
@@ -83,6 +89,7 @@ export function Header() {
                     <button
                       className="nav-link flex items-center gap-1 bg-transparent border-0 p-0 cursor-pointer"
                       aria-haspopup="true"
+                      style={isShopActive ? { color: 'var(--color-brand-gold)' } : undefined}
                     >
                       Shop
                       <svg
@@ -149,7 +156,7 @@ export function Header() {
                 )
               }
 
-              /* Custom — always gold, visually distinct as the primary nav action */
+              /* Custom — gold only when actually on /custom */
               if (item.label === 'Custom') {
                 const isActive = pathname === item.href
                 return (
@@ -158,7 +165,7 @@ export function Header() {
                     href={item.href}
                     className="nav-link"
                     aria-current={isActive ? 'page' : undefined}
-                    style={{ color: 'var(--color-brand-gold)', fontWeight: 600 }}
+                    style={isActive ? { color: 'var(--color-brand-gold)', fontWeight: 600 } : undefined}
                   >
                     Custom
                   </Link>
@@ -229,23 +236,27 @@ export function Header() {
             backgroundColor: 'var(--color-brand-charcoal)',
           }}
         >
-          {mainNav.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              onClick={() => setMobileOpen(false)}
-              className="block py-3.5"
-              style={{
-                borderBottom: '1px solid var(--color-brand-border)',
-                color:        item.label === 'Custom' ? 'var(--color-brand-gold)' : 'var(--color-brand-silver)',
-                fontFamily:   'var(--font-body)',
-                fontSize:     '0.9375rem',
-                fontWeight:   item.label === 'Custom' ? 600 : undefined,
-              }}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {mainNav.map((item) => {
+            const mobileActive =
+              item.label === 'Shop' ? isShopActive : pathname === item.href
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className="block py-3.5"
+                style={{
+                  borderBottom: '1px solid var(--color-brand-border)',
+                  color:        mobileActive ? 'var(--color-brand-gold)' : 'var(--color-brand-silver)',
+                  fontFamily:   'var(--font-body)',
+                  fontSize:     '0.9375rem',
+                  fontWeight:   mobileActive ? 600 : undefined,
+                }}
+              >
+                {item.label}
+              </Link>
+            )
+          })}
 
           {/* Mobile CTAs: primary build, secondary WhatsApp */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem', marginTop: '1.25rem' }}>
