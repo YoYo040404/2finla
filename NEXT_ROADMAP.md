@@ -68,31 +68,46 @@ npm run dev
 - **Sitewide contrast + selector grouping + mobile CTA clearance** (commit 2303850 — 2026-05-31): THE BUILD as 3 numbered decision blocks, 10 body contrast fixes, MobileCtaBar `padding-bottom` clearance
 - **Resend lead capture verified live** (2026-05-31): all 9 fields confirmed in email (piece type, metal direction, stone direction, name, phone, budget, idea, file, timestamp); file attachments working; success screen gated on Resend response; WhatsApp fallback on error; env vars server-side only
 - **Vercel live**: https://2finla.vercel.app
+- **Homepage flash system polish** (commits `b8edf8f`, `6af213a`) — CSS-only flash, hero BANG impact, icy product title flash
+- **Chains mini-catalog** (commit `744d2b3`) — six style cards, SHOP language, SVG fallback
+- **SHOP vs CUSTOM rule document** (commit `294421e`)
+- **Gated proof slots** (commit `821efa9`) — chains and pendants proof slot structure
+- **Mini catalog for shop categories** (commit `dc33c16`) — Bracelets / Rings / Earrings, shared template, six cards per category
+- **Header active nav states cleanup** (commit `4f3097f`) — Shop / Pendants / Grillz / Watches / Custom / About all correct
+- **Pendants split — compact custom selector** (commit `4b6c067`) — SHOP section + custom pendant selector; Pendants split between SHOP and CUSTOM
+- **Watches high-ticket inquiry page reworked** (commit `77799de`) — `app/watches/page.tsx`; Rolex-aware, non-authorized-dealer disclosure, image-ready
+- **Grillz fit-first page reworked** (commit `7e87bce`) — `app/grillz/page.tsx`; fit-first, six style cards, no dental/medical/fit-guarantee claims
 
 ### WIP / Approval Pending ⚠️
 
-- `/grillz` — read-only QA done; structurally acceptable for demo; deeper visual work held until real/demo assets
-- `/watches` — duplicate hero copy fixed (c485b83); read-only QA done; structurally acceptable for demo; deeper visual work held until real/demo assets
+- `/grillz` — reworked (7e87bce); fit-first architecture, six style cards, process-driven; visual QA and user approval pending for new version
+- `/watches` — reworked (77799de); high-ticket inquiry architecture, Rolex-aware; visual QA and user approval pending for new version
+- Category pages (Chains, Bracelets, Rings, Earrings, Pendants) — built; visual QA pending
 
 ### Not Yet 🚫
 
+- Sitewide typography/font/contrast audit
+- Real asset/media replacement (hero footage, product shots, grillz/watches photos, store footage)
+- Short asset request list for 2T Jewelers
+- Lead capture/backend wiring for forms on category pages (if applicable)
 - Real product/category images
-- Real hero/grillz/watches/store photo and video assets
 - Instagram/TikTok feed strategy and dynamic feed
 - WhatsApp floating desktop button
 - Production Resend sender domain (`leads@2tjewelers.com` or similar) — current `onboarding@resend.dev` is acceptable for testing
 - Final logo SVG/2x/favicon
 - Shopify recalibration
+- SEO/schema (after core pages and claims are controlled)
 - Material/stone SEO landing pages (build only when real inventory + assets + proof exists)
 - Material/stone filtering on product/category pages (later, Shopify)
 - Per-piece product badge layer: `[14K GOLD]` `[925 STERLING]` `[GRA VVS MOISSANITE]` `[NATURAL DIAMOND]` `[GIA CERT]` `[IN STOCK]` — build only with verified per-piece data
 
 ### Next Milestone 🎯
 
+- Sitewide typography/font/contrast audit
+- Real asset/media replacement planning — define what photos/footage are needed
+- Visual QA and user approval of reworked `/grillz` and `/watches`
 - Production Resend sender domain polish (low priority — before real traffic)
-- Custom Hero / media proof / real asset planning
-- Category/product proof pages (after media/proof planning)
-- Refine `/grillz`, `/watches` based on assets and feedback
+- SEO/schema after core pages pass claim-safety review
 
 ---
 
@@ -353,10 +368,21 @@ Only if user explicitly approves:
 15. ✅ **Sitewide contrast + selector grouping + mobile CTA clearance** — THE BUILD numbered blocks, 10 contrast fixes, MobileCtaBar clearance (2303850, 2026-05-31)
 16. ✅ **Resend lead capture verified live** — all 9 fields, file attachments, server-side env vars (2026-05-31)
 17. ✅ **Vercel deploy** — live at https://2finla.vercel.app
-18. 🎯 **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic ← LOW PRIORITY NEXT
-19. 🎯 **Custom Hero / media proof / real asset planning** ← NEXT PHASE
-20. 🎯 **Category/product proof pages** — after media/proof planning
-21. ⏳ Collect demo feedback → refine /grillz, /watches based on assets
+18. ✅ **Homepage flash system polish** — CSS-only flash, BANG hero impact (commits `b8edf8f`, `6af213a`)
+19. ✅ **Chains mini-catalog** — six style cards, SHOP language (commit `744d2b3`)
+20. ✅ **SHOP vs CUSTOM commerce rule** — documented (commit `294421e`)
+21. ✅ **Gated proof slots** — chains and pendants (commit `821efa9`)
+22. ✅ **Mini catalog for shop categories** — Bracelets / Rings / Earrings (commit `dc33c16`)
+23. ✅ **Header active nav states cleanup** (commit `4f3097f`)
+24. ✅ **Pendants compact custom selector** — SHOP/CUSTOM split (commit `4b6c067`)
+25. ✅ **Watches high-ticket inquiry page reworked** (commit `77799de`)
+26. ✅ **Grillz fit-first page reworked** (commit `7e87bce`)
+27. 🎯 **Visual QA of reworked /grillz and /watches** — user approval required ← NEXT
+28. 🎯 **Sitewide typography/font/contrast audit** ← NEXT
+29. 🎯 **Real asset/media replacement planning** ← NEXT PHASE
+30. 🎯 **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic ← LOW PRIORITY
+31. 🎯 **Category/product proof pages** — after media/proof planning
+32. ⏳ SEO/schema — after core pages pass claim-safety review
 22. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL
     - Scope: 5 files only — `app/page.tsx`, `components/home/ProofMarquee.tsx`, `components/home/WeeklyPromo.tsx`, `components/home/PittsburghStory.tsx`, `components/home/SocialTeaser.tsx`
     - Do NOT start until user explicitly approves Pass 5C

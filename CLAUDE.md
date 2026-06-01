@@ -74,37 +74,22 @@ Removed: old Trust Strip, old Shop by Category / Collection Grid.
 - Address, phone, WhatsApp, Instagram, TikTok, Acima: all wired in Footer
 - Hero video: slot wired at `public/assets/hero-loop-demo.mp4`, file pending
 
-**Custom Flow: WIP — build passes but NOT user-approved as final.**
+**Custom Flow: user-approved and live on Vercel.**
 
-Latest update (commit 84af600 — 2026-05-17):
-- Hero is more compact
-- Primary CTA changed to START THE REQUEST →
-- Browse Ready-Made removed
-- Piece type chips wrap cleanly
-- Upload zone appears above textarea on mobile
-- Textarea reduced to 4 rows
-- Material and Budget chips remain
-- Label: WHATSAPP OR PHONE
-- Gold-bordered trust callout added
-- SEND REQUEST → is full-width
-- Bypass CTA: Not sure yet? Hit us up on WhatsApp →
-- HowItWorks step 02: WE REVIEW THE DIRECTION
-- HowItWorks step 03: WE QUOTE FIRST
+CRO pass and selector grouping committed (commits `60c7d06`, `2303850`). Resend lead capture verified live. All 9 fields including metal/stone direction and file attachments confirmed working.
 
-Also in 84af600 — homepage polish applied:
-- Hybrid typography prototype applied using existing fonts
-- SocialTeaser heading changed to TAP IN WITH 2T.
-- TikTok copy changed to See what's dropping.
-- FinalCTABar heading changed to BUILD WITH 2T.
-- Grillz inquiry lane copy tightened to Let's build.
+**Category pages completed (as of 2026-06-01):**
 
-Do not commit or push `/custom` as an approved milestone. Visual QA and user approval still required.
+- Header Navigation Cleanup — Shop ▾ / Pendants / Grillz / Watches / Custom / About; `/collections/pendants` highlights Pendants; other `/collections/*` highlight Shop; `/custom`, `/grillz`, `/watches` active states correct. Files: `components/layout/Header.tsx`, `data/nav.ts`
+- Chains — six chain style cards, SHOP product/category language, image-ready SVG fallback structure
+- Bracelets / Rings / Earrings — shared category template, six style cards per category, SHOP language, no BUILD CUSTOM CTA on these pages
+- Pendants split — SHOP section (six pendant cards) + compact custom pendant selector (photo/logo/name/number/memorial/custom-shape); regular pendants = SHOP, photo/logo/name/number/custom-shape pendants = CUSTOM
+- Watches — `app/watches/page.tsx` fully reworked; high-ticket iced/bust-down/Rolex-aware inquiry architecture; non-authorized-dealer disclosure included; image-ready structure; no fake inventory/prices/claims
+- Grillz — `app/grillz/page.tsx` fully reworked; custom/fit/process-driven; six style cards (Top Set, Bottom Set, Full Mouth, Open Face, Stone Direction/Iced-Out, Cut Direction/Diamond Cut); no dental/medical/fit-guarantee/mold-kit claims
 
-**Default next task: visual QA of /custom after latest update. Wait for user approval before any further changes.**
-
+Do not commit or push new category pages without visual QA and user approval.  
 Do not wire Formspree.  
 Do not add backend.  
-Do not build Watches/Grillz yet.  
 Do not deploy.  
 Do not install final logo until user provides the SVG/2x file.
 

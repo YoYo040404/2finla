@@ -432,7 +432,7 @@ Homepage is a product-first store with a custom lane — NOT custom-only. Hero d
 
 **No fake products, claims, prices, testimonials, social metrics, celebrity proof, or inventory introduced.**
 
-**Not redesigned in this pass:** `/custom`, `/grillz`, `/watches`.
+**Not redesigned in this pass:** `/custom`, `/grillz`, `/watches`. (These were redesigned in subsequent passes — see Category Pages section below.)
 
 Do not drift back to:
 - custom-only homepage
@@ -499,28 +499,49 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 - Production polish needed later: verified sender domain (`leads@2tjewelers.com` or similar)
 - Env vars: `RESEND_API_KEY`, `LEAD_EMAIL_TO`, `LEAD_EMAIL_FROM` — all server-side only, gitignored, no `NEXT_PUBLIC_` exposure
 
+### Category Pages (completed 2026-06-01)
+
+| Page / Feature | File(s) | Status |
+|---|---|---|
+| Header Navigation Cleanup | `components/layout/Header.tsx`, `data/nav.ts` | ✅ Active states corrected — Shop/Pendants/Grillz/Watches/Custom/About |
+| Chains page | `app/collections/chains/page.tsx` (or equivalent) | ✅ Six chain style cards, SHOP product/category language, SVG fallback |
+| Bracelets / Rings / Earrings | Shared category template | ✅ Six style cards per category, SHOP language, no BUILD CUSTOM CTA |
+| Pendants split page | `app/collections/pendants/page.tsx` | ✅ SHOP section (six pendant cards) + compact custom pendant selector (photo/logo/name/number/memorial/custom-shape) |
+| Watches inquiry page | `app/watches/page.tsx` | ✅ High-ticket inquiry architecture, Rolex-aware, non-authorized-dealer disclosure, image-ready, no fake claims |
+| Grillz fit-first page | `app/grillz/page.tsx` | ✅ Custom/fit/process-driven, six style cards (Top Set / Bottom Set / Full Mouth / Open Face / Stone Direction / Cut Direction), no dental/medical/fit-guarantee claims |
+
+**Visual rules applied to category pages:**
+- Important buyer-facing text uses `--color-brand-bone` (off-white), not gold/brown as primary text
+- Gold used only for accents, labels, borders, dividers, glints
+- Material/stone direction note chips are styled as static labels, not interactive buttons
+
 ---
 
 ## Current Next Task
 
 **Active branch / state:** `main` — all recent passes committed and live on Vercel.
 
-**Completed milestones (as of 2026-05-31):**
+**Completed milestones (as of 2026-06-01):**
 - Pittsburgh BANG homepage merged into main (PR #1 — commit `39a3b70`).
 - Repo QA cleanup — screenshot artifacts gitignored, QA utility added (commit `854c15e`).
-- `/custom` Pass A simplification — repetition removed, flow shortened (commit `03991f5`).
-- `/grillz` and `/watches` read-only QA completed — both structurally acceptable for demo.
-- `/watches` duplicate hero copy fixed (commit `c485b83`).
+- `/custom` CRO pass and selector grouping — lead funnel tightened, all 9 fields live via Resend (commits `60c7d06`, `2303850`).
 - Material & stone direction system — homepage + categories (commits `a4f5298` → `0e85b35`).
-- Homepage visual depth and shine surface refinement (commit `5f4afd7`).
-- `/custom` CRO pass — lead funnel tightened, selector clarity improved (commit `60c7d06`).
-- Sitewide contrast + /custom selector grouping + mobile CTA clearance (commit `2303850`).
-- **Resend lead capture verified live** — all 9 fields including metal/stone direction, file attachments confirmed working.
+- Homepage flash system polish — CSS-only flash, hero BANG impact, icy product title flash (commits `b8edf8f`, `6af213a`).
+- Chains mini-catalog — six style cards, SHOP language (commit `744d2b3`).
+- SHOP vs CUSTOM rule documented (commit `294421e`).
+- Gated proof slots — chains and pendants (commit `821efa9`).
+- Mini catalog for shop categories — Bracelets/Rings/Earrings (commit `dc33c16`).
+- Pendants compact custom selector — SHOP/CUSTOM split (commit `4b6c067`).
+- Header active nav states cleaned (commit `4f3097f`).
+- Watches high-ticket inquiry page reworked (commit `77799de`).
+- Grillz fit-first page reworked (commit `7e87bce`).
 
 **Next phase:**
-1. Production sender/domain polish — configure verified Resend domain (`leads@2tjewelers.com` or similar) before real traffic.
-2. Custom Hero / media proof / real asset planning — hero footage, product shots, grillz/watches photos, store footage.
-3. Category/product proof pages — build only after media and proof planning is done.
+1. Sitewide typography/font/contrast audit — verify all text is using the correct tokens, no gold/brown on body copy.
+2. Real asset/media replacement — hero footage, product shots, grillz/watches photos, store footage.
+3. Short asset request list for 2T Jewelers — define what specific images/media are needed.
+4. Lead capture/backend wiring for forms on category pages (if applicable).
+5. SEO/schema after core pages and claims are controlled.
 
 **Do not reopen homepage redesign** unless a clear blocker is found.
 
@@ -532,6 +553,16 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 | Commit | Description |
 |---|---|
+| `7e87bce` | feat: add fit-first grillz page |
+| `77799de` | feat: add high-ticket iced watch inquiry page |
+| `4f3097f` | fix: clean header active nav states |
+| `4b6c067` | feat: add compact custom selector to pendants page |
+| `dc33c16` | feat: add mini catalog cards to shop categories |
+| `744d2b3` | feat: add chains mini catalog style cards |
+| `294421e` | docs: add shop vs custom commerce rule |
+| `821efa9` | feat: add gated proof slots to chains and pendants |
+| `6af213a` | feat: add hero bang impact and icy product title flash |
+| `b8edf8f` | feat: add css-only homepage flash system polish |
 | `2303850` | feat: improve sitewide contrast and custom selector grouping — 10 contrast fixes, THE BUILD numbered blocks (01/02/03), MobileCtaBar bottom clearance |
 | `60c7d06` | feat: improve custom lead funnel flow and selector clarity — CRO pass, metalDirection + stoneDirection wired end-to-end |
 | `5f4afd7` | feat: refine homepage visual depth and shine surfaces |
@@ -623,7 +654,7 @@ Do not:
 - use Moses copy/assets
 - promise CAD/render/free mockup
 - turn `/custom` into a generic intake form
-- redesign `/grillz` or `/watches` unless specifically approved
+- further redesign `/grillz` or `/watches` without visual QA of the current reworked versions and explicit user approval
 - redesign `/custom` unless specifically approved
 
 ---
@@ -638,6 +669,8 @@ Do not build yet:
 - analytics / Meta Pixel / TikTok Pixel
 - real custom gallery/assets (photography)
 - copywriting pass (final brand voice)
-- Watches page deeper redesign (hold until real/demo assets)
-- Grillz page deeper redesign (hold until real/demo assets)
+- Watches page further redesign (current rework complete — hold deeper redesign until real/demo assets and user approval)
+- Grillz page further redesign (current rework complete — hold deeper redesign until real/demo assets and user approval)
+- Sitewide typography/contrast audit
+- Asset request list and real media replacement plan
 - category/product proof pages (after media/proof planning)

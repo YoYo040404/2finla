@@ -95,10 +95,20 @@ Do not publish as blanket sitewide claims without verification. Do not invent th
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
 Old Shopify folder is archive only. Do not touch it.
 
-**Latest committed state (as of 2026-05-31):**
+**Latest committed state (as of 2026-06-01):**
 
 | Commit | Description |
 |---|---|
+| `7e87bce` | feat: add fit-first grillz page |
+| `77799de` | feat: add high-ticket iced watch inquiry page |
+| `4f3097f` | fix: clean header active nav states |
+| `4b6c067` | feat: add compact custom selector to pendants page |
+| `dc33c16` | feat: add mini catalog cards to shop categories |
+| `744d2b3` | feat: add chains mini catalog style cards |
+| `294421e` | docs: add shop vs custom commerce rule |
+| `821efa9` | feat: add gated proof slots to chains and pendants |
+| `6af213a` | feat: add hero bang impact and icy product title flash |
+| `b8edf8f` | feat: add css-only homepage flash system polish |
 | `2303850` | feat: improve sitewide contrast and custom selector grouping — THE BUILD numbered blocks, 10 contrast fixes, MobileCtaBar clearance |
 | `60c7d06` | feat: improve custom lead funnel flow and selector clarity — CRO pass, metalDirection + stoneDirection wired end-to-end |
 | `5f4afd7` | feat: refine homepage visual depth and shine surfaces |
@@ -196,8 +206,12 @@ Custom page (as of commit 84af600 — 2026-05-17):
 | PittsburghStory | ✅ Stat ledger: 25 / 5TH AVE with gold left-border rules |
 | SocialTeaser | ✅ Channel-map rows, WhatsApp gold-bordered, real links only |
 | Hero video | ✅ Slot wired — `public/assets/hero-loop-demo.mp4` (file pending) |
-| Grillz page `/grillz` | ✅ Read-only QA done — structurally acceptable for demo. Hold deeper visual work until real/demo assets arrive. |
-| Watches page `/watches` | ✅ Duplicate hero copy fixed (c485b83). Read-only QA done — structurally acceptable for demo. Hold deeper visual work until real/demo assets arrive. |
+| Header navigation | ✅ Active states cleaned (4f3097f) — Shop ▾ / Pendants / Grillz / Watches / Custom / About |
+| Chains page `/collections/chains` | ✅ Six style cards (744d2b3/dc33c16), SHOP language, SVG fallback |
+| Bracelets / Rings / Earrings | ✅ Six style cards per category (dc33c16), SHOP language, no BUILD CUSTOM CTA |
+| Pendants page `/collections/pendants` | ✅ Split (4b6c067) — SHOP section (six cards) + compact custom pendant selector |
+| Grillz page `/grillz` | ✅ Fully reworked (7e87bce) — fit-first, six style cards, process-driven, non-authorized claims removed. Visual QA and user approval pending. |
+| Watches page `/watches` | ✅ Fully reworked (77799de) — high-ticket inquiry architecture, Rolex-aware, non-authorized-dealer disclosure included. Visual QA and user approval pending. |
 | Custom page `/custom` | ✅ CRO pass committed (60c7d06), selector grouping committed (2303850), user-approved. |
 | Logo (temporary) | ✅ Transparent logo in header, black-bg logo in footer — final SVG/2x pending |
 | Contact / social | ✅ Address, phone, WhatsApp, Instagram, TikTok, Acima all wired in Footer |
@@ -213,16 +227,18 @@ Custom page (as of commit 84af600 — 2026-05-17):
 
 ## Default Next Prompt
 
-**Current milestone: /custom lead capture is live and verified. Site is on Vercel.**
+**Current milestone: Core category pages (Chains, Pendants split, Watches rework, Grillz rework, Header nav) committed to main.**
 
-1. Do not reopen broad homepage redesign. Pittsburgh BANG is merged and is the current direction.
+1. Do not reopen broad homepage redesign. Pittsburgh BANG is the current direction.
 2. Do not re-polish `/custom` — CRO pass and selector grouping are approved and live.
 3. Do not rebuild the Resend backend — it is working and verified.
 4. Next immediate tasks (in order):
-   - Production Resend sender domain polish (`leads@2tjewelers.com` or similar) — low priority, before real traffic only.
-   - Custom Hero / media proof / real asset planning — hero footage, product shots, store footage.
-   - Category/product proof pages — after media and proof planning.
-5. Next refinement: `/grillz`, `/watches`, category pages — asset-dependent.
+   - Sitewide typography/font/contrast audit — verify all text uses correct tokens (bone/silver, not gold/brown as body copy).
+   - Real asset/media replacement — hero footage, product shots, grillz/watches photos, store footage.
+   - Short asset request list for 2T Jewelers — define what specific images/media are needed.
+   - Lead capture/backend wiring for category page forms (if applicable).
+   - SEO/schema after core pages and claims are controlled.
+5. `/grillz` and `/watches` rework complete — visual QA and user approval pending for the new versions before further changes.
 
 **Keep untouched until explicitly approved:**
 - `public/assets/logo-to-use.png` — do not rename, move, or wire unless user provides final asset and approves.
