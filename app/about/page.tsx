@@ -36,7 +36,7 @@ export default function AboutPage() {
             style={{
               fontFamily:    'var(--font-display)',
               fontSize:      'clamp(3rem, 7vw, 5.5rem)',
-              fontWeight:    600,
+              fontWeight:    400,
               lineHeight:    0.9,
               letterSpacing: '-0.03em',
               color:         'var(--color-brand-white)',

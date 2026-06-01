@@ -40,10 +40,10 @@ export function Footer() {
             style={{
               marginTop:     '0.875rem',
               fontFamily:    'var(--font-mono)',
-              fontSize:      '0.6rem',
-              letterSpacing: '0.11em',
+              fontSize:      '0.72rem',
+              letterSpacing: '0.1em',
               textTransform: 'uppercase',
-              color:         'var(--color-brand-muted)',
+              color:         'var(--color-brand-silver)',
               lineHeight:    1.85,
             }}
           >

@@ -8,7 +8,7 @@
   --color-brand-charcoal:   #0E0E0E;
   --color-brand-surface:    #141414;
   --color-brand-border:     #1F1D1A;
-  --color-brand-subtle:     #3A3630;
+  --color-brand-subtle:     #6B6560;
   --color-brand-muted:      #7A7468;
   --color-brand-silver:     #ADA69D;
   --color-brand-white:      #F3F0EA;
@@ -337,7 +337,7 @@
   }
   .mat-tier:last-child { margin-bottom: 0; }
   .mat-tier-name {
-    font-family: var(--font-display);
+    font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 600;
     color: var(--color-brand-white);
@@ -411,7 +411,7 @@
     border-radius: 0;
   }
   .form-input:focus { border-color: var(--color-brand-gold-dim); }
-  .form-input::placeholder { color: var(--color-brand-subtle); }
+  .form-input::placeholder { color: var(--color-brand-muted); }
   .form-input option { background-color: var(--color-brand-charcoal); }
 
   /* Piece type chip (PieceTiles compact) */
@@ -456,9 +456,9 @@
     line-height:    1.0;
     color:          var(--color-brand-white);
   }
-  /* Craft: Cormorant minimum 600 — editorial / story moments only */
+  /* Craft: Cormorant 600 — editorial / story moments only */
   .display-craft {
-    font-family:    var(--font-display);
+    font-family:    var(--font-display-accent);
     font-weight:    600;
     letter-spacing: -0.025em;
     line-height:    1.08;
@@ -466,7 +466,7 @@
   }
   /* Craft strong: Cormorant 700 — premium narrative headings */
   .display-craft-strong {
-    font-family:    var(--font-display);
+    font-family:    var(--font-display-accent);
     font-weight:    700;
     letter-spacing: -0.025em;
     line-height:    1.05;
@@ -839,7 +839,7 @@
   font-family: var(--font-display);
   font-size: 1.3rem;
   font-style: italic;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--color-brand-gold);
   letter-spacing: 0.03em;
   white-space: nowrap;
@@ -932,7 +932,7 @@
   transform: translate(-50%, -50%);
   font-family: var(--font-display);
   font-size: clamp(2.8rem, 8vw, 5rem);
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: -0.02em;
   color: transparent;
   -webkit-text-stroke: 1px rgba(212,175,55,0.1);
@@ -944,7 +944,7 @@
 .pitt-story-headline {
   font-family:    var(--font-display);
   font-size:      clamp(1.9rem, 3.8vw, 3rem);
-  font-weight:    500;
+  font-weight:    400;
   line-height:    1.07;
   letter-spacing: -0.025em;
   color:          var(--color-brand-white);
@@ -1069,7 +1069,7 @@
   display: block;
   font-family: var(--font-display);
   font-size: clamp(5rem, 12vw, 8.5rem);
-  font-weight: 700;
+  font-weight: 400;
   font-style: normal;
   color: var(--color-brand-gold);
   letter-spacing: -0.03em;
@@ -1095,7 +1095,7 @@
 .social-heading {
   font-family: var(--font-display);
   font-size: clamp(2.25rem, 5vw, 3.75rem);
-  font-weight: 700;
+  font-weight: 400;
   color: var(--color-brand-white);
   line-height: 0.93;
   letter-spacing: -0.02em;

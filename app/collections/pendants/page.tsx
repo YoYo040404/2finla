@@ -522,7 +522,7 @@ export default function PendantsPage() {
             style={{
               fontFamily:    'var(--font-display)',
               fontSize:      'clamp(2.8rem, 6.5vw, 5rem)',
-              fontWeight:    600,
+              fontWeight:    400,
               lineHeight:    1.05,
               letterSpacing: '-0.03em',
               color:         'var(--color-brand-white)',

@@ -535,7 +535,7 @@ export default function GrillzPage() {
                 style={{
                   fontFamily:    'var(--font-display)',
                   fontSize:      'clamp(3.2rem, 7vw, 6rem)',
-                  fontWeight:    600,
+                  fontWeight:    400,
                   lineHeight:    0.92,
                   letterSpacing: '-0.03em',
                   color:         'var(--color-brand-white)',
