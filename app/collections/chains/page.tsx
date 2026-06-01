@@ -635,15 +635,6 @@ export default function ChainsPage() {
                     ))}
                   </ul>
 
-                  <a
-                    href={waUrl(style.waMessage)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary"
-                    style={{ display: 'block', textAlign: 'center', marginTop: '0.25rem' }}
-                  >
-                    TEXT 2T →
-                  </a>
                 </div>
               </div>
             ))}
@@ -1032,93 +1023,41 @@ export default function ChainsPage() {
         </section>
       )}
 
-      {/* ── Pair With a Pendant ───────────────────────────────────── */}
+      {/* ── Pair With a Pendant — compact strip ───────────────────── */}
       <section
         style={{
-          padding:      'clamp(3rem, 6vw, 4.5rem) 1.5rem',
+          padding:      'clamp(1.5rem, 3vw, 2.25rem) 1.5rem',
           borderBottom: '1px solid var(--color-brand-border)',
           background:   'var(--color-brand-charcoal)',
         }}
       >
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <div
+        <div
+          style={{
+            maxWidth:   '1100px',
+            margin:     '0 auto',
+            display:    'flex',
+            gap:        '1.25rem',
+            alignItems: 'center',
+            flexWrap:   'wrap',
+          }}
+        >
+          <p
             style={{
-              display:    'flex',
-              gap:        '2.5rem',
-              alignItems: 'flex-start',
-              flexWrap:   'wrap',
+              fontFamily:   'var(--font-body)',
+              fontSize:     '0.875rem',
+              color:        'var(--color-brand-muted)',
+              lineHeight:   1.5,
+              flex:         '1 1 200px',
             }}
           >
-            <div style={{ flex: '1 1 300px' }}>
-              <span className="section-eyebrow" style={{ marginBottom: '0.75rem' }}>PAIR WITH A PENDANT</span>
-              <p
-                style={{
-                  fontFamily:   'var(--font-display)',
-                  fontSize:     'clamp(1.5rem, 3.5vw, 2.4rem)',
-                  fontWeight:   400,
-                  color:        'var(--color-brand-white)',
-                  lineHeight:   1.1,
-                  marginBottom: '1rem',
-                }}
-              >
-                Start with the chain.<br />Add the pendant.
-              </p>
-              <p
-                style={{
-                  fontFamily:   'var(--font-body)',
-                  fontSize:     '0.9rem',
-                  color:        'var(--color-brand-muted)',
-                  lineHeight:   1.7,
-                  marginBottom: '1.5rem',
-                  maxWidth:     '42ch',
-                }}
-              >
-                Have a pendant in mind? Pick the chain direction first — we can help
-                match the weight, width, and look. Custom pendants are a separate
-                conversation.
-              </p>
-              <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap' }}>
-                <Link href="/collections/pendants" className="btn-primary">
-                  SHOP PENDANTS →
-                </Link>
-                <a
-                  href={WA_CHAINS}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-outline-gold"
-                >
-                  TEXT US FIRST →
-                </a>
-              </div>
-            </div>
-
-            {/* Chain + pendant visual */}
-            <div
-              aria-hidden="true"
-              style={{
-                flex:           '0 0 auto',
-                width:          '140px',
-                height:         '140px',
-                border:         '1px solid var(--color-brand-border)',
-                background:     'var(--color-brand-black)',
-                display:        'flex',
-                alignItems:     'center',
-                justifyContent: 'center',
-              }}
-            >
-              <svg width="90" height="100" viewBox="0 0 90 100" fill="none">
-                {/* Chain links */}
-                <ellipse cx="30" cy="22" rx="14" ry="8" stroke="rgba(201,168,76,0.55)" strokeWidth="1.5"/>
-                <ellipse cx="60" cy="30" rx="14" ry="8" stroke="rgba(201,168,76,0.55)" strokeWidth="1.5"/>
-                <line x1="43" y1="26" x2="47" y2="26" stroke="rgba(201,168,76,0.35)" strokeWidth="1.5" strokeLinecap="round"/>
-                {/* Pendant bail */}
-                <rect x="41" y="32" width="8" height="10" rx="4" stroke="rgba(208,238,255,0.5)" strokeWidth="1.25"/>
-                {/* Pendant diamond shape */}
-                <path d="M20 55 L45 38 L70 55 L45 80 Z" stroke="rgba(208,238,255,0.6)" strokeWidth="1.5"/>
-                <circle cx="45" cy="57" r="5" fill="rgba(208,238,255,0.65)"/>
-              </svg>
-            </div>
-          </div>
+            <strong style={{ color: 'var(--color-brand-silver)', fontWeight: 600 }}>
+              Start with the chain. Add the pendant.
+            </strong>
+            {' '}Have a pendant in mind? Text 2T to match width and direction.
+          </p>
+          <Link href="/collections/pendants" className="btn-outline-gold" style={{ flexShrink: 0 }}>
+            SHOP PENDANTS →
+          </Link>
         </div>
       </section>
 

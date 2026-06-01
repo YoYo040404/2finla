@@ -772,7 +772,7 @@ export default function WatchesPage() {
                 style={{
                   fontFamily:    'var(--font-body)',
                   fontSize:      '0.72rem',
-                  color:         'rgba(180,175,165,0.6)',
+                  color:         'rgba(180,175,165,0.88)',
                   letterSpacing: '0.015em',
                   marginBottom:  '1.875rem',
                   paddingLeft:   '0.875rem',
@@ -1015,7 +1015,7 @@ export default function WatchesPage() {
                   <p
                     style={{
                       fontFamily:    'var(--font-body)',
-                      fontSize:      '0.62rem',
+                      fontSize:      '0.72rem',
                       fontWeight:    600,
                       letterSpacing: '0.14em',
                       textTransform: 'uppercase',

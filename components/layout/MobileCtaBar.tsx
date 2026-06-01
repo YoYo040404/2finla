@@ -1,6 +1,84 @@
-/* Mobile sticky CTA bar — upgraded to prominent primary action layout */
+'use client'
+
+import { usePathname } from 'next/navigation'
+
+/* Mobile sticky CTA bar — context-aware primary action */
+
+type CtaConfig = {
+  label:   string
+  href:    string
+  waText?: string  // override WhatsApp pre-fill if provided
+}
+
+function getCtaConfig(pathname: string): CtaConfig {
+  // Pure SHOP category routes — no build/custom language
+  if (
+    pathname === '/collections' ||
+    pathname === '/collections/chains' ||
+    pathname === '/collections/rings' ||
+    pathname === '/collections/bracelets' ||
+    pathname === '/collections/earrings' ||
+    pathname === '/collections/best-sellers' ||
+    pathname === '/collections/new-arrivals'
+  ) {
+    return {
+      label:  'TEXT 2T →',
+      href:   'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20shop.%20What%20do%20you%20have%20available%3F',
+      waText: "Hey 2T — I'm looking to shop. What do you have available?",
+    }
+  }
+
+  // Pendants — split SHOP + CUSTOM, keep neutral text
+  if (pathname === '/collections/pendants') {
+    return {
+      label:  'TEXT 2T →',
+      href:   'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20at%20pendants.%20What%20do%20you%20have%3F',
+      waText: "Hey 2T — I'm looking at pendants. What do you have?",
+    }
+  }
+
+  // Watches — product inquiry, not custom build
+  if (pathname === '/watches') {
+    return {
+      label:  'ASK ABOUT WATCHES →',
+      href:   'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20ask%20about%20watches.%20What%20do%20you%20have%20available%3F',
+      waText: "Hey 2T — I'm looking to ask about watches. What do you have available?",
+    }
+  }
+
+  // Grillz — inquiry/process, not custom build language
+  if (pathname === '/grillz') {
+    return {
+      label:  'ASK ABOUT GRILLZ →',
+      href:   'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20ask%20about%20grillz.',
+      waText: "Hey 2T — I'm looking to ask about grillz.",
+    }
+  }
+
+  // Custom — user is already on the custom page, avoid redundancy
+  if (pathname === '/custom') {
+    return {
+      label:  'TEXT 2T →',
+      href:   'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27d%20like%20to%20ask%20about%20a%20custom%20piece.',
+      waText: "Hey 2T — I'd like to ask about a custom piece.",
+    }
+  }
+
+  // Default — home, about, and all other routes
+  return {
+    label: 'Build Custom →',
+    href:  '/custom',
+  }
+}
 
 export function MobileCtaBar() {
+  const pathname = usePathname()
+  const cta      = getCtaConfig(pathname)
+
+  const waIconHref = cta.waText
+    ? `https://wa.me/14124524343?text=${encodeURIComponent(cta.waText)}`
+    : 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20build%20a%20piece.'
+
   return (
     <div
       role="navigation"
@@ -26,15 +104,15 @@ export function MobileCtaBar() {
 
       <div
         style={{
-          display:    'grid',
+          display:             'grid',
           gridTemplateColumns: 'auto auto 1fr',
-          height:     '56px',
-          alignItems: 'stretch',
+          height:              '56px',
+          alignItems:          'stretch',
         }}
       >
         {/* WhatsApp */}
         <a
-          href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20build%20a%20piece."
+          href={waIconHref}
           aria-label="WhatsApp"
           target="_blank"
           rel="noopener noreferrer"
@@ -65,23 +143,27 @@ export function MobileCtaBar() {
           </span>
         </a>
 
-        {/* Primary CTA — full remaining width */}
+        {/* Primary CTA — full remaining width, context-aware */}
         <a
-          href="/custom"
-          aria-label="Build custom"
+          href={cta.href}
+          aria-label={cta.label}
+          target={cta.href.startsWith('http') ? '_blank' : undefined}
+          rel={cta.href.startsWith('http') ? 'noopener noreferrer' : undefined}
           className="flex items-center justify-center active:opacity-80 transition-opacity duration-100"
           style={{
             backgroundColor: 'var(--color-brand-gold)',
             color:           'var(--color-brand-black)',
             fontFamily:      'var(--font-body)',
             fontWeight:      600,
-            fontSize:        '0.78rem',
-            letterSpacing:   '0.07em',
+            fontSize:        '0.75rem',
+            letterSpacing:   '0.06em',
             textTransform:   'uppercase',
             gap:             '0.4rem',
+            textAlign:       'center',
+            padding:         '0 0.75rem',
           }}
         >
-          Build Custom
+          {cta.label}
           <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
             <path d="M2 6.5h9M7.5 3l3.5 3.5-3.5 3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>

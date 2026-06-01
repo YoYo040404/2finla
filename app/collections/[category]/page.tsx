@@ -851,15 +851,6 @@ export default async function CategoryPage({ params }: Props) {
                       ))}
                     </ul>
 
-                    <a
-                      href={waUrl(style.waMessage)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary"
-                      style={{ display: 'block', textAlign: 'center', marginTop: '0.25rem' }}
-                    >
-                      TEXT 2T →
-                    </a>
                   </div>
                 </div>
               ))}
