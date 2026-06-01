@@ -1,6 +1,42 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
+// ── Proof slot types ────────────────────────────────────────────────────────
+// All constants below are null / empty by default.
+// Populate with real, verified assets before any slot becomes visible.
+
+type FeaturedPiece = {
+  label:     string   // e.g. "MIAMI CUBAN — GOLD DIRECTION"
+  descriptor: string  // claim-safe descriptor, no karat/grade/price claims
+  imageSrc:  string   // path under /public/assets/ — real photo required
+  imageAlt:  string   // descriptive alt text
+  waMessage: string   // pre-filled WhatsApp text specific to this piece
+}
+
+type ProofAsset = {
+  src:     string  // path under /public/assets/ — real photo required
+  alt:     string  // descriptive alt text — no claim language
+  caption?: string // optional one-liner, no unverified claims
+}
+
+type ActiveOffer = {
+  headline:    string   // confirmed offer copy only
+  body:        string   // claim-safe body
+  ctaLabel:    string   // button label
+  waMessage:   string   // pre-filled WhatsApp text
+  promoTerms?: string   // e.g. "Offer terms shown on eligible items only."
+}
+
+// Set to a populated object only when a real verified photo exists.
+const FEATURED_PIECE: FeaturedPiece | null = null
+
+// Add entries only when real photos are confirmed and available.
+const PROOF_ASSETS: ProofAsset[] = []
+
+// Set to true and populate ACTIVE_OFFER only when a real confirmed offer exists.
+const HAS_ACTIVE_OFFER = false
+const ACTIVE_OFFER: ActiveOffer | null = null
+
 export const metadata: Metadata = {
   title:       '2T Jewelers | Chains — Cuban, Rope & Tennis — Pittsburgh, PA',
   description: 'Cuban, rope, tennis, and Franco chains in Pittsburgh, PA. Ask 2T what\'s in stock and available. Real Pittsburgh store. 25 years.',
@@ -132,6 +168,93 @@ export default function ChainsPage() {
         </div>
       </section>
 
+      {/* ── Featured Piece slot ───────────────────────────────────────
+           Renders nothing while FEATURED_PIECE is null.
+           Populate with a real verified photo to make this visible. */}
+      {FEATURED_PIECE !== null && (
+        <section
+          style={{
+            padding:      'clamp(3rem, 6vw, 4.5rem) 1.5rem',
+            borderBottom: '1px solid var(--color-brand-border)',
+          }}
+        >
+          <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+            <span className="section-eyebrow" style={{ marginBottom: '0.75rem' }}>FEATURED</span>
+            <div
+              style={{
+                display:   'flex',
+                gap:       '2rem',
+                flexWrap:  'wrap',
+                alignItems: 'flex-start',
+              }}
+            >
+              <div
+                style={{
+                  flex:       '0 0 auto',
+                  width:      'clamp(200px, 40%, 360px)',
+                  aspectRatio: '1 / 1',
+                  background: 'var(--color-brand-charcoal)',
+                  border:     '1px solid var(--color-brand-border)',
+                  overflow:   'hidden',
+                  position:   'relative',
+                }}
+              >
+                <img
+                  src={FEATURED_PIECE.imageSrc}
+                  alt={FEATURED_PIECE.imageAlt}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
+              <div style={{ flex: '1 1 260px' }}>
+                <p
+                  style={{
+                    fontFamily:   'var(--font-display)',
+                    fontSize:     'clamp(1.4rem, 3vw, 2rem)',
+                    fontWeight:   400,
+                    color:        'var(--color-brand-white)',
+                    lineHeight:   1.05,
+                    marginBottom: '0.75rem',
+                  }}
+                >
+                  {FEATURED_PIECE.label}
+                </p>
+                <p
+                  style={{
+                    fontFamily:   'var(--font-body)',
+                    fontSize:     '0.875rem',
+                    color:        'var(--color-brand-muted)',
+                    lineHeight:   1.65,
+                    marginBottom: '0.5rem',
+                  }}
+                >
+                  {FEATURED_PIECE.descriptor}
+                </p>
+                <p
+                  style={{
+                    fontFamily:    'var(--font-body)',
+                    fontSize:      '0.72rem',
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                    color:         'var(--color-brand-subtle)',
+                    marginBottom:  '1.5rem',
+                  }}
+                >
+                  Details confirmed per piece.
+                </p>
+                <a
+                  href={`https://wa.me/14124524343?text=${encodeURIComponent(FEATURED_PIECE.waMessage)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
+                  TEXT 2T ABOUT THIS CHAIN →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── Style Chips ───────────────────────────────────────────── */}
       <section
         style={{
@@ -174,6 +297,72 @@ export default function ChainsPage() {
           </p>
         </div>
       </section>
+
+      {/* ── Proof Rail slot ───────────────────────────────────────────────
+           Renders nothing while PROOF_ASSETS is empty.
+           Add real verified chain photos to make this visible. */}
+      {PROOF_ASSETS.length > 0 && (
+        <section
+          style={{
+            padding:      'clamp(2.5rem, 5vw, 3.5rem) 1.5rem',
+            borderBottom: '1px solid var(--color-brand-border)',
+            overflow:     'hidden',
+          }}
+        >
+          <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+            <span className="section-eyebrow" style={{ marginBottom: '0.75rem' }}>WHAT WE&rsquo;VE BUILT</span>
+            <div
+              style={{
+                display:               'flex',
+                gap:                   '1px',
+                overflowX:             'auto',
+                background:            'var(--color-brand-border)',
+                scrollSnapType:        'x mandatory',
+                WebkitOverflowScrolling: 'touch',
+              }}
+            >
+              {PROOF_ASSETS.map((asset, i) => (
+                <div
+                  key={i}
+                  style={{
+                    flex:            '0 0 auto',
+                    width:           'clamp(220px, 30vw, 340px)',
+                    aspectRatio:     '1 / 1',
+                    background:      'var(--color-brand-charcoal)',
+                    overflow:        'hidden',
+                    scrollSnapAlign: 'start',
+                    position:        'relative',
+                  }}
+                >
+                  <img
+                    src={asset.src}
+                    alt={asset.alt}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
+                  {asset.caption && (
+                    <p
+                      style={{
+                        position:   'absolute',
+                        bottom:     0,
+                        left:       0,
+                        right:      0,
+                        padding:    '0.5rem 0.75rem',
+                        background: 'rgba(5,5,5,0.75)',
+                        fontFamily: 'var(--font-body)',
+                        fontSize:   '0.72rem',
+                        color:      'var(--color-brand-muted)',
+                        lineHeight: 1.3,
+                      }}
+                    >
+                      {asset.caption}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── Material Direction ──────────────────────────────────────── */}
       <section
@@ -354,72 +543,87 @@ export default function ChainsPage() {
         </div>
       </section>
 
-      {/* ── Promo-Ready Module ────────────────────────────────────── */}
-      <section
-        style={{
-          padding:      'clamp(3rem, 6vw, 4.5rem) 1.5rem',
-          borderBottom: '1px solid var(--color-brand-border)',
-        }}
-      >
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <span className="section-eyebrow" style={{ marginBottom: '0.75rem' }}>SPECIAL OF THE WEEK</span>
-
-          <div
-            style={{
-              padding:    'clamp(1.5rem, 4vw, 2.5rem)',
-              border:     '1px solid rgba(201,168,76,0.18)',
-              background: 'linear-gradient(135deg, rgba(201,168,76,0.04) 0%, rgba(201,168,76,0.01) 100%)',
-              position:   'relative',
-              overflow:   'hidden',
-            }}
-          >
-            <div aria-hidden="true" style={{
-              position:   'absolute',
-              inset:      0,
-              background: 'radial-gradient(ellipse 50% 60% at 90% 20%, rgba(201,168,76,0.05) 0%, transparent 70%)',
-            }} />
-
-            <p
+      {/* ── Active Offer slot ─────────────────────────────────────────────
+           Replaces the former hardcoded "SPECIAL OF THE WEEK" section.
+           Renders nothing while HAS_ACTIVE_OFFER is false.
+           Set HAS_ACTIVE_OFFER = true and populate ACTIVE_OFFER only when
+           a real confirmed offer exists. */}
+      {HAS_ACTIVE_OFFER && ACTIVE_OFFER !== null && (
+        <section
+          style={{
+            padding:      'clamp(3rem, 6vw, 4.5rem) 1.5rem',
+            borderBottom: '1px solid var(--color-brand-border)',
+          }}
+        >
+          <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+            <span className="section-eyebrow" style={{ marginBottom: '0.75rem' }}>SPECIAL OF THE WEEK</span>
+            <div
               style={{
-                fontFamily:   'var(--font-display)',
-                fontSize:     'clamp(1.4rem, 3vw, 2.2rem)',
-                fontWeight:   400,
-                color:        'var(--color-brand-white)',
-                lineHeight:   1.1,
-                marginBottom: '0.75rem',
-                position:     'relative',
+                padding:    'clamp(1.5rem, 4vw, 2.5rem)',
+                border:     '1px solid rgba(201,168,76,0.18)',
+                background: 'linear-gradient(135deg, rgba(201,168,76,0.04) 0%, rgba(201,168,76,0.01) 100%)',
+                position:   'relative',
+                overflow:   'hidden',
               }}
             >
-              Chain deals come through. Ask what&apos;s available.
-            </p>
-
-            <p
-              style={{
-                fontFamily:   'var(--font-body)',
-                fontSize:     '0.875rem',
-                color:        'var(--color-brand-muted)',
-                lineHeight:   1.65,
-                maxWidth:     '46ch',
-                marginBottom: '1.5rem',
-                position:     'relative',
-              }}
-            >
-              Special chain offers, featured pieces, and weekly highlights are confirmed
-              per availability. Text 2T to ask what&apos;s running now.
-            </p>
-
-            <a
-              href={WA_CHAINS}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline-gold"
-              style={{ position: 'relative' }}
-            >
-              ASK ABOUT CURRENT OFFERS →
-            </a>
+              <div aria-hidden="true" style={{
+                position:   'absolute',
+                inset:      0,
+                background: 'radial-gradient(ellipse 50% 60% at 90% 20%, rgba(201,168,76,0.05) 0%, transparent 70%)',
+              }} />
+              <p
+                style={{
+                  fontFamily:   'var(--font-display)',
+                  fontSize:     'clamp(1.4rem, 3vw, 2.2rem)',
+                  fontWeight:   400,
+                  color:        'var(--color-brand-white)',
+                  lineHeight:   1.1,
+                  marginBottom: '0.75rem',
+                  position:     'relative',
+                }}
+              >
+                {ACTIVE_OFFER.headline}
+              </p>
+              <p
+                style={{
+                  fontFamily:   'var(--font-body)',
+                  fontSize:     '0.875rem',
+                  color:        'var(--color-brand-muted)',
+                  lineHeight:   1.65,
+                  maxWidth:     '46ch',
+                  marginBottom: ACTIVE_OFFER.promoTerms ? '0.75rem' : '1.5rem',
+                  position:     'relative',
+                }}
+              >
+                {ACTIVE_OFFER.body}
+              </p>
+              {ACTIVE_OFFER.promoTerms && (
+                <p
+                  style={{
+                    fontFamily:    'var(--font-body)',
+                    fontSize:      '0.7rem',
+                    color:         'var(--color-brand-subtle)',
+                    letterSpacing: '0.03em',
+                    marginBottom:  '1.5rem',
+                    position:      'relative',
+                  }}
+                >
+                  {ACTIVE_OFFER.promoTerms}
+                </p>
+              )}
+              <a
+                href={`https://wa.me/14124524343?text=${encodeURIComponent(ACTIVE_OFFER.waMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline-gold"
+                style={{ position: 'relative' }}
+              >
+                {ACTIVE_OFFER.ctaLabel}
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ── Custom Pairing Bridge ─────────────────────────────────── */}
       <section
