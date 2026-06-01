@@ -1752,7 +1752,7 @@
   align-items:       center;
   padding:           0.4rem 0.9rem;
   border:            1px solid var(--color-brand-border);
-  border-radius:     100px;
+  border-radius:     3px;
   background:        transparent;
   font-family:       var(--font-body);
   font-size:         0.72rem;
@@ -1760,15 +1760,8 @@
   text-transform:    uppercase;
   letter-spacing:    0.05em;
   color:             var(--color-brand-muted);
-  cursor:            pointer;
-  transition:        border-color 140ms ease, color 140ms ease, background 140ms ease;
-  -webkit-tap-highlight-color: transparent;
+  cursor:            default;
   white-space:       nowrap;
-}
-
-.direction-chip:hover {
-  border-color: var(--color-brand-gold-dim);
-  color:        var(--color-brand-white);
 }
 
 .direction-chip-active {
