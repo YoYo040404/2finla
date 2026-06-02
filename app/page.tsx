@@ -3,7 +3,7 @@ import ProofContactZone from '@/components/home/ProofContactZone'
 import ShineDirectionBand from '@/components/home/ShineDirectionBand'
 
 const WA_BUILD  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20want%20to%20build%20something%20custom.'
-const WA_PROMO  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%20promos%20are%20running%20right%20now%3F'
+const WA_PROMO  = 'https://wa.me/14124524343?text=What%27s%20running%20this%20week%20at%202T%3F'
 const WA_STOCK  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%20do%20you%20have%20in%20stock%20right%20now%3F'
 const WA_ASK    = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20ask%20about%20a%20piece.'
 
@@ -13,7 +13,7 @@ const ANCHOR_TILES = [
     label:       'GRILLZ.',
     tone:        'pb-grillz',
     gleam:       true,
-    sub:         'Custom fit. Gold or stones. Ask 2T first.',
+    sub:         'Fit-first grillz. Gold or stones. Come through or text 2T first.',
     pills:       ['TOP SET', 'BOTTOM SET', 'FULL MOUTH', 'ICE'],
     pillGold:    'ICE',
     cornerL:     'GOLD TEETH',
@@ -25,7 +25,7 @@ const ANCHOR_TILES = [
     label:       'WATCHES.',
     tone:        'pb-watches',
     gleam:       true,
-    sub:         'Iced looks. Details confirmed per piece.',
+    sub:         "Ask what's available. Details confirmed per piece.",
     pills:       ['ICED BEZEL', 'BUST DOWN', 'ICED OUT'],
     pillIce:     'ICED BEZEL',
     cornerL:     'ICE BEZEL',
@@ -37,7 +37,7 @@ const ANCHOR_TILES = [
     label:       'CHAINS.',
     tone:        'pb-chains',
     gleam:       true,
-    sub:         "Cuban, rope, and tennis. Ask what's in.",
+    sub:         "Cuban, rope, or tennis. Ask what's in stock.",
     pills:       ['CUBAN', 'ROPE', 'TENNIS'],
     cornerL:     'NECK GAME',
     href:        '/collections/chains',
@@ -48,10 +48,10 @@ const ANCHOR_TILES = [
 
 // Secondary tiles — each tone maps to a per-category vitrine surface in globals.css
 const SECONDARY_TILES = [
-  { label: 'PENDANTS.',  tone: 'pb-pendants',  sub: 'Photo, logo, name. Send the idea.',           href: '/collections/pendants'  },
-  { label: 'RINGS.',     tone: 'pb-rings',     sub: 'Big face. Heavy statement. Details per piece.', href: '/collections/rings'     },
-  { label: 'BRACELETS.', tone: 'pb-bracelets', sub: 'Wrist shine with weight. Text to ask.',        href: '/collections/bracelets' },
-  { label: 'EARRINGS.',  tone: 'pb-earrings',  sub: "Iced and clean. Ask what's available.",        href: '/collections/earrings'  },
+  { label: 'PENDANTS.',  tone: 'pb-pendants',  sub: 'Photo, logo, name, or number. Send the idea.',  href: '/collections/pendants'  },
+  { label: 'RINGS.',     tone: 'pb-rings',     sub: "Statement ring. Ask what's available.",          href: '/collections/rings'     },
+  { label: 'BRACELETS.', tone: 'pb-bracelets', sub: "Wrist game with weight. Ask what's in stock.",  href: '/collections/bracelets' },
+  { label: 'EARRINGS.',  tone: 'pb-earrings',  sub: 'Iced and clean. Ask about availability.',       href: '/collections/earrings'  },
 ] as const
 
 // Demo concept visuals for secondary tiles — replace with real 2T product media when available
@@ -147,7 +147,7 @@ export default function HomePage() {
             }}
           >
             Grillz. Watches. Chains. Pendants. Custom.{' '}
-            <span style={{ color: 'var(--color-brand-muted)' }}>Real Pittsburgh jeweler. Text 2T.</span>
+            <span style={{ color: 'var(--color-brand-muted)' }}>Pittsburgh jeweler. Text 2T or come through.</span>
           </p>
 
           <div className="reveal reveal-d3" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center', marginBottom: '1.25rem' }}>
@@ -379,11 +379,11 @@ export default function HomePage() {
        */}
       <div className="promo-ticker" role="complementary" aria-label="What's running at 2T">
         <div className="promo-ticker-inner">
-          <span className="promo-ticker-item">ASK WHAT&rsquo;S RUNNING THIS WEEK</span>
+          <span className="promo-ticker-item">THIS WEEK AT 2T</span>
           <span className="promo-ticker-sep" aria-hidden="true">◆</span>
-          <span className="promo-ticker-item">DETAILS CONFIRMED PER PIECE</span>
+          <span className="promo-ticker-item">ASK WHAT&rsquo;S RUNNING — CHAINS · PENDANTS · GRILLZ · CUSTOM</span>
           <span className="promo-ticker-sep promo-ticker-wide" aria-hidden="true">◆</span>
-          <span className="promo-ticker-item promo-ticker-wide">TEXT 2T FOR CURRENT DEALS</span>
+          <span className="promo-ticker-item promo-ticker-wide">PROMO TERMS ON ELIGIBLE PIECES ONLY</span>
           <span className="promo-ticker-sep" aria-hidden="true">◆</span>
           <a
             href={WA_PROMO}
@@ -391,7 +391,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className="promo-ticker-cta"
           >
-            TEXT 2T →
+            ASK WHAT&rsquo;S RUNNING →
           </a>
         </div>
       </div>

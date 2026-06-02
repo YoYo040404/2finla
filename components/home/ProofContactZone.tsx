@@ -10,7 +10,7 @@ import type { ReactNode } from 'react'
 const CHANNELS = [
   {
     platform:  'TIKTOK',
-    copy:      'Watch the shine.',
+    copy:      'Watch the build.',
     handle:    '@2tjewelers',
     href:      'https://www.tiktok.com/@2tjewelers',
     wa:        false,
@@ -20,7 +20,7 @@ const CHANNELS = [
   },
   {
     platform:  'INSTAGRAM',
-    copy:      'Real pieces. Real shots.',
+    copy:      "See what's dropping.",
     handle:    '@2tjewelers',
     href:      'https://www.instagram.com/2tjewelers/',
     wa:        false,
@@ -30,7 +30,7 @@ const CHANNELS = [
   },
   {
     platform:  'WHATSAPP',
-    copy:      'Hit us up. Ask before you buy.',
+    copy:      "Text before you buy. Ask what's available.",
     handle:    'TEXT 2T',
     href:      'https://wa.me/14124524343',
     wa:        true,
@@ -142,13 +142,13 @@ export default function ProofContactZone() {
             lineHeight: 0.88,
             marginBottom: '1rem',
           }}>
-            BUILT IN{' '}
+            PITTSBURGH JEWELER.{' '}
             <em style={{
               fontStyle: 'italic',
               color: 'var(--color-brand-gold)',
               fontFamily: 'var(--font-display)',
             }}>
-              PITTSBURGH.
+              25 YEARS.
             </em>
           </h2>
 
@@ -160,7 +160,7 @@ export default function ProofContactZone() {
             maxWidth: '40ch',
             marginBottom: '1.75rem',
           }}>
-            25 years in downtown Pittsburgh. Chains, watches, grillz, pendants, repairs, and custom work.
+            Text or come through. Direct access. Details confirmed per piece.
           </p>
 
           {/* Social channel map — platform label removed (icon identifies platform) */}

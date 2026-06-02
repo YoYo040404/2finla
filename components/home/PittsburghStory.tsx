@@ -108,7 +108,7 @@ export default function PittsburghStory() {
               marginBottom: '1.25rem',
             }}
           >
-            BUILT IN{' '}
+            PITTSBURGH JEWELER.{' '}
             <em
               style={{
                 fontStyle: 'italic',
@@ -116,7 +116,7 @@ export default function PittsburghStory() {
                 fontFamily: 'var(--font-display)',
               }}
             >
-              PITTSBURGH.
+              25 YEARS.
             </em>
           </h2>
 
@@ -128,22 +128,10 @@ export default function PittsburghStory() {
               color: 'var(--color-brand-silver)',
               lineHeight: 1.68,
               maxWidth: '40ch',
-              marginBottom: '1rem',
-            }}
-          >
-            25 years in downtown Pittsburgh. Chains, watches, grillz, pendants, repairs, and custom pieces built to stand out.
-          </p>
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '0.9375rem',
-              color: 'var(--color-brand-muted)',
-              lineHeight: 1.65,
-              maxWidth: '40ch',
               marginBottom: '1.75rem',
             }}
           >
-            Shop what&rsquo;s available or bring the idea. Text 2T before you buy or build.
+            Text or come through. Direct access. Details confirmed per piece.
           </p>
 
           {/* BANG. — brand signature */}
