@@ -88,8 +88,8 @@ const CATEGORIES = [
   },
   {
     slug:  'best-sellers',
-    label: 'Best Sellers',
-    sub:   'Ask what people are getting. Text 2T to confirm.',
+    label: 'Most Asked About',
+    sub:   'What people text 2T for. Ask what\'s available now.',
     cta:   'TEXT 2T →',
     svg: (
       <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
@@ -101,8 +101,8 @@ const CATEGORIES = [
   },
   {
     slug:  'new-arrivals',
-    label: 'New Arrivals',
-    sub:   'Ask what\'s coming in. Text 2T to confirm.',
+    label: 'Ask What Just Landed',
+    sub:   'New directions as they come in. Text 2T to find out.',
     cta:   'TEXT 2T →',
     svg: (
       <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
@@ -116,6 +116,11 @@ const CATEGORIES = [
     glow: 'rgba(208,238,255,0.08)',
   },
 ]
+
+const SHOP_CATS     = CATEGORIES.filter(c => !['best-sellers', 'new-arrivals'].includes(c.slug))
+const DISCOVER_CATS = CATEGORIES.filter(c =>  ['best-sellers', 'new-arrivals'].includes(c.slug))
+const ROW1 = SHOP_CATS.slice(0, 3)  // Chains, Pendants, Bracelets
+const ROW2 = SHOP_CATS.slice(3)     // Rings, Earrings
 
 export default function CollectionsPage() {
   return (
@@ -213,24 +218,40 @@ export default function CollectionsPage() {
         </div>
       </section>
 
-      {/* ── Category grid ───────────────────────────────────────── */}
+      {/* ── Product category grid: 3+2, no empty holes ─────────── */}
       <section
         style={{
-          padding:   'clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 3vw, 2.5rem)',
-          maxWidth:  '1080px',
-          margin:    '0 auto',
+          padding:  'clamp(2rem, 4vw, 3rem) clamp(1.25rem, 3vw, 2.5rem) clamp(1rem, 2vw, 1.5rem)',
+          maxWidth: '1080px',
+          margin:   '0 auto',
         }}
       >
-        <div
+        {/* Eyebrow */}
+        <p
           style={{
-            display:             'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
-            gap:                 '1px',
-            background:          'var(--color-brand-border)',
-            border:              '1px solid var(--color-brand-border)',
+            fontFamily:    'var(--font-mono)',
+            fontSize:      '0.62rem',
+            letterSpacing: '0.16em',
+            textTransform: 'uppercase',
+            color:         'var(--color-brand-gold)',
+            opacity:       0.7,
+            marginBottom:  '1.25rem',
           }}
         >
-          {CATEGORIES.map((cat) => (
+          Shop by piece
+        </p>
+
+        {/* Row 1: Chains / Pendants / Bracelets — 3 equal columns */}
+        <div
+          className="grid grid-cols-1 sm:grid-cols-3"
+          style={{
+            gap:          '1px',
+            background:   'var(--color-brand-border)',
+            border:       '1px solid var(--color-brand-border)',
+            marginBottom: '1px',
+          }}
+        >
+          {ROW1.map((cat) => (
             <Link
               key={cat.slug}
               href={`/collections/${cat.slug}`}
@@ -241,10 +262,10 @@ export default function CollectionsPage() {
                 alignItems:     'flex-start',
                 gap:            '20px',
                 padding:        '36px 28px',
+                minHeight:      '220px',
                 position:       'relative',
                 overflow:       'hidden',
                 textDecoration: 'none',
-                background:     'var(--color-brand-black)',
               }}
             >
               <div
@@ -258,42 +279,150 @@ export default function CollectionsPage() {
               />
               <div style={{ position: 'relative' }}>{cat.svg}</div>
               <div style={{ position: 'relative', flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                <div
-                  style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize:   'clamp(1.3rem, 2.5vw, 1.5rem)',
-                    fontWeight: 400,
-                    color:      'var(--color-brand-white)',
-                    lineHeight: 1.0,
-                  }}
-                >
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.3rem, 2.5vw, 1.5rem)', fontWeight: 400, color: 'var(--color-brand-white)', lineHeight: 1.0 }}>
                   {cat.label}
                 </div>
-                <div
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize:   '0.8125rem',
-                    color:      'var(--color-brand-muted)',
-                    lineHeight: 1.5,
-                  }}
-                >
+                <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.8125rem', color: 'var(--color-brand-muted)', lineHeight: 1.5 }}>
                   {cat.sub}
                 </div>
               </div>
-              <div
-                style={{
-                  fontFamily:    'var(--font-body)',
-                  fontSize:      '0.72rem',
-                  letterSpacing: '0.08em',
-                  color:         'var(--color-brand-gold)',
-                  textTransform: 'uppercase',
-                  position:      'relative',
-                }}
-              >
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', letterSpacing: '0.08em', color: 'var(--color-brand-gold)', textTransform: 'uppercase', position: 'relative' }}>
                 {cat.cta}
               </div>
             </Link>
           ))}
+        </div>
+
+        {/* Row 2: Rings / Earrings — 2 wider cards, no top border (seamless with row 1) */}
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2"
+          style={{
+            gap:          '1px',
+            background:   'var(--color-brand-border)',
+            borderLeft:   '1px solid var(--color-brand-border)',
+            borderRight:  '1px solid var(--color-brand-border)',
+            borderBottom: '1px solid var(--color-brand-border)',
+          }}
+        >
+          {ROW2.map((cat) => (
+            <Link
+              key={cat.slug}
+              href={`/collections/${cat.slug}`}
+              className="cat-grid-link"
+              style={{
+                display:        'flex',
+                flexDirection:  'column',
+                alignItems:     'flex-start',
+                gap:            '20px',
+                padding:        '36px 28px',
+                minHeight:      '180px',
+                position:       'relative',
+                overflow:       'hidden',
+                textDecoration: 'none',
+              }}
+            >
+              <div
+                aria-hidden="true"
+                style={{
+                  position:      'absolute',
+                  inset:         0,
+                  background:    `radial-gradient(circle at 30% 40%, ${cat.glow} 0%, transparent 65%)`,
+                  pointerEvents: 'none',
+                }}
+              />
+              <div style={{ position: 'relative' }}>{cat.svg}</div>
+              <div style={{ position: 'relative', flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.3rem, 2.5vw, 1.5rem)', fontWeight: 400, color: 'var(--color-brand-white)', lineHeight: 1.0 }}>
+                  {cat.label}
+                </div>
+                <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.8125rem', color: 'var(--color-brand-muted)', lineHeight: 1.5 }}>
+                  {cat.sub}
+                </div>
+              </div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', letterSpacing: '0.08em', color: 'var(--color-brand-gold)', textTransform: 'uppercase', position: 'relative' }}>
+                {cat.cta}
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Discover strip — intentionally separated ─────────────── */}
+      <section
+        style={{
+          padding:      'clamp(2rem, 4vw, 3rem) clamp(1.25rem, 3vw, 2.5rem)',
+          background:   'var(--color-brand-charcoal)',
+          borderTop:    '1px solid var(--color-brand-border)',
+          borderBottom: '1px solid var(--color-brand-border)',
+        }}
+      >
+        <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
+
+          {/* Eyebrow */}
+          <p
+            style={{
+              fontFamily:    'var(--font-mono)',
+              fontSize:      '0.6rem',
+              letterSpacing: '0.16em',
+              textTransform: 'uppercase',
+              color:         'var(--color-brand-gold)',
+              opacity:       0.62,
+              marginBottom:  '1rem',
+            }}
+          >
+            Ask first
+          </p>
+
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2"
+            style={{
+              gap:        '1px',
+              background: 'var(--color-brand-border)',
+              border:     '1px solid var(--color-brand-border)',
+            }}
+          >
+            {DISCOVER_CATS.map((cat) => (
+              <Link
+                key={cat.slug}
+                href={`/collections/${cat.slug}`}
+                className="cat-grid-link"
+                style={{
+                  display:        'flex',
+                  flexDirection:  'column',
+                  alignItems:     'flex-start',
+                  gap:            '16px',
+                  padding:        '28px 28px',
+                  position:       'relative',
+                  overflow:       'hidden',
+                  textDecoration: 'none',
+                  borderLeft:     '2px solid rgba(201,168,76,0.28)',
+                }}
+              >
+                <div
+                  aria-hidden="true"
+                  style={{
+                    position:      'absolute',
+                    inset:         0,
+                    background:    `radial-gradient(circle at 0% 50%, ${cat.glow} 0%, transparent 60%)`,
+                    pointerEvents: 'none',
+                  }}
+                />
+                <div style={{ position: 'relative' }}>{cat.svg}</div>
+                <div style={{ position: 'relative', flex: 1, display: 'flex', flexDirection: 'column', gap: '5px' }}>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.15rem, 2vw, 1.35rem)', fontWeight: 400, color: 'var(--color-brand-white)', lineHeight: 1.05 }}>
+                    {cat.label}
+                  </div>
+                  <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.8rem', color: 'var(--color-brand-muted)', lineHeight: 1.5 }}>
+                    {cat.sub}
+                  </div>
+                </div>
+                <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', letterSpacing: '0.08em', color: 'var(--color-brand-gold)', textTransform: 'uppercase', position: 'relative' }}>
+                  {cat.cta}
+                </div>
+              </Link>
+            ))}
+          </div>
+
         </div>
       </section>
 

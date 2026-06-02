@@ -27,8 +27,8 @@ export const shopCategories: NavItem[] = [
   { label: 'Watches',          href: '/watches' },
   { label: 'Grillz',           href: '/grillz' },
   { label: 'Custom Jewelry',   href: '/custom' },
-  { label: 'New Arrivals',     href: '/collections/new-arrivals', tag: 'New' },
-  { label: 'Best Sellers',     href: '/collections/best-sellers' },
+  { label: 'Ask What Just Landed', href: '/collections/new-arrivals', tag: 'New' },
+  { label: 'Most Asked About',     href: '/collections/best-sellers' },
 ]
 
 export const homepageCategories: string[] = [
@@ -66,8 +66,8 @@ export const footerNav: NavGroup[] = [
     title: 'Browse',
     links: [
       { label: 'All Collections', href: '/collections' },
-      { label: 'Best Sellers',    href: '/collections/best-sellers' },
-      { label: 'New Arrivals',    href: '/collections/new-arrivals' },
+      { label: 'Most Asked About',     href: '/collections/best-sellers' },
+      { label: 'Ask What Just Landed', href: '/collections/new-arrivals' },
     ],
   },
 ]

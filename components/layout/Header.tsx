@@ -27,7 +27,7 @@ const SHOP_GROUPS = [
   },
   {
     items: shopCategories.filter(c =>
-      ['New Arrivals', 'Best Sellers'].includes(c.label)
+      ['Ask What Just Landed', 'Most Asked About'].includes(c.label)
     ),
     gold: false,
   },
@@ -114,6 +114,26 @@ export function Header() {
                         zIndex:          100,
                       }}
                     >
+                      {/* All Collections — top of dropdown */}
+                      <Link
+                        href="/collections"
+                        className="nav-link flex items-center px-3 py-2"
+                        style={{
+                          fontSize:     '0.8125rem',
+                          borderRadius: '2px',
+                          fontWeight:   600,
+                          color:        'var(--color-brand-gold)',
+                          opacity:      0.9,
+                        }}
+                      >
+                        All Collections
+                      </Link>
+                      <div style={{
+                        height:     '1px',
+                        background: 'var(--color-brand-border)',
+                        margin:     '4px 8px',
+                      }} />
+
                       {SHOP_GROUPS.map((group, gi) => (
                         <div key={gi}>
                           {gi > 0 && (

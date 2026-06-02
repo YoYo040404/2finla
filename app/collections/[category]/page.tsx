@@ -15,20 +15,23 @@ type StyleCard = {
 }
 
 type CategoryData = {
-  title:          string
-  headline:       string
-  body:           string
-  note:           string
-  glow:           string
-  svg:            React.ReactNode
-  styles?:        StyleCard[]
-  chips?:         string[]
-  materialChips?: string[]
-  stoneChips?:    string[]
-  directionNote?: string
-  waMessage:      string
-  primaryCta:     string
-  noCtaBox?:      boolean
+  title:           string
+  headline:        string
+  body:            string
+  note:            string
+  glow:            string
+  svg:             React.ReactNode
+  styles?:         StyleCard[]
+  stylesEyebrow?:  string
+  stylesSubhead?:  string
+  ctaHeading?:     string
+  chips?:          string[]
+  materialChips?:  string[]
+  stoneChips?:     string[]
+  directionNote?:  string
+  waMessage:       string
+  primaryCta:      string
+  noCtaBox?:       boolean
 }
 
 // ─── WhatsApp helper ──────────────────────────────────────────────────────────
@@ -541,33 +544,168 @@ const CATEGORY_DATA: Record<string, CategoryData> = {
   },
 
   'best-sellers': {
-    title:      'Best Sellers',
-    headline:   'Ask what\'s moving.',
-    body:       'Chains, pendants, grillz, watches — text 2T to ask what people are getting and what\'s available now. Product details confirmed per piece.',
-    note:       'Ask about current availability. Details confirmed per piece.',
-    glow:       'rgba(201,168,76,0.10)',
-    waMessage:  "Hey 2T — I want to ask what pieces are popular right now.",
-    primaryCta: 'TEXT 2T WHAT\'S MOVING →',
-    chips:         ['Chains', 'Pendants', 'Grillz', 'Watches', 'Custom Pieces'],
-    directionNote: 'Gold or silver direction. Diamond or moissanite. Text 2T to ask what\'s available.',
+    title:         'Most Asked About',
+    headline:      'What people text 2T for.',
+    body:          "Chains that hit the neck. Pendants that mean something. Grillz that fit. Watches that speak. Ask what people are getting — we'll tell you what's available now.",
+    note:          "Availability changes. Text 2T to confirm what's in stock now.",
+    glow:          'rgba(201,168,76,0.10)',
+    waMessage:     "Hey 2T — I want to ask what pieces people are getting most right now and what's available.",
+    primaryCta:    "TEXT 2T WHAT'S MOVING →",
+    stylesEyebrow: 'MOST ASKED ABOUT',
+    stylesSubhead: '6 directions people text 2T for most.',
+    ctaHeading:    'Text 2T. Find what people are getting.',
+    directionNote: 'Gold or silver. Diamond or moissanite. Different shine. Different direction. Details confirmed per piece.',
     svg: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
         <polygon points="32,4 38,24 60,24 43,37 49,58 32,45 15,58 21,37 4,24 26,24" stroke="rgba(201,168,76,0.65)" strokeWidth="1.5" fill="none"/>
         <circle cx="32" cy="32" r="6" fill="rgba(201,168,76,0.5)"/>
       </svg>
     ),
+    styles: [
+      {
+        title:       'CUBAN CHAINS',
+        description: 'Foundation of the neck. The most-asked-about chain at 2T. Ask about width, length, material, and what\'s in stock.',
+        specs:       ['Cuban link — flat interlocking', "Width and length: ask what's in", 'Gold or silver direction', 'Clean or iced-out'],
+        imageSrc:    null,
+        imageAlt:    'Cuban chain direction at 2T',
+        waMessage:   "Hey 2T — I'm asking about Cuban chains. What widths and styles do you have available?",
+        illustration: (
+          <svg viewBox="0 0 240 110" fill="none" width="100%" height="100%">
+            {([40, 83, 126, 169] as const).map(cx => (
+              <ellipse key={cx} cx={cx} cy="55" rx="21" ry="13" stroke={G} strokeWidth="2"/>
+            ))}
+            {([62, 105, 148] as const).map(cx => (
+              <circle key={cx} cx={cx} cy="55" r="3" fill={IC} opacity="0.65"/>
+            ))}
+            <line x1="188" y1="55" x2="210" y2="55" stroke={GB} strokeWidth="1.5" strokeLinecap="round"/>
+            <circle cx="210" cy="55" r="4" fill={G} opacity="0.65"/>
+          </svg>
+        ),
+      },
+      {
+        title:       'CUSTOM PENDANTS',
+        description: 'Logo, photo, name, or number. The most requested custom direction. Send the idea — we quote before the build.',
+        specs:       ['Photo, logo, name, or number pendant', 'Custom or ready-made direction', 'Gold or silver direction', 'No deposit to start'],
+        imageSrc:    null,
+        imageAlt:    'Custom pendant direction at 2T',
+        waMessage:   "Hey 2T — I'm asking about custom pendants. Can I send a photo, logo, or name?",
+        illustration: (
+          <svg viewBox="0 0 240 110" fill="none" width="100%" height="100%">
+            <rect x="113" y="8" width="14" height="18" rx="7" stroke={IC} strokeWidth="1.5"/>
+            <path d="M76 55 L120 22 L164 55 L120 94 Z" stroke={IC} strokeWidth="1.8"/>
+            <path d="M76 55 L120 66 L164 55" stroke={IC} strokeWidth="0.75" opacity="0.35"/>
+            <circle cx="120" cy="58" r="9" fill={IC} opacity="0.45"/>
+            <circle cx="120" cy="58" r="4.5" fill={IC} opacity="0.9"/>
+          </svg>
+        ),
+      },
+      {
+        title:       'GRILLZ',
+        description: 'Top set, bottom set, full mouth. The most asked-about custom piece. Text to start the fit conversation.',
+        specs:       ['Top set / bottom set / full mouth', 'Gold or silver direction', 'Stone options available', 'Text to ask about the process'],
+        imageSrc:    null,
+        imageAlt:    'Grillz direction at 2T',
+        waMessage:   "Hey 2T — I'm asking about grillz. What's the process and what's available?",
+        illustration: (
+          <svg viewBox="0 0 240 110" fill="none" width="100%" height="100%">
+            <path d="M52 35 Q120 20 188 35 L188 72 Q120 87 52 72 Z" stroke={G} strokeWidth="1.8" fill="none"/>
+            {([0,1,2,3,4,5] as const).map(i => (
+              <rect key={i} x={63 + i * 21} y="38" width="14" height="26" rx="2" stroke={GF} strokeWidth="1.2"/>
+            ))}
+            {([0,2,4] as const).map(i => (
+              <circle key={`g${i}`} cx={70 + i * 21} cy="51" r="3.5" fill={IC} opacity="0.5"/>
+            ))}
+          </svg>
+        ),
+      },
+      {
+        title:       'ICED WATCHES',
+        description: 'Bust-down and iced-out directions. High-ticket, high-ask. Text before you buy — details confirmed per piece.',
+        specs:       ['Ask what watches are available now', 'Condition confirmed per piece', 'Details and pricing by text', 'Ask before you commit'],
+        imageSrc:    null,
+        imageAlt:    'Iced watch direction at 2T',
+        waMessage:   "Hey 2T — I'm asking about iced watches. What do you have available?",
+        illustration: (
+          <svg viewBox="0 0 240 110" fill="none" width="100%" height="100%">
+            <circle cx="120" cy="55" r="34" stroke={G} strokeWidth="2.5"/>
+            <circle cx="120" cy="55" r="25" stroke={GF} strokeWidth="1"/>
+            <circle cx="120" cy="55" r="16" stroke={GB} strokeWidth="1.5"/>
+            {([0,1,2,3,4,5,6,7] as const).map(i => {
+              const a = (i / 8) * Math.PI * 2 - Math.PI / 2
+              const x = 120 + 30 * Math.cos(a)
+              const y = 55  + 30 * Math.sin(a)
+              return <circle key={i} cx={x} cy={y} r="3" fill={IC} opacity="0.72"/>
+            })}
+            <line x1="120" y1="55" x2="120" y2="38" stroke={IC} strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="120" y1="55" x2="134" y2="55" stroke={IC} strokeWidth="1.5" strokeLinecap="round"/>
+          </svg>
+        ),
+      },
+      {
+        title:       'ROPE + TENNIS CHAINS',
+        description: 'Second and third most-asked chains. Rope or tennis — ask about width, length, material, and what\'s in stock.',
+        specs:       ['Rope chain or tennis direction', 'Width and length confirmed per piece', 'Gold or silver direction', 'Stone or clean — ask what fits'],
+        imageSrc:    null,
+        imageAlt:    'Rope and tennis chain direction at 2T',
+        waMessage:   "Hey 2T — I'm asking about rope or tennis chains. What styles and sizes do you have?",
+        illustration: (
+          <svg viewBox="0 0 240 110" fill="none" width="100%" height="100%">
+            <path d="M28 34 Q120 24 212 34" stroke={G} strokeWidth="4" strokeLinecap="round"/>
+            <path d="M28 40 Q120 30 212 40" stroke={GF} strokeWidth="2" strokeDasharray="12 7" opacity="0.5"/>
+            {([0,1,2,3,4,5,6,7] as const).map(i => {
+              const x = 36 + i * 24
+              return (
+                <g key={i}>
+                  <circle cx={x} cy="72" r="7.5" stroke={G} strokeWidth="1.5"/>
+                  <circle cx={x} cy="72" r="4"   fill={IC}  opacity="0.6"/>
+                </g>
+              )
+            })}
+          </svg>
+        ),
+      },
+      {
+        title:       'NOT SURE YET',
+        description: 'Start with the look. Text 2T and we\'ll point you to the right piece.',
+        specs:       ['Chains, pendants, grillz, or watches', 'Gold or silver direction', 'Details confirmed per piece', 'Ask what\'s available'],
+        imageSrc:    null,
+        imageAlt:    'Not sure yet — all directions available at 2T',
+        waMessage:   "Hey 2T — I'm not sure what I want yet. Can you help me figure out the right piece?",
+        illustration: (
+          <svg viewBox="0 0 240 110" fill="none" width="100%" height="100%">
+            <circle cx="120" cy="55" r="30" stroke={GF} strokeWidth="1" strokeDasharray="4 4"/>
+            <circle cx="120" cy="55" r="10" stroke={G} strokeWidth="1.5"/>
+            <circle cx="120" cy="55" r="4" fill={G} opacity="0.7"/>
+            {([0,1,2,3] as const).map(i => {
+              const a = (i / 4) * Math.PI * 2 - Math.PI / 4
+              const x2 = 120 + 24 * Math.cos(a)
+              const y2 = 55  + 24 * Math.sin(a)
+              return <line key={i} x1={120} y1={55} x2={x2} y2={y2} stroke={GB} strokeWidth="1.5" strokeLinecap="round"/>
+            })}
+            {([0,1,2,3] as const).map(i => {
+              const a = (i / 4) * Math.PI * 2
+              const x = 120 + 44 * Math.cos(a)
+              const y = 55  + 44 * Math.sin(a)
+              return <circle key={`o${i}`} cx={x} cy={y} r="4.5" stroke={IC} strokeWidth="1.2" fill="none"/>
+            })}
+          </svg>
+        ),
+      },
+    ],
   },
 
   'new-arrivals': {
-    title:      'New Arrivals',
-    headline:   'Ask what just came in.',
-    body:       'New pieces and directions as they come in. Text 2T to ask what\'s available and what\'s coming next. Product details confirmed per piece.',
-    note:       'Availability changes. Text us to confirm.',
-    glow:       'rgba(208,238,255,0.07)',
-    waMessage:  "Hey 2T — I want to ask what's new or just came in.",
-    primaryCta: 'TEXT 2T WHAT\'S NEW →',
-    chips:         ['Chains', 'Pendants', 'Grillz', 'Watches', 'Custom Direction'],
-    directionNote: 'Gold or silver direction. Diamond or moissanite. Text 2T to ask what\'s available.',
+    title:         'Ask What Just Landed',
+    headline:      'New pieces. New directions. Text 2T to find out.',
+    body:          "New chains, pendants, watches, grillz, and custom directions as they come in. Availability changes. The fastest way to know what just landed is to text us.",
+    note:          'Availability changes fast. Text 2T to confirm before you make a move.',
+    glow:          'rgba(208,238,255,0.07)',
+    waMessage:     "Hey 2T — I want to ask what just came in. What's new in chains, pendants, watches, or custom directions?",
+    primaryCta:    "TEXT 2T WHAT'S NEW →",
+    stylesEyebrow: 'ASK WHAT JUST LANDED',
+    stylesSubhead: '6 directions to ask about now.',
+    ctaHeading:    'Text 2T. Ask what just came in.',
+    directionNote: 'Gold or silver. Diamond or moissanite. Different shine. Different direction. Details confirmed per piece.',
     svg: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
         <circle cx="32" cy="32" r="24" stroke="rgba(208,238,255,0.35)" strokeWidth="1.5" strokeDasharray="4 3"/>
@@ -577,6 +715,131 @@ const CATEGORY_DATA: Record<string, CategoryData> = {
         <circle cx="32" cy="10" r="3" fill="rgba(201,168,76,0.8)"/>
       </svg>
     ),
+    styles: [
+      {
+        title:       'NEW CHAINS',
+        description: 'When new chains come in, they move. Ask before they go — Cuban, rope, or tennis direction.',
+        specs:       ['Cuban, rope, or tennis direction', "Width and length: ask what's in", 'Gold or silver direction', 'Iced or clean'],
+        imageSrc:    null,
+        imageAlt:    'New chain direction at 2T',
+        waMessage:   "Hey 2T — I want to ask what chains just came in. What's new?",
+        illustration: (
+          <svg viewBox="0 0 240 110" fill="none" width="100%" height="100%">
+            {([40, 83, 126, 169] as const).map(cx => (
+              <ellipse key={cx} cx={cx} cy="60" rx="21" ry="13" stroke={G} strokeWidth="2"/>
+            ))}
+            {([62, 105, 148] as const).map(cx => (
+              <circle key={cx} cx={cx} cy="60" r="3" fill={IC} opacity="0.65"/>
+            ))}
+            <line x1="196" y1="20" x2="196" y2="32" stroke={IC} strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="190" y1="26" x2="202" y2="26" stroke={IC} strokeWidth="1.5" strokeLinecap="round"/>
+            <circle cx="196" cy="26" r="6" stroke={IC} strokeWidth="1" opacity="0.4"/>
+          </svg>
+        ),
+      },
+      {
+        title:       'FRESH PENDANTS',
+        description: 'New iced-out, custom-ready, or ready-made pendants as they come in. Ask first — details confirmed per piece.',
+        specs:       ['Iced-out or clean direction', 'Custom or ready-made', 'Gold or silver direction', 'Details confirmed per piece'],
+        imageSrc:    null,
+        imageAlt:    'Fresh pendant direction at 2T',
+        waMessage:   "Hey 2T — I want to ask what pendants just came in. What's new?",
+        illustration: (
+          <svg viewBox="0 0 240 110" fill="none" width="100%" height="100%">
+            <rect x="113" y="8" width="14" height="18" rx="7" stroke={G} strokeWidth="1.5"/>
+            <path d="M76 55 L120 22 L164 55 L120 94 Z" stroke={G} strokeWidth="1.8"/>
+            <path d="M76 55 L120 66 L164 55" stroke={G} strokeWidth="0.75" opacity="0.35"/>
+            <circle cx="120" cy="58" r="9" fill={G} opacity="0.38"/>
+            <circle cx="120" cy="58" r="4.5" fill={G} opacity="0.85"/>
+            <circle cx="163" cy="22" r="4" fill={IC} opacity="0.8"/>
+            <line x1="163" y1="13" x2="163" y2="17" stroke={IC} strokeWidth="1.2" strokeLinecap="round"/>
+            <line x1="172" y1="22" x2="168" y2="22" stroke={IC} strokeWidth="1.2" strokeLinecap="round"/>
+          </svg>
+        ),
+      },
+      {
+        title:       'INCOMING GRILLZ',
+        description: 'New grillz directions and options as they arrive. Text to start the fit conversation before anything gets made.',
+        specs:       ['Top set / bottom set / full mouth', 'Gold or silver direction', 'Stone options as they come in', 'Text to ask about the process'],
+        imageSrc:    null,
+        imageAlt:    'Incoming grillz direction at 2T',
+        waMessage:   "Hey 2T — I want to ask what grillz are available or coming in soon.",
+        illustration: (
+          <svg viewBox="0 0 240 110" fill="none" width="100%" height="100%">
+            <path d="M52 35 Q120 20 188 35 L188 72 Q120 87 52 72 Z" stroke={GB} strokeWidth="1.8" fill="none"/>
+            {([0,1,2,3,4,5] as const).map(i => (
+              <rect key={i} x={63 + i * 21} y="38" width="14" height="26" rx="2" stroke={GF} strokeWidth="1.2"/>
+            ))}
+            {([1,3,5] as const).map(i => (
+              <circle key={`n${i}`} cx={70 + i * 21} cy="51" r="3.5" fill={IC} opacity="0.58"/>
+            ))}
+            <path d="M196 40 L208 53 L196 66" stroke={IC} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+          </svg>
+        ),
+      },
+      {
+        title:       'WATCH INQUIRIES',
+        description: 'New watch inventory moves fast. Text before it\'s gone — details and pricing confirmed per piece.',
+        specs:       ['Ask what watches are available now', 'Iced-out and bust-down directions', 'Condition confirmed per piece', 'Text before you commit'],
+        imageSrc:    null,
+        imageAlt:    'Watch inquiry at 2T',
+        waMessage:   "Hey 2T — I want to ask what watches just came in or are available now.",
+        illustration: (
+          <svg viewBox="0 0 240 110" fill="none" width="100%" height="100%">
+            <circle cx="120" cy="55" r="34" stroke={GB} strokeWidth="2.5"/>
+            <circle cx="120" cy="55" r="25" stroke={GF} strokeWidth="1"/>
+            <circle cx="120" cy="55" r="16" stroke={GF} strokeWidth="1.5"/>
+            {([0,1,2,3,4,5,6,7] as const).map(i => {
+              const a = (i / 8) * Math.PI * 2 - Math.PI / 2
+              const x = 120 + 30 * Math.cos(a)
+              const y = 55  + 30 * Math.sin(a)
+              return <circle key={i} cx={x} cy={y} r="3" fill={G} opacity="0.65"/>
+            })}
+            <line x1="120" y1="55" x2="120" y2="40" stroke={G} strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="120" y1="55" x2="130" y2="60" stroke={G} strokeWidth="1.5" strokeLinecap="round"/>
+            <circle cx="151" cy="24" r="5" fill={IC} opacity="0.82"/>
+          </svg>
+        ),
+      },
+      {
+        title:       'CUSTOM DIRECTIONS',
+        description: 'New custom ideas, new reference pieces, new material directions. Send the photo, logo, or name — we quote before the build.',
+        specs:       ['Photo, logo, name, or number', 'Send the idea for a quote', "Ask what's possible now", 'No deposit to start'],
+        imageSrc:    null,
+        imageAlt:    'Custom direction inquiry at 2T',
+        waMessage:   "Hey 2T — I have a custom idea. What can be made right now? I can send a photo or logo.",
+        illustration: (
+          <svg viewBox="0 0 240 110" fill="none" width="100%" height="100%">
+            <polygon points="120,14 132,48 168,48 140,68 152,104 120,84 88,104 100,68 72,48 108,48" stroke={G} strokeWidth="1.8" fill="none"/>
+            <circle cx="120" cy="60" r="9" fill={IC} opacity="0.42"/>
+            <circle cx="120" cy="60" r="4.5" fill={IC} opacity="0.88"/>
+            <line x1="120" y1="48" x2="120" y2="42" stroke={IC} strokeWidth="1" opacity="0.55"/>
+            <line x1="132" y1="52" x2="136" y2="48" stroke={IC} strokeWidth="1" opacity="0.55"/>
+            <line x1="108" y1="52" x2="104" y2="48" stroke={IC} strokeWidth="1" opacity="0.55"/>
+          </svg>
+        ),
+      },
+      {
+        title:       "ASK WHAT'S RUNNING",
+        description: 'Not sure what just came in? Text 2T and ask what\'s moving now.',
+        specs:       ['New chains, pendants, watches, or custom directions', 'Availability changes', 'Details confirmed per piece', 'Text before you move'],
+        imageSrc:    null,
+        imageAlt:    "Ask what's running now at 2T",
+        waMessage:   "Hey 2T — I'm not sure what's new. Can you tell me what's moving right now?",
+        illustration: (
+          <svg viewBox="0 0 240 110" fill="none" width="100%" height="100%">
+            <path d="M35 55 L182 55" stroke={G} strokeWidth="1.5" strokeLinecap="round"/>
+            <path d="M166 38 L188 55 L166 72" stroke={G} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+            {([55, 88, 121, 154] as const).map(x => (
+              <circle key={x} cx={x} cy="55" r="4" fill={IC} opacity="0.55"/>
+            ))}
+            <circle cx="35" cy="55" r="4.5" stroke={GB} strokeWidth="1.5" fill="none"/>
+            <circle cx="188" cy="55" r="6" fill={G} opacity="0.55"/>
+            <circle cx="188" cy="55" r="3" fill={G} opacity="0.9"/>
+          </svg>
+        ),
+      },
+    ],
   },
 }
 
@@ -728,7 +991,7 @@ export default async function CategoryPage({ params }: Props) {
         >
           <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
             <span className="section-eyebrow" style={{ marginBottom: '0.75rem' }}>
-              SHOP {data.title.toUpperCase()}
+              {data.stylesEyebrow ?? `SHOP ${data.title.toUpperCase()}`}
             </span>
             <p
               style={{
@@ -740,7 +1003,7 @@ export default async function CategoryPage({ params }: Props) {
                 marginBottom: '2rem',
               }}
             >
-              {data.styles.length} styles. One piece that hits.
+              {data.stylesSubhead ?? `${data.styles.length} styles. One piece that hits.`}
             </p>
 
             <div
@@ -1062,7 +1325,7 @@ export default async function CategoryPage({ params }: Props) {
                   position:     'relative',
                 }}
               >
-                Text 2T about {data.title.toLowerCase()}.
+                {data.ctaHeading ?? `Text 2T about ${data.title.toLowerCase()}.`}
               </p>
 
               <p
