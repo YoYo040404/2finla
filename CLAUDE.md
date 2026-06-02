@@ -52,13 +52,13 @@ For execution tasks:
 
 ## Current Active Task
 
-**Midnight Icebox homepage is live and user-approved. Custom flow is live. Category pages completed. Post-Pass-2B QA clean.**
+**Midnight Icebox homepage is live and user-approved. Custom flow is live. Category pages completed. Pass 3A–3C copy/cleanup + Homepage SHOP Boost committed at `0b5252e`. QA screenshots captured.**
 
-**Current homepage section order (Midnight Icebox — commit `af7f20d` and later):**
+**Current homepage section order (Midnight Icebox — commit `0b5252e` and later):**
 
-1. Hero — full-bleed campaign, BUILT TO HIT., BANG. gold brand stamp, dual CTAs: SHOP JEWELRY + BUILD CUSTOM →, video slot wired
+1. Hero — full-bleed campaign, BUILT TO HIT., BANG. gold brand stamp, dual CTAs: SHOP THE PIECES + BUILD CUSTOM →, video slot wired
 2. ProofMarquee — CSS-only animated trust strip, gold borders
-3. PICK THE PIECE — vitrine display-case gateway, anchor row (GRILLZ dominant), inline text direction labels + material cue
+3. PICK THE PIECE — stronger vitrine gateway (0b5252e), anchor row (GRILLZ dominant), discovery strip, BestSellersStrip wired, inline text direction labels + material cue
 4. ShineDirectionBand — METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite
 5. Promo strip — ASK WHAT'S RUNNING NOW, claim-safe
 6. Custom lane — YOUR LOGO. YOUR NAME. YOUR PIECE., keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST
@@ -90,21 +90,29 @@ CRO pass and selector grouping committed (commits `60c7d06`, `2303850`). Resend 
 - `3dcb65d` fix: refine typography and contrast system
 - `7567917` fix: make static direction chips non-interactive
 
-**Post-Pass-2B QA status: CLEAN (2026-06-02)**
+**Pass 3A–3C + Homepage SHOP Boost committed (2026-06-02):**
 
-Routes tested: /, /collections/chains, /collections/pendants, /custom, /watches, /grillz, /about.
-Mobile 390px: passed. Desktop 1280px: key routes passed.
-No horizontal scroll. Sticky mobile CTA clears content. Static direction chips render as non-interactive spec labels.
-Claim-safety grep: clean. Build passed. Site is healthy/shippable.
+- `b8a9688` copy: pass 3a homepage copy sharpening
+- `d4fa052` copy: pass 3b-a grillz and pendants copy sharpening
+- `619cd6a` fix: simplify pendants page
+- `5e6cfee` fix: simplify grillz hero
+- `4d566bb` fix: clean chains bottom and sharpen watches copy
+- `6cedd28` fix: clean rings bracelets earrings category ctas
+- `b58c9a0` feat: add claim-safe discovery collections (Most Asked About / Ask What Just Landed)
+- `0b5252e` feat: boost homepage shop discovery — stronger PICK THE PIECE, discovery strip, BestSellersStrip, hero CTA SHOP THE PIECES, All Collections in Shop dropdown, /collections layout improved
+
+**Post-Pass-3C QA screenshots captured (2026-06-02):**
+
+Routes screenshotted: best sellers (desktop 1280 / mobile 390), collections (desktop / mobile), new arrivals (desktop), shop dropdown, shop boost (desktop / mobile). Site is healthy/shippable. Full Playwright QA pass pending.
 
 **Working tree — do not stage without explicit approval:**
 - `docs/superpowers/plans/` and `docs/superpowers/specs/` — planning/spec notes
 - `public/assets/demo/phase3a/` — demo PNG assets
 - `public/assets/logo-to-use.png` — replacement logo candidate, not yet approved for wiring
-- `qa-2b-*.jpeg` — QA screenshots (do not commit; add to .gitignore if not already)
+- `qa-3c-*.jpeg` and `qa-shop-boost-*.jpeg` — QA screenshots (do not commit; gitignore if not already)
 
-**Next recommended phase: Full Site VOC + Competitor + Social Copywriting/SEO Research Plan.**
-No random CSS/layout cleanup unless QA finds a real issue. Asset/media request list comes after research.
+**Next recommended phase: SEO foundation planning / metadata pass** — research before any SEO implementation. After that, TikTok/Instagram feed feasibility assessment.
+No random CSS/layout cleanup unless QA finds a real issue.
 
 Do not commit or push new category pages without visual QA and user approval.  
 Do not wire Formspree.  

@@ -99,6 +99,14 @@ Old Shopify folder is archive only. Do not touch it.
 
 | Commit | Description |
 |---|---|
+| `0b5252e` | feat: boost homepage shop discovery |
+| `b58c9a0` | feat: add claim-safe discovery collections |
+| `6cedd28` | fix: clean rings bracelets earrings category ctas |
+| `4d566bb` | fix: clean chains bottom and sharpen watches copy |
+| `5e6cfee` | fix: simplify grillz hero |
+| `619cd6a` | fix: simplify pendants page |
+| `d4fa052` | copy: pass 3b-a grillz and pendants copy sharpening |
+| `b8a9688` | copy: pass 3a homepage copy sharpening |
 | `7567917` | fix: make static direction chips non-interactive |
 | `3dcb65d` | fix: refine typography and contrast system |
 | `5cdb34e` | fix: improve mobile readability and route ctas |
@@ -203,7 +211,7 @@ Custom page (as of commit 84af600 — 2026-05-17):
 | Homepage Midnight Icebox Pass 3 | ✅ Committed — af7f20d. Anton/Archivo/JetBrains Mono. Vitrine system. Gold/ice palette. |
 | Hero | ✅ Full-bleed campaign. Video opacity 0.60. BANG. brand text stamp. |
 | ProofMarquee | ✅ Live — gold borders |
-| PICK THE PIECE gateway | ✅ Vitrine display-case tiles, anchor row, inline text labels + material cue |
+| PICK THE PIECE gateway | ✅ Stronger vitrine (0b5252e) — anchor row, discovery strip, BestSellersStrip wired, inline text labels + material cue |
 | ShineDirectionBand | ✅ Live — METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite — Details confirmed per piece |
 | Promo module | ✅ Live — claim-safe, no fake offers |
 | Custom lane (homepage) | ✅ Live — keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST |
@@ -231,27 +239,25 @@ Custom page (as of commit 84af600 — 2026-05-17):
 
 ## Default Next Prompt
 
-**Current milestone: Category pages + Post-Pass-2B polish committed and QA clean. Site is healthy/shippable.**
+**Current milestone: Pass 3A–3C copy/cleanup + Homepage SHOP Boost committed at `0b5252e`. QA screenshots captured. Site is healthy/shippable.**
 
-**Post-Pass-2B QA status (2026-06-02): CLEAN**
-Routes tested: /, /collections/chains, /collections/pendants, /custom, /watches, /grillz, /about.
-Mobile 390px passed. Desktop 1280px key routes passed. No horizontal scroll. Sticky mobile CTA clears content.
-Static direction chips render as non-interactive spec labels. Claim-safety grep clean. Build passed.
+**Post-Pass-3C QA status (2026-06-02): Screenshots captured**
+Routes screenshotted: best sellers (desktop 1280 / mobile 390), collections (desktop / mobile), new arrivals (desktop), shop dropdown, shop boost (desktop / mobile). Full Playwright QA pass pending.
 
 **Working tree — do not stage without explicit approval:**
 - `docs/superpowers/plans/` and `docs/superpowers/specs/` — planning/spec notes
 - `public/assets/demo/phase3a/` — demo PNG assets
 - `public/assets/logo-to-use.png` — replacement logo candidate, not yet approved for wiring
-- `qa-2b-*.jpeg` — QA screenshots (do not commit; add to .gitignore if not already)
+- `qa-3c-*.jpeg` and `qa-shop-boost-*.jpeg` — QA screenshots (do not commit; gitignore if not already)
 
 1. Do not reopen broad homepage redesign. Pittsburgh BANG is the current direction.
 2. Do not re-polish `/custom` — CRO pass and selector grouping are approved and live.
 3. Do not rebuild the Resend backend — it is working and verified.
 4. Do not do random CSS/layout cleanup unless QA finds a real issue.
 5. Next recommended phase:
-   - **Full Site VOC + Competitor + Social Copywriting/SEO Research Plan** — research before any copy or SEO implementation.
+   - **SEO foundation planning / metadata pass** — research before any SEO implementation.
+   - **TikTok/Instagram feed feasibility** — assess technical options before planning dynamic feed.
    - Asset/media request list — after research phase, define what specific images/media are needed.
-   - SEO/schema after core pages and claims are controlled.
 6. `/grillz` and `/watches` rework complete — Post-Pass-2B QA passed. No further redesign until real/demo assets arrive.
 
 **Keep untouched until explicitly approved:**

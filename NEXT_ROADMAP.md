@@ -85,6 +85,12 @@ npm run dev
 **Post-Pass-2B QA status (2026-06-02): CLEAN**
 Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grillz, /about. Mobile 390px ✅. Desktop 1280px key routes ✅. No horizontal scroll ✅. Sticky mobile CTA clears content ✅. Claim-safety grep clean ✅. Build passed ✅.
 
+- **Pass 3A homepage copy sharpening** (commit `b8a9688`)
+- **Pass 3B-A grillz + pendants copy sharpening; pendants simplified; grillz hero simplified** (commits `d4fa052`, `619cd6a`, `5e6cfee`)
+- **Pass 3B-B chains + watches copy; rings / bracelets / earrings CTAs cleaned** (commits `4d566bb`, `6cedd28`)
+- **Pass 3C — claim-safe discovery collections** (commit `b58c9a0`) — Most Asked About / Ask What Just Landed; /collections layout improved; Shop dropdown includes All Collections
+- **Homepage SHOP Boost** (commit `0b5252e`) — stronger PICK THE PIECE, discovery strip, BestSellersStrip wired, hero CTA SHOP THE PIECES, /collections layout improved
+
 ### WIP / Approval Pending ⚠️
 
 - Category pages (Chains, Bracelets, Rings, Earrings, Pendants, Grillz, Watches) — Post-Pass-2B QA passed; awaiting real media assets before further visual changes
@@ -108,7 +114,8 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 
 ### Next Milestone 🎯
 
-- **Full Site VOC + Competitor + Social Copywriting/SEO Research Plan** — research before any copy or SEO implementation
+- **SEO foundation planning / metadata pass** — research before any SEO implementation
+- **TikTok/Instagram feed feasibility** — assess technical options before planning dynamic feed
 - Asset/media request list — define what specific photos/footage are needed (after research)
 - Production Resend sender domain polish (low priority — before real traffic)
 - SEO/schema after core pages pass claim-safety review
@@ -387,12 +394,18 @@ Only if user explicitly approves:
 29. ✅ **Typography and contrast system refined** (commit `3dcb65d`)
 30. ✅ **Static direction chips non-interactive** (commit `7567917`)
 31. ✅ **Post-Pass-2B QA** — all routes clean, mobile 390px, desktop 1280px, claim-safety grep, build passed
-32. 🎯 **Full Site VOC + Competitor + Social Copywriting/SEO Research Plan** ← NEXT
-33. 🎯 **Asset/media request list** — after research phase ← NEXT PHASE
-34. 🎯 **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic ← LOW PRIORITY
-31. 🎯 **Category/product proof pages** — after media/proof planning
-32. ⏳ SEO/schema — after core pages pass claim-safety review
-22. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL
+32. ✅ **Pass 3A** — homepage copy sharpening (commit `b8a9688`)
+33. ✅ **Pass 3B** — grillz + pendants copy, pendants simplified, grillz hero simplified, chains + watches copy, rings/bracelets/earrings CTAs (commits `d4fa052`, `619cd6a`, `5e6cfee`, `4d566bb`, `6cedd28`)
+34. ✅ **Pass 3C** — claim-safe discovery collections, /collections layout improved, All Collections in Shop dropdown (commit `b58c9a0`)
+35. ✅ **Homepage SHOP Boost** — stronger PICK THE PIECE, discovery strip, BestSellersStrip, hero CTA SHOP THE PIECES (commit `0b5252e`)
+36. ✅ **Docs sync** — 2026-06-02
+37. 🎯 **SEO foundation planning / metadata pass** ← NEXT
+38. 🎯 **TikTok/Instagram feed feasibility** ← NEXT PHASE
+39. 🎯 **Asset/media request list** — after research phase ← NEXT PHASE
+40. 🎯 **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic ← LOW PRIORITY
+41. ⏳ **Category/product proof pages** — after media/proof planning
+42. ⏳ SEO/schema — after core pages pass claim-safety review
+43. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL
     - Scope: 5 files only — `app/page.tsx`, `components/home/ProofMarquee.tsx`, `components/home/WeeklyPromo.tsx`, `components/home/PittsburghStory.tsx`, `components/home/SocialTeaser.tsx`
     - Do NOT start until user explicitly approves Pass 5C
     - Full spec in `docs/2t-pass5b-competitor-backed-copy-research.md` Section 11

@@ -409,17 +409,17 @@ See Visual Direction section above for the full Midnight Icebox token table (upd
 
 ### Homepage — Material & Stone Direction Pass ✅ Committed
 
-**Latest commit:** `0e85b35 — feat: add homepage material and stone direction system` (2026-05-31)
+**Latest commit:** `0b5252e — feat: boost homepage shop discovery` (2026-06-02)
 
-Homepage is a product-first store with a custom lane — NOT custom-only. Hero dual CTAs: SHOP JEWELRY + BUILD CUSTOM →.
+Homepage is a product-first store with a custom lane — NOT custom-only. Hero dual CTAs: SHOP THE PIECES + BUILD CUSTOM →.
 
 **Midnight Icebox system active:**
 
 | # | Section | Component | Status |
 |---|---------|-----------|--------|
-| 1 | Hero — BUILT TO HIT. + BANG. stamp | inline in `app/page.tsx` | ✅ Full-bleed campaign media, video opacity 0.60, BANG. as borderless gold brand text stamp |
+| 1 | Hero — BUILT TO HIT. + BANG. stamp | inline in `app/page.tsx` | ✅ Full-bleed campaign media, video opacity 0.60, BANG. as borderless gold brand text stamp; CTAs: SHOP THE PIECES + BUILD CUSTOM → |
 | 2 | ProofMarquee | `components/home/ProofMarquee.tsx` | ✅ CSS-only marquee, gold borders, trust facts, accessible |
-| 3 | PICK THE PIECE — shop gateway | inline in `app/page.tsx` | ✅ Anchor row (GRILLZ dominant), vitrine display-case tiles, inline mono text direction labels + material cue: "Gold · Silver · Diamonds · Moissanite / Pick the piece. Then pick the shine." |
+| 3 | PICK THE PIECE — shop gateway | inline in `app/page.tsx` | ✅ Stronger vitrine gateway (0b5252e); anchor row (GRILLZ dominant); discovery strip; BestSellersStrip wired; inline mono text labels + material cue |
 | 4 | ShineDirectionBand — material/stone direction | inline in `app/page.tsx` | ✅ METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite — Details confirmed per piece. No per-tile chips. |
 | 5 | Promo strip — ASK WHAT'S RUNNING NOW | inline in `app/page.tsx` | ✅ Claim-safe, WhatsApp prefill, promo terms note |
 | 6 | Custom lane — YOUR LOGO. YOUR NAME. YOUR PIECE. | inline in `app/page.tsx` | ✅ Keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST |
@@ -540,11 +540,16 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 - Typography and contrast system refined (commit `3dcb65d`).
 - Static direction chips made non-interactive (commit `7567917`).
 - **Post-Pass-2B QA clean** — all routes, mobile 390px, desktop 1280px, no horizontal scroll, claim-safety grep clean, build passed.
+- **Pass 3A homepage copy sharpening** (commit `b8a9688`).
+- **Pass 3B-A grillz + pendants copy sharpening; pendants simplified; grillz hero simplified** (commits `d4fa052`, `619cd6a`, `5e6cfee`).
+- **Pass 3B-B chains + watches copy; rings / bracelets / earrings CTAs cleaned** (commits `4d566bb`, `6cedd28`).
+- **Pass 3C — claim-safe discovery collections** — Most Asked About / Ask What Just Landed; /collections layout improved; Shop dropdown includes All Collections (commit `b58c9a0`).
+- **Homepage SHOP Boost** — stronger PICK THE PIECE, discovery strip, BestSellersStrip wired, hero CTA SHOP THE PIECES (commit `0b5252e`).
 
 **Next phase:**
-1. **Full Site VOC + Competitor + Social Copywriting/SEO Research Plan** — research before any copy or SEO implementation.
-2. Asset/media request list — define what specific images/media are needed (after research).
-3. SEO/schema after core pages and claims are controlled.
+1. **SEO foundation planning / metadata pass** — research before any SEO implementation.
+2. **TikTok/Instagram feed feasibility** — assess technical options before planning dynamic feed.
+3. Asset/media request list — define what specific images/media are needed (after research).
 4. No random CSS/layout cleanup unless QA finds a real issue.
 
 **Do not reopen homepage redesign** unless a clear blocker is found.
@@ -557,6 +562,14 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 | Commit | Description |
 |---|---|
+| `0b5252e` | feat: boost homepage shop discovery — stronger PICK THE PIECE, discovery strip, BestSellersStrip, hero CTA SHOP THE PIECES, All Collections in Shop dropdown, /collections layout improved |
+| `b58c9a0` | feat: add claim-safe discovery collections (Most Asked About / Ask What Just Landed) |
+| `6cedd28` | fix: clean rings bracelets earrings category ctas |
+| `4d566bb` | fix: clean chains bottom and sharpen watches copy |
+| `5e6cfee` | fix: simplify grillz hero |
+| `619cd6a` | fix: simplify pendants page |
+| `d4fa052` | copy: pass 3b-a grillz and pendants copy sharpening |
+| `b8a9688` | copy: pass 3a homepage copy sharpening |
 | `7567917` | fix: make static direction chips non-interactive |
 | `3dcb65d` | fix: refine typography and contrast system |
 | `5cdb34e` | fix: improve mobile readability and route ctas |
@@ -681,4 +694,5 @@ Do not build yet:
 - Grillz page further redesign (current rework complete — hold deeper redesign until real/demo assets and user approval)
 - Sitewide typography/contrast audit
 - Asset request list and real media replacement plan
+- TikTok/Instagram feed feasibility — assess technical options (oEmbed, API, static slots) before planning dynamic feed
 - category/product proof pages (after media/proof planning)
