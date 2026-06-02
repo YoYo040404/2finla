@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import ProofContactZone from '@/components/home/ProofContactZone'
 import ShineDirectionBand from '@/components/home/ShineDirectionBand'
+import BestSellersStrip from '@/components/home/BestSellersStrip'
 
 const WA_BUILD  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20want%20to%20build%20something%20custom.'
 const WA_PROMO  = 'https://wa.me/14124524343?text=What%27s%20running%20this%20week%20at%202T%3F'
@@ -13,7 +14,7 @@ const ANCHOR_TILES = [
     label:       'GRILLZ.',
     tone:        'pb-grillz',
     gleam:       true,
-    sub:         'Fit-first grillz. Gold or stones. Come through or text 2T first.',
+    sub:         'Top. Bottom. Full mouth. Custom fit.',
     pills:       ['TOP SET', 'BOTTOM SET', 'FULL MOUTH', 'ICE'],
     pillGold:    'ICE',
     cornerL:     'GOLD TEETH',
@@ -25,7 +26,7 @@ const ANCHOR_TILES = [
     label:       'WATCHES.',
     tone:        'pb-watches',
     gleam:       true,
-    sub:         "Ask what's available. Details confirmed per piece.",
+    sub:         'Iced. Bust-down. Inquiry only.',
     pills:       ['ICED BEZEL', 'BUST DOWN', 'ICED OUT'],
     pillIce:     'ICED BEZEL',
     cornerL:     'ICE BEZEL',
@@ -37,7 +38,7 @@ const ANCHOR_TILES = [
     label:       'CHAINS.',
     tone:        'pb-chains',
     gleam:       true,
-    sub:         "Cuban, rope, or tennis. Ask what's in stock.",
+    sub:         "Cuban. Rope. Tennis. Ask what's in.",
     pills:       ['CUBAN', 'ROPE', 'TENNIS'],
     cornerL:     'NECK GAME',
     href:        '/collections/chains',
@@ -48,10 +49,10 @@ const ANCHOR_TILES = [
 
 // Secondary tiles — each tone maps to a per-category vitrine surface in globals.css
 const SECONDARY_TILES = [
-  { label: 'PENDANTS.',  tone: 'pb-pendants',  sub: 'Photo, logo, name, or number. Send the idea.',  href: '/collections/pendants'  },
-  { label: 'RINGS.',     tone: 'pb-rings',     sub: "Statement ring. Ask what's available.",          href: '/collections/rings'     },
-  { label: 'BRACELETS.', tone: 'pb-bracelets', sub: "Wrist game with weight. Ask what's in stock.",  href: '/collections/bracelets' },
-  { label: 'EARRINGS.',  tone: 'pb-earrings',  sub: 'Iced and clean. Ask about availability.',       href: '/collections/earrings'  },
+  { label: 'PENDANTS.',  tone: 'pb-pendants',  sub: 'Photo. Logo. Name. Number.',                    href: '/collections/pendants'  },
+  { label: 'RINGS.',     tone: 'pb-rings',     sub: 'Custom or catalog. Ask what fits.',              href: '/collections/rings'     },
+  { label: 'BRACELETS.', tone: 'pb-bracelets', sub: "Tennis. Cuban. Ask what's available.",          href: '/collections/bracelets' },
+  { label: 'EARRINGS.',  tone: 'pb-earrings',  sub: "Studs. Hoops. Ask what's in.",                  href: '/collections/earrings'  },
 ] as const
 
 // Demo concept visuals for secondary tiles — replace with real 2T product media when available
@@ -156,7 +157,7 @@ export default function HomePage() {
               className="btn-primary"
               style={{ fontSize: '0.875rem', letterSpacing: '0.08em', padding: '0.9rem 1.875rem' }}
             >
-              SHOP JEWELRY
+              SHOP THE PIECES
             </a>
             <Link
               href="/custom"
@@ -212,6 +213,17 @@ export default function HomePage() {
         <div style={{ maxWidth: '1360px', margin: '0 auto' }}>
           {/* Masthead — hard, commercial */}
           <div style={{ marginBottom: '1.25rem' }}>
+            <span style={{
+              fontFamily:    'var(--font-mono)',
+              fontSize:      '0.62rem',
+              letterSpacing: '0.18em',
+              color:         'rgba(201,168,76,0.65)',
+              textTransform: 'uppercase',
+              display:       'block',
+              marginBottom:  '0.55rem',
+            }}>
+              WHAT 2T MAKES
+            </span>
             <h2
               style={{
                 fontFamily: 'var(--font-display)',
@@ -237,7 +249,7 @@ export default function HomePage() {
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', letterSpacing: '0.13em', color: 'var(--color-ice-blue)' }}>MOISSANITE</span>
             </div>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--color-brand-muted)', margin: 0, letterSpacing: '0.01em' }}>
-              Pick the piece. Then pick the shine.
+              Details confirmed per piece. Ask before you buy.
             </p>
           </div>
 
@@ -274,12 +286,44 @@ export default function HomePage() {
                       objectFit: 'cover',
                     }}
                   />
+                  {/* Layered depth — warm base glow + cool edge + bottom richness */}
+                  <div aria-hidden="true" style={{
+                    position:      'absolute',
+                    inset:         0,
+                    zIndex:        2,
+                    pointerEvents: 'none',
+                    background:    tile.label === 'GRILLZ.'
+                      ? 'linear-gradient(to bottom, rgba(201,168,76,0.05) 0%, transparent 38%), linear-gradient(to top, rgba(201,168,76,0.32) 0%, rgba(201,168,76,0.08) 42%, transparent 68%)'
+                      : tile.label === 'WATCHES.'
+                      ? 'linear-gradient(to bottom, rgba(208,238,255,0.06) 0%, transparent 38%), linear-gradient(to top, rgba(185,215,245,0.26) 0%, rgba(185,215,245,0.06) 42%, transparent 68%)'
+                      : 'linear-gradient(to bottom, rgba(201,168,76,0.04) 0%, transparent 38%), linear-gradient(to top, rgba(201,168,76,0.22) 0%, rgba(201,168,76,0.05) 42%, transparent 68%)',
+                  }} />
+                  {/* Diagonal metallic sweep — breaks flat surface, adds premium depth */}
+                  <div aria-hidden="true" style={{
+                    position:      'absolute',
+                    inset:         0,
+                    zIndex:        3,
+                    pointerEvents: 'none',
+                    background:    'linear-gradient(135deg, transparent 22%, rgba(255,255,255,0.045) 46%, rgba(255,255,255,0.02) 54%, transparent 78%)',
+                  }} />
+                  {/* Radial hot-spot — center brightness for bling energy */}
+                  <div aria-hidden="true" style={{
+                    position:      'absolute',
+                    inset:         0,
+                    zIndex:        3,
+                    pointerEvents: 'none',
+                    background:    tile.label === 'GRILLZ.'
+                      ? 'radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.10) 0%, transparent 65%)'
+                      : tile.label === 'WATCHES.'
+                      ? 'radial-gradient(ellipse 55% 45% at 50% 38%, rgba(208,238,255,0.09) 0%, transparent 65%)'
+                      : 'radial-gradient(ellipse 55% 45% at 50% 40%, rgba(201,168,76,0.07) 0%, transparent 65%)',
+                  }} />
                   {tile.gleam && <div className="mi-gleam" />}
                   {/* Corner label — category identity */}
                   <span className="mi-corner">{tile.cornerL}</span>
                 </div>
-                <div className="pb-tile-foot">
-                  <h5 className="pb-tile-label pb-tile-title">{tile.label}</h5>
+                <div className="pb-tile-foot" style={{ borderTop: '1.5px solid rgba(201,168,76,0.28)' }}>
+                  <h5 className="pb-tile-label pb-tile-title" style={{ fontSize: 'clamp(1.3rem, 2.8vw, 1.8rem)' }}>{tile.label}</h5>
                 </div>
                 <div className="pb-tile-pills">
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.63rem', letterSpacing: '0.04em', textTransform: 'uppercase', color: 'var(--color-brand-muted)', display: 'block', paddingBottom: '0.3rem', borderBottom: '1px solid rgba(201,168,76,0.10)', marginBottom: '0.3rem', lineHeight: 1.4 }}>
@@ -348,6 +392,89 @@ export default function HomePage() {
             ))}
           </div>
 
+          {/* ── DISCOVERY STRIP — collection hub entry points ── */}
+          <nav
+            aria-label="Browse collections"
+            style={{
+              borderTop:    '1px solid rgba(201,168,76,0.20)',
+              marginTop:    '1.875rem',
+              marginBottom: '1.75rem',
+            }}
+          >
+            <div style={{
+              display:             'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
+              border:              '1px solid rgba(201,168,76,0.14)',
+              borderTop:           'none',
+              overflow:            'hidden',
+            }}>
+              {([
+                {
+                  label: 'MOST ASKED ABOUT',
+                  copy:  'What most people text 2T for first.',
+                  cta:   'Browse →',
+                  href:  '/collections/best-sellers',
+                },
+                {
+                  label: 'ASK WHAT JUST LANDED',
+                  copy:  "What's moving now. Ask before it moves.",
+                  cta:   'Ask →',
+                  href:  '/collections/new-arrivals',
+                },
+                {
+                  label: 'VIEW ALL CATEGORIES',
+                  copy:  'Browse everything. Text 2T before you buy.',
+                  cta:   'Browse all →',
+                  href:  '/collections',
+                },
+              ] as const).map((entry, i) => (
+                <Link
+                  key={entry.href}
+                  href={entry.href}
+                  style={{
+                    display:        'flex',
+                    flexDirection:  'column',
+                    gap:            '0.3rem',
+                    padding:        '1.25rem 1.375rem 1.125rem',
+                    background:     '#0e0e0e',
+                    textDecoration: 'none',
+                    color:          'inherit',
+                    borderLeft:     i > 0 ? '1px solid rgba(201,168,76,0.10)' : 'none',
+                  }}
+                >
+                  <span style={{
+                    fontFamily:    'var(--font-mono)',
+                    fontSize:      '0.6rem',
+                    letterSpacing: '0.16em',
+                    color:         'var(--color-brand-gold)',
+                    textTransform: 'uppercase',
+                    lineHeight:    1.2,
+                  }}>
+                    {entry.label}
+                  </span>
+                  <span style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize:   '0.73rem',
+                    color:      'var(--color-brand-muted)',
+                    lineHeight: 1.5,
+                  }}>
+                    {entry.copy}
+                  </span>
+                  <span style={{
+                    fontFamily:    'var(--font-mono)',
+                    fontSize:      '0.58rem',
+                    letterSpacing: '0.1em',
+                    color:         'rgba(201,168,76,0.50)',
+                    marginTop:     '0.2rem',
+                    textTransform: 'uppercase',
+                  }}>
+                    {entry.cta}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </nav>
+
           {/* ── CUSTOM INTERRUPT BAND ── */}
           <div className="pb-custom-band">
             <div>
@@ -395,6 +522,9 @@ export default function HomePage() {
           </a>
         </div>
       </div>
+
+      {/* ─── 3b. STYLE DIRECTIONS — Most Requested / What's Dropping ─── */}
+      <BestSellersStrip />
 
       {/* ─── 4. BUILD CUSTOM — identity flex lane ──────────────────────── */}
       <section
