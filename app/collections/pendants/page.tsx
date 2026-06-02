@@ -47,12 +47,11 @@ type CustomPendantType = {
 const PENDANT_STYLES: PendantStyle[] = [
   {
     title:       'CROSS PENDANT',
-    description: 'Clean or iced. Ask about availability.',
+    description: 'Clean or iced. Built to sit right on the chain.',
     specs: [
-      'Cross shape — plain or iced-out',
+      'Plain or iced-out direction',
       'Gold or silver direction',
-      "Size: ask what's available",
-      'Details confirmed per piece',
+      "Ask what's available",
     ],
     imageSrc:  null,
     imageAlt:  'Cross pendant — clean or iced gold cross shape',
@@ -60,12 +59,11 @@ const PENDANT_STYLES: PendantStyle[] = [
   },
   {
     title:       'JESUS PIECE',
-    description: 'Loud by design. Details confirmed per piece.',
+    description: 'Classic hip-hop icon. Loud when it hits the light.',
     specs: [
-      'Classic hip-hop icon shape',
-      'Iced-out or clean gold',
-      "Sizes: ask what's available",
-      'Details confirmed per piece',
+      'Clean or iced-out direction',
+      'Size confirmed per piece',
+      "Ask what's available",
     ],
     imageSrc:  null,
     imageAlt:  'Jesus piece pendant — iced hip-hop style',
@@ -73,10 +71,9 @@ const PENDANT_STYLES: PendantStyle[] = [
   },
   {
     title:       'MEDALLION',
-    description: 'Big face. Gold or silver. Details confirmed per piece.',
+    description: 'Big face. Round, oval, clean, or iced.',
     specs: [
-      'Round or oval coin face',
-      'Engraved, clean, or iced-out finish',
+      'Engraved or stone-set direction',
       'Gold or silver direction',
       'Details confirmed per piece',
     ],
@@ -86,12 +83,11 @@ const PENDANT_STYLES: PendantStyle[] = [
   },
   {
     title:       'INITIAL PENDANT',
-    description: 'Your letter, iced. Ask what\'s available.',
+    description: 'Your letter. Block, script, or bubble.',
     specs: [
       'Single letter or monogram',
-      'Block, script, or bubble font',
-      'Gold or silver direction',
-      'Details confirmed per piece',
+      'Clean or iced direction',
+      "Ask what's available",
     ],
     imageSrc:  null,
     imageAlt:  'Initial pendant — block letter with bail',
@@ -99,9 +95,8 @@ const PENDANT_STYLES: PendantStyle[] = [
   },
   {
     title:       'ICED PENDANT',
-    description: 'Stone-set face. Built to hit. Details confirmed per piece.',
+    description: 'Stone-set face. Built to hit.',
     specs: [
-      'Full stone-set face',
       'Diamond or moissanite direction',
       'Gold or silver setting',
       'Details confirmed per piece',
@@ -112,12 +107,11 @@ const PENDANT_STYLES: PendantStyle[] = [
   },
   {
     title:       'PENDANT + CHAIN',
-    description: 'Stack the look. Ask what pairs right.',
+    description: 'The full setup. Ask what chain hits right.',
     specs: [
-      'Pendant and chain as a set',
-      'Cuban, rope, or franco base',
-      'Gold or silver direction',
-      'Ask about pairing and sizing',
+      'Cuban, rope, or tennis pairing',
+      'Chain weight and pendant size matter',
+      'Ask what pairs right',
     ],
     imageSrc:  null,
     imageAlt:  'Pendant and chain set — full neck setup',
@@ -128,37 +122,37 @@ const PENDANT_STYLES: PendantStyle[] = [
 const CUSTOM_PENDANT_TYPES: CustomPendantType[] = [
   {
     label:       'PHOTO PENDANT',
-    description: 'Your picture, built into a piece. Send the photo first.',
+    description: 'Your picture, built into a piece.',
     imageSrc:    null,
     imageAlt:    'Custom photo pendant — portrait or personal image cast in gold or silver',
   },
   {
     label:       'LOGO PENDANT',
-    description: 'Business mark, personal logo, or design. Send the file.',
+    description: 'Business mark, personal logo, or design.',
     imageSrc:    null,
     imageAlt:    'Custom logo pendant — your design cast as a wearable pendant',
   },
   {
     label:       'NAME PIECE',
-    description: 'Your name, iced and clean. Tell us the direction.',
+    description: 'Your name, iced and clean.',
     imageSrc:    null,
     imageAlt:    'Custom name piece — letters set in gold or silver',
   },
   {
     label:       'NUMBER PENDANT',
-    description: 'Jersey, area code, or date. Text the idea.',
+    description: 'Jersey, area code, or date.',
     imageSrc:    null,
     imageAlt:    'Custom number pendant — personal number cast in gold',
   },
   {
     label:       'MEMORIAL PENDANT',
-    description: 'Keep the memory close. Send the photo or idea.',
+    description: 'Keep the memory close.',
     imageSrc:    null,
     imageAlt:    'Custom memorial pendant — tribute piece in gold or silver',
   },
   {
     label:       'CUSTOM SHAPE',
-    description: 'Your concept, your silhouette. Send the idea first.',
+    description: 'Your concept, your silhouette.',
     imageSrc:    null,
     imageAlt:    'Custom shape pendant — your unique form cast in metal',
   },
@@ -536,16 +530,15 @@ export default function PendantsPage() {
 
           <p
             style={{
-              fontFamily:   'var(--font-display)',
-              fontSize:     'clamp(1.05rem, 2.2vw, 1.45rem)',
-              fontStyle:    'italic',
-              color:        'var(--color-brand-gold-light)',
+              fontFamily:   'var(--font-body)',
+              fontSize:     'clamp(0.95rem, 1.5vw, 1.05rem)',
+              color:        'var(--color-brand-silver)',
               marginBottom: '2rem',
-              lineHeight:   1.25,
-              maxWidth:     '540px',
+              lineHeight:   1.65,
+              maxWidth:     '42ch',
             }}
           >
-            Photo, logo, name, number, or full custom. Send the idea — we quote before the build.
+            Photo, logo, name, or number. Send the idea — we quote before the build.
           </p>
 
           <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap' }}>
@@ -557,9 +550,6 @@ export default function PendantsPage() {
             >
               ASK ABOUT PENDANTS →
             </a>
-            <Link href="/custom" className="btn-outline-gold">
-              BUILD CUSTOM →
-            </Link>
           </div>
         </div>
       </section>
@@ -646,9 +636,6 @@ export default function PendantsPage() {
                   >
                     TEXT 2T ABOUT THIS PENDANT →
                   </a>
-                  <Link href="/custom" className="btn-outline-gold">
-                    BUILD CUSTOM →
-                  </Link>
                 </div>
               </div>
             </div>
@@ -797,31 +784,33 @@ export default function PendantsPage() {
                     ))}
                   </ul>
 
-                  <a
-                    href={waUrl(style.waMessage)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary"
-                    style={{ display: 'block', textAlign: 'center', marginTop: '0.25rem' }}
-                  >
-                    TEXT 2T →
-                  </a>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Footnote */}
-          <p
-            style={{
-              fontFamily:    'var(--font-body)',
-              fontSize:      '0.78rem',
-              color:         'var(--color-brand-subtle)',
-              letterSpacing: '0.02em',
-            }}
-          >
-            Details confirmed per piece. Ask what&rsquo;s in stock and available.
-          </p>
+          {/* Section-level CTA */}
+          <div style={{ marginTop: '2rem', display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+            <a
+              href={WA_PENDANTS}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              ASK ABOUT PENDANTS →
+            </a>
+            <p
+              style={{
+                fontFamily:    'var(--font-body)',
+                fontSize:      '0.72rem',
+                color:         'var(--color-brand-subtle)',
+                letterSpacing: '0.02em',
+                margin:        0,
+              }}
+            >
+              Details confirmed per piece. Ask what&rsquo;s in stock and available.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -1015,126 +1004,78 @@ export default function PendantsPage() {
             Send the idea — we quote before the build.
           </p>
 
-          {/* ── Selector groups (mirrors /custom build-decision-block pattern) ── */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem', marginBottom: '2rem' }}>
-
-            {/* 01 — METAL */}
-            <div>
-              <div className="build-decision-header">
-                <span className="build-decision-num">01</span>
-                <span className="build-decision-text">METAL</span>
-              </div>
-              <div className="chip-row">
-                {['Gold', 'Silver', 'Not Sure Yet'].map((chip) => (
-                  <span key={chip} className="direction-chip">{chip}</span>
-                ))}
-              </div>
-            </div>
-
-            {/* 02 — STONE */}
-            <div>
-              <div className="build-decision-header">
-                <span className="build-decision-num">02</span>
-                <span className="build-decision-text">STONE</span>
-              </div>
-              <div className="chip-row">
-                {['Diamond', 'Moissanite', 'No Stones', 'Not Sure Yet'].map((chip) => (
-                  <span key={chip} className="direction-chip">{chip}</span>
-                ))}
-              </div>
-              <p
-                style={{
-                  fontFamily:    'var(--font-body)',
-                  fontSize:      '0.72rem',
-                  color:         'var(--color-brand-subtle)',
-                  letterSpacing: '0.01em',
-                  marginTop:     '0.625rem',
-                }}
-              >
-                Details confirmed per piece.
-              </p>
-            </div>
-
-            {/* 03 — PENDANT TYPE: image-ready tiles */}
-            <div>
-              <div className="build-decision-header">
-                <span className="build-decision-num">03</span>
-                <span className="build-decision-text">PENDANT TYPE</span>
-              </div>
+          {/* Custom pendant type tiles — visual gateway to /custom */}
+          <div
+            style={{
+              display:             'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
+              gap:                 '1px',
+              background:          'var(--color-brand-border)',
+              marginBottom:        '2rem',
+            }}
+          >
+            {CUSTOM_PENDANT_TYPES.map((type, i) => (
               <div
+                key={type.label}
                 style={{
-                  display:             'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
-                  gap:                 '1px',
-                  background:          'var(--color-brand-border)',
-                  marginTop:           '0.75rem',
+                  background:    'var(--color-brand-black)',
+                  display:       'flex',
+                  flexDirection: 'column',
                 }}
               >
-                {CUSTOM_PENDANT_TYPES.map((type, i) => (
-                  <div
-                    key={type.label}
+                {/* Visual: real photo if imageSrc set, SVG icon fallback otherwise */}
+                <div
+                  style={{
+                    aspectRatio:    '4 / 3',
+                    background:     'var(--color-brand-charcoal)',
+                    display:        'flex',
+                    alignItems:     'center',
+                    justifyContent: 'center',
+                    overflow:       'hidden',
+                    padding:        type.imageSrc ? '0' : '1.25rem',
+                  }}
+                >
+                  {type.imageSrc ? (
+                    <img
+                      src={type.imageSrc}
+                      alt={type.imageAlt}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    />
+                  ) : (
+                    <CustomTypeIllustration index={i} />
+                  )}
+                </div>
+                {/* Label + description */}
+                <div style={{ padding: '0.75rem 0.875rem' }}>
+                  <p
                     style={{
-                      background:    'var(--color-brand-black)',
-                      display:       'flex',
-                      flexDirection: 'column',
+                      fontFamily:    'var(--font-body)',
+                      fontSize:      '0.62rem',
+                      fontWeight:    700,
+                      letterSpacing: '0.11em',
+                      textTransform: 'uppercase',
+                      color:         'var(--color-brand-gold)',
+                      marginBottom:  '0.3rem',
+                      opacity:       0.9,
                     }}
                   >
-                    {/* Visual: real photo if imageSrc set, SVG icon fallback otherwise */}
-                    <div
-                      style={{
-                        aspectRatio:    '4 / 3',
-                        background:     'var(--color-brand-charcoal)',
-                        display:        'flex',
-                        alignItems:     'center',
-                        justifyContent: 'center',
-                        overflow:       'hidden',
-                        padding:        type.imageSrc ? '0' : '1.25rem',
-                      }}
-                    >
-                      {type.imageSrc ? (
-                        <img
-                          src={type.imageSrc}
-                          alt={type.imageAlt}
-                          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                        />
-                      ) : (
-                        <CustomTypeIllustration index={i} />
-                      )}
-                    </div>
-                    {/* Label + description */}
-                    <div style={{ padding: '0.75rem 0.875rem' }}>
-                      <p
-                        style={{
-                          fontFamily:    'var(--font-body)',
-                          fontSize:      '0.62rem',
-                          fontWeight:    700,
-                          letterSpacing: '0.11em',
-                          textTransform: 'uppercase',
-                          color:         'var(--color-brand-gold)',
-                          marginBottom:  '0.3rem',
-                          opacity:       0.9,
-                        }}
-                      >
-                        {type.label}
-                      </p>
-                      <p
-                        style={{
-                          fontFamily: 'var(--font-body)',
-                          fontSize:   '0.72rem',
-                          color:      'var(--color-brand-white)',
-                          lineHeight: 1.45,
-                          opacity:    0.72,
-                        }}
-                      >
-                        {type.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                    {type.label}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize:   '0.72rem',
+                      color:      'var(--color-brand-white)',
+                      lineHeight: 1.45,
+                      opacity:    0.72,
+                    }}
+                  >
+                    {type.description}
+                  </p>
+                </div>
               </div>
-            </div>
-
-          </div>{/* end selector groups */}
+            ))}
+          </div>
 
           {/* Claim note — custom only */}
           <p
@@ -1149,18 +1090,10 @@ export default function PendantsPage() {
             Pittsburgh jeweler. No deposit to start. We quote before the build.
           </p>
 
-          {/* CTAs */}
+          {/* CTA */}
           <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap' }}>
-            <a
-              href={WA_PENDANTS_CUSTOM}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              SEND YOUR PENDANT IDEA →
-            </a>
-            <Link href="/custom" className="btn-outline-gold">
-              BUILD CUSTOM →
+            <Link href="/custom" className="btn-primary">
+              START CUSTOM PENDANT →
             </Link>
           </div>
 
