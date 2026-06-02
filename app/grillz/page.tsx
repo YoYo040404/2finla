@@ -534,12 +534,12 @@ export default function GrillzPage() {
               <h1
                 style={{
                   fontFamily:    'var(--font-display)',
-                  fontSize:      'clamp(3.2rem, 7vw, 6rem)',
+                  fontSize:      'clamp(2.8rem, 5.5vw, 4.5rem)',
                   fontWeight:    400,
                   lineHeight:    0.92,
                   letterSpacing: '-0.03em',
                   color:         'var(--color-brand-white)',
-                  marginBottom:  '1.25rem',
+                  marginBottom:  '1.5rem',
                 }}
               >
                 CUSTOM GRILLZ.{' '}<br />
@@ -548,61 +548,41 @@ export default function GrillzPage() {
 
               <p
                 style={{
-                  fontFamily:   'var(--font-display)',
-                  fontSize:     'clamp(1.1rem, 2.3vw, 1.5rem)',
-                  fontStyle:    'italic',
-                  color:        'var(--color-brand-gold-light)',
-                  marginBottom: '1.25rem',
-                  lineHeight:   1.2,
+                  fontFamily:   'var(--font-body)',
+                  fontSize:     'clamp(0.95rem, 1.5vw, 1.05rem)',
+                  color:        'var(--color-brand-silver)',
+                  marginBottom: '2rem',
+                  lineHeight:   1.65,
+                  maxWidth:     '42ch',
                 }}
               >
-                Gold. Stones. Top, bottom, or full set. Walk in or text 2T first — we&apos;ll walk you through the grillz process.
+                Top, bottom, or full set. Custom fit starts with the process. Text 2T or come through first.
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.875rem' }}>
-                {[
-                  'Custom built top, bottom, or full mouth. 4, 6, or 8 teeth.',
-                  'Custom fit starts with the process. Text or come through — we’ll tell you what’s needed before anything gets made.',
-                ].map((line) => (
-                  <p
-                    key={line}
-                    style={{
-                      fontFamily: 'var(--font-body)',
-                      fontSize:   'clamp(0.84rem, 1.4vw, 0.9rem)',
-                      color:      '#CECAC2',
-                      lineHeight: 1.6,
-                      display:    'flex',
-                      gap:        '0.5rem',
-                      alignItems: 'flex-start',
-                    }}
-                  >
-                    <span
-                      aria-hidden="true"
-                      style={{ color: 'var(--color-brand-gold)', flexShrink: 0, fontSize: '0.65rem', marginTop: '0.38em', opacity: 0.65 }}
-                    >
-                      ◆
-                    </span>
-                    {line}
-                  </p>
-                ))}
-              </div>
-
-              <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap', alignItems: 'center' }}>
                 <a
                   href={WA_GRILLZ}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"
                 >
-                  ASK ABOUT GRILLZ →
+                  TEXT 2T ABOUT GRILLZ →
                 </a>
                 <a
                   href={WA_GRILLZ_FIT}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-outline-gold"
+                  style={{
+                    fontFamily:     'var(--font-body)',
+                    fontSize:       '0.75rem',
+                    fontWeight:     600,
+                    letterSpacing:  '0.08em',
+                    color:          'rgba(201,168,76,0.55)',
+                    textDecoration: 'none',
+                    whiteSpace:     'nowrap',
+                  }}
                 >
-                  TEXT 2T ABOUT GRILLZ →
+                  ASK ABOUT THE FIT →
                 </a>
               </div>
             </div>
