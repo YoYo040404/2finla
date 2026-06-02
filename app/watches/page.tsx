@@ -143,7 +143,7 @@ function waUrl(msg: string): string {
 export const metadata: Metadata = {
   title: '2T Jewelers | Iced-Out & Bust-Down Watches — Pittsburgh, PA',
   description:
-    'Iced-out and bust-down watches in Pittsburgh, PA. Real watches including Rolex may be available through trusted vendor sources. Stone details confirmed per piece. Text 2T.',
+    'Iced-out and bust-down watches in Pittsburgh, PA. Stone details and sourcing confirmed per piece. Text 2T to ask what\'s available.',
 }
 
 // ── Confirm Icons ─────────────────────────────────────────────────────────────

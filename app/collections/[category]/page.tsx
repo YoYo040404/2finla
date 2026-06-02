@@ -853,6 +853,21 @@ export function generateStaticParams() {
 
 type Props = { params: Promise<{ category: string }> }
 
+const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
+  rings: {
+    title:       '2T Jewelers | Rings — Iced & Custom | Pittsburgh, PA',
+    description: 'Iced-out rings and custom ring designs at 2T Jewelers in Pittsburgh, PA. Ask about styles, materials, and availability. Text 2T.',
+  },
+  bracelets: {
+    title:       '2T Jewelers | Bracelets — Tennis, Cuban & Custom | Pittsburgh, PA',
+    description: 'Tennis, Cuban link, and custom bracelets at 2T Jewelers in Pittsburgh, PA. Material details confirmed per piece. Text 2T to ask.',
+  },
+  earrings: {
+    title:       '2T Jewelers | Earrings — Iced Studs & Hoops | Pittsburgh, PA',
+    description: 'Iced studs, hoops, and custom earrings at 2T Jewelers in Pittsburgh, PA. Material details confirmed per piece. Ask what\'s available.',
+  },
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category } = await params
   const data = CATEGORY_DATA[category]
@@ -863,11 +878,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? { robots: { index: false, follow: true } }
     : {}
 
-  return {
+  const seo = SEO_OVERRIDES[category] ?? {
     title:       `2T Jewelers | ${data.title} — Pittsburgh, PA`,
     description: `Shop ${data.title.toLowerCase()} at 2T Jewelers in Pittsburgh, PA. Real store. 25 years. Ask about availability and material details. Text to ask.`,
-    ...robotsMeta,
   }
+
+  return { ...seo, ...robotsMeta }
 }
 
 // ─── Page ─────────────────────────────────────────────────────────────────────

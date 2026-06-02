@@ -50,8 +50,8 @@ export const metadata: Metadata = {
     type:        'website',
     images: [{
       url:    '/assets/brand/2t-og-image-1200x630.png',
-      width:  1731,
-      height: 909,
+      width:  1200,
+      height: 630,
       alt:    '2T Jewelers — Grillz, Watches, Chains & Custom Jewelry in Pittsburgh',
     }],
   },
@@ -82,8 +82,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'JewelryStore',
+            '@id': `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://2tjewelers.com'}/#business`,
             name: '2T Jewelers',
-            url: 'https://2finla.vercel.app',
+            url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://2tjewelers.com',
             address: {
               '@type': 'PostalAddress',
               streetAddress: '332 Fifth Ave',

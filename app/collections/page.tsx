@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title:       '2T Jewelers | Shop Jewelry — Chains, Pendants & More — Pittsburgh, PA',
+  title:       '2T Jewelers | Shop Chains, Grillz, Pendants & More — Pittsburgh, PA',
   description: 'Shop chains, pendants, bracelets, rings, and earrings at 2T Jewelers in Pittsburgh, PA. Real store. 25 years. Ask about availability. Text 2T before you buy.',
 }
 

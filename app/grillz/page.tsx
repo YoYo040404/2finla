@@ -113,8 +113,8 @@ const WA_GRILLZ_FIT =
 // ── SEO ───────────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title:       '2T Jewelers | Custom Grillz — Pittsburgh, PA',
-  description: 'Custom gold and iced grillz. Pittsburgh jeweler. Top, bottom, or full set. Text 2T first — no deposit to start. Material and timing confirmed before the build.',
+  title:       'Custom Gold & Iced Grillz Pittsburgh | 2T Jewelers',
+  description: 'Custom gold and iced grillz in Pittsburgh. Top, bottom, or full set. Text 2T — no deposit to start. Material details confirmed before the build.',
 }
 
 // ── Hero Grillz Visual ────────────────────────────────────────────────────────
