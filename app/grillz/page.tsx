@@ -25,7 +25,7 @@ const GRILLZ_STYLES: GrillzStyle[] = [
   {
     label:       'TOP SET',
     eyebrow:     'UPPER ARCH',
-    description: 'Cover the top. 4, 6, or 8 teeth. Gold or iced direction.',
+    description: 'Gold or iced. Ask what\'s available.',
     specs:       ['Top 4, 6, or 8 teeth', 'Gold, silver, or stone direction'],
     imageSrc:    null,
     imageAlt:    'Top set grillz — upper arch gold or iced',
@@ -33,7 +33,7 @@ const GRILLZ_STYLES: GrillzStyle[] = [
   {
     label:       'BOTTOM SET',
     eyebrow:     'LOWER ARCH',
-    description: 'Bottom arch. Built to flash when you talk.',
+    description: 'Matching direction. Confirm details by text.',
     specs:       ['Bottom 4, 6, or 8 teeth', 'Any material direction'],
     imageSrc:    null,
     imageAlt:    'Bottom set grillz — lower arch',
@@ -41,7 +41,7 @@ const GRILLZ_STYLES: GrillzStyle[] = [
   {
     label:       'FULL MOUTH',
     eyebrow:     'TOP + BOTTOM',
-    description: 'Top and bottom together. The full statement.',
+    description: 'Top and bottom. Custom fit. Text 2T first.',
     specs:       ['Top + bottom full set', 'Match or mix directions'],
     imageSrc:    null,
     imageAlt:    'Full mouth grillz — top and bottom set',
@@ -49,7 +49,7 @@ const GRILLZ_STYLES: GrillzStyle[] = [
   {
     label:       'OPEN FACE',
     eyebrow:     'OPEN FACE DIRECTION',
-    description: 'Gold frame around each tooth. The tooth shows through. Loud and clean.',
+    description: 'Gold frame, natural teeth showing. Ask about the look.',
     specs:       ['Open center, gold or silver border', 'Top or bottom available'],
     imageSrc:    null,
     imageAlt:    'Open face grillz — gold frame, tooth visible through',
@@ -57,7 +57,7 @@ const GRILLZ_STYLES: GrillzStyle[] = [
   {
     label:       'ICED-OUT',
     eyebrow:     'STONE DIRECTION',
-    description: 'Stones set across every tooth. Full ice.',
+    description: 'Stone direction confirmed per piece. Ask what fits.',
     specs:       ['Stone-set direction', 'Stone details confirmed per piece'],
     imageSrc:    null,
     imageAlt:    'Iced-out grillz — stone-covered full set',
@@ -65,7 +65,7 @@ const GRILLZ_STYLES: GrillzStyle[] = [
   {
     label:       'DIAMOND CUT',
     eyebrow:     'CUT DIRECTION',
-    description: 'Geometric faceted surface. A different kind of shine.',
+    description: 'Cut and pattern confirmed before the build.',
     specs:       ['Diamond-cut pattern direction', 'Material confirmed per piece'],
     imageSrc:    null,
     imageAlt:    'Diamond cut grillz — geometric faceted surface',
@@ -88,7 +88,7 @@ const FIT_STEPS = [
   {
     num:   '03',
     label: 'FIT STEP CONFIRMED',
-    body:  'Mold and fit process confirmed before build. Not skipped.',
+    body:  'Fit process confirmed before build. Not skipped.',
   },
   {
     num:   '04',
@@ -105,16 +105,16 @@ const FIT_STEPS = [
 // ── WhatsApp ──────────────────────────────────────────────────────────────────
 
 const WA_GRILLZ =
-  'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20ask%20about%20grillz.'
+  'https://wa.me/14124524343?text=I%27m%20interested%20in%20grillz.%20What%27s%20the%20process%20and%20what%20do%20you%20need%20from%20me%3F'
 
 const WA_GRILLZ_FIT =
-  'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20asking%20about%20the%20grillz%20fit%20and%20mold%20process.%20What%20does%20that%20step%20look%20like%3F'
+  'https://wa.me/14124524343?text=I%20want%20custom%20grillz.%20Can%20you%20walk%20me%20through%20the%20next%20step%3F'
 
 // ── SEO ───────────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
   title:       '2T Jewelers | Custom Grillz — Pittsburgh, PA',
-  description: 'Custom gold and iced grillz in Pittsburgh, PA. Top, bottom, or full set. Fit confirmed before build. Ask 2T first — no deposit to start. 25 years.',
+  description: 'Custom gold and iced grillz. Pittsburgh jeweler. Top, bottom, or full set. Text 2T first — no deposit to start. Material and timing confirmed before the build.',
 }
 
 // ── Hero Grillz Visual ────────────────────────────────────────────────────────
@@ -542,8 +542,8 @@ export default function GrillzPage() {
                   marginBottom:  '1.25rem',
                 }}
               >
-                GRILLZ{' '}<br />
-                <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>BUILT TO HIT.</em>
+                CUSTOM GRILLZ.{' '}<br />
+                <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>BUILT AROUND THE FIT.</em>
               </h1>
 
               <p
@@ -556,13 +556,13 @@ export default function GrillzPage() {
                   lineHeight:   1.2,
                 }}
               >
-                Top. Bottom. Full set. Gold or stones. Fit starts first.
+                Gold. Stones. Top, bottom, or full set. Walk in or text 2T first — we&apos;ll walk you through the grillz process.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.875rem' }}>
                 {[
                   'Custom built top, bottom, or full mouth. 4, 6, or 8 teeth.',
-                  'Fit step confirmed before build. Quote confirmed before production.',
+                  'Custom fit starts with the process. Text or come through — we’ll tell you what’s needed before anything gets made.',
                 ].map((line) => (
                   <p
                     key={line}
@@ -594,7 +594,7 @@ export default function GrillzPage() {
                   rel="noopener noreferrer"
                   className="btn-primary"
                 >
-                  TEXT 2T ABOUT GRILLZ →
+                  ASK ABOUT GRILLZ →
                 </a>
                 <a
                   href={WA_GRILLZ_FIT}
@@ -602,7 +602,7 @@ export default function GrillzPage() {
                   rel="noopener noreferrer"
                   className="btn-outline-gold"
                 >
-                  ASK ABOUT THE FIT →
+                  TEXT 2T ABOUT GRILLZ →
                 </a>
               </div>
             </div>
@@ -820,7 +820,7 @@ export default function GrillzPage() {
               letterSpacing: '0.02em',
             }}
           >
-            Grillz are custom built per order. Fit confirmed before build. Material and stone details confirmed per piece.
+            Pittsburgh jeweler. Text or come through. Material and timing confirmed before the build.
           </p>
         </div>
       </section>
@@ -938,7 +938,7 @@ export default function GrillzPage() {
           >
             {[
               { label: 'SET & TEETH COUNT', body: 'Top, bottom, or full. 4, 6, or 8 teeth confirmed before build.' },
-              { label: 'FIT & MOLD',        body: 'Fit process confirmed before build starts. Not skipped.' },
+              { label: 'FIT & PROCESS',     body: 'Fit process confirmed before build starts. Not skipped.' },
               { label: 'MATERIAL & STONES', body: 'Gold, silver, diamond, or moissanite. Confirmed per piece.' },
               { label: 'QUOTE FIRST',       body: 'Price confirmed before production. No deposit to start.' },
             ].map((item) => (

@@ -47,7 +47,7 @@ type CustomPendantType = {
 const PENDANT_STYLES: PendantStyle[] = [
   {
     title:       'CROSS PENDANT',
-    description: 'The classic. Bold faith statement. Clean or iced.',
+    description: 'Clean or iced. Ask about availability.',
     specs: [
       'Cross shape — plain or iced-out',
       'Gold or silver direction',
@@ -60,7 +60,7 @@ const PENDANT_STYLES: PendantStyle[] = [
   },
   {
     title:       'JESUS PIECE',
-    description: 'Most iconic hip-hop pendant. Iced crown to base.',
+    description: 'Loud by design. Details confirmed per piece.',
     specs: [
       'Classic hip-hop icon shape',
       'Iced-out or clean gold',
@@ -73,7 +73,7 @@ const PENDANT_STYLES: PendantStyle[] = [
   },
   {
     title:       'MEDALLION',
-    description: 'Round coin face. Engraved, clean, or iced.',
+    description: 'Big face. Gold or silver. Details confirmed per piece.',
     specs: [
       'Round or oval coin face',
       'Engraved, clean, or iced-out finish',
@@ -86,7 +86,7 @@ const PENDANT_STYLES: PendantStyle[] = [
   },
   {
     title:       'INITIAL PENDANT',
-    description: 'Your letter. Block, script, or bubble font.',
+    description: 'Your letter, iced. Ask what\'s available.',
     specs: [
       'Single letter or monogram',
       'Block, script, or bubble font',
@@ -99,7 +99,7 @@ const PENDANT_STYLES: PendantStyle[] = [
   },
   {
     title:       'ICED PENDANT',
-    description: 'Full stone-set face. Built to stop the room.',
+    description: 'Stone-set face. Built to hit. Details confirmed per piece.',
     specs: [
       'Full stone-set face',
       'Diamond or moissanite direction',
@@ -112,7 +112,7 @@ const PENDANT_STYLES: PendantStyle[] = [
   },
   {
     title:       'PENDANT + CHAIN',
-    description: 'The full setup. Pendant and chain paired together.',
+    description: 'Stack the look. Ask what pairs right.',
     specs: [
       'Pendant and chain as a set',
       'Cuban, rope, or franco base',
@@ -128,37 +128,37 @@ const PENDANT_STYLES: PendantStyle[] = [
 const CUSTOM_PENDANT_TYPES: CustomPendantType[] = [
   {
     label:       'PHOTO PENDANT',
-    description: 'Built from your photo. Person, place, or moment.',
+    description: 'Your picture, built into a piece. Send the photo first.',
     imageSrc:    null,
     imageAlt:    'Custom photo pendant — portrait or personal image cast in gold or silver',
   },
   {
     label:       'LOGO PENDANT',
-    description: 'Brand, team mark, or design — cast in gold or silver.',
+    description: 'Business mark, personal logo, or design. Send the file.',
     imageSrc:    null,
     imageAlt:    'Custom logo pendant — your design cast as a wearable pendant',
   },
   {
     label:       'NAME PIECE',
-    description: 'Name, word, or phrase. Custom-set letter by letter.',
+    description: 'Your name, iced and clean. Tell us the direction.',
     imageSrc:    null,
     imageAlt:    'Custom name piece — letters set in gold or silver',
   },
   {
     label:       'NUMBER PENDANT',
-    description: 'Jersey number, area code, birth year, or any number.',
+    description: 'Jersey, area code, or date. Text the idea.',
     imageSrc:    null,
     imageAlt:    'Custom number pendant — personal number cast in gold',
   },
   {
     label:       'MEMORIAL PENDANT',
-    description: 'A tribute piece. Something that means something.',
+    description: 'Keep the memory close. Send the photo or idea.',
     imageSrc:    null,
     imageAlt:    'Custom memorial pendant — tribute piece in gold or silver',
   },
   {
     label:       'CUSTOM SHAPE',
-    description: 'Specific form, unusual shape, or your own design.',
+    description: 'Your concept, your silhouette. Send the idea first.',
     imageSrc:    null,
     imageAlt:    'Custom shape pendant — your unique form cast in metal',
   },
@@ -454,11 +454,12 @@ function CustomTypeIllustration({ index }: { index: number }) {
 }
 
 export const metadata: Metadata = {
-  title:       '2T Jewelers | Pendants — Cross, Iced & Custom — Pittsburgh, PA',
-  description: 'Shop cross, Jesus piece, medallion, initial, and iced pendants in Pittsburgh, PA. Custom photo, logo, and name pendants also available. 25 years. Text to ask.',
+  title:       '2T Jewelers | Pendants — Custom Photo, Logo, Name | Pittsburgh, PA',
+  description: 'Shop iced pendants or build custom. Photo, logo, name, number, memorial — Pittsburgh jeweler. No deposit to start. We quote before the build. 25 years.',
 }
 
-const WA_PENDANTS = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20for%20a%20pendant.%20I%20have%20a%20logo%2C%20photo%2C%20or%20name%20idea.%20Gold%20or%20silver%2C%20diamond%20or%20moissanite%20if%20iced.'
+const WA_PENDANTS        = 'https://wa.me/14124524343?text=What%20pendants%20do%20you%20have%20available%20now%3F'
+const WA_PENDANTS_CUSTOM = 'https://wa.me/14124524343?text=I%20want%20a%20custom%20pendant.%20Can%20I%20send%20a%20photo%2C%20logo%2C%20name%2C%20or%20number%3F'
 
 
 export default function PendantsPage() {
@@ -544,7 +545,7 @@ export default function PendantsPage() {
               maxWidth:     '540px',
             }}
           >
-            Six styles to shop. Bring the logo, photo, or name to build.
+            Photo, logo, name, number, or full custom. Send the idea — we quote before the build.
           </p>
 
           <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap' }}>
@@ -554,7 +555,7 @@ export default function PendantsPage() {
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              TEXT 2T ABOUT PENDANTS →
+              ASK ABOUT PENDANTS →
             </a>
             <Link href="/custom" className="btn-outline-gold">
               BUILD CUSTOM →
@@ -666,7 +667,7 @@ export default function PendantsPage() {
         }}
       >
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <span className="section-eyebrow" style={{ marginBottom: '0.75rem' }}>SHOP PENDANT STYLES</span>
+          <span className="section-eyebrow" style={{ marginBottom: '0.75rem' }}>READY TO SHOP</span>
           <p
             style={{
               fontFamily:   'var(--font-display)',
@@ -988,7 +989,7 @@ export default function PendantsPage() {
       >
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
-          <span className="section-eyebrow" style={{ marginBottom: '0.6rem' }}>CUSTOM PENDANT</span>
+          <span className="section-eyebrow" style={{ marginBottom: '0.6rem' }}>BUILD THE PIECE</span>
           <p
             style={{
               fontFamily:   'var(--font-display)',
@@ -1011,7 +1012,7 @@ export default function PendantsPage() {
               maxWidth:     '48ch',
             }}
           >
-            We&apos;ll shape the direction before quote or production.
+            Send the idea — we quote before the build.
           </p>
 
           {/* ── Selector groups (mirrors /custom build-decision-block pattern) ── */}
@@ -1145,22 +1146,22 @@ export default function PendantsPage() {
               marginBottom:  '1.5rem',
             }}
           >
-            No deposit. We quote before the build.
+            Pittsburgh jeweler. No deposit to start. We quote before the build.
           </p>
 
           {/* CTAs */}
           <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap' }}>
-            <Link href="/custom" className="btn-primary">
-              START CUSTOM PENDANT →
-            </Link>
             <a
-              href={WA_PENDANTS}
+              href={WA_PENDANTS_CUSTOM}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline-gold"
+              className="btn-primary"
             >
-              TEXT 2T FIRST →
+              SEND YOUR PENDANT IDEA →
             </a>
+            <Link href="/custom" className="btn-outline-gold">
+              BUILD CUSTOM →
+            </Link>
           </div>
 
         </div>
