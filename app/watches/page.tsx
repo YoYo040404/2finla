@@ -45,22 +45,22 @@ const WATCH_DIRECTIONS: WatchDirection[] = [
   {
     label:       'BUST-DOWN',
     eyebrow:     'FULL ICE DIRECTION',
-    description: 'Stones on the case, bracelet, and bezel. Built to stop the room.',
+    description: 'Full ice direction. Wrist shine from every angle.',
     specs: [
-      'Full case, bracelet, and bezel stone-set direction',
-      'Stone details confirmed per piece',
+      'Source and condition confirmed per piece',
+      'Stones confirmed per piece',
     ],
     imageSrc:  null,
     imageAlt:  'Bust-down watch — fully iced case, bracelet, and bezel',
     waMessage: "Hey 2T — I'm looking for a bust-down watch. Full ice, stones everywhere. What do you have available?",
   },
   {
-    label:       'ICED-OUT',
+    label:       'ICED-OUT / BEZEL',
     eyebrow:     'DIAMOND BEZEL DIRECTION',
-    description: 'Diamond bezel. Stone-set dial. Wrist shine that hits.',
+    description: 'Bezel shine or stone-set dial. Built to catch light.',
     specs: [
-      'Bezel and dial stone directions available',
       'Stone setting confirmed per piece',
+      'Pricing confirmed before you move',
     ],
     imageSrc:  null,
     imageAlt:  'Iced-out watch — diamond bezel and stone-set dial',
@@ -69,10 +69,10 @@ const WATCH_DIRECTIONS: WatchDirection[] = [
   {
     label:       'REAL ROLEX WATCHES',
     eyebrow:     'VENDOR-SOURCED',
-    description: 'Rolex may be available through trusted vendor and dealer sources.',
+    description: 'Rolex may be available through trusted vendor sources.',
     specs: [
-      'Source and condition confirmed before purchase',
       '2T is not an authorized Rolex dealer',
+      'Source and condition confirmed per piece',
     ],
     imageSrc:    null,
     imageAlt:    'Rolex watch direction — vendor-sourced, details confirmed per piece',
@@ -82,10 +82,10 @@ const WATCH_DIRECTIONS: WatchDirection[] = [
   {
     label:       'GOLD / TWO-TONE',
     eyebrow:     'METAL DIRECTION',
-    description: 'Gold case and bracelet. Two-tone metal. Wrist presence — clean or iced.',
+    description: 'Gold-tone or two-tone. Clean wrist presence with shine.',
     specs: [
-      'Full gold or two-tone direction',
-      'Metal and stone details confirmed per piece',
+      'Source and condition confirmed per piece',
+      'Details confirmed before purchase',
     ],
     imageSrc:  null,
     imageAlt:  'Gold two-tone watch — metal direction',
@@ -94,22 +94,22 @@ const WATCH_DIRECTIONS: WatchDirection[] = [
   {
     label:       'STONE-SET DIAL',
     eyebrow:     'DIAL DIRECTION',
-    description: 'Stones on the dial face. Custom hour markers. A different kind of shine.',
+    description: 'Dial shine with a cleaner face.',
     specs: [
-      'Diamond dial or stone marker directions may be available',
-      'Stone type confirmed per piece',
+      'Stones confirmed per piece',
+      "Ask what's available",
     ],
     imageSrc:  null,
     imageAlt:  'Watch with stone-set dial — diamond hour markers',
     waMessage: "Hey 2T — I'm looking at watches with stone-set dials. What directions do you have available?",
   },
   {
-    label:       'ASK WHAT\'S AVAILABLE',
+    label:       "ASK WHAT'S AVAILABLE",
     eyebrow:     'OPEN INQUIRY',
-    description: 'Tell us the wrist, the budget range, and the look. We\'ll tell you what\'s in.',
+    description: 'Tell us the wrist, the look, and the budget range.',
     specs: [
-      'Any iced-out or bust-down direction',
-      'Availability confirmed before anything moves',
+      "We'll tell you what's available",
+      'Details confirmed before anything moves',
     ],
     imageSrc:  null,
     imageAlt:  'Open watch inquiry — text 2T and ask what is available',
@@ -133,9 +133,6 @@ const CONFIRMED_ITEMS = [
 
 const WA_WATCHES =
   'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20ask%20about%20a%20watch.%20What%20iced-out%20or%20bust-down%20directions%20do%20you%20have%3F'
-
-const WA_AVAILABLE =
-  'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%20watches%20do%20you%20have%20available%20right%20now%3F%20Iced-out%2C%20bust-down%2C%20or%20Rolex%20direction.'
 
 function waUrl(msg: string): string {
   return `https://wa.me/14124524343?text=${encodeURIComponent(msg)}`
@@ -727,45 +724,29 @@ export default function WatchesPage() {
 
               <p
                 style={{
-                  fontFamily:   'var(--font-display)',
-                  fontSize:     'clamp(1.1rem, 2.3vw, 1.5rem)',
-                  fontStyle:    'italic',
-                  color:        '#a8cce0',
-                  marginBottom: '1.5rem',
-                  lineHeight:   1.2,
+                  fontFamily:   'var(--font-body)',
+                  fontSize:     'clamp(0.95rem, 1.5vw, 1.05rem)',
+                  color:        'var(--color-brand-silver)',
+                  marginBottom: '0.75rem',
+                  lineHeight:   1.65,
+                  maxWidth:     '42ch',
                 }}
               >
-                Iced-out. Bust-down. Diamond-covered.
+                Iced-out. Bust-down. Made to flood the wrist.
               </p>
 
-              {/* Two trust lines — clean, not a list */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.25rem' }}>
-                {[
-                  'Real iced-out and bust-down watches available — diamond-covered and stone-set directions.',
-                  'Rolex may be available through trusted vendor sources. All details confirmed per piece.',
-                ].map((line) => (
-                  <p
-                    key={line}
-                    style={{
-                      fontFamily: 'var(--font-body)',
-                      fontSize:   'clamp(0.84rem, 1.4vw, 0.9rem)',
-                      color:      '#c0ccd8',
-                      lineHeight: 1.6,
-                      display:    'flex',
-                      gap:        '0.5rem',
-                      alignItems: 'flex-start',
-                    }}
-                  >
-                    <span
-                      aria-hidden="true"
-                      style={{ color: 'var(--color-ice-blue)', flexShrink: 0, fontSize: '0.65rem', marginTop: '0.38em', opacity: 0.65 }}
-                    >
-                      ◆
-                    </span>
-                    {line}
-                  </p>
-                ))}
-              </div>
+              <p
+                style={{
+                  fontFamily:   'var(--font-body)',
+                  fontSize:     '0.8rem',
+                  color:        'var(--color-brand-muted)',
+                  marginBottom: '1.25rem',
+                  lineHeight:   1.6,
+                  maxWidth:     '44ch',
+                }}
+              >
+                Ask what watches are available now. Source, condition, modifications, stones, and pricing confirmed per piece.
+              </p>
 
               {/* Disclosure */}
               <p
@@ -785,10 +766,7 @@ export default function WatchesPage() {
 
               <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap' }}>
                 <a href={WA_WATCHES} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                  TEXT 2T ABOUT WATCHES →
-                </a>
-                <a href={WA_AVAILABLE} target="_blank" rel="noopener noreferrer" className="btn-outline-gold">
-                  ASK WHAT&rsquo;S AVAILABLE →
+                  ASK ABOUT WATCHES →
                 </a>
               </div>
             </div>

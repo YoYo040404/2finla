@@ -55,51 +55,51 @@ const ACTIVE_OFFER: ActiveOffer | null = null
 const CHAIN_STYLES: ChainStyle[] = [
   {
     title:       'CUBAN CHAIN',
-    description: 'Bold, flat links. The most recognized chain in the game.',
-    specs:       ["Width: ask what's available", 'Length: 18"–24" and up', 'Gold or silver direction', 'Clean or iced-out'],
+    description: 'Bold link style. The most requested chain to hold the piece.',
+    specs:       ['Width and length confirmed per piece', 'Gold or silver direction', "Ask what's available"],
     imageSrc:    null,
     imageAlt:    'Cuban link chain — flat interlocking links',
     waMessage:   "Hey 2T — I'm looking at Cuban chains. What widths and lengths do you have available?",
   },
   {
     title:       'ROPE CHAIN',
-    description: 'Twisted links, textured shine. Works layered or solo.',
-    specs:       ['Slim (2–3mm) or bold (5–6mm)', 'Length: 18"–30" range', 'Gold or silver direction', 'Clean or diamond-cut finish'],
+    description: 'Twisted links. A classic shine that moves.',
+    specs:       ['Length confirmed per piece', 'Gold or silver direction', "Ask what's available"],
     imageSrc:    null,
     imageAlt:    'Rope chain — twisted link texture',
     waMessage:   "Hey 2T — I'm looking at rope chains. What thicknesses and lengths do you have? Gold or silver direction.",
   },
   {
     title:       'TENNIS CHAIN',
-    description: 'Stone-set all the way around. Built for shine in every link.',
-    specs:       ['Stone-set from clasp to clasp', 'Length: 18"–22" most common', 'Diamond or moissanite direction', 'Details confirmed per piece'],
+    description: 'Stone-set all the way around. Built for shine.',
+    specs:       ['Diamond or moissanite direction', 'Stone details confirmed per piece', "Ask what's available"],
     imageSrc:    null,
     imageAlt:    'Tennis chain — continuous stone-set links',
     waMessage:   "Hey 2T — I'm interested in a tennis chain. What stone directions and lengths do you have? Diamond or moissanite — let me know what's available.",
   },
   {
     title:       'FRANCO CHAIN',
-    description: 'Four-sided structure, heavier build. Strong foundation for a bigger pendant.',
-    specs:       ['Width: 2mm–6mm range', 'Length: 18"–26" common', 'Gold or silver direction', 'Usually clean — ask about iced-out'],
+    description: 'Four-sided structure. Heavier build. Strong profile.',
+    specs:       ['Width and length confirmed per piece', 'Gold or silver direction', "Ask what's available"],
     imageSrc:    null,
     imageAlt:    'Franco chain — four-sided box links',
     waMessage:   "Hey 2T — I'm looking at Franco chains. What widths and lengths do you have? I want something solid for a pendant.",
   },
   {
     title:       'FIGARO CHAIN',
-    description: 'Classic Italian structure. Alternating short-long links, built different.',
-    specs:       ['Width: 3mm–8mm range', 'Length: 18"–24" most common', 'Gold or silver direction', 'Usually clean — ask about iced-out'],
+    description: 'Classic link structure. Alternating long-short rhythm.',
+    specs:       ['Gold or silver direction', 'Length confirmed per piece', "Ask what's available"],
     imageSrc:    null,
     imageAlt:    'Figaro chain — alternating small and large links',
     waMessage:   "Hey 2T — I'm looking at Figaro chains. What widths and metal directions do you have?",
   },
   {
-    title:       'ICED-OUT CHAIN',
-    description: 'Stone-set links from clasp to clasp. Built to stop the room.',
-    specs:       ["Cuban or rope base — ask what's in", 'Diamond or moissanite direction', 'Gold or silver direction', 'Details confirmed per piece'],
+    title:       'STONE-SET LINK',
+    description: 'Stone-set links from clasp to clasp. Built to hit the light.',
+    specs:       ['Stone details confirmed per piece', 'Material confirmed per piece', "Ask what's available"],
     imageSrc:    null,
-    imageAlt:    'Iced-out chain — stone-set links, full shine',
-    waMessage:   "Hey 2T — I want to look at iced-out chains. What stone directions and base styles do you have?",
+    imageAlt:    'Stone-set chain — fully iced links',
+    waMessage:   "Hey 2T — I want to look at stone-set or iced-out chains. What stone directions and base styles do you have?",
   },
 ]
 
@@ -110,39 +110,6 @@ const WA_CHAINS = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%2
 function waUrl(msg: string): string {
   return `https://wa.me/14124524343?text=${encodeURIComponent(msg)}`
 }
-
-// ── Style chips ───────────────────────────────────────────────────────────────
-
-const STYLE_CHIPS = [
-  'Cuban',
-  'Rope',
-  'Tennis',
-  'Franco',
-  'Figaro',
-  'Iced-Out',
-  'Yellow Gold',
-  'White Gold',
-  'Rose Gold',
-  'Silver',
-  'Not Sure Yet',
-]
-
-// ── Direction reference cards ─────────────────────────────────────────────────
-
-const DIRECTION_CARDS = [
-  {
-    label: 'STYLE',
-    body:  "Cuban, rope, tennis, Franco, Figaro — or iced-out. Tell us what's catching your eye.",
-  },
-  {
-    label: 'WEIGHT + WIDTH',
-    body:  'Heavier and thicker for a statement piece. Lighter and thinner for everyday layering.',
-  },
-  {
-    label: 'PENDANT PAIRING',
-    body:  'Already have a pendant in mind? The chain should complement the weight and look of the piece.',
-  },
-]
 
 // ── Chain illustration SVG fallbacks ─────────────────────────────────────────
 // Geometric line-art per chain style — renders when imageSrc is null.
@@ -319,7 +286,7 @@ function ChainIllustration({ index }: { index: number }) {
 
 export const metadata: Metadata = {
   title:       '2T Jewelers | Chains — Cuban, Rope & Tennis — Pittsburgh, PA',
-  description: "Cuban, rope, tennis, Franco, Figaro, and iced-out chains in Pittsburgh, PA. Browse styles and ask 2T what's in stock. Real Pittsburgh store. 25 years.",
+  description: "Cuban, rope, tennis, Franco, Figaro, and stone-set chains in Pittsburgh, PA. Browse styles and ask 2T what's available. Pittsburgh jeweler. 25 years.",
 }
 
 // ── Page ──────────────────────────────────────────────────────────────────────
@@ -365,30 +332,15 @@ export default function ChainsPage() {
 
           <p
             style={{
-              fontFamily:   'var(--font-display)',
-              fontSize:     'clamp(1.05rem, 2.2vw, 1.45rem)',
-              fontStyle:    'italic',
-              color:        'var(--color-brand-gold-light)',
-              marginBottom: '1.25rem',
-              lineHeight:   1.25,
-              maxWidth:     '540px',
-            }}
-          >
-            Cuban, rope, tennis, Franco, Figaro, iced-out.
-          </p>
-
-          <p
-            style={{
               fontFamily:   'var(--font-body)',
-              fontSize:     'clamp(0.9rem, 1.5vw, 1rem)',
-              color:        'var(--color-brand-muted)',
-              lineHeight:   1.7,
-              maxWidth:     '520px',
+              fontSize:     'clamp(0.95rem, 1.5vw, 1.05rem)',
+              color:        'var(--color-brand-silver)',
               marginBottom: '2rem',
+              lineHeight:   1.65,
+              maxWidth:     '42ch',
             }}
           >
-            The foundation of every neck. Browse the styles below and ask 2T
-            what&rsquo;s in stock — details confirmed per piece.
+            Cuban, rope, or tennis. Ask what&rsquo;s available and what pairs with your pendant.
           </p>
 
           <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap' }}>
@@ -398,11 +350,8 @@ export default function ChainsPage() {
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              TEXT 2T ABOUT CHAINS →
+              ASK ABOUT CHAINS →
             </a>
-            <Link href="/collections/pendants" className="btn-outline-gold">
-              SHOP PENDANTS →
-            </Link>
           </div>
         </div>
       </section>
@@ -640,60 +589,26 @@ export default function ChainsPage() {
             ))}
           </div>
 
-          {/* Footnote */}
+          {/* Footnote + CTA */}
           <p
             style={{
               fontFamily:    'var(--font-body)',
               fontSize:      '0.78rem',
               color:         'var(--color-brand-subtle)',
               letterSpacing: '0.02em',
+              marginBottom:  '1.25rem',
             }}
           >
-            Details confirmed per piece. Ask what&rsquo;s in stock and available.
+            Details confirmed per piece. Ask what&rsquo;s available before you buy.
           </p>
-        </div>
-      </section>
-
-      {/* ── Style Chips ───────────────────────────────────────────── */}
-      <section
-        style={{
-          padding:      'clamp(3rem, 6vw, 4.5rem) 1.5rem',
-          borderBottom: '1px solid var(--color-brand-border)',
-        }}
-      >
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <span className="section-eyebrow" style={{ marginBottom: '0.75rem' }}>NARROW IT DOWN</span>
-          <p
-            style={{
-              fontFamily:   'var(--font-display)',
-              fontSize:     'clamp(1.5rem, 3.5vw, 2.6rem)',
-              fontWeight:   400,
-              color:        'var(--color-brand-white)',
-              lineHeight:   1.1,
-              marginBottom: '1.75rem',
-            }}
+          <a
+            href={WA_CHAINS}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
           >
-            Tell us the style when you text.
-          </p>
-
-          <div className="chip-row" style={{ marginBottom: '1.25rem' }}>
-            {STYLE_CHIPS.map((chip) => (
-              <span key={chip} className="direction-chip">
-                {chip}
-              </span>
-            ))}
-          </div>
-
-          <p
-            style={{
-              fontFamily:    'var(--font-body)',
-              fontSize:      '0.82rem',
-              color:         'var(--color-brand-subtle)',
-              letterSpacing: '0.02em',
-            }}
-          >
-            Text 2T the style — we guide width, length, and finish from there.
-          </p>
+            ASK ABOUT CHAINS →
+          </a>
         </div>
       </section>
 
@@ -763,184 +678,6 @@ export default function ChainsPage() {
         </section>
       )}
 
-      {/* ── Material Direction ──────────────────────────────────────── */}
-      <section
-        style={{
-          padding:      'clamp(3rem, 6vw, 4.5rem) 1.5rem',
-          borderBottom: '1px solid var(--color-brand-border)',
-          background:   'var(--color-brand-charcoal)',
-        }}
-      >
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <span className="section-eyebrow" style={{ marginBottom: '0.75rem' }}>MATERIAL DIRECTION</span>
-          <p
-            style={{
-              fontFamily:   'var(--font-display)',
-              fontSize:     'clamp(1.5rem, 3.5vw, 2.6rem)',
-              fontWeight:   400,
-              color:        'var(--color-brand-white)',
-              lineHeight:   1.1,
-              marginBottom: '1.75rem',
-            }}
-          >
-            Gold or silver. Diamond or moissanite.
-          </p>
-
-          <div style={{ marginBottom: '1.25rem' }}>
-            <p
-              style={{
-                fontFamily:    'var(--font-body)',
-                fontSize:      '0.65rem',
-                fontWeight:    600,
-                letterSpacing: '0.13em',
-                textTransform: 'uppercase',
-                color:         'var(--color-brand-gold)',
-                marginBottom:  '0.6rem',
-                opacity:       0.85,
-              }}
-            >
-              METAL
-            </p>
-            <div className="chip-row">
-              {['Gold', 'Silver', 'Not Sure Yet'].map((chip) => (
-                <span key={chip} className="direction-chip">{chip}</span>
-              ))}
-            </div>
-          </div>
-
-          <div style={{ marginBottom: '1.5rem' }}>
-            <p
-              style={{
-                fontFamily:    'var(--font-body)',
-                fontSize:      '0.65rem',
-                fontWeight:    600,
-                letterSpacing: '0.13em',
-                textTransform: 'uppercase',
-                color:         'var(--color-brand-gold)',
-                marginBottom:  '0.6rem',
-                opacity:       0.85,
-              }}
-            >
-              STONE
-            </p>
-            <div className="chip-row">
-              {['Diamond', 'Moissanite', 'No Stones', 'Not Sure Yet'].map((chip) => (
-                <span key={chip} className="direction-chip">{chip}</span>
-              ))}
-            </div>
-          </div>
-
-          <p
-            style={{
-              fontFamily:    'var(--font-body)',
-              fontSize:      '0.82rem',
-              color:         'var(--color-brand-subtle)',
-              letterSpacing: '0.02em',
-            }}
-          >
-            Different shine. Different direction. Details confirmed per piece.
-          </p>
-        </div>
-      </section>
-
-      {/* ── Tell Us What You&apos;re After ─────────────────────────── */}
-      <section
-        style={{
-          padding:      'clamp(3rem, 6vw, 4.5rem) 1.5rem',
-          borderBottom: '1px solid var(--color-brand-border)',
-          background:   'var(--color-brand-charcoal)',
-        }}
-      >
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <span className="section-eyebrow" style={{ marginBottom: '0.75rem' }}>PICK THE DIRECTION</span>
-          <p
-            style={{
-              fontFamily:   'var(--font-display)',
-              fontSize:     'clamp(1.5rem, 3.5vw, 2.6rem)',
-              fontWeight:   400,
-              color:        'var(--color-brand-white)',
-              lineHeight:   1.1,
-              marginBottom: '2.5rem',
-            }}
-          >
-            Tell us what you&apos;re after.
-          </p>
-
-          <div
-            style={{
-              display:             'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-              gap:                 '1.5rem',
-              marginBottom:        '2rem',
-            }}
-          >
-            {DIRECTION_CARDS.map((card) => (
-              <div
-                key={card.label}
-                style={{
-                  padding:    '1.75rem',
-                  border:     '1px solid var(--color-brand-border)',
-                  background: 'var(--color-brand-black)',
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily:    'var(--font-body)',
-                    fontSize:      '0.68rem',
-                    fontWeight:    600,
-                    letterSpacing: '0.13em',
-                    textTransform: 'uppercase',
-                    color:         'var(--color-brand-gold)',
-                    marginBottom:  '0.6rem',
-                    opacity:       0.85,
-                  }}
-                >
-                  {card.label}
-                </p>
-                <p
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize:   '0.875rem',
-                    color:      'var(--color-brand-muted)',
-                    lineHeight: 1.65,
-                  }}
-                >
-                  {card.body}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div
-            style={{
-              padding:    '1.1rem 1.4rem',
-              border:     '1px solid var(--color-brand-border)',
-              background: 'rgba(201,168,76,0.03)',
-              display:    'flex',
-              gap:        '0.75rem',
-              alignItems: 'flex-start',
-            }}
-          >
-            <span
-              aria-hidden="true"
-              style={{ color: 'var(--color-brand-gold)', fontSize: '0.85rem', flexShrink: 0, opacity: 0.7, marginTop: '1px' }}
-            >
-              ◆
-            </span>
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize:   '0.82rem',
-                color:      'var(--color-brand-muted)',
-                lineHeight: 1.6,
-              }}
-            >
-              Product details are confirmed per piece. Ask about current availability,
-              material direction, and width options before committing.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* ── Active Offer slot ─────────────────────────────────────────────
            Renders nothing while HAS_ACTIVE_OFFER is false.
@@ -1023,122 +760,18 @@ export default function ChainsPage() {
         </section>
       )}
 
-      {/* ── Pair With a Pendant — compact strip ───────────────────── */}
-      <section
-        style={{
-          padding:      'clamp(1.5rem, 3vw, 2.25rem) 1.5rem',
-          borderBottom: '1px solid var(--color-brand-border)',
-          background:   'var(--color-brand-charcoal)',
-        }}
-      >
-        <div
-          style={{
-            maxWidth:   '1100px',
-            margin:     '0 auto',
-            display:    'flex',
-            gap:        '1.25rem',
-            alignItems: 'center',
-            flexWrap:   'wrap',
-          }}
-        >
-          <p
-            style={{
-              fontFamily:   'var(--font-body)',
-              fontSize:     '0.875rem',
-              color:        'var(--color-brand-muted)',
-              lineHeight:   1.5,
-              flex:         '1 1 200px',
-            }}
+      {/* ── Footer nav ───────────────────────────────────────────────── */}
+      <div style={{ padding: 'clamp(1.5rem, 3vw, 2.25rem) 1.5rem' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <Link
+            href="/collections"
+            className="nav-link-footer"
+            style={{ fontFamily: 'var(--font-body)', fontSize: '0.8125rem', letterSpacing: '0.03em' }}
           >
-            <strong style={{ color: 'var(--color-brand-silver)', fontWeight: 600 }}>
-              Start with the chain. Add the pendant.
-            </strong>
-            {' '}Have a pendant in mind? Text 2T to match width and direction.
-          </p>
-          <Link href="/collections/pendants" className="btn-outline-gold" style={{ flexShrink: 0 }}>
-            SHOP PENDANTS →
+            ← All Collections
           </Link>
         </div>
-      </section>
-
-      {/* ── CTA Card ──────────────────────────────────────────────── */}
-      <section
-        style={{
-          padding: 'clamp(3.5rem, 7vw, 5.5rem) 1.5rem',
-        }}
-      >
-        <div style={{ maxWidth: '780px', margin: '0 auto' }}>
-          <div
-            style={{
-              padding:    'clamp(2rem, 5vw, 3rem) clamp(1.5rem, 4vw, 2.5rem)',
-              border:     '1px solid rgba(201,168,76,0.3)',
-              background: 'linear-gradient(135deg, rgba(201,168,76,0.04) 0%, rgba(201,168,76,0.01) 100%)',
-              position:   'relative',
-              overflow:   'hidden',
-            }}
-          >
-            <div aria-hidden="true" style={{
-              position:   'absolute',
-              inset:      0,
-              background: 'radial-gradient(ellipse 60% 70% at 90% 20%, rgba(201,168,76,0.06) 0%, transparent 70%)',
-            }} />
-
-            <span className="section-eyebrow" style={{ marginBottom: '0.75rem', position: 'relative' }}>
-              START THE CONVERSATION
-            </span>
-
-            <p
-              style={{
-                fontFamily:   'var(--font-display)',
-                fontSize:     'clamp(1.8rem, 4vw, 3rem)',
-                fontWeight:   400,
-                color:        'var(--color-brand-white)',
-                lineHeight:   1.0,
-                marginBottom: '0.75rem',
-                position:     'relative',
-              }}
-            >
-              Text 2T about chains.
-            </p>
-
-            <p
-              style={{
-                fontFamily:   'var(--font-body)',
-                fontSize:     '0.9rem',
-                color:        'var(--color-brand-muted)',
-                lineHeight:   1.65,
-                maxWidth:     '46ch',
-                marginBottom: '2rem',
-                position:     'relative',
-              }}
-            >
-              Tell us the style and direction. Ask what&rsquo;s in stock.
-              Details confirmed per piece.
-            </p>
-
-            <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap', position: 'relative' }}>
-              <a
-                href={WA_CHAINS}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-              >
-                TEXT 2T ABOUT CHAINS →
-              </a>
-            </div>
-          </div>
-
-          <div style={{ marginTop: '2.5rem' }}>
-            <Link
-              href="/collections"
-              className="nav-link-footer"
-              style={{ fontFamily: 'var(--font-body)', fontSize: '0.8125rem', letterSpacing: '0.03em' }}
-            >
-              ← All Collections
-            </Link>
-          </div>
-        </div>
-      </section>
+      </div>
 
     </main>
   )
