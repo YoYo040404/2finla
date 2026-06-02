@@ -28,6 +28,7 @@ type CategoryData = {
   directionNote?: string
   waMessage:      string
   primaryCta:     string
+  noCtaBox?:      boolean
 }
 
 // ─── WhatsApp helper ──────────────────────────────────────────────────────────
@@ -88,15 +89,13 @@ const CATEGORY_DATA: Record<string, CategoryData> = {
 
   bracelets: {
     title:      'Bracelets',
-    headline:   'Wrist weight that hits.',
-    body:       'Cuban link, tennis, bangle, iced-out. Browse the styles below and ask 2T what\'s in stock — details confirmed per piece.',
+    headline:   'WRIST GAME WITH WEIGHT.',
+    body:       'Tennis, Cuban, or iced-out direction. Ask what\'s available.',
     note:       'Ask what\'s available. Details confirmed per piece.',
     glow:       'rgba(201,168,76,0.07)',
     waMessage:  "Hey 2T — I'm looking at bracelets. What styles and directions do you have available?",
-    primaryCta: 'TEXT 2T ABOUT BRACELETS →',
-    chips:      ['Cuban Link', 'Tennis', 'Bangle', 'Iced-Out', 'Rope', 'Not Sure Yet'],
-    materialChips: ['Gold', 'Silver', 'Not Sure Yet'],
-    stoneChips:    ['Diamond', 'Moissanite', 'No Stones', 'Not Sure Yet'],
+    primaryCta: 'ASK ABOUT BRACELETS →',
+    noCtaBox:   true,
     svg: (
       <svg width="70" height="60" viewBox="0 0 70 60" fill="none">
         <path d="M8 52 A31 31 0 1 1 62 52" stroke="rgba(201,168,76,0.55)" strokeWidth="2.5" strokeLinecap="round"/>
@@ -249,15 +248,13 @@ const CATEGORY_DATA: Record<string, CategoryData> = {
 
   rings: {
     title:      'Rings',
-    headline:   'Pinky, statement, signet.',
-    body:       'Browse the styles below and ask 2T what\'s available. Stack or solo — text about sizing and stone direction. Details confirmed per piece.',
-    note:       'Ask about sizing and available styles before committing.',
+    headline:   'RINGS THAT HIT.',
+    body:       'Big face, iced look, or clean statement. Ask what\'s available before you buy.',
+    note:       'Ask about sizing and available styles.',
     glow:       'rgba(208,238,255,0.07)',
     waMessage:  "Hey 2T — I'm looking at rings. What styles and sizes do you have available?",
-    primaryCta: 'TEXT 2T ABOUT RINGS →',
-    chips:      ['Pinky Ring', 'Statement Ring', 'Signet', 'Iced-Out', 'Band', 'Not Sure Yet'],
-    materialChips: ['Gold', 'Silver', 'Not Sure Yet'],
-    stoneChips:    ['Diamond', 'Moissanite', 'No Stones', 'Not Sure Yet'],
+    primaryCta: 'ASK ABOUT RINGS →',
+    noCtaBox:   true,
     svg: (
       <svg width="60" height="68" viewBox="0 0 60 68" fill="none">
         <circle cx="30" cy="44" r="20" stroke="rgba(208,238,255,0.55)" strokeWidth="2.5"/>
@@ -382,15 +379,13 @@ const CATEGORY_DATA: Record<string, CategoryData> = {
 
   earrings: {
     title:      'Earrings',
-    headline:   'Studs, hoops, drops.',
-    body:       'Iced or brushed. Browse the styles below and ask 2T what\'s available — details confirmed per piece.',
+    headline:   'EARRINGS THAT CATCH LIGHT.',
+    body:       'Studs, hoops, or iced-out direction. Ask what\'s available.',
     note:       'Ask what\'s in stock. Details confirmed per piece.',
     glow:       'rgba(208,238,255,0.06)',
     waMessage:  "Hey 2T — I'm looking at earrings. What styles and directions do you have available?",
-    primaryCta: 'TEXT 2T ABOUT EARRINGS →',
-    chips:      ['Studs', 'Hoops', 'Drop Earrings', 'Iced-Out', 'Cluster', 'Not Sure Yet'],
-    materialChips: ['Gold', 'Silver', 'Not Sure Yet'],
-    stoneChips:    ['Diamond', 'Moissanite', 'No Stones', 'Not Sure Yet'],
+    primaryCta: 'ASK ABOUT EARRINGS →',
+    noCtaBox:   true,
     svg: (
       <svg width="60" height="68" viewBox="0 0 60 68" fill="none">
         <line x1="16" y1="5"  x2="16" y2="18" stroke="rgba(208,238,255,0.5)"  strokeWidth="1.5" strokeLinecap="round"/>
@@ -1021,83 +1016,95 @@ export default async function CategoryPage({ params }: Props) {
       )}
 
       {/* ── CTA ─────────────────────────────────────────────────── */}
-      <section style={{ padding: 'clamp(3rem, 6vw, 4.5rem) clamp(1.25rem, 3vw, 2.5rem)' }}>
+      <section style={{ padding: 'clamp(2.5rem, 5vw, 3.5rem) clamp(1.25rem, 3vw, 2.5rem)' }}>
         <div style={{ maxWidth: '780px', margin: '0 auto' }}>
-          <div
-            style={{
-              padding:    'clamp(2rem, 5vw, 3rem) clamp(1.5rem, 4vw, 2.5rem)',
-              border:     '1px solid rgba(201,168,76,0.25)',
-              background: 'linear-gradient(135deg, rgba(201,168,76,0.04) 0%, rgba(201,168,76,0.01) 100%)',
-              position:   'relative',
-              overflow:   'hidden',
-            }}
-          >
+
+          {data.noCtaBox ? (
+            <a
+              href={waHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              {data.primaryCta}
+            </a>
+          ) : (
             <div
-              aria-hidden="true"
               style={{
-                position:   'absolute',
-                inset:      0,
-                background: 'radial-gradient(ellipse 50% 60% at 100% 50%, rgba(201,168,76,0.04) 0%, transparent 70%)',
-              }}
-            />
-
-            <span className="section-eyebrow" style={{ marginBottom: '0.75rem', position: 'relative' }}>
-              START THE CONVERSATION
-            </span>
-
-            <p
-              style={{
-                fontFamily:   'var(--font-display)',
-                fontSize:     'clamp(1.5rem, 3.5vw, 2.4rem)',
-                fontWeight:   400,
-                color:        'var(--color-brand-white)',
-                lineHeight:   1.0,
-                marginBottom: '0.75rem',
-                position:     'relative',
+                padding:    'clamp(2rem, 5vw, 3rem) clamp(1.5rem, 4vw, 2.5rem)',
+                border:     '1px solid rgba(201,168,76,0.25)',
+                background: 'linear-gradient(135deg, rgba(201,168,76,0.04) 0%, rgba(201,168,76,0.01) 100%)',
+                position:   'relative',
+                overflow:   'hidden',
               }}
             >
-              Text 2T about {data.title.toLowerCase()}.
-            </p>
+              <div
+                aria-hidden="true"
+                style={{
+                  position:   'absolute',
+                  inset:      0,
+                  background: 'radial-gradient(ellipse 50% 60% at 100% 50%, rgba(201,168,76,0.04) 0%, transparent 70%)',
+                }}
+              />
 
-            <p
-              style={{
-                fontFamily:   'var(--font-body)',
-                fontSize:     '0.875rem',
-                color:        'var(--color-brand-muted)',
-                lineHeight:   1.65,
-                maxWidth:     '46ch',
-                marginBottom: '0.5rem',
-                position:     'relative',
-              }}
-            >
-              {data.note}
-            </p>
+              <span className="section-eyebrow" style={{ marginBottom: '0.75rem', position: 'relative' }}>
+                START THE CONVERSATION
+              </span>
 
-            <p
-              style={{
-                fontFamily:    'var(--font-mono)',
-                fontSize:      '0.6rem',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color:         'var(--color-brand-subtle)',
-                marginBottom:  '1.75rem',
-                position:      'relative',
-              }}
-            >
-              Product details confirmed per piece.
-            </p>
-
-            <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap', position: 'relative' }}>
-              <a
-                href={waHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
+              <p
+                style={{
+                  fontFamily:   'var(--font-display)',
+                  fontSize:     'clamp(1.5rem, 3.5vw, 2.4rem)',
+                  fontWeight:   400,
+                  color:        'var(--color-brand-white)',
+                  lineHeight:   1.0,
+                  marginBottom: '0.75rem',
+                  position:     'relative',
+                }}
               >
-                {data.primaryCta}
-              </a>
+                Text 2T about {data.title.toLowerCase()}.
+              </p>
+
+              <p
+                style={{
+                  fontFamily:   'var(--font-body)',
+                  fontSize:     '0.875rem',
+                  color:        'var(--color-brand-muted)',
+                  lineHeight:   1.65,
+                  maxWidth:     '46ch',
+                  marginBottom: '0.5rem',
+                  position:     'relative',
+                }}
+              >
+                {data.note}
+              </p>
+
+              <p
+                style={{
+                  fontFamily:    'var(--font-mono)',
+                  fontSize:      '0.6rem',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color:         'var(--color-brand-subtle)',
+                  marginBottom:  '1.75rem',
+                  position:      'relative',
+                }}
+              >
+                Product details confirmed per piece.
+              </p>
+
+              <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap', position: 'relative' }}>
+                <a
+                  href={waHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
+                  {data.primaryCta}
+                </a>
+              </div>
             </div>
-          </div>
+          )}
 
           <div style={{ marginTop: '2.5rem' }}>
             <Link
