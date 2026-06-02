@@ -77,12 +77,17 @@ npm run dev
 - **Pendants split — compact custom selector** (commit `4b6c067`) — SHOP section + custom pendant selector; Pendants split between SHOP and CUSTOM
 - **Watches high-ticket inquiry page reworked** (commit `77799de`) — `app/watches/page.tsx`; Rolex-aware, non-authorized-dealer disclosure, image-ready
 - **Grillz fit-first page reworked** (commit `7e87bce`) — `app/grillz/page.tsx`; fit-first, six style cards, no dental/medical/fit-guarantee claims
+- **Docs sync** (commit `4fc8e3a`) — project state synced after category pages
+- **Mobile readability + route CTAs** (commit `5cdb34e`) — improved mobile readability, route CTA fixes across category pages
+- **Typography and contrast system refined** (commit `3dcb65d`) — token corrections sitewide
+- **Static direction chips made non-interactive** (commit `7567917`) — material/stone spec labels rendered as read-only, not interactive buttons
+
+**Post-Pass-2B QA status (2026-06-02): CLEAN**
+Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grillz, /about. Mobile 390px ✅. Desktop 1280px key routes ✅. No horizontal scroll ✅. Sticky mobile CTA clears content ✅. Claim-safety grep clean ✅. Build passed ✅.
 
 ### WIP / Approval Pending ⚠️
 
-- `/grillz` — reworked (7e87bce); fit-first architecture, six style cards, process-driven; visual QA and user approval pending for new version
-- `/watches` — reworked (77799de); high-ticket inquiry architecture, Rolex-aware; visual QA and user approval pending for new version
-- Category pages (Chains, Bracelets, Rings, Earrings, Pendants) — built; visual QA pending
+- Category pages (Chains, Bracelets, Rings, Earrings, Pendants, Grillz, Watches) — Post-Pass-2B QA passed; awaiting real media assets before further visual changes
 
 ### Not Yet 🚫
 
@@ -103,11 +108,11 @@ npm run dev
 
 ### Next Milestone 🎯
 
-- Sitewide typography/font/contrast audit
-- Real asset/media replacement planning — define what photos/footage are needed
-- Visual QA and user approval of reworked `/grillz` and `/watches`
+- **Full Site VOC + Competitor + Social Copywriting/SEO Research Plan** — research before any copy or SEO implementation
+- Asset/media request list — define what specific photos/footage are needed (after research)
 - Production Resend sender domain polish (low priority — before real traffic)
 - SEO/schema after core pages pass claim-safety review
+- No random CSS/layout cleanup unless QA finds a real issue
 
 ---
 
@@ -377,10 +382,14 @@ Only if user explicitly approves:
 24. ✅ **Pendants compact custom selector** — SHOP/CUSTOM split (commit `4b6c067`)
 25. ✅ **Watches high-ticket inquiry page reworked** (commit `77799de`)
 26. ✅ **Grillz fit-first page reworked** (commit `7e87bce`)
-27. 🎯 **Visual QA of reworked /grillz and /watches** — user approval required ← NEXT
-28. 🎯 **Sitewide typography/font/contrast audit** ← NEXT
-29. 🎯 **Real asset/media replacement planning** ← NEXT PHASE
-30. 🎯 **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic ← LOW PRIORITY
+27. ✅ **Docs sync** (commit `4fc8e3a`)
+28. ✅ **Mobile readability + route CTAs** (commit `5cdb34e`)
+29. ✅ **Typography and contrast system refined** (commit `3dcb65d`)
+30. ✅ **Static direction chips non-interactive** (commit `7567917`)
+31. ✅ **Post-Pass-2B QA** — all routes clean, mobile 390px, desktop 1280px, claim-safety grep, build passed
+32. 🎯 **Full Site VOC + Competitor + Social Copywriting/SEO Research Plan** ← NEXT
+33. 🎯 **Asset/media request list** — after research phase ← NEXT PHASE
+34. 🎯 **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic ← LOW PRIORITY
 31. 🎯 **Category/product proof pages** — after media/proof planning
 32. ⏳ SEO/schema — after core pages pass claim-safety review
 22. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL

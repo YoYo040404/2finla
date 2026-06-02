@@ -521,7 +521,7 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 **Active branch / state:** `main` — all recent passes committed and live on Vercel.
 
-**Completed milestones (as of 2026-06-01):**
+**Completed milestones (as of 2026-06-02):**
 - Pittsburgh BANG homepage merged into main (PR #1 — commit `39a3b70`).
 - Repo QA cleanup — screenshot artifacts gitignored, QA utility added (commit `854c15e`).
 - `/custom` CRO pass and selector grouping — lead funnel tightened, all 9 fields live via Resend (commits `60c7d06`, `2303850`).
@@ -535,13 +535,17 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 - Header active nav states cleaned (commit `4f3097f`).
 - Watches high-ticket inquiry page reworked (commit `77799de`).
 - Grillz fit-first page reworked (commit `7e87bce`).
+- Docs sync after category pages (commit `4fc8e3a`).
+- Mobile readability and route CTAs improved (commit `5cdb34e`).
+- Typography and contrast system refined (commit `3dcb65d`).
+- Static direction chips made non-interactive (commit `7567917`).
+- **Post-Pass-2B QA clean** — all routes, mobile 390px, desktop 1280px, no horizontal scroll, claim-safety grep clean, build passed.
 
 **Next phase:**
-1. Sitewide typography/font/contrast audit — verify all text is using the correct tokens, no gold/brown on body copy.
-2. Real asset/media replacement — hero footage, product shots, grillz/watches photos, store footage.
-3. Short asset request list for 2T Jewelers — define what specific images/media are needed.
-4. Lead capture/backend wiring for forms on category pages (if applicable).
-5. SEO/schema after core pages and claims are controlled.
+1. **Full Site VOC + Competitor + Social Copywriting/SEO Research Plan** — research before any copy or SEO implementation.
+2. Asset/media request list — define what specific images/media are needed (after research).
+3. SEO/schema after core pages and claims are controlled.
+4. No random CSS/layout cleanup unless QA finds a real issue.
 
 **Do not reopen homepage redesign** unless a clear blocker is found.
 
@@ -549,10 +553,14 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 ---
 
-## Committed Work (as of 2026-05-31)
+## Committed Work (as of 2026-06-02)
 
 | Commit | Description |
 |---|---|
+| `7567917` | fix: make static direction chips non-interactive |
+| `3dcb65d` | fix: refine typography and contrast system |
+| `5cdb34e` | fix: improve mobile readability and route ctas |
+| `4fc8e3a` | docs: sync current 2T project state |
 | `7e87bce` | feat: add fit-first grillz page |
 | `77799de` | feat: add high-ticket iced watch inquiry page |
 | `4f3097f` | fix: clean header active nav states |

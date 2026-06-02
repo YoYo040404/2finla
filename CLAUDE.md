@@ -52,22 +52,18 @@ For execution tasks:
 
 ## Current Active Task
 
-**Homepage Phase 2 is complete and user-approved as a milestone.**
+**Midnight Icebox homepage is live and user-approved. Custom flow is live. Category pages completed. Post-Pass-2B QA clean.**
 
-Approved homepage section order:
+**Current homepage section order (Midnight Icebox — commit `af7f20d` and later):**
 
-1. Hero — full-bleed, BUILT TO HIT., video slot wired
-2. ProofMarquee — CSS-only animated trust strip (Pittsburgh-built, 25 years)
-3. Custom Entry Block — bring the logo / photo / idea, CTA to /custom
-4. PICK YOUR LANE — 5 category tiles (Chains, Pendants, Grillz, Watches, Custom) + secondary pills
-5. BestSellersStrip — two editorial lanes (Best Sellers / New Arrivals), inline SVG shape cards, no real product data
-6. Inquiry Lanes — 3 inquiry lanes (Diamond Watches, Grillz, Custom Jewelry), each with a CTA
-7. PittsburghStory — outline typography brand story, dual CTAs
-8. SocialTeaser — Instagram / TikTok / WhatsApp cards with inline SVG icons, real links only
-9. Material Preview — material option chips (925 Silver, Gold-Plated, Moissanite, etc.)
-10. FinalCTABar — HAVE A PIECE IN MIND? Start the piece + Text 2T
-
-Removed: old Trust Strip, old Shop by Category / Collection Grid.
+1. Hero — full-bleed campaign, BUILT TO HIT., BANG. gold brand stamp, dual CTAs: SHOP JEWELRY + BUILD CUSTOM →, video slot wired
+2. ProofMarquee — CSS-only animated trust strip, gold borders
+3. PICK THE PIECE — vitrine display-case gateway, anchor row (GRILLZ dominant), inline text direction labels + material cue
+4. ShineDirectionBand — METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite
+5. Promo strip — ASK WHAT'S RUNNING NOW, claim-safe
+6. Custom lane — YOUR LOGO. YOUR NAME. YOUR PIECE., keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST
+7. PittsburghStory — stat ledger: 25 YEARS / 5TH AVE, gold left-border rules
+8. SocialTeaser — channel-map rows: TikTok / Instagram / WhatsApp, real links only
 
 - Header logo: `2t-logo-wide-transparent.png` — numeric width/height, TODO for final SVG/2x
 - Footer logo: `2t-logo-full-black-bg.png` — installed
@@ -86,6 +82,29 @@ CRO pass and selector grouping committed (commits `60c7d06`, `2303850`). Resend 
 - Pendants split — SHOP section (six pendant cards) + compact custom pendant selector (photo/logo/name/number/memorial/custom-shape); regular pendants = SHOP, photo/logo/name/number/custom-shape pendants = CUSTOM
 - Watches — `app/watches/page.tsx` fully reworked; high-ticket iced/bust-down/Rolex-aware inquiry architecture; non-authorized-dealer disclosure included; image-ready structure; no fake inventory/prices/claims
 - Grillz — `app/grillz/page.tsx` fully reworked; custom/fit/process-driven; six style cards (Top Set, Bottom Set, Full Mouth, Open Face, Stone Direction/Iced-Out, Cut Direction/Diamond Cut); no dental/medical/fit-guarantee/mold-kit claims
+
+**Post-category polish passes committed (2026-06-01 → 2026-06-02):**
+
+- `4fc8e3a` docs: sync current 2T project state
+- `5cdb34e` fix: improve mobile readability and route ctas
+- `3dcb65d` fix: refine typography and contrast system
+- `7567917` fix: make static direction chips non-interactive
+
+**Post-Pass-2B QA status: CLEAN (2026-06-02)**
+
+Routes tested: /, /collections/chains, /collections/pendants, /custom, /watches, /grillz, /about.
+Mobile 390px: passed. Desktop 1280px: key routes passed.
+No horizontal scroll. Sticky mobile CTA clears content. Static direction chips render as non-interactive spec labels.
+Claim-safety grep: clean. Build passed. Site is healthy/shippable.
+
+**Working tree — do not stage without explicit approval:**
+- `docs/superpowers/plans/` and `docs/superpowers/specs/` — planning/spec notes
+- `public/assets/demo/phase3a/` — demo PNG assets
+- `public/assets/logo-to-use.png` — replacement logo candidate, not yet approved for wiring
+- `qa-2b-*.jpeg` — QA screenshots (do not commit; add to .gitignore if not already)
+
+**Next recommended phase: Full Site VOC + Competitor + Social Copywriting/SEO Research Plan.**
+No random CSS/layout cleanup unless QA finds a real issue. Asset/media request list comes after research.
 
 Do not commit or push new category pages without visual QA and user approval.  
 Do not wire Formspree.  

@@ -95,10 +95,14 @@ Do not publish as blanket sitewide claims without verification. Do not invent th
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
 Old Shopify folder is archive only. Do not touch it.
 
-**Latest committed state (as of 2026-06-01):**
+**Latest committed state (as of 2026-06-02):**
 
 | Commit | Description |
 |---|---|
+| `7567917` | fix: make static direction chips non-interactive |
+| `3dcb65d` | fix: refine typography and contrast system |
+| `5cdb34e` | fix: improve mobile readability and route ctas |
+| `4fc8e3a` | docs: sync current 2T project state |
 | `7e87bce` | feat: add fit-first grillz page |
 | `77799de` | feat: add high-ticket iced watch inquiry page |
 | `4f3097f` | fix: clean header active nav states |
@@ -210,8 +214,8 @@ Custom page (as of commit 84af600 — 2026-05-17):
 | Chains page `/collections/chains` | ✅ Six style cards (744d2b3/dc33c16), SHOP language, SVG fallback |
 | Bracelets / Rings / Earrings | ✅ Six style cards per category (dc33c16), SHOP language, no BUILD CUSTOM CTA |
 | Pendants page `/collections/pendants` | ✅ Split (4b6c067) — SHOP section (six cards) + compact custom pendant selector |
-| Grillz page `/grillz` | ✅ Fully reworked (7e87bce) — fit-first, six style cards, process-driven, non-authorized claims removed. Visual QA and user approval pending. |
-| Watches page `/watches` | ✅ Fully reworked (77799de) — high-ticket inquiry architecture, Rolex-aware, non-authorized-dealer disclosure included. Visual QA and user approval pending. |
+| Grillz page `/grillz` | ✅ Fully reworked (7e87bce) — fit-first, six style cards, process-driven, non-authorized claims removed. Post-Pass-2B QA passed (2026-06-02). |
+| Watches page `/watches` | ✅ Fully reworked (77799de) — high-ticket inquiry architecture, Rolex-aware, non-authorized-dealer disclosure included. Post-Pass-2B QA passed (2026-06-02). |
 | Custom page `/custom` | ✅ CRO pass committed (60c7d06), selector grouping committed (2303850), user-approved. |
 | Logo (temporary) | ✅ Transparent logo in header, black-bg logo in footer — final SVG/2x pending |
 | Contact / social | ✅ Address, phone, WhatsApp, Instagram, TikTok, Acima all wired in Footer |
@@ -227,18 +231,28 @@ Custom page (as of commit 84af600 — 2026-05-17):
 
 ## Default Next Prompt
 
-**Current milestone: Core category pages (Chains, Pendants split, Watches rework, Grillz rework, Header nav) committed to main.**
+**Current milestone: Category pages + Post-Pass-2B polish committed and QA clean. Site is healthy/shippable.**
+
+**Post-Pass-2B QA status (2026-06-02): CLEAN**
+Routes tested: /, /collections/chains, /collections/pendants, /custom, /watches, /grillz, /about.
+Mobile 390px passed. Desktop 1280px key routes passed. No horizontal scroll. Sticky mobile CTA clears content.
+Static direction chips render as non-interactive spec labels. Claim-safety grep clean. Build passed.
+
+**Working tree — do not stage without explicit approval:**
+- `docs/superpowers/plans/` and `docs/superpowers/specs/` — planning/spec notes
+- `public/assets/demo/phase3a/` — demo PNG assets
+- `public/assets/logo-to-use.png` — replacement logo candidate, not yet approved for wiring
+- `qa-2b-*.jpeg` — QA screenshots (do not commit; add to .gitignore if not already)
 
 1. Do not reopen broad homepage redesign. Pittsburgh BANG is the current direction.
 2. Do not re-polish `/custom` — CRO pass and selector grouping are approved and live.
 3. Do not rebuild the Resend backend — it is working and verified.
-4. Next immediate tasks (in order):
-   - Sitewide typography/font/contrast audit — verify all text uses correct tokens (bone/silver, not gold/brown as body copy).
-   - Real asset/media replacement — hero footage, product shots, grillz/watches photos, store footage.
-   - Short asset request list for 2T Jewelers — define what specific images/media are needed.
-   - Lead capture/backend wiring for category page forms (if applicable).
+4. Do not do random CSS/layout cleanup unless QA finds a real issue.
+5. Next recommended phase:
+   - **Full Site VOC + Competitor + Social Copywriting/SEO Research Plan** — research before any copy or SEO implementation.
+   - Asset/media request list — after research phase, define what specific images/media are needed.
    - SEO/schema after core pages and claims are controlled.
-5. `/grillz` and `/watches` rework complete — visual QA and user approval pending for the new versions before further changes.
+6. `/grillz` and `/watches` rework complete — Post-Pass-2B QA passed. No further redesign until real/demo assets arrive.
 
 **Keep untouched until explicitly approved:**
 - `public/assets/logo-to-use.png` — do not rename, move, or wire unless user provides final asset and approves.
