@@ -394,15 +394,15 @@ For current prototype pages:
 - If a placeholder is needed for layout purposes, mark it clearly in code as a placeholder
 - Get user approval before any placeholder content goes into a real preview
 
-### Approved Demo Promo — Business-Owner Confirmed
+### PromoBar — Claim-Safe Copy (updated 2026-06-03)
 
-**"20% OFF YOUR FIRST CUSTOM ORDER"** is business-owner approved for the current demo promo bar placement.
+**"20% OFF YOUR FIRST CUSTOM ORDER"** was **removed** in commit `f8101dd` (Pass 4A, 2026-06-03).
 
-- Scope: promo bar only. Do not extend this wording to other page sections, hero copy, category pages, or popups.
-- Do not add urgency, countdown timers, expiry, scarcity, or conditions to this claim unless confirmed.
-- Do not expand into related discount or policy claims (free shipping, warranty, VVS/GIA, Rolex/authenticity, celebrity proof, guarantee, inventory) without product/policy-level confirmation.
-- Wording is locked to the approved phrase. Do not rephrase or broaden without user confirmation.
-- This approval is for demo preview only. Confirm with business owner before any public launch.
+- It was never confirmed as business-owner approved at product/policy level.
+- The audit (2026-06-03) identified it as a claim-safety violation: a specific percentage discount without verified terms, conditions, or business-owner confirmation.
+- It has been replaced with: **"ASK WHAT'S RUNNING NOW · CUSTOM PIECES BUILT HERE · DETAILS CONFIRMED PER PIECE"**
+- This replacement copy is fully claim-safe under the existing approved phrase set.
+- Do not re-introduce percentage discounts, BOGO, or promotional offers unless explicitly confirmed by the business owner with terms, scope, and expiry defined.
 
 ---
 

@@ -409,7 +409,7 @@ See Visual Direction section above for the full Midnight Icebox token table (upd
 
 ### Homepage — Material & Stone Direction Pass ✅ Committed
 
-**Latest commit:** `0b5252e — feat: boost homepage shop discovery` (2026-06-02)
+**Latest commit:** `f8101dd — fix: polish site visuals and claim-safe promo bar` (2026-06-03)
 
 Homepage is a product-first store with a custom lane — NOT custom-only. Hero dual CTAs: SHOP THE PIECES + BUILD CUSTOM →.
 
@@ -424,7 +424,7 @@ Homepage is a product-first store with a custom lane — NOT custom-only. Hero d
 | 5 | Promo strip — ASK WHAT'S RUNNING NOW | inline in `app/page.tsx` | ✅ Claim-safe, WhatsApp prefill, promo terms note |
 | 6 | Custom lane — YOUR LOGO. YOUR NAME. YOUR PIECE. | inline in `app/page.tsx` | ✅ Keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST |
 | 7 | REAL STORE. REAL WORK. | `components/home/PittsburghStory.tsx` | ✅ Stat ledger: 25 YEARS / 5TH AVE with gold left-border rules |
-| 8 | TAP IN WITH 2T. | `components/home/SocialTeaser.tsx` | ✅ Channel-map rows with diamond glyphs, WhatsApp gold-bordered |
+| 8 | TAP IN WITH 2T. | `components/home/SocialTeaser.tsx` | ✅ Platform icon vitrine (TikTok/Instagram/WhatsApp cluster, WA pulse animation); channel-map rows right; real links only |
 
 **Vitrine system:** Striped diagonal-pattern CSS placeholder wells with corner crop marks. Replace with real `<img>` or `<video>` when media assets arrive.
 
@@ -565,6 +565,8 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 - **Pass 3B-B chains + watches copy; rings / bracelets / earrings CTAs cleaned** (commits `4d566bb`, `6cedd28`).
 - **Pass 3C — claim-safe discovery collections** — Most Asked About / Ask What Just Landed; /collections layout improved; Shop dropdown includes All Collections (commit `b58c9a0`).
 - **Homepage SHOP Boost** — stronger PICK THE PIECE, discovery strip, BestSellersStrip wired, hero CTA SHOP THE PIECES (commit `0b5252e`).
+- **SEO foundation + social docs** (commits `1b36f09`, `eb3fcd9`, `c9e8817`, `cfefe89`) — metadata/sitemap/robots, production URL env doc, social strategy sync, asset request plan.
+- **Pass 4A — sitewide visual polish + claim safety** (commit `f8101dd`, 2026-06-03): PromoBar "20% OFF" removed + claim-safe copy; secondary tile mi-gleam; BestSellersStrip mobile CTA visibility + stagger animation; SocialTeaser platform icon vitrine; BANG. signature in ProofContactZone + About; hover states on all category style cards; screenshot gitignore patterns.
 
 **TikTok / Instagram Feed — Feasibility Assessed (2026-06-03):**
 
@@ -576,8 +578,8 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 - **Assets needed from 2T:** 2–3 still frames from real @2tjewelers TikTok/Instagram posts + direct post URLs + 1 real caption snippet per post.
 
 **Next phase:**
-1. **SEO foundation planning / metadata pass** — research before any SEO implementation.
-2. **Asset/media request list** — define what specific images/media are needed.
+1. **Final sitewide asset shot list** — define exactly what photos/footage 2T needs to provide. Site is now visually polished enough that the remaining gaps are clearly identifiable.
+2. **SocialTeaser Phase 1** — manual curated social cards when real @2tjewelers still frames + post URLs arrive from 2T.
 3. No random CSS/layout cleanup unless QA finds a real issue.
 
 **Do not reopen homepage redesign** unless a clear blocker is found.

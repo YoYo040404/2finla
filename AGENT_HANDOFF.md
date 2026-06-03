@@ -95,10 +95,13 @@ Do not publish as blanket sitewide claims without verification. Do not invent th
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
 Old Shopify folder is archive only. Do not touch it.
 
-**Latest committed state (as of 2026-06-03):**
+**Latest committed state (as of 2026-06-03 — latest: `f8101dd`):**
 
 | Commit | Description |
 |---|---|
+| `f8101dd` | fix: polish site visuals and claim-safe promo bar — Pass 4A |
+| `cfefe89` | docs: add asset request social phase 1 plan |
+| `c9e8817` | docs: sync tooling and social feed strategy |
 | `eb3fcd9` | docs: document production site url env |
 | `1b36f09` | feat: add seo foundation metadata sitemap robots |
 | `4e651ff` | docs: sync post pass 3c project state |
@@ -140,7 +143,7 @@ Old Shopify folder is archive only. Do not touch it.
 
 **Current strategic direction:** 2T Jewelers is a real Pittsburgh street-luxury jewelry store. Pittsburgh BANG homepage is merged into main. Visual direction: hard hip-hop / hood street-luxury — loud, flashy, bling-heavy, ice/diamond/gold shine, rapper/athlete energy. NOT quiet luxury, NOT boutique, NOT over-clean ecommerce.
 
-**Current focus:** /custom CRO pass and lead capture are complete and live. Next phase: production Resend sender domain polish → Custom Hero / media proof / real asset planning → category/product proof pages. Do not reopen broad homepage redesign.
+**Current focus:** Pass 4A visual polish is complete and committed (`f8101dd`). PromoBar claim risk ("20% OFF") removed. Site is visually polished and ready for the final asset shot list. Next phase: compile the final sitewide asset shot list — define exactly what photos/footage 2T needs to provide. SocialTeaser Phase 1 when real @2tjewelers still frames arrive. Do not reopen broad homepage redesign. Do not add CSS/layout cleanup unless QA finds a real issue.
 
 ---
 

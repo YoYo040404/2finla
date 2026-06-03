@@ -52,23 +52,23 @@ For execution tasks:
 
 ## Current Active Task
 
-**SEO foundation committed (`1b36f09`). Social feed feasibility assessed (2026-06-03). Latest commit: `eb3fcd9`. Midnight Icebox homepage live and user-approved. Custom flow live. Category pages complete.**
+**Pass 4A sitewide visual polish committed (`f8101dd`). Latest commit: `f8101dd`. Midnight Icebox homepage live and user-approved. Custom flow live. Category pages complete. PromoBar claim risk removed.**
 
 **Social feed feasibility conclusion (2026-06-03):**
 - Phase 1 = manual curated cards in SocialTeaser left canvas (build when 2T provides real still frames + post URLs)
 - Do NOT build Instagram/TikTok API yet (requires developer apps + app review)
 - Feasibility plan: `docs/superpowers/plans/2026-06-03-social-feed-feasibility.md`
 
-**Current homepage section order (Midnight Icebox — commit `0b5252e` and later):**
+**Current homepage section order (Midnight Icebox — commit `f8101dd` and later):**
 
 1. Hero — full-bleed campaign, BUILT TO HIT., BANG. gold brand stamp, dual CTAs: SHOP THE PIECES + BUILD CUSTOM →, video slot wired
 2. ProofMarquee — CSS-only animated trust strip, gold borders
-3. PICK THE PIECE — stronger vitrine gateway (0b5252e), anchor row (GRILLZ dominant), discovery strip, BestSellersStrip wired, inline text direction labels + material cue
+3. PICK THE PIECE — stronger vitrine gateway, anchor row (GRILLZ dominant), discovery strip, BestSellersStrip wired; secondary tiles (RINGS/BRACELETS/EARRINGS) have mi-gleam animation; mobile CTA visible at 55% opacity by default
 4. ShineDirectionBand — METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite
-5. Promo strip — ASK WHAT'S RUNNING NOW, claim-safe
+5. Promo strip — "ASK WHAT'S RUNNING NOW · CUSTOM PIECES BUILT HERE · DETAILS CONFIRMED PER PIECE" — fully claim-safe (old "20% OFF" copy removed in f8101dd)
 6. Custom lane — YOUR LOGO. YOUR NAME. YOUR PIECE., keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST
-7. PittsburghStory — stat ledger: 25 YEARS / 5TH AVE, gold left-border rules
-8. SocialTeaser — channel-map rows: TikTok / Instagram / WhatsApp, real links only
+7. ProofContactZone — stat ledger: 25 YEARS / 332 FIFTH AVE; BANG. signature added; channel-map rows: TikTok / Instagram / WhatsApp
+8. SocialTeaser — platform icon vitrine (TikTok/Instagram/WhatsApp cluster, WA pulse animation); channel-map rows right; real links only
 
 - Header logo: `2t-logo-wide-transparent.png` — numeric width/height, TODO for final SVG/2x
 - Footer logo: `2t-logo-full-black-bg.png` — installed
@@ -106,17 +106,31 @@ CRO pass and selector grouping committed (commits `60c7d06`, `2303850`). Resend 
 - `b58c9a0` feat: add claim-safe discovery collections (Most Asked About / Ask What Just Landed)
 - `0b5252e` feat: boost homepage shop discovery — stronger PICK THE PIECE, discovery strip, BestSellersStrip, hero CTA SHOP THE PIECES, All Collections in Shop dropdown, /collections layout improved
 
-**Post-Pass-3C QA screenshots captured (2026-06-02):**
+**SEO foundation + social docs (2026-06-03):**
 
-Routes screenshotted: best sellers (desktop 1280 / mobile 390), collections (desktop / mobile), new arrivals (desktop), shop dropdown, shop boost (desktop / mobile). Site is healthy/shippable. Full Playwright QA pass pending.
+- `1b36f09` feat: add seo foundation metadata sitemap robots
+- `eb3fcd9` docs: document production site url env
+- `c9e8817` docs: sync tooling and social feed strategy
+- `cfefe89` docs: add asset request social phase 1 plan
+
+**Pass 4A — sitewide visual polish + claim safety (2026-06-03):**
+
+- `f8101dd` fix: polish site visuals and claim-safe promo bar
+  - PromoBar "20% OFF YOUR FIRST CUSTOM ORDER" removed — replaced with claim-safe copy
+  - Secondary tiles (RINGS/BRACELETS/EARRINGS) — mi-gleam animation added
+  - BestSellersStrip — mobile CTA visible at 55% opacity; card-enter stagger animation
+  - SocialTeaser left canvas — platform icon cluster (TikTok/Instagram/WhatsApp); WA pulse animation
+  - BANG. signature added to ProofContactZone and About page
+  - Hover states (style-card-hover) on Grillz, Watches, Chains, Pendants, Collections hub cards
+  - cat-grid-link hover upgraded (gold outline + translateY)
+  - Screenshot gitignore patterns added (qa-*.jpeg, audit-*.jpeg)
 
 **Working tree — do not stage without explicit approval:**
 - `docs/superpowers/plans/` and `docs/superpowers/specs/` — planning/spec notes
 - `public/assets/demo/phase3a/` — demo PNG assets
 - `public/assets/logo-to-use.png` — replacement logo candidate, not yet approved for wiring
-- `qa-3c-*.jpeg` and `qa-shop-boost-*.jpeg` — QA screenshots (do not commit; gitignore if not already)
 
-**Next recommended phase:** Asset/media request list — define what specific photos/footage 2T needs to provide. After that, SocialTeaser Phase 1 when real @2tjewelers still frames arrive.
+**Next recommended phase:** Final sitewide asset shot list — define exactly what photos/footage 2T needs to provide. SocialTeaser Phase 1 when real @2tjewelers still frames arrive.
 No random CSS/layout cleanup unless QA finds a real issue.
 
 Do not commit or push new category pages without visual QA and user approval.  

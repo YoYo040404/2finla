@@ -90,21 +90,26 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 - **Pass 3B-B chains + watches copy; rings / bracelets / earrings CTAs cleaned** (commits `4d566bb`, `6cedd28`)
 - **Pass 3C — claim-safe discovery collections** (commit `b58c9a0`) — Most Asked About / Ask What Just Landed; /collections layout improved; Shop dropdown includes All Collections
 - **Homepage SHOP Boost** (commit `0b5252e`) — stronger PICK THE PIECE, discovery strip, BestSellersStrip wired, hero CTA SHOP THE PIECES, /collections layout improved
+- **SEO foundation + social docs** (commits `1b36f09`, `eb3fcd9`, `c9e8817`, `cfefe89`)
+- **Pass 4A — sitewide visual polish + claim safety** (commit `f8101dd`, 2026-06-03):
+  - PromoBar "20% OFF YOUR FIRST CUSTOM ORDER" removed — replaced with claim-safe copy
+  - Secondary tiles (RINGS/BRACELETS/EARRINGS) — mi-gleam diagonal light sweep added
+  - BestSellersStrip — mobile CTA visible by default (0.55 opacity); card-enter stagger animation
+  - SocialTeaser left canvas — platform icon vitrine (TikTok/Instagram/WA cluster + WA pulse)
+  - BANG. signature added to ProofContactZone and About page
+  - Hover states on all category style cards (Grillz, Watches, Chains, Pendants, Collections hub)
+  - Screenshot gitignore patterns added
 
 ### WIP / Approval Pending ⚠️
 
-- Category pages (Chains, Bracelets, Rings, Earrings, Pendants, Grillz, Watches) — Post-Pass-2B QA passed; awaiting real media assets before further visual changes
+- None currently. Pass 4A is committed and QA-verified.
 
 ### Not Yet 🚫
 
-- Sitewide typography/font/contrast audit
+- **Final sitewide asset shot list** — in progress (next phase)
 - Real asset/media replacement (hero footage, product shots, grillz/watches photos, store footage)
-- Short asset request list for 2T Jewelers
-- Lead capture/backend wiring for forms on category pages (if applicable)
-- Real product/category images
 - SocialTeaser Phase 1: manual curated cards (build when 2T provides real @2tjewelers still frames + post URLs)
 - Instagram oEmbed Read API / TikTok Display API dynamic feed (future — requires developer apps + app review — see feasibility plan)
-- WhatsApp floating desktop button
 - Production Resend sender domain (`leads@2tjewelers.com` or similar) — current `onboarding@resend.dev` is acceptable for testing
 - Final logo SVG/2x/favicon
 - Shopify recalibration
@@ -115,8 +120,8 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 
 ### Next Milestone 🎯
 
-- **Asset/media request list** — define what specific photos/footage are needed from 2T
-- **SocialTeaser Phase 1** — manual curated social cards when 2T provides real still frames + post URLs
+- **Final sitewide asset shot list** — define exactly what photos/footage 2T needs to provide; site is now polished enough that remaining gaps are clearly identifiable
+- **SocialTeaser Phase 1** — manual curated social cards when 2T provides real @2tjewelers still frames + post URLs
 - **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic (low priority)
 - SEO/schema after core pages pass claim-safety review
 - No random CSS/layout cleanup unless QA finds a real issue
