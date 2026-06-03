@@ -34,9 +34,9 @@ export function PromoBar() {
       >
         <span style={{ color: 'var(--color-brand-gold)', marginRight: '0.6em' }}>◆</span>
         {/* Desktop copy — hidden on narrow viewports via CSS */}
-        <span className="promo-bar-full">20% OFF YOUR FIRST CUSTOM ORDER &nbsp;◆&nbsp; START YOUR PIECE TODAY</span>
+        <span className="promo-bar-full">ASK WHAT&rsquo;S RUNNING NOW &nbsp;◆&nbsp; CUSTOM PIECES BUILT HERE &nbsp;◆&nbsp; DETAILS CONFIRMED PER PIECE</span>
         {/* Mobile copy — shown only on narrow viewports via CSS */}
-        <span className="promo-bar-short">20% OFF FIRST CUSTOM ORDER</span>
+        <span className="promo-bar-short">ASK WHAT&rsquo;S RUNNING NOW</span>
         <span style={{ color: 'var(--color-brand-gold)', marginLeft: '0.6em' }}>◆</span>
       </p>
     </div>

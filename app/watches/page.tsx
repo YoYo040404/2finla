@@ -928,8 +928,10 @@ export default function WatchesPage() {
             {WATCH_DIRECTIONS.map((dir, i) => (
               <div
                 key={dir.label}
+                className="style-card-hover"
                 style={{
                   background:    dir.accentRolex ? 'linear-gradient(160deg, #0c0a05 0%, #070604 100%)' : 'var(--color-brand-black)',
+                  border:        '1px solid var(--color-brand-border)',
                   display:       'flex',
                   flexDirection: 'column',
                   position:      'relative',

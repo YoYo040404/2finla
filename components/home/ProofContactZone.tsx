@@ -158,10 +158,14 @@ export default function ProofContactZone() {
             color: 'var(--color-brand-silver)',
             lineHeight: 1.68,
             maxWidth: '40ch',
-            marginBottom: '1.75rem',
+            marginBottom: '1.25rem',
           }}>
             Text or come through. Direct access. Details confirmed per piece.
           </p>
+
+          <div style={{ marginBottom: '1.5rem' }}>
+            <span className="bang-signature bang-signature--section">BANG.</span>
+          </div>
 
           {/* Social channel map — platform label removed (icon identifies platform) */}
           <div style={{ borderTop: '1px solid var(--color-brand-border)', paddingTop: '1.5rem' }}>

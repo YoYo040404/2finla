@@ -666,8 +666,10 @@ export default function GrillzPage() {
               return (
                 <div
                   key={style.label}
+                  className="style-card-hover"
                   style={{
                     background:    isIce ? 'linear-gradient(160deg, #070a10 0%, #050608 100%)' : 'var(--color-brand-black)',
+                    border:        '1px solid var(--color-brand-border)',
                     display:       'flex',
                     flexDirection: 'column',
                     position:      'relative',

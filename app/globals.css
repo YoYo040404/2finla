@@ -151,9 +151,23 @@
   }
   .nav-link-footer:hover { color: var(--color-brand-white); }
 
-  /* Collections grid card link (hover bg only, CSS-only) */
-  .cat-grid-link { background: #141414; }
-  .cat-grid-link:hover { background: #1c1c1c; }
+  /* Collections grid card link */
+  .cat-grid-link {
+    background:  #141414;
+    outline:     1px solid transparent;
+    transition:  background 0.2s ease, outline-color 0.2s ease, transform 0.2s ease;
+  }
+  @media (hover: hover) {
+    .cat-grid-link:hover {
+      background:    #1a1a14;
+      outline-color: rgba(201, 168, 76, 0.45);
+      transform:     translateY(-1px);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cat-grid-link { transition: background 0.1s ease; }
+    .cat-grid-link:hover { transform: none; }
+  }
 
   /* Collection card */
   .collection-card {
@@ -3441,4 +3455,53 @@
   .mi-gleam             { animation: none; }
   .pb-vitrine-custom    { animation: none; }
   .homepage-hero::before { animation: none; opacity: 0; }
+}
+
+/* ─── SocialTeaser — WhatsApp icon pulse ─────────────────────────────────── */
+
+.social-vitrine-wa {
+  animation: wa-border-pulse 4s ease-in-out infinite;
+}
+
+@keyframes wa-border-pulse {
+  0%, 100% { border-color: rgba(37,211,102,0.18); box-shadow: none; }
+  50%       { border-color: rgba(37,211,102,0.60); box-shadow: 0 0 10px rgba(37,211,102,0.18); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-vitrine-wa { animation: none; }
+}
+
+/* ─── Style card hover — used on Grillz, Watches, Chains, Pendants, Collections ── */
+
+.style-card-hover {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+@media (hover: hover) {
+  .style-card-hover:hover {
+    border-color: rgba(201, 168, 76, 0.55) !important;
+    box-shadow:   0 4px 22px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(201, 168, 76, 0.18);
+    transform:    translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .style-card-hover { transition: border-color 0.1s ease; }
+  .style-card-hover:hover { transform: none; box-shadow: none; }
+}
+
+/* ─── BestSellersStrip — stagger card entrance ──────────────────────────── */
+
+@keyframes card-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.bss-card-enter {
+  animation: card-enter 0.5s var(--ease-smooth) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bss-card-enter { animation: none; }
 }

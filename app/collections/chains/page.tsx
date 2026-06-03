@@ -481,8 +481,10 @@ export default function ChainsPage() {
             {CHAIN_STYLES.map((style, i) => (
               <div
                 key={style.title}
+                className="style-card-hover"
                 style={{
                   background:    'var(--color-brand-black)',
+                  border:        '1px solid var(--color-brand-border)',
                   display:       'flex',
                   flexDirection: 'column',
                 }}

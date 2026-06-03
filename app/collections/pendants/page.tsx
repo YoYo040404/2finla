@@ -681,8 +681,10 @@ export default function PendantsPage() {
             {PENDANT_STYLES.map((style, i) => (
               <div
                 key={style.title}
+                className="style-card-hover"
                 style={{
                   background:    'var(--color-brand-black)',
+                  border:        '1px solid var(--color-brand-border)',
                   display:       'flex',
                   flexDirection: 'column',
                 }}
@@ -1017,8 +1019,10 @@ export default function PendantsPage() {
             {CUSTOM_PENDANT_TYPES.map((type, i) => (
               <div
                 key={type.label}
+                className="style-card-hover"
                 style={{
                   background:    'var(--color-brand-black)',
+                  border:        '1px solid var(--color-brand-border)',
                   display:       'flex',
                   flexDirection: 'column',
                 }}

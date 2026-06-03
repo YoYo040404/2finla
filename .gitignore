@@ -74,6 +74,12 @@ public/lockup-preview.html
 
 # qa screenshot output
 qa-screenshots/
+qa-*.jpeg
+qa-*.png
+
+# audit screenshots (local only)
+audit-*.jpeg
+audit-*.png
 
 # design direction reference screenshots (local only)
 mi-*.png

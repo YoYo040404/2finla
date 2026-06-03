@@ -381,6 +381,7 @@ export default function HomePage() {
                       }}
                     />
                   )}
+                  <div className="mi-gleam" />
                 </div>
                 <div className="pb-tile-foot">
                   <h5 className="pb-tile-title" style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 'clamp(1.08rem, 2.1vw, 1.35rem)', margin: 0, lineHeight: 0.9 }}>{tile.label}</h5>

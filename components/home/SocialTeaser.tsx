@@ -93,12 +93,7 @@ export default function SocialTeaser() {
           alignItems: 'center',
         }}
       >
-        {/* Left — brand canvas: replace with real social clip when available */}
-        {/*
-          <video autoPlay muted loop playsInline style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover'}}>
-            <source src="/assets/store/social-clip.mp4" type="video/mp4" />
-          </video>
-        */}
+        {/* Left — platform identity vitrine. Replace outer div with <video> when real social clip arrives. */}
         <div
           aria-hidden="true"
           className="mi-vitrine pb-vitrine-social"
@@ -106,44 +101,53 @@ export default function SocialTeaser() {
             aspectRatio: '4/3',
             position: 'relative',
             display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
+            gap: '1.25rem',
           }}
         >
-          {/* @2tjewelers mark — alive even without real media */}
-          <div style={{ textAlign: 'center', zIndex: 2, position: 'relative' }}>
-            <p
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(2.5rem, 6vw, 4rem)',
-                fontWeight: 400,
-                lineHeight: 1,
-                color: 'transparent',
-                WebkitTextStroke: '1px rgba(201,168,76,0.28)',
-                letterSpacing: '0.02em',
-                margin: '0 0 8px',
-                userSelect: 'none',
-              }}
-            >
-              @2T
-            </p>
-            <p className="mi-mono" style={{ color: 'rgba(201,168,76,0.38)', fontSize: '0.55rem', letterSpacing: '0.2em' }}>
-              JEWELERS
-            </p>
+          {/* Atmospheric radial — center bloom */}
+          <div style={{
+            position: 'absolute', inset: 0, pointerEvents: 'none',
+            background: 'radial-gradient(ellipse 60% 55% at 50% 48%, rgba(201,168,76,0.07) 0%, transparent 65%)',
+          }} />
+
+          {/* Platform icon cluster — TikTok / Instagram / WhatsApp */}
+          <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', position: 'relative', zIndex: 2 }}>
+
+            {/* TikTok */}
+            <div style={{ width: 42, height: 42, border: '1px solid rgba(255,255,255,0.14)', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.04)', flexShrink: 0 }}>
+              <TikTokIcon />
+            </div>
+
+            {/* Instagram */}
+            <div style={{ width: 42, height: 42, border: '1px solid rgba(225,48,108,0.22)', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(225,48,108,0.04)', flexShrink: 0 }}>
+              <InstagramIcon />
+            </div>
+
+            {/* WhatsApp — animated pulse border */}
+            <div className="social-vitrine-wa" style={{ width: 42, height: 42, border: '1px solid rgba(37,211,102,0.28)', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(37,211,102,0.06)', flexShrink: 0 }}>
+              <WhatsAppIcon />
+            </div>
           </div>
+
+          {/* Handle */}
+          <p className="mi-mono" style={{ color: 'rgba(201,168,76,0.42)', fontSize: '0.55rem', letterSpacing: '0.22em', position: 'relative', zIndex: 2, margin: 0 }}>
+            @2TJEWELERS
+          </p>
+
           {/* Bottom label */}
           <div
             style={{
               position: 'absolute',
-              bottom: 0,
-              left: 0,
-              right: 0,
+              bottom: 0, left: 0, right: 0,
               padding: '10px 14px',
               borderTop: '1px solid var(--color-brand-border)',
             }}
           >
             <span className="mi-mono mi-faint" style={{ fontSize: '0.55rem' }}>
-              TIKTOK · INSTAGRAM · WHATSAPP
+              WATCH · FOLLOW · TEXT
             </span>
           </div>
         </div>

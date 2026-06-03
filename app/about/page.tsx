@@ -24,7 +24,7 @@ export default function AboutPage() {
           style={{
             position:      'absolute',
             inset:         0,
-            background:    'radial-gradient(ellipse 55% 60% at 15% 45%, rgba(201,168,76,0.07) 0%, transparent 70%)',
+            background:    'radial-gradient(ellipse 55% 60% at 15% 45%, rgba(201,168,76,0.07) 0%, transparent 70%), radial-gradient(ellipse 45% 50% at 88% 50%, rgba(201,168,76,0.04) 0%, transparent 65%)',
             pointerEvents: 'none',
           }}
         />
@@ -40,12 +40,15 @@ export default function AboutPage() {
               lineHeight:    0.9,
               letterSpacing: '-0.03em',
               color:         'var(--color-brand-white)',
-              marginBottom:  '1.75rem',
+              marginBottom:  '1.25rem',
             }}
           >
             DOWNTOWN<br />
             <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>PITTSBURGH.</em>
           </h1>
+          <div style={{ marginBottom: '1.25rem' }}>
+            <span className="bang-signature bang-signature--section">BANG.</span>
+          </div>
           <p
             style={{
               fontFamily: 'var(--font-body)',

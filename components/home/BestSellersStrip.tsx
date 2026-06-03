@@ -10,10 +10,11 @@ import { useState } from 'react'
 type Tone = 'gold' | 'ice' | 'smoke'
 
 interface StyleCard {
-  label: string
-  sub:   string
-  href:  string
-  tone:  Tone
+  label:       string
+  sub:         string
+  href:        string
+  tone:        Tone
+  enterDelay?: string
 }
 
 interface Lane {
@@ -29,10 +30,10 @@ const LANES: Lane[] = [
     label: 'MOST REQUESTED STYLES',
     sub:   'Pieces people ask for first.',
     cards: [
-      { label: 'Cuban Chains',   sub: 'Heavy links. Neck piece energy.',         href: '/collections/chains',   tone: 'gold'  },
-      { label: 'Logo Pendants',  sub: 'Bring the mark. Make it hit.',            href: '/collections/pendants', tone: 'ice'   },
-      { label: 'Grillz',        sub: 'Top, bottom, full set.',                  href: '/grillz',               tone: 'gold'  },
-      { label: 'Tennis Chains', sub: 'Clean shine. Everyday flash.',            href: '/collections/chains',   tone: 'ice'   },
+      { label: 'Cuban Chains',   sub: 'Heavy links. Neck piece energy.',         href: '/collections/chains',   tone: 'gold',  enterDelay: '0ms'   },
+      { label: 'Logo Pendants',  sub: 'Bring the mark. Make it hit.',            href: '/collections/pendants', tone: 'ice',   enterDelay: '60ms'  },
+      { label: 'Grillz',        sub: 'Top, bottom, full set.',                  href: '/grillz',               tone: 'gold',  enterDelay: '120ms' },
+      { label: 'Tennis Chains', sub: 'Clean shine. Everyday flash.',            href: '/collections/chains',   tone: 'ice',   enterDelay: '180ms' },
     ],
   },
   {
@@ -40,10 +41,10 @@ const LANES: Lane[] = [
     label: "WHAT'S DROPPING",
     sub:   'Style directions worth asking about.',
     cards: [
-      { label: 'Photo Pendants',     sub: 'Turn the image into a piece.',               href: '/custom',               tone: 'ice'   },
-      { label: 'Diamond Watches',    sub: 'Iced bezels. Custom-set direction.',         href: '/watches',              tone: 'ice'   },
-      { label: 'Custom Name Pieces', sub: 'Name, number, logo — built from the idea.', href: '/custom',               tone: 'gold'  },
-      { label: 'Earrings & Rings',   sub: 'Small piece. Loud signal.',                 href: '/collections/earrings', tone: 'smoke' },
+      { label: 'Photo Pendants',     sub: 'Turn the image into a piece.',               href: '/custom',               tone: 'ice',   enterDelay: '0ms'   },
+      { label: 'Diamond Watches',    sub: 'Iced bezels. Custom-set direction.',         href: '/watches',              tone: 'ice',   enterDelay: '60ms'  },
+      { label: 'Custom Name Pieces', sub: 'Name, number, logo — built from the idea.', href: '/custom',               tone: 'gold',  enterDelay: '120ms' },
+      { label: 'Earrings & Rings',   sub: 'Small piece. Loud signal.',                 href: '/collections/earrings', tone: 'smoke', enterDelay: '180ms' },
     ],
   },
 ]
@@ -79,6 +80,7 @@ function StyleCard({ card }: { card: StyleCard }) {
     <Link
       href={card.href}
       aria-label={`${card.label} — ask about this style`}
+      className="bss-card-enter"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
@@ -96,6 +98,7 @@ function StyleCard({ card }: { card: StyleCard }) {
         transform:       hovered ? 'scale(1.014)' : 'scale(1)',
         boxShadow:       hovered ? '0 8px 28px rgba(0,0,0,0.45)' : 'none',
         transition:      'border-color 0.25s ease, transform 0.25s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.25s ease',
+        animationDelay:  card.enterDelay ?? '0ms',
       }}
     >
       {/* Atmospheric glow */}
@@ -180,7 +183,7 @@ function StyleCard({ card }: { card: StyleCard }) {
         </span>
       </div>
 
-      {/* Hover-reveal CTA */}
+      {/* CTA — visible at low opacity by default; full on hover (mobile-accessible) */}
       <span
         style={{
           position:      'relative',
@@ -192,9 +195,8 @@ function StyleCard({ card }: { card: StyleCard }) {
           fontWeight:    600,
           letterSpacing: '0.1em',
           color:         '#c9a84c',
-          opacity:       hovered ? 1 : 0,
-          transform:     hovered ? 'translateY(0)' : 'translateY(4px)',
-          transition:    'opacity 0.2s ease, transform 0.2s ease',
+          opacity:       hovered ? 1 : 0.55,
+          transition:    'opacity 0.2s ease',
         }}
       >
         ASK ABOUT THIS STYLE →
