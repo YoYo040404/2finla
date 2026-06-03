@@ -409,7 +409,7 @@ See Visual Direction section above for the full Midnight Icebox token table (upd
 
 ### Homepage — Material & Stone Direction Pass ✅ Committed
 
-**Latest commit:** `f8101dd — fix: polish site visuals and claim-safe promo bar` (2026-06-03)
+**Latest commit:** `9849b81 — feat: add interactive homepage motion pass` (2026-06-03)
 
 Homepage is a product-first store with a custom lane — NOT custom-only. Hero dual CTAs: SHOP THE PIECES + BUILD CUSTOM →.
 
@@ -567,6 +567,7 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 - **Homepage SHOP Boost** — stronger PICK THE PIECE, discovery strip, BestSellersStrip wired, hero CTA SHOP THE PIECES (commit `0b5252e`).
 - **SEO foundation + social docs** (commits `1b36f09`, `eb3fcd9`, `c9e8817`, `cfefe89`) — metadata/sitemap/robots, production URL env doc, social strategy sync, asset request plan.
 - **Pass 4A — sitewide visual polish + claim safety** (commit `f8101dd`, 2026-06-03): PromoBar "20% OFF" removed + claim-safe copy; secondary tile mi-gleam; BestSellersStrip mobile CTA visibility + stagger animation; SocialTeaser platform icon vitrine; BANG. signature in ProofContactZone + About; hover states on all category style cards; screenshot gitignore patterns.
+- **Pass 4B — interactive homepage motion** (commit `9849b81`, 2026-06-03): ScrollRevealController (IntersectionObserver scroll reveals on ShineDirectionBand / ProofContactZone / SocialTeaser / FinalCTABar); anchor tile stagger (tile-reveal-0/1/2) + secondary tile stagger (tile-reveal-s0/1/2/3); BestSellersStrip scroll-snap infrastructure (mobile); StickyConversionBar desktop/tablet WA CTA (z-index 30, hidden on mobile); ProofContactZone "25" rAF countUp animation; ShineDirectionBand chip hover tilt (desktop only); FinalCTABar + SocialTeaser wired into app/page.tsx (were missing). No new npm packages. app/page.tsx stays Server Component.
 
 **TikTok / Instagram Feed — Feasibility Assessed (2026-06-03):**
 
@@ -578,9 +579,10 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 - **Assets needed from 2T:** 2–3 still frames from real @2tjewelers TikTok/Instagram posts + direct post URLs + 1 real caption snippet per post.
 
 **Next phase:**
-1. **Final sitewide asset shot list** — define exactly what photos/footage 2T needs to provide. Site is now visually polished enough that the remaining gaps are clearly identifiable.
+1. **Final sitewide asset shot list** — define exactly what photos/footage 2T needs to provide. Site is now visually polished enough that remaining gaps are clearly identifiable.
 2. **SocialTeaser Phase 1** — manual curated social cards when real @2tjewelers still frames + post URLs arrive from 2T.
-3. No random CSS/layout cleanup unless QA finds a real issue.
+3. **Concept C (Pass 4C)** — motion/react 3D tilt, border beam, swipe drawer — gated on real product assets arriving.
+4. No random CSS/layout cleanup unless QA finds a real issue.
 
 **Do not reopen homepage redesign** unless a clear blocker is found.
 
@@ -588,10 +590,17 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 ---
 
-## Committed Work (as of 2026-06-02)
+## Committed Work (as of 2026-06-03)
 
 | Commit | Description |
 |---|---|
+| `9849b81` | feat: add interactive homepage motion pass — ScrollRevealController, section reveals, tile stagger, BestSellersStrip scroll-snap, StickyConversionBar (desktop), ProofContactZone counter, ShineDirectionBand chip tilt |
+| `f8101dd` | fix: polish site visuals and claim-safe promo bar — Pass 4A |
+| `f952928` | docs: sync pass 4a project state |
+| `cfefe89` | docs: add asset request social phase 1 plan |
+| `c9e8817` | docs: sync tooling and social feed strategy |
+| `eb3fcd9` | docs: document production site url env |
+| `1b36f09` | feat: add seo foundation metadata sitemap robots |
 | `0b5252e` | feat: boost homepage shop discovery — stronger PICK THE PIECE, discovery strip, BestSellersStrip, hero CTA SHOP THE PIECES, All Collections in Shop dropdown, /collections layout improved |
 | `b58c9a0` | feat: add claim-safe discovery collections (Most Asked About / Ask What Just Landed) |
 | `6cedd28` | fix: clean rings bracelets earrings category ctas |

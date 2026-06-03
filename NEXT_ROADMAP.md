@@ -99,13 +99,24 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
   - BANG. signature added to ProofContactZone and About page
   - Hover states on all category style cards (Grillz, Watches, Chains, Pendants, Collections hub)
   - Screenshot gitignore patterns added
+- **Pass 4B — interactive homepage motion** (commit `9849b81`, 2026-06-03):
+  - `ScrollRevealController.tsx` — client component; IntersectionObserver scroll reveals on ShineDirectionBand / ProofContactZone / SocialTeaser / FinalCTABar; app/page.tsx stays Server Component
+  - Anchor tile stagger: `tile-reveal-0/1/2` on GRILLZ/WATCHES/CHAINS (0/80/160ms, translateY 18px → none)
+  - Secondary tile stagger: `tile-reveal-s0/1/2/3` on RINGS/BRACELETS/EARRINGS (0/60/120/180ms, scale 0.97 → 1)
+  - `StickyConversionBar.tsx` — desktop/tablet WA CTA bar; `display:none` on mobile; z-index 30; sessionStorage dismiss
+  - `ProofCounterTrigger.tsx` — rAF countUp on "25" in "25 YEARS" on scroll entry; "332 FIFTH AVE" static
+  - ShineDirectionBand chips — CSS perspective hover tilt (desktop only, prefers-reduced-motion covered)
+  - BestSellersStrip scroll-snap infrastructure (`bss-snap-container` / `bss-snap-card`; no layout change)
+  - FinalCTABar + SocialTeaser wired into app/page.tsx homepage section order
+  - No new npm packages; zero TypeScript errors
 
 ### WIP / Approval Pending ⚠️
 
-- None currently. Pass 4A is committed and QA-verified.
+- None currently. Pass 4B is committed and QA-verified.
 
 ### Not Yet 🚫
 
+- **Concept C (Pass 4C)** — motion/react 3D card tilt, border beam, swipe drawer — gated on real product assets arriving
 - **Final sitewide asset shot list** — in progress (next phase)
 - Real asset/media replacement (hero footage, product shots, grillz/watches photos, store footage)
 - SocialTeaser Phase 1: manual curated cards (build when 2T provides real @2tjewelers still frames + post URLs)
@@ -120,8 +131,9 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 
 ### Next Milestone 🎯
 
-- **Final sitewide asset shot list** — define exactly what photos/footage 2T needs to provide; site is now polished enough that remaining gaps are clearly identifiable
+- **Final sitewide asset shot list** — define exactly what photos/footage 2T needs to provide; site is now interactive and polished enough that remaining gaps are clearly identifiable
 - **SocialTeaser Phase 1** — manual curated social cards when 2T provides real @2tjewelers still frames + post URLs
+- **Concept C (Pass 4C)** — motion/react 3D tilt / border beam / swipe drawer — start only when real product assets arrive
 - **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic (low priority)
 - SEO/schema after core pages pass claim-safety review
 - No random CSS/layout cleanup unless QA finds a real issue
@@ -407,12 +419,15 @@ Only if user explicitly approves:
 37. ✅ **SEO foundation metadata** — sitemap, robots, generateMetadata (commit `1b36f09`)
 38. ✅ **Production URL env documented** (commit `eb3fcd9`)
 39. ✅ **TikTok/Instagram feed feasibility assessed** — Phase 1 = manual curated cards; dynamic API = future (2026-06-03). Plan: `docs/superpowers/plans/2026-06-03-social-feed-feasibility.md`
-40. 🎯 **Asset/media request list** — define what specific photos/footage 2T needs to provide ← NEXT
-41. 🎯 **SocialTeaser Phase 1** — manual curated social cards when 2T provides still frames ← NEXT PHASE
-42. 🎯 **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic ← LOW PRIORITY
-41. ⏳ **Category/product proof pages** — after media/proof planning
-42. ⏳ SEO/schema — after core pages pass claim-safety review
-43. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL
+40. ✅ **Pass 4A — sitewide visual polish + claim safety** (commit `f8101dd`, 2026-06-03)
+41. ✅ **Pass 4B — interactive homepage motion** (commit `9849b81`, 2026-06-03) — ScrollRevealController, scroll reveals, tile stagger, StickyConversionBar, ProofContactZone counter, chip tilt, FinalCTABar + SocialTeaser wired
+42. 🎯 **Asset/media request list** — define what specific photos/footage 2T needs to provide ← NEXT
+43. 🎯 **SocialTeaser Phase 1** — manual curated social cards when 2T provides still frames ← NEXT PHASE
+44. 🎯 **Concept C (Pass 4C)** — motion/react 3D tilt, border beam, swipe drawer ← GATED ON REAL ASSETS
+45. 🎯 **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic ← LOW PRIORITY
+46. ⏳ **Category/product proof pages** — after media/proof planning
+47. ⏳ SEO/schema — after core pages pass claim-safety review
+48. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL
     - Scope: 5 files only — `app/page.tsx`, `components/home/ProofMarquee.tsx`, `components/home/WeeklyPromo.tsx`, `components/home/PittsburghStory.tsx`, `components/home/SocialTeaser.tsx`
     - Do NOT start until user explicitly approves Pass 5C
     - Full spec in `docs/2t-pass5b-competitor-backed-copy-research.md` Section 11

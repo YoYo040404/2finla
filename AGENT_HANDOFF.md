@@ -95,10 +95,12 @@ Do not publish as blanket sitewide claims without verification. Do not invent th
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
 Old Shopify folder is archive only. Do not touch it.
 
-**Latest committed state (as of 2026-06-03 — latest: `f8101dd`):**
+**Latest committed state (as of 2026-06-03 — latest: `9849b81`):**
 
 | Commit | Description |
 |---|---|
+| `9849b81` | feat: add interactive homepage motion pass — Pass 4B |
+| `f952928` | docs: sync pass 4a project state |
 | `f8101dd` | fix: polish site visuals and claim-safe promo bar — Pass 4A |
 | `cfefe89` | docs: add asset request social phase 1 plan |
 | `c9e8817` | docs: sync tooling and social feed strategy |
@@ -143,7 +145,7 @@ Old Shopify folder is archive only. Do not touch it.
 
 **Current strategic direction:** 2T Jewelers is a real Pittsburgh street-luxury jewelry store. Pittsburgh BANG homepage is merged into main. Visual direction: hard hip-hop / hood street-luxury — loud, flashy, bling-heavy, ice/diamond/gold shine, rapper/athlete energy. NOT quiet luxury, NOT boutique, NOT over-clean ecommerce.
 
-**Current focus:** Pass 4A visual polish is complete and committed (`f8101dd`). PromoBar claim risk ("20% OFF") removed. Site is visually polished and ready for the final asset shot list. Next phase: compile the final sitewide asset shot list — define exactly what photos/footage 2T needs to provide. SocialTeaser Phase 1 when real @2tjewelers still frames arrive. Do not reopen broad homepage redesign. Do not add CSS/layout cleanup unless QA finds a real issue.
+**Current focus:** Pass 4B interactive motion is complete and committed (`9849b81`). Homepage now has scroll-triggered section reveals, tile stagger (anchor + secondary), StickyConversionBar (desktop/tablet WA CTA), ProofContactZone "25" countUp animation, ShineDirectionBand chip hover tilt, and BestSellersStrip scroll-snap infrastructure. No new npm packages added. app/page.tsx remains a Server Component. Next phase: compile the final sitewide asset shot list. SocialTeaser Phase 1 when real @2tjewelers still frames arrive. Concept C (motion/react 3D tilt, border beam) gated on real product assets. Do not reopen broad homepage redesign. Do not add CSS/layout cleanup unless QA finds a real issue.
 
 ---
 
@@ -236,6 +238,11 @@ Custom page (as of commit 84af600 — 2026-05-17):
 | Pittsburgh BANG merge | ✅ Complete — merged into main (39a3b70) |
 | Real product images | 🚫 Not yet |
 | Instagram/TikTok feed | ⚠️ Feasibility assessed (2026-06-03) — Phase 1 = manual curated cards when real @2tjewelers assets provided. Dynamic API feed is future only. |
+| Scroll reveals (section-reveal) | ✅ Pass 4B — ShineDirectionBand / ProofContactZone / SocialTeaser / FinalCTABar all reveal on scroll entry |
+| Tile stagger (anchor + secondary) | ✅ Pass 4B — GRILLZ/WATCHES/CHAINS stagger 0/80/160ms; RINGS/BRACELETS/EARRINGS stagger 0/60/120/180ms |
+| StickyConversionBar | ✅ Pass 4B — desktop/tablet WA CTA, z-index 30, hidden on mobile, sessionStorage dismiss |
+| ProofContactZone "25" countUp | ✅ Pass 4B — rAF animation on scroll entry; "332 FIFTH AVE" static |
+| ShineDirectionBand chip tilt | ✅ Pass 4B — hover perspective tilt desktop only, prefers-reduced-motion covered |
 | WhatsApp floating desktop button | 🚫 Not yet |
 | Lead capture (Resend) | ✅ Live — all 9 fields including metal/stone direction + file attachments. Sender: onboarding@resend.dev (testing). Production domain polish pending. |
 | Vercel deploy | ✅ Live on Vercel — https://2finla.vercel.app |
@@ -245,7 +252,7 @@ Custom page (as of commit 84af600 — 2026-05-17):
 
 ## Default Next Prompt
 
-**Current milestone: SEO foundation committed (`1b36f09`). Social feed feasibility assessed (2026-06-03). Site is healthy/shippable.**
+**Current milestone: Pass 4B interactive motion committed (`9849b81`). SEO foundation live. Social feed feasibility assessed (2026-06-03). Site is healthy/shippable with interactive scroll choreography.**
 
 **SEO foundation status (commit `1b36f09`):** metadata, sitemap, robots added. Production URL env documented (`eb3fcd9`).
 

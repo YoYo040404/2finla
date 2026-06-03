@@ -52,7 +52,7 @@ For execution tasks:
 
 ## Current Active Task
 
-**Pass 4A sitewide visual polish committed (`f8101dd`). Latest commit: `f8101dd`. Midnight Icebox homepage live and user-approved. Custom flow live. Category pages complete. PromoBar claim risk removed.**
+**Pass 4B interactive homepage motion committed (`9849b81`). Latest commit: `9849b81`. Midnight Icebox homepage live and user-approved. Custom flow live. Category pages complete. PromoBar claim risk removed. Interactive scroll reveals, tile stagger, StickyConversionBar, ProofContactZone counter, and ShineDirectionBand chip tilt all live.**
 
 **Social feed feasibility conclusion (2026-06-03):**
 - Phase 1 = manual curated cards in SocialTeaser left canvas (build when 2T provides real still frames + post URLs)
@@ -67,8 +67,9 @@ For execution tasks:
 4. ShineDirectionBand — METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite
 5. Promo strip — "ASK WHAT'S RUNNING NOW · CUSTOM PIECES BUILT HERE · DETAILS CONFIRMED PER PIECE" — fully claim-safe (old "20% OFF" copy removed in f8101dd)
 6. Custom lane — YOUR LOGO. YOUR NAME. YOUR PIECE., keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST
-7. ProofContactZone — stat ledger: 25 YEARS / 332 FIFTH AVE; BANG. signature added; channel-map rows: TikTok / Instagram / WhatsApp
-8. SocialTeaser — platform icon vitrine (TikTok/Instagram/WhatsApp cluster, WA pulse animation); channel-map rows right; real links only
+7. ProofContactZone — stat ledger: 25 YEARS (animated countUp on scroll entry) / 332 FIFTH AVE (static); BANG. signature added; channel-map rows: TikTok / Instagram / WhatsApp
+8. SocialTeaser — platform icon vitrine (TikTok/Instagram/WhatsApp cluster, WA pulse animation); channel-map rows right; real links only; scroll-reveal on entry
+9. FinalCTABar — MAKE IT HIT. / START THE PIECE → + TEXT US →; scroll-reveal on entry
 
 - Header logo: `2t-logo-wide-transparent.png` — numeric width/height, TODO for final SVG/2x
 - Footer logo: `2t-logo-full-black-bg.png` — installed
@@ -125,12 +126,27 @@ CRO pass and selector grouping committed (commits `60c7d06`, `2303850`). Resend 
   - cat-grid-link hover upgraded (gold outline + translateY)
   - Screenshot gitignore patterns added (qa-*.jpeg, audit-*.jpeg)
 
+**Pass 4B — interactive homepage motion (2026-06-03):**
+
+- `9849b81` feat: add interactive homepage motion pass
+  - `ScrollRevealController.tsx` — new client component; IntersectionObserver attaches `.is-revealed` to `.section-reveal` / `[class*="tile-reveal-"]` elements on scroll entry; threshold 0.12, fires once; app/page.tsx stays a Server Component
+  - `StickyConversionBar.tsx` — new client component; desktop/tablet only (hidden on mobile, `display:none` at ≤767px); `position:fixed bottom:0 z-index:30`; sentinel-triggered IntersectionObserver; sessionStorage dismiss; WA link `wa.me/14124524343`
+  - `ProofCounterTrigger.tsx` — new client component; rAF countUp on "25" in "25 YEARS" only; "332 FIFTH AVE" stays static; fires once per session
+  - Scroll reveals on `ShineDirectionBand`, `ProofContactZone`, `SocialTeaser`, `FinalCTABar` (class `section-reveal`)
+  - Anchor tile stagger: `tile-reveal-0/1/2` on GRILLZ/WATCHES/CHAINS — 0/80/160ms delays; `translateY(18px)` → none
+  - Secondary tile stagger: `tile-reveal-s0/1/2/3` on RINGS/BRACELETS/EARRINGS + 4th — 0/60/120/180ms delays; `scale(0.97)` → 1
+  - `BestSellersStrip` — `bss-snap-container` / `bss-snap-card` classes added; mobile `scroll-snap-type: x mandatory` infrastructure in place (no visual effect at current 2-col card widths)
+  - `ShineDirectionBand` chips — `.sdb-chip` hover tilt: `perspective(400px) rotateX(-4deg) rotateY(3deg) scale(1.04)` desktop only
+  - `FinalCTABar` and `SocialTeaser` added to app/page.tsx (were missing — now rendered in correct section order)
+  - All new CSS covered by `prefers-reduced-motion: reduce`; z-index: StickyConversionBar=30, FloatingWhatsAppButton=40 (no conflict)
+  - No new npm packages; zero TypeScript errors; app/page.tsx has no hooks
+
 **Working tree — do not stage without explicit approval:**
 - `docs/superpowers/plans/` and `docs/superpowers/specs/` — planning/spec notes
 - `public/assets/demo/phase3a/` — demo PNG assets
 - `public/assets/logo-to-use.png` — replacement logo candidate, not yet approved for wiring
 
-**Next recommended phase:** Final sitewide asset shot list — define exactly what photos/footage 2T needs to provide. SocialTeaser Phase 1 when real @2tjewelers still frames arrive.
+**Next recommended phase:** Final sitewide asset shot list — define exactly what photos/footage 2T needs to provide. SocialTeaser Phase 1 when real @2tjewelers still frames arrive. Concept C (motion/react, 3D tilt, border beam) gated on real product assets arriving.
 No random CSS/layout cleanup unless QA finds a real issue.
 
 Do not commit or push new category pages without visual QA and user approval.  
