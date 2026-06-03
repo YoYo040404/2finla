@@ -9,7 +9,7 @@
 export default function ShineDirectionBand() {
   return (
     <div
-      className="sdb-band"
+      className="sdb-band section-reveal"
       role="complementary"
       aria-label="Material and stone directions at 2T Jewelers"
     >
@@ -25,7 +25,7 @@ export default function ShineDirectionBand() {
         <div className="sdb-row">
 
           {/* METAL panel — gold accent */}
-          <div className="sdb-panel sdb-panel--gold">
+          <div className="sdb-panel sdb-panel--gold sdb-chip">
             <span className="sdb-eyebrow">METAL</span>
             <p className="sdb-value sdb-value--gold">GOLD · SILVER</p>
             <span className="sdb-spec">925 Sterling Silver</span>
@@ -33,7 +33,7 @@ export default function ShineDirectionBand() {
           </div>
 
           {/* STONE panel — ice accent */}
-          <div className="sdb-panel sdb-panel--ice">
+          <div className="sdb-panel sdb-panel--ice sdb-chip">
             <span className="sdb-eyebrow">STONE</span>
             <p className="sdb-value sdb-value--ice">DIAMONDS · MOISSANITE</p>
             <span className="sdb-spec">D-color VVS Moissanite</span>

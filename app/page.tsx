@@ -2,6 +2,10 @@ import Link from 'next/link'
 import ProofContactZone from '@/components/home/ProofContactZone'
 import ShineDirectionBand from '@/components/home/ShineDirectionBand'
 import BestSellersStrip from '@/components/home/BestSellersStrip'
+import SocialTeaser from '@/components/home/SocialTeaser'
+import FinalCTABar from '@/components/home/FinalCTABar'
+import ScrollRevealController from '@/components/home/ScrollRevealController'
+import StickyConversionBar from '@/components/home/StickyConversionBar'
 
 const WA_BUILD  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20want%20to%20build%20something%20custom.'
 const WA_PROMO  = 'https://wa.me/14124524343?text=What%27s%20running%20this%20week%20at%202T%3F'
@@ -66,6 +70,9 @@ const CUSTOM_CHIPS = ['LOGO PIECE', 'NAME PENDANT', 'PHOTO PENDANT']
 export default function HomePage() {
   return (
     <>
+      {/* Scroll-reveal controller — client component, attaches IntersectionObserver */}
+      <ScrollRevealController />
+
       {/* ─── 1. HERO — Full-bleed campaign ──────────────────────────────── */}
       <section
         aria-label="Hero"
@@ -255,11 +262,11 @@ export default function HomePage() {
 
           {/* ── ANCHOR ROW: 1.4fr 1fr 1fr — GRILLZ dominant ── */}
           <div className="mi-anchor-row">
-            {ANCHOR_TILES.map((tile) => (
+            {ANCHOR_TILES.map((tile, idx) => (
               <Link
                 key={tile.label}
                 href={tile.href}
-                className="pb-tile-link"
+                className={`pb-tile-link tile-reveal-${idx}`}
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
@@ -354,11 +361,11 @@ export default function HomePage() {
 
           {/* ── SECONDARY TILES: 4-col, compressed ── */}
           <div className="mi-secondary-row">
-            {SECONDARY_TILES.map((tile) => (
+            {SECONDARY_TILES.map((tile, idx) => (
               <Link
                 key={tile.label}
                 href={tile.href}
-                className="pb-tile-link"
+                className={`pb-tile-link tile-reveal-s${idx}`}
                 style={{ display: 'flex', flexDirection: 'column', minHeight: '288px', textDecoration: 'none', color: 'inherit' }}
               >
                 <div
@@ -527,6 +534,9 @@ export default function HomePage() {
       {/* ─── 3b. STYLE DIRECTIONS — Most Requested / What's Dropping ─── */}
       <BestSellersStrip />
 
+      {/* Sentinel for StickyConversionBar — appears when user scrolls past this point */}
+      <div id="sticky-trigger" aria-hidden="true" />
+
       {/* ─── 4. BUILD CUSTOM — identity flex lane ──────────────────────── */}
       <section
         aria-label="Custom jewelry"
@@ -648,6 +658,15 @@ export default function HomePage() {
       </section>
 
       <ProofContactZone />
+
+      {/* ─── 8. SOCIAL TEASER — tap in with 2T ─────────────────────────── */}
+      <SocialTeaser />
+
+      {/* ─── 9. FINAL CTA BAR — last conversion push ───────────────────── */}
+      <FinalCTABar />
+
+      {/* Desktop/tablet sticky conversion bar — client component, no mobile */}
+      <StickyConversionBar />
     </>
   )
 }

@@ -247,8 +247,9 @@ export default function BestSellersStrip() {
                 </p>
               </div>
 
-              {/* 2×2 card grid */}
+              {/* 2×2 card grid — scroll-snap on mobile */}
               <div
+                className="bss-snap-container"
                 style={{
                   display:             'grid',
                   gridTemplateColumns: 'repeat(2, 1fr)',
@@ -256,7 +257,9 @@ export default function BestSellersStrip() {
                 }}
               >
                 {lane.cards.map((card) => (
-                  <StyleCard key={card.label} card={card} />
+                  <div key={card.label} className="bss-snap-card">
+                    <StyleCard card={card} />
+                  </div>
                 ))}
               </div>
 

@@ -3505,3 +3505,164 @@
 @media (prefers-reduced-motion: reduce) {
   .bss-card-enter { animation: none; }
 }
+
+/* ─── Pass 4B — Scroll Reveal System ────────────────────────────────────── */
+
+.section-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s var(--ease-smooth), transform 0.6s var(--ease-smooth);
+}
+.section-reveal.is-revealed {
+  opacity: 1;
+  transform: none;
+}
+@media (max-width: 480px) {
+  .section-reveal { transform: translateY(8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section-reveal,
+  .section-reveal.is-revealed {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ─── Pass 4B — Anchor Tile Stagger (GRILLZ / WATCHES / CHAINS) ─────────── */
+
+.tile-reveal-0 {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s var(--ease-smooth), transform 0.5s var(--ease-smooth);
+}
+.tile-reveal-1 {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s var(--ease-smooth) 80ms, transform 0.5s var(--ease-smooth) 80ms;
+}
+.tile-reveal-2 {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s var(--ease-smooth) 160ms, transform 0.5s var(--ease-smooth) 160ms;
+}
+
+/* ─── Pass 4B — Secondary Tile Stagger (PENDANTS / RINGS / BRACELETS / EARRINGS) */
+
+.tile-reveal-s0 {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.tile-reveal-s1 {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.4s ease 60ms, transform 0.4s ease 60ms;
+}
+.tile-reveal-s2 {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.4s ease 120ms, transform 0.4s ease 120ms;
+}
+.tile-reveal-s3 {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.4s ease 180ms, transform 0.4s ease 180ms;
+}
+
+[class*="tile-reveal-"].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile-reveal-0, .tile-reveal-1, .tile-reveal-2,
+  .tile-reveal-s0, .tile-reveal-s1, .tile-reveal-s2, .tile-reveal-s3 {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ─── Pass 4B — BestSellersStrip Mobile Scroll-Snap ─────────────────────── */
+
+@media (max-width: 767px) {
+  .bss-snap-container {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .bss-snap-card {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+}
+
+/* ─── Pass 4B — Sticky Conversion Bar (desktop/tablet only) ─────────────── */
+
+.sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  height: 52px;
+  background: var(--color-brand-charcoal);
+  border-top: 1px solid var(--color-brand-border);
+  display: none; /* hidden by default; shown on md+ only */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .sticky-bar { display: flex; }
+}
+.sticky-bar-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-brand-silver);
+  flex: 1;
+}
+.sticky-bar-cta {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-brand-gold);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+.sticky-bar-cta:hover { color: var(--color-brand-gold-light); }
+.sticky-bar-dismiss {
+  background: none;
+  border: none;
+  color: var(--color-brand-subtle);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  transition: color 0.18s ease;
+  flex-shrink: 0;
+}
+.sticky-bar-dismiss:hover { color: var(--color-brand-silver); }
+@media (prefers-reduced-motion: reduce) {
+  .sticky-bar-cta { transition: none; }
+  .sticky-bar-dismiss { transition: none; }
+}
+
+/* ─── Pass 4B — ShineDirectionBand Chip Hover Tilt ──────────────────────── */
+
+@media (hover: hover) {
+  .sdb-chip:hover {
+    transform: perspective(400px) rotateX(-4deg) rotateY(3deg) scale(1.04);
+    border-color: var(--color-brand-gold-dim);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4), inset 0 0 12px rgba(201,164,73,0.06);
+    transition: transform 0.22s var(--ease-smooth), border-color 0.22s ease, box-shadow 0.22s ease;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sdb-chip { transition: none !important; }
+  .sdb-chip:hover { transform: none !important; box-shadow: none !important; }
+}

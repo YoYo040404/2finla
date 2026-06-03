@@ -6,6 +6,7 @@
 // Tenure wording: "25 years" confirmed 2026-05-31.
 
 import type { ReactNode } from 'react'
+import ProofCounterTrigger from '@/components/home/ProofCounterTrigger'
 
 const CHANNELS = [
   {
@@ -81,8 +82,9 @@ export default function ProofContactZone() {
     <section
       id="story"
       aria-label="About 2T Jewelers — store, contact, and social"
-      className="pb-proof-zone"
+      className="pb-proof-zone section-reveal"
     >
+      <ProofCounterTrigger />
       <div className="pb-proof-inner">
 
         {/* ── Left: stat-dominant proof ledger ─────────────────────── */}
@@ -94,7 +96,7 @@ export default function ProofContactZone() {
             flexDirection: 'column',
             gap: '0',
           }}>
-            {/* 25 YEARS — large, dominant */}
+            {/* 25 YEARS — large, dominant; span animated by ProofCounterTrigger */}
             <div style={{ marginBottom: '1.5rem' }}>
               <p style={{
                 fontFamily: 'var(--font-display)',
@@ -105,7 +107,7 @@ export default function ProofContactZone() {
                 margin: 0,
                 letterSpacing: '0.01em',
               }}>
-                25
+                <span className="stat-counter" data-target="25">25</span>
               </p>
               <p className="mi-mono mi-faint" style={{ margin: '6px 0 0', fontSize: '0.6rem', letterSpacing: '0.18em' }}>
                 YEARS

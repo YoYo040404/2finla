@@ -77,6 +77,7 @@ export default function SocialTeaser() {
   return (
     <section
       aria-label="Follow 2T Jewelers"
+      className="section-reveal"
       style={{
         background: 'var(--color-brand-black)',
         borderTop: '1px solid var(--color-brand-border)',
