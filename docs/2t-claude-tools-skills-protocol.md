@@ -1,5 +1,5 @@
 # 2T Jewelers — Claude Tools, Skills, Agents, and MCP Protocol
-**Date:** 2026-05-28  
+**Date:** 2026-06-03 (updated)  
 **Purpose:** Define when Claude Code should check and use available skills, agents, plugins, slash commands, and MCP servers for the 2T Jewelers project.  
 **Status:** Project source protocol. Read before any major planning, design, frontend, backend, QA, or verification task.
 
@@ -99,6 +99,79 @@ Use only for:
 - product taxonomy/metafields only after approval
 
 Do not use for current Next.js prototype work.
+
+---
+
+### Next DevTools MCP
+Use for:
+- inspecting Next.js routes, runtime behavior, metadata, diagnostics
+- verifying page metadata (title, description, OG) before and after SEO passes
+- diagnosing rendering mode (SSR/SSG/ISR) per route
+- route tree inspection without running `npm run dev` manually
+
+Use when:
+- implementing or QA-ing SEO metadata
+- debugging route or layout behavior
+- verifying Next.js config changes
+
+Do not use for:
+- visual/design work — use Playwright for screenshots
+- copy edits
+
+---
+
+### Chrome DevTools MCP
+Use for:
+- live browser console inspection
+- layout, overflow, spacing diagnostics
+- performance profiling
+- network request inspection (useful for verifying no unwanted external scripts load)
+
+Use when:
+- debugging a visual layout issue in the live browser
+- verifying that no external scripts (TikTok embed.js, Instagram embed.js, analytics pixels) load unexpectedly
+- inspecting CSS computed values that look wrong in Playwright screenshots
+
+Do not use for:
+- pure code edits
+- MD sync
+- backend API work
+
+---
+
+### Context7 MCP
+Use for:
+- looking up current Next.js / React / Tailwind documentation before implementation
+- resolving API or config questions without guessing
+- checking current Next.js `generateMetadata`, `sitemap.ts`, `robots.ts`, Tailwind v4 specifics
+
+Use when:
+- implementing or changing Next.js config, metadata, or routing features
+- referencing a specific Next.js or Tailwind API that may have changed recently
+- any technical implementation where the docs are needed before writing code
+
+Do not use for:
+- general brand/copy/strategy decisions — those use project docs
+
+---
+
+### Magic UI MCP
+Use for:
+- controlled shine/bling effects: glow borders, light sweep, animated text, sparkle, background beams, gradient mesh
+- adding motion to hero sections, product cards, CTAs when explicitly planned
+- generating effect variants to compare before approving one
+
+Use when:
+- adding a planned visual effect approved by the user
+- exploring motion options for a specific component
+
+**Magic UI guardrail (non-negotiable):**
+- Effects must stay: street-luxury, black/gold/ice, controlled, premium, hip-hop
+- Effects must NOT make the site feel: SaaS, casino, NFT, childish, nightclub, or rave
+- Do not use Magic UI to add effects not explicitly approved in the current task
+- Do not use glitter, rainbow, or neon effects
+- Do not add particle/confetti animations
+- One effect at a time — do not layer multiple animated effects without user approval
 
 ---
 

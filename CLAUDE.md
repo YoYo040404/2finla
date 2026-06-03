@@ -52,7 +52,12 @@ For execution tasks:
 
 ## Current Active Task
 
-**Midnight Icebox homepage is live and user-approved. Custom flow is live. Category pages completed. Pass 3A–3C copy/cleanup + Homepage SHOP Boost committed at `0b5252e`. QA screenshots captured.**
+**SEO foundation committed (`1b36f09`). Social feed feasibility assessed (2026-06-03). Latest commit: `eb3fcd9`. Midnight Icebox homepage live and user-approved. Custom flow live. Category pages complete.**
+
+**Social feed feasibility conclusion (2026-06-03):**
+- Phase 1 = manual curated cards in SocialTeaser left canvas (build when 2T provides real still frames + post URLs)
+- Do NOT build Instagram/TikTok API yet (requires developer apps + app review)
+- Feasibility plan: `docs/superpowers/plans/2026-06-03-social-feed-feasibility.md`
 
 **Current homepage section order (Midnight Icebox — commit `0b5252e` and later):**
 
@@ -111,7 +116,7 @@ Routes screenshotted: best sellers (desktop 1280 / mobile 390), collections (des
 - `public/assets/logo-to-use.png` — replacement logo candidate, not yet approved for wiring
 - `qa-3c-*.jpeg` and `qa-shop-boost-*.jpeg` — QA screenshots (do not commit; gitignore if not already)
 
-**Next recommended phase: SEO foundation planning / metadata pass** — research before any SEO implementation. After that, TikTok/Instagram feed feasibility assessment.
+**Next recommended phase:** Asset/media request list — define what specific photos/footage 2T needs to provide. After that, SocialTeaser Phase 1 when real @2tjewelers still frames arrive.
 No random CSS/layout cleanup unless QA finds a real issue.
 
 Do not commit or push new category pages without visual QA and user approval.  

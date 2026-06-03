@@ -95,10 +95,13 @@ Do not publish as blanket sitewide claims without verification. Do not invent th
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
 Old Shopify folder is archive only. Do not touch it.
 
-**Latest committed state (as of 2026-06-02):**
+**Latest committed state (as of 2026-06-03):**
 
 | Commit | Description |
 |---|---|
+| `eb3fcd9` | docs: document production site url env |
+| `1b36f09` | feat: add seo foundation metadata sitemap robots |
+| `4e651ff` | docs: sync post pass 3c project state |
 | `0b5252e` | feat: boost homepage shop discovery |
 | `b58c9a0` | feat: add claim-safe discovery collections |
 | `6cedd28` | fix: clean rings bracelets earrings category ctas |
@@ -229,7 +232,7 @@ Custom page (as of commit 84af600 — 2026-05-17):
 | Contact / social | ✅ Address, phone, WhatsApp, Instagram, TikTok, Acima all wired in Footer |
 | Pittsburgh BANG merge | ✅ Complete — merged into main (39a3b70) |
 | Real product images | 🚫 Not yet |
-| Instagram/TikTok dynamic feed | 🚫 Not yet |
+| Instagram/TikTok feed | ⚠️ Feasibility assessed (2026-06-03) — Phase 1 = manual curated cards when real @2tjewelers assets provided. Dynamic API feed is future only. |
 | WhatsApp floating desktop button | 🚫 Not yet |
 | Lead capture (Resend) | ✅ Live — all 9 fields including metal/stone direction + file attachments. Sender: onboarding@resend.dev (testing). Production domain polish pending. |
 | Vercel deploy | ✅ Live on Vercel — https://2finla.vercel.app |
@@ -239,25 +242,31 @@ Custom page (as of commit 84af600 — 2026-05-17):
 
 ## Default Next Prompt
 
-**Current milestone: Pass 3A–3C copy/cleanup + Homepage SHOP Boost committed at `0b5252e`. QA screenshots captured. Site is healthy/shippable.**
+**Current milestone: SEO foundation committed (`1b36f09`). Social feed feasibility assessed (2026-06-03). Site is healthy/shippable.**
 
-**Post-Pass-3C QA status (2026-06-02): Screenshots captured**
-Routes screenshotted: best sellers (desktop 1280 / mobile 390), collections (desktop / mobile), new arrivals (desktop), shop dropdown, shop boost (desktop / mobile). Full Playwright QA pass pending.
+**SEO foundation status (commit `1b36f09`):** metadata, sitemap, robots added. Production URL env documented (`eb3fcd9`).
+
+**Social feed feasibility (2026-06-03):**
+- Phase 1 = manual curated social cards in SocialTeaser left canvas. No API. No external scripts.
+- Build when 2T provides: 2–3 real @2tjewelers still frames + post URLs + 1 caption snippet per post.
+- Do NOT build Instagram/TikTok API integration yet — requires Meta/TikTok developer app + app review.
+- Feasibility plan: `docs/superpowers/plans/2026-06-03-social-feed-feasibility.md`
 
 **Working tree — do not stage without explicit approval:**
 - `docs/superpowers/plans/` and `docs/superpowers/specs/` — planning/spec notes
 - `public/assets/demo/phase3a/` — demo PNG assets
 - `public/assets/logo-to-use.png` — replacement logo candidate, not yet approved for wiring
-- `qa-3c-*.jpeg` and `qa-shop-boost-*.jpeg` — QA screenshots (do not commit; gitignore if not already)
+
+**Connected MCPs (as of 2026-06-03):** Playwright, Firecrawl, Magic 21st.dev, Next DevTools, Chrome DevTools, Context7, Magic UI, Shopify (paused), Gmail/Calendar/Drive (on-request only).
 
 1. Do not reopen broad homepage redesign. Pittsburgh BANG is the current direction.
 2. Do not re-polish `/custom` — CRO pass and selector grouping are approved and live.
 3. Do not rebuild the Resend backend — it is working and verified.
 4. Do not do random CSS/layout cleanup unless QA finds a real issue.
 5. Next recommended phase:
-   - **SEO foundation planning / metadata pass** — research before any SEO implementation.
-   - **TikTok/Instagram feed feasibility** — assess technical options before planning dynamic feed.
-   - Asset/media request list — after research phase, define what specific images/media are needed.
+   - **Asset/media request list** — define what specific photos/footage are needed.
+   - **SocialTeaser Phase 1** — build when real @2tjewelers still frames arrive.
+   - **Production Resend sender domain** — low priority, before real traffic.
 6. `/grillz` and `/watches` rework complete — Post-Pass-2B QA passed. No further redesign until real/demo assets arrive.
 
 **Keep untouched until explicitly approved:**

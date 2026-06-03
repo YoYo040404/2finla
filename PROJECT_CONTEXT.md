@@ -517,6 +517,26 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 ---
 
+## Connected MCP Servers (as of 2026-06-03)
+
+| MCP | Status | Use for |
+|---|---|---|
+| Playwright | ✅ Connected | Visual QA, screenshots, mobile/desktop checks, form testing |
+| Magic 21st.dev | ✅ Connected | Component/design inspiration |
+| Firecrawl | ✅ Connected | Competitor/VOC/social research, web scraping |
+| Next DevTools | ✅ Connected | Next.js routes, runtime, metadata, diagnostics |
+| Chrome DevTools | ✅ Connected | Live browser console, layout, performance, network inspection |
+| Context7 | ✅ Connected | Current Next.js / React / Tailwind docs lookup before implementation |
+| Magic UI | ✅ Connected | Controlled shine/bling effects (glow, sweep, sparkle, beams) — street-luxury/hip-hop only |
+| Shopify | ⏸️ Connected but paused | Do not use unless user explicitly approves Shopify work |
+| Gmail | ✅ Connected | Only if user explicitly asks for email workflows |
+| Google Calendar | ✅ Connected | Only if user explicitly asks for scheduling |
+| Google Drive | ✅ Connected | Only if user explicitly asks for file access |
+
+**Magic UI guardrail:** Effects must stay street-luxury / black-gold-ice / controlled. Never SaaS, casino, NFT, nightclub, rave, or childish.
+
+---
+
 ## Current Next Task
 
 **Active branch / state:** `main` — all recent passes committed and live on Vercel.
@@ -546,11 +566,19 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 - **Pass 3C — claim-safe discovery collections** — Most Asked About / Ask What Just Landed; /collections layout improved; Shop dropdown includes All Collections (commit `b58c9a0`).
 - **Homepage SHOP Boost** — stronger PICK THE PIECE, discovery strip, BestSellersStrip wired, hero CTA SHOP THE PIECES (commit `0b5252e`).
 
+**TikTok / Instagram Feed — Feasibility Assessed (2026-06-03):**
+
+- **Phase 1 recommended:** Manual curated social cards using real @2tjewelers screenshots/still frames + real post URLs. Replace SocialTeaser left canvas vitrine. Full design-system control, no external scripts, no API, no cookies. Build when assets arrive.
+- **Do not build yet:** Instagram oEmbed Read API (requires Meta App + App Review) / TikTok Display API (requires Developer App + Production App Review, uncertain timeline).
+- **Do not use:** Fake social posts, fake captions, fake views/likes/followers, competitor screenshots, non-@2tjewelers content.
+- **Future Phase 2:** Instagram oEmbed Read (Meta App + App Review → App Access Token → Next.js API route, server-side). Feasibility plan: `docs/superpowers/plans/2026-06-03-social-feed-feasibility.md`.
+- **Future Phase 3:** TikTok Display API (Developer App + Production App Review + OAuth from @2tjewelers account owner). Most complex — pursue only if auto-feed is required.
+- **Assets needed from 2T:** 2–3 still frames from real @2tjewelers TikTok/Instagram posts + direct post URLs + 1 real caption snippet per post.
+
 **Next phase:**
 1. **SEO foundation planning / metadata pass** — research before any SEO implementation.
-2. **TikTok/Instagram feed feasibility** — assess technical options before planning dynamic feed.
-3. Asset/media request list — define what specific images/media are needed (after research).
-4. No random CSS/layout cleanup unless QA finds a real issue.
+2. **Asset/media request list** — define what specific images/media are needed.
+3. No random CSS/layout cleanup unless QA finds a real issue.
 
 **Do not reopen homepage redesign** unless a clear blocker is found.
 

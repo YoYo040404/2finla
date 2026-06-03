@@ -102,7 +102,8 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 - Short asset request list for 2T Jewelers
 - Lead capture/backend wiring for forms on category pages (if applicable)
 - Real product/category images
-- Instagram/TikTok feed strategy and dynamic feed
+- SocialTeaser Phase 1: manual curated cards (build when 2T provides real @2tjewelers still frames + post URLs)
+- Instagram oEmbed Read API / TikTok Display API dynamic feed (future — requires developer apps + app review — see feasibility plan)
 - WhatsApp floating desktop button
 - Production Resend sender domain (`leads@2tjewelers.com` or similar) — current `onboarding@resend.dev` is acceptable for testing
 - Final logo SVG/2x/favicon
@@ -114,10 +115,9 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 
 ### Next Milestone 🎯
 
-- **SEO foundation planning / metadata pass** — research before any SEO implementation
-- **TikTok/Instagram feed feasibility** — assess technical options before planning dynamic feed
-- Asset/media request list — define what specific photos/footage are needed (after research)
-- Production Resend sender domain polish (low priority — before real traffic)
+- **Asset/media request list** — define what specific photos/footage are needed from 2T
+- **SocialTeaser Phase 1** — manual curated social cards when 2T provides real still frames + post URLs
+- **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic (low priority)
 - SEO/schema after core pages pass claim-safety review
 - No random CSS/layout cleanup unless QA finds a real issue
 
@@ -399,10 +399,12 @@ Only if user explicitly approves:
 34. ✅ **Pass 3C** — claim-safe discovery collections, /collections layout improved, All Collections in Shop dropdown (commit `b58c9a0`)
 35. ✅ **Homepage SHOP Boost** — stronger PICK THE PIECE, discovery strip, BestSellersStrip, hero CTA SHOP THE PIECES (commit `0b5252e`)
 36. ✅ **Docs sync** — 2026-06-02
-37. 🎯 **SEO foundation planning / metadata pass** ← NEXT
-38. 🎯 **TikTok/Instagram feed feasibility** ← NEXT PHASE
-39. 🎯 **Asset/media request list** — after research phase ← NEXT PHASE
-40. 🎯 **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic ← LOW PRIORITY
+37. ✅ **SEO foundation metadata** — sitemap, robots, generateMetadata (commit `1b36f09`)
+38. ✅ **Production URL env documented** (commit `eb3fcd9`)
+39. ✅ **TikTok/Instagram feed feasibility assessed** — Phase 1 = manual curated cards; dynamic API = future (2026-06-03). Plan: `docs/superpowers/plans/2026-06-03-social-feed-feasibility.md`
+40. 🎯 **Asset/media request list** — define what specific photos/footage 2T needs to provide ← NEXT
+41. 🎯 **SocialTeaser Phase 1** — manual curated social cards when 2T provides still frames ← NEXT PHASE
+42. 🎯 **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic ← LOW PRIORITY
 41. ⏳ **Category/product proof pages** — after media/proof planning
 42. ⏳ SEO/schema — after core pages pass claim-safety review
 43. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL
