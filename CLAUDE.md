@@ -52,24 +52,25 @@ For execution tasks:
 
 ## Current Active Task
 
-**Pass 4B interactive homepage motion committed (`9849b81`). Latest commit: `9849b81`. Midnight Icebox homepage live and user-approved. Custom flow live. Category pages complete. PromoBar claim risk removed. Interactive scroll reveals, tile stagger, StickyConversionBar, ProofContactZone counter, and ShineDirectionBand chip tilt all live.**
+**Pass 4C committed and live (`70fcdd6`). Latest commit: `70fcdd6`. Midnight Icebox homepage live and QA-verified on https://2finla.vercel.app. Custom flow live. Category pages complete. ShineRail seamless category carousel live. BestSellersStrip component removed. TileGlareController (desktop cursor 3D tilt/glare on anchor tiles) added. Oversized BANG entrance animation removed — BANG. brand stamp remains in hero.**
 
 **Social feed feasibility conclusion (2026-06-03):**
 - Phase 1 = manual curated cards in SocialTeaser left canvas (build when 2T provides real still frames + post URLs)
 - Do NOT build Instagram/TikTok API yet (requires developer apps + app review)
 - Feasibility plan: `docs/superpowers/plans/2026-06-03-social-feed-feasibility.md`
 
-**Current homepage section order (Midnight Icebox — commit `f8101dd` and later):**
+**Current homepage section order (Midnight Icebox — commit `70fcdd6`):**
 
-1. Hero — full-bleed campaign, BUILT TO HIT., BANG. gold brand stamp, dual CTAs: SHOP THE PIECES + BUILD CUSTOM →, video slot wired
+1. Hero — full-bleed campaign, BUILT TO HIT., BANG. gold brand stamp (normal size, no entrance animation), dual CTAs: SHOP THE PIECES + BUILD CUSTOM →, video slot wired
 2. ProofMarquee — CSS-only animated trust strip, gold borders
-3. PICK THE PIECE — stronger vitrine gateway, anchor row (GRILLZ dominant), discovery strip, BestSellersStrip wired; secondary tiles (RINGS/BRACELETS/EARRINGS) have mi-gleam animation; mobile CTA visible at 55% opacity by default
-4. ShineDirectionBand — METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite
-5. Promo strip — "ASK WHAT'S RUNNING NOW · CUSTOM PIECES BUILT HERE · DETAILS CONFIRMED PER PIECE" — fully claim-safe (old "20% OFF" copy removed in f8101dd)
-6. Custom lane — YOUR LOGO. YOUR NAME. YOUR PIECE., keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST
-7. ProofContactZone — stat ledger: 25 YEARS (animated countUp on scroll entry) / 332 FIFTH AVE (static); BANG. signature added; channel-map rows: TikTok / Instagram / WhatsApp
-8. SocialTeaser — platform icon vitrine (TikTok/Instagram/WhatsApp cluster, WA pulse animation); channel-map rows right; real links only; scroll-reveal on entry
-9. FinalCTABar — MAKE IT HIT. / START THE PIECE → + TEXT US →; scroll-reveal on entry
+3. PICK THE PIECE — stronger vitrine gateway, anchor row (GRILLZ dominant), TileGlareController (3D cursor tilt/glare on anchor tiles, desktop only), discovery strip; secondary tiles collapse to text-only on mobile
+4. ShineDirectionBand — METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite; section-reveal on scroll
+5. Promo strip — "ASK WHAT'S RUNNING NOW · CUSTOM PIECES BUILT HERE · DETAILS CONFIRMED PER PIECE" — fully claim-safe
+6. ShineRail — seamless auto-scrolling category carousel; 8 categories × 2 = 16 cards × 220px; heading: MOST ASKED ABOUT / VIEW ALL →; GRILLZ/WATCHES/CHAINS/PENDANTS/CUSTOM with demo images; RINGS/BRACELETS/EARRINGS use CSS gradient placeholders; section-reveal on scroll
+7. Custom lane — YOUR LOGO. YOUR NAME. YOUR PIECE., demo sketch+pendant image, keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST
+8. ProofContactZone — stat ledger: 25 YEARS (animated countUp on scroll entry) / 332 FIFTH AVE (static); BANG. signature; Pittsburgh proof only — social channel rows removed in Pass 4C
+9. SocialTeaser — TAP IN WITH 2T.; reel thumbnail renders (2t-demo-social-thumbnail-01.png); platform icon cluster left; channel-map rows right (TikTok/Instagram/WhatsApp real links); scroll-reveal on entry
+10. FinalCTABar — MAKE IT HIT. / START THE PIECE → + TEXT US →; scroll-reveal on entry
 
 - Header logo: `2t-logo-wide-transparent.png` — numeric width/height, TODO for final SVG/2x
 - Footer logo: `2t-logo-full-black-bg.png` — installed
@@ -126,6 +127,21 @@ CRO pass and selector grouping committed (commits `60c7d06`, `2303850`). Resend 
   - cat-grid-link hover upgraded (gold outline + translateY)
   - Screenshot gitignore patterns added (qa-*.jpeg, audit-*.jpeg)
 
+**Pass 4C — homepage motion + category rail (2026-06-03):**
+
+- `70fcdd6` feat: add pass 4c homepage motion and category rail
+  - `ShineRail.tsx` — new seamless category carousel; 8 categories × 2 duplicated = 16 cards × 220px; `translateX(-1760px)` loop; GRILLZ/WATCHES/CHAINS/PENDANTS/CUSTOM with demo images; RINGS/BRACELETS/EARRINGS CSS gradient placeholders
+  - `TileGlareController.tsx` — new client component; cursor-tracked 3D tilt + glare on GRILLZ/WATCHES/CHAINS anchor tiles; desktop only
+  - `BestSellersStrip.tsx` — deleted; replaced by ShineRail
+  - Oversized BANG entrance animation removed from hero; BANG. brand stamp stays as static element
+  - Custom vitrine background: `2t-demo-custom-before-after-01.png` committed and wired
+  - SocialTeaser reel: `2t-demo-social-thumbnail-01.png` committed and wired
+  - ProofContactZone: duplicate social channel rows removed — Pittsburgh proof only
+  - SocialTeaser: now owns all TikTok/Instagram/WhatsApp channel rows
+  - PICK THE PIECE text readability improved; secondary tiles collapse to text-only on mobile
+  - `app/globals.css` and `app/page.tsx` updated accordingly
+  - Live QA passed: https://2finla.vercel.app — zero console errors, zero 404s, no horizontal scroll
+
 **Pass 4B — interactive homepage motion (2026-06-03):**
 
 - `9849b81` feat: add interactive homepage motion pass
@@ -143,10 +159,11 @@ CRO pass and selector grouping committed (commits `60c7d06`, `2303850`). Resend 
 
 **Working tree — do not stage without explicit approval:**
 - `docs/superpowers/plans/` and `docs/superpowers/specs/` — planning/spec notes
-- `public/assets/demo/phase3a/` — demo PNG assets
+- `public/assets/demo/phase3a/` — demo PNG assets (includes Pass 4C additions: `2t-demo-custom-before-after-01.png`, `2t-demo-social-thumbnail-01.png`)
 - `public/assets/logo-to-use.png` — replacement logo candidate, not yet approved for wiring
+- QA screenshots (`qa-*.jpeg`) in project root — gitignored, safe to leave
 
-**Next recommended phase:** Final sitewide asset shot list — define exactly what photos/footage 2T needs to provide. SocialTeaser Phase 1 when real @2tjewelers still frames arrive. Concept C (motion/react, 3D tilt, border beam) gated on real product assets arriving.
+**Next recommended phase:** Final sitewide asset shot list — define exactly what photos/footage 2T needs to provide. SocialTeaser Phase 1 when real @2tjewelers still frames + post URLs arrive. Wire ShineRail real images for RINGS/BRACELETS/EARRINGS cards (`image: null` in `ShineRail.tsx` lines 51–70) when real photos arrive.
 No random CSS/layout cleanup unless QA finds a real issue.
 
 Do not commit or push new category pages without visual QA and user approval.  

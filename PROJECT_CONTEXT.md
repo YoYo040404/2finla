@@ -409,7 +409,7 @@ See Visual Direction section above for the full Midnight Icebox token table (upd
 
 ### Homepage — Material & Stone Direction Pass ✅ Committed
 
-**Latest commit:** `9849b81 — feat: add interactive homepage motion pass` (2026-06-03)
+**Latest commit:** `70fcdd6 — feat: add pass 4c homepage motion and category rail` (2026-06-03)
 
 Homepage is a product-first store with a custom lane — NOT custom-only. Hero dual CTAs: SHOP THE PIECES + BUILD CUSTOM →.
 
@@ -419,12 +419,13 @@ Homepage is a product-first store with a custom lane — NOT custom-only. Hero d
 |---|---------|-----------|--------|
 | 1 | Hero — BUILT TO HIT. + BANG. stamp | inline in `app/page.tsx` | ✅ Full-bleed campaign media, video opacity 0.60, BANG. as borderless gold brand text stamp; CTAs: SHOP THE PIECES + BUILD CUSTOM → |
 | 2 | ProofMarquee | `components/home/ProofMarquee.tsx` | ✅ CSS-only marquee, gold borders, trust facts, accessible |
-| 3 | PICK THE PIECE — shop gateway | inline in `app/page.tsx` | ✅ Stronger vitrine gateway (0b5252e); anchor row (GRILLZ dominant); discovery strip; BestSellersStrip wired; inline mono text labels + material cue |
+| 3 | PICK THE PIECE — shop gateway | inline in `app/page.tsx` | ✅ Stronger vitrine gateway; anchor row (GRILLZ dominant); TileGlareController (3D tilt/glare desktop); discovery strip; secondary tiles text-only on mobile (Pass 4C) |
+| 3b | ShineRail — category carousel | `components/home/ShineRail.tsx` | ✅ Pass 4C — seamless auto-scrolling 16-card carousel (8×2); GRILLZ/WATCHES/CHAINS/PENDANTS/CUSTOM with demo images; RINGS/BRACELETS/EARRINGS CSS placeholders |
 | 4 | ShineDirectionBand — material/stone direction | inline in `app/page.tsx` | ✅ METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite — Details confirmed per piece. No per-tile chips. |
 | 5 | Promo strip — ASK WHAT'S RUNNING NOW | inline in `app/page.tsx` | ✅ Claim-safe, WhatsApp prefill, promo terms note |
 | 6 | Custom lane — YOUR LOGO. YOUR NAME. YOUR PIECE. | inline in `app/page.tsx` | ✅ Keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST |
-| 7 | REAL STORE. REAL WORK. | `components/home/PittsburghStory.tsx` | ✅ Stat ledger: 25 YEARS / 5TH AVE with gold left-border rules |
-| 8 | TAP IN WITH 2T. | `components/home/SocialTeaser.tsx` | ✅ Platform icon vitrine (TikTok/Instagram/WhatsApp cluster, WA pulse animation); channel-map rows right; real links only |
+| 7 | ProofContactZone — Pittsburgh proof | `components/home/ProofContactZone.tsx` | ✅ Stat ledger: 25 YEARS (countUp) / 332 FIFTH AVE (static); BANG. signature; Pittsburgh proof only — social channel rows removed in Pass 4C |
+| 8 | TAP IN WITH 2T. | `components/home/SocialTeaser.tsx` | ✅ Reel thumbnail (2t-demo-social-thumbnail-01.png); platform icon cluster left; channel-map rows right (TikTok/Instagram/WhatsApp); real links only; now owns all social channel rows (Pass 4C) |
 
 **Vitrine system:** Striped diagonal-pattern CSS placeholder wells with corner crop marks. Replace with real `<img>` or `<video>` when media assets arrive.
 
@@ -568,6 +569,7 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 - **SEO foundation + social docs** (commits `1b36f09`, `eb3fcd9`, `c9e8817`, `cfefe89`) — metadata/sitemap/robots, production URL env doc, social strategy sync, asset request plan.
 - **Pass 4A — sitewide visual polish + claim safety** (commit `f8101dd`, 2026-06-03): PromoBar "20% OFF" removed + claim-safe copy; secondary tile mi-gleam; BestSellersStrip mobile CTA visibility + stagger animation; SocialTeaser platform icon vitrine; BANG. signature in ProofContactZone + About; hover states on all category style cards; screenshot gitignore patterns.
 - **Pass 4B — interactive homepage motion** (commit `9849b81`, 2026-06-03): ScrollRevealController (IntersectionObserver scroll reveals on ShineDirectionBand / ProofContactZone / SocialTeaser / FinalCTABar); anchor tile stagger (tile-reveal-0/1/2) + secondary tile stagger (tile-reveal-s0/1/2/3); BestSellersStrip scroll-snap infrastructure (mobile); StickyConversionBar desktop/tablet WA CTA (z-index 30, hidden on mobile); ProofContactZone "25" rAF countUp animation; ShineDirectionBand chip hover tilt (desktop only); FinalCTABar + SocialTeaser wired into app/page.tsx (were missing). No new npm packages. app/page.tsx stays Server Component.
+- **Pass 4C — homepage motion + category rail** (commit `70fcdd6`, 2026-06-03): ShineRail seamless category carousel (8 categories × 2 = 16 cards × 220px, `translateX(-1760px)` loop); TileGlareController (cursor 3D tilt/glare on anchor tiles, desktop only); BestSellersStrip deleted; oversized BANG entrance animation removed — BANG. stamp stays static; custom vitrine background wired (`2t-demo-custom-before-after-01.png`); SocialTeaser reel thumbnail wired (`2t-demo-social-thumbnail-01.png`); ProofContactZone stripped to Pittsburgh proof only; SocialTeaser owns all social channel rows; mobile secondary tiles collapse to text-only. Live QA passed on https://2finla.vercel.app — zero console errors, zero 404s, no horizontal scroll.
 
 **TikTok / Instagram Feed — Feasibility Assessed (2026-06-03):**
 
@@ -581,7 +583,7 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 **Next phase:**
 1. **Final sitewide asset shot list** — define exactly what photos/footage 2T needs to provide. Site is now visually polished enough that remaining gaps are clearly identifiable.
 2. **SocialTeaser Phase 1** — manual curated social cards when real @2tjewelers still frames + post URLs arrive from 2T.
-3. **Concept C (Pass 4C)** — motion/react 3D tilt, border beam, swipe drawer — gated on real product assets arriving.
+3. **ShineRail real images** — wire RINGS/BRACELETS/EARRINGS cards in `ShineRail.tsx` (lines 51–70) when real product photos arrive.
 4. No random CSS/layout cleanup unless QA finds a real issue.
 
 **Do not reopen homepage redesign** unless a clear blocker is found.
@@ -594,6 +596,7 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 | Commit | Description |
 |---|---|
+| `70fcdd6` | feat: add pass 4c homepage motion and category rail — ShineRail carousel, TileGlareController, BestSellersStrip removed, BANG entrance animation removed, custom vitrine + SocialTeaser demo assets wired, ProofContactZone Pittsburgh-only, mobile secondary tile collapse |
 | `9849b81` | feat: add interactive homepage motion pass — ScrollRevealController, section reveals, tile stagger, BestSellersStrip scroll-snap, StickyConversionBar (desktop), ProofContactZone counter, ShineDirectionBand chip tilt |
 | `f8101dd` | fix: polish site visuals and claim-safe promo bar — Pass 4A |
 | `f952928` | docs: sync pass 4a project state |

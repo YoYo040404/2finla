@@ -109,6 +109,17 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
   - BestSellersStrip scroll-snap infrastructure (`bss-snap-container` / `bss-snap-card`; no layout change)
   - FinalCTABar + SocialTeaser wired into app/page.tsx homepage section order
   - No new npm packages; zero TypeScript errors
+- **Pass 4C — homepage motion + category rail** (commit `70fcdd6`, 2026-06-03):
+  - `ShineRail.tsx` — new seamless category carousel; 8 categories × 2 = 16 cards × 220px; `translateX(-1760px)` loop; GRILLZ/WATCHES/CHAINS/PENDANTS/CUSTOM with demo images; RINGS/BRACELETS/EARRINGS CSS gradient placeholders
+  - `TileGlareController.tsx` — cursor 3D tilt + glare on GRILLZ/WATCHES/CHAINS anchor tiles; desktop only
+  - `BestSellersStrip.tsx` — deleted
+  - Oversized BANG entrance animation removed; BANG. stamp stays as static brand element
+  - Custom vitrine background wired (`2t-demo-custom-before-after-01.png`)
+  - SocialTeaser reel thumbnail wired (`2t-demo-social-thumbnail-01.png`)
+  - ProofContactZone: duplicate social channel rows removed — Pittsburgh proof only
+  - SocialTeaser: now owns all TikTok/Instagram/WhatsApp channel rows
+  - Mobile secondary tiles collapse to text-only cards
+  - Live QA passed — zero console errors, zero 404s, no horizontal scroll
 
 ### WIP / Approval Pending ⚠️
 
@@ -116,7 +127,7 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 
 ### Not Yet 🚫
 
-- **Concept C (Pass 4C)** — motion/react 3D card tilt, border beam, swipe drawer — gated on real product assets arriving
+- **ShineRail real images** — wire RINGS/BRACELETS/EARRINGS cards (`ShineRail.tsx` lines 51–70) when real product photos arrive
 - **Final sitewide asset shot list** — in progress (next phase)
 - Real asset/media replacement (hero footage, product shots, grillz/watches photos, store footage)
 - SocialTeaser Phase 1: manual curated cards (build when 2T provides real @2tjewelers still frames + post URLs)
@@ -133,7 +144,7 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 
 - **Final sitewide asset shot list** — define exactly what photos/footage 2T needs to provide; site is now interactive and polished enough that remaining gaps are clearly identifiable
 - **SocialTeaser Phase 1** — manual curated social cards when 2T provides real @2tjewelers still frames + post URLs
-- **Concept C (Pass 4C)** — motion/react 3D tilt / border beam / swipe drawer — start only when real product assets arrive
+- **ShineRail real images** — wire RINGS/BRACELETS/EARRINGS cards when real product photos arrive
 - **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic (low priority)
 - SEO/schema after core pages pass claim-safety review
 - No random CSS/layout cleanup unless QA finds a real issue
@@ -421,10 +432,11 @@ Only if user explicitly approves:
 39. ✅ **TikTok/Instagram feed feasibility assessed** — Phase 1 = manual curated cards; dynamic API = future (2026-06-03). Plan: `docs/superpowers/plans/2026-06-03-social-feed-feasibility.md`
 40. ✅ **Pass 4A — sitewide visual polish + claim safety** (commit `f8101dd`, 2026-06-03)
 41. ✅ **Pass 4B — interactive homepage motion** (commit `9849b81`, 2026-06-03) — ScrollRevealController, scroll reveals, tile stagger, StickyConversionBar, ProofContactZone counter, chip tilt, FinalCTABar + SocialTeaser wired
-42. 🎯 **Asset/media request list** — define what specific photos/footage 2T needs to provide ← NEXT
-43. 🎯 **SocialTeaser Phase 1** — manual curated social cards when 2T provides still frames ← NEXT PHASE
-44. 🎯 **Concept C (Pass 4C)** — motion/react 3D tilt, border beam, swipe drawer ← GATED ON REAL ASSETS
-45. 🎯 **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic ← LOW PRIORITY
+42. ✅ **Pass 4C — homepage motion + category rail** (commit `70fcdd6`, 2026-06-03) — ShineRail seamless carousel, TileGlareController, BestSellersStrip removed, BANG entrance animation removed, custom vitrine + SocialTeaser demo assets wired, ProofContactZone Pittsburgh-only, mobile secondary tile collapse. Live QA passed.
+43. 🎯 **Asset/media request list** — define what specific photos/footage 2T needs to provide ← NEXT
+44. 🎯 **SocialTeaser Phase 1** — manual curated social cards when 2T provides still frames ← NEXT PHASE
+45. 🎯 **ShineRail real images** — wire RINGS/BRACELETS/EARRINGS when real product photos arrive ← NEXT PHASE
+46. 🎯 **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic ← LOW PRIORITY
 46. ⏳ **Category/product proof pages** — after media/proof planning
 47. ⏳ SEO/schema — after core pages pass claim-safety review
 48. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL

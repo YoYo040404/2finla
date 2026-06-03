@@ -95,10 +95,11 @@ Do not publish as blanket sitewide claims without verification. Do not invent th
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
 Old Shopify folder is archive only. Do not touch it.
 
-**Latest committed state (as of 2026-06-03 — latest: `9849b81`):**
+**Latest committed state (as of 2026-06-03 — latest: `70fcdd6`):**
 
 | Commit | Description |
 |---|---|
+| `70fcdd6` | feat: add pass 4c homepage motion and category rail — ShineRail carousel, TileGlareController, BestSellersStrip removed, BANG entrance animation removed, demo assets wired |
 | `9849b81` | feat: add interactive homepage motion pass — Pass 4B |
 | `f952928` | docs: sync pass 4a project state |
 | `f8101dd` | fix: polish site visuals and claim-safe promo bar — Pass 4A |
@@ -145,7 +146,7 @@ Old Shopify folder is archive only. Do not touch it.
 
 **Current strategic direction:** 2T Jewelers is a real Pittsburgh street-luxury jewelry store. Pittsburgh BANG homepage is merged into main. Visual direction: hard hip-hop / hood street-luxury — loud, flashy, bling-heavy, ice/diamond/gold shine, rapper/athlete energy. NOT quiet luxury, NOT boutique, NOT over-clean ecommerce.
 
-**Current focus:** Pass 4B interactive motion is complete and committed (`9849b81`). Homepage now has scroll-triggered section reveals, tile stagger (anchor + secondary), StickyConversionBar (desktop/tablet WA CTA), ProofContactZone "25" countUp animation, ShineDirectionBand chip hover tilt, and BestSellersStrip scroll-snap infrastructure. No new npm packages added. app/page.tsx remains a Server Component. Next phase: compile the final sitewide asset shot list. SocialTeaser Phase 1 when real @2tjewelers still frames arrive. Concept C (motion/react 3D tilt, border beam) gated on real product assets. Do not reopen broad homepage redesign. Do not add CSS/layout cleanup unless QA finds a real issue.
+**Current focus:** Pass 4C committed and live (`70fcdd6`). Homepage now has: ShineRail seamless category carousel, TileGlareController desktop 3D tilt/glare on anchor tiles, BANG entrance animation removed (static stamp retained), custom vitrine background + SocialTeaser reel thumbnail wired via committed demo assets, ProofContactZone Pittsburgh-proof-only, SocialTeaser owns all social channel rows, mobile secondary tiles collapse to text-only. BestSellersStrip component deleted. Live QA passed on https://2finla.vercel.app — zero errors. Next phase: final sitewide asset shot list. SocialTeaser Phase 1 when real @2tjewelers still frames arrive. Wire ShineRail real images for RINGS/BRACELETS/EARRINGS when photos arrive.
 
 ---
 
@@ -219,12 +220,15 @@ Custom page (as of commit 84af600 — 2026-05-17):
 | Homepage Midnight Icebox Pass 3 | ✅ Committed — af7f20d. Anton/Archivo/JetBrains Mono. Vitrine system. Gold/ice palette. |
 | Hero | ✅ Full-bleed campaign. Video opacity 0.60. BANG. brand text stamp. |
 | ProofMarquee | ✅ Live — gold borders |
-| PICK THE PIECE gateway | ✅ Stronger vitrine (0b5252e) — anchor row, discovery strip, BestSellersStrip wired, inline text labels + material cue |
+| PICK THE PIECE gateway | ✅ Anchor row (GRILLZ dominant); TileGlareController 3D tilt/glare desktop (Pass 4C); discovery strip; secondary tiles text-only on mobile (Pass 4C) |
+| ShineRail | ✅ Pass 4C — seamless carousel, 16 cards (8×2), 220px each; GRILLZ/WATCHES/CHAINS/PENDANTS/CUSTOM with demo images; RINGS/BRACELETS/EARRINGS CSS placeholders |
+| BestSellersStrip | 🗑️ Removed in Pass 4C — replaced by ShineRail |
+| TileGlareController | ✅ Pass 4C — cursor 3D tilt + glare on anchor tiles, desktop only |
 | ShineDirectionBand | ✅ Live — METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite — Details confirmed per piece |
 | Promo module | ✅ Live — claim-safe, no fake offers |
-| Custom lane (homepage) | ✅ Live — keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST |
-| PittsburghStory | ✅ Stat ledger: 25 / 5TH AVE with gold left-border rules |
-| SocialTeaser | ✅ Channel-map rows, WhatsApp gold-bordered, real links only |
+| Custom lane (homepage) | ✅ Live — demo sketch image; keyword chips; NO DEPOSIT TO START · WE QUOTE FIRST |
+| ProofContactZone | ✅ Stat ledger: 25 YEARS (countUp) / 332 FIFTH AVE (static); BANG. stamp; Pittsburgh proof only — social channel rows removed (Pass 4C) |
+| SocialTeaser | ✅ Pass 4C — reel thumbnail wired (2t-demo-social-thumbnail-01.png); platform icons left; channel-map rows right (TikTok/Instagram/WhatsApp); now owns all social channel rows |
 | Hero video | ✅ Slot wired — `public/assets/hero-loop-demo.mp4` (file pending) |
 | Header navigation | ✅ Active states cleaned (4f3097f) — Shop ▾ / Pendants / Grillz / Watches / Custom / About |
 | Chains page `/collections/chains` | ✅ Six style cards (744d2b3/dc33c16), SHOP language, SVG fallback |
@@ -252,7 +256,7 @@ Custom page (as of commit 84af600 — 2026-05-17):
 
 ## Default Next Prompt
 
-**Current milestone: Pass 4B interactive motion committed (`9849b81`). SEO foundation live. Social feed feasibility assessed (2026-06-03). Site is healthy/shippable with interactive scroll choreography.**
+**Current milestone: Pass 4C committed (`70fcdd6`) and live QA passed on https://2finla.vercel.app. ShineRail carousel, TileGlareController, BestSellersStrip removed, demo assets wired. Zero errors on live QA. Site is healthy/shippable.**
 
 **SEO foundation status (commit `1b36f09`):** metadata, sitemap, robots added. Production URL env documented (`eb3fcd9`).
 
