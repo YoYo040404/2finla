@@ -689,14 +689,21 @@ export default function WatchesPage() {
         <div aria-hidden="true" style={{
           position:      'absolute',
           inset:         0,
-          background:    'radial-gradient(ellipse 75% 65% at 0% 55%, rgba(200,230,255,0.07) 0%, transparent 65%)',
+          background:    'radial-gradient(ellipse 75% 65% at 0% 55%, rgba(200,230,255,0.15) 0%, transparent 62%)',
           pointerEvents: 'none',
         }} />
         {/* Cold glow — top right corner */}
         <div aria-hidden="true" style={{
           position:      'absolute',
           inset:         0,
-          background:    'radial-gradient(ellipse 50% 50% at 100% 0%, rgba(200,230,255,0.04) 0%, transparent 70%)',
+          background:    'radial-gradient(ellipse 50% 50% at 100% 0%, rgba(200,230,255,0.09) 0%, transparent 68%)',
+          pointerEvents: 'none',
+        }} />
+        {/* Grid crosshatch — mechanical precision texture */}
+        <div aria-hidden="true" style={{
+          position:      'absolute',
+          inset:         0,
+          backgroundImage: 'repeating-linear-gradient(0deg, rgba(216,235,255,0.02) 0 1px, transparent 1px 20px), repeating-linear-gradient(90deg, rgba(216,235,255,0.02) 0 1px, transparent 1px 20px)',
           pointerEvents: 'none',
         }} />
 
@@ -943,8 +950,8 @@ export default function WatchesPage() {
                     width:          '100%',
                     aspectRatio:    '4 / 3',
                     background:     dir.accentRolex
-                      ? 'linear-gradient(155deg, #100d06 0%, #080704 100%)'
-                      : 'var(--color-brand-charcoal)',
+                      ? 'radial-gradient(88% 68% at 50% 34%, rgba(201,164,73,0.24) 0%, transparent 54%), radial-gradient(35% 28% at 80% 14%, rgba(233,210,137,0.14) 0%, transparent 50%), repeating-linear-gradient(135deg, rgba(201,164,73,0.048) 0 10px, transparent 10px 20px), #110900'
+                      : 'radial-gradient(80% 62% at 62% 28%, rgba(216,235,255,0.20) 0%, transparent 50%), radial-gradient(38% 30% at 82% 14%, rgba(255,255,255,0.16) 0%, transparent 46%), repeating-linear-gradient(0deg, rgba(216,235,255,0.022) 0 7px, transparent 7px 14px), repeating-linear-gradient(90deg, rgba(216,235,255,0.022) 0 7px, transparent 7px 14px), #030810',
                     display:        'flex',
                     alignItems:     'center',
                     justifyContent: 'center',
@@ -958,14 +965,14 @@ export default function WatchesPage() {
                     <div aria-hidden="true" style={{
                       position:   'absolute',
                       inset:      0,
-                      background: 'radial-gradient(ellipse 65% 65% at 50% 50%, rgba(201,168,76,0.07) 0%, transparent 70%)',
+                      background: 'radial-gradient(ellipse 65% 60% at 50% 50%, rgba(201,168,76,0.20) 0%, transparent 68%)',
                     }} />
                   )}
                   {!dir.accentRolex && i < 2 && (
                     <div aria-hidden="true" style={{
                       position:   'absolute',
                       inset:      0,
-                      background: 'radial-gradient(ellipse 65% 65% at 50% 55%, rgba(200,230,255,0.055) 0%, transparent 70%)',
+                      background: 'radial-gradient(ellipse 65% 60% at 50% 52%, rgba(200,230,255,0.16) 0%, transparent 68%)',
                     }} />
                   )}
                   {dir.imageSrc ? (

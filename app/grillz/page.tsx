@@ -513,14 +513,21 @@ export default function GrillzPage() {
         <div aria-hidden="true" style={{
           position:      'absolute',
           inset:         0,
-          background:    'radial-gradient(ellipse 72% 65% at 0% 55%, rgba(201,168,76,0.08) 0%, transparent 68%)',
+          background:    'radial-gradient(ellipse 72% 65% at 0% 55%, rgba(201,168,76,0.16) 0%, transparent 66%)',
           pointerEvents: 'none',
         }} />
         {/* Warm glow — top right */}
         <div aria-hidden="true" style={{
           position:      'absolute',
           inset:         0,
-          background:    'radial-gradient(ellipse 45% 45% at 100% 0%, rgba(201,168,76,0.04) 0%, transparent 70%)',
+          background:    'radial-gradient(ellipse 45% 45% at 100% 0%, rgba(201,168,76,0.09) 0%, transparent 68%)',
+          pointerEvents: 'none',
+        }} />
+        {/* Crosshatch workshop texture */}
+        <div aria-hidden="true" style={{
+          position:      'absolute',
+          inset:         0,
+          backgroundImage: 'repeating-linear-gradient(45deg, rgba(201,168,76,0.025) 0 1px, transparent 1px 22px), repeating-linear-gradient(-45deg, rgba(201,168,76,0.025) 0 1px, transparent 1px 22px)',
           pointerEvents: 'none',
         }} />
 
@@ -681,8 +688,8 @@ export default function GrillzPage() {
                       width:          '100%',
                       aspectRatio:    '4 / 3',
                       background:     isIce
-                        ? 'linear-gradient(155deg, #080c14 0%, #050609 100%)'
-                        : 'var(--color-brand-charcoal)',
+                        ? 'radial-gradient(80% 62% at 62% 30%, rgba(216,235,255,0.18) 0%, transparent 52%), radial-gradient(35% 28% at 82% 14%, rgba(255,255,255,0.14) 0%, transparent 48%), repeating-linear-gradient(0deg, rgba(216,235,255,0.02) 0 7px, transparent 7px 14px), repeating-linear-gradient(90deg, rgba(216,235,255,0.02) 0 7px, transparent 7px 14px), #030710'
+                        : 'radial-gradient(88% 68% at 50% 34%, rgba(201,164,73,0.26) 0%, transparent 54%), radial-gradient(35% 28% at 80% 14%, rgba(233,210,137,0.14) 0%, transparent 50%), repeating-linear-gradient(135deg, rgba(201,164,73,0.05) 0 10px, transparent 10px 20px), #100a00',
                       display:        'flex',
                       alignItems:     'center',
                       justifyContent: 'center',
@@ -696,8 +703,8 @@ export default function GrillzPage() {
                       position:   'absolute',
                       inset:      0,
                       background: isIce
-                        ? 'radial-gradient(ellipse 65% 65% at 50% 55%, rgba(200,230,255,0.05) 0%, transparent 70%)'
-                        : 'radial-gradient(ellipse 65% 65% at 50% 55%, rgba(201,168,76,0.06) 0%, transparent 70%)',
+                        ? 'radial-gradient(ellipse 65% 60% at 50% 52%, rgba(200,230,255,0.12) 0%, transparent 68%)'
+                        : 'radial-gradient(ellipse 65% 60% at 50% 52%, rgba(201,168,76,0.18) 0%, transparent 68%)',
                     }} />
                     {style.imageSrc ? (
                       <img

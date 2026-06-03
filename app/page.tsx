@@ -510,6 +510,7 @@ export default function HomePage() {
       {/* ─── 4. BUILD CUSTOM — identity flex lane ──────────────────────── */}
       <section
         aria-label="Custom jewelry"
+        className="custom-inquiry-section"
         style={{
           background: '#0A0702',
           borderTop: '1px solid rgba(201,164,73,0.30)',

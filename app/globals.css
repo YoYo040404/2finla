@@ -4095,3 +4095,391 @@
     border-top: 1px solid rgba(201,168,76,0.14);
   }
 }
+
+/* ─── Pass 4D — Midnight Icebox 2.0 / Surface Language Pass ─────────────── */
+/* Thesis: frame is strong, shelf is weak. Too many surfaces feel flat, dark,  */
+/* empty, icon-like. This pass adds icy/chrome/gold surface language CSS-only  */
+/* across ShineRail, ProofContactZone, SocialTeaser, FinalCTABar, SDB panels, */
+/* and category page hero/vitrine areas. No packages, no fake products.        */
+
+/* ── 1. ShineRail: per-tone card atmospheric surfaces ──────────────────────── */
+/* Replaces flat #111111 with product-character backgrounds per tone.          */
+
+.src-card--gold {
+  background:
+    radial-gradient(88% 68% at 50% 30%, rgba(201,164,73,0.20) 0%, transparent 56%),
+    radial-gradient(55% 45% at 82% 75%, rgba(201,164,73,0.08) 0%, transparent 60%),
+    repeating-linear-gradient(135deg, rgba(201,164,73,0.04) 0 10px, transparent 10px 20px),
+    #0e0b02;
+  border-left-width: 3px;
+}
+.src-card--ice {
+  background:
+    radial-gradient(80% 62% at 62% 28%, rgba(216,235,255,0.16) 0%, transparent 52%),
+    radial-gradient(38% 30% at 20% 74%, rgba(216,235,255,0.07) 0%, transparent 60%),
+    repeating-linear-gradient(  0deg, rgba(216,235,255,0.018) 0 7px, transparent 7px 14px),
+    repeating-linear-gradient( 90deg, rgba(216,235,255,0.018) 0 7px, transparent 7px 14px),
+    #030710;
+  border-left-width: 3px;
+}
+.src-card--silver {
+  background:
+    radial-gradient(72% 56% at 50% 26%, rgba(255,255,255,0.10) 0%, transparent 52%),
+    radial-gradient(42% 34% at 50% 78%, rgba(201,164,73,0.07) 0%, transparent 58%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.024) 0 7px, transparent 7px 14px),
+    #070707;
+  border-left-width: 3px;
+}
+.src-card--warm {
+  background:
+    radial-gradient(90% 70% at 50% 34%, rgba(201,164,73,0.24) 0%, transparent 54%),
+    radial-gradient(48% 38% at 74% 20%, rgba(216,235,255,0.08) 0%, transparent 50%),
+    repeating-linear-gradient( 45deg, rgba(201,164,73,0.042) 0 1px, transparent 1px 18px),
+    repeating-linear-gradient(-45deg, rgba(201,164,73,0.042) 0 1px, transparent 1px 18px),
+    #0a0702;
+  border-left-width: 3px;
+}
+
+/* ── 2. ShineRail: stronger placeholder backgrounds ────────────────────────── */
+/* Overrides existing placeholders with higher radial intensity.               */
+
+.src-placeholder--gold {
+  background:
+    radial-gradient(58% 50% at 50% 38%, rgba(201,164,73,0.42) 0%, transparent 50%),
+    radial-gradient(80% 65% at 50% 84%, rgba(201,164,73,0.16) 0%, transparent 62%),
+    radial-gradient(32% 25% at 82% 14%, rgba(233,210,137,0.14) 0%, transparent 52%),
+    repeating-linear-gradient(45deg,  rgba(201,164,73,0.058) 0 8px, transparent 8px 16px),
+    repeating-linear-gradient(-45deg, rgba(201,164,73,0.042) 0 8px, transparent 8px 16px),
+    #100a00;
+}
+.src-placeholder--ice {
+  background:
+    radial-gradient(52% 44% at 50% 35%, rgba(216,235,255,0.32) 0%, transparent 50%),
+    radial-gradient(35% 28% at 50% 84%, rgba(216,235,255,0.12) 0%, transparent 58%),
+    radial-gradient(28% 22% at 82% 14%, rgba(255,255,255,0.14) 0%, transparent 48%),
+    repeating-linear-gradient(135deg, rgba(216,235,255,0.04) 0 9px, transparent 9px 18px),
+    #030810;
+}
+.src-placeholder--silver {
+  background:
+    radial-gradient(56% 46% at 50% 34%, rgba(255,255,255,0.18) 0%, transparent 50%),
+    radial-gradient(68% 52% at 50% 74%, rgba(201,164,73,0.10) 0%, transparent 58%),
+    radial-gradient(26% 22% at 78% 16%, rgba(255,255,255,0.10) 0%, transparent 50%),
+    repeating-linear-gradient(-45deg, rgba(255,255,255,0.034) 0 8px, transparent 8px 16px),
+    #080707;
+}
+
+/* ── 3. ShineRail: card body + top border ──────────────────────────────────── */
+
+.src-body {
+  border-top-color: rgba(201, 168, 76, 0.18);
+}
+.src-label {
+  text-shadow: 0 1px 0 rgba(0,0,0,0.65), 0 0 10px rgba(255,255,255,0.06);
+}
+/* Slightly brighter image rendering */
+.src-img-area img {
+  filter: brightness(0.92) contrast(1.08) saturate(1.05);
+}
+
+/* ── 4. ShineRail: stronger outer section border ───────────────────────────── */
+
+.src-wrap {
+  border-top-color:    rgba(201, 168, 76, 0.38);
+  border-bottom-color: rgba(201, 168, 76, 0.22);
+}
+
+/* ── 5. ProofContactZone: richer surface + gold top edge ───────────────────── */
+
+.pb-proof-zone {
+  background:
+    radial-gradient(ellipse 90% 60% at 12% 50%, rgba(201,164,73,0.10) 0%, transparent 52%),
+    radial-gradient(ellipse 55% 45% at 82% 80%, rgba(201,164,73,0.05) 0%, transparent 58%),
+    radial-gradient(ellipse 40% 35% at 50% 0%,  rgba(201,164,73,0.04) 0%, transparent 55%),
+    #0d0c0b;
+  border-top-color: rgba(201,164,73,0.45);
+}
+
+/* ── 6. ProofContactZone: store/brand card surface ────────────────────────── */
+
+.pb-store-card {
+  background:
+    radial-gradient(80% 60% at 35% 42%, rgba(201,164,73,0.10) 0%, transparent 60%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.014) 0 14px, transparent 14px 28px),
+    #050505;
+  border-color: rgba(201,164,73,0.32);
+}
+
+/* ── 7. SocialTeaser: richer left vitrine atmosphere ───────────────────────── */
+
+.pb-vitrine-social {
+  background:
+    radial-gradient(ellipse 75% 65% at 50% 46%, rgba(201,168,76,0.12) 0%, transparent 56%),
+    radial-gradient(ellipse 40% 35% at 80% 20%, rgba(216,235,255,0.05) 0%, transparent 52%),
+    linear-gradient(160deg, #0e0e0e 0%, #080808 100%) !important;
+  border-top: 2px solid rgba(201,164,73,0.42) !important;
+}
+
+/* ── 8. FinalCTABar: atmospheric depth + gold accent edge ──────────────────── */
+
+.final-cta-bar {
+  border-top-color: rgba(201,168,76,0.38);
+  background:
+    radial-gradient(ellipse 65% 55% at 50% 0%, rgba(201,164,73,0.07) 0%, transparent 52%),
+    radial-gradient(ellipse 35% 30% at 88% 100%, rgba(201,164,73,0.04) 0%, transparent 58%),
+    var(--color-brand-charcoal);
+}
+
+/* ── 9. ShineDirectionBand: richer panel surfaces ──────────────────────────── */
+
+.sdb-panel--gold {
+  background:
+    radial-gradient(100% 80% at 0% 50%, rgba(201,164,73,0.16) 0%, transparent 54%),
+    radial-gradient(60% 50% at 100% 0%,  rgba(201,164,73,0.06) 0%, transparent 58%),
+    #0c0a02;
+  box-shadow: inset 0 0 20px rgba(201,164,73,0.04);
+}
+.sdb-panel--ice {
+  background:
+    radial-gradient(100% 80% at 0% 50%, rgba(216,235,255,0.12) 0%, transparent 54%),
+    radial-gradient(60% 50% at 100% 0%,  rgba(216,235,255,0.06) 0%, transparent 58%),
+    #04080e;
+  box-shadow: inset 0 0 20px rgba(216,235,255,0.04);
+}
+
+/* ── 10. Anchor vitrine tiles: increase radial intensities ─────────────────── */
+/* GRILLZ — more vivid warm gold */
+.pb-vitrine-pb-grillz {
+  background:
+    radial-gradient(110% 75% at 50% 105%, rgba(201,164,73,0.30) 0%, transparent 50%),
+    radial-gradient(90%  65% at 28%  35%, rgba(201,164,73,0.22) 0%, transparent 52%),
+    radial-gradient(50%  40% at 72%  70%, rgba(201,164,73,0.14) 0%, transparent 55%),
+    radial-gradient(35%  28% at 80%  12%, rgba(233,210,137,0.12) 0%, transparent 52%),
+    repeating-linear-gradient(135deg, rgba(201,164,73,0.062) 0 10px, rgba(0,0,0,0) 10px 20px),
+    #110900;
+}
+
+/* WATCHES — crisper ice grid, stronger highlight */
+.pb-vitrine-pb-watches {
+  background:
+    radial-gradient(38% 38% at 62% 36%, rgba(216,235,255,0.28) 0%, transparent 52%),
+    radial-gradient(85% 58% at 62% 30%, rgba(216,235,255,0.14) 0%, transparent 50%),
+    radial-gradient(30% 25% at 82% 14%, rgba(255,255,255,0.16) 0%, transparent 46%),
+    radial-gradient(55% 42% at 28% 68%, rgba(216,235,255,0.07) 0%, transparent 56%),
+    repeating-linear-gradient(  0deg, rgba(216,235,255,0.022) 0 7px, rgba(0,0,0,0) 7px 14px),
+    repeating-linear-gradient( 90deg, rgba(216,235,255,0.022) 0 7px, rgba(0,0,0,0) 7px 14px),
+    #030810;
+}
+
+/* CHAINS — richer chrome warmth */
+.pb-vitrine-pb-chains {
+  background:
+    radial-gradient(75% 55% at 50% 30%, rgba(255,255,255,0.14) 0%, transparent 54%),
+    radial-gradient(42% 32% at 50% 12%, rgba(201,164,73,0.18) 0%, transparent 56%),
+    radial-gradient(48% 38% at 50% 88%, rgba(201,164,73,0.12) 0%, transparent 56%),
+    radial-gradient(28% 22% at 82% 16%, rgba(216,235,255,0.09) 0%, transparent 50%),
+    repeating-linear-gradient( 45deg, rgba(255,255,255,0.036) 0 5px, rgba(0,0,0,0) 5px 10px),
+    repeating-linear-gradient(-45deg, rgba(255,255,255,0.026) 0 5px, rgba(0,0,0,0) 5px 10px),
+    #070707;
+}
+
+/* PENDANTS — warmer amber */
+.pb-vitrine-pb-pendants {
+  background:
+    radial-gradient(90% 70% at 50% 35%, rgba(201,164,73,0.22) 0%, transparent 52%),
+    radial-gradient(45% 35% at 50% 85%, rgba(201,164,73,0.09) 0%, transparent 56%),
+    radial-gradient(32% 26% at 80% 14%, rgba(233,210,137,0.10) 0%, transparent 50%),
+    repeating-linear-gradient(135deg, rgba(201,164,73,0.046) 0 10px, rgba(0,0,0,0) 10px 20px),
+    #0d0a00;
+}
+
+/* ── 11. Display-case frame utility ─────────────────────────────────────────── */
+/* Reusable premium surface for sections needing a jeweler's showcase feel.    */
+.display-case-surface {
+  border:     1px solid rgba(201,168,76,0.24);
+  box-shadow:
+    0 0 0 1px rgba(201,168,76,0.07) inset,
+    0 8px 40px rgba(0,0,0,0.55);
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 38%, rgba(201,164,73,0.09) 0%, transparent 58%),
+    #0a0a0a;
+}
+
+/* Ice-chrome utility — cold mechanical precision surface */
+.ice-chrome-surface {
+  background:
+    radial-gradient(ellipse 80% 58% at 60% 32%, rgba(216,235,255,0.13) 0%, transparent 56%),
+    radial-gradient(ellipse 40% 32% at 20% 70%, rgba(216,235,255,0.06) 0%, transparent 60%),
+    #030810;
+  border: 1px solid rgba(216,235,255,0.16);
+}
+
+/* ── 12. Category hero: stronger style card surfaces ───────────────────────── */
+/* Works alongside .style-card-hover — richer base before hover fires.         */
+.style-card-hover {
+  background:
+    radial-gradient(80% 60% at 50% 28%, rgba(201,164,73,0.07) 0%, transparent 56%),
+    var(--color-brand-charcoal);
+}
+
+/* ── 13. ProofMarquee: add ice-gold glow to BANG. items ────────────────────── */
+.proof-marquee-bang {
+  text-shadow: 0 0 18px rgba(201,168,76,0.40), 0 0 35px rgba(201,168,76,0.16);
+}
+
+/* ── 14. Anchor tile foot: gold-tinted background on hover (global rule) ───── */
+@media (hover: hover) {
+  .pb-tile-link:hover .pb-tile-foot {
+    background: #181410;
+  }
+}
+
+/* ── 15. mi-channel-row: richer base surface ───────────────────────────────── */
+.mi-channel-row {
+  background:
+    radial-gradient(80% 60% at 0% 50%, rgba(201,164,73,0.04) 0%, transparent 55%),
+    #0a0a0a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Pass 4D adds no new animations — all changes are static surfaces. */
+}
+
+/* ─── Pass 4D-B — Midnight Icebox 2.0 / Homepage Visible Surface Upgrade ─── */
+/* Problem: Pass 4D radial intensities were 0.05–0.12 — invisible to the eye.  */
+/* Section-level backgrounds (inline styles) had no depth at all.               */
+/* This pass pushes section atmospheres, display-case framing, and edge-fade    */
+/* to a level visible without being told what changed. CSS-only + 1 class hook. */
+
+/* ── 1. PICK THE PIECE section: atmospheric warm-left / ice-right depth ────── */
+/* Inline style background: var(--color-brand-black) requires !important.       */
+#shop-jewelry {
+  background:
+    radial-gradient(ellipse 58% 52% at 11% 50%, rgba(201,164,73,0.11) 0%, transparent 58%),
+    radial-gradient(ellipse 48% 44% at 89% 22%, rgba(216,235,255,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 42% 34% at 50% 96%, rgba(201,164,73,0.06) 0%, transparent 50%),
+    var(--color-brand-black) !important;
+}
+
+/* ── 2. Display-case vitrine: bolder corner bracket marks ──────────────────── */
+/* Increases visibility of the display-case framing metaphor.                   */
+.mi-vitrine::before,
+.mi-vitrine::after {
+  border-color: rgba(201,168,76,0.52);
+  opacity: 0.62;
+  width:   16px;
+  height:  16px;
+}
+
+/* ── 3. Vitrine tone surfaces: richer anchor-tile atmospheres ───────────────── */
+.mi-vitrine-gold {
+  background:
+    radial-gradient(120% 82% at 28% 26%, rgba(201,164,73,0.22) 0%, transparent 58%),
+    radial-gradient(65%  52% at 72% 80%, rgba(201,164,73,0.10) 0%, transparent 55%),
+    repeating-linear-gradient(135deg, rgba(201,164,73,0.042) 0 14px, rgba(0,0,0,0) 14px 28px),
+    #0c0802;
+}
+.mi-vitrine-ice {
+  background:
+    radial-gradient(120% 80% at 72% 26%, rgba(216,235,255,0.14) 0%, transparent 58%),
+    radial-gradient(65%  50% at 28% 72%, rgba(216,235,255,0.07) 0%, transparent 55%),
+    repeating-linear-gradient(135deg, rgba(216,235,255,0.030) 0 14px, rgba(0,0,0,0) 14px 28px),
+    #040b14;
+}
+
+/* ── 4. ShineRail: wider edge fades + subtle ambient section background ─────── */
+/* Edge fades 80px → 140px. Solid zone 15% → 28%. Stronger framing effect.     */
+.src-rail::before {
+  width:      140px;
+  background: linear-gradient(to right, var(--color-brand-black) 28%, transparent);
+}
+.src-rail::after {
+  width:      140px;
+  background: linear-gradient(to left,  var(--color-brand-black) 28%, transparent);
+}
+.src-heading {
+  border-bottom-color: rgba(201,168,76,0.22);
+}
+.src-wrap {
+  background:
+    radial-gradient(ellipse 52% 36% at 0%   50%, rgba(201,164,73,0.07)  0%, transparent 54%),
+    radial-gradient(ellipse 52% 36% at 100% 50%, rgba(216,235,255,0.05) 0%, transparent 54%),
+    var(--color-brand-black);
+}
+
+/* ── 5. ShineDirectionBand: much stronger gold/ice ambient ─────────────────── */
+/* Previous: 0.11 side gradient, invisible. Now: 0.22 gold / 0.18 ice.         */
+.sdb-band {
+  background:
+    radial-gradient(ellipse 46% 65% at 4%   50%, rgba(201,164,73,0.22)  0%, transparent 54%),
+    radial-gradient(ellipse 46% 65% at 96%  50%, rgba(216,235,255,0.18) 0%, transparent 54%),
+    radial-gradient(ellipse 52% 36% at 50% 110%, rgba(201,164,73,0.08)  0%, transparent 52%),
+    #070707;
+  box-shadow: inset 0 5px 40px rgba(201,164,73,0.09), inset 0 -3px 20px rgba(216,235,255,0.04);
+}
+
+/* ── 5a. SDB panel radials: 0.16/0.12 → 0.26/0.20 ────────────────────────── */
+.sdb-panel--gold {
+  background:
+    radial-gradient(110% 85% at 0%   50%, rgba(201,164,73,0.26)  0%, transparent 52%),
+    radial-gradient( 60% 52% at 100% 0%,  rgba(201,164,73,0.10)  0%, transparent 56%),
+    radial-gradient( 40% 32% at 50% 110%, rgba(201,164,73,0.08)  0%, transparent 50%),
+    #0e0b02;
+  box-shadow: inset 4px 0 16px rgba(201,164,73,0.10), inset 0 0 28px rgba(201,164,73,0.05);
+}
+.sdb-panel--ice {
+  background:
+    radial-gradient(110% 85% at 0%   50%, rgba(216,235,255,0.20) 0%, transparent 52%),
+    radial-gradient( 60% 52% at 100% 0%,  rgba(216,235,255,0.10) 0%, transparent 56%),
+    radial-gradient( 40% 32% at 50% 110%, rgba(216,235,255,0.07) 0%, transparent 50%),
+    #050a14;
+  box-shadow: inset 4px 0 16px rgba(216,235,255,0.08), inset 0 0 28px rgba(216,235,255,0.04);
+}
+
+/* ── 6. Custom lane: atmospheric gold workshop surface ──────────────────────── */
+/* .custom-inquiry-section class added in app/page.tsx.                          */
+/* !important overrides inline background and border-top.                        */
+.custom-inquiry-section {
+  background:
+    radial-gradient(ellipse 62% 54% at 17% 42%, rgba(201,164,73,0.14) 0%, transparent 56%),
+    radial-gradient(ellipse 48% 44% at 83% 72%, rgba(216,235,255,0.07) 0%, transparent 54%),
+    radial-gradient(ellipse 36% 30% at 50% 0%,  rgba(201,164,73,0.08) 0%, transparent 52%),
+    #0A0702 !important;
+  border-top-color: rgba(201,164,73,0.46) !important;
+}
+
+/* ── 7. ProofContactZone: visible gold ambient behind 25 YEARS / address ────── */
+/* Previous main radial: 0.055. Now: 0.18. Clearly visible depth behind stats. */
+.pb-proof-zone {
+  background:
+    radial-gradient(ellipse 84% 64% at 14% 55%, rgba(201,164,73,0.18) 0%, transparent 54%),
+    radial-gradient(ellipse 58% 48% at 80% 30%, rgba(201,164,73,0.09) 0%, transparent 58%),
+    radial-gradient(ellipse 42% 38% at 50% 100%, rgba(201,164,73,0.07) 0%, transparent 50%),
+    #0d0c0b;
+  border-top-color: rgba(201,164,73,0.58);
+}
+
+/* ── 8. SocialTeaser: stronger gold atmosphere + gold top accent ────────────── */
+.pb-vitrine-social {
+  background:
+    radial-gradient(ellipse 80% 72% at 50% 50%, rgba(201,168,76,0.18) 0%, transparent 56%),
+    radial-gradient(ellipse 44% 38% at 82% 20%, rgba(216,235,255,0.08) 0%, transparent 52%),
+    radial-gradient(ellipse 36% 30% at 18% 82%, rgba(201,168,76,0.08) 0%, transparent 50%),
+    linear-gradient(160deg, #0f0f0e 0%, #0a0a09 100%) !important;
+  border-top: 2px solid rgba(201,164,73,0.58) !important;
+}
+
+/* ── 9. FinalCTABar: strong closing atmospheric depth ───────────────────────── */
+/* Previous: 0.07 radial. Invisible. Now: 0.16 — clearly lit from top edge.    */
+.final-cta-bar {
+  border-top-color: rgba(201,168,76,0.52);
+  background:
+    radial-gradient(ellipse 78% 68% at 50% 0%, rgba(201,164,73,0.16)  0%, transparent 52%),
+    radial-gradient(ellipse 44% 37% at 90% 100%, rgba(201,164,73,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 34% 29% at  8%  80%, rgba(201,164,73,0.06) 0%, transparent 55%),
+    var(--color-brand-charcoal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Pass 4D-B adds no animations — all changes are static surfaces. */
+}
