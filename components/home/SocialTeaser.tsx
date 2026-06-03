@@ -5,6 +5,7 @@
 // Left canvas: replace div with real social clip when available.
 
 import type { ReactNode } from 'react'
+import Image from 'next/image'
 
 const CHANNELS = [
   {
@@ -108,9 +109,24 @@ export default function SocialTeaser() {
             gap: '1.25rem',
           }}
         >
+          {/* Reel background — demo thumbnail + scanlines */}
+          <div className="social-reel-bg" aria-hidden="true">
+            <Image
+              src="/assets/demo/phase3a/2t-demo-social-thumbnail-01.png"
+              alt=""
+              width={320}
+              height={380}
+              loading="lazy"
+            />
+            <div className="social-scanlines" />
+          </div>
+
+          {/* Reel indicator dot */}
+          <div className="social-reel-dot" aria-hidden="true" />
+
           {/* Atmospheric radial — center bloom */}
           <div style={{
-            position: 'absolute', inset: 0, pointerEvents: 'none',
+            position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1,
             background: 'radial-gradient(ellipse 60% 55% at 50% 48%, rgba(201,168,76,0.07) 0%, transparent 65%)',
           }} />
 
@@ -145,6 +161,7 @@ export default function SocialTeaser() {
               bottom: 0, left: 0, right: 0,
               padding: '10px 14px',
               borderTop: '1px solid var(--color-brand-border)',
+              zIndex: 2,
             }}
           >
             <span className="mi-mono mi-faint" style={{ fontSize: '0.55rem' }}>

@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import ProofContactZone from '@/components/home/ProofContactZone'
 import ShineDirectionBand from '@/components/home/ShineDirectionBand'
-import BestSellersStrip from '@/components/home/BestSellersStrip'
+import { ShineRail } from '@/components/home/ShineRail'
 import SocialTeaser from '@/components/home/SocialTeaser'
 import FinalCTABar from '@/components/home/FinalCTABar'
 import ScrollRevealController from '@/components/home/ScrollRevealController'
 import StickyConversionBar from '@/components/home/StickyConversionBar'
+import { TileGlareController } from '@/components/home/TileGlareController'
 
 const WA_BUILD  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20want%20to%20build%20something%20custom.'
 const WA_PROMO  = 'https://wa.me/14124524343?text=What%27s%20running%20this%20week%20at%202T%3F'
@@ -15,39 +16,31 @@ const WA_ASK    = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%2
 // Anchor tiles — 1.4fr 1fr 1fr, GRILLZ dominant
 const ANCHOR_TILES = [
   {
-    label:       'GRILLZ.',
-    tone:        'pb-grillz',
-    gleam:       true,
-    sub:         'Top. Bottom. Full mouth. Custom fit.',
-    pills:       ['TOP SET', 'BOTTOM SET', 'FULL MOUTH', 'ICE'],
-    pillGold:    'ICE',
-    cornerL:     'GOLD TEETH',
-    href:        '/grillz',
-    image:       '/assets/demo/phase3a/2t-demo-grillz-flat-01.png',
-    imageAlt:    'Grillz — demo concept visual',
+    label:    'GRILLZ.',
+    tone:     'pb-grillz',
+    gleam:    true,
+    sub:      'Top. Bottom. Full mouth. Custom fit.',
+    href:     '/grillz',
+    image:    '/assets/demo/phase3a/2t-demo-grillz-flat-01.png',
+    imageAlt: 'Grillz — demo concept visual',
   },
   {
-    label:       'WATCHES.',
-    tone:        'pb-watches',
-    gleam:       true,
-    sub:         'Iced. Bust-down. Inquiry only.',
-    pills:       ['ICED BEZEL', 'BUST DOWN', 'ICED OUT'],
-    pillIce:     'ICED BEZEL',
-    cornerL:     'ICE BEZEL',
-    href:        '/watches',
-    image:       '/assets/demo/phase3a/2t-demo-watch-face-01.png',
-    imageAlt:    'Watch — demo concept visual',
+    label:    'WATCHES.',
+    tone:     'pb-watches',
+    gleam:    true,
+    sub:      "Iced. Bust-down. Ask what's available.",
+    href:     '/watches',
+    image:    '/assets/demo/phase3a/2t-demo-watch-face-01.png',
+    imageAlt: 'Watch — demo concept visual',
   },
   {
-    label:       'CHAINS.',
-    tone:        'pb-chains',
-    gleam:       true,
-    sub:         "Cuban. Rope. Tennis. Ask what's in.",
-    pills:       ['CUBAN', 'ROPE', 'TENNIS'],
-    cornerL:     'NECK GAME',
-    href:        '/collections/chains',
-    image:       '/assets/demo/phase3a/2t-demo-chains-01.png',
-    imageAlt:    'Chain — demo concept visual',
+    label:    'CHAINS.',
+    tone:     'pb-chains',
+    gleam:    true,
+    sub:      "Cuban. Rope. Tennis. Ask what's in.",
+    href:     '/collections/chains',
+    image:    '/assets/demo/phase3a/2t-demo-chains-01.png',
+    imageAlt: 'Chain — demo concept visual',
   },
 ] as const
 
@@ -72,6 +65,7 @@ export default function HomePage() {
     <>
       {/* Scroll-reveal controller — client component, attaches IntersectionObserver */}
       <ScrollRevealController />
+      <TileGlareController />
 
       {/* ─── 1. HERO — Full-bleed campaign ──────────────────────────────── */}
       <section
@@ -107,11 +101,6 @@ export default function HomePage() {
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #030303 0%, rgba(3,3,3,0.82) 20%, rgba(3,3,3,0.35) 45%, transparent 75%)', zIndex: 1, pointerEvents: 'none' }} />
         {/* Subtle gold bloom — low-key richness */}
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 55% 70% at 72% 38%, rgba(201,164,73,0.11) 0%, transparent 60%)', zIndex: 1, pointerEvents: 'none' }} />
-
-        {/* BANG. cinematic overlay — one-time title-card flash on load, fades permanently */}
-        <div className="bang-cinematic-overlay" aria-hidden="true">
-          <span className="bang-cinematic-text">BANG.</span>
-        </div>
 
         {/* Single-column content — text anchored left, campaign breathes right */}
         <div
@@ -266,7 +255,7 @@ export default function HomePage() {
               <Link
                 key={tile.label}
                 href={tile.href}
-                className={`pb-tile-link tile-reveal-${idx}`}
+                className={`pb-tile-link tile-reveal-${idx} pb-tile-scan pb-tile-3d`}
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
@@ -275,6 +264,7 @@ export default function HomePage() {
                   color: 'inherit',
                 }}
               >
+                <div className="pb-tile-glare" aria-hidden="true" />
                 <div
                   className={`mi-vitrine pb-vitrine-${tile.tone}`}
                   style={{ flex: 1, position: 'relative', overflow: 'hidden' }}
@@ -326,34 +316,14 @@ export default function HomePage() {
                       : 'radial-gradient(ellipse 55% 45% at 50% 40%, rgba(201,168,76,0.07) 0%, transparent 65%)',
                   }} />
                   {tile.gleam && <div className="mi-gleam" />}
-                  {/* Corner label — category identity */}
-                  <span className="mi-corner">{tile.cornerL}</span>
                 </div>
                 <div className="pb-tile-foot" style={{ borderTop: '1.5px solid rgba(201,168,76,0.28)' }}>
                   <h5 className="pb-tile-label pb-tile-title" style={{ fontSize: 'clamp(1.3rem, 2.8vw, 1.8rem)' }}>{tile.label}</h5>
                 </div>
-                <div className="pb-tile-pills">
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.63rem', letterSpacing: '0.04em', textTransform: 'uppercase', color: 'var(--color-brand-muted)', display: 'block', paddingBottom: '0.3rem', borderBottom: '1px solid rgba(201,168,76,0.10)', marginBottom: '0.3rem', lineHeight: 1.4 }}>
+                <div style={{ padding: '0 0.875rem 0.875rem' }}>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'var(--color-brand-muted)', lineHeight: 1.5, margin: 0 }}>
                     {tile.sub}
-                  </span>
-                  {tile.pills.map((p) => (
-                    <span
-                      key={p}
-                      style={{
-                        fontFamily: 'var(--font-mono)',
-                        fontSize: '0.72rem',
-                        letterSpacing: '0.1em',
-                        textTransform: 'uppercase',
-                        color: ('pillGold' in tile && tile.pillGold === p)
-                          ? 'var(--color-brand-gold)'
-                          : ('pillIce' in tile && tile.pillIce === p)
-                            ? 'var(--color-ice-blue)'
-                            : 'var(--color-brand-silver)',
-                      }}
-                    >
-                      {p}
-                    </span>
-                  ))}
+                  </p>
                 </div>
               </Link>
             ))}
@@ -366,7 +336,7 @@ export default function HomePage() {
                 key={tile.label}
                 href={tile.href}
                 className={`pb-tile-link tile-reveal-s${idx}`}
-                style={{ display: 'flex', flexDirection: 'column', minHeight: '288px', textDecoration: 'none', color: 'inherit' }}
+                style={{ display: 'flex', flexDirection: 'column', minHeight: '200px', textDecoration: 'none', color: 'inherit' }}
               >
                 <div
                   className={`mi-vitrine pb-vitrine-${tile.tone}`}
@@ -531,8 +501,8 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ─── 3b. STYLE DIRECTIONS — Most Requested / What's Dropping ─── */}
-      <BestSellersStrip />
+      {/* ─── 3b. SHINE RAIL — primary visual merchandising rail ────────── */}
+      <ShineRail />
 
       {/* Sentinel for StickyConversionBar — appears when user scrolls past this point */}
       <div id="sticky-trigger" aria-hidden="true" />
@@ -568,6 +538,22 @@ export default function HomePage() {
               padding: '1rem 1.125rem 0.875rem',
             }}
           >
+            {/* Custom concept image — ambient bling energy, no product claims */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/assets/demo/phase3a/2t-demo-custom-before-after-01.png"
+              alt=""
+              style={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                opacity: 0.22,
+                filter: 'brightness(0.65) saturate(0.55) contrast(1.1)',
+                pointerEvents: 'none',
+              }}
+            />
             {/* Diamond outline depth marks — ambient accent, not headline */}
             <div aria-hidden="true" style={{
               position: 'absolute', top: '50%', left: '50%',
