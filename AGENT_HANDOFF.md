@@ -95,10 +95,11 @@ Do not publish as blanket sitewide claims without verification. Do not invent th
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
 Old Shopify folder is archive only. Do not touch it.
 
-**Latest committed state (as of 2026-06-10 — latest: `0633c9e`):**
+**Latest committed state (as of 2026-06-10 - latest: `992a4ca`):**
 
 | Commit | Description |
 |---|---|
+| `992a4ca` | feat: prepare homepage media pipeline - Phase B2-safe homepage asset-ready media pipeline; `data/homeMedia.ts`; safe `next/image` migration; hero video unchanged with poster/reduced-motion fallback; ShineDirectionBand readability; ShineRail links/hidden duplicates/hover-focus pause; no asset edits or copy/claim changes |
 | `0633c9e` | feat: add custom build recap and dynamic whatsapp flow — Custom P2 recap strip, dynamic WhatsApp prefill, multi-upload up to 3 files, thumbnails, oversized-file WhatsApp fallback; QA clean |
 | `38d814e` | Custom P0/P1 mobile lead-flow simplification — completed, pushed, live QA clean |
 | `8d43222` | Phase A Motion & Light Polish — completed, pushed, live QA clean |
@@ -153,7 +154,7 @@ Old Shopify folder is archive only. Do not touch it.
 
 Moses The Jeweler is energy/reference only, not a source to copy. Translate the inspiration into 2T-owned Pittsburgh street-luxury: cinematic product macros, black glass, velvet, hard light, chrome/ice highlights, gold accents, real-store energy, social-first pacing, handoff moments, and real Pittsburgh proof.
 
-**Current focus:** Phase A Motion & Light Polish (`8d43222`), Custom P0/P1 mobile lead-flow simplification (`38d814e`), and Custom P2 build recap + dynamic WhatsApp + multi-upload (`0633c9e`) are completed, committed, pushed, and QA clean. Manual mobile QA confirmed clean. Next queued work: Phase B structure-ready-for-assets; Pass 5C full copywriting pass; docs / claim-safety maintenance as needed; final QA after each implementation. Keep the asset shot list as the production request direction.
+**Current focus:** Phase B2-safe (`992a4ca`) is completed, committed, pushed, and live checked by Yaniv. B2-safe is closed. Next planned work is Pass 5C Copy/CRO plan-only; do not implement Pass 5C yet. Pass 5C planning must use hard street-luxury / hip-hop jewelry buyer language, VOC-backed copy, Moses-style energy as reference only, and claim-safety review. Moses is a tone/energy benchmark only, not a source to copy.
 
 ---
 
@@ -225,18 +226,18 @@ Custom page historical baseline (commit 84af600 — 2026-05-17; superseded by P0
 | Area | Status |
 |---|---|
 | Homepage Midnight Icebox Pass 3 | ✅ Committed — af7f20d. Anton/Archivo/JetBrains Mono. Vitrine system. Gold/ice palette. |
-| Hero | ✅ Full-bleed campaign. Video opacity 0.60. BANG. brand text stamp. |
+| Hero | Complete - full-bleed video unchanged, opacity 0.60, poster attribute retained; reduced-motion users get poster fallback and hidden video layer. |
 | ProofMarquee | ✅ Live — gold borders |
 | PICK THE PIECE gateway | ✅ Anchor row (GRILLZ dominant); TileGlareController 3D tilt/glare desktop (Pass 4C); discovery strip; secondary tiles text-only on mobile (Pass 4C) |
-| ShineRail | ✅ Pass 4C — seamless carousel, 16 cards (8×2), 220px each; GRILLZ/WATCHES/CHAINS/PENDANTS/CUSTOM with demo images; RINGS/BRACELETS/EARRINGS CSS placeholders |
+| ShineRail | Phase B2-safe complete - seamless rail with first 8 cards clickable; duplicate cards aria-hidden/non-link; hover/focus pause; no prices, badges, inventory labels, or new claims. |
 | BestSellersStrip | 🗑️ Removed in Pass 4C — replaced by ShineRail |
 | TileGlareController | ✅ Pass 4C — cursor 3D tilt + glare on anchor tiles, desktop only |
-| ShineDirectionBand | ✅ Live — METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite — Details confirmed per piece |
+| ShineDirectionBand | Live - approved material/stone direction copy unchanged; B2-safe made micro text more readable without claim changes. |
 | Promo module | ✅ Live — claim-safe, no fake offers |
 | Custom lane (homepage) | ✅ Live — demo sketch image; keyword chips; NO DEPOSIT TO START · WE QUOTE FIRST |
 | ProofContactZone | ✅ Stat ledger: 25 YEARS (countUp) / 332 FIFTH AVE (static); BANG. stamp; Pittsburgh proof only — social channel rows removed (Pass 4C) |
 | SocialTeaser | ✅ Pass 4C — reel thumbnail wired (2t-demo-social-thumbnail-01.png); platform icons left; channel-map rows right (TikTok/Instagram/WhatsApp); now owns all social channel rows |
-| Hero video | ✅ Slot wired — `public/assets/hero-loop-demo.mp4` (file pending) |
+| Hero video | `public/assets/hero-loop-demo.mp4` remains unchanged; poster attribute retained; reduced-motion poster fallback hides the video layer. |
 | Header navigation | ✅ Active states cleaned (4f3097f) — Shop ▾ / Pendants / Grillz / Watches / Custom / About |
 | Chains page `/collections/chains` | ✅ Six style cards (744d2b3/dc33c16), SHOP language, SVG fallback |
 | Bracelets / Rings / Earrings | ✅ Six style cards per category (dc33c16), SHOP language, no BUILD CUSTOM CTA |
@@ -261,9 +262,19 @@ Custom page historical baseline (commit 84af600 — 2026-05-17; superseded by P0
 
 ---
 
+**Phase B2-safe completion note:**
+- Commit `992a4ca - feat: prepare homepage media pipeline` completed, pushed, and live checked by Yaniv.
+- Homepage media paths are centralized in `data/homeMedia.ts`.
+- Safe homepage raw `<img>` usage was migrated to `next/image` where appropriate.
+- Hero video remains unchanged, with poster attribute retained; reduced-motion users get poster fallback and the video layer is hidden.
+- ShineDirectionBand micro text was made more readable.
+- First 8 ShineRail cards are clickable links; duplicate rail cards are aria-hidden/non-link duplicates; ShineRail pauses on hover/focus.
+- No asset resizing/moving/deleting/re-exporting, no copy/claim changes, no Shopify work.
+- Codex browser QA was limited by sandbox/browser failures; Yaniv manually checked the live homepage after Vercel deploy and confirmed it looks good.
+- B2-safe is closed.
 ## Default Next Prompt
 
-**Current milestone: Phase A Motion & Light Polish (`8d43222`), Custom P0/P1 mobile lead-flow simplification (`38d814e`), and Custom P2 build recap + dynamic WhatsApp + multi-upload (`0633c9e`) are completed, committed, pushed, and QA clean. Manual mobile QA confirmed clean. Site is healthy/shippable.**
+**Current milestone:** Phase B2-safe (`992a4ca`) is completed, pushed, and live checked by Yaniv. Site is healthy/shippable. Next planned work: Pass 5C Copy/CRO plan-only. Do not implement Pass 5C yet.
 
 **SEO foundation status (commit `1b36f09`):** metadata, sitemap, robots added. Production URL env documented (`eb3fcd9`).
 
@@ -285,11 +296,10 @@ Custom page historical baseline (commit 84af600 — 2026-05-17; superseded by P0
 3. Do not rebuild the Resend backend — it is working and verified.
 4. Do not do random CSS/layout cleanup unless QA finds a real issue.
 5. Next queued work:
-   - **Phase B structure-ready-for-assets**
-   - **Pass 5C full copywriting pass** after explicit approval
-   - **Docs / claim-safety maintenance** as needed
-   - **Final QA after each implementation**
-   - Keep the existing asset shot list as the production request direction.
+   - **Pass 5C Copy/CRO plan-only** - do not implement yet
+   - Must include hard street-luxury / hip-hop jewelry buyer language, VOC-backed copy, Moses-style energy as reference only, and claim-safety review
+   - Do not encode Moses as a source to copy; tone/energy benchmark only
+   - Docs / claim-safety maintenance as needed
 6. `/grillz` and `/watches` rework complete — Post-Pass-2B QA passed. No further redesign until real/demo assets arrive.
 
 **Keep untouched until explicitly approved:**

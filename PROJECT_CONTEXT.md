@@ -414,9 +414,9 @@ components/layout/MobileCtaBar.tsx
 
 See Visual Direction section above for the full Midnight Icebox token table (updated 2026-05-25).
 
-### Homepage — Material & Stone Direction Pass ✅ Committed
+### Homepage - Midnight Icebox / Phase B2-safe - Committed
 
-**Latest commit:** `70fcdd6 — feat: add pass 4c homepage motion and category rail` (2026-06-03)
+**Latest commit:** `992a4ca - feat: prepare homepage media pipeline` (2026-06-10)
 
 Homepage is a product-first store with a custom lane — NOT custom-only. Hero dual CTAs: SHOP THE PIECES + BUILD CUSTOM →.
 
@@ -424,17 +424,19 @@ Homepage is a product-first store with a custom lane — NOT custom-only. Hero d
 
 | # | Section | Component | Status |
 |---|---------|-----------|--------|
-| 1 | Hero — BUILT TO HIT. + BANG. stamp | inline in `app/page.tsx` | ✅ Full-bleed campaign media, video opacity 0.60, BANG. as borderless gold brand text stamp; CTAs: SHOP THE PIECES + BUILD CUSTOM → |
+| 1 | Hero - BUILT TO HIT. + BANG. stamp | inline in `app/page.tsx` | Completed. Full-bleed campaign video remains unchanged, video opacity 0.60, poster attribute retained; reduced-motion users get a poster fallback with the video layer hidden; CTAs unchanged. |
 | 2 | ProofMarquee | `components/home/ProofMarquee.tsx` | ✅ CSS-only marquee, gold borders, trust facts, accessible |
 | 3 | PICK THE PIECE — shop gateway | inline in `app/page.tsx` | ✅ Stronger vitrine gateway; anchor row (GRILLZ dominant); TileGlareController (3D tilt/glare desktop); discovery strip; secondary tiles text-only on mobile (Pass 4C) |
-| 3b | ShineRail — category carousel | `components/home/ShineRail.tsx` | ✅ Pass 4C — seamless auto-scrolling 16-card carousel (8×2); GRILLZ/WATCHES/CHAINS/PENDANTS/CUSTOM with demo images; RINGS/BRACELETS/EARRINGS CSS placeholders |
-| 4 | ShineDirectionBand — material/stone direction | inline in `app/page.tsx` | ✅ METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite — Details confirmed per piece. No per-tile chips. |
+| 3b | ShineRail - category carousel | `components/home/ShineRail.tsx` | Phase B2-safe complete: first 8 cards are clickable links; duplicate rail cards are aria-hidden/non-link duplicates; hover/focus pauses the rail; no prices, badges, inventory labels, or claim copy added. |
+| 4 | ShineDirectionBand - material/stone direction | inline in `app/page.tsx` | Completed. Approved material/stone copy remains unchanged; B2-safe made the micro text more readable without changing claims. |
 | 5 | Promo strip — ASK WHAT'S RUNNING NOW | inline in `app/page.tsx` | ✅ Claim-safe, WhatsApp prefill, promo terms note |
 | 6 | Custom lane — YOUR LOGO. YOUR NAME. YOUR PIECE. | inline in `app/page.tsx` | ✅ Keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST |
 | 7 | ProofContactZone — Pittsburgh proof | `components/home/ProofContactZone.tsx` | ✅ Stat ledger: 25 YEARS (countUp) / 332 FIFTH AVE (static); BANG. signature; Pittsburgh proof only — social channel rows removed in Pass 4C |
 | 8 | TAP IN WITH 2T. | `components/home/SocialTeaser.tsx` | ✅ Reel thumbnail (2t-demo-social-thumbnail-01.png); platform icon cluster left; channel-map rows right (TikTok/Instagram/WhatsApp); real links only; now owns all social channel rows (Pass 4C) |
 
-**Vitrine system:** Striped diagonal-pattern CSS placeholder wells with corner crop marks. Replace with real `<img>` or `<video>` when media assets arrive.
+**Vitrine system:** Striped diagonal-pattern CSS placeholder wells with corner crop marks. Replace with real media when assets arrive.
+
+**Phase B2-safe asset-ready media pipeline:** Completed, committed, pushed, and live checked by Yaniv in commit `992a4ca`. Homepage media paths are centralized in `data/homeMedia.ts`; safe homepage raw `<img>` usage was migrated to `next/image` where appropriate. The hero video remains unchanged with the poster attribute retained. Reduced-motion users get a poster fallback and the video layer is hidden. ShineDirectionBand micro text is more readable. The first 8 ShineRail cards are clickable links; duplicate rail cards are aria-hidden/non-link duplicates; ShineRail pauses on hover/focus. No asset resizing, moving, deleting, renaming, or re-exporting was done. No copy or claim changes were made. No Shopify work. Codex browser QA was limited by sandbox/browser failures; Yaniv manually checked the live Vercel homepage after deploy and confirmed it looks good. B2-safe is closed.
 
 **ShineDirectionBand:** Committed in `0e85b35`. Presents METAL (Gold/Silver + 925 Sterling Silver spec) and STONE (Diamonds/Moissanite + D-color VVS Moissanite spec) as parallel directions with "Details confirmed per piece." footer. No per-tile material chips. No claim-safety regressions. Uses user-confirmed business facts.
 
@@ -449,9 +451,9 @@ Do not drift back to:
 - generic dark luxury / SaaS-spec-sheet UI
 - border-box pill spec labels on shop tiles
 
-### Demo Video (slot wired — file pending)
+### Demo Video (slot wired)
 
-The `<video>` slot is wired in `app/page.tsx`. Source: `public/assets/hero-loop-demo.mp4`.
+The `<video>` slot is wired in `app/page.tsx`. Source: `public/assets/hero-loop-demo.mp4`. Phase B2-safe kept the existing video unchanged, retained `preload="metadata"` and the poster attribute, and added a reduced-motion poster fallback while hiding the video layer for reduced-motion users.
 
 When real footage is available, drop the file at:
 
@@ -581,7 +583,8 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 - **Phase A Motion & Light Polish** (commit `8d43222`) — completed, committed, pushed, and live QA clean.
 - **Custom P0/P1 mobile lead-flow simplification** (commit `38d814e`) — completed, committed, pushed, and live QA clean.
 - **Custom P2 build recap + dynamic WhatsApp + multi-upload** (commit `0633c9e`) — completed, committed, pushed, and QA clean.
-- **Manual mobile QA** — confirmed clean after Custom P2.
+- **Manual mobile QA** - confirmed clean after Custom P2.
+- **Phase B2-safe homepage media pipeline** (commit `992a4ca`, 2026-06-10): completed, committed, pushed, and live checked by Yaniv. `data/homeMedia.ts` centralizes homepage media paths; safe homepage raw image usage migrated to `next/image`; hero video unchanged with poster/reduced-motion fallback; ShineDirectionBand micro text improved; ShineRail links/pause/hidden duplicates added; no asset edits, copy changes, claim changes, Shopify work, staging, or deployment from Codex.
 
 **TikTok / Instagram Feed — Feasibility Assessed (2026-06-03):**
 
@@ -593,11 +596,12 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 - **Assets needed from 2T:** 2–3 still frames from real @2tjewelers TikTok/Instagram posts + direct post URLs + 1 real caption snippet per post.
 
 **Next queued work:**
-1. **Phase B structure-ready-for-assets** — prepare the existing system for real media without inventing proof or fake assets.
-2. **Pass 5C full copywriting pass** — execute only after explicit approval; keep claims scoped and use the existing Pass 5B research.
-3. **Docs / claim-safety maintenance** — update only as needed when implementation changes copy, claims, or status.
-4. **Final QA after each implementation** — browser QA, mobile 390px, no horizontal scroll, console, and claim-safety scan.
-5. **Keep asset shot list as the production request direction** — cinematic macros, product closeups, store proof, social stills, and custom process assets.
+1. **Pass 5C Copy/CRO plan-only** — plan only; do not implement yet. Must use hard street-luxury / hip-hop jewelry buyer language, VOC-backed copy, Moses-style energy as reference only, and claim-safety review.
+2. **Docs / claim-safety maintenance** — update only as needed when implementation changes copy, claims, or status.
+3. **Final QA after each implementation** — browser QA, mobile 390px, no horizontal scroll, console, and claim-safety scan when browser tools are available.
+4. **Keep asset shot list as the production request direction** — cinematic macros, product closeups, store proof, social stills, and custom process assets.
+
+**B2-safe is closed. Do not implement Pass 5C yet. Do not encode Moses as a source to copy; treat it as a tone/energy benchmark only.**
 
 **Do not reopen homepage redesign** unless a clear blocker is found.
 
@@ -609,6 +613,7 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 | Commit | Description |
 |---|---|
+| `992a4ca` | feat: prepare homepage media pipeline - Phase B2-safe complete; centralized homepage media paths in `data/homeMedia.ts`, migrated safe homepage images to `next/image`, retained hero video/poster with reduced-motion poster fallback, improved ShineDirectionBand micro text, made first 8 ShineRail cards clickable with hidden duplicate rail cards and hover/focus pause; no asset edits or copy/claim changes |
 | `0633c9e` | feat: add custom build recap and dynamic whatsapp flow — Custom P2 build recap, dynamic WhatsApp prefill, multi-upload up to 3 files, thumbnails, oversized-file WhatsApp fallback; QA clean |
 | `38d814e` | Custom P0/P1 mobile lead-flow simplification — completed, pushed, live QA clean |
 | `8d43222` | Phase A Motion & Light Polish — completed, pushed, live QA clean |

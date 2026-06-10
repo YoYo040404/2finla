@@ -52,21 +52,21 @@ For execution tasks:
 
 ## Current Active Task
 
-**Latest committed state: Custom P2 committed and pushed (`0633c9e`). Phase A Motion & Light Polish (`8d43222`), Custom P0/P1 mobile lead-flow simplification (`38d814e`), and Custom P2 build recap + dynamic WhatsApp + multi-upload (`0633c9e`) are completed and QA clean. Manual mobile QA confirmed clean. Midnight Icebox homepage remains live and QA-verified on https://2finla.vercel.app.**
+**Latest committed state: Phase B2-safe is completed, committed, pushed, and live checked by Yaniv (`992a4ca - feat: prepare homepage media pipeline`). Custom P2 (`0633c9e`), Phase A Motion & Light Polish (`8d43222`), Custom P0/P1 (`38d814e`), and Custom P2 are completed and QA clean. Midnight Icebox homepage remains live on https://2finla.vercel.app.**
 
 **Social feed feasibility conclusion (2026-06-03):**
 - Phase 1 = manual curated cards in SocialTeaser left canvas (build when 2T provides real still frames + post URLs)
 - Do NOT build Instagram/TikTok API yet (requires developer apps + app review)
 - Feasibility plan: `docs/superpowers/plans/2026-06-03-social-feed-feasibility.md`
 
-**Current homepage section order (Midnight Icebox — commit `70fcdd6`):**
+**Current homepage section order (Midnight Icebox - Phase B2-safe, commit `992a4ca`):**
 
-1. Hero — full-bleed campaign, BUILT TO HIT., BANG. gold brand stamp (normal size, no entrance animation), dual CTAs: SHOP THE PIECES + BUILD CUSTOM →, video slot wired
+1. Hero - full-bleed campaign, BUILT TO HIT., BANG. gold brand stamp, dual CTAs: SHOP THE PIECES + BUILD CUSTOM; existing video remains unchanged, poster attribute retained, reduced-motion users get poster fallback with video hidden
 2. ProofMarquee — CSS-only animated trust strip, gold borders
 3. PICK THE PIECE — stronger vitrine gateway, anchor row (GRILLZ dominant), TileGlareController (3D cursor tilt/glare on anchor tiles, desktop only), discovery strip; secondary tiles collapse to text-only on mobile
 4. ShineDirectionBand — METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite; section-reveal on scroll
 5. Promo strip — "ASK WHAT'S RUNNING NOW · CUSTOM PIECES BUILT HERE · DETAILS CONFIRMED PER PIECE" — fully claim-safe
-6. ShineRail — seamless auto-scrolling category carousel; 8 categories × 2 = 16 cards × 220px; heading: MOST ASKED ABOUT / VIEW ALL →; GRILLZ/WATCHES/CHAINS/PENDANTS/CUSTOM with demo images; RINGS/BRACELETS/EARRINGS use CSS gradient placeholders; section-reveal on scroll
+6. ShineRail - seamless auto-scrolling category carousel; first 8 cards are clickable links; duplicate rail cards are aria-hidden/non-link duplicates; hover/focus pauses animation; GRILLZ/WATCHES/CHAINS/PENDANTS/CUSTOM use demo images; RINGS/BRACELETS/EARRINGS use CSS placeholders
 7. Custom lane — YOUR LOGO. YOUR NAME. YOUR PIECE., demo sketch+pendant image, keyword chips, NO DEPOSIT TO START · WE QUOTE FIRST
 8. ProofContactZone — stat ledger: 25 YEARS (animated countUp on scroll entry) / 332 FIFTH AVE (static); BANG. signature; Pittsburgh proof only — social channel rows removed in Pass 4C
 9. SocialTeaser — TAP IN WITH 2T.; reel thumbnail renders (2t-demo-social-thumbnail-01.png); platform icon cluster left; channel-map rows right (TikTok/Instagram/WhatsApp real links); scroll-reveal on entry
@@ -75,7 +75,7 @@ For execution tasks:
 - Header logo: `2t-logo-wide-transparent.png` — numeric width/height, TODO for final SVG/2x
 - Footer logo: `2t-logo-full-black-bg.png` — installed
 - Address, phone, WhatsApp, Instagram, TikTok, Acima: all wired in Footer
-- Hero video: slot wired at `public/assets/hero-loop-demo.mp4`, file pending
+- Hero video: `public/assets/hero-loop-demo.mp4` remains unchanged; `preload="metadata"` and poster attribute retained; reduced-motion fallback uses the poster and hides the video layer
 
 **Custom Flow: user-approved and live on Vercel.**
 
@@ -157,13 +157,26 @@ CRO pass and selector grouping committed (commits `60c7d06`, `2303850`). P0/P1 m
   - All new CSS covered by `prefers-reduced-motion: reduce`; z-index: StickyConversionBar=30, FloatingWhatsAppButton=40 (no conflict)
   - No new npm packages; zero TypeScript errors; app/page.tsx has no hooks
 
+**Phase B2-safe - homepage asset-ready media pipeline (2026-06-10):**
+
+- Commit `992a4ca - feat: prepare homepage media pipeline` completed, pushed, and live checked by Yaniv.
+- Homepage media paths centralized in `data/homeMedia.ts`.
+- Safe homepage raw `<img>` usage migrated to `next/image` where appropriate.
+- Hero video remains unchanged with poster attribute retained; reduced-motion users get poster fallback and the video layer is hidden.
+- ShineDirectionBand micro text made more readable.
+- First 8 ShineRail cards are clickable links; duplicate rail cards are aria-hidden/non-link duplicates; ShineRail pauses on hover/focus.
+- No asset resizing, moving, deleting, renaming, or re-exporting was done.
+- No copy/claim changes. No Shopify work.
+- Codex browser QA was limited by sandbox/browser failures; Yaniv manually checked the live Vercel homepage after deploy and confirmed it looks good.
+- B2-safe is closed.
 **Working tree — do not stage without explicit approval:**
 - `docs/superpowers/plans/` and `docs/superpowers/specs/` — planning/spec notes
 - `public/assets/demo/phase3a/` — demo PNG assets (includes Pass 4C additions: `2t-demo-custom-before-after-01.png`, `2t-demo-social-thumbnail-01.png`)
 - `public/assets/logo-to-use.png` — replacement logo candidate, not yet approved for wiring
-- QA screenshots (`qa-*.jpeg`) in project root — gitignored, safe to leave
+- QA screenshots (qa-*.jpeg) in project root — gitignored, safe to leave
+- Known untracked files remain intentionally untouched unless the user explicitly approves handling them
 
-**Next queued work:** Phase B structure-ready-for-assets; Pass 5C full copywriting pass after explicit approval; docs / claim-safety maintenance as needed; final QA after each implementation. Keep the existing asset shot list as the production request direction.
+**Next queued work:** Pass 5C Copy/CRO plan-only. Do not implement Pass 5C yet. The plan must use hard street-luxury / hip-hop jewelry buyer language, VOC-backed copy, Moses-style energy as reference only, and claim-safety review. Do not encode Moses as a source to copy; it is a tone/energy benchmark only.
 No random CSS/layout cleanup unless QA finds a real issue.
 
 Do not commit or push new category pages without visual QA and user approval.  

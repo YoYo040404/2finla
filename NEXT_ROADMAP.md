@@ -43,7 +43,7 @@ npm run dev
 - SocialTeaser inline SVG icon polish (Instagram / TikTok / WhatsApp)
 - Temporary logos installed (header + footer)
 - Contact info wired (address, phone, WhatsApp, Instagram, TikTok, Acima)
-- Hero video slot wired (file pending)
+- Hero video slot wired; current demo MP4 exists, poster attribute retained, reduced-motion poster fallback added in B2-safe
 - **Homepage Midnight Icebox Pass 3** (commit af7f20d — 2026-05-25)
   - Anton / Archivo / JetBrains Mono / Cormorant Garamond font system
   - Obsidian / bone / gold `#C9A449` / ice palette
@@ -124,6 +124,7 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 - **Custom P0/P1 mobile lead-flow simplification** (commit `38d814e`) — completed, committed, pushed, and live QA clean
 - **Custom P2 build recap + dynamic WhatsApp + multi-upload** (commit `0633c9e`) — completed, committed, pushed, and QA clean
 - **Manual mobile QA** — confirmed clean after Custom P2
+- **Phase B2-safe homepage media pipeline** (commit `992a4ca`, 2026-06-10) - completed, committed, pushed, and live checked by Yaniv. Media paths centralized in `data/homeMedia.ts`; safe homepage raw image usage migrated to `next/image`; hero video unchanged with poster/reduced-motion fallback; ShineDirectionBand micro text improved; ShineRail links/pause/hidden duplicates added; no asset edits, copy changes, claim changes, or Shopify work.
 
 ### WIP / Approval Pending ⚠️
 
@@ -131,8 +132,7 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 
 ### Not Yet 🚫
 
-- **Phase B structure-ready-for-assets** — next queued implementation direction
-- **Pass 5C full copywriting pass** — pending explicit approval
+- **Pass 5C Copy/CRO plan-only** - next planned work; do not implement yet
 - **Docs / claim-safety maintenance** — as needed
 - **Final QA after each implementation** — required
 - **ShineRail real images** — wire RINGS/BRACELETS/EARRINGS cards when real product photos arrive
@@ -149,12 +149,12 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 
 ### Next Milestone 🎯
 
-- **Phase B structure-ready-for-assets**
-- **Pass 5C full copywriting pass** after explicit approval
+- **Pass 5C Copy/CRO plan-only** - do not implement yet
+- Must include hard street-luxury / hip-hop jewelry buyer language, VOC-backed copy, Moses-style energy as reference only, and claim-safety review
+- Do not encode Moses as a source to copy; tone/energy benchmark only
 - **Docs / claim-safety maintenance** as needed
 - **Final QA after each implementation**
-- **Keep asset shot list as the production request direction** — cinematic macros, real-store proof, social-first pacing, shine, movement, Pittsburgh street-luxury, and custom process assets
-- **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic (low priority)
+- **Keep asset shot list as production request direction** - cinematic macros, real-store proof, social-first pacing, shine, movement, Pittsburgh street-luxury, and custom process assets
 
 ---
 
@@ -278,8 +278,8 @@ Still needed:
 ### Phase 4 — Hero Video Integration ✅ Complete (temporary)
 
 - `<video autoPlay muted loop playsInline>` slot wired in `app/page.tsx`
-- source: `public/assets/hero-loop-demo.mp4` (file pending)
-- dark background + gradient overlays handle missing-file gracefully
+- source: `public/assets/hero-loop-demo.mp4`
+- Phase B2-safe retained the existing video and poster attribute; reduced-motion users get a poster fallback with the video layer hidden
 
 Still needed: real footage at `public/assets/hero-loop-demo.mp4`  
 Specs: 8–10 seconds, MP4, muted, loopable, 16:9/21:9 desktop, 9:16 mobile backup if possible.
@@ -448,11 +448,11 @@ Only if user explicitly approves:
 44. ✅ **Custom P0/P1 mobile lead-flow simplification** (commit `38d814e`) — completed, pushed, live QA clean
 45. ✅ **Custom P2 build recap + dynamic WhatsApp + multi-upload** (commit `0633c9e`) — completed, pushed, QA clean
 46. ✅ **Manual mobile QA** — confirmed clean
-47. 🎯 **Phase B structure-ready-for-assets** ← NEXT
-48. 🎯 **Pass 5C full copywriting pass** ⚠️ PENDING USER APPROVAL
-    - Scope: 5 files only — `app/page.tsx`, `components/home/ProofMarquee.tsx`, `components/home/WeeklyPromo.tsx`, `components/home/PittsburghStory.tsx`, `components/home/SocialTeaser.tsx`
-    - Do NOT start until user explicitly approves Pass 5C
-    - Full spec in `docs/2t-pass5b-competitor-backed-copy-research.md` Section 11
+47. ✅ **Phase B2-safe homepage media pipeline** (commit `992a4ca`, 2026-06-10) — completed, pushed, and live checked by Yaniv; `data/homeMedia.ts`, safe `next/image` migration, hero poster/reduced-motion fallback, SDB readability, ShineRail links/pause/hidden duplicates; no asset edits or copy/claim changes.
+48. 🎯 **Pass 5C Copy/CRO plan-only** ← NEXT — do not implement yet
+    - Must include hard street-luxury / hip-hop jewelry buyer language, VOC-backed copy, Moses-style energy as reference only, and claim-safety review
+    - Do not encode Moses as a source to copy; tone/energy benchmark only
+    - Use `docs/2t-pass5b-competitor-backed-copy-research.md` as research input; plan first, no implementation
 49. 🎯 **Docs / claim-safety maintenance** — as needed
 50. 🎯 **Final QA after each implementation**
 51. 🎯 **Keep asset shot list as production request direction**
