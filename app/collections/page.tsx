@@ -1,480 +1,214 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
-  title:       '2T Jewelers | Shop Chains, Grillz, Pendants & More — Pittsburgh, PA',
-  description: 'Shop chains, pendants, bracelets, rings, and earrings at 2T Jewelers in Pittsburgh, PA. Real store. 25 years. Ask about availability. Text 2T before you buy.',
+  title: '2T Jewelers | Collections - Pittsburgh, PA',
+  description:
+    'Shop chains, pendants, bracelets, rings, earrings, grillz, watches, and custom at 2T Jewelers in Pittsburgh, PA. Details confirmed per piece. Ask before you buy.',
 }
 
-const WA_STOCK = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%20do%20you%20have%20in%20stock%20right%20now%3F'
+const WA_ASK =
+  'https://wa.me/14124524343?text=Hey%202T%20-%20I%27m%20looking%20at%20the%20collections.%20What%27s%20available%3F'
 
-const CATEGORIES = [
+type CaseCategory = {
+  slug: string
+  label: string
+  href: string
+  line: string
+  tone: 'gold' | 'ice' | 'mixed'
+  icon: ReactNode
+}
+
+const safeLine = "Details confirmed per piece. Ask before you buy. Ask what's available."
+
+const caseCategories: CaseCategory[] = [
   {
-    slug:  'chains',
+    slug: 'grillz',
+    label: 'Grillz',
+    href: '/grillz',
+    line: 'Fit and details are confirmed per piece.',
+    tone: 'gold',
+    icon: (
+      <svg viewBox="0 0 120 82" aria-hidden="true">
+        <path d="M18 39C31 22 49 16 60 16s29 6 42 23" />
+        <path d="M25 42c6 16 17 24 35 24s29-8 35-24" />
+        <path d="M35 37v23M48 31v34M60 28v38M72 31v34M85 37v23" />
+      </svg>
+    ),
+  },
+  {
+    slug: 'watches',
+    label: 'Watches',
+    href: '/watches',
+    line: "Ask what's available before you buy.",
+    tone: 'ice',
+    icon: (
+      <svg viewBox="0 0 120 82" aria-hidden="true">
+        <path d="M47 12h26l5 17a28 28 0 0 1 0 24L73 70H47l-5-17a28 28 0 0 1 0-24l5-17Z" />
+        <circle cx="60" cy="41" r="20" />
+        <path d="M60 28v14l10 7M52 6h16M52 76h16" />
+      </svg>
+    ),
+  },
+  {
+    slug: 'chains',
     label: 'Chains',
-    sub:   'Cuban, rope, tennis, iced-out. Ask what\'s in.',
-    cta:   'SHOP CHAINS →',
-    svg: (
-      <svg width="64" height="48" viewBox="0 0 80 56" fill="none">
-        <ellipse cx="22" cy="24" rx="15" ry="9" stroke="rgba(201,168,76,0.55)" strokeWidth="1.5"/>
-        <ellipse cx="58" cy="32" rx="15" ry="9" stroke="rgba(201,168,76,0.55)" strokeWidth="1.5"/>
-        <line x1="35" y1="28" x2="45" y2="28" stroke="rgba(201,168,76,0.35)" strokeWidth="1.5" strokeLinecap="round"/>
-        <circle cx="35" cy="28" r="2.5" fill="rgba(208,238,255,0.6)"/>
-        <circle cx="45" cy="28" r="2.5" fill="rgba(208,238,255,0.6)"/>
+    href: '/collections/chains',
+    line: 'Ask about length, style, and piece details.',
+    tone: 'mixed',
+    icon: (
+      <svg viewBox="0 0 120 82" aria-hidden="true">
+        <ellipse cx="36" cy="37" rx="23" ry="13" transform="rotate(-18 36 37)" />
+        <ellipse cx="84" cy="45" rx="23" ry="13" transform="rotate(-18 84 45)" />
+        <path d="M55 40h10" />
+        <circle cx="53" cy="40" r="3" />
+        <circle cx="67" cy="40" r="3" />
       </svg>
     ),
-    glow: 'rgba(201,168,76,0.10)',
   },
   {
-    slug:  'pendants',
+    slug: 'pendants',
     label: 'Pendants',
-    sub:   'Logo, photo, name, number. Send the idea.',
-    cta:   'SHOP PENDANTS →',
-    svg: (
-      <svg width="48" height="64" viewBox="0 0 58 78" fill="none">
-        <rect x="24" y="4" width="10" height="13" rx="5" stroke="rgba(208,238,255,0.5)" strokeWidth="1.5"/>
-        <path d="M4 36 L29 16 L54 36 L29 65 Z" stroke="rgba(208,238,255,0.6)" strokeWidth="1.5"/>
-        <path d="M4 36 L29 46 L54 36" stroke="rgba(208,238,255,0.28)" strokeWidth="0.75"/>
-        <circle cx="29" cy="38" r="5" fill="rgba(208,238,255,0.65)"/>
+    href: '/collections/pendants',
+    line: 'Ask about the piece before you buy.',
+    tone: 'ice',
+    icon: (
+      <svg viewBox="0 0 120 82" aria-hidden="true">
+        <path d="M54 8h12v15H54z" />
+        <path d="M60 22 31 43l29 31 29-31-29-21Z" />
+        <path d="M31 43h58M45 43l15 31 15-31" />
       </svg>
     ),
-    glow: 'rgba(208,238,255,0.08)',
   },
   {
-    slug:  'bracelets',
+    slug: 'bracelets',
     label: 'Bracelets',
-    sub:   'Wrist weight. Ask what\'s in.',
-    cta:   'ASK ABOUT BRACELETS →',
-    svg: (
-      <svg width="56" height="48" viewBox="0 0 70 60" fill="none">
-        <path d="M8 52 A31 31 0 1 1 62 52" stroke="rgba(201,168,76,0.55)" strokeWidth="2.5" strokeLinecap="round"/>
-        <circle cx="8"  cy="52" r="4.5" fill="rgba(208,238,255,0.65)"/>
-        <circle cx="62" cy="52" r="4.5" fill="rgba(208,238,255,0.65)"/>
-        <circle cx="35" cy="4"  r="3.5" fill="rgba(201,168,76,0.65)"/>
+    href: '/collections/bracelets',
+    line: 'Details confirmed per piece.',
+    tone: 'gold',
+    icon: (
+      <svg viewBox="0 0 120 82" aria-hidden="true">
+        <path d="M21 61a42 42 0 1 1 78 0" />
+        <path d="M32 62a30 30 0 1 1 56 0" />
+        <circle cx="21" cy="61" r="6" />
+        <circle cx="99" cy="61" r="6" />
+        <circle cx="60" cy="20" r="4" />
       </svg>
     ),
-    glow: 'rgba(201,168,76,0.08)',
   },
   {
-    slug:  'rings',
+    slug: 'rings',
     label: 'Rings',
-    sub:   'Pinky, statement, signet. Ask what\'s in.',
-    cta:   'ASK ABOUT RINGS →',
-    svg: (
-      <svg width="48" height="56" viewBox="0 0 60 68" fill="none">
-        <circle cx="30" cy="44" r="20" stroke="rgba(208,238,255,0.55)" strokeWidth="2.5"/>
-        <path d="M22 24 L30 14 L38 24" stroke="rgba(208,238,255,0.45)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="30" cy="14" r="4" fill="rgba(208,238,255,0.7)"/>
+    href: '/collections/rings',
+    line: 'Ask about sizing and piece details.',
+    tone: 'ice',
+    icon: (
+      <svg viewBox="0 0 120 82" aria-hidden="true">
+        <circle cx="60" cy="50" r="24" />
+        <path d="m47 27 13-16 13 16" />
+        <path d="M47 27h26" />
+        <circle cx="60" cy="12" r="4" />
       </svg>
     ),
-    glow: 'rgba(208,238,255,0.08)',
   },
   {
-    slug:  'earrings',
+    slug: 'earrings',
     label: 'Earrings',
-    sub:   'Studs, hoops, drops. Ask what\'s available.',
-    cta:   'ASK ABOUT EARRINGS →',
-    svg: (
-      <svg width="48" height="56" viewBox="0 0 60 68" fill="none">
-        <line x1="16" y1="5"  x2="16" y2="18" stroke="rgba(208,238,255,0.5)"  strokeWidth="1.5" strokeLinecap="round"/>
-        <ellipse cx="16" cy="38" rx="9" ry="16" stroke="rgba(208,238,255,0.55)" strokeWidth="1.5"/>
-        <circle  cx="16" cy="38" r="3.5" fill="rgba(208,238,255,0.55)"/>
-        <line x1="44" y1="5"  x2="44" y2="18" stroke="rgba(208,238,255,0.5)"  strokeWidth="1.5" strokeLinecap="round"/>
-        <ellipse cx="44" cy="38" rx="9" ry="16" stroke="rgba(208,238,255,0.55)" strokeWidth="1.5"/>
-        <circle  cx="44" cy="38" r="3.5" fill="rgba(208,238,255,0.55)"/>
+    href: '/collections/earrings',
+    line: "Ask what's available.",
+    tone: 'mixed',
+    icon: (
+      <svg viewBox="0 0 120 82" aria-hidden="true">
+        <path d="M37 10v17M83 10v17" />
+        <ellipse cx="37" cy="48" rx="14" ry="22" />
+        <ellipse cx="83" cy="48" rx="14" ry="22" />
+        <circle cx="37" cy="48" r="4" />
+        <circle cx="83" cy="48" r="4" />
       </svg>
     ),
-    glow: 'rgba(208,238,255,0.07)',
   },
   {
-    slug:  'best-sellers',
-    label: 'Most Asked About',
-    sub:   'What people text 2T for. Ask what\'s available now.',
-    cta:   'TEXT 2T →',
-    svg: (
-      <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
-        <polygon points="32,4 38,24 60,24 43,37 49,58 32,45 15,58 21,37 4,24 26,24" stroke="rgba(201,168,76,0.65)" strokeWidth="1.5" fill="none"/>
-        <circle cx="32" cy="32" r="6" fill="rgba(201,168,76,0.5)"/>
+    slug: 'custom',
+    label: 'Custom',
+    href: '/custom',
+    line: 'Ask before you buy.',
+    tone: 'gold',
+    icon: (
+      <svg viewBox="0 0 120 82" aria-hidden="true">
+        <path d="M23 58 56 14l41 10-33 44-41-10Z" />
+        <path d="M56 14 64 68M35 42l41 10M44 30l41 10" />
+        <circle cx="78" cy="26" r="4" />
       </svg>
     ),
-    glow: 'rgba(201,168,76,0.12)',
-  },
-  {
-    slug:  'new-arrivals',
-    label: 'Ask What Just Landed',
-    sub:   'New directions as they come in. Text 2T to find out.',
-    cta:   'TEXT 2T →',
-    svg: (
-      <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
-        <circle cx="32" cy="32" r="24" stroke="rgba(208,238,255,0.35)" strokeWidth="1.5" strokeDasharray="4 3"/>
-        <line x1="32" y1="10" x2="32" y2="54" stroke="rgba(208,238,255,0.25)" strokeWidth="1"/>
-        <line x1="10" y1="32" x2="54" y2="32" stroke="rgba(208,238,255,0.25)" strokeWidth="1"/>
-        <circle cx="32" cy="32" r="5" fill="rgba(208,238,255,0.7)"/>
-        <circle cx="32" cy="10" r="3" fill="rgba(201,168,76,0.8)"/>
-      </svg>
-    ),
-    glow: 'rgba(208,238,255,0.08)',
   },
 ]
 
-const SHOP_CATS     = CATEGORIES.filter(c => !['best-sellers', 'new-arrivals'].includes(c.slug))
-const DISCOVER_CATS = CATEGORIES.filter(c =>  ['best-sellers', 'new-arrivals'].includes(c.slug))
-const ROW1 = SHOP_CATS.slice(0, 3)  // Chains, Pendants, Bracelets
-const ROW2 = SHOP_CATS.slice(3)     // Rings, Earrings
-
 export default function CollectionsPage() {
   return (
-    <main
-      style={{
-        background:  'var(--color-brand-black)',
-        minHeight:   '100vh',
-        paddingTop:  '80px',
-      }}
-    >
+    <main className="collections-case-page">
+      <section className="collections-case-hero">
+        <div className="collections-case-shell collections-case-hero__inner">
+          <div className="collections-case-hero__copy">
+            <p className="collections-case-kicker">2T Jewelers - Pittsburgh</p>
+            <h1>
+              Shop 2T
+              <span> jewelry.</span>
+            </h1>
+            <p>{safeLine}</p>
+          </div>
 
-      {/* ── Hero ────────────────────────────────────────────────── */}
-      <section
-        style={{
-          padding:      'clamp(3.5rem, 8vw, 6rem) clamp(1.25rem, 3vw, 2.5rem) clamp(2.5rem, 5vw, 4rem)',
-          borderBottom: '1px solid var(--color-brand-border)',
-          position:     'relative',
-          overflow:     'hidden',
-        }}
-      >
-        <div
-          aria-hidden="true"
-          style={{
-            position:      'absolute',
-            inset:         0,
-            background:    'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%)',
-            pointerEvents: 'none',
-          }}
-        />
-        <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <p
-            style={{
-              fontFamily:    'var(--font-body)',
-              fontSize:      '0.65rem',
-              letterSpacing: '0.14em',
-              color:         'var(--color-brand-gold)',
-              textTransform: 'uppercase',
-              marginBottom:  '1rem',
-            }}
-          >
-            2T Jewelers — Pittsburgh
-          </p>
-          <h1
-            style={{
-              fontFamily:    'var(--font-display)',
-              fontSize:      'clamp(2.8rem, 7vw, 5.5rem)',
-              fontWeight:    400,
-              lineHeight:    0.92,
-              letterSpacing: '-0.02em',
-              color:         'var(--color-brand-white)',
-              marginBottom:  '1.25rem',
-            }}
-          >
-            SHOP 2T{' '}
-            <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold)', fontFamily: 'var(--font-display)' }}>
-              JEWELRY.
-            </em>
-          </h1>
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize:   'clamp(0.9rem, 1.5vw, 1rem)',
-              color:      'var(--color-brand-muted)',
-              maxWidth:   '48ch',
-              lineHeight: 1.65,
-            }}
-          >
-            Shop by category. Ask what&apos;s available. Text 2T before you buy.
-          </p>
-          <p
-            style={{
-              fontFamily:    'var(--font-mono)',
-              fontSize:      '0.62rem',
-              letterSpacing: '0.13em',
-              textTransform: 'uppercase',
-              color:         'var(--color-brand-gold)',
-              marginTop:     '0.75rem',
-              opacity:       0.7,
-            }}
-          >
-            Gold or Silver&nbsp;·&nbsp;Diamond or Moissanite
-          </p>
-          <p
-            style={{
-              fontFamily:    'var(--font-mono)',
-              fontSize:      '0.6rem',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              color:         'var(--color-brand-subtle)',
-              marginTop:     '0.3rem',
-            }}
-          >
-            Material and stone details confirmed per piece. Text 2T to ask what fits.
-          </p>
+          <div className="collections-case-hero__vitrine" aria-hidden="true">
+            <div className="collections-case-glass collections-case-glass--top" />
+            <div className="collections-case-glass collections-case-glass--middle" />
+            <div className="collections-case-glass collections-case-glass--bottom" />
+          </div>
         </div>
       </section>
 
-      {/* ── Product category grid: 3+2, no empty holes ─────────── */}
-      <section
-        style={{
-          padding:  'clamp(2rem, 4vw, 3rem) clamp(1.25rem, 3vw, 2.5rem) clamp(1rem, 2vw, 1.5rem)',
-          maxWidth: '1080px',
-          margin:   '0 auto',
-        }}
-      >
-        {/* Eyebrow */}
-        <p
-          style={{
-            fontFamily:    'var(--font-mono)',
-            fontSize:      '0.62rem',
-            letterSpacing: '0.16em',
-            textTransform: 'uppercase',
-            color:         'var(--color-brand-gold)',
-            opacity:       0.7,
-            marginBottom:  '1.25rem',
-          }}
-        >
-          Shop by piece
-        </p>
-
-        {/* Row 1: Chains / Pendants / Bracelets — 3 equal columns */}
-        <div
-          className="grid grid-cols-1 sm:grid-cols-3"
-          style={{
-            gap:          '1px',
-            background:   'var(--color-brand-border)',
-            border:       '1px solid var(--color-brand-border)',
-            marginBottom: '1px',
-          }}
-        >
-          {ROW1.map((cat) => (
-            <Link
-              key={cat.slug}
-              href={`/collections/${cat.slug}`}
-              className="cat-grid-link"
-              style={{
-                display:        'flex',
-                flexDirection:  'column',
-                alignItems:     'flex-start',
-                gap:            '20px',
-                padding:        '36px 28px',
-                minHeight:      '220px',
-                position:       'relative',
-                overflow:       'hidden',
-                textDecoration: 'none',
-              }}
-            >
-              <div
-                aria-hidden="true"
-                style={{
-                  position:      'absolute',
-                  inset:         0,
-                  background:    `radial-gradient(circle at 30% 40%, ${cat.glow} 0%, transparent 65%)`,
-                  pointerEvents: 'none',
-                }}
-              />
-              <div style={{ position: 'relative' }}>{cat.svg}</div>
-              <div style={{ position: 'relative', flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.3rem, 2.5vw, 1.5rem)', fontWeight: 400, color: 'var(--color-brand-white)', lineHeight: 1.0 }}>
-                  {cat.label}
-                </div>
-                <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.8125rem', color: 'var(--color-brand-muted)', lineHeight: 1.5 }}>
-                  {cat.sub}
-                </div>
-              </div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', letterSpacing: '0.08em', color: 'var(--color-brand-gold)', textTransform: 'uppercase', position: 'relative' }}>
-                {cat.cta}
-              </div>
-            </Link>
-          ))}
+      <section className="collections-case-shell collections-case-grid-section" aria-labelledby="collections-case-heading">
+        <div className="collections-case-section-head">
+          <p className="collections-case-kicker">Details confirmed per piece.</p>
+          <h2 id="collections-case-heading">Ask before you buy.</h2>
+          <p>{safeLine}</p>
         </div>
 
-        {/* Row 2: Rings / Earrings — 2 wider cards, no top border (seamless with row 1) */}
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2"
-          style={{
-            gap:          '1px',
-            background:   'var(--color-brand-border)',
-            borderLeft:   '1px solid var(--color-brand-border)',
-            borderRight:  '1px solid var(--color-brand-border)',
-            borderBottom: '1px solid var(--color-brand-border)',
-          }}
-        >
-          {ROW2.map((cat) => (
+        <div className="collections-case-grid">
+          {caseCategories.map((category) => (
             <Link
-              key={cat.slug}
-              href={`/collections/${cat.slug}`}
-              className="cat-grid-link"
-              style={{
-                display:        'flex',
-                flexDirection:  'column',
-                alignItems:     'flex-start',
-                gap:            '20px',
-                padding:        '36px 28px',
-                minHeight:      '180px',
-                position:       'relative',
-                overflow:       'hidden',
-                textDecoration: 'none',
-              }}
+              key={category.slug}
+              href={category.href}
+              className={`collections-case-card collections-case-card--${category.tone}`}
+              aria-label={category.label}
             >
-              <div
-                aria-hidden="true"
-                style={{
-                  position:      'absolute',
-                  inset:         0,
-                  background:    `radial-gradient(circle at 30% 40%, ${cat.glow} 0%, transparent 65%)`,
-                  pointerEvents: 'none',
-                }}
-              />
-              <div style={{ position: 'relative' }}>{cat.svg}</div>
-              <div style={{ position: 'relative', flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.3rem, 2.5vw, 1.5rem)', fontWeight: 400, color: 'var(--color-brand-white)', lineHeight: 1.0 }}>
-                  {cat.label}
-                </div>
-                <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.8125rem', color: 'var(--color-brand-muted)', lineHeight: 1.5 }}>
-                  {cat.sub}
-                </div>
-              </div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', letterSpacing: '0.08em', color: 'var(--color-brand-gold)', textTransform: 'uppercase', position: 'relative' }}>
-                {cat.cta}
-              </div>
+              <span className="collections-case-card__media">
+                <span className="collections-case-card__tray" />
+                <span className="collections-case-card__icon">{category.icon}</span>
+                <span className="collections-case-card__spark collections-case-card__spark--one" />
+                <span className="collections-case-card__spark collections-case-card__spark--two" />
+              </span>
+              <span className="collections-case-card__body">
+                <span className="collections-case-card__title">{category.label}</span>
+                <span className="collections-case-card__copy">{category.line}</span>
+                <span className="collections-case-card__cta">{category.label} -&gt;</span>
+              </span>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* ── Discover strip — intentionally separated ─────────────── */}
-      <section
-        style={{
-          padding:      'clamp(2rem, 4vw, 3rem) clamp(1.25rem, 3vw, 2.5rem)',
-          background:   'var(--color-brand-charcoal)',
-          borderTop:    '1px solid var(--color-brand-border)',
-          borderBottom: '1px solid var(--color-brand-border)',
-        }}
-      >
-        <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
-
-          {/* Eyebrow */}
-          <p
-            style={{
-              fontFamily:    'var(--font-mono)',
-              fontSize:      '0.6rem',
-              letterSpacing: '0.16em',
-              textTransform: 'uppercase',
-              color:         'var(--color-brand-gold)',
-              opacity:       0.62,
-              marginBottom:  '1rem',
-            }}
-          >
-            Ask first
-          </p>
-
-          <div
-            className="grid grid-cols-1 sm:grid-cols-2"
-            style={{
-              gap:        '1px',
-              background: 'var(--color-brand-border)',
-              border:     '1px solid var(--color-brand-border)',
-            }}
-          >
-            {DISCOVER_CATS.map((cat) => (
-              <Link
-                key={cat.slug}
-                href={`/collections/${cat.slug}`}
-                className="cat-grid-link"
-                style={{
-                  display:        'flex',
-                  flexDirection:  'column',
-                  alignItems:     'flex-start',
-                  gap:            '16px',
-                  padding:        '28px 28px',
-                  position:       'relative',
-                  overflow:       'hidden',
-                  textDecoration: 'none',
-                  borderLeft:     '2px solid rgba(201,168,76,0.28)',
-                }}
-              >
-                <div
-                  aria-hidden="true"
-                  style={{
-                    position:      'absolute',
-                    inset:         0,
-                    background:    `radial-gradient(circle at 0% 50%, ${cat.glow} 0%, transparent 60%)`,
-                    pointerEvents: 'none',
-                  }}
-                />
-                <div style={{ position: 'relative' }}>{cat.svg}</div>
-                <div style={{ position: 'relative', flex: 1, display: 'flex', flexDirection: 'column', gap: '5px' }}>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.15rem, 2vw, 1.35rem)', fontWeight: 400, color: 'var(--color-brand-white)', lineHeight: 1.05 }}>
-                    {cat.label}
-                  </div>
-                  <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.8rem', color: 'var(--color-brand-muted)', lineHeight: 1.5 }}>
-                    {cat.sub}
-                  </div>
-                </div>
-                <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', letterSpacing: '0.08em', color: 'var(--color-brand-gold)', textTransform: 'uppercase', position: 'relative' }}>
-                  {cat.cta}
-                </div>
-              </Link>
-            ))}
+      <section className="collections-case-ask">
+        <div className="collections-case-shell collections-case-ask__inner">
+          <div>
+            <p className="collections-case-kicker">Ask before you buy.</p>
+            <h2>Ask what&apos;s available.</h2>
           </div>
-
+          <p>{safeLine}</p>
+          <a href={WA_ASK} target="_blank" rel="noopener noreferrer" className="collections-case-ask__link">
+            Ask what&apos;s available.
+          </a>
         </div>
       </section>
-
-      {/* ── Bottom CTA ──────────────────────────────────────────── */}
-      <section
-        style={{
-          padding:      'clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 3vw, 2.5rem)',
-          borderTop:    '1px solid var(--color-brand-border)',
-          background:   'var(--color-brand-charcoal)',
-        }}
-      >
-        <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
-          <p
-            style={{
-              fontFamily:   'var(--font-display)',
-              fontSize:     'clamp(1.3rem, 3vw, 2rem)',
-              fontWeight:   400,
-              color:        'var(--color-brand-white)',
-              marginBottom: '0.5rem',
-              lineHeight:   1.1,
-            }}
-          >
-            Don&apos;t see your piece?
-          </p>
-          <p
-            style={{
-              fontFamily:   'var(--font-body)',
-              fontSize:     '0.9rem',
-              color:        'var(--color-brand-muted)',
-              marginBottom: '1.75rem',
-              lineHeight:   1.6,
-              maxWidth:     '48ch',
-            }}
-          >
-            Send the logo, photo, name, or idea. We quote before the build. No deposit to start.
-          </p>
-          <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap' }}>
-            <Link href="/custom" className="btn-primary">
-              BUILD CUSTOM →
-            </Link>
-            <a
-              href={WA_STOCK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline-gold"
-            >
-              ASK WHAT&rsquo;S IN →
-            </a>
-          </div>
-        </div>
-      </section>
-
     </main>
   )
 }
