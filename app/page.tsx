@@ -70,7 +70,7 @@ export default function HomePage() {
       {/* ─── 1. HERO — Full-bleed campaign ──────────────────────────────── */}
       <section
         aria-label="Hero"
-        className="homepage-hero"
+        className="homepage-hero grain-field"
         style={{
           position:       'relative',
           minHeight:      'max(90vh, 600px)',
@@ -85,6 +85,7 @@ export default function HomePage() {
         {/* Campaign video — jewelry media is the visual */}
         <video
           autoPlay muted loop playsInline preload="metadata"
+          className="hero-media-kenburns"
           poster="/assets/demo/phase3a/2t-demo-hero-chain-pendant-01.png"
           style={{
             position: 'absolute', inset: 0,
@@ -126,7 +127,7 @@ export default function HomePage() {
             }}
           >
             BUILT TO{' '}
-            <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic', fontFamily: 'var(--font-display)', textShadow: '0 0 20px rgba(201,168,76,0.55), 0 0 44px rgba(201,168,76,0.24)' }}>
+            <em className="hero-hit-sweep">
               HIT.
             </em>
           </h1>
@@ -150,7 +151,7 @@ export default function HomePage() {
           <div className="reveal reveal-d3" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center', marginBottom: '1.25rem' }}>
             <a
               href="#shop-jewelry"
-              className="btn-primary"
+              className="btn-primary cta-shimmer"
               style={{ fontSize: '0.875rem', letterSpacing: '0.08em', padding: '0.9rem 1.875rem' }}
             >
               SHOP THE PIECES
@@ -200,6 +201,7 @@ export default function HomePage() {
       <section
         id="shop-jewelry"
         aria-label="Shop jewelry by category"
+        className="grain-field"
         style={{
           background: 'var(--color-brand-black)',
           borderTop: '1px solid var(--color-brand-border)',
@@ -465,7 +467,7 @@ export default function HomePage() {
               <span className="mi-mono mi-faint" style={{ fontSize: '0.58rem' }}>DETAILS CONFIRMED PER PIECE</span>
             </div>
             <div style={{ flexShrink: 0 }}>
-              <Link href="/custom" className="btn-primary" style={{ fontSize: '0.8rem', letterSpacing: '0.08em', padding: '0.8rem 1.5rem' }}>
+              <Link href="/custom" className="btn-primary cta-shimmer" style={{ fontSize: '0.8rem', letterSpacing: '0.08em', padding: '0.8rem 1.5rem' }}>
                 BUILD CUSTOM →
               </Link>
             </div>
@@ -510,7 +512,7 @@ export default function HomePage() {
       {/* ─── 4. BUILD CUSTOM — identity flex lane ──────────────────────── */}
       <section
         aria-label="Custom jewelry"
-        className="custom-inquiry-section"
+        className="custom-inquiry-section grain-field"
         style={{
           background: '#0A0702',
           borderTop: '1px solid rgba(201,164,73,0.30)',
@@ -544,6 +546,7 @@ export default function HomePage() {
             <img
               src="/assets/demo/phase3a/2t-demo-custom-before-after-01.png"
               alt=""
+              className="custom-vitrine-pulse"
               style={{
                 position: 'absolute',
                 inset: 0,
@@ -637,7 +640,7 @@ export default function HomePage() {
               NO DEPOSIT TO START · WE QUOTE FIRST
             </p>
 
-            <Link href="/custom" className="btn-primary" style={{ fontSize: '0.85rem', letterSpacing: '0.08em', padding: '0.875rem 1.75rem' }}>
+            <Link href="/custom" className="btn-primary cta-shimmer" style={{ fontSize: '0.85rem', letterSpacing: '0.08em', padding: '0.875rem 1.75rem' }}>
               START THE REQUEST →
             </Link>
           </div>

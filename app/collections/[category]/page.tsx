@@ -1042,6 +1042,7 @@ export default async function CategoryPage({ params }: Props) {
                 >
                   {/* Visual area */}
                   <div
+                    className="lit-diagram"
                     style={{
                       width:          '100%',
                       aspectRatio:    '16 / 9',
@@ -1116,9 +1117,9 @@ export default async function CategoryPage({ params }: Props) {
                         >
                           <span
                             aria-hidden="true"
-                            style={{ position: 'absolute', left: 0, color: 'var(--color-brand-gold)', opacity: 0.6 }}
+                            style={{ position: 'absolute', left: 0, color: 'var(--color-brand-gold)', opacity: 0.75, fontSize: '0.7rem' }}
                           >
-                            —
+                            ✓
                           </span>
                           {spec}
                         </li>

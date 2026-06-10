@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function FinalCTABar() {
   return (
-    <section className="final-cta-bar section-reveal" aria-label="Start your custom piece">
+    <section className="final-cta-bar section-reveal grain-field" aria-label="Start your custom piece">
       <div aria-hidden="true" className="gold-rule" />
       <div className="final-cta-inner">
         <div>
@@ -16,7 +16,7 @@ export default function FinalCTABar() {
           </p>
         </div>
         <div className="final-cta-actions">
-          <Link href="/custom" className="btn-primary final-cta-btn">
+          <Link href="/custom" className="btn-primary final-cta-btn cta-shimmer">
             START THE PIECE →
           </Link>
           <a

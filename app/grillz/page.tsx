@@ -571,7 +571,7 @@ export default function GrillzPage() {
                   href={WA_GRILLZ}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary"
+                  className="btn-primary cta-shimmer"
                 >
                   TEXT 2T ABOUT GRILLZ →
                 </a>
@@ -684,6 +684,7 @@ export default function GrillzPage() {
                 >
                   {/* Visual area */}
                   <div
+                    className="lit-diagram"
                     style={{
                       width:          '100%',
                       aspectRatio:    '4 / 3',
@@ -786,10 +787,11 @@ export default function GrillzPage() {
                               position: 'absolute',
                               left:     0,
                               color:    isIce ? 'rgba(200,230,255,0.55)' : 'var(--color-brand-gold)',
-                              opacity:  0.7,
+                              opacity:  0.8,
+                              fontSize: '0.7rem',
                             }}
                           >
-                            —
+                            ✓
                           </span>
                           {spec}
                         </li>

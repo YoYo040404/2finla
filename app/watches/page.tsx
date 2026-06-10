@@ -772,7 +772,7 @@ export default function WatchesPage() {
               </p>
 
               <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap' }}>
-                <a href={WA_WATCHES} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                <a href={WA_WATCHES} target="_blank" rel="noopener noreferrer" className="btn-primary cta-shimmer">
                   ASK ABOUT WATCHES →
                 </a>
               </div>
@@ -946,6 +946,7 @@ export default function WatchesPage() {
               >
                 {/* Visual area */}
                 <div
+                  className="lit-diagram"
                   style={{
                     width:          '100%',
                     aspectRatio:    '4 / 3',
@@ -1057,10 +1058,11 @@ export default function WatchesPage() {
                             position: 'absolute',
                             left:     0,
                             color:    dir.accentRolex ? 'var(--color-brand-gold)' : 'rgba(200,230,255,0.55)',
-                            opacity:  0.7,
+                            opacity:  0.8,
+                            fontSize: '0.7rem',
                           }}
                         >
-                          —
+                          ✓
                         </span>
                         {spec}
                       </li>

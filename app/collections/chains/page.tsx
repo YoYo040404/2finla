@@ -327,7 +327,10 @@ export default function ChainsPage() {
             }}
           >
             CHAINS<br />
-            <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>BUILT TO HIT.</em>
+            {/* Phase A: "BUILT TO HIT." is reserved for the homepage hero.
+                Line derived from approved on-page copy ("the most requested
+                chain to hold the piece"). */}
+            <em style={{ color: 'var(--color-brand-gold)', fontStyle: 'italic' }}>HOLD THE PIECE.</em>
           </h1>
 
           <p
@@ -348,7 +351,7 @@ export default function ChainsPage() {
               href={WA_CHAINS}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
+              className="btn-primary cta-shimmer"
             >
               ASK ABOUT CHAINS →
             </a>
@@ -491,6 +494,7 @@ export default function ChainsPage() {
               >
                 {/* Visual area */}
                 <div
+                  className="lit-diagram"
                   style={{
                     width:           '100%',
                     aspectRatio:     '16 / 9',
@@ -576,10 +580,11 @@ export default function ChainsPage() {
                             position: 'absolute',
                             left:     0,
                             color:    'var(--color-brand-gold)',
-                            opacity:  0.6,
+                            opacity:  0.75,
+                            fontSize: '0.7rem',
                           }}
                         >
-                          —
+                          ✓
                         </span>
                         {spec}
                       </li>

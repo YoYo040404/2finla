@@ -691,6 +691,7 @@ export default function PendantsPage() {
               >
                 {/* Visual area */}
                 <div
+                  className="lit-diagram"
                   style={{
                     width:          '100%',
                     aspectRatio:    '16 / 9',
@@ -776,10 +777,11 @@ export default function PendantsPage() {
                             position: 'absolute',
                             left:     0,
                             color:    'var(--color-brand-gold)',
-                            opacity:  0.6,
+                            opacity:  0.75,
+                            fontSize: '0.7rem',
                           }}
                         >
-                          —
+                          ✓
                         </span>
                         {spec}
                       </li>
