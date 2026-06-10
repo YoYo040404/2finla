@@ -3420,7 +3420,7 @@
 .sdb-spec {
   display:        block;
   font-family:    var(--font-mono);
-  font-size:      0.55rem;
+  font-size:      0.66rem;
   letter-spacing: 0.08em;
   color:          var(--color-brand-muted);
   line-height:    1.3;
@@ -3439,7 +3439,7 @@
 /* Shared footer */
 .sdb-footer {
   font-family:    var(--font-mono);
-  font-size:      0.5rem;
+  font-size:      0.62rem;
   letter-spacing: 0.10em;
   color:          var(--color-brand-muted);
   margin:         0;
@@ -4016,7 +4016,14 @@
   border-right:   1px solid rgba(201, 168, 76, 0.10);
   position:       relative;
   overflow:       hidden;
+  color:          inherit;
+  text-decoration: none;
   transition:     background 0.22s ease, border-color 0.22s ease;
+}
+
+.src-card:focus-visible {
+  outline:        2px solid var(--color-brand-gold);
+  outline-offset: -2px;
 }
 
 /* Tone variants — border-left accent */
@@ -4026,11 +4033,16 @@
 .src-card--warm   { border-left: 2px solid rgba(201, 168, 76, 0.50); }
 
 @media (hover: hover) {
+  .src-rail:hover .src-track { animation-play-state: paused; }
   .src-card:hover { background: #181818; }
   .src-card--gold:hover   { border-left-color: rgba(201, 168, 76, 0.75); }
   .src-card--ice:hover    { border-left-color: rgba(208, 238, 255, 0.60); }
   .src-card--silver:hover { border-left-color: rgba(200, 210, 220, 0.50); }
   .src-card--warm:hover   { border-left-color: rgba(201, 168, 76, 0.90); }
+}
+
+.src-rail:focus-within .src-track {
+  animation-play-state: paused;
 }
 
 /* Image container — fixed height, relative for next/image fill */
@@ -4105,6 +4117,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .src-track { animation: none; }
+  .src-rail:hover .src-track,
+  .src-rail:focus-within .src-track { animation-play-state: running; }
 }
 
 /* ─── Pass 4C — SocialTeaser Reel Energy ────────────────────────────────── */
@@ -4728,8 +4742,14 @@ div:nth-child(3n + 3) > .lit-diagram::after { animation-delay: 5s; }
 
 /* ── Phase A reduced-motion: every new animation off, content fully visible ─ */
 @media (prefers-reduced-motion: reduce) {
+  .homepage-hero {
+    background-image: url('/assets/demo/phase3a/2t-demo-hero-chain-pendant-01.png') !important;
+    background-size: cover !important;
+    background-position: center 30% !important;
+    background-repeat: no-repeat !important;
+  }
   .lit-diagram::after      { animation: none; opacity: 0; }
-  .hero-media-kenburns     { animation: none; }
+  .hero-media-kenburns     { animation: none; display: none; }
   .custom-vitrine-pulse    { animation: none; }
   .cta-shimmer::before     { animation: none; left: -130%; }
   .hero-hit-sweep {

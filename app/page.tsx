@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import ProofContactZone from '@/components/home/ProofContactZone'
 import ShineDirectionBand from '@/components/home/ShineDirectionBand'
@@ -7,6 +8,7 @@ import FinalCTABar from '@/components/home/FinalCTABar'
 import ScrollRevealController from '@/components/home/ScrollRevealController'
 import StickyConversionBar from '@/components/home/StickyConversionBar'
 import { TileGlareController } from '@/components/home/TileGlareController'
+import { HOME_MEDIA } from '@/data/homeMedia'
 
 const WA_BUILD  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20want%20to%20build%20something%20custom.'
 const WA_PROMO  = 'https://wa.me/14124524343?text=What%27s%20running%20this%20week%20at%202T%3F'
@@ -21,7 +23,7 @@ const ANCHOR_TILES = [
     gleam:    true,
     sub:      'Top. Bottom. Full mouth. Custom fit.',
     href:     '/grillz',
-    image:    '/assets/demo/phase3a/2t-demo-grillz-flat-01.png',
+    image:    HOME_MEDIA.anchorTiles.grillz.src,
     imageAlt: 'Grillz — demo concept visual',
   },
   {
@@ -30,7 +32,7 @@ const ANCHOR_TILES = [
     gleam:    true,
     sub:      "Iced. Bust-down. Ask what's available.",
     href:     '/watches',
-    image:    '/assets/demo/phase3a/2t-demo-watch-face-01.png',
+    image:    HOME_MEDIA.anchorTiles.watches.src,
     imageAlt: 'Watch — demo concept visual',
   },
   {
@@ -39,7 +41,7 @@ const ANCHOR_TILES = [
     gleam:    true,
     sub:      "Cuban. Rope. Tennis. Ask what's in.",
     href:     '/collections/chains',
-    image:    '/assets/demo/phase3a/2t-demo-chains-01.png',
+    image:    HOME_MEDIA.anchorTiles.chains.src,
     imageAlt: 'Chain — demo concept visual',
   },
 ] as const
@@ -86,7 +88,7 @@ export default function HomePage() {
         <video
           autoPlay muted loop playsInline preload="metadata"
           className="hero-media-kenburns"
-          poster="/assets/demo/phase3a/2t-demo-hero-chain-pendant-01.png"
+          poster={HOME_MEDIA.hero.posterSrc}
           style={{
             position: 'absolute', inset: 0,
             width: '100%', height: '100%',
@@ -94,7 +96,7 @@ export default function HomePage() {
             zIndex: 0, opacity: 0.60,
           }}
         >
-          <source src="/assets/hero-loop-demo.mp4" type="video/mp4" />
+          <source src={HOME_MEDIA.hero.videoSrc} type="video/mp4" />
         </video>
 
         {/* Atmospheric depth — left text protection + bottom grounding */}
@@ -272,16 +274,13 @@ export default function HomePage() {
                   style={{ flex: 1, position: 'relative', overflow: 'hidden' }}
                 >
                   {/* Demo concept visual — replace with real 2T product media when available */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={tile.image}
                     alt={tile.imageAlt}
+                    fill
+                    sizes={idx === 0 ? '(max-width: 767px) 100vw, 45vw' : '(max-width: 767px) 100vw, 28vw'}
                     className="pb-anchor-img"
                     style={{
-                      position: 'absolute',
-                      inset: 0,
-                      width: '100%',
-                      height: '100%',
                       objectFit: 'cover',
                     }}
                   />
@@ -346,15 +345,12 @@ export default function HomePage() {
                 >
                   {/* Demo concept visual — replace with real 2T product media when available */}
                   {SECONDARY_DEMO_IMAGES[tile.label] && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={SECONDARY_DEMO_IMAGES[tile.label].src}
+                    <Image
+                      src={tile.label === 'PENDANTS.' ? HOME_MEDIA.pendantSecondary.src : SECONDARY_DEMO_IMAGES[tile.label].src}
                       alt={SECONDARY_DEMO_IMAGES[tile.label].alt}
+                      fill
+                      sizes="(max-width: 767px) 50vw, 25vw"
                       style={{
-                        position: 'absolute',
-                        inset: 0,
-                        width: '100%',
-                        height: '100%',
                         objectFit: 'cover',
                         opacity: 0.88,
                       }}
@@ -542,16 +538,13 @@ export default function HomePage() {
             }}
           >
             {/* Custom concept image — ambient bling energy, no product claims */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/assets/demo/phase3a/2t-demo-custom-before-after-01.png"
-              alt=""
+            <Image
+              src={HOME_MEDIA.customVitrine.src}
+              alt={HOME_MEDIA.customVitrine.alt}
+              fill
+              sizes="(max-width: 767px) 100vw, 50vw"
               className="custom-vitrine-pulse"
               style={{
-                position: 'absolute',
-                inset: 0,
-                width: '100%',
-                height: '100%',
                 objectFit: 'cover',
                 opacity: 0.22,
                 filter: 'brightness(0.65) saturate(0.55) contrast(1.1)',
