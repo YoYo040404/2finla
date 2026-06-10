@@ -120,15 +120,22 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
   - SocialTeaser: now owns all TikTok/Instagram/WhatsApp channel rows
   - Mobile secondary tiles collapse to text-only cards
   - Live QA passed — zero console errors, zero 404s, no horizontal scroll
+- **Phase A Motion & Light Polish** (commit `8d43222`) — completed, committed, pushed, and live QA clean
+- **Custom P0/P1 mobile lead-flow simplification** (commit `38d814e`) — completed, committed, pushed, and live QA clean
+- **Custom P2 build recap + dynamic WhatsApp + multi-upload** (commit `0633c9e`) — completed, committed, pushed, and QA clean
+- **Manual mobile QA** — confirmed clean after Custom P2
 
 ### WIP / Approval Pending ⚠️
 
-- None currently. Pass 4B is committed and QA-verified.
+- None currently. Custom P2 is committed, pushed, and QA clean.
 
 ### Not Yet 🚫
 
-- **ShineRail real images** — wire RINGS/BRACELETS/EARRINGS cards (`ShineRail.tsx` lines 51–70) when real product photos arrive
-- **Final sitewide asset shot list** — in progress (next phase)
+- **Phase B structure-ready-for-assets** — next queued implementation direction
+- **Pass 5C full copywriting pass** — pending explicit approval
+- **Docs / claim-safety maintenance** — as needed
+- **Final QA after each implementation** — required
+- **ShineRail real images** — wire RINGS/BRACELETS/EARRINGS cards when real product photos arrive
 - Real asset/media replacement (hero footage, product shots, grillz/watches photos, store footage)
 - SocialTeaser Phase 1: manual curated cards (build when 2T provides real @2tjewelers still frames + post URLs)
 - Instagram oEmbed Read API / TikTok Display API dynamic feed (future — requires developer apps + app review — see feasibility plan)
@@ -142,12 +149,12 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 
 ### Next Milestone 🎯
 
-- **Final sitewide asset shot list** — define exactly what photos/footage 2T needs to provide; site is now interactive and polished enough that remaining gaps are clearly identifiable
-- **SocialTeaser Phase 1** — manual curated social cards when 2T provides real @2tjewelers still frames + post URLs
-- **ShineRail real images** — wire RINGS/BRACELETS/EARRINGS cards when real product photos arrive
+- **Phase B structure-ready-for-assets**
+- **Pass 5C full copywriting pass** after explicit approval
+- **Docs / claim-safety maintenance** as needed
+- **Final QA after each implementation**
+- **Keep asset shot list as the production request direction** — cinematic macros, real-store proof, social-first pacing, shine, movement, Pittsburgh street-luxury, and custom process assets
 - **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic (low priority)
-- SEO/schema after core pages pass claim-safety review
-- No random CSS/layout cleanup unless QA finds a real issue
 
 ---
 
@@ -168,6 +175,10 @@ For every major UX, copy, visual, or conversion decision:
 
 ## Visual Direction — Locked (2026-05-25)
 
+**Approved creative direction:** "The Lit Case at Night."
+
+Moses The Jeweler is energy/reference only, not a source to copy. Translate the inspiration into 2T-owned Pittsburgh street-luxury: cinematic product macros, black glass, velvet, hard light, chrome/ice highlights, gold accents, real-store energy, social-first pacing, handoff moments, and real Pittsburgh proof.
+
 **Midnight Icebox — interpreted through hard hip-hop / hood street-luxury energy.**
 
 Must feel: black, urban, hood/street, loud, flashy, bling-heavy, ice/diamond/gold shine, rapper/athlete/big-car energy, real Pittsburgh jeweler, product-dominant, shop-ready and custom-ready, high-visibility, direct and street-commercial.
@@ -185,8 +196,8 @@ Use for: ecommerce behavior, category depth, product density, mobile shopping fl
 Do not copy: assets, copy, claims, discounts, celebrity proof, or trademarks.
 
 ### Moses NYC
-Use for: full-bleed visual discipline, smooth homepage rhythm, credibility, inquiry-led structure, simple custom/contact flow, strong visual hierarchy.
-Do not copy: assets, videos, copy, product names, claims, layout exactly, or restrained tone.
+Use for: energy/reference direction only — cinematic macros, real-store energy, social-first pacing, shine, movement, and Pittsburgh street-luxury translation.
+Do not copy: assets, videos, copy, product names, claims, layout exactly, restrained tone, celebrity proof, Knicks/NBA/MSG references, gestures, captions, or social assets.
 2T must be louder, shinier, more custom-first, and more hip-hop than Moses.
 
 ---
@@ -273,10 +284,10 @@ Still needed:
 Still needed: real footage at `public/assets/hero-loop-demo.mp4`  
 Specs: 8–10 seconds, MP4, muted, loopable, 16:9/21:9 desktop, 9:16 mobile backup if possible.
 
-### Phase 5 — Watches / Grillz Prototype Pages ✅ Committed (200e5a1)
+### Phase 5 — Watches / Grillz Prototype Pages ✅ Complete
 
-- `/grillz` — committed. Visual QA and user approval still pending.
-- `/watches` — committed. Visual QA and user approval still pending.
+- `/grillz` — fully reworked and QA clean.
+- `/watches` — fully reworked and QA clean.
 - Do not redesign either page unless specifically approved.
 
 ### Phase 6 — Form Backend + Upload Handling ✅ Complete
@@ -433,21 +444,28 @@ Only if user explicitly approves:
 40. ✅ **Pass 4A — sitewide visual polish + claim safety** (commit `f8101dd`, 2026-06-03)
 41. ✅ **Pass 4B — interactive homepage motion** (commit `9849b81`, 2026-06-03) — ScrollRevealController, scroll reveals, tile stagger, StickyConversionBar, ProofContactZone counter, chip tilt, FinalCTABar + SocialTeaser wired
 42. ✅ **Pass 4C — homepage motion + category rail** (commit `70fcdd6`, 2026-06-03) — ShineRail seamless carousel, TileGlareController, BestSellersStrip removed, BANG entrance animation removed, custom vitrine + SocialTeaser demo assets wired, ProofContactZone Pittsburgh-only, mobile secondary tile collapse. Live QA passed.
-43. 🎯 **Asset/media request list** — define what specific photos/footage 2T needs to provide ← NEXT
-44. 🎯 **SocialTeaser Phase 1** — manual curated social cards when 2T provides still frames ← NEXT PHASE
-45. 🎯 **ShineRail real images** — wire RINGS/BRACELETS/EARRINGS when real product photos arrive ← NEXT PHASE
-46. 🎯 **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic ← LOW PRIORITY
-46. ⏳ **Category/product proof pages** — after media/proof planning
-47. ⏳ SEO/schema — after core pages pass claim-safety review
-48. **Pass 5C — Copy Sharpening + Promo Upgrade** ⚠️ PENDING USER APPROVAL
+43. ✅ **Phase A Motion & Light Polish** (commit `8d43222`) — completed, pushed, live QA clean
+44. ✅ **Custom P0/P1 mobile lead-flow simplification** (commit `38d814e`) — completed, pushed, live QA clean
+45. ✅ **Custom P2 build recap + dynamic WhatsApp + multi-upload** (commit `0633c9e`) — completed, pushed, QA clean
+46. ✅ **Manual mobile QA** — confirmed clean
+47. 🎯 **Phase B structure-ready-for-assets** ← NEXT
+48. 🎯 **Pass 5C full copywriting pass** ⚠️ PENDING USER APPROVAL
     - Scope: 5 files only — `app/page.tsx`, `components/home/ProofMarquee.tsx`, `components/home/WeeklyPromo.tsx`, `components/home/PittsburghStory.tsx`, `components/home/SocialTeaser.tsx`
     - Do NOT start until user explicitly approves Pass 5C
     - Full spec in `docs/2t-pass5b-competitor-backed-copy-research.md` Section 11
-23. Sitewide copy + SEO pass — only after demo QA gates cleared
-24. About / Pittsburgh / Store — research + redesign plan (after QA gates)
-25. Social / Instagram / TikTok planning
-26. Material/stone SEO landing pages + per-category filtering (only after real inventory + assets + proof)
-27. Per-piece product badge layer — only with verified per-piece data (GRA cert, GIA cert, hallmark, etc.)
+49. 🎯 **Docs / claim-safety maintenance** — as needed
+50. 🎯 **Final QA after each implementation**
+51. 🎯 **Keep asset shot list as production request direction**
+52. ⏳ **SocialTeaser Phase 1** — manual curated social cards when 2T provides still frames
+53. ⏳ **ShineRail real images** — wire RINGS/BRACELETS/EARRINGS when real product photos arrive
+54. ⏳ **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic
+55. ⏳ **Category/product proof pages** — after media/proof planning
+56. ⏳ SEO/schema — after core pages pass claim-safety review
+57. Sitewide copy + SEO pass — only after demo QA gates cleared
+58. About / Pittsburgh / Store — research + redesign plan (after QA gates)
+59. Social / Instagram / TikTok planning
+60. Material/stone SEO landing pages + per-category filtering (only after real inventory + assets + proof)
+61. Per-piece product badge layer — only with verified per-piece data (GRA cert, GIA cert, hallmark, etc.)
 
 ---
 

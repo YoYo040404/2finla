@@ -52,7 +52,7 @@ For execution tasks:
 
 ## Current Active Task
 
-**Pass 4C committed and live (`70fcdd6`). Latest commit: `70fcdd6`. Midnight Icebox homepage live and QA-verified on https://2finla.vercel.app. Custom flow live. Category pages complete. ShineRail seamless category carousel live. BestSellersStrip component removed. TileGlareController (desktop cursor 3D tilt/glare on anchor tiles) added. Oversized BANG entrance animation removed — BANG. brand stamp remains in hero.**
+**Latest committed state: Custom P2 committed and pushed (`0633c9e`). Phase A Motion & Light Polish (`8d43222`), Custom P0/P1 mobile lead-flow simplification (`38d814e`), and Custom P2 build recap + dynamic WhatsApp + multi-upload (`0633c9e`) are completed and QA clean. Manual mobile QA confirmed clean. Midnight Icebox homepage remains live and QA-verified on https://2finla.vercel.app.**
 
 **Social feed feasibility conclusion (2026-06-03):**
 - Phase 1 = manual curated cards in SocialTeaser left canvas (build when 2T provides real still frames + post URLs)
@@ -79,7 +79,7 @@ For execution tasks:
 
 **Custom Flow: user-approved and live on Vercel.**
 
-CRO pass and selector grouping committed (commits `60c7d06`, `2303850`). Resend lead capture verified live. All 9 fields including metal/stone direction and file attachments confirmed working.
+CRO pass and selector grouping committed (commits `60c7d06`, `2303850`). P0/P1 mobile lead-flow simplification committed (`38d814e`) and live QA clean. P2 build recap + dynamic WhatsApp + multi-upload committed (`0633c9e`) and QA clean. Resend lead capture verified live. All 9 fields including metal/stone direction and file attachments confirmed working; Custom P2 supports up to 3 uploads, image thumbnails, and oversized-file WhatsApp fallback.
 
 **Category pages completed (as of 2026-06-01):**
 
@@ -163,7 +163,7 @@ CRO pass and selector grouping committed (commits `60c7d06`, `2303850`). Resend 
 - `public/assets/logo-to-use.png` — replacement logo candidate, not yet approved for wiring
 - QA screenshots (`qa-*.jpeg`) in project root — gitignored, safe to leave
 
-**Next recommended phase:** Final sitewide asset shot list — define exactly what photos/footage 2T needs to provide. SocialTeaser Phase 1 when real @2tjewelers still frames + post URLs arrive. Wire ShineRail real images for RINGS/BRACELETS/EARRINGS cards (`image: null` in `ShineRail.tsx` lines 51–70) when real photos arrive.
+**Next queued work:** Phase B structure-ready-for-assets; Pass 5C full copywriting pass after explicit approval; docs / claim-safety maintenance as needed; final QA after each implementation. Keep the existing asset shot list as the production request direction.
 No random CSS/layout cleanup unless QA finds a real issue.
 
 Do not commit or push new category pages without visual QA and user approval.  
@@ -196,6 +196,10 @@ Do not change to any other formulation unless the user explicitly confirms the e
 
 ## Design Direction
 
+**Approved creative direction:** "The Lit Case at Night."
+
+Moses The Jeweler is energy/reference only, not a source to copy. Translate the inspiration into 2T-owned Pittsburgh street-luxury: cinematic product macros, black glass, velvet, hard light, chrome/ice highlights, gold accents, real-store energy, social-first pacing, handoff moments, and real Pittsburgh proof.
+
 Visual direction: **Dark Shine / Loud Luxury.**
 
 Homepage must create an immediate BAM effect — full-bleed immersive hero, video-loop energy, gold/ice flash, big custom piece energy.
@@ -222,7 +226,7 @@ Homepage must create an immediate BAM effect — full-bleed immersive hero, vide
 
 GLD.com — ecommerce behavior only. Do not copy GLD assets, copy, claims, products, discounts, policies, celebrity proof, or trademarks.
 
-Moses NYC — full-bleed visual discipline, smooth homepage rhythm, inquiry-led structure. Do not copy Moses assets, copy, layout, or restrained tone. 2T must be louder, shinier, more custom-first, and more hip-hop than Moses.
+Moses NYC — energy/reference direction only: cinematic macros, real-store energy, social-first pacing, shine, movement, Pittsburgh street-luxury. Do not copy Moses assets, copy, layout, restrained tone, celebrity proof, Knicks/NBA/MSG references, gestures, captions, or social assets. 2T must be louder, shinier, more custom-first, and more hip-hop than Moses.
 
 ---
 

@@ -95,10 +95,13 @@ Do not publish as blanket sitewide claims without verification. Do not invent th
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
 Old Shopify folder is archive only. Do not touch it.
 
-**Latest committed state (as of 2026-06-03 — latest: `70fcdd6`):**
+**Latest committed state (as of 2026-06-10 — latest: `0633c9e`):**
 
 | Commit | Description |
 |---|---|
+| `0633c9e` | feat: add custom build recap and dynamic whatsapp flow — Custom P2 recap strip, dynamic WhatsApp prefill, multi-upload up to 3 files, thumbnails, oversized-file WhatsApp fallback; QA clean |
+| `38d814e` | Custom P0/P1 mobile lead-flow simplification — completed, pushed, live QA clean |
+| `8d43222` | Phase A Motion & Light Polish — completed, pushed, live QA clean |
 | `70fcdd6` | feat: add pass 4c homepage motion and category rail — ShineRail carousel, TileGlareController, BestSellersStrip removed, BANG entrance animation removed, demo assets wired |
 | `9849b81` | feat: add interactive homepage motion pass — Pass 4B |
 | `f952928` | docs: sync pass 4a project state |
@@ -146,7 +149,11 @@ Old Shopify folder is archive only. Do not touch it.
 
 **Current strategic direction:** 2T Jewelers is a real Pittsburgh street-luxury jewelry store. Pittsburgh BANG homepage is merged into main. Visual direction: hard hip-hop / hood street-luxury — loud, flashy, bling-heavy, ice/diamond/gold shine, rapper/athlete energy. NOT quiet luxury, NOT boutique, NOT over-clean ecommerce.
 
-**Current focus:** Pass 4C committed and live (`70fcdd6`). Homepage now has: ShineRail seamless category carousel, TileGlareController desktop 3D tilt/glare on anchor tiles, BANG entrance animation removed (static stamp retained), custom vitrine background + SocialTeaser reel thumbnail wired via committed demo assets, ProofContactZone Pittsburgh-proof-only, SocialTeaser owns all social channel rows, mobile secondary tiles collapse to text-only. BestSellersStrip component deleted. Live QA passed on https://2finla.vercel.app — zero errors. Next phase: final sitewide asset shot list. SocialTeaser Phase 1 when real @2tjewelers still frames arrive. Wire ShineRail real images for RINGS/BRACELETS/EARRINGS when photos arrive.
+**Approved creative direction:** "The Lit Case at Night."
+
+Moses The Jeweler is energy/reference only, not a source to copy. Translate the inspiration into 2T-owned Pittsburgh street-luxury: cinematic product macros, black glass, velvet, hard light, chrome/ice highlights, gold accents, real-store energy, social-first pacing, handoff moments, and real Pittsburgh proof.
+
+**Current focus:** Phase A Motion & Light Polish (`8d43222`), Custom P0/P1 mobile lead-flow simplification (`38d814e`), and Custom P2 build recap + dynamic WhatsApp + multi-upload (`0633c9e`) are completed, committed, pushed, and QA clean. Manual mobile QA confirmed clean. Next queued work: Phase B structure-ready-for-assets; Pass 5C full copywriting pass; docs / claim-safety maintenance as needed; final QA after each implementation. Keep the asset shot list as the production request direction.
 
 ---
 
@@ -201,7 +208,7 @@ Footer (rebuilt):
 - Connect column: Instagram, TikTok, WhatsApp CTA, Acima (safe wording)
 - grid: 2×2 mobile / 4-col desktop
 
-Custom page (as of commit 84af600 — 2026-05-17):
+Custom page historical baseline (commit 84af600 — 2026-05-17; superseded by P0/P1 `38d814e` and P2 `0633c9e`):
 - Compact hero; primary CTA: START THE REQUEST →; Browse Ready-Made removed
 - Piece type chips wrap cleanly (Step 1)
 - Upload zone above textarea on mobile; textarea 4 rows (Step 2)
@@ -236,7 +243,7 @@ Custom page (as of commit 84af600 — 2026-05-17):
 | Pendants page `/collections/pendants` | ✅ Split (4b6c067) — SHOP section (six cards) + compact custom pendant selector |
 | Grillz page `/grillz` | ✅ Fully reworked (7e87bce) — fit-first, six style cards, process-driven, non-authorized claims removed. Post-Pass-2B QA passed (2026-06-02). |
 | Watches page `/watches` | ✅ Fully reworked (77799de) — high-ticket inquiry architecture, Rolex-aware, non-authorized-dealer disclosure included. Post-Pass-2B QA passed (2026-06-02). |
-| Custom page `/custom` | ✅ CRO pass committed (60c7d06), selector grouping committed (2303850), user-approved. |
+| Custom page `/custom` | ✅ P0/P1 mobile lead-flow simplification committed (`38d814e`) and live QA clean; P2 recap + dynamic WhatsApp + multi-upload committed (`0633c9e`) and QA clean. |
 | Logo (temporary) | ✅ Transparent logo in header, black-bg logo in footer — final SVG/2x pending |
 | Contact / social | ✅ Address, phone, WhatsApp, Instagram, TikTok, Acima all wired in Footer |
 | Pittsburgh BANG merge | ✅ Complete — merged into main (39a3b70) |
@@ -248,7 +255,7 @@ Custom page (as of commit 84af600 — 2026-05-17):
 | ProofContactZone "25" countUp | ✅ Pass 4B — rAF animation on scroll entry; "332 FIFTH AVE" static |
 | ShineDirectionBand chip tilt | ✅ Pass 4B — hover perspective tilt desktop only, prefers-reduced-motion covered |
 | WhatsApp floating desktop button | 🚫 Not yet |
-| Lead capture (Resend) | ✅ Live — all 9 fields including metal/stone direction + file attachments. Sender: onboarding@resend.dev (testing). Production domain polish pending. |
+| Lead capture (Resend) | ✅ Live — all 9 fields including metal/stone direction + file attachments. Custom P2 supports up to 3 files, image thumbnails, oversized-file error + WhatsApp fallback. Sender: onboarding@resend.dev (testing). Production domain polish pending. |
 | Vercel deploy | ✅ Live on Vercel — https://2finla.vercel.app |
 | Shopify | 🚫 Paused |
 
@@ -256,7 +263,7 @@ Custom page (as of commit 84af600 — 2026-05-17):
 
 ## Default Next Prompt
 
-**Current milestone: Pass 4C committed (`70fcdd6`) and live QA passed on https://2finla.vercel.app. ShineRail carousel, TileGlareController, BestSellersStrip removed, demo assets wired. Zero errors on live QA. Site is healthy/shippable.**
+**Current milestone: Phase A Motion & Light Polish (`8d43222`), Custom P0/P1 mobile lead-flow simplification (`38d814e`), and Custom P2 build recap + dynamic WhatsApp + multi-upload (`0633c9e`) are completed, committed, pushed, and QA clean. Manual mobile QA confirmed clean. Site is healthy/shippable.**
 
 **SEO foundation status (commit `1b36f09`):** metadata, sitemap, robots added. Production URL env documented (`eb3fcd9`).
 
@@ -274,13 +281,15 @@ Custom page (as of commit 84af600 — 2026-05-17):
 **Connected MCPs (as of 2026-06-03):** Playwright, Firecrawl, Magic 21st.dev, Next DevTools, Chrome DevTools, Context7, Magic UI, Shopify (paused), Gmail/Calendar/Drive (on-request only).
 
 1. Do not reopen broad homepage redesign. Pittsburgh BANG is the current direction.
-2. Do not re-polish `/custom` — CRO pass and selector grouping are approved and live.
+2. Do not re-polish `/custom` — CRO pass, selector grouping, P0/P1, and P2 are approved/live and QA clean.
 3. Do not rebuild the Resend backend — it is working and verified.
 4. Do not do random CSS/layout cleanup unless QA finds a real issue.
-5. Next recommended phase:
-   - **Asset/media request list** — define what specific photos/footage are needed.
-   - **SocialTeaser Phase 1** — build when real @2tjewelers still frames arrive.
-   - **Production Resend sender domain** — low priority, before real traffic.
+5. Next queued work:
+   - **Phase B structure-ready-for-assets**
+   - **Pass 5C full copywriting pass** after explicit approval
+   - **Docs / claim-safety maintenance** as needed
+   - **Final QA after each implementation**
+   - Keep the existing asset shot list as the production request direction.
 6. `/grillz` and `/watches` rework complete — Post-Pass-2B QA passed. No further redesign until real/demo assets arrive.
 
 **Keep untouched until explicitly approved:**

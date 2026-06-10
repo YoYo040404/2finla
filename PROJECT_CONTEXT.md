@@ -244,6 +244,10 @@ Rules for the selector:
 
 ## Visual Direction
 
+**Approved creative direction:** "The Lit Case at Night."
+
+Moses The Jeweler is energy/reference only, not a source to copy. Translate the inspiration into 2T-owned Pittsburgh street-luxury: cinematic product macros, black glass, velvet, hard light, chrome/ice highlights, gold accents, real-store energy, social-first pacing, handoff moments, and real Pittsburgh proof.
+
 **Midnight Icebox — interpreted through hard hip-hop / hood street-luxury energy.**
 
 This is not restrained luxury. The site must feel:
@@ -369,12 +373,12 @@ Secondary benchmark for visual discipline and inquiry-led structure.
 
 Use Moses for:
 
-- full-bleed visual discipline
-- smooth homepage rhythm
-- credibility signals
-- inquiry-led structure (not cart-first)
-- simple custom/contact flow
-- strong visual hierarchy
+- energy/reference direction only
+- cinematic macro pacing
+- real-store energy
+- social-first rhythm
+- shine and movement
+- Pittsburgh street-luxury translation
 
 Do **not** copy:
 
@@ -383,6 +387,9 @@ Do **not** copy:
 - Moses claims
 - Moses layout exactly
 - Moses restrained/quiet tone
+- Moses celebrity proof
+- Knicks / NBA / MSG references
+- Moses gestures, captions, or social assets
 
 2T must be **louder, shinier, more custom-first, and more hip-hop** than Moses.
 
@@ -493,7 +500,8 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 **Resend lead capture — verified live (2026-05-31):**
 - API route: `app/api/custom-request/route.ts`
 - All 9 fields delivered in email: piece type, metal direction, stone direction, name, phone, budget, idea, file attachment, timestamp
-- File attachments confirmed working (up to 5 MB)
+- File attachments confirmed working (up to 5 MB per file)
+- Custom P2 supports up to 3 uploads, image thumbnails for image files, and oversized-file error copy with WhatsApp fallback (commit `0633c9e`)
 - Success screen appears only after Resend confirms delivery
 - WhatsApp fallback visible on error
 - Current sender: `onboarding@resend.dev` (testing mode — acceptable now)
@@ -542,10 +550,10 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 **Active branch / state:** `main` — all recent passes committed and live on Vercel.
 
-**Completed milestones (as of 2026-06-02):**
+**Completed milestones (as of 2026-06-10):**
 - Pittsburgh BANG homepage merged into main (PR #1 — commit `39a3b70`).
 - Repo QA cleanup — screenshot artifacts gitignored, QA utility added (commit `854c15e`).
-- `/custom` CRO pass and selector grouping — lead funnel tightened, all 9 fields live via Resend (commits `60c7d06`, `2303850`).
+- `/custom` CRO pass, P0/P1 mobile lead-flow simplification, and P2 recap / dynamic WhatsApp / multi-upload — lead funnel tightened, all 9 fields live via Resend (commits `60c7d06`, `2303850`, `38d814e`, `0633c9e`).
 - Material & stone direction system — homepage + categories (commits `a4f5298` → `0e85b35`).
 - Homepage flash system polish — CSS-only flash, hero BANG impact, icy product title flash (commits `b8edf8f`, `6af213a`).
 - Chains mini-catalog — six style cards, SHOP language (commit `744d2b3`).
@@ -570,6 +578,10 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 - **Pass 4A — sitewide visual polish + claim safety** (commit `f8101dd`, 2026-06-03): PromoBar "20% OFF" removed + claim-safe copy; secondary tile mi-gleam; BestSellersStrip mobile CTA visibility + stagger animation; SocialTeaser platform icon vitrine; BANG. signature in ProofContactZone + About; hover states on all category style cards; screenshot gitignore patterns.
 - **Pass 4B — interactive homepage motion** (commit `9849b81`, 2026-06-03): ScrollRevealController (IntersectionObserver scroll reveals on ShineDirectionBand / ProofContactZone / SocialTeaser / FinalCTABar); anchor tile stagger (tile-reveal-0/1/2) + secondary tile stagger (tile-reveal-s0/1/2/3); BestSellersStrip scroll-snap infrastructure (mobile); StickyConversionBar desktop/tablet WA CTA (z-index 30, hidden on mobile); ProofContactZone "25" rAF countUp animation; ShineDirectionBand chip hover tilt (desktop only); FinalCTABar + SocialTeaser wired into app/page.tsx (were missing). No new npm packages. app/page.tsx stays Server Component.
 - **Pass 4C — homepage motion + category rail** (commit `70fcdd6`, 2026-06-03): ShineRail seamless category carousel (8 categories × 2 = 16 cards × 220px, `translateX(-1760px)` loop); TileGlareController (cursor 3D tilt/glare on anchor tiles, desktop only); BestSellersStrip deleted; oversized BANG entrance animation removed — BANG. stamp stays static; custom vitrine background wired (`2t-demo-custom-before-after-01.png`); SocialTeaser reel thumbnail wired (`2t-demo-social-thumbnail-01.png`); ProofContactZone stripped to Pittsburgh proof only; SocialTeaser owns all social channel rows; mobile secondary tiles collapse to text-only. Live QA passed on https://2finla.vercel.app — zero console errors, zero 404s, no horizontal scroll.
+- **Phase A Motion & Light Polish** (commit `8d43222`) — completed, committed, pushed, and live QA clean.
+- **Custom P0/P1 mobile lead-flow simplification** (commit `38d814e`) — completed, committed, pushed, and live QA clean.
+- **Custom P2 build recap + dynamic WhatsApp + multi-upload** (commit `0633c9e`) — completed, committed, pushed, and QA clean.
+- **Manual mobile QA** — confirmed clean after Custom P2.
 
 **TikTok / Instagram Feed — Feasibility Assessed (2026-06-03):**
 
@@ -580,11 +592,12 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 - **Future Phase 3:** TikTok Display API (Developer App + Production App Review + OAuth from @2tjewelers account owner). Most complex — pursue only if auto-feed is required.
 - **Assets needed from 2T:** 2–3 still frames from real @2tjewelers TikTok/Instagram posts + direct post URLs + 1 real caption snippet per post.
 
-**Next phase:**
-1. **Final sitewide asset shot list** — define exactly what photos/footage 2T needs to provide. Site is now visually polished enough that remaining gaps are clearly identifiable.
-2. **SocialTeaser Phase 1** — manual curated social cards when real @2tjewelers still frames + post URLs arrive from 2T.
-3. **ShineRail real images** — wire RINGS/BRACELETS/EARRINGS cards in `ShineRail.tsx` (lines 51–70) when real product photos arrive.
-4. No random CSS/layout cleanup unless QA finds a real issue.
+**Next queued work:**
+1. **Phase B structure-ready-for-assets** — prepare the existing system for real media without inventing proof or fake assets.
+2. **Pass 5C full copywriting pass** — execute only after explicit approval; keep claims scoped and use the existing Pass 5B research.
+3. **Docs / claim-safety maintenance** — update only as needed when implementation changes copy, claims, or status.
+4. **Final QA after each implementation** — browser QA, mobile 390px, no horizontal scroll, console, and claim-safety scan.
+5. **Keep asset shot list as the production request direction** — cinematic macros, product closeups, store proof, social stills, and custom process assets.
 
 **Do not reopen homepage redesign** unless a clear blocker is found.
 
@@ -592,10 +605,13 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 ---
 
-## Committed Work (as of 2026-06-03)
+## Committed Work (as of 2026-06-10)
 
 | Commit | Description |
 |---|---|
+| `0633c9e` | feat: add custom build recap and dynamic whatsapp flow — Custom P2 build recap, dynamic WhatsApp prefill, multi-upload up to 3 files, thumbnails, oversized-file WhatsApp fallback; QA clean |
+| `38d814e` | Custom P0/P1 mobile lead-flow simplification — completed, pushed, live QA clean |
+| `8d43222` | Phase A Motion & Light Polish — completed, pushed, live QA clean |
 | `70fcdd6` | feat: add pass 4c homepage motion and category rail — ShineRail carousel, TileGlareController, BestSellersStrip removed, BANG entrance animation removed, custom vitrine + SocialTeaser demo assets wired, ProofContactZone Pittsburgh-only, mobile secondary tile collapse |
 | `9849b81` | feat: add interactive homepage motion pass — ScrollRevealController, section reveals, tile stagger, BestSellersStrip scroll-snap, StickyConversionBar (desktop), ProofContactZone counter, ShineDirectionBand chip tilt |
 | `f8101dd` | fix: polish site visuals and claim-safe promo bar — Pass 4A |
