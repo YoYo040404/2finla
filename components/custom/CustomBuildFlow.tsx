@@ -8,11 +8,11 @@ type BuildData = {
   name:           string
   phone:          string
   budget:         string
-  uploadFile:     File | null
-  uploadFileName: string
   metalDirection: '' | 'gold' | 'silver' | 'not-sure-metal'
   stoneDirection: '' | 'diamond' | 'moissanite' | 'no-stones' | 'not-sure-stone'
 }
+
+type UploadItem = { file: File; preview: string | null }
 
 const EMPTY: BuildData = {
   pieceType:      '',
@@ -20,8 +20,6 @@ const EMPTY: BuildData = {
   name:           '',
   phone:          '',
   budget:         '',
-  uploadFile:     null,
-  uploadFileName: '',
   metalDirection: '',
   stoneDirection: '',
 }
@@ -74,14 +72,36 @@ const BUDGET_OPTIONS = [
 ]
 
 const MAX_FILE_BYTES = 5 * 1024 * 1024
+const MAX_FILES      = 3
 
 const WA_CHAT_URL =
   'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat.'
 const WA_FILE_URL =
   'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20my%20reference%20file%20is%20too%20big%20to%20upload.%20Can%20I%20send%20it%20here%3F'
 
+/* Recap strip — selected directions, "not sure" values excluded */
+const RECAP_PIECE: Record<string, string> = {
+  'custom-pendant': 'CUSTOM PENDANT',
+  grillz:           'GRILLZ',
+  'custom-chain':   'CUSTOM CHAIN',
+  watch:            'WATCH',
+  'bracelet-ring':  'BRACELET / RING',
+}
+const RECAP_METAL: Record<string, string> = { gold: 'GOLD', silver: 'SILVER' }
+const RECAP_STONE: Record<string, string> = { diamond: 'DIAMONDS', moissanite: 'MOISSANITE', 'no-stones': 'NO STONES' }
+
+/* WhatsApp prefill phrases */
+const WA_PIECE_PHRASE: Record<string, string> = {
+  'custom-pendant': 'a custom pendant',
+  grillz:           'custom grillz',
+  'custom-chain':   'a custom chain',
+  watch:            'a custom watch',
+  'bracelet-ring':  'a custom bracelet or ring',
+}
+
 export function CustomBuildFlow() {
   const [data, setData]              = useState<BuildData>(EMPTY)
+  const [files, setFiles]            = useState<UploadItem[]>([])
   const [submitting, setSubmitting]  = useState(false)
   const [submitted, setSubmitted]    = useState(false)
   const [submitError, setSubmitError] = useState(false)
@@ -90,6 +110,12 @@ export function CustomBuildFlow() {
   const [errors, setErrors]          = useState({ pieceType: false, contact: false, idea: false })
   const fileInputRef                 = useRef<HTMLInputElement>(null)
   const successRef                   = useRef<HTMLElement>(null)
+  const filesRef                     = useRef<UploadItem[]>([])
+
+  useEffect(() => { filesRef.current = files }, [files])
+  useEffect(() => () => {
+    filesRef.current.forEach(f => f.preview && URL.revokeObjectURL(f.preview))
+  }, [])
 
   useEffect(() => {
     if (submitted) {
@@ -106,30 +132,70 @@ export function CustomBuildFlow() {
     setData(d => ({ ...d, budget: d.budget === id ? '' : id }))
   }
 
-  const applyFile = (file: File | null) => {
-    if (!file) return
-    if (file.size > MAX_FILE_BYTES) {
-      setFileTooBig(true)
-      return
+  const applyFiles = (incoming: File[]) => {
+    if (!incoming.length) return
+    const room = MAX_FILES - files.length
+    const valid: UploadItem[] = []
+    let tooBig = false
+    for (const file of incoming) {
+      if (file.size > MAX_FILE_BYTES) { tooBig = true; continue }
+      if (valid.length < room) {
+        valid.push({
+          file,
+          preview: file.type.startsWith('image/') ? URL.createObjectURL(file) : null,
+        })
+      }
     }
-    setFileTooBig(false)
-    setData(d => ({ ...d, uploadFile: file, uploadFileName: file.name }))
-    setErrors(e => ({ ...e, idea: false }))
+    setFileTooBig(tooBig)
+    if (valid.length) {
+      setFiles(prev => [...prev, ...valid].slice(0, MAX_FILES))
+      setErrors(e => ({ ...e, idea: false }))
+    }
   }
 
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault()
     setDragOver(false)
-    applyFile(e.dataTransfer.files[0] ?? null)
+    applyFiles(Array.from(e.dataTransfer.files))
   }
 
-  const clearFile = () => {
+  const removeFile = (index: number) => {
     setFileTooBig(false)
-    setData(d => ({ ...d, uploadFile: null, uploadFileName: '' }))
+    setFiles(prev => {
+      const target = prev[index]
+      if (target?.preview) URL.revokeObjectURL(target.preview)
+      return prev.filter((_, i) => i !== index)
+    })
+  }
+
+  const openChooser = () => {
+    if (files.length < MAX_FILES) fileInputRef.current?.click()
   }
 
   const truncateFilename = (name: string, max = 24) =>
     name.length > max ? name.slice(0, max - 1) + '…' : name
+
+  /* Recap parts from current selections */
+  const recapParts = [
+    RECAP_PIECE[data.pieceType],
+    RECAP_METAL[data.metalDirection],
+    RECAP_STONE[data.stoneDirection],
+  ].filter(Boolean) as string[]
+
+  /* WhatsApp link that carries the build selections */
+  const waBuildHref = () => {
+    const extras: string[] = []
+    if (RECAP_METAL[data.metalDirection]) extras.push(data.metalDirection)
+    if (data.stoneDirection === 'diamond')         extras.push('diamonds')
+    else if (data.stoneDirection === 'moissanite') extras.push('moissanite')
+    else if (data.stoneDirection === 'no-stones')  extras.push('no stones')
+    const piece =
+      WA_PIECE_PHRASE[data.pieceType] ??
+      (data.pieceType || extras.length ? 'a custom piece' : '')
+    if (!piece) return WA_CHAT_URL
+    const msg = `Hey 2T — I want to build ${piece}${extras.length ? ', ' + extras.join(', ') : ''}. Here's my idea:`
+    return `https://wa.me/14124524343?text=${encodeURIComponent(msg)}`
+  }
 
   const handleSubmit = async () => {
     setSubmitError(false)
@@ -137,7 +203,7 @@ export function CustomBuildFlow() {
     const next = {
       pieceType: !data.pieceType,
       contact:   !data.name.trim() || !data.phone.trim(),
-      idea:      !data.idea.trim() && !data.uploadFileName,
+      idea:      !data.idea.trim() && files.length === 0,
     }
     setErrors(next)
     if (Object.values(next).some(Boolean)) return
@@ -152,9 +218,7 @@ export function CustomBuildFlow() {
       body.append('budget',    data.budget)
       if (data.metalDirection) body.append('metalDirection', data.metalDirection)
       if (data.stoneDirection) body.append('stoneDirection', data.stoneDirection)
-      if (data.uploadFile) {
-        body.append('uploadFile', data.uploadFile, data.uploadFileName)
-      }
+      files.forEach(f => body.append('uploadFile', f.file, f.file.name))
 
       const res = await fetch('/api/custom-request', { method: 'POST', body })
       if (!res.ok) { setSubmitError(true); return }
@@ -199,6 +263,15 @@ export function CustomBuildFlow() {
           }}>
             Your request is in.
           </h2>
+          {recapParts.length > 0 && (
+            <p style={{
+              fontFamily: 'var(--font-body)', fontSize: '0.75rem', fontWeight: 600,
+              letterSpacing: '0.12em', color: 'var(--color-brand-gold)',
+              marginBottom: '0.875rem',
+            }}>
+              {recapParts.join(' · ')}
+            </p>
+          )}
           <p style={{
             fontSize: '0.9375rem', color: 'var(--color-brand-muted)',
             lineHeight: 1.65, maxWidth: '38ch', margin: '0 auto 2.5rem',
@@ -335,37 +408,53 @@ export function CustomBuildFlow() {
           </div>
 
           <div
-            className={`upload-hero${dragOver ? ' drag-over' : ''}${data.uploadFileName ? ' has-file' : ''}`}
+            className={`upload-hero${dragOver ? ' drag-over' : ''}${files.length >= MAX_FILES ? ' has-file' : ''}`}
             style={{ marginBottom: '0.875rem' }}
             onDragOver={e => { e.preventDefault(); setDragOver(true) }}
             onDragLeave={() => setDragOver(false)}
             onDrop={handleDrop}
-            onClick={() => !data.uploadFileName && fileInputRef.current?.click()}
+            onClick={openChooser}
             role="button"
             tabIndex={0}
-            onKeyDown={e => e.key === 'Enter' && !data.uploadFileName && fileInputRef.current?.click()}
-            aria-label="Upload reference file"
+            onKeyDown={e => e.key === 'Enter' && openChooser()}
+            aria-label={files.length ? 'Add another reference file' : 'Upload reference file'}
           >
             <input
               ref={fileInputRef}
               type="file"
               accept="image/*,.pdf"
+              multiple
               style={{ display: 'none' }}
-              onChange={e => applyFile(e.target.files?.[0] ?? null)}
+              onChange={e => {
+                applyFiles(Array.from(e.target.files ?? []))
+                e.target.value = ''
+              }}
               aria-hidden="true"
             />
-            {data.uploadFileName ? (
-              <div className="upload-hero-file">
-                <span className="upload-hero-icon" style={{ fontSize: '1.1rem' }}>✓</span>
-                <span className="upload-hero-filename">{truncateFilename(data.uploadFileName)}&nbsp;—&nbsp;nice.</span>
-                <button
-                  type="button"
-                  className="upload-hero-clear"
-                  onClick={e => { e.stopPropagation(); clearFile() }}
-                  aria-label="Remove file"
-                >
-                  ✕
-                </button>
+            {files.length > 0 ? (
+              <div className="upload-file-list">
+                {files.map((f, i) => (
+                  <div key={`${f.file.name}-${i}`} className="upload-file-item">
+                    {f.preview ? (
+                      // eslint-disable-next-line @next/next/no-img-element -- blob: preview, next/image not applicable
+                      <img src={f.preview} alt={`Reference preview — ${f.file.name}`} className="upload-thumb" />
+                    ) : (
+                      <span className="upload-file-doc" aria-hidden="true">PDF</span>
+                    )}
+                    <span className="upload-hero-filename">{truncateFilename(f.file.name)}</span>
+                    <button
+                      type="button"
+                      className="upload-hero-clear"
+                      onClick={e => { e.stopPropagation(); removeFile(i) }}
+                      aria-label={`Remove ${f.file.name}`}
+                    >
+                      ✕
+                    </button>
+                  </div>
+                ))}
+                {files.length < MAX_FILES && (
+                  <span className="upload-add-more">+ Add another ({files.length}/{MAX_FILES})</span>
+                )}
               </div>
             ) : (
               <>
@@ -378,7 +467,7 @@ export function CustomBuildFlow() {
                 </span>
                 <span className="upload-hero-label upload-label-touch">TAP TO ADD YOUR PHOTO, LOGO, OR SKETCH</span>
                 <span className="upload-hero-label upload-label-pointer">DROP YOUR PHOTO, LOGO, OR SKETCH</span>
-                <span className="upload-hero-sub">Or describe it below — anything works.</span>
+                <span className="upload-hero-sub">Up to {MAX_FILES} files — or describe it below. Anything works.</span>
               </>
             )}
           </div>
@@ -493,6 +582,13 @@ export function CustomBuildFlow() {
 
         {/* ── SUBMIT ─────────────────────────────────────────────────────── */}
         <div className="cf-group">
+          {recapParts.length > 0 && (
+            <div className="build-recap-strip" aria-live="polite">
+              <span className="build-recap-label">YOUR BUILD</span>
+              <span className="build-recap-value">{recapParts.join(' · ')}</span>
+            </div>
+          )}
+
           <div className="custom-trust-callout" style={{ marginBottom: '1.25rem' }}>
             <span className="trust-diamond" aria-hidden="true">◆</span>
             No deposit. No rush. We quote first.
@@ -514,7 +610,7 @@ export function CustomBuildFlow() {
           </button>
 
           <a
-            href={WA_CHAT_URL}
+            href={waBuildHref()}
             target="_blank" rel="noopener noreferrer"
             style={{
               display: 'flex', alignItems: 'center', justifyContent: 'center',

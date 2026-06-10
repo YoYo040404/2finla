@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
 const MAX_FILE_BYTES = 5 * 1024 * 1024 // 5 MB
+const MAX_FILES      = 3
 
 function htmlEscape(str: string): string {
   return str
@@ -44,16 +45,19 @@ export async function POST(req: NextRequest) {
   const budget          = (formData.get('budget')          as string | null)?.trim() ?? ''
   const metalDirection  = (formData.get('metalDirection')  as string | null)?.trim() ?? ''
   const stoneDirection  = (formData.get('stoneDirection')  as string | null)?.trim() ?? ''
-  const uploadFile      = formData.get('uploadFile') as File | null
+  const uploadFiles = formData
+    .getAll('uploadFile')
+    .filter((f): f is File => f instanceof File && f.size > 0)
+    .slice(0, MAX_FILES)
 
   // Server-side validation (mirrors client rules)
   if (!pieceType)                        return NextResponse.json({ error: 'pieceType required.' }, { status: 400 })
   if (!name || !phone)                   return NextResponse.json({ error: 'name and phone required.' }, { status: 400 })
-  if (!idea && !uploadFile?.size)        return NextResponse.json({ error: 'idea or file required.' }, { status: 400 })
+  if (!idea && !uploadFiles.length)      return NextResponse.json({ error: 'idea or file required.' }, { status: 400 })
 
-  // Build attachment if a file was uploaded
+  // Build attachments for any uploaded files
   const attachments: { filename: string; content: Buffer }[] = []
-  if (uploadFile && uploadFile.size > 0) {
+  for (const uploadFile of uploadFiles) {
     if (uploadFile.size > MAX_FILE_BYTES) {
       return NextResponse.json({ error: 'File exceeds 5 MB limit.' }, { status: 400 })
     }
@@ -91,10 +95,10 @@ export async function POST(req: NextRequest) {
   <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">Metal direction</td>  <td>${metalDirection ? htmlEscape(resolveLabel(METAL_LABELS, metalDirection)) : '—'}</td></tr>
   <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">Stone direction</td>  <td>${stoneDirection ? htmlEscape(resolveLabel(STONE_LABELS, stoneDirection)) : '—'}</td></tr>
   <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">Idea</td>             <td style="white-space:pre-wrap">${idea ? htmlEscape(idea) : '—'}</td></tr>
-  <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">File</td>      <td>${uploadFile?.name ? htmlEscape(uploadFile.name) : 'None'}</td></tr>
+  <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">Files</td>     <td>${uploadFiles.length ? htmlEscape(uploadFiles.map(f => f.name).join(', ')) : 'None'}</td></tr>
   <tr><td style="padding:2px 16px 2px 0;color:#888;white-space:nowrap">Submitted</td> <td>${submittedAt}</td></tr>
 </table>
-${attachments.length ? '<p style="font-family:monospace;font-size:13px;margin-top:16px;color:#555">Reference file attached.</p>' : ''}
+${attachments.length ? `<p style="font-family:monospace;font-size:13px;margin-top:16px;color:#555">${attachments.length} reference file(s) attached.</p>` : ''}
 `
 
   const resend = new Resend(process.env.RESEND_API_KEY)
