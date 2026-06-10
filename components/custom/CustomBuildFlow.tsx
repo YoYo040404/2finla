@@ -73,12 +73,20 @@ const BUDGET_OPTIONS = [
   { id: '5000-plus',       label: '$5,000+' },
 ]
 
+const MAX_FILE_BYTES = 5 * 1024 * 1024
+
+const WA_CHAT_URL =
+  'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat.'
+const WA_FILE_URL =
+  'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20my%20reference%20file%20is%20too%20big%20to%20upload.%20Can%20I%20send%20it%20here%3F'
+
 export function CustomBuildFlow() {
   const [data, setData]              = useState<BuildData>(EMPTY)
   const [submitting, setSubmitting]  = useState(false)
   const [submitted, setSubmitted]    = useState(false)
   const [submitError, setSubmitError] = useState(false)
   const [dragOver, setDragOver]      = useState(false)
+  const [fileTooBig, setFileTooBig]  = useState(false)
   const [errors, setErrors]          = useState({ pieceType: false, contact: false, idea: false })
   const fileInputRef                 = useRef<HTMLInputElement>(null)
   const successRef                   = useRef<HTMLElement>(null)
@@ -100,7 +108,11 @@ export function CustomBuildFlow() {
 
   const applyFile = (file: File | null) => {
     if (!file) return
-    if (file.size > 5 * 1024 * 1024) return
+    if (file.size > MAX_FILE_BYTES) {
+      setFileTooBig(true)
+      return
+    }
+    setFileTooBig(false)
     setData(d => ({ ...d, uploadFile: file, uploadFileName: file.name }))
     setErrors(e => ({ ...e, idea: false }))
   }
@@ -111,8 +123,10 @@ export function CustomBuildFlow() {
     applyFile(e.dataTransfer.files[0] ?? null)
   }
 
-  const clearFile = () =>
+  const clearFile = () => {
+    setFileTooBig(false)
     setData(d => ({ ...d, uploadFile: null, uploadFileName: '' }))
+  }
 
   const truncateFilename = (name: string, max = 24) =>
     name.length > max ? name.slice(0, max - 1) + '…' : name
@@ -211,7 +225,7 @@ export function CustomBuildFlow() {
     <section id="custom-form" className="custom-funnel-section">
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
 
-        {/* ── Header + process strip ─────────────────────────────────────── */}
+        {/* ── Header + quiet process line ────────────────────────────────── */}
         <div style={{ marginBottom: 'clamp(2rem, 5vw, 3rem)' }}>
           <p className="section-eyebrow" style={{ marginBottom: '0.5rem' }}>
             START YOUR BUILD
@@ -219,173 +233,106 @@ export function CustomBuildFlow() {
           <p style={{
             fontFamily: 'var(--font-body)', fontSize: '0.9375rem',
             color: 'var(--color-brand-silver)', lineHeight: 1.6,
-            maxWidth: '48ch', marginBottom: 'clamp(1.25rem, 3vw, 1.75rem)',
+            maxWidth: '48ch', marginBottom: '0.875rem',
           }}>
             Send the idea first. We quote before the build.
           </p>
-
-          <div className="custom-proof-strip">
-            <div className="custom-proof-step">
-              <span className="custom-proof-num" aria-hidden="true">01</span>
-              <div>
-                <p className="custom-proof-label">SEND THE IDEA</p>
-                <p className="custom-proof-body">Logo, sketch, photo, or rough idea.</p>
-              </div>
-            </div>
-            <div className="custom-proof-divider" aria-hidden="true" />
-            <div className="custom-proof-step">
-              <span className="custom-proof-num" aria-hidden="true">02</span>
-              <div>
-                <p className="custom-proof-label">WE REVIEW THE DIRECTION</p>
-                <p className="custom-proof-body">Piece type, material, and visual direction.</p>
-              </div>
-            </div>
-            <div className="custom-proof-divider" aria-hidden="true" />
-            <div className="custom-proof-step">
-              <span className="custom-proof-num" aria-hidden="true">03</span>
-              <div>
-                <p className="custom-proof-label">WE QUOTE FIRST</p>
-                <p className="custom-proof-body">We confirm the direction with you before production.</p>
-              </div>
-            </div>
-          </div>
+          <p style={{
+            fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 600,
+            letterSpacing: '0.1em', textTransform: 'uppercase',
+            color: 'var(--color-brand-muted)', lineHeight: 1.7,
+          }}>
+            Send the idea <span aria-hidden="true" style={{ color: 'var(--color-brand-gold)' }}>→</span> We
+            review the direction <span aria-hidden="true" style={{ color: 'var(--color-brand-gold)' }}>→</span> We
+            quote first
+          </p>
         </div>
 
-        {/* ── THE BUILD ───────────────────────────────────────────────────── */}
-        <div className="cf-group">
-          <p className="cf-group-label">THE BUILD</p>
-
-          {/* 01 — PICK THE PIECE */}
-          <div className="build-decision-block">
-            <div className="build-decision-header">
-              <span className="build-decision-num">01</span>
-              <span className="build-decision-text">PICK THE PIECE</span>
-            </div>
-            <div className="piece-select-grid">
-              {PIECES.map(p => (
-                <button
-                  key={p.id}
-                  type="button"
-                  className={`piece-chip${data.pieceType === p.id ? ' active' : ''}`}
-                  onClick={() => selectPiece(p.id)}
-                  aria-pressed={data.pieceType === p.id}
-                >
-                  {p.label}
-                </button>
-              ))}
-            </div>
-            {errors.pieceType && (
-              <p className="cf-error" style={{ marginTop: '0.625rem', marginBottom: 0 }}>Select a piece type to continue.</p>
-            )}
+        {/* ── 01 — THE PIECE ─────────────────────────────────────────────── */}
+        <div className="build-decision-block">
+          <div className="build-decision-header">
+            <span className="build-decision-num">01</span>
+            <span className="build-decision-text">THE PIECE</span>
           </div>
-
-          {/* 02 — PICK THE METAL */}
-          <div className="build-decision-block">
-            <div className="build-decision-header">
-              <span className="build-decision-num">02</span>
-              <span className="build-decision-text">PICK THE METAL</span>
-            </div>
-            <div className="metal-chip-row">
-              {METAL_OPTIONS.map(({ value, label }) => {
-                const sel = data.metalDirection === value
-                return (
-                  <button
-                    key={value}
-                    type="button"
-                    className="material-chip"
-                    style={sel ? metalActiveStyle(value) : undefined}
-                    onClick={() => setData(d => ({
-                      ...d,
-                      metalDirection: (d.metalDirection === value ? '' : value) as BuildData['metalDirection'],
-                    }))}
-                    aria-pressed={sel}
-                  >
-                    {label}
-                  </button>
-                )
-              })}
-            </div>
+          <div className="piece-select-grid">
+            {PIECES.map(p => (
+              <button
+                key={p.id}
+                type="button"
+                className={`piece-chip${data.pieceType === p.id ? ' active' : ''}`}
+                onClick={() => selectPiece(p.id)}
+                aria-pressed={data.pieceType === p.id}
+              >
+                {p.label}
+              </button>
+            ))}
           </div>
-
-          {/* 03 — PICK THE STONE */}
-          <div className="build-decision-block">
-            <div className="build-decision-header">
-              <span className="build-decision-num">03</span>
-              <span className="build-decision-text">PICK THE STONE</span>
-            </div>
-            <div className="stone-chip-grid">
-              {STONE_OPTIONS.map(({ value, label }) => {
-                const sel = data.stoneDirection === value
-                return (
-                  <button
-                    key={value}
-                    type="button"
-                    className="material-chip"
-                    style={sel ? stoneActiveStyle(value) : undefined}
-                    onClick={() => setData(d => ({
-                      ...d,
-                      stoneDirection: (d.stoneDirection === value ? '' : value) as BuildData['stoneDirection'],
-                    }))}
-                    aria-pressed={sel}
-                  >
-                    {label}
-                  </button>
-                )
-              })}
-            </div>
-            <p className="cf-hint" style={{ marginTop: '0.875rem' }}>
-              Gold or silver. Diamonds or moissanite. Details confirmed per piece.
-            </p>
-          </div>
-        </div>
-
-        {/* ── CONTACT ─────────────────────────────────────────────────────── */}
-        <div className="cf-group">
-          <p className="cf-group-label">CONTACT</p>
-
-          <div className="build-contact-grid" style={{ marginBottom: '1.25rem' }}>
-            <div>
-              <label htmlFor="cf-name" className="cf-field-label">YOUR NAME</label>
-              <input
-                id="cf-name"
-                type="text"
-                className="form-input"
-                placeholder="Your name"
-                autoComplete="name"
-                value={data.name}
-                onChange={e => {
-                  setData(d => ({ ...d, name: e.target.value }))
-                  setErrors(er => ({ ...er, contact: false }))
-                }}
-              />
-            </div>
-            <div>
-              <label htmlFor="cf-phone" className="cf-field-label">WHATSAPP OR PHONE</label>
-              <input
-                id="cf-phone"
-                type="tel"
-                className="form-input"
-                placeholder="Your number"
-                autoComplete="tel"
-                value={data.phone}
-                onChange={e => {
-                  setData(d => ({ ...d, phone: e.target.value }))
-                  setErrors(er => ({ ...er, contact: false }))
-                }}
-              />
-              <p className="field-micro">Best number for this build.</p>
-            </div>
-          </div>
-          {errors.contact && (
-            <p className="cf-error" style={{ marginTop: '-0.5rem', marginBottom: '1rem' }}>
-              Name and phone are required.
-            </p>
+          {errors.pieceType && (
+            <p className="cf-error" style={{ marginTop: '0.625rem', marginBottom: 0 }}>Select a piece type to continue.</p>
           )}
         </div>
 
-        {/* ── THE IDEA ────────────────────────────────────────────────────── */}
-        <div className="cf-group">
-          <p className="cf-group-label">THE IDEA</p>
+        {/* ── 02 — THE SHINE ─────────────────────────────────────────────── */}
+        <div className="build-decision-block">
+          <div className="build-decision-header">
+            <span className="build-decision-num">02</span>
+            <span className="build-decision-text">THE SHINE</span>
+          </div>
+
+          <p className="cf-field-label">METAL</p>
+          <div className="metal-chip-row" style={{ marginBottom: '1rem' }}>
+            {METAL_OPTIONS.map(({ value, label }) => {
+              const sel = data.metalDirection === value
+              return (
+                <button
+                  key={value}
+                  type="button"
+                  className="material-chip"
+                  style={sel ? metalActiveStyle(value) : undefined}
+                  onClick={() => setData(d => ({
+                    ...d,
+                    metalDirection: (d.metalDirection === value ? '' : value) as BuildData['metalDirection'],
+                  }))}
+                  aria-pressed={sel}
+                >
+                  {label}
+                </button>
+              )
+            })}
+          </div>
+
+          <p className="cf-field-label">STONE</p>
+          <div className="stone-chip-grid">
+            {STONE_OPTIONS.map(({ value, label }) => {
+              const sel = data.stoneDirection === value
+              return (
+                <button
+                  key={value}
+                  type="button"
+                  className="material-chip"
+                  style={sel ? stoneActiveStyle(value) : undefined}
+                  onClick={() => setData(d => ({
+                    ...d,
+                    stoneDirection: (d.stoneDirection === value ? '' : value) as BuildData['stoneDirection'],
+                  }))}
+                  aria-pressed={sel}
+                >
+                  {label}
+                </button>
+              )
+            })}
+          </div>
+          <p className="cf-hint" style={{ marginTop: '0.875rem' }}>
+            Gold or silver. Diamonds or moissanite. Details confirmed per piece.
+          </p>
+        </div>
+
+        {/* ── 03 — THE IDEA ──────────────────────────────────────────────── */}
+        <div className="build-decision-block">
+          <div className="build-decision-header">
+            <span className="build-decision-num">03</span>
+            <span className="build-decision-text">THE IDEA</span>
+          </div>
 
           <div
             className={`upload-hero${dragOver ? ' drag-over' : ''}${data.uploadFileName ? ' has-file' : ''}`}
@@ -429,11 +376,24 @@ export function CustomBuildFlow() {
                     <line x1="12" y1="3" x2="12" y2="15" />
                   </svg>
                 </span>
-                <span className="upload-hero-label">DROP YOUR PHOTO, LOGO, OR SKETCH</span>
+                <span className="upload-hero-label upload-label-touch">TAP TO ADD YOUR PHOTO, LOGO, OR SKETCH</span>
+                <span className="upload-hero-label upload-label-pointer">DROP YOUR PHOTO, LOGO, OR SKETCH</span>
                 <span className="upload-hero-sub">Or describe it below — anything works.</span>
               </>
             )}
           </div>
+          {fileTooBig && (
+            <p className="cf-error" style={{ marginBottom: '0.875rem' }}>
+              That file&apos;s over 5MB. Try a smaller one — or{' '}
+              <a
+                href={WA_FILE_URL}
+                target="_blank" rel="noopener noreferrer"
+                style={{ color: 'inherit', textDecoration: 'underline' }}
+              >
+                send it to us on WhatsApp →
+              </a>
+            </p>
+          )}
 
           <textarea
             id="cf-idea"
@@ -461,9 +421,53 @@ export function CustomBuildFlow() {
           )}
         </div>
 
-        {/* ── BUDGET + SUBMIT ──────────────────────────────────────────────── */}
-        <div className="cf-group">
-          <div style={{ marginBottom: '1.75rem' }}>
+        {/* ── 04 — YOU ───────────────────────────────────────────────────── */}
+        <div className="build-decision-block">
+          <div className="build-decision-header">
+            <span className="build-decision-num">04</span>
+            <span className="build-decision-text">YOU</span>
+          </div>
+
+          <div className="build-contact-grid" style={{ marginBottom: '1.25rem' }}>
+            <div>
+              <label htmlFor="cf-name" className="cf-field-label">YOUR NAME</label>
+              <input
+                id="cf-name"
+                type="text"
+                className="form-input"
+                placeholder="Your name"
+                autoComplete="name"
+                value={data.name}
+                onChange={e => {
+                  setData(d => ({ ...d, name: e.target.value }))
+                  setErrors(er => ({ ...er, contact: false }))
+                }}
+              />
+            </div>
+            <div>
+              <label htmlFor="cf-phone" className="cf-field-label">WHATSAPP OR PHONE</label>
+              <input
+                id="cf-phone"
+                type="tel"
+                className="form-input"
+                placeholder="Your number"
+                autoComplete="tel"
+                value={data.phone}
+                onChange={e => {
+                  setData(d => ({ ...d, phone: e.target.value }))
+                  setErrors(er => ({ ...er, contact: false }))
+                }}
+              />
+              <p className="field-micro">Best number for this build.</p>
+            </div>
+          </div>
+          {errors.contact && (
+            <p className="cf-error" style={{ marginTop: '-0.5rem', marginBottom: '1rem' }}>
+              Name and phone are required.
+            </p>
+          )}
+
+          <div>
             <p className="cf-field-label" style={{ marginBottom: '0.5rem' }}>
               BUDGET{' '}
               <span style={{ fontWeight: 400, opacity: 0.5, textTransform: 'lowercase', letterSpacing: 0, fontSize: '0.65rem' }}>
@@ -485,10 +489,13 @@ export function CustomBuildFlow() {
             </div>
             <p className="cf-hint">Budget helps guide the conversation. Not a final quote.</p>
           </div>
+        </div>
 
+        {/* ── SUBMIT ─────────────────────────────────────────────────────── */}
+        <div className="cf-group">
           <div className="custom-trust-callout" style={{ marginBottom: '1.25rem' }}>
             <span className="trust-diamond" aria-hidden="true">◆</span>
-            Send the idea first. No deposit to start. We quote before the build.
+            No deposit. No rush. We quote first.
           </div>
 
           <button
@@ -507,7 +514,7 @@ export function CustomBuildFlow() {
           </button>
 
           <a
-            href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
+            href={WA_CHAT_URL}
             target="_blank" rel="noopener noreferrer"
             style={{
               display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -531,7 +538,7 @@ export function CustomBuildFlow() {
             }}>
               Something went wrong.{' '}
               <a
-                href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat."
+                href={WA_CHAT_URL}
                 target="_blank" rel="noopener noreferrer"
                 style={{ color: 'inherit', textDecoration: 'underline' }}
               >

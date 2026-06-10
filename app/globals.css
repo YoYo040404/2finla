@@ -1712,6 +1712,14 @@
   color:          var(--color-brand-white);
 }
 
+/* Upload label — touch wording on mobile, drag wording on desktop */
+.upload-label-pointer { display: none; }
+.upload-label-touch   { display: block; }
+@media (min-width: 768px) {
+  .upload-label-pointer { display: block; }
+  .upload-label-touch   { display: none; }
+}
+
 .upload-hero-sub {
   font-family:    var(--font-body);
   font-size:      0.67rem;
