@@ -125,14 +125,16 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 - **Custom P2 build recap + dynamic WhatsApp + multi-upload** (commit `0633c9e`) — completed, committed, pushed, and QA clean
 - **Manual mobile QA** — confirmed clean after Custom P2
 - **Phase B2-safe homepage media pipeline** (commit `992a4ca`, 2026-06-10) - completed, committed, pushed, and live checked by Yaniv. Media paths centralized in `data/homeMedia.ts`; safe homepage raw image usage migrated to `next/image`; hero video unchanged with poster/reduced-motion fallback; ShineDirectionBand micro text improved; ShineRail links/pause/hidden duplicates added; no asset edits, copy changes, claim changes, or Shopify work.
+- **Pass 5C Copy/CRO** (commit `5da57da`, 2026-06-18) — implemented, QA passed, committed, and pushed.
+- **Interface Design system** (commit `553834b`, 2026-06-18) — `.interface-design/system.md` created. Governing file for all future UI/visual work. Type stack, four-level gold token scale, surface elevation tokens, depth strategy, spacing, easing, motion system, CTA variants, card rules, eyebrow pattern, shine/atmosphere, BANG. signature, anti-generic checklist.
 
 ### WIP / Approval Pending ⚠️
 
-- None currently. Custom P2 is committed, pushed, and QA clean.
+- None currently. Pass 5C and interface design system are committed, pushed, and closed.
 
 ### Not Yet 🚫
 
-- **Pass 5C Copy/CRO plan-only** - next planned work; do not implement yet
+- **Visual/UI pass — plan and approve first** — candidate work in `.interface-design/system.md` audit: P0 (eyebrow standardization, gold tokens, card padding, MobileCtaBar audit); P1 (category cross-sell rail, About page proof-ledger, grain-field extension, TileGlare expansion); P2 (surface token sitewide, Watches vitrine, category card stagger). No implementation until approved.
 - **Docs / claim-safety maintenance** — as needed
 - **Final QA after each implementation** — required
 - **ShineRail real images** — wire RINGS/BRACELETS/EARRINGS cards when real product photos arrive
@@ -149,12 +151,13 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 
 ### Next Milestone 🎯
 
-- **Pass 5C Copy/CRO plan-only** - do not implement yet
-- Must include hard street-luxury / hip-hop jewelry buyer language, VOC-backed copy, Moses-style energy as reference only, and claim-safety review
-- Do not encode Moses as a source to copy; tone/energy benchmark only
+- **Visual/UI pass — plan and approve** — use `.interface-design/system.md` as the governing system document before any implementation
+- P0 candidates: eyebrow standardization sitewide, four gold tokens in `globals.css`, card padding to `1.25rem`/`1.5rem`, MobileCtaBar route audit
+- P1 candidates: category cross-sell rail, About page proof-ledger rebuild, `.grain-field` extension, TileGlare on category cards
+- Motion add-ons (top 3): Hero Video Vignette, BANG. Sparkle Burst on Entry, Card Border Edge Glint
 - **Docs / claim-safety maintenance** as needed
 - **Final QA after each implementation**
-- **Keep asset shot list as production request direction** - cinematic macros, real-store proof, social-first pacing, shine, movement, Pittsburgh street-luxury, and custom process assets
+- **Keep asset shot list as production request direction** — cinematic macros, real-store proof, social-first pacing, shine, movement, Pittsburgh street-luxury, and custom process assets
 
 ---
 
@@ -449,13 +452,12 @@ Only if user explicitly approves:
 45. ✅ **Custom P2 build recap + dynamic WhatsApp + multi-upload** (commit `0633c9e`) — completed, pushed, QA clean
 46. ✅ **Manual mobile QA** — confirmed clean
 47. ✅ **Phase B2-safe homepage media pipeline** (commit `992a4ca`, 2026-06-10) — completed, pushed, and live checked by Yaniv; `data/homeMedia.ts`, safe `next/image` migration, hero poster/reduced-motion fallback, SDB readability, ShineRail links/pause/hidden duplicates; no asset edits or copy/claim changes.
-48. 🎯 **Pass 5C Copy/CRO plan-only** ← NEXT — do not implement yet
-    - Must include hard street-luxury / hip-hop jewelry buyer language, VOC-backed copy, Moses-style energy as reference only, and claim-safety review
-    - Do not encode Moses as a source to copy; tone/energy benchmark only
-    - Use `docs/2t-pass5b-competitor-backed-copy-research.md` as research input; plan first, no implementation
-49. 🎯 **Docs / claim-safety maintenance** — as needed
-50. 🎯 **Final QA after each implementation**
-51. 🎯 **Keep asset shot list as production request direction**
+48. ✅ **Pass 5C Copy/CRO** (commit `5da57da`, 2026-06-18) — implemented, QA passed, committed, and pushed.
+49. ✅ **Interface Design system** (commit `553834b`, 2026-06-18) — `.interface-design/system.md` created; governing file for all future UI/visual work.
+50. 🎯 **Visual/UI pass — plan first, then approve** ← NEXT — use `.interface-design/system.md` as the governing system; candidate P0/P1/P2 work defined in audit plan; do not implement until approved
+51. 🎯 **Docs / claim-safety maintenance** — as needed
+52. 🎯 **Final QA after each implementation**
+53. 🎯 **Keep asset shot list as production request direction**
 52. ⏳ **SocialTeaser Phase 1** — manual curated social cards when 2T provides still frames
 53. ⏳ **ShineRail real images** — wire RINGS/BRACELETS/EARRINGS when real product photos arrive
 54. ⏳ **Production Resend sender domain** — configure `leads@2tjewelers.com` before real traffic

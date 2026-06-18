@@ -595,13 +595,23 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 - **Future Phase 3:** TikTok Display API (Developer App + Production App Review + OAuth from @2tjewelers account owner). Most complex — pursue only if auto-feed is required.
 - **Assets needed from 2T:** 2–3 still frames from real @2tjewelers TikTok/Instagram posts + direct post URLs + 1 real caption snippet per post.
 
+**Pass 5C Copy/CRO — completed (commit `5da57da`, 2026-06-18):** Implemented, QA passed, committed, and pushed.
+
+**Interface Design system — added (commit `553834b`, 2026-06-18):** `.interface-design/system.md` created. Governing file for all future UI/visual work. Contains: type stack, four-level gold token scale (`--gold-full/mid/faint/trace`), three-level surface elevation (`--surface-base/lift/deep`), depth strategy (borders-only, no shadows), spacing system, single easing curve, motion system (ScrollRevealController / TileGlareController / ProofCounterTrigger / stagger classes), three CTA variants, card rules, eyebrow pattern, shine/atmosphere rules, BANG. signature placement, section structure rules, and 12-point anti-generic checklist.
+
+**Current active phase:** Visual/UI pass planning. No implementation yet. Candidate work is defined in the interface-design audit (`.claude/plans/use-the-interface-design-skill-buzzing-fiddle.md`):
+- P0: eyebrow standardization sitewide, card padding consolidation to `1.25rem`/`1.5rem`, four gold tokens in `globals.css`, MobileCtaBar route audit
+- P1: category cross-sell rail (Grillz/Watches/Chains/Pendants), About page proof-ledger rebuild, `.grain-field` extension to category CTAs, TileGlare expansion to category cards
+- P2: semantic surface tokens sitewide, Watches vitrine left-canvas, category card stagger reveals
+- Motion add-ons (top candidates): Hero Video Vignette, BANG. Sparkle Burst on Entry, Card Border Edge Glint
+
 **Next queued work:**
-1. **Pass 5C Copy/CRO plan-only** — plan only; do not implement yet. Must use hard street-luxury / hip-hop jewelry buyer language, VOC-backed copy, Moses-style energy as reference only, and claim-safety review.
+1. **Visual/UI pass — plan and approve** before any implementation. Use `.interface-design/system.md` as the governing system document.
 2. **Docs / claim-safety maintenance** — update only as needed when implementation changes copy, claims, or status.
-3. **Final QA after each implementation** — browser QA, mobile 390px, no horizontal scroll, console, and claim-safety scan when browser tools are available.
+3. **Final QA after each implementation** — browser QA, mobile 390px, no horizontal scroll, console, and claim-safety scan.
 4. **Keep asset shot list as the production request direction** — cinematic macros, product closeups, store proof, social stills, and custom process assets.
 
-**B2-safe is closed. Do not implement Pass 5C yet. Do not encode Moses as a source to copy; treat it as a tone/energy benchmark only.**
+**B2-safe is closed. Pass 5C is closed. Do not encode Moses as a source to copy; treat it as a tone/energy benchmark only.**
 
 **Do not reopen homepage redesign** unless a clear blocker is found.
 
@@ -613,6 +623,9 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 | Commit | Description |
 |---|---|
+| `553834b` | docs: add interface design system — `.interface-design/system.md` created with extracted 2T visual system: type stack, four-level gold token scale, surface elevation tokens, depth strategy, spacing, easing, motion system, CTA variants, card rules, eyebrow pattern, shine/atmosphere, BANG. signature, section structure rules, anti-generic checklist |
+| `5da57da` | feat: implement pass 5c copy cro updates — Pass 5C Copy/CRO implemented and QA passed |
+| `46934ff` | docs: add approved pass 5c copy cro plan |
 | `992a4ca` | feat: prepare homepage media pipeline - Phase B2-safe complete; centralized homepage media paths in `data/homeMedia.ts`, migrated safe homepage images to `next/image`, retained hero video/poster with reduced-motion poster fallback, improved ShineDirectionBand micro text, made first 8 ShineRail cards clickable with hidden duplicate rail cards and hover/focus pause; no asset edits or copy/claim changes |
 | `0633c9e` | feat: add custom build recap and dynamic whatsapp flow — Custom P2 build recap, dynamic WhatsApp prefill, multi-upload up to 3 files, thumbnails, oversized-file WhatsApp fallback; QA clean |
 | `38d814e` | Custom P0/P1 mobile lead-flow simplification — completed, pushed, live QA clean |

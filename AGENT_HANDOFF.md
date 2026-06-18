@@ -95,10 +95,12 @@ Do not publish as blanket sitewide claims without verification. Do not invent th
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
 Old Shopify folder is archive only. Do not touch it.
 
-**Latest committed state (as of 2026-06-10 - latest: `992a4ca`):**
+**Latest committed state (as of 2026-06-18 - latest: `553834b`):**
 
 | Commit | Description |
 |---|---|
+| `553834b` | docs: add interface design system — `.interface-design/system.md` created; extracted 2T visual system: type stack, four-level gold token scale, surface elevation tokens, depth strategy, spacing, easing, motion system, CTA variants, card rules, eyebrow pattern, shine/atmosphere, BANG. signature, section structure rules, anti-generic checklist |
+| `5da57da` | feat: implement pass 5c copy cro updates — Pass 5C Copy/CRO implemented, QA passed |
 | `992a4ca` | feat: prepare homepage media pipeline - Phase B2-safe homepage asset-ready media pipeline; `data/homeMedia.ts`; safe `next/image` migration; hero video unchanged with poster/reduced-motion fallback; ShineDirectionBand readability; ShineRail links/hidden duplicates/hover-focus pause; no asset edits or copy/claim changes |
 | `0633c9e` | feat: add custom build recap and dynamic whatsapp flow — Custom P2 recap strip, dynamic WhatsApp prefill, multi-upload up to 3 files, thumbnails, oversized-file WhatsApp fallback; QA clean |
 | `38d814e` | Custom P0/P1 mobile lead-flow simplification — completed, pushed, live QA clean |
@@ -154,7 +156,7 @@ Old Shopify folder is archive only. Do not touch it.
 
 Moses The Jeweler is energy/reference only, not a source to copy. Translate the inspiration into 2T-owned Pittsburgh street-luxury: cinematic product macros, black glass, velvet, hard light, chrome/ice highlights, gold accents, real-store energy, social-first pacing, handoff moments, and real Pittsburgh proof.
 
-**Current focus:** Phase B2-safe (`992a4ca`) is completed, committed, pushed, and live checked by Yaniv. B2-safe is closed. Next planned work is Pass 5C Copy/CRO plan-only; do not implement Pass 5C yet. Pass 5C planning must use hard street-luxury / hip-hop jewelry buyer language, VOC-backed copy, Moses-style energy as reference only, and claim-safety review. Moses is a tone/energy benchmark only, not a source to copy.
+**Current focus:** Pass 5C Copy/CRO is completed (`5da57da`), QA passed, committed, and pushed. Interface Design system added at `.interface-design/system.md` (`553834b`) — this is now the governing file for all future UI/visual work. Current active phase is visual/UI pass planning only. No implementation has started. Candidate work: P0 eyebrow standardization + gold token consolidation + card padding system + MobileCtaBar route audit; P1 category cross-sell rail + About page proof-ledger rebuild; P2 surface token system. Top motion add-on candidates: Hero Video Vignette, BANG. Sparkle Burst on Entry, Card Border Edge Glint. Do not implement any visual pass without explicit approval.
 
 ---
 

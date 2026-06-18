@@ -52,7 +52,7 @@ For execution tasks:
 
 ## Current Active Task
 
-**Latest committed state: Phase B2-safe is completed, committed, pushed, and live checked by Yaniv (`992a4ca - feat: prepare homepage media pipeline`). Custom P2 (`0633c9e`), Phase A Motion & Light Polish (`8d43222`), Custom P0/P1 (`38d814e`), and Custom P2 are completed and QA clean. Midnight Icebox homepage remains live on https://2finla.vercel.app.**
+**Latest committed state: Pass 5C Copy/CRO is implemented, QA passed, committed, and pushed (`5da57da - feat: implement pass 5c copy cro updates`). Interface Design system file added at `.interface-design/system.md` (`553834b - docs: add interface design system`). Phase B2-safe (`992a4ca`) and all prior passes remain QA clean. Midnight Icebox homepage live on https://2finla.vercel.app.**
 
 **Social feed feasibility conclusion (2026-06-03):**
 - Phase 1 = manual curated cards in SocialTeaser left canvas (build when 2T provides real still frames + post URLs)
@@ -176,7 +176,11 @@ CRO pass and selector grouping committed (commits `60c7d06`, `2303850`). P0/P1 m
 - QA screenshots (qa-*.jpeg) in project root — gitignored, safe to leave
 - Known untracked files remain intentionally untouched unless the user explicitly approves handling them
 
-**Next queued work:** Pass 5C Copy/CRO plan-only. Do not implement Pass 5C yet. The plan must use hard street-luxury / hip-hop jewelry buyer language, VOC-backed copy, Moses-style energy as reference only, and claim-safety review. Do not encode Moses as a source to copy; it is a tone/energy benchmark only.
+**Pass 5C Copy/CRO — completed (commit `5da57da`):** Implemented, QA passed, committed, and pushed.
+
+**Interface Design system — added (commit `553834b`):** `.interface-design/system.md` created. Contains the extracted 2T visual system: type stack, color tokens (surface elevation + four-level gold scale), depth strategy, spacing, easing, motion system, CTA variants, card rules, eyebrow pattern, shine/atmosphere rules, BANG. signature, section structure rules, and anti-generic checklist. Use this file before any future UI/visual work.
+
+**Next queued work:** Visual/UI pass planning using `.interface-design/system.md` as the governing system document. No implementation yet. Candidate work defined in the interface-design audit plan (P0: eyebrow standardization, gold token consolidation, card padding system, MobileCtaBar route audit; P1: category cross-sell rail, About page proof-ledger rebuild, grain-field extension, TileGlare expansion; P2: surface token system, Watches vitrine, category card stagger). Motion add-on ideas documented in audit (Hero Video Vignette, BANG. Sparkle Burst, Card Border Edge Glint as top P0 candidates).
 No random CSS/layout cleanup unless QA finds a real issue.
 
 Do not commit or push new category pages without visual QA and user approval.  
