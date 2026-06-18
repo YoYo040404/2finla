@@ -17,6 +17,12 @@
   --color-brand-gold-dim:   #8C6F23;
   --color-ice-blue:         #D8EBFF;
 
+  /* Gold scale — four semantic alpha levels (system.md) */
+  --gold-full:   rgba(201, 168, 76, 1.0);
+  --gold-mid:    rgba(201, 168, 76, 0.55);
+  --gold-faint:  rgba(201, 168, 76, 0.28);
+  --gold-trace:  rgba(201, 168, 76, 0.15);
+
   /* Typography — Midnight Icebox */
   --font-display:        var(--font-anton), 'Anton', sans-serif;
   --font-display-accent: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
@@ -848,7 +854,12 @@
   font-size: 0.4rem;
   color: var(--color-brand-gold-dim);
   flex-shrink: 0;
+  animation: pulse-glow 3.5s ease-in-out infinite;
 }
+.proof-marquee-sep:nth-child(4n + 2) { animation-delay: -1.2s; }
+.proof-marquee-sep:nth-child(4n + 3) { animation-delay: -2.4s; }
+.proof-marquee-sep:nth-child(4n + 4) { animation-delay: -3.0s; }
+.proof-marquee:hover .proof-marquee-sep { animation-play-state: paused; }
 .proof-marquee-bang {
   font-family: var(--font-display);
   font-size: 1.3rem;
@@ -5245,4 +5256,64 @@ div:nth-child(3n + 3) > .lit-diagram::after { animation-delay: 5s; }
   .collections-case-card:hover::after {
     animation: none;
   }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Midnight Flash — First Visual/UI Upgrade Pass · 2026-06-18
+   CSS-only. No JSX edits. No copy changes. globals.css only.
+   Items A (gold tokens) and C (ProofMarquee sep pulse) are inline above.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── B. Hero vignette strengthen ────────────────────────────────────────────
+   Base .grain-field::after opacity is 0.45 (grain texture + radial dark-edge).
+   Hero override raises it to 0.62 — deeper "lit case at night" spotlight feel.
+   Both .homepage-hero pseudo slots are taken (::before = shine sweep,
+   ::after via .grain-field), so the compound selector overrides opacity only. */
+
+.homepage-hero.grain-field::after {
+  opacity: 0.62;
+}
+
+/* ── D. Card border edge glint ──────────────────────────────────────────────
+   Gold light sweep on hover — like a hand passing over a jewelry case glass.
+   Uses transform (not left) to keep on compositor thread.
+   Fires only on hover-capable devices (@media hover:hover).
+   prefers-reduced-motion: hides ::before entirely. */
+
+.style-card-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.style-card-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(201, 168, 76, 0.16) 50%,
+    transparent 100%
+  );
+  transform: translateX(-220%) skewX(-12deg);
+  pointer-events: none;
+  z-index: 3;
+}
+
+@media (hover: hover) {
+  .style-card-hover:hover::before {
+    animation: card-edge-glint 0.55s var(--ease-smooth) forwards;
+  }
+}
+
+@keyframes card-edge-glint {
+  from { transform: translateX(-220%) skewX(-12deg); }
+  to   { transform: translateX(340%) skewX(-12deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .style-card-hover::before { display: none; }
 }
