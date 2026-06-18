@@ -94,7 +94,7 @@ const CHAIN_STYLES: ChainStyle[] = [
     waMessage:   "Hey 2T — I'm looking at Figaro chains. What widths and metal directions do you have?",
   },
   {
-    title:       'STONE-SET LINK',
+    title:       'ICED-OUT CHAIN',
     description: 'Stone-set links from clasp to clasp. Built to hit the light.',
     specs:       ['Stone details confirmed per piece', 'Material confirmed per piece', "Ask what's available"],
     imageSrc:    null,
@@ -286,7 +286,7 @@ function ChainIllustration({ index }: { index: number }) {
 
 export const metadata: Metadata = {
   title:       '2T Jewelers | Chains — Cuban, Rope & Tennis — Pittsburgh, PA',
-  description: "Cuban, rope, tennis, Franco, Figaro, and stone-set chains in Pittsburgh, PA. Browse styles and ask 2T what's available. Pittsburgh jeweler. 25 years.",
+  description: "Cuban, rope, tennis, Franco, and iced-out chains in Pittsburgh, PA. Browse styles and ask 2T what's available. Pittsburgh jeweler. 25 years.",
 }
 
 // ── Page ──────────────────────────────────────────────────────────────────────
@@ -343,7 +343,7 @@ export default function ChainsPage() {
               maxWidth:     '42ch',
             }}
           >
-            Cuban, rope, or tennis. Ask what&rsquo;s available and what pairs with your pendant.
+            Cuban, rope, or tennis. The chain carries the piece — ask what&rsquo;s in.
           </p>
 
           <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap' }}>
@@ -606,7 +606,7 @@ export default function ChainsPage() {
               marginBottom:  '1.25rem',
             }}
           >
-            Details confirmed per piece. Ask what&rsquo;s available before you buy.
+            Details confirmed per piece.
           </p>
           <a
             href={WA_CHAINS}
@@ -614,7 +614,7 @@ export default function ChainsPage() {
             rel="noopener noreferrer"
             className="btn-primary"
           >
-            ASK ABOUT CHAINS →
+            TEXT 2T ABOUT CHAINS →
           </a>
         </div>
       </section>

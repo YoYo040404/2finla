@@ -25,7 +25,7 @@ const GRILLZ_STYLES: GrillzStyle[] = [
   {
     label:       'TOP SET',
     eyebrow:     'UPPER ARCH',
-    description: 'Gold or iced. Ask what\'s available.',
+    description: 'The classic flash. Gold, silver, or iced across the top.',
     specs:       ['Top 4, 6, or 8 teeth', 'Gold, silver, or stone direction'],
     imageSrc:    null,
     imageAlt:    'Top set grillz — upper arch gold or iced',
@@ -33,7 +33,7 @@ const GRILLZ_STYLES: GrillzStyle[] = [
   {
     label:       'BOTTOM SET',
     eyebrow:     'LOWER ARCH',
-    description: 'Matching direction. Confirm details by text.',
+    description: 'Low shine that shows when you talk. Match the top or run it solo.',
     specs:       ['Bottom 4, 6, or 8 teeth', 'Any material direction'],
     imageSrc:    null,
     imageAlt:    'Bottom set grillz — lower arch',
@@ -41,7 +41,7 @@ const GRILLZ_STYLES: GrillzStyle[] = [
   {
     label:       'FULL MOUTH',
     eyebrow:     'TOP + BOTTOM',
-    description: 'Top and bottom. Custom fit. Text 2T first.',
+    description: 'Top and bottom. The whole smile hits. Fit first.',
     specs:       ['Top + bottom full set', 'Match or mix directions'],
     imageSrc:    null,
     imageAlt:    'Full mouth grillz — top and bottom set',
@@ -49,7 +49,7 @@ const GRILLZ_STYLES: GrillzStyle[] = [
   {
     label:       'OPEN FACE',
     eyebrow:     'OPEN FACE DIRECTION',
-    description: 'Gold frame, natural teeth showing. Ask about the look.',
+    description: 'Gold frame, your teeth showing through. Old-school look, custom cut.',
     specs:       ['Open center, gold or silver border', 'Top or bottom available'],
     imageSrc:    null,
     imageAlt:    'Open face grillz — gold frame, tooth visible through',
@@ -57,7 +57,7 @@ const GRILLZ_STYLES: GrillzStyle[] = [
   {
     label:       'ICED-OUT',
     eyebrow:     'STONE DIRECTION',
-    description: 'Stone direction confirmed per piece. Ask what fits.',
+    description: 'Stone-set across the set. Built for the light.',
     specs:       ['Stone-set direction', 'Stone details confirmed per piece'],
     imageSrc:    null,
     imageAlt:    'Iced-out grillz — stone-covered full set',
@@ -65,7 +65,7 @@ const GRILLZ_STYLES: GrillzStyle[] = [
   {
     label:       'DIAMOND CUT',
     eyebrow:     'CUT DIRECTION',
-    description: 'Cut and pattern confirmed before the build.',
+    description: 'Cut patterns that catch from every angle. Pattern confirmed before the build.',
     specs:       ['Diamond-cut pattern direction', 'Material confirmed per piece'],
     imageSrc:    null,
     imageAlt:    'Diamond cut grillz — geometric faceted surface',
@@ -105,10 +105,10 @@ const FIT_STEPS = [
 // ── WhatsApp ──────────────────────────────────────────────────────────────────
 
 const WA_GRILLZ =
-  'https://wa.me/14124524343?text=I%27m%20interested%20in%20grillz.%20What%27s%20the%20process%20and%20what%20do%20you%20need%20from%20me%3F'
+  'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20interested%20in%20grillz.%20What%27s%20the%20process%20and%20what%20do%20you%20need%20from%20me%3F'
 
 const WA_GRILLZ_FIT =
-  'https://wa.me/14124524343?text=I%20want%20custom%20grillz.%20Can%20you%20walk%20me%20through%20the%20next%20step%3F'
+  'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20want%20custom%20grillz.%20Can%20you%20walk%20me%20through%20the%20next%20step%3F'
 
 // ── SEO ───────────────────────────────────────────────────────────────────────
 

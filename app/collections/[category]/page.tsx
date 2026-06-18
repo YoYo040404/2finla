@@ -50,51 +50,14 @@ const IF = 'rgba(200,230,255,0.38)'
 
 // ─── Category data ────────────────────────────────────────────────────────────
 
+// NOTE: chains and pendants have dedicated pages (app/collections/chains,
+// app/collections/pendants) — do not add entries for them here.
 const CATEGORY_DATA: Record<string, CategoryData> = {
-  chains: {
-    title:      'Chains',
-    headline:   'Rope, Cuban, Franco, Tennis.',
-    body:       'Foundation of every neck. Ask about available styles.',
-    note:       'Ask about available styles before ordering.',
-    glow:       'rgba(201,168,76,0.08)',
-    waMessage:  "Hey 2T — I'm looking for a chain. What styles and directions do you have available?",
-    primaryCta: 'TEXT 2T ABOUT CHAINS →',
-    chips:      ['Cuban', 'Rope', 'Tennis', 'Franco', 'Iced-Out', 'Not Sure Yet'],
-    svg: (
-      <svg width="80" height="56" viewBox="0 0 80 56" fill="none">
-        <ellipse cx="22" cy="24" rx="15" ry="9" stroke="rgba(201,168,76,0.55)" strokeWidth="1.5"/>
-        <ellipse cx="58" cy="32" rx="15" ry="9" stroke="rgba(201,168,76,0.55)" strokeWidth="1.5"/>
-        <line x1="35" y1="28" x2="45" y2="28" stroke="rgba(201,168,76,0.35)" strokeWidth="1.5" strokeLinecap="round"/>
-        <circle cx="35" cy="28" r="2.5" fill="rgba(208,238,255,0.6)"/>
-        <circle cx="45" cy="28" r="2.5" fill="rgba(208,238,255,0.6)"/>
-      </svg>
-    ),
-  },
-
-  pendants: {
-    title:      'Pendants',
-    headline:   'Your identity, hanging.',
-    body:       'Iced, engraved, or fully custom. Have a logo or sketch? Start the request and we\'ll guide the visual direction before quote or production.',
-    note:       'Have a logo, photo, or reference? Attach it when you start the request.',
-    glow:       'rgba(208,238,255,0.07)',
-    waMessage:  "Hey 2T — I'm looking for a pendant. I have a logo, photo, or name idea.",
-    primaryCta: 'TEXT 2T ABOUT PENDANTS →',
-    chips:      ['Logo', 'Photo', 'Name', 'Number', 'Iced-Out', 'Custom Shape', 'Not Sure Yet'],
-    svg: (
-      <svg width="58" height="78" viewBox="0 0 58 78" fill="none">
-        <rect x="24" y="4" width="10" height="13" rx="5" stroke="rgba(208,238,255,0.5)" strokeWidth="1.5"/>
-        <path d="M4 36 L29 16 L54 36 L29 65 Z" stroke="rgba(208,238,255,0.6)" strokeWidth="1.5"/>
-        <path d="M4 36 L29 46 L54 36" stroke="rgba(208,238,255,0.28)" strokeWidth="0.75"/>
-        <circle cx="29" cy="38" r="5" fill="rgba(208,238,255,0.65)"/>
-      </svg>
-    ),
-  },
-
   bracelets: {
     title:      'Bracelets',
     headline:   'WRIST GAME WITH WEIGHT.',
-    body:       'Tennis, Cuban, or iced-out direction. Ask what\'s available.',
-    note:       'Ask what\'s available. Details confirmed per piece.',
+    body:       'Tennis, Cuban, bangle. Weight that shows.',
+    note:       'Details confirmed per piece.',
     glow:       'rgba(201,168,76,0.07)',
     waMessage:  "Hey 2T — I'm looking at bracelets. What styles and directions do you have available?",
     primaryCta: 'ASK ABOUT BRACELETS →',
@@ -252,7 +215,7 @@ const CATEGORY_DATA: Record<string, CategoryData> = {
   rings: {
     title:      'Rings',
     headline:   'RINGS THAT HIT.',
-    body:       'Big face, iced look, or clean statement. Ask what\'s available before you buy.',
+    body:       'Big face, iced face, or clean band. Made to get noticed.',
     note:       'Ask about sizing and available styles.',
     glow:       'rgba(208,238,255,0.07)',
     waMessage:  "Hey 2T — I'm looking at rings. What styles and sizes do you have available?",
@@ -383,7 +346,7 @@ const CATEGORY_DATA: Record<string, CategoryData> = {
   earrings: {
     title:      'Earrings',
     headline:   'EARRINGS THAT CATCH LIGHT.',
-    body:       'Studs, hoops, or iced-out direction. Ask what\'s available.',
+    body:       'Studs, hoops, iced or clean. Shine at eye level.',
     note:       'Ask what\'s in stock. Details confirmed per piece.',
     glow:       'rgba(208,238,255,0.06)',
     waMessage:  "Hey 2T — I'm looking at earrings. What styles and directions do you have available?",

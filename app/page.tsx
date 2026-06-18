@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import ProofContactZone from '@/components/home/ProofContactZone'
+import ProofMarquee from '@/components/home/ProofMarquee'
 import ShineDirectionBand from '@/components/home/ShineDirectionBand'
 import { ShineRail } from '@/components/home/ShineRail'
 import SocialTeaser from '@/components/home/SocialTeaser'
@@ -11,7 +12,7 @@ import { TileGlareController } from '@/components/home/TileGlareController'
 import { HOME_MEDIA } from '@/data/homeMedia'
 
 const WA_BUILD  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20want%20to%20build%20something%20custom.'
-const WA_PROMO  = 'https://wa.me/14124524343?text=What%27s%20running%20this%20week%20at%202T%3F'
+const WA_PROMO  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%27s%20running%20this%20week%3F'
 const WA_STOCK  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%20do%20you%20have%20in%20stock%20right%20now%3F'
 const WA_ASK    = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20ask%20about%20a%20piece.'
 
@@ -199,6 +200,9 @@ export default function HomePage() {
         }} />
       </div>
 
+      {/* ─── 1b. PROOF MARQUEE — trust strip between hero and product wall ─ */}
+      <ProofMarquee />
+
       {/* ─── 2. SHOP JEWELRY — Pittsburgh BANG product wall ────────────── */}
       <section
         id="shop-jewelry"
@@ -249,7 +253,7 @@ export default function HomePage() {
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', letterSpacing: '0.13em', color: 'var(--color-ice-blue)' }}>MOISSANITE</span>
             </div>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--color-brand-muted)', margin: 0, letterSpacing: '0.01em' }}>
-              Details confirmed per piece. Ask before you buy.
+              Pick the piece. Then pick the shine. Details confirmed per piece.
             </p>
           </div>
 
@@ -387,7 +391,7 @@ export default function HomePage() {
               {([
                 {
                   label: 'MOST ASKED ABOUT',
-                  copy:  'What most people text 2T for first.',
+                  copy:  'The pieces people text 2T for first.',
                   cta:   'Browse →',
                   href:  '/collections/best-sellers',
                 },

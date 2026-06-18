@@ -58,8 +58,8 @@ export default function AboutPage() {
               maxWidth:   '52ch',
             }}
           >
-            25 years in Pittsburgh. Custom jewelry, grillz, and watches.
-            Real store, real pieces — ask before you buy.
+            25 years on Fifth Ave. Grillz, watches, chains, pendants, custom.
+            Real store, real counter — ask before you buy.
           </p>
         </div>
       </section>
@@ -167,9 +167,8 @@ export default function AboutPage() {
               marginBottom: '0.75rem',
             }}
           >
-            We build custom jewelry — pendants, chains, bracelets, rings — from a logo,
-            name, photo, sketch, or reference. You send the idea. We guide the direction
-            before quote or production starts.
+            Send the logo, photo, name, or sketch — we build the piece from it.
+            Direction first. Quote before the build.
           </p>
           <p
             style={{
@@ -180,9 +179,8 @@ export default function AboutPage() {
               maxWidth:   '56ch',
             }}
           >
-            Grillz are fit-confirmed before build. Watches are inquiry-led — condition,
-            source, and details confirmed per piece. Material and stone direction confirmed
-            per order. No deposit to start — ask before anything moves.
+            Grillz get fitted before anything is made. Watches are ask-first — source,
+            condition, and stones confirmed per piece. No deposit to start.
           </p>
         </div>
       </section>
@@ -234,8 +232,8 @@ export default function AboutPage() {
                 position:     'relative',
               }}
             >
-              Walk in or text first. We&rsquo;re in downtown Pittsburgh.
-              Ask about availability, current pieces, and custom direction.
+              Walk in or text first. Ask what&rsquo;s in the case, what just landed,
+              or what it takes to build yours.
             </p>
             <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap', position: 'relative' }}>
               <a

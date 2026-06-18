@@ -5,11 +5,11 @@ import type { ReactNode } from 'react'
 export const metadata: Metadata = {
   title: '2T Jewelers | Collections - Pittsburgh, PA',
   description:
-    'Shop chains, pendants, bracelets, rings, earrings, grillz, watches, and custom at 2T Jewelers in Pittsburgh, PA. Details confirmed per piece. Ask before you buy.',
+    "Shop hip hop jewelry in Pittsburgh — Cuban chains, iced-out pendants, grillz, watches, rings. Real store. Text 2T to ask what's in.",
 }
 
 const WA_ASK =
-  'https://wa.me/14124524343?text=Hey%202T%20-%20I%27m%20looking%20at%20the%20collections.%20What%27s%20available%3F'
+  'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20at%20the%20collections.%20What%27s%20available%3F'
 
 type CaseCategory = {
   slug: string
@@ -20,14 +20,15 @@ type CaseCategory = {
   icon: ReactNode
 }
 
-const safeLine = "Details confirmed per piece. Ask before you buy. Ask what's available."
+const heroLine  = 'Grillz. Watches. Chains. Pendants. Gold or silver. Diamond or moissanite.'
+const trustLine = 'Details confirmed per piece. Ask before you buy.'
 
 const caseCategories: CaseCategory[] = [
   {
     slug: 'grillz',
     label: 'Grillz',
     href: '/grillz',
-    line: 'Fit and details are confirmed per piece.',
+    line: 'Top. Bottom. Full mouth. Built around the fit.',
     tone: 'gold',
     icon: (
       <svg viewBox="0 0 120 82" aria-hidden="true">
@@ -41,7 +42,7 @@ const caseCategories: CaseCategory[] = [
     slug: 'watches',
     label: 'Watches',
     href: '/watches',
-    line: "Ask what's available before you buy.",
+    line: "Iced-out. Bust-down. Ask what's in.",
     tone: 'ice',
     icon: (
       <svg viewBox="0 0 120 82" aria-hidden="true">
@@ -55,7 +56,7 @@ const caseCategories: CaseCategory[] = [
     slug: 'chains',
     label: 'Chains',
     href: '/collections/chains',
-    line: 'Ask about length, style, and piece details.',
+    line: 'Cuban. Rope. Tennis. The neck comes first.',
     tone: 'mixed',
     icon: (
       <svg viewBox="0 0 120 82" aria-hidden="true">
@@ -71,7 +72,7 @@ const caseCategories: CaseCategory[] = [
     slug: 'pendants',
     label: 'Pendants',
     href: '/collections/pendants',
-    line: 'Ask about the piece before you buy.',
+    line: 'Photo. Logo. Name. Number. Pieces that mean something.',
     tone: 'ice',
     icon: (
       <svg viewBox="0 0 120 82" aria-hidden="true">
@@ -85,7 +86,7 @@ const caseCategories: CaseCategory[] = [
     slug: 'bracelets',
     label: 'Bracelets',
     href: '/collections/bracelets',
-    line: 'Details confirmed per piece.',
+    line: 'Tennis. Cuban. Bangle. Weight on the wrist.',
     tone: 'gold',
     icon: (
       <svg viewBox="0 0 120 82" aria-hidden="true">
@@ -101,7 +102,7 @@ const caseCategories: CaseCategory[] = [
     slug: 'rings',
     label: 'Rings',
     href: '/collections/rings',
-    line: 'Ask about sizing and piece details.',
+    line: 'Big face or clean band. Ask what fits.',
     tone: 'ice',
     icon: (
       <svg viewBox="0 0 120 82" aria-hidden="true">
@@ -116,7 +117,7 @@ const caseCategories: CaseCategory[] = [
     slug: 'earrings',
     label: 'Earrings',
     href: '/collections/earrings',
-    line: "Ask what's available.",
+    line: 'Studs. Hoops. Iced or clean.',
     tone: 'mixed',
     icon: (
       <svg viewBox="0 0 120 82" aria-hidden="true">
@@ -132,7 +133,7 @@ const caseCategories: CaseCategory[] = [
     slug: 'custom',
     label: 'Custom',
     href: '/custom',
-    line: 'Ask before you buy.',
+    line: 'Your logo. Your name. Your piece.',
     tone: 'gold',
     icon: (
       <svg viewBox="0 0 120 82" aria-hidden="true">
@@ -150,12 +151,12 @@ export default function CollectionsPage() {
       <section className="collections-case-hero">
         <div className="collections-case-shell collections-case-hero__inner">
           <div className="collections-case-hero__copy">
-            <p className="collections-case-kicker">2T Jewelers - Pittsburgh</p>
+            <p className="collections-case-kicker">2T JEWELERS · PITTSBURGH</p>
             <h1>
-              Shop 2T
-              <span> jewelry.</span>
+              Pick the
+              <span> piece.</span>
             </h1>
-            <p>{safeLine}</p>
+            <p>{heroLine}</p>
           </div>
 
           <div className="collections-case-hero__vitrine" aria-hidden="true">
@@ -168,9 +169,9 @@ export default function CollectionsPage() {
 
       <section className="collections-case-shell collections-case-grid-section" aria-labelledby="collections-case-heading">
         <div className="collections-case-section-head">
-          <p className="collections-case-kicker">Details confirmed per piece.</p>
-          <h2 id="collections-case-heading">Ask before you buy.</h2>
-          <p>{safeLine}</p>
+          <p className="collections-case-kicker">THE CASE</p>
+          <h2 id="collections-case-heading">Eight ways to hit.</h2>
+          <p>{trustLine}</p>
         </div>
 
         <div className="collections-case-grid">
@@ -200,12 +201,12 @@ export default function CollectionsPage() {
       <section className="collections-case-ask">
         <div className="collections-case-shell collections-case-ask__inner">
           <div>
-            <p className="collections-case-kicker">Ask before you buy.</p>
-            <h2>Ask what&apos;s available.</h2>
+            <p className="collections-case-kicker">DON&rsquo;T GUESS</p>
+            <h2>Text 2T. Ask what&apos;s in.</h2>
           </div>
-          <p>{safeLine}</p>
+          <p>Availability moves. The fastest answer is a text.</p>
           <a href={WA_ASK} target="_blank" rel="noopener noreferrer" className="collections-case-ask__link">
-            Ask what&apos;s available.
+            TEXT 2T →
           </a>
         </div>
       </section>

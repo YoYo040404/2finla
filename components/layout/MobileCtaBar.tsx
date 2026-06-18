@@ -66,8 +66,9 @@ function getCtaConfig(pathname: string): CtaConfig {
 
   // Default — home, about, and all other routes
   return {
-    label: 'Build Custom →',
-    href:  '/custom',
+    label:  'TEXT 2T →',
+    href:   'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20at%20pieces.%20What%27s%20available%3F',
+    waText: "Hey 2T — I'm looking at pieces. What's available?",
   }
 }
 

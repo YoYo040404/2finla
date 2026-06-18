@@ -93,7 +93,7 @@ export default function ProofContactZone() {
             maxWidth: '40ch',
             marginBottom: '1.5rem',
           }}>
-            Text or come through. Direct access. Details confirmed per piece.
+            Real Pittsburgh store. Walk in or text 2T. Direct access. Details confirmed per piece.
           </p>
 
           <div>

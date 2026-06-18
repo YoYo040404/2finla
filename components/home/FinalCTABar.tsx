@@ -12,7 +12,7 @@ export default function FinalCTABar() {
         <div>
           <h2 className="final-cta-headline">MAKE IT HIT.</h2>
           <p className="final-cta-body">
-            Send the idea. We quote before the build.
+            Shop what&rsquo;s in or send the idea. Either way — text 2T first.
           </p>
         </div>
         <div className="final-cta-actions">
@@ -25,7 +25,7 @@ export default function FinalCTABar() {
             rel="noopener noreferrer"
             className="btn-outline-gold final-cta-btn"
           >
-            TEXT US →
+            TEXT 2T →
           </a>
         </div>
       </div>

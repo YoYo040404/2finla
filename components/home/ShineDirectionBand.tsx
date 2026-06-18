@@ -29,7 +29,7 @@ export default function ShineDirectionBand() {
             <span className="sdb-eyebrow">METAL</span>
             <p className="sdb-value sdb-value--gold">GOLD · SILVER</p>
             <span className="sdb-spec">925 Sterling Silver</span>
-            <span className="sdb-micro">Pick the metal direction.</span>
+            <span className="sdb-micro">Pick the metal. Different shine.</span>
           </div>
 
           {/* STONE panel — ice accent */}
@@ -37,7 +37,7 @@ export default function ShineDirectionBand() {
             <span className="sdb-eyebrow">STONE</span>
             <p className="sdb-value sdb-value--ice">DIAMONDS · MOISSANITE</p>
             <span className="sdb-spec">D-color VVS Moissanite</span>
-            <span className="sdb-micro">Pick the stone direction.</span>
+            <span className="sdb-micro">Pick the stone. Different direction.</span>
           </div>
 
         </div>

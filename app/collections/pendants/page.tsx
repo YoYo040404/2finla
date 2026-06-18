@@ -452,8 +452,8 @@ export const metadata: Metadata = {
   description: 'Shop iced pendants or build custom. Photo, logo, name, number, memorial — Pittsburgh jeweler. No deposit to start. We quote before the build. 25 years.',
 }
 
-const WA_PENDANTS        = 'https://wa.me/14124524343?text=What%20pendants%20do%20you%20have%20available%20now%3F'
-const WA_PENDANTS_CUSTOM = 'https://wa.me/14124524343?text=I%20want%20a%20custom%20pendant.%20Can%20I%20send%20a%20photo%2C%20logo%2C%20name%2C%20or%20number%3F'
+const WA_PENDANTS        = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%20pendants%20do%20you%20have%20available%20now%3F'
+const WA_PENDANTS_CUSTOM = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20want%20a%20custom%20pendant.%20Can%20I%20send%20a%20photo%2C%20logo%2C%20name%2C%20or%20number%3F'
 
 
 export default function PendantsPage() {
@@ -538,7 +538,8 @@ export default function PendantsPage() {
               maxWidth:     '42ch',
             }}
           >
-            Photo, logo, name, or number. Send the idea — we quote before the build.
+            Crosses, Jesus pieces, medallions, iced faces — or your photo, logo,
+            name, or number built from scratch.
           </p>
 
           <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap' }}>
@@ -654,7 +655,7 @@ export default function PendantsPage() {
         }}
       >
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <span className="section-eyebrow" style={{ marginBottom: '0.75rem' }}>READY TO SHOP</span>
+          <span className="section-eyebrow" style={{ marginBottom: '0.75rem' }}>SHOP PENDANTS</span>
           <p
             style={{
               fontFamily:   'var(--font-display)',
@@ -801,7 +802,7 @@ export default function PendantsPage() {
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              ASK ABOUT PENDANTS →
+              TEXT 2T ABOUT PENDANTS →
             </a>
             <p
               style={{
@@ -812,7 +813,7 @@ export default function PendantsPage() {
                 margin:        0,
               }}
             >
-              Details confirmed per piece. Ask what&rsquo;s in stock and available.
+              Details confirmed per piece. Ask what&rsquo;s in stock.
             </p>
           </div>
         </div>

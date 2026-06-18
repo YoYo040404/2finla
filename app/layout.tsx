@@ -42,8 +42,8 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://2tjewelers.com'),
-  title:       '2T Jewelers — Grillz, Watches & Custom Jewelry | Pittsburgh, PA',
-  description: 'Shop grillz, watches, chains, pendants, and custom jewelry from 2T Jewelers in Pittsburgh. Text 2T before you buy. Product details confirmed per piece.',
+  title:       '2T Jewelers | Hip Hop Jewelry, Grillz & Custom — Pittsburgh, PA',
+  description: 'Iced-out chains, custom grillz, pendants, and watches at 2T Jewelers — real Pittsburgh store, 25 years. Text 2T before you buy. Details confirmed per piece.',
   openGraph: {
     title:       '2T Jewelers',
     description: 'Custom pieces. Real materials. Build the piece around your look.',
