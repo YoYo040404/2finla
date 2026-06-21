@@ -10,7 +10,7 @@ import Image from 'next/image'
 const CHANNELS = [
   {
     platform: 'TIKTOK',
-    copy:     'Watch the build.',
+    copy:     'Watch the shine. Follow',
     handle:   '@2tjewelers',
     href:     'https://www.tiktok.com/@2tjewelers',
     wa:       false,
@@ -32,7 +32,7 @@ const CHANNELS = [
     platform: 'WHATSAPP',
     copy:     "Text before you buy. Ask what's available.",
     handle:   'TEXT 2T',
-    href:     'https://wa.me/14124524343',
+    href:     'https://wa.me/14124524343?text=Hi%202T%20%E2%80%94%20I%20saw%20the%20site%20and%20want%20to%20ask%20what%27s%20available.',
     wa:       true,
     label:    'WhatsApp: Text 2T',
     action:   'TEXT NOW →',
@@ -174,7 +174,7 @@ export default function SocialTeaser() {
         <div>
           <div className="mi-eyebrow" style={{ marginBottom: '0.75rem' }}>
             <span className="mi-diamond-sm" aria-hidden="true" />
-            @2TJEWELERS · WATCH THE WORK
+            @2TJEWELERS · FOLLOW THE SHOP
           </div>
 
           <h2
@@ -199,7 +199,7 @@ export default function SocialTeaser() {
           </h2>
 
           <p className="mi-mono mi-faint" style={{ marginBottom: '1.5rem', fontSize: '0.6rem' }}>
-            WATCH THE BUILD · SEE THE PIECES · TEXT BEFORE YOU BUY
+            SEE WHAT&rsquo;S DROPPING · TEXT BEFORE YOU BUY
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>

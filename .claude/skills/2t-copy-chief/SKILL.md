@@ -23,11 +23,19 @@ Pairs with `.interface-design/system.md` (UI) and `CLAIM_SAFETY.md` (the binding
 
 ## 2. 2T audience snapshot
 
-U.S. hip-hop / street-luxury jewelry buyer. Male-primary, rising female + gift buyer. Knows the market — knows plated vs solid, knows the karat/diamond-tester talk, names moissanite directly. One core tension:
+Primary buyer: **Black American and broader U.S. hip-hop / street-luxury jewelry buyers.** Male-primary, rising female + gift buyer. Fluent in the category — knows plated vs solid, knows the karat/diamond-tester talk, names moissanite directly, spots a fake from a mile out (site, slang, or stone). One core tension:
 
 > "I want it to hit." vs "Don't finesse me — don't sell me one thing as another."
 
-Two equal paths, never custom-only: **SHOP** (catalog = desire) and **CUSTOM** (the dream + margin). Trust drives action. Text/DM removes friction.
+Two equal paths, never custom-only: **SHOP** (catalog = desire) and **CUSTOM** (the dream + margin). Trust drives action. Text/DM removes friction. Social-first — this buyer arrives from TikTok/IG and decides fast.
+
+### Language doctrine (read before writing a single line)
+
+Write in the buyer's **category-authentic vocabulary — never imitation dialect.** The voice is a real Pittsburgh street-luxury jeweler who knows this buyer, not an outsider performing a culture.
+
+- **Do:** speak the shine / identity / process vocabulary the buyer already uses (§5). Short, social-first, confident, direct, product-fluent.
+- **Do NOT:** write AAVE grammar, forced dialect, or parody "street" voice. No "drip so crazy," "bussin," "gang," "for the culture" — they read as costume and get roasted (this buyer roasts corny brands). Authenticity comes from knowing the product and the buyer, not from mimicking how anyone talks.
+- **The test:** would a real jeweler who serves this buyer every day say it out loud, plainly? If it sounds like a brand *trying* to sound Black, cut it. Confidence + product fluency carry the street weight — not slang density.
 
 ---
 
@@ -59,7 +67,9 @@ Top fear = **deception** + **silence**. Every page should defuse both within one
 
 ## 5. Words to use
 
-ice · iced-out · flooded · hits / hits in the light · clean · heavy · solid · real · custom · piece · Cuban · rope · tennis · name/photo/logo/number piece · grillz · top set / bottom set / full mouth / open face · fit · bust-down · bezel · aftermarket · factory-set · gold · silver · diamond · **moissanite** (name it) · karat / 10K / 14K · send the photo/logo/idea · text 2T · ask what's in stock · ask what's running · we quote before the build · no deposit to start · come through · Pittsburgh · details confirmed per piece · BANG.
+ice · iced-out · flooded · hits / hits in the light · clean · heavy · solid · real · custom · piece · Cuban · rope · tennis · name/photo/logo/number piece · grillz · top set / bottom set / full mouth / open face · fit · bust-down · bezel · aftermarket · factory-set · gold · silver · diamond · **moissanite** (name it) · karat / 10K / 14K · tap in · send the pic · send the photo/logo/idea · text 2T · ask what's in stock · ask what's running · we quote before the build · no deposit to start · come through · Pittsburgh · details confirmed per piece · BANG.
+
+Social-caption extras — use **only where real content backs them** (never over a placeholder/demo): `see what's dropping` · `what just landed` · `tap in for the drop`. On the site itself, default to the trust-carrying versions (§12).
 
 ## 6. Words to avoid
 
@@ -186,4 +196,4 @@ Confirmed facts: WhatsApp `14124524343` · phone `+1 412-281-7072` · 332 Fifth 
 
 ## Last Updated
 
-2026-06-21 · v1 · Authored from existing VOC research + 2026 currency check
+2026-06-21 · v1.1 · Sharpened audience + language doctrine (Pass A4). v1: authored from VOC research + 2026 currency check.
