@@ -62,6 +62,7 @@ Full protocol: `docs/2t-claude-tools-skills-protocol.md`. Read it before any maj
 - **Research** (Firecrawl / WebSearch): only when fresh competitor / VOC / current-market research is actually needed. Not for small copy/string fixes.
 - **Technical** (Context7 / Next DevTools): only for Next.js / React / routing / metadata / framework questions.
 - **Superpowers:** planning/audit → `writing-plans`; execution → `executing-plans`; before done → `verification-before-completion`; debugging only if build/QA fails. Do not use Superpowers to expand scope.
+- **Code Review** (`/code-review`, `code-review@claude-plugins-official` — enabled): review gate for meaningful code/UI/frontend work — multi-file, branch/PR-style, route, form, or QA-heavy changes, and before major commits. Run after implementation + build, and after Playwright when UI is affected. Checks CLAUDE.md compliance, unintended file changes, claim-safety regressions, broken links/routes, accessibility, logic regressions, code quality. Does NOT replace Playwright, `frontend-design`/`visual-critique`, or `2t-copy-chief`/`CLAIM_SAFETY`. Skip (with reason) for docs-only / tiny string-only / no-diff tasks. If it needs a PR branch or can't run, say so — don't pretend it ran.
 - **Forbidden unless explicitly approved:** Shopify, Gmail, Calendar, Drive, Spotify are connected but off-limits for 2T work.
 
 Claim-safety (`CLAIM_SAFETY.md`) is binding and is never overridden by copy or tooling.

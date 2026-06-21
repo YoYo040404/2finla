@@ -305,6 +305,8 @@ Custom page historical baseline (commit 84af600 — 2026-05-17; superseded by P0
 
 **Governing skill/system files:** `.claude/skills/2t-copy-chief/SKILL.md` (copy + audience), `.interface-design/system.md` (UI system), `CLAIM_SAFETY.md` (binding claims). Tool/skills gate: `docs/2t-claude-tools-skills-protocol.md` — decide which tools are useful per task and report used/skipped.
 
+**Enabled plugins:** `code-review@claude-plugins-official` (`/code-review`) — review gate for meaningful code/UI/frontend work (multi-file, branch/PR-style, route, form, QA-heavy, before major commits). Run after implementation + build, and after Playwright when UI is affected. Does not replace Playwright, frontend-design/visual-critique, or 2t-copy-chief/CLAIM_SAFETY. Skip with reason for docs-only / tiny string-only / no-diff tasks. Details: `docs/2t-claude-tools-skills-protocol.md` §9.
+
 1. Do not reopen broad homepage redesign. Pittsburgh BANG is the current direction.
 2. Do not re-polish `/custom` — CRO pass, selector grouping, P0/P1, and P2 are approved/live and QA clean.
 3. Do not rebuild the Resend backend — it is working and verified.

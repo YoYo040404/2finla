@@ -423,18 +423,47 @@ Use after:
 Use when:
 - local app needs to be launched for QA
 
-### `/code-review`
-Use before committing:
+### `/code-review` (`code-review@claude-plugins-official` — enabled)
+Review gate for meaningful 2T implementation work.
+
+Use for:
+- meaningful code / UI / frontend changes
 - multi-file changes
-- backend changes
+- branch / PR-style work
+- route changes
 - form changes
-- high-risk claim/copy changes
-- visual architecture changes
+- QA-heavy work
+- before major commits
+
+When to run:
+- after implementation and after `npm run build`
+- after Playwright when UI is affected (Playwright first, then review)
+
+It should check:
+- `CLAUDE.md` compliance
+- unintended / unrelated file changes
+- claim-safety regressions
+- broken links / routes
+- accessibility
+- logic regressions
+- code quality
+
+It does NOT replace:
+- Playwright visual QA
+- `frontend-design` / `visual-critique`
+- `2t-copy-chief` or `CLAIM_SAFETY.md` for copy
+
+Skip (with stated reason) for:
+- docs-only changes
+- tiny string-only changes
+- no-diff QA tasks
 
 Recommended effort:
 - low/medium for small changes
 - high for multi-file implementation
 - ultra only for major branches
+
+If `/code-review` requires a PR branch or cannot run in the current context, report that honestly and do not pretend it ran.
 
 ### `/security-review`
 Use for:
