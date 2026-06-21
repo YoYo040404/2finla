@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import ProofContactZone from '@/components/home/ProofContactZone'
-import ProofMarquee from '@/components/home/ProofMarquee'
 import ShineDirectionBand from '@/components/home/ShineDirectionBand'
 import { ShineRail } from '@/components/home/ShineRail'
 import SocialTeaser from '@/components/home/SocialTeaser'
@@ -199,9 +198,6 @@ export default function HomePage() {
           pointerEvents: 'none',
         }} />
       </div>
-
-      {/* ─── 1b. PROOF MARQUEE — trust strip between hero and product wall ─ */}
-      <ProofMarquee />
 
       {/* ─── 2. SHOP JEWELRY — Pittsburgh BANG product wall ────────────── */}
       <section
@@ -528,7 +524,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── 6b. SHINE RAIL — late-page re-engagement merchandising rail ─ */}
+      {/* ─── 6b. SHINE RAIL — Most Asked About merchandising rail ──────── */}
       <ShineRail />
 
       <ProofContactZone />
