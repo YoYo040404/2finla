@@ -131,6 +131,8 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 - **Visual Pass 1B — standardize visual system details** (commit `a785b85`, 2026-06-21) — pushed.
 - **Homepage De-Clutter Pass 1** (commit `c24fd27`, 2026-06-21) — reduced homepage product-flow noise: removed PICK THE PIECE material/stone row, discovery strip nav block, pb-custom-band interrupt block, and unused pb-custom-band CSS. Pushed.
 - **Trust + Text-Speed + Custom Hero Pass A** (commit `98c56ff`, 2026-06-21) — live-approved by Yaniv. Desktop Header `TEXT 2T` WhatsApp link (`lg+` only); ProofContactZone `text 2T` linked to WhatsApp + new claim-safe material/stone transparency line; CustomBuildFlow upload confidence line ("Your logo, photo, or sketch stays yours. We review it, then quote."); CustomHero desktop right-side CSS-only lit-case/vitrine visual upgrade (`lg+`, static, reduced-motion safe). No new assets, no fake proof/products/pricing/inventory/promos, no Shopify. Build + QA clean. Pushed.
+- **ShineRail relocation** (commit `fbd203c`, 2026-06-21) — moved ShineRail / Most Asked About from upper page to after the Custom lane, before ProofContactZone; cut back-to-back category repetition. JSX move only. Pushed.
+- **Homepage proof-rhythm simplification** (commit `a113a70`, 2026-06-21) — live-approved by Yaniv. Removed ProofMarquee from homepage (trust facts already in ProofContactZone; cut duplicate top marquee + double-ticker noise). ShineRail / Most Asked About kept. Final rhythm (9 sections): Hero → PICK THE PIECE → ShineDirectionBand → Promo strip → Custom lane → ShineRail / Most Asked About → ProofContactZone → SocialTeaser → FinalCTABar. Promo strip is now the only ticker. `app/page.tsx` only; ProofMarquee.tsx / ShineRail.tsx / CSS / data intact (ProofMarquee unmounted, not deleted). No copy/claim/asset/Shopify changes. Pushed.
 
 ### WIP / Approval Pending ⚠️
 
@@ -155,8 +157,8 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 
 ### Next Milestone 🎯
 
-- **Pass B — homepage category de-dup / ShineRail decision** — plan and approve separately before any implementation. Do not implement Pass B yet.
-- **Evaluate homepage after De-Clutter Pass 1 + Pass A** (`c24fd27`, `98c56ff`) — assess product flow before adding more motion or sections
+- **SocialTeaser tightening/upgrade** — possible separate future pass (reduce height, reconsider demo-thumbnail/scanlines, sharpen follow CTAs). Plan and approve before any implementation. Do not implement yet.
+- **Evaluate homepage after proof-rhythm simplification** (`a113a70`) — assess flow before adding more motion or sections
 - **Visual/UI pass — plan and approve** — use `.interface-design/system.md` as the governing system document before any implementation
 - P0 candidates: eyebrow standardization sitewide, four gold tokens in `globals.css`, card padding to `1.25rem`/`1.5rem`, MobileCtaBar route audit
 - P1 candidates: category cross-sell rail, About page proof-ledger rebuild, `.grain-field` extension, TileGlare on category cards

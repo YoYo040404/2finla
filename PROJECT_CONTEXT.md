@@ -416,7 +416,7 @@ See Visual Direction section above for the full Midnight Icebox token table (upd
 
 ### Homepage - Midnight Icebox / Phase B2-safe - Committed
 
-**Latest commit:** `98c56ff - feat: add trust signals and custom hero weight` (2026-06-21, live-approved by Yaniv)
+**Latest commit:** `a113a70 - feat: simplify homepage proof rhythm` (2026-06-21, live-approved by Yaniv)
 
 Homepage is a product-first store with a custom lane — NOT custom-only. Hero dual CTAs: SHOP THE PIECES + BUILD CUSTOM →.
 
@@ -609,7 +609,9 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 **Interface Design system — added (commit `553834b`, 2026-06-18):** `.interface-design/system.md` created. Governing file for all future UI/visual work. Contains: type stack, four-level gold token scale (`--gold-full/mid/faint/trace`), three-level surface elevation (`--surface-base/lift/deep`), depth strategy (borders-only, no shadows), spacing system, single easing curve, motion system (ScrollRevealController / TileGlareController / ProofCounterTrigger / stagger classes), three CTA variants, card rules, eyebrow pattern, shine/atmosphere rules, BANG. signature placement, section structure rules, and 12-point anti-generic checklist.
 
-**Current active phase:** Consider Pass B — homepage category de-dup / ShineRail decision. Do NOT implement Pass B until separately planned and approved. Then continue Visual/UI pass planning. No further implementation beyond what is committed. Candidate work is defined in the interface-design audit (`.claude/plans/use-the-interface-design-skill-buzzing-fiddle.md`):
+**Homepage proof-rhythm simplification — completed, live-approved, pushed (`a113a70` + `fbd203c`, 2026-06-21):** Yaniv reviewed live — looks good. `fbd203c` relocated ShineRail / Most Asked About below the Custom lane (before ProofContactZone). `a113a70` removed ProofMarquee from the homepage (trust facts already in ProofContactZone; removed duplicate top marquee + double-ticker noise). Final homepage rhythm (9 sections): Hero → PICK THE PIECE → ShineDirectionBand → Promo strip → Custom lane → ShineRail / Most Asked About → ProofContactZone → SocialTeaser → FinalCTABar. Promo strip is now the only ticker. `app/page.tsx` JSX/import only; ProofMarquee.tsx / ShineRail.tsx / CSS / `data/homeMedia.ts` intact (ProofMarquee unmounted, not deleted). No copy/claim/asset/inventory/pricing/review/promo/Shopify/product changes. Build + QA clean.
+
+**Current active phase:** SocialTeaser tightening/upgrade is a possible separate future pass — do NOT implement until separately planned and approved. Then continue Visual/UI pass planning. No further implementation beyond what is committed. Candidate work is defined in the interface-design audit (`.claude/plans/use-the-interface-design-skill-buzzing-fiddle.md`):
 - P0: eyebrow standardization sitewide, card padding consolidation to `1.25rem`/`1.5rem`, four gold tokens in `globals.css`, MobileCtaBar route audit
 - P1: category cross-sell rail (Grillz/Watches/Chains/Pendants), About page proof-ledger rebuild, `.grain-field` extension to category CTAs, TileGlare expansion to category cards
 - P2: semantic surface tokens sitewide, Watches vitrine left-canvas, category card stagger reveals

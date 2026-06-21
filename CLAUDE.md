@@ -52,7 +52,14 @@ For execution tasks:
 
 ## Current Active Task
 
-**Latest committed state: Trust + Text-Speed + Custom Hero Pass A implemented, live-approved by Yaniv, and pushed (`98c56ff - feat: add trust signals and custom hero weight`). Preceded by Homepage De-Clutter Pass 1 (`c24fd27 - feat: declutter homepage product flow`), Visual Pass 1B (`a785b85`), and Midnight Flash visual polish (`e1caaba`). Pass 5C Copy/CRO (`5da57da`), Interface Design system at `.interface-design/system.md` (`553834b`), Phase B2-safe (`992a4ca`), and all prior passes remain QA clean. Midnight Icebox homepage live on https://2finla.vercel.app.**
+**Latest committed state: Homepage proof-rhythm simplification implemented, live-approved by Yaniv, and pushed (`a113a70 - feat: simplify homepage proof rhythm`). ProofMarquee removed from homepage; ShineRail / Most Asked About kept, relocated below the Custom lane (`fbd203c - feat: relocate ShineRail below custom lane`). Preceded by Trust + Text-Speed + Custom Hero Pass A (`98c56ff - feat: add trust signals and custom hero weight`), Homepage De-Clutter Pass 1 (`c24fd27`), Visual Pass 1B (`a785b85`), and Midnight Flash visual polish (`e1caaba`). Pass 5C Copy/CRO (`5da57da`), Interface Design system at `.interface-design/system.md` (`553834b`), Phase B2-safe (`992a4ca`), and all prior passes remain QA clean. Midnight Icebox homepage live on https://2finla.vercel.app.**
+
+**Homepage proof-rhythm simplification (`a113a70` + `fbd203c`) — completed, live-approved 2026-06-21:**
+- `fbd203c`: ShineRail / Most Asked About relocated below the Custom lane (before ProofContactZone) — cuts back-to-back category repetition near the top.
+- `a113a70`: ProofMarquee removed from homepage — trust facts already carried by ProofContactZone; removed the duplicate top marquee + double-ticker noise.
+- Final homepage rhythm (9 sections): Hero → PICK THE PIECE → ShineDirectionBand → Promo strip → Custom lane → ShineRail / Most Asked About → ProofContactZone → SocialTeaser → FinalCTABar.
+- Reason: reduce repeated trust/ticker noise, keep the Most Asked About strip + shop energy, shorter/cleaner page. Promo strip is now the only ticker.
+- `app/page.tsx` JSX/import only. ProofMarquee.tsx / ShineRail.tsx / CSS / `data/homeMedia.ts` left intact (ProofMarquee unmounted but not deleted). No copy/claim/asset/inventory/pricing/review/promo/Shopify/product changes. Build + QA clean.
 
 **Trust + Text-Speed + Custom Hero Pass A (`98c56ff`) — completed, live-approved 2026-06-21:**
 - desktop Header `TEXT 2T` WhatsApp link, `lg+` only (hidden below 1024, no tablet/mobile crowd)
@@ -68,7 +75,7 @@ For execution tasks:
 - removed pb-custom-band interrupt block
 - removed unused pb-custom-band CSS
 
-**Current next phase:** Consider Pass B — homepage category de-dup / ShineRail decision. Do NOT implement Pass B until separately planned and approved. Known old untracked files remain intentionally untouched.
+**Current next phase:** SocialTeaser tightening/upgrade is a possible separate future pass — do NOT implement until separately planned and approved. Known old untracked files remain intentionally untouched.
 
 **Social feed feasibility conclusion (2026-06-03):**
 - Phase 1 = manual curated cards in SocialTeaser left canvas (build when 2T provides real still frames + post URLs)
@@ -196,7 +203,7 @@ CRO pass and selector grouping committed (commits `60c7d06`, `2303850`). P0/P1 m
 
 **Interface Design system — added (commit `553834b`):** `.interface-design/system.md` created. Contains the extracted 2T visual system: type stack, color tokens (surface elevation + four-level gold scale), depth strategy, spacing, easing, motion system, CTA variants, card rules, eyebrow pattern, shine/atmosphere rules, BANG. signature, section structure rules, and anti-generic checklist. Use this file before any future UI/visual work.
 
-**Next queued work:** Consider Pass B — homepage category de-dup / ShineRail decision (plan + approve separately before any implementation). Then continue Visual/UI pass planning using `.interface-design/system.md` as the governing system document. No implementation yet beyond what is committed. Candidate work defined in the interface-design audit plan (P0: eyebrow standardization, gold token consolidation, card padding system, MobileCtaBar route audit; P1: category cross-sell rail, About page proof-ledger rebuild, grain-field extension, TileGlare expansion; P2: surface token system, Watches vitrine, category card stagger). Motion add-on ideas documented in audit (Hero Video Vignette, BANG. Sparkle Burst, Card Border Edge Glint as top P0 candidates).
+**Next queued work:** SocialTeaser tightening/upgrade — possible separate future pass (plan + approve before any implementation). Then continue Visual/UI pass planning using `.interface-design/system.md` as the governing system document. No implementation yet beyond what is committed. Candidate work defined in the interface-design audit plan (P0: eyebrow standardization, gold token consolidation, card padding system, MobileCtaBar route audit; P1: category cross-sell rail, About page proof-ledger rebuild, grain-field extension, TileGlare expansion; P2: surface token system, Watches vitrine, category card stagger). Motion add-on ideas documented in audit (Hero Video Vignette, BANG. Sparkle Burst, Card Border Edge Glint as top P0 candidates).
 No random CSS/layout cleanup unless QA finds a real issue.
 
 Do not commit or push new category pages without visual QA and user approval.  
