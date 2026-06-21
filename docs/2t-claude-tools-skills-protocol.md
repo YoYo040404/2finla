@@ -1,5 +1,5 @@
 # 2T Jewelers — Claude Tools, Skills, Agents, and MCP Protocol
-**Date:** 2026-06-03 (updated)  
+**Date:** 2026-06-21 (updated)  
 **Purpose:** Define when Claude Code should check and use available skills, agents, plugins, slash commands, and MCP servers for the 2T Jewelers project.  
 **Status:** Project source protocol. Read before any major planning, design, frontend, backend, QA, or verification task.
 
@@ -11,6 +11,10 @@ Before any meaningful task, Claude Code must check the task type and decide whic
 
 Do **not** force tools on every task.  
 Use tools when they improve planning, implementation, QA, verification, or design quality.
+
+**Decide-and-report gate (required):** Before starting any task, decide which skills, MCP servers, plugins, and slash commands are useful for that specific task. When reporting the task, state what was used and what was skipped, and why. Be honest about invocation: say whether a skill was formally invoked, enabled-but-applied-as-doctrine, or skipped as not relevant. Never claim a tool was invoked when it was not.
+
+**Anti-overuse:** Tools are not decoration. Use them when they improve the result. Small string-only / copy-only edits do not need Firecrawl / WebSearch / Magic / Magic UI / Context7. Visible UI changes still get visual/frontend discipline (see the Copy Doctrine section and §5).
 
 Always stay grounded in:
 - the actual repo state
@@ -32,14 +36,38 @@ For project direction:
 - `CLAIM_SAFETY.md`
 
 For homepage / visual / layout / brand work:
+- `.interface-design/system.md` — governing 2T UI system (type, tokens, depth, motion, CTA variants, card rules, eyebrow pattern, BANG.). Read before any UI/visual work.
 - `docs/2t-homepage-master-direction.md`
 - `docs/2t-strategic-visual-reset-audit-pittsburgh-bang-2026-05-25.md`
 
 For copy / category / promo / SEO / social / material language:
+- `.claude/skills/2t-copy-chief/SKILL.md` — governing copy + audience system. Load before writing or revising any 2T copy.
+- `CLAIM_SAFETY.md` — binding claim authority.
 - `docs/2t-pass5b-competitor-backed-copy-research.md`
 - `docs/2t-voc-copy-system.md`
 - `docs/2t-copy-swipe-map.md`
 - `docs/2t-growth-strategy-seo-cro-90day.md`
+
+---
+
+## 2.5 Copy Doctrine — 2T Copy Chief
+
+**Any copy task** (hero, CTA, promo, category, PDP/spec, form/upload/success, WhatsApp prefill, social caption, About/store, SEO title/meta) must use:
+- `.claude/skills/2t-copy-chief/SKILL.md` — governing copy doctrine (audience, voice, use/avoid words, CTA + WhatsApp rules, promo state machine, material/stone parity, pre-ship checklist).
+- `CLAIM_SAFETY.md` — binding; never overridden by copy.
+- `PROJECT_CONTEXT.md` — audience, positioning, brand facts.
+- `superpowers:verification-before-completion` before claiming the copy task done.
+
+Hardcore ≠ fake slang. No imitation dialect, no AAVE grammar, no parody street voice, no "drip so crazy / bussin / gang / for the culture". Copy is sharp because it knows the product, the buyer, the shop, and the trust tension — not from slang density.
+
+**Visible-site copy** (anything that renders on the live site) must ALSO clear the rhythm gates:
+- `.interface-design/system.md` — Anton headline weight, gold/ice system, eyebrow + CTA variant fit.
+- `frontend-design` — copy/layout rhythm; CTAs match the existing arrow `→` system; no generic boutique-luxury language; no corporate softness.
+- `visual-critique` — where useful, for hierarchy/typography/composition of the copy in context.
+- Mobile fit at 390px (no horizontal scroll, no overflow) and CTA rhythm preserved.
+- Playwright QA at relevant breakpoints when the change is visible.
+
+Do not soften the site. Keep it street-luxury, product-fluent, text-first, real Pittsburgh jeweler energy.
 
 ---
 
@@ -175,13 +203,14 @@ Use when:
 
 ---
 
-### Gmail / Calendar / Drive MCP
-Use only if the user explicitly asks for:
-- email workflow
-- scheduling
-- document/file access
+### Gmail / Calendar / Drive / Spotify MCP (forbidden for 2T unless approved)
+These connectors are connected to the environment but **forbidden for 2T work** unless the user explicitly approves them for a specific task:
+- Gmail — email workflow
+- Calendar — scheduling
+- Drive — document/file access
+- Spotify — not relevant to 2T; do not use
 
-Do not use automatically for 2T implementation work.
+Do not use any of them automatically for 2T implementation work. Shopify (above) is likewise paused/forbidden unless explicitly reopened.
 
 ---
 

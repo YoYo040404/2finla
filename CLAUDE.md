@@ -50,7 +50,29 @@ For execution tasks:
 
 ---
 
+## Skills & Tools Gate
+
+Full protocol: `docs/2t-claude-tools-skills-protocol.md`. Read it before any major task.
+
+**Before any task:** decide which skills / MCP servers / plugins / slash commands are useful for that specific task, then report what was used and what was skipped (and why). Be honest about invocation — formally invoked, enabled-but-applied-as-doctrine, or skipped. Tools are not decoration: small string/copy-only edits do not need Firecrawl / Magic / Magic UI / Context7; visible UI changes still get visual/frontend discipline.
+
+- **Copy task** (hero, CTA, promo, category, PDP, form/success, WhatsApp prefill, social, About, SEO title/meta): use `.claude/skills/2t-copy-chief/SKILL.md` + `CLAIM_SAFETY.md` + `PROJECT_CONTEXT.md` + `superpowers:verification-before-completion`.
+- **Visible-site copy** (renders live): also clear `.interface-design/system.md` + `frontend-design` + `visual-critique` (where useful) — Anton/gold/ice fit, mobile 390px fit, arrow `→` CTA rhythm, Playwright QA at relevant breakpoints.
+- **UI / design** (layout, frontend, visual polish, components, responsive, homepage/category surfaces): use `.interface-design/system.md` + `frontend-design` + `visual-critique` + Playwright QA at relevant breakpoints + build verification.
+- **Research** (Firecrawl / WebSearch): only when fresh competitor / VOC / current-market research is actually needed. Not for small copy/string fixes.
+- **Technical** (Context7 / Next DevTools): only for Next.js / React / routing / metadata / framework questions.
+- **Superpowers:** planning/audit → `writing-plans`; execution → `executing-plans`; before done → `verification-before-completion`; debugging only if build/QA fails. Do not use Superpowers to expand scope.
+- **Forbidden unless explicitly approved:** Shopify, Gmail, Calendar, Drive, Spotify are connected but off-limits for 2T work.
+
+Claim-safety (`CLAIM_SAFETY.md`) is binding and is never overridden by copy or tooling.
+
+---
+
 ## Current Active Task
+
+**Latest pushed: `0b1a47b - copy: sharpen site CTAs and promo rhythm`.** Tracked working tree clean except known old untracked files (`_handoff/`, `docs/superpowers/plans|specs`, `public/assets/demo/phase3a/*`, `public/assets/logo-to-use.png`). 2T Copy Chief skill (`.claude/skills/2t-copy-chief/SKILL.md`) is active and tracked (`c4e6eed`). Recent copy passes completed + pushed: SocialTeaser tightened + audience doctrine sharpened (`20e30e4`); site CTAs + promo rhythm sharpened (`0b1a47b` — collections hub card CTAs → `SHOP/ASK/START … →` with real arrow; homepage promo de-dup, eyebrow `SHOP THE CASE`; mobile menu WA `TEXT 2T →`). Build + Playwright QA clean (390/1280, no horizontal scroll). All edits copy-string only — no layout/CSS/asset/claim/Shopify changes.
+
+
 
 **Latest committed state: Homepage proof-rhythm simplification implemented, live-approved by Yaniv, and pushed (`a113a70 - feat: simplify homepage proof rhythm`). ProofMarquee removed from homepage; ShineRail / Most Asked About kept, relocated below the Custom lane (`fbd203c - feat: relocate ShineRail below custom lane`). Preceded by Trust + Text-Speed + Custom Hero Pass A (`98c56ff - feat: add trust signals and custom hero weight`), Homepage De-Clutter Pass 1 (`c24fd27`), Visual Pass 1B (`a785b85`), and Midnight Flash visual polish (`e1caaba`). Pass 5C Copy/CRO (`5da57da`), Interface Design system at `.interface-design/system.md` (`553834b`), Phase B2-safe (`992a4ca`), and all prior passes remain QA clean. Midnight Icebox homepage live on https://2finla.vercel.app.**
 
