@@ -15,6 +15,7 @@ const SPARKLES: { top: string; left: string; delay: string; size: number; ice: b
 export function CustomHero() {
   return (
     <section
+      className="custom-hero-shell"
       style={{
         position:   'relative',
         minHeight:  'clamp(240px, 38vh, 320px)',
@@ -259,6 +260,24 @@ export function CustomHero() {
                 TEXT 2T ON WHATSAPP →
               </a>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Desktop intake vitrine — CSS-only lit-case concept, lg+ only ──── */}
+      {/* No assets, no product images, no claims. Static (reduced-motion safe). */}
+      <div className="custom-hero-vitrine" aria-hidden="true">
+        <div className="chv-frame">
+          <span className="chv-corner chv-corner--tl" />
+          <span className="chv-corner chv-corner--tr" />
+          <span className="chv-corner chv-corner--bl" />
+          <span className="chv-corner chv-corner--br" />
+          <span className="chv-catchlight" />
+          <div className="chv-diamond chv-diamond--lg" />
+          <div className="chv-diamond chv-diamond--sm" />
+          <p className="chv-label">LOGO · PHOTO · NAME · SKETCH</p>
+          <div className="chv-process">
+            <span>SEND</span><i>→</i><span>REVIEW</span><i>→</i><span>QUOTE</span>
           </div>
         </div>
       </div>

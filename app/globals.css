@@ -5306,3 +5306,154 @@ div:nth-child(3n + 3) > .lit-diagram::after { animation-delay: 5s; }
 @media (prefers-reduced-motion: reduce) {
   .style-card-hover::before { display: none; }
 }
+
+/* ─── Pass A — Header text-speed link (lg+) ─────────────────────────────── */
+.header-text-link {
+  align-items:     center;
+  gap:             0.4rem;
+  font-family:     var(--font-mono);
+  font-size:       0.7rem;
+  font-weight:     400;
+  letter-spacing:  0.16em;
+  text-transform:  uppercase;
+  color:           #4cba6c;
+  text-decoration: none;
+  white-space:     nowrap;
+  transition:      color 0.2s ease, opacity 0.2s ease;
+}
+.header-text-link:hover { color: #5fd17e; }
+.header-text-link:focus-visible {
+  outline:        2px solid var(--color-brand-gold);
+  outline-offset: 3px;
+}
+
+/* ─── Pass A — ProofContactZone trust-speed copy ────────────────────────── */
+.proof-text-link {
+  color:                  var(--color-brand-gold);
+  text-decoration:        underline;
+  text-decoration-color:  var(--color-brand-gold-dim);
+  text-underline-offset:  3px;
+  transition:             color 0.2s ease;
+}
+.proof-text-link:hover { color: var(--color-brand-gold-light); }
+.proof-trust-line {
+  font-family:    var(--font-mono);
+  font-size:      0.66rem;
+  letter-spacing: 0.04em;
+  line-height:    1.7;
+  text-transform: none;
+  color:          var(--color-brand-muted);
+  max-width:      46ch;
+  margin:         0;
+}
+
+/* ─── Pass A — Custom upload confidence line ────────────────────────────── */
+.cf-upload-confidence {
+  display:         flex;
+  align-items:     baseline;
+  gap:             0.45rem;
+  font-family:     var(--font-body);
+  font-size:       0.75rem;
+  line-height:     1.55;
+  color:           var(--color-brand-silver);
+  margin:          0 0 0.875rem;
+}
+.cf-upload-confidence .trust-diamond {
+  color:      var(--color-brand-gold);
+  font-size:  0.55rem;
+  flex-shrink: 0;
+}
+
+/* ─── Pass A — Custom hero desktop intake vitrine (lg+, CSS-only, static) ── */
+.custom-hero-vitrine { display: none; }
+
+@media (min-width: 1024px) {
+  .custom-hero-shell { min-height: clamp(360px, 46vh, 460px) !important; }
+
+  .custom-hero-vitrine {
+    display:        block;
+    position:       absolute;
+    top:            50%;
+    right:          clamp(1.5rem, 4vw, 5rem);
+    transform:      translateY(-50%);
+    width:          clamp(280px, 30vw, 400px);
+    aspect-ratio:   4 / 3;
+    z-index:        5;
+    pointer-events: none;
+  }
+  .chv-frame {
+    position:       absolute;
+    inset:          0;
+    border:         1px solid var(--color-brand-border);
+    background:
+      radial-gradient(72% 62% at 50% 46%, rgba(201,164,73,.16), transparent 58%),
+      radial-gradient(46% 38% at 74% 20%, rgba(216,235,255,.10), transparent 52%),
+      repeating-linear-gradient(45deg,  rgba(201,164,73,.05) 0 1px, transparent 1px 20px),
+      repeating-linear-gradient(-45deg, rgba(201,164,73,.05) 0 1px, transparent 1px 20px),
+      linear-gradient(160deg, #0c0904 0%, #060402 100%);
+    overflow:        hidden;
+    isolation:       isolate;
+    display:         flex;
+    flex-direction:  column;
+    justify-content: flex-end;
+    padding:         1.25rem 1.375rem;
+  }
+  /* Gold corner brackets — lit-case frame */
+  .chv-corner {
+    position: absolute;
+    width:    18px;
+    height:   18px;
+    border:   1px solid var(--color-brand-gold);
+    opacity:  0.5;
+  }
+  .chv-corner--tl { top: 10px;    left: 10px;  border-right: 0; border-bottom: 0; }
+  .chv-corner--tr { top: 10px;    right: 10px; border-left:  0; border-bottom: 0; }
+  .chv-corner--bl { bottom: 10px; left: 10px;  border-right: 0; border-top:    0; }
+  .chv-corner--br { bottom: 10px; right: 10px; border-left:  0; border-top:    0; }
+  /* Diamond outlines — depth marks */
+  .chv-diamond {
+    position:      absolute;
+    top:           42%;
+    left:          50%;
+    border:        1px solid var(--color-brand-gold);
+    transform:     translate(-50%, -50%) rotate(45deg);
+    pointer-events: none;
+  }
+  .chv-diamond--lg { width: 132px; height: 132px; opacity: 0.20; }
+  .chv-diamond--sm { width: 74px;  height: 74px;  opacity: 0.40; }
+  /* Ice catch-light — top right */
+  .chv-catchlight {
+    position:   absolute;
+    top:        12%;
+    right:      14%;
+    width:      54px;
+    height:     54px;
+    background: radial-gradient(circle, rgba(216,235,255,.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .chv-label {
+    position:       relative;
+    z-index:        1;
+    margin:         0 0 0.625rem;
+    font-family:    var(--font-mono);
+    font-size:      0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color:          var(--color-brand-gold);
+  }
+  .chv-process {
+    position:       relative;
+    z-index:        1;
+    display:        flex;
+    align-items:    center;
+    gap:            0.5rem;
+    border-top:     1px solid rgba(201,164,73,0.2);
+    padding-top:    0.625rem;
+    font-family:    var(--font-mono);
+    font-size:      0.55rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color:          var(--color-brand-silver);
+  }
+  .chv-process i { color: var(--color-brand-gold); font-style: normal; }
+}

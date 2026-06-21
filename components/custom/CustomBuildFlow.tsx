@@ -484,6 +484,11 @@ export function CustomBuildFlow() {
             </p>
           )}
 
+          <p className="cf-upload-confidence">
+            <span className="trust-diamond" aria-hidden="true">◆</span>
+            Your logo, photo, or sketch stays yours. We review it, then quote.
+          </p>
+
           <textarea
             id="cf-idea"
             className="form-input"

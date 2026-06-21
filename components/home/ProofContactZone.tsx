@@ -8,6 +8,9 @@
 
 import ProofCounterTrigger from '@/components/home/ProofCounterTrigger'
 
+const WA_PROOF =
+  'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20want%20to%20ask%20about%20a%20piece.'
+
 export default function ProofContactZone() {
   return (
     <section
@@ -91,12 +94,25 @@ export default function ProofContactZone() {
             color: 'var(--color-brand-silver)',
             lineHeight: 1.68,
             maxWidth: '40ch',
-            marginBottom: '1.5rem',
+            marginBottom: '1rem',
           }}>
-            Real Pittsburgh store. Walk in or text 2T. Direct access. Details confirmed per piece.
+            Real Pittsburgh store. Walk in or{' '}
+            <a
+              href={WA_PROOF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="proof-text-link"
+            >
+              text 2T
+            </a>
+            . Direct access. Details confirmed per piece.
           </p>
 
-          <div>
+          <p className="proof-trust-line">
+            Ask before you buy. Material and stone details are confirmed per piece — gold or silver, diamond or moissanite.
+          </p>
+
+          <div style={{ marginTop: '1.5rem' }}>
             <span className="bang-signature bang-signature--section">BANG.</span>
           </div>
 
