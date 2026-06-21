@@ -95,10 +95,14 @@ Do not publish as blanket sitewide claims without verification. Do not invent th
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
 Old Shopify folder is archive only. Do not touch it.
 
-**Latest committed state (as of 2026-06-18 - latest: `553834b`):**
+**Latest committed state (as of 2026-06-21 - latest: `c24fd27`):**
 
 | Commit | Description |
 |---|---|
+| `c24fd27` | feat: declutter homepage product flow — removed PICK THE PIECE material/stone row, discovery strip nav block, pb-custom-band interrupt block, and unused pb-custom-band CSS. Next phase: evaluate homepage before adding more motion/sections |
+| `a785b85` | feat: standardize visual system details — Visual Pass 1B |
+| `e1caaba` | feat: add midnight flash visual polish — Midnight Flash |
+| `465858e` | docs: sync pass 5c and interface design state |
 | `553834b` | docs: add interface design system — `.interface-design/system.md` created; extracted 2T visual system: type stack, four-level gold token scale, surface elevation tokens, depth strategy, spacing, easing, motion system, CTA variants, card rules, eyebrow pattern, shine/atmosphere, BANG. signature, section structure rules, anti-generic checklist |
 | `5da57da` | feat: implement pass 5c copy cro updates — Pass 5C Copy/CRO implemented, QA passed |
 | `992a4ca` | feat: prepare homepage media pipeline - Phase B2-safe homepage asset-ready media pipeline; `data/homeMedia.ts`; safe `next/image` migration; hero video unchanged with poster/reduced-motion fallback; ShineDirectionBand readability; ShineRail links/hidden duplicates/hover-focus pause; no asset edits or copy/claim changes |
@@ -156,7 +160,7 @@ Old Shopify folder is archive only. Do not touch it.
 
 Moses The Jeweler is energy/reference only, not a source to copy. Translate the inspiration into 2T-owned Pittsburgh street-luxury: cinematic product macros, black glass, velvet, hard light, chrome/ice highlights, gold accents, real-store energy, social-first pacing, handoff moments, and real Pittsburgh proof.
 
-**Current focus:** Pass 5C Copy/CRO is completed (`5da57da`), QA passed, committed, and pushed. Interface Design system added at `.interface-design/system.md` (`553834b`) — this is now the governing file for all future UI/visual work. Current active phase is visual/UI pass planning only. No implementation has started. Candidate work: P0 eyebrow standardization + gold token consolidation + card padding system + MobileCtaBar route audit; P1 category cross-sell rail + About page proof-ledger rebuild; P2 surface token system. Top motion add-on candidates: Hero Video Vignette, BANG. Sparkle Burst on Entry, Card Border Edge Glint. Do not implement any visual pass without explicit approval.
+**Current focus:** Homepage De-Clutter Pass 1 completed and pushed (`c24fd27`) — removed PICK THE PIECE material/stone row, discovery strip nav block, pb-custom-band interrupt block, and unused pb-custom-band CSS. Preceded by Visual Pass 1B (`a785b85`) and Midnight Flash visual polish (`e1caaba`). Pass 5C Copy/CRO (`5da57da`) and Interface Design system at `.interface-design/system.md` (`553834b`) remain in place — the latter is the governing file for all future UI/visual work. Current next phase: evaluate homepage after declutter before adding more motion or sections, then continue visual/UI pass planning. No further implementation beyond what is committed. Candidate work: P0 eyebrow standardization + gold token consolidation + card padding system + MobileCtaBar route audit; P1 category cross-sell rail + About page proof-ledger rebuild; P2 surface token system. Top motion add-on candidates: Hero Video Vignette, BANG. Sparkle Burst on Entry, Card Border Edge Glint. Do not implement any visual pass without explicit approval.
 
 ---
 
@@ -230,7 +234,7 @@ Custom page historical baseline (commit 84af600 — 2026-05-17; superseded by P0
 | Homepage Midnight Icebox Pass 3 | ✅ Committed — af7f20d. Anton/Archivo/JetBrains Mono. Vitrine system. Gold/ice palette. |
 | Hero | Complete - full-bleed video unchanged, opacity 0.60, poster attribute retained; reduced-motion users get poster fallback and hidden video layer. |
 | ProofMarquee | ✅ Live — gold borders |
-| PICK THE PIECE gateway | ✅ Anchor row (GRILLZ dominant); TileGlareController 3D tilt/glare desktop (Pass 4C); discovery strip; secondary tiles text-only on mobile (Pass 4C) |
+| PICK THE PIECE gateway | ✅ Anchor row (GRILLZ dominant); TileGlareController 3D tilt/glare desktop (Pass 4C); secondary tiles text-only on mobile (Pass 4C). Material/stone row + discovery strip removed in De-Clutter Pass 1 (`c24fd27`) |
 | ShineRail | Phase B2-safe complete - seamless rail with first 8 cards clickable; duplicate cards aria-hidden/non-link; hover/focus pause; no prices, badges, inventory labels, or new claims. |
 | BestSellersStrip | 🗑️ Removed in Pass 4C — replaced by ShineRail |
 | TileGlareController | ✅ Pass 4C — cursor 3D tilt + glare on anchor tiles, desktop only |

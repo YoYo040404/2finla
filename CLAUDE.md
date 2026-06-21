@@ -52,7 +52,15 @@ For execution tasks:
 
 ## Current Active Task
 
-**Latest committed state: Pass 5C Copy/CRO is implemented, QA passed, committed, and pushed (`5da57da - feat: implement pass 5c copy cro updates`). Interface Design system file added at `.interface-design/system.md` (`553834b - docs: add interface design system`). Phase B2-safe (`992a4ca`) and all prior passes remain QA clean. Midnight Icebox homepage live on https://2finla.vercel.app.**
+**Latest committed state: Homepage De-Clutter Pass 1 implemented and pushed (`c24fd27 - feat: declutter homepage product flow`). Preceded by Visual Pass 1B (`a785b85 - feat: standardize visual system details`) and Midnight Flash visual polish (`e1caaba - feat: add midnight flash visual polish`). Pass 5C Copy/CRO (`5da57da`), Interface Design system at `.interface-design/system.md` (`553834b`), Phase B2-safe (`992a4ca`), and all prior passes remain QA clean. Midnight Icebox homepage live on https://2finla.vercel.app.**
+
+**Homepage De-Clutter Pass 1 (`c24fd27`):** Reduced product-flow noise on homepage —
+- removed PICK THE PIECE material/stone row
+- removed discovery strip nav block
+- removed pb-custom-band interrupt block
+- removed unused pb-custom-band CSS
+
+**Current next phase:** Evaluate homepage after declutter before adding more motion or sections. Known old untracked files remain intentionally untouched.
 
 **Social feed feasibility conclusion (2026-06-03):**
 - Phase 1 = manual curated cards in SocialTeaser left canvas (build when 2T provides real still frames + post URLs)
@@ -63,7 +71,7 @@ For execution tasks:
 
 1. Hero - full-bleed campaign, BUILT TO HIT., BANG. gold brand stamp, dual CTAs: SHOP THE PIECES + BUILD CUSTOM; existing video remains unchanged, poster attribute retained, reduced-motion users get poster fallback with video hidden
 2. ProofMarquee — CSS-only animated trust strip, gold borders
-3. PICK THE PIECE — stronger vitrine gateway, anchor row (GRILLZ dominant), TileGlareController (3D cursor tilt/glare on anchor tiles, desktop only), discovery strip; secondary tiles collapse to text-only on mobile
+3. PICK THE PIECE — stronger vitrine gateway, anchor row (GRILLZ dominant), TileGlareController (3D cursor tilt/glare on anchor tiles, desktop only); secondary tiles collapse to text-only on mobile. (Material/stone row and discovery strip removed in De-Clutter Pass 1 `c24fd27`)
 4. ShineDirectionBand — METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite; section-reveal on scroll
 5. Promo strip — "ASK WHAT'S RUNNING NOW · CUSTOM PIECES BUILT HERE · DETAILS CONFIRMED PER PIECE" — fully claim-safe
 6. ShineRail - seamless auto-scrolling category carousel; first 8 cards are clickable links; duplicate rail cards are aria-hidden/non-link duplicates; hover/focus pauses animation; GRILLZ/WATCHES/CHAINS/PENDANTS/CUSTOM use demo images; RINGS/BRACELETS/EARRINGS use CSS placeholders
@@ -180,7 +188,7 @@ CRO pass and selector grouping committed (commits `60c7d06`, `2303850`). P0/P1 m
 
 **Interface Design system — added (commit `553834b`):** `.interface-design/system.md` created. Contains the extracted 2T visual system: type stack, color tokens (surface elevation + four-level gold scale), depth strategy, spacing, easing, motion system, CTA variants, card rules, eyebrow pattern, shine/atmosphere rules, BANG. signature, section structure rules, and anti-generic checklist. Use this file before any future UI/visual work.
 
-**Next queued work:** Visual/UI pass planning using `.interface-design/system.md` as the governing system document. No implementation yet. Candidate work defined in the interface-design audit plan (P0: eyebrow standardization, gold token consolidation, card padding system, MobileCtaBar route audit; P1: category cross-sell rail, About page proof-ledger rebuild, grain-field extension, TileGlare expansion; P2: surface token system, Watches vitrine, category card stagger). Motion add-on ideas documented in audit (Hero Video Vignette, BANG. Sparkle Burst, Card Border Edge Glint as top P0 candidates).
+**Next queued work:** Evaluate homepage after De-Clutter Pass 1 before adding more motion or sections. Then continue Visual/UI pass planning using `.interface-design/system.md` as the governing system document. No implementation yet beyond what is committed. Candidate work defined in the interface-design audit plan (P0: eyebrow standardization, gold token consolidation, card padding system, MobileCtaBar route audit; P1: category cross-sell rail, About page proof-ledger rebuild, grain-field extension, TileGlare expansion; P2: surface token system, Watches vitrine, category card stagger). Motion add-on ideas documented in audit (Hero Video Vignette, BANG. Sparkle Burst, Card Border Edge Glint as top P0 candidates).
 No random CSS/layout cleanup unless QA finds a real issue.
 
 Do not commit or push new category pages without visual QA and user approval.  

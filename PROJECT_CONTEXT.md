@@ -416,9 +416,11 @@ See Visual Direction section above for the full Midnight Icebox token table (upd
 
 ### Homepage - Midnight Icebox / Phase B2-safe - Committed
 
-**Latest commit:** `992a4ca - feat: prepare homepage media pipeline` (2026-06-10)
+**Latest commit:** `c24fd27 - feat: declutter homepage product flow` (2026-06-21)
 
 Homepage is a product-first store with a custom lane — NOT custom-only. Hero dual CTAs: SHOP THE PIECES + BUILD CUSTOM →.
+
+**Homepage De-Clutter Pass 1 (`c24fd27`):** Reduced product-flow noise — removed PICK THE PIECE material/stone row, removed discovery strip nav block, removed pb-custom-band interrupt block, removed unused pb-custom-band CSS. Next phase: evaluate homepage after declutter before adding more motion or sections.
 
 **Midnight Icebox system active:**
 
@@ -426,7 +428,7 @@ Homepage is a product-first store with a custom lane — NOT custom-only. Hero d
 |---|---------|-----------|--------|
 | 1 | Hero - BUILT TO HIT. + BANG. stamp | inline in `app/page.tsx` | Completed. Full-bleed campaign video remains unchanged, video opacity 0.60, poster attribute retained; reduced-motion users get a poster fallback with the video layer hidden; CTAs unchanged. |
 | 2 | ProofMarquee | `components/home/ProofMarquee.tsx` | ✅ CSS-only marquee, gold borders, trust facts, accessible |
-| 3 | PICK THE PIECE — shop gateway | inline in `app/page.tsx` | ✅ Stronger vitrine gateway; anchor row (GRILLZ dominant); TileGlareController (3D tilt/glare desktop); discovery strip; secondary tiles text-only on mobile (Pass 4C) |
+| 3 | PICK THE PIECE — shop gateway | inline in `app/page.tsx` | ✅ Stronger vitrine gateway; anchor row (GRILLZ dominant); TileGlareController (3D tilt/glare desktop); secondary tiles text-only on mobile (Pass 4C). Material/stone row + discovery strip removed in De-Clutter Pass 1 (`c24fd27`) |
 | 3b | ShineRail - category carousel | `components/home/ShineRail.tsx` | Phase B2-safe complete: first 8 cards are clickable links; duplicate rail cards are aria-hidden/non-link duplicates; hover/focus pauses the rail; no prices, badges, inventory labels, or claim copy added. |
 | 4 | ShineDirectionBand - material/stone direction | inline in `app/page.tsx` | Completed. Approved material/stone copy remains unchanged; B2-safe made the micro text more readable without changing claims. |
 | 5 | Promo strip — ASK WHAT'S RUNNING NOW | inline in `app/page.tsx` | ✅ Claim-safe, WhatsApp prefill, promo terms note |
@@ -597,9 +599,15 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 **Pass 5C Copy/CRO — completed (commit `5da57da`, 2026-06-18):** Implemented, QA passed, committed, and pushed.
 
+**Midnight Flash visual polish — completed (commit `e1caaba`, 2026-06-21):** Pushed.
+
+**Visual Pass 1B — completed (commit `a785b85`, 2026-06-21):** Standardize visual system details. Pushed.
+
+**Homepage De-Clutter Pass 1 — completed (commit `c24fd27`, 2026-06-21):** Reduced product-flow noise — removed PICK THE PIECE material/stone row, discovery strip nav block, pb-custom-band interrupt block, and unused pb-custom-band CSS. Pushed. Next phase: evaluate homepage after declutter before adding more motion or sections.
+
 **Interface Design system — added (commit `553834b`, 2026-06-18):** `.interface-design/system.md` created. Governing file for all future UI/visual work. Contains: type stack, four-level gold token scale (`--gold-full/mid/faint/trace`), three-level surface elevation (`--surface-base/lift/deep`), depth strategy (borders-only, no shadows), spacing system, single easing curve, motion system (ScrollRevealController / TileGlareController / ProofCounterTrigger / stagger classes), three CTA variants, card rules, eyebrow pattern, shine/atmosphere rules, BANG. signature placement, section structure rules, and 12-point anti-generic checklist.
 
-**Current active phase:** Visual/UI pass planning. No implementation yet. Candidate work is defined in the interface-design audit (`.claude/plans/use-the-interface-design-skill-buzzing-fiddle.md`):
+**Current active phase:** Evaluate homepage after De-Clutter Pass 1 (`c24fd27`) before adding more motion or sections. Then continue Visual/UI pass planning. No further implementation beyond what is committed. Candidate work is defined in the interface-design audit (`.claude/plans/use-the-interface-design-skill-buzzing-fiddle.md`):
 - P0: eyebrow standardization sitewide, card padding consolidation to `1.25rem`/`1.5rem`, four gold tokens in `globals.css`, MobileCtaBar route audit
 - P1: category cross-sell rail (Grillz/Watches/Chains/Pendants), About page proof-ledger rebuild, `.grain-field` extension to category CTAs, TileGlare expansion to category cards
 - P2: semantic surface tokens sitewide, Watches vitrine left-canvas, category card stagger reveals
@@ -619,10 +627,14 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 ---
 
-## Committed Work (as of 2026-06-10)
+## Committed Work (as of 2026-06-21)
 
 | Commit | Description |
 |---|---|
+| `c24fd27` | feat: declutter homepage product flow — removed PICK THE PIECE material/stone row, discovery strip nav block, pb-custom-band interrupt block, and unused pb-custom-band CSS |
+| `a785b85` | feat: standardize visual system details — Visual Pass 1B |
+| `e1caaba` | feat: add midnight flash visual polish — Midnight Flash |
+| `465858e` | docs: sync pass 5c and interface design state |
 | `553834b` | docs: add interface design system — `.interface-design/system.md` created with extracted 2T visual system: type stack, four-level gold token scale, surface elevation tokens, depth strategy, spacing, easing, motion system, CTA variants, card rules, eyebrow pattern, shine/atmosphere, BANG. signature, section structure rules, anti-generic checklist |
 | `5da57da` | feat: implement pass 5c copy cro updates — Pass 5C Copy/CRO implemented and QA passed |
 | `46934ff` | docs: add approved pass 5c copy cro plan |

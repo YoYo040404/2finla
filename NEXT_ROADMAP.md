@@ -127,6 +127,9 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 - **Phase B2-safe homepage media pipeline** (commit `992a4ca`, 2026-06-10) - completed, committed, pushed, and live checked by Yaniv. Media paths centralized in `data/homeMedia.ts`; safe homepage raw image usage migrated to `next/image`; hero video unchanged with poster/reduced-motion fallback; ShineDirectionBand micro text improved; ShineRail links/pause/hidden duplicates added; no asset edits, copy changes, claim changes, or Shopify work.
 - **Pass 5C Copy/CRO** (commit `5da57da`, 2026-06-18) — implemented, QA passed, committed, and pushed.
 - **Interface Design system** (commit `553834b`, 2026-06-18) — `.interface-design/system.md` created. Governing file for all future UI/visual work. Type stack, four-level gold token scale, surface elevation tokens, depth strategy, spacing, easing, motion system, CTA variants, card rules, eyebrow pattern, shine/atmosphere, BANG. signature, anti-generic checklist.
+- **Midnight Flash visual polish** (commit `e1caaba`, 2026-06-21) — pushed.
+- **Visual Pass 1B — standardize visual system details** (commit `a785b85`, 2026-06-21) — pushed.
+- **Homepage De-Clutter Pass 1** (commit `c24fd27`, 2026-06-21) — reduced homepage product-flow noise: removed PICK THE PIECE material/stone row, discovery strip nav block, pb-custom-band interrupt block, and unused pb-custom-band CSS. Pushed.
 
 ### WIP / Approval Pending ⚠️
 
@@ -151,6 +154,7 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 
 ### Next Milestone 🎯
 
+- **Evaluate homepage after De-Clutter Pass 1** (`c24fd27`) — assess product flow before adding more motion or sections
 - **Visual/UI pass — plan and approve** — use `.interface-design/system.md` as the governing system document before any implementation
 - P0 candidates: eyebrow standardization sitewide, four gold tokens in `globals.css`, card padding to `1.25rem`/`1.5rem`, MobileCtaBar route audit
 - P1 candidates: category cross-sell rail, About page proof-ledger rebuild, `.grain-field` extension, TileGlare on category cards
@@ -454,7 +458,10 @@ Only if user explicitly approves:
 47. ✅ **Phase B2-safe homepage media pipeline** (commit `992a4ca`, 2026-06-10) — completed, pushed, and live checked by Yaniv; `data/homeMedia.ts`, safe `next/image` migration, hero poster/reduced-motion fallback, SDB readability, ShineRail links/pause/hidden duplicates; no asset edits or copy/claim changes.
 48. ✅ **Pass 5C Copy/CRO** (commit `5da57da`, 2026-06-18) — implemented, QA passed, committed, and pushed.
 49. ✅ **Interface Design system** (commit `553834b`, 2026-06-18) — `.interface-design/system.md` created; governing file for all future UI/visual work.
-50. 🎯 **Visual/UI pass — plan first, then approve** ← NEXT — use `.interface-design/system.md` as the governing system; candidate P0/P1/P2 work defined in audit plan; do not implement until approved
+49a. ✅ **Midnight Flash visual polish** (commit `e1caaba`, 2026-06-21)
+49b. ✅ **Visual Pass 1B — standardize visual system details** (commit `a785b85`, 2026-06-21)
+49c. ✅ **Homepage De-Clutter Pass 1** (commit `c24fd27`, 2026-06-21) — removed PICK THE PIECE material/stone row, discovery strip nav block, pb-custom-band interrupt block, unused pb-custom-band CSS
+50. 🎯 **Evaluate homepage after declutter** ← NEXT — assess product flow before adding more motion or sections; then continue Visual/UI pass planning with `.interface-design/system.md` as the governing system; candidate P0/P1/P2 work defined in audit plan; do not implement until approved
 51. 🎯 **Docs / claim-safety maintenance** — as needed
 52. 🎯 **Final QA after each implementation**
 53. 🎯 **Keep asset shot list as production request direction**
