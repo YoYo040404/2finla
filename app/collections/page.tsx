@@ -23,6 +23,13 @@ type CaseCategory = {
 const heroLine  = 'Grillz. Watches. Chains. Pendants. Gold or silver. Diamond or moissanite.'
 const trustLine = 'Details confirmed per piece. Ask before you buy.'
 
+function ctaLabel(category: CaseCategory): string {
+  if (category.slug === 'grillz')  return 'ASK ABOUT GRILLZ →'
+  if (category.slug === 'watches') return 'ASK ABOUT WATCHES →'
+  if (category.slug === 'custom')  return 'START CUSTOM →'
+  return `SHOP ${category.label.toUpperCase()} →`
+}
+
 const caseCategories: CaseCategory[] = [
   {
     slug: 'grillz',
@@ -191,7 +198,7 @@ export default function CollectionsPage() {
               <span className="collections-case-card__body">
                 <span className="collections-case-card__title">{category.label}</span>
                 <span className="collections-case-card__copy">{category.line}</span>
-                <span className="collections-case-card__cta">{category.label} -&gt;</span>
+                <span className="collections-case-card__cta">{ctaLabel(category)}</span>
               </span>
             </Link>
           ))}

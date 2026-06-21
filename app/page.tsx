@@ -222,7 +222,7 @@ export default function HomePage() {
               display:       'block',
               marginBottom:  '0.55rem',
             }}>
-              WHAT 2T MAKES
+              SHOP THE CASE
             </span>
             <h2
               style={{
@@ -367,13 +367,11 @@ export default function HomePage() {
        * CLAIM SAFETY: no %, BOGO, free shipping, material, or inventory
        * claims. Safe phrases only. Promo terms confirmed per piece.
        */}
-      <div className="promo-ticker" role="complementary" aria-label="What's running at 2T">
+      <div className="promo-ticker" role="complementary" aria-label="Shop 2T by category">
         <div className="promo-ticker-inner">
           <span className="promo-ticker-item">THIS WEEK AT 2T</span>
           <span className="promo-ticker-sep" aria-hidden="true">◆</span>
-          <span className="promo-ticker-item">ASK WHAT&rsquo;S RUNNING — CHAINS · PENDANTS · GRILLZ · CUSTOM</span>
-          <span className="promo-ticker-sep promo-ticker-wide" aria-hidden="true">◆</span>
-          <span className="promo-ticker-item promo-ticker-wide">PROMO TERMS ON ELIGIBLE PIECES ONLY</span>
+          <span className="promo-ticker-item">CHAINS · PENDANTS · GRILLZ · CUSTOM</span>
           <span className="promo-ticker-sep" aria-hidden="true">◆</span>
           <a
             href={WA_PROMO}
@@ -381,7 +379,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className="promo-ticker-cta"
           >
-            ASK WHAT&rsquo;S RUNNING →
+            TEXT 2T →
           </a>
         </div>
       </div>

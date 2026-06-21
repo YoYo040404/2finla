@@ -319,7 +319,7 @@ export function Header() {
                 textDecoration: 'none',
               }}
             >
-              HIT US UP →
+              TEXT 2T →
             </a>
           </div>
         </nav>
