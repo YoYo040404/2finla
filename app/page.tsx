@@ -390,9 +390,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ─── 3b. SHINE RAIL — primary visual merchandising rail ────────── */}
-      <ShineRail />
-
       {/* Sentinel for StickyConversionBar — appears when user scrolls past this point */}
       <div id="sticky-trigger" aria-hidden="true" />
 
@@ -530,6 +527,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ─── 6b. SHINE RAIL — late-page re-engagement merchandising rail ─ */}
+      <ShineRail />
 
       <ProofContactZone />
 
