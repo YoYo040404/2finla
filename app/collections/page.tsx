@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
+import { HOME_MEDIA } from '@/data/homeMedia'
 
 export const metadata: Metadata = {
   title: '2T Jewelers | Collections - Pittsburgh, PA',
@@ -18,6 +20,9 @@ type CaseCategory = {
   line: string
   tone: 'gold' | 'ice' | 'mixed'
   icon: ReactNode
+  // Tracked demo concept visual — present only where a real-image stand-in exists.
+  // Categories without one keep the line-icon case treatment.
+  image?: { src: string; alt: string }
 }
 
 const heroLine  = 'Grillz. Watches. Chains. Pendants. Gold or silver. Diamond or moissanite.'
@@ -37,6 +42,7 @@ const caseCategories: CaseCategory[] = [
     href: '/grillz',
     line: 'Top. Bottom. Full mouth. Built around the fit.',
     tone: 'gold',
+    image: HOME_MEDIA.anchorTiles.grillz,
     icon: (
       <svg viewBox="0 0 120 82" aria-hidden="true">
         <path d="M18 39C31 22 49 16 60 16s29 6 42 23" />
@@ -51,6 +57,7 @@ const caseCategories: CaseCategory[] = [
     href: '/watches',
     line: "Iced-out. Bust-down. Ask what's in.",
     tone: 'ice',
+    image: HOME_MEDIA.anchorTiles.watches,
     icon: (
       <svg viewBox="0 0 120 82" aria-hidden="true">
         <path d="M47 12h26l5 17a28 28 0 0 1 0 24L73 70H47l-5-17a28 28 0 0 1 0-24l5-17Z" />
@@ -65,6 +72,7 @@ const caseCategories: CaseCategory[] = [
     href: '/collections/chains',
     line: 'Cuban. Rope. Tennis. The neck comes first.',
     tone: 'mixed',
+    image: HOME_MEDIA.anchorTiles.chains,
     icon: (
       <svg viewBox="0 0 120 82" aria-hidden="true">
         <ellipse cx="36" cy="37" rx="23" ry="13" transform="rotate(-18 36 37)" />
@@ -81,6 +89,7 @@ const caseCategories: CaseCategory[] = [
     href: '/collections/pendants',
     line: 'Photo. Logo. Name. Number. Pieces that mean something.',
     tone: 'ice',
+    image: HOME_MEDIA.pendantSecondary,
     icon: (
       <svg viewBox="0 0 120 82" aria-hidden="true">
         <path d="M54 8h12v15H54z" />
@@ -167,9 +176,13 @@ export default function CollectionsPage() {
           </div>
 
           <div className="collections-case-hero__vitrine" aria-hidden="true">
-            <div className="collections-case-glass collections-case-glass--top" />
-            <div className="collections-case-glass collections-case-glass--middle" />
-            <div className="collections-case-glass collections-case-glass--bottom" />
+            <Image
+              src={HOME_MEDIA.hero.posterSrc}
+              alt=""
+              fill
+              sizes="(max-width: 949px) 100vw, 42vw"
+              className="collections-case-hero__photo"
+            />
           </div>
         </div>
       </section>
@@ -189,11 +202,27 @@ export default function CollectionsPage() {
               className={`collections-case-card collections-case-card--${category.tone}`}
               aria-label={category.label}
             >
-              <span className="collections-case-card__media">
-                <span className="collections-case-card__tray" />
-                <span className="collections-case-card__icon">{category.icon}</span>
-                <span className="collections-case-card__spark collections-case-card__spark--one" />
-                <span className="collections-case-card__spark collections-case-card__spark--two" />
+              <span
+                className={`collections-case-card__media${
+                  category.image ? ' collections-case-card__media--photo' : ''
+                }`}
+              >
+                {category.image ? (
+                  <Image
+                    src={category.image.src}
+                    alt=""
+                    fill
+                    sizes="(max-width: 767px) 100vw, (max-width: 1099px) 50vw, 25vw"
+                    className="collections-case-card__photo"
+                  />
+                ) : (
+                  <>
+                    <span className="collections-case-card__tray" />
+                    <span className="collections-case-card__icon">{category.icon}</span>
+                    <span className="collections-case-card__spark collections-case-card__spark--one" />
+                    <span className="collections-case-card__spark collections-case-card__spark--two" />
+                  </>
+                )}
               </span>
               <span className="collections-case-card__body">
                 <span className="collections-case-card__title">{category.label}</span>

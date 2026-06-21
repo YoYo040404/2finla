@@ -2739,31 +2739,36 @@
     #0c0900;
 }
 
-/* RINGS — richer warm amber, stone-face spotlight */
+/* RINGS — lit case, gold stone-face spotlight + facet catch */
 .pb-vitrine-pb-rings {
   background:
-    radial-gradient(62% 52% at 50% 44%, rgba(201,164,73,.22), transparent 52%),
-    radial-gradient(80% 62% at 50% 44%, rgba(201,164,73,.08), transparent 66%),
-    repeating-linear-gradient(45deg,  rgba(201,164,73,.032) 0 8px, rgba(0,0,0,0) 8px 16px),
-    repeating-linear-gradient(-45deg, rgba(201,164,73,.022) 0 8px, rgba(0,0,0,0) 8px 16px),
+    radial-gradient(44% 38% at 50% 42%, rgba(201,164,73,.34), transparent 56%),
+    radial-gradient(78% 44% at 50% 94%, rgba(201,164,73,.12), transparent 64%),
+    linear-gradient(116deg, transparent 38%, rgba(255,255,255,.07) 49%, transparent 61%),
+    radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,.05), transparent 42%),
+    repeating-linear-gradient(45deg, rgba(201,164,73,.03) 0 7px, rgba(0,0,0,0) 7px 15px),
     #0e0a00;
 }
 
-/* BRACELETS — iced-out cool, steel-silver/ice catch-light */
+/* BRACELETS — lit case, iced steel-silver wrist catch-light */
 .pb-vitrine-pb-bracelets {
   background:
-    radial-gradient(85% 60% at 50% 50%, rgba(216,235,255,.10), transparent 58%),
-    radial-gradient(40% 32% at 50% 18%, rgba(216,235,255,.06), transparent 60%),
-    repeating-linear-gradient(135deg, rgba(216,235,255,.022) 0 9px, rgba(0,0,0,0) 9px 18px),
+    radial-gradient(46% 40% at 50% 44%, rgba(216,235,255,.20), transparent 56%),
+    radial-gradient(80% 46% at 50% 94%, rgba(216,235,255,.08), transparent 64%),
+    linear-gradient(116deg, transparent 38%, rgba(255,255,255,.08) 49%, transparent 61%),
+    radial-gradient(120% 80% at 50% 0%, rgba(216,235,255,.05), transparent 42%),
+    repeating-linear-gradient(135deg, rgba(216,235,255,.022) 0 8px, rgba(0,0,0,0) 8px 17px),
     #040810;
 }
 
-/* EARRINGS — bright diamond-stud energy, warm-white catch */
+/* EARRINGS — lit case, bright diamond-stud catch */
 .pb-vitrine-pb-earrings {
   background:
-    radial-gradient(58% 46% at 50% 36%, rgba(255,255,255,.11), transparent 50%),
-    radial-gradient(72% 56% at 50% 58%, rgba(201,164,73,.07), transparent 60%),
-    repeating-linear-gradient(-45deg, rgba(255,255,255,.025) 0 8px, rgba(0,0,0,0) 8px 16px),
+    radial-gradient(42% 36% at 50% 40%, rgba(255,255,255,.20), transparent 52%),
+    radial-gradient(76% 46% at 50% 94%, rgba(201,164,73,.08), transparent 62%),
+    linear-gradient(116deg, transparent 38%, rgba(255,255,255,.09) 49%, transparent 61%),
+    radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,.06), transparent 42%),
+    repeating-linear-gradient(-45deg, rgba(255,255,255,.022) 0 7px, rgba(0,0,0,0) 7px 15px),
     #090808;
 }
 
@@ -2775,13 +2780,12 @@
     #060606;
 }
 
-/* Custom lane art — warm gold haze, diamond cool catch, crosshatch workshop feel */
+/* Custom lane art — warm gold haze, ice catch, single facet sweep (lit case) */
 .pb-vitrine-custom {
   background:
-    radial-gradient(72% 62% at 50% 48%, rgba(201,164,73,.22), transparent 55%),
-    radial-gradient(46% 38% at 76% 22%, rgba(216,235,255,.10), transparent 50%),
-    repeating-linear-gradient(45deg,  rgba(201,164,73,.042) 0 1px, transparent 1px 18px),
-    repeating-linear-gradient(-45deg, rgba(201,164,73,.042) 0 1px, transparent 1px 18px),
+    radial-gradient(70% 60% at 50% 46%, rgba(201,164,73,.24), transparent 56%),
+    radial-gradient(46% 38% at 76% 22%, rgba(216,235,255,.11), transparent 50%),
+    linear-gradient(118deg, transparent 40%, rgba(255,255,255,.055) 50%, transparent 62%),
     #090602;
   animation: vitrine-gold-breathe 5.5s ease-in-out infinite;
 }
@@ -4887,21 +4891,12 @@ div:nth-child(3n + 3) > .lit-diagram::after { animation-delay: 5s; }
   opacity: 0.34;
 }
 
-.collections-case-glass {
-  position: absolute;
-  left: 10%;
-  right: 10%;
-  height: 44px;
-  border: 1px solid rgba(216,235,255,0.16);
-  background:
-    linear-gradient(90deg, transparent, rgba(216,235,255,0.08), transparent),
-    rgba(255,255,255,0.018);
-  transform: skewX(-9deg);
+/* Hero vitrine — decorative tracked demo visual behind the case sheen */
+.collections-case-hero__photo {
+  object-fit: cover;
+  opacity: 0.5;
+  z-index: 0;
 }
-
-.collections-case-glass--top { top: 34px; }
-.collections-case-glass--middle { top: 90px; }
-.collections-case-glass--bottom { top: 146px; }
 
 .collections-case-grid-section {
   padding: 2.75rem 0 3.25rem;
@@ -5010,6 +5005,17 @@ div:nth-child(3n + 3) > .lit-diagram::after { animation-delay: 5s; }
   min-height: 150px;
   place-items: center;
   isolation: isolate;
+}
+
+/* Photo case — real tracked demo visual instead of line icon */
+.collections-case-card__media--photo {
+  min-height: 172px;
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.20);
+}
+.collections-case-card__photo {
+  object-fit: cover;
+  opacity: 0.92;
 }
 
 .collections-case-card__tray {

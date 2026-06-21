@@ -213,17 +213,10 @@ export default function HomePage() {
         <div style={{ maxWidth: '1360px', margin: '0 auto' }}>
           {/* Masthead — hard, commercial */}
           <div style={{ marginBottom: '1.25rem' }}>
-            <span style={{
-              fontFamily:    'var(--font-mono)',
-              fontSize:      '0.62rem',
-              letterSpacing: '0.18em',
-              color:         'rgba(201,168,76,0.65)',
-              textTransform: 'uppercase',
-              display:       'block',
-              marginBottom:  '0.55rem',
-            }}>
+            <div className="mi-eyebrow" style={{ marginBottom: '0.55rem' }}>
+              <span className="mi-diamond-sm" aria-hidden="true" />
               SHOP THE CASE
-            </span>
+            </div>
             <h2
               style={{
                 fontFamily: 'var(--font-display)',
@@ -433,18 +426,12 @@ export default function HomePage() {
                 pointerEvents: 'none',
               }}
             />
-            {/* Diamond outline depth marks — ambient accent, not headline */}
+            {/* Single diamond outline — clean piece-in-case frame, ambient accent */}
             <div aria-hidden="true" style={{
               position: 'absolute', top: '50%', left: '50%',
               transform: 'translate(-50%, -54%) rotate(45deg)',
-              width: 'clamp(100px, 22vw, 140px)', height: 'clamp(100px, 22vw, 140px)',
-              border: '1px solid rgba(201,168,76,0.16)', pointerEvents: 'none',
-            }} />
-            <div aria-hidden="true" style={{
-              position: 'absolute', top: '50%', left: '50%',
-              transform: 'translate(-50%, -54%) rotate(45deg)',
-              width: 'clamp(58px, 12vw, 80px)', height: 'clamp(58px, 12vw, 80px)',
-              border: '1px solid rgba(201,168,76,0.28)', pointerEvents: 'none',
+              width: 'clamp(96px, 20vw, 132px)', height: 'clamp(96px, 20vw, 132px)',
+              border: '1px solid rgba(201,168,76,0.30)', pointerEvents: 'none',
             }} />
             {/* Ice catch-light — top right */}
             <div aria-hidden="true" style={{
