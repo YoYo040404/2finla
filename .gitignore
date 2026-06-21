@@ -69,8 +69,13 @@ backup-*.patch
 review-diff.txt
 public/lockup-preview.html
 
-# claude code local config
-.claude/
+# claude code local config (ignore all of .claude EXCEPT the tracked project skill)
+.claude/*
+!.claude/skills/
+.claude/skills/*
+!.claude/skills/2t-copy-chief/
+.claude/skills/2t-copy-chief/*
+!.claude/skills/2t-copy-chief/SKILL.md
 
 # qa screenshot output
 qa-screenshots/
