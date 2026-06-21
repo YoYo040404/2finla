@@ -94,16 +94,8 @@ export default function AboutPage() {
                 }}
               >
                 <p
-                  style={{
-                    fontFamily:    'var(--font-body)',
-                    fontSize:      '0.72rem',
-                    fontWeight:    600,
-                    letterSpacing: '0.14em',
-                    textTransform: 'uppercase',
-                    color:         'var(--color-brand-gold)',
-                    opacity:       0.85,
-                    marginBottom:  '0.5rem',
-                  }}
+                  className="card-eyebrow mi-gold"
+                  style={{ marginBottom: '0.5rem' }}
                 >
                   {label}
                 </p>

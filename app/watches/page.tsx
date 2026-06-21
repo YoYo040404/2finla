@@ -1001,15 +1001,8 @@ export default function WatchesPage() {
                   }}
                 >
                   <p
-                    style={{
-                      fontFamily:    'var(--font-body)',
-                      fontSize:      '0.72rem',
-                      fontWeight:    600,
-                      letterSpacing: '0.14em',
-                      textTransform: 'uppercase',
-                      color:         dir.accentRolex ? 'var(--color-brand-gold)' : 'var(--color-ice-blue)',
-                      opacity:       0.85,
-                    }}
+                    className="card-eyebrow"
+                    style={{ color: dir.accentRolex ? 'var(--color-brand-gold)' : 'var(--color-ice-blue)' }}
                   >
                     {dir.eyebrow}
                   </p>

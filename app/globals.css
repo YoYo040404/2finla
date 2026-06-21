@@ -395,15 +395,25 @@
     letter-spacing: 0.08em;
   }
 
-  /* Section label (eyebrow) */
+  /* Section label (eyebrow) — system.md: mono font, 0.6rem, 0.18em tracking */
   .section-eyebrow {
     display: block;
-    font-family: var(--font-body);
-    font-size: 0.7rem;
-    font-weight: 600;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 400;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--color-brand-gold);
+  }
+
+  /* Card-internal eyebrow label (type/direction inside product cards) */
+  .card-eyebrow {
+    font-family:    var(--font-mono);
+    font-size:      0.65rem;
+    font-weight:    400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity:        0.85;
   }
 
   /* Page-load stagger */

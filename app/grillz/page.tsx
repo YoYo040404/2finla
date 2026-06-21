@@ -730,15 +730,8 @@ export default function GrillzPage() {
                     }}
                   >
                     <p
-                      style={{
-                        fontFamily:    'var(--font-body)',
-                        fontSize:      '0.72rem',
-                        fontWeight:    600,
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color:         isIce ? 'var(--color-ice-blue)' : 'var(--color-brand-gold)',
-                        opacity:       0.85,
-                      }}
+                      className="card-eyebrow"
+                      style={{ color: isIce ? 'var(--color-ice-blue)' : 'var(--color-brand-gold)' }}
                     >
                       {style.eyebrow}
                     </p>
