@@ -130,6 +130,7 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 - **Midnight Flash visual polish** (commit `e1caaba`, 2026-06-21) — pushed.
 - **Visual Pass 1B — standardize visual system details** (commit `a785b85`, 2026-06-21) — pushed.
 - **Homepage De-Clutter Pass 1** (commit `c24fd27`, 2026-06-21) — reduced homepage product-flow noise: removed PICK THE PIECE material/stone row, discovery strip nav block, pb-custom-band interrupt block, and unused pb-custom-band CSS. Pushed.
+- **Trust + Text-Speed + Custom Hero Pass A** (commit `98c56ff`, 2026-06-21) — live-approved by Yaniv. Desktop Header `TEXT 2T` WhatsApp link (`lg+` only); ProofContactZone `text 2T` linked to WhatsApp + new claim-safe material/stone transparency line; CustomBuildFlow upload confidence line ("Your logo, photo, or sketch stays yours. We review it, then quote."); CustomHero desktop right-side CSS-only lit-case/vitrine visual upgrade (`lg+`, static, reduced-motion safe). No new assets, no fake proof/products/pricing/inventory/promos, no Shopify. Build + QA clean. Pushed.
 
 ### WIP / Approval Pending ⚠️
 
@@ -154,7 +155,8 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 
 ### Next Milestone 🎯
 
-- **Evaluate homepage after De-Clutter Pass 1** (`c24fd27`) — assess product flow before adding more motion or sections
+- **Pass B — homepage category de-dup / ShineRail decision** — plan and approve separately before any implementation. Do not implement Pass B yet.
+- **Evaluate homepage after De-Clutter Pass 1 + Pass A** (`c24fd27`, `98c56ff`) — assess product flow before adding more motion or sections
 - **Visual/UI pass — plan and approve** — use `.interface-design/system.md` as the governing system document before any implementation
 - P0 candidates: eyebrow standardization sitewide, four gold tokens in `globals.css`, card padding to `1.25rem`/`1.5rem`, MobileCtaBar route audit
 - P1 candidates: category cross-sell rail, About page proof-ledger rebuild, `.grain-field` extension, TileGlare on category cards

@@ -95,10 +95,11 @@ Do not publish as blanket sitewide claims without verification. Do not invent th
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
 Old Shopify folder is archive only. Do not touch it.
 
-**Latest committed state (as of 2026-06-21 - latest: `c24fd27`):**
+**Latest committed state (as of 2026-06-21 - latest: `98c56ff`):**
 
 | Commit | Description |
 |---|---|
+| `98c56ff` | feat: add trust signals and custom hero weight — Trust + Text-Speed + Custom Hero Pass A. Live-approved by Yaniv. Desktop Header `TEXT 2T` WhatsApp link (`lg+`); ProofContactZone `text 2T` linked + new claim-safe material/stone transparency line; CustomBuildFlow upload confidence line; CustomHero desktop CSS-only lit-case/vitrine upgrade. No assets, no fake proof/products/pricing/promos, no Shopify. Build + QA clean |
 | `c24fd27` | feat: declutter homepage product flow — removed PICK THE PIECE material/stone row, discovery strip nav block, pb-custom-band interrupt block, and unused pb-custom-band CSS. Next phase: evaluate homepage before adding more motion/sections |
 | `a785b85` | feat: standardize visual system details — Visual Pass 1B |
 | `e1caaba` | feat: add midnight flash visual polish — Midnight Flash |
@@ -160,7 +161,7 @@ Old Shopify folder is archive only. Do not touch it.
 
 Moses The Jeweler is energy/reference only, not a source to copy. Translate the inspiration into 2T-owned Pittsburgh street-luxury: cinematic product macros, black glass, velvet, hard light, chrome/ice highlights, gold accents, real-store energy, social-first pacing, handoff moments, and real Pittsburgh proof.
 
-**Current focus:** Homepage De-Clutter Pass 1 completed and pushed (`c24fd27`) — removed PICK THE PIECE material/stone row, discovery strip nav block, pb-custom-band interrupt block, and unused pb-custom-band CSS. Preceded by Visual Pass 1B (`a785b85`) and Midnight Flash visual polish (`e1caaba`). Pass 5C Copy/CRO (`5da57da`) and Interface Design system at `.interface-design/system.md` (`553834b`) remain in place — the latter is the governing file for all future UI/visual work. Current next phase: evaluate homepage after declutter before adding more motion or sections, then continue visual/UI pass planning. No further implementation beyond what is committed. Candidate work: P0 eyebrow standardization + gold token consolidation + card padding system + MobileCtaBar route audit; P1 category cross-sell rail + About page proof-ledger rebuild; P2 surface token system. Top motion add-on candidates: Hero Video Vignette, BANG. Sparkle Burst on Entry, Card Border Edge Glint. Do not implement any visual pass without explicit approval.
+**Current focus:** Trust + Text-Speed + Custom Hero Pass A completed, live-approved by Yaniv, and pushed (`98c56ff`) — desktop Header `TEXT 2T` WhatsApp link (`lg+`), ProofContactZone `text 2T` linked + claim-safe material/stone transparency line, CustomBuildFlow upload confidence line, CustomHero desktop CSS-only lit-case/vitrine upgrade. No assets, no fake proof/products/pricing/promos, no Shopify. Next phase: consider Pass B (homepage category de-dup / ShineRail decision) — plan and approve separately before any implementation. Preceded by Homepage De-Clutter Pass 1 (`c24fd27`), Visual Pass 1B (`a785b85`), and Midnight Flash visual polish (`e1caaba`). Pass 5C Copy/CRO (`5da57da`) and Interface Design system at `.interface-design/system.md` (`553834b`) remain in place — the latter is the governing file for all future UI/visual work. Current next phase: evaluate homepage after declutter before adding more motion or sections, then continue visual/UI pass planning. No further implementation beyond what is committed. Candidate work: P0 eyebrow standardization + gold token consolidation + card padding system + MobileCtaBar route audit; P1 category cross-sell rail + About page proof-ledger rebuild; P2 surface token system. Top motion add-on candidates: Hero Video Vignette, BANG. Sparkle Burst on Entry, Card Border Edge Glint. Do not implement any visual pass without explicit approval.
 
 ---
 

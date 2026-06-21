@@ -416,7 +416,7 @@ See Visual Direction section above for the full Midnight Icebox token table (upd
 
 ### Homepage - Midnight Icebox / Phase B2-safe - Committed
 
-**Latest commit:** `c24fd27 - feat: declutter homepage product flow` (2026-06-21)
+**Latest commit:** `98c56ff - feat: add trust signals and custom hero weight` (2026-06-21, live-approved by Yaniv)
 
 Homepage is a product-first store with a custom lane — NOT custom-only. Hero dual CTAs: SHOP THE PIECES + BUILD CUSTOM →.
 
@@ -605,9 +605,11 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 **Homepage De-Clutter Pass 1 — completed (commit `c24fd27`, 2026-06-21):** Reduced product-flow noise — removed PICK THE PIECE material/stone row, discovery strip nav block, pb-custom-band interrupt block, and unused pb-custom-band CSS. Pushed. Next phase: evaluate homepage after declutter before adding more motion or sections.
 
+**Trust + Text-Speed + Custom Hero Pass A — completed, live-approved, pushed (commit `98c56ff`, 2026-06-21):** Yaniv live-reviewed — custom page and homepage look great. Scope: desktop Header `TEXT 2T` WhatsApp link (`lg+` only); ProofContactZone `text 2T` linked to WhatsApp (`14124524343`); new claim-safe material/stone transparency line in ProofContactZone ("Ask before you buy. Material and stone details are confirmed per piece — gold or silver, diamond or moissanite."); CustomBuildFlow upload confidence line ("Your logo, photo, or sketch stays yours. We review it, then quote."); CustomHero desktop right-side CSS-only lit-case/vitrine visual upgrade (`lg+`, static, reduced-motion safe). Files: `components/layout/Header.tsx`, `components/home/ProofContactZone.tsx`, `components/custom/CustomHero.tsx`, `components/custom/CustomBuildFlow.tsx`, `app/globals.css`. No new assets, no fake proof/products/pricing/inventory/promos, no Shopify. Build clean, QA clean.
+
 **Interface Design system — added (commit `553834b`, 2026-06-18):** `.interface-design/system.md` created. Governing file for all future UI/visual work. Contains: type stack, four-level gold token scale (`--gold-full/mid/faint/trace`), three-level surface elevation (`--surface-base/lift/deep`), depth strategy (borders-only, no shadows), spacing system, single easing curve, motion system (ScrollRevealController / TileGlareController / ProofCounterTrigger / stagger classes), three CTA variants, card rules, eyebrow pattern, shine/atmosphere rules, BANG. signature placement, section structure rules, and 12-point anti-generic checklist.
 
-**Current active phase:** Evaluate homepage after De-Clutter Pass 1 (`c24fd27`) before adding more motion or sections. Then continue Visual/UI pass planning. No further implementation beyond what is committed. Candidate work is defined in the interface-design audit (`.claude/plans/use-the-interface-design-skill-buzzing-fiddle.md`):
+**Current active phase:** Consider Pass B — homepage category de-dup / ShineRail decision. Do NOT implement Pass B until separately planned and approved. Then continue Visual/UI pass planning. No further implementation beyond what is committed. Candidate work is defined in the interface-design audit (`.claude/plans/use-the-interface-design-skill-buzzing-fiddle.md`):
 - P0: eyebrow standardization sitewide, card padding consolidation to `1.25rem`/`1.5rem`, four gold tokens in `globals.css`, MobileCtaBar route audit
 - P1: category cross-sell rail (Grillz/Watches/Chains/Pendants), About page proof-ledger rebuild, `.grain-field` extension to category CTAs, TileGlare expansion to category cards
 - P2: semantic surface tokens sitewide, Watches vitrine left-canvas, category card stagger reveals
