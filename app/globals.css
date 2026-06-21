@@ -2688,27 +2688,6 @@
   gap: 5px;
 }
 
-/* Custom interrupt band */
-.pb-custom-band {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  background: #0a0703;
-  border: 1px solid var(--color-brand-gold);
-  padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1rem, 2.5vw, 1.75rem);
-  margin-top: 1px;
-  margin-bottom: 1rem;
-}
-.pb-custom-band-headline {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
-  font-weight: 400;
-  line-height: 0.9;
-  margin: 0 0 6px;
-  color: var(--color-brand-white);
-}
 
 /* Utility rail */
 .pb-utility-rail {

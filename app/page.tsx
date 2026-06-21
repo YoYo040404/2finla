@@ -242,19 +242,6 @@ export default function HomePage() {
                 PIECE.
               </em>
             </h2>
-            {/* Material direction cue — all categories, all directions. Not a filter. */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.22rem', marginBottom: '0.3rem' }}>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', letterSpacing: '0.13em', color: 'var(--color-brand-gold)' }}>GOLD</span>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--color-brand-muted)' }}>·</span>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', letterSpacing: '0.13em', color: 'var(--color-brand-silver)' }}>SILVER</span>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'rgba(201,168,76,0.35)', padding: '0 0.15rem' }}>◆</span>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', letterSpacing: '0.13em', color: 'var(--color-ice-blue)' }}>DIAMONDS</span>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--color-brand-muted)' }}>·</span>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', letterSpacing: '0.13em', color: 'var(--color-ice-blue)' }}>MOISSANITE</span>
-            </div>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--color-brand-muted)', margin: 0, letterSpacing: '0.01em' }}>
-              Pick the piece. Then pick the shine. Details confirmed per piece.
-            </p>
           </div>
 
           {/* ── ANCHOR ROW: 1.4fr 1fr 1fr — GRILLZ dominant ── */}
@@ -372,106 +359,6 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* ── DISCOVERY STRIP — collection hub entry points ── */}
-          <nav
-            aria-label="Browse collections"
-            style={{
-              borderTop:    '1px solid rgba(201,168,76,0.20)',
-              marginTop:    '1.875rem',
-              marginBottom: '1.75rem',
-            }}
-          >
-            <div style={{
-              display:             'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
-              border:              '1px solid rgba(201,168,76,0.14)',
-              borderTop:           'none',
-              overflow:            'hidden',
-            }}>
-              {([
-                {
-                  label: 'MOST ASKED ABOUT',
-                  copy:  'The pieces people text 2T for first.',
-                  cta:   'Browse →',
-                  href:  '/collections/best-sellers',
-                },
-                {
-                  label: 'ASK WHAT JUST LANDED',
-                  copy:  "What's moving now. Ask before it moves.",
-                  cta:   'Ask →',
-                  href:  '/collections/new-arrivals',
-                },
-                {
-                  label: 'VIEW ALL CATEGORIES',
-                  copy:  'Browse everything. Text 2T before you buy.',
-                  cta:   'Browse all →',
-                  href:  '/collections',
-                },
-              ] as const).map((entry, i) => (
-                <Link
-                  key={entry.href}
-                  href={entry.href}
-                  style={{
-                    display:        'flex',
-                    flexDirection:  'column',
-                    gap:            '0.3rem',
-                    padding:        '1.25rem 1.375rem 1.125rem',
-                    background:     '#0e0e0e',
-                    textDecoration: 'none',
-                    color:          'inherit',
-                    borderLeft:     i > 0 ? '1px solid rgba(201,168,76,0.10)' : 'none',
-                  }}
-                >
-                  <span style={{
-                    fontFamily:    'var(--font-mono)',
-                    fontSize:      '0.6rem',
-                    letterSpacing: '0.16em',
-                    color:         'var(--color-brand-gold)',
-                    textTransform: 'uppercase',
-                    lineHeight:    1.2,
-                  }}>
-                    {entry.label}
-                  </span>
-                  <span style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize:   '0.73rem',
-                    color:      'var(--color-brand-muted)',
-                    lineHeight: 1.5,
-                  }}>
-                    {entry.copy}
-                  </span>
-                  <span style={{
-                    fontFamily:    'var(--font-mono)',
-                    fontSize:      '0.58rem',
-                    letterSpacing: '0.1em',
-                    color:         'rgba(201,168,76,0.50)',
-                    marginTop:     '0.2rem',
-                    textTransform: 'uppercase',
-                  }}>
-                    {entry.cta}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </nav>
-
-          {/* ── CUSTOM INTERRUPT BAND ── */}
-          <div className="pb-custom-band">
-            <div>
-              <h3 className="pb-custom-band-headline">
-                SEND THE PHOTO.{' '}
-                <em style={{ fontStyle: 'italic', color: 'var(--color-brand-gold)', fontFamily: 'var(--font-display)' }}>
-                  SEND THE IDEA.
-                </em>
-              </h3>
-              <span className="mi-mono mi-faint" style={{ fontSize: '0.58rem' }}>DETAILS CONFIRMED PER PIECE</span>
-            </div>
-            <div style={{ flexShrink: 0 }}>
-              <Link href="/custom" className="btn-primary cta-shimmer" style={{ fontSize: '0.8rem', letterSpacing: '0.08em', padding: '0.8rem 1.5rem' }}>
-                BUILD CUSTOM →
-              </Link>
-            </div>
-          </div>
 
         </div>
       </section>
