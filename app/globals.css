@@ -2972,33 +2972,31 @@
   width:                   fit-content;
   padding-bottom:          0.14em;
   border-bottom:           1px solid rgba(201,164,73,0.18);
-  /* Ice-dominant gradient — steel → bright ice → warm-white peak → gold accent */
+  /* Gold-dominant metal — warm gold body with a chrome/ice highlight at the core */
   background: linear-gradient(
-    90deg,
-    #0c1520 0%,
-    #1e3a58 8%,
-    #3d7aa0 18%,
-    #7db5d8 28%,
-    #d0eaf8 40%,
-    #fffef4 46%,
-    #ffffff 50%,
-    #fffef4 54%,
-    #d0eaf8 60%,
-    #8ab8d0 67%,
-    #d4a83a 74%,
-    #8a6018 86%,
-    #0c1520 100%
+    95deg,
+    #7a5c16 0%,
+    #a07d22 12%,
+    #d8b14f 28%,
+    #f2da86 40%,
+    #ffffff 47%,
+    #eaf6ff 50%,
+    #ffffff 53%,
+    #f2da86 60%,
+    #d8b14f 72%,
+    #a07d22 88%,
+    #7a5c16 100%
   );
   background-size:         300% 100%;
   background-clip:         text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color:                   #a0c0d8;
-  /* Warm-white inner core → ice middle ring → gold outer bloom */
+  color:                   var(--color-brand-gold);
+  /* Controlled gold glow with a faint ice rim — no fake-object effect */
   text-shadow:
-    0 0 12px rgba(255,248,210,0.45),
-    0 0 28px rgba(216,235,255,0.52),
-    0 0 55px rgba(201,168,76,0.22);
+    0 0 12px rgba(232,196,95,0.42),
+    0 0 28px rgba(201,168,76,0.30),
+    0 0 52px rgba(216,235,255,0.12);
   /* Settle in after cinematic overlay → ice shine sweep → ice glow breathe */
   animation:
     bang-stamp-settle 0.7s ease-out 1.8s both,
@@ -3020,10 +3018,11 @@
   left:   -7px;
   animation-delay: 2.0s;
 }
-/* Mobile: signature scale — full word visible, no MobileCtaBar conflict */
-@media (max-width: 639px) {
+/* Mobile: scale down + lift clear of the 56px MobileCtaBar */
+@media (max-width: 767px) {
   .bang-signature--hero {
-    font-size: clamp(2.5rem, 10vw, 3.2rem);
+    font-size:     clamp(2.5rem, 10vw, 3.2rem);
+    margin-bottom: 3rem;
   }
 }
 

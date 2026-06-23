@@ -139,15 +139,16 @@ export default function HomePage() {
             className="reveal reveal-d2"
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize: 'clamp(0.9rem, 1.5vw, 1rem)',
-              color: 'var(--color-brand-silver)',
-              lineHeight: 1.55,
+              fontSize: 'clamp(0.95rem, 1.6vw, 1.0625rem)',
+              lineHeight: 1.5,
               marginBottom: '1.5rem',
-              maxWidth: '44ch',
+              maxWidth: '46ch',
+              textShadow: '0 1px 8px rgba(0,0,0,0.6)',
             }}
           >
-            Grillz. Watches. Chains. Pendants. Custom.{' '}
-            <span style={{ color: 'var(--color-brand-muted)' }}>Pittsburgh jeweler. Text 2T or come through.</span>
+            <span style={{ color: 'var(--color-brand-white)', fontWeight: 500 }}>Grillz. Watches. Chains. Pendants. Custom pieces.</span>
+            <br />
+            <span style={{ color: 'var(--color-brand-silver)' }}>Real Pittsburgh jeweler. Text 2T before you buy.</span>
           </p>
 
           <div className="reveal reveal-d3" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center', marginBottom: '1.25rem' }}>
