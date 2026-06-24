@@ -71,7 +71,19 @@ Claim-safety (`CLAIM_SAFETY.md`) is binding and is never overridden by copy or t
 
 ## Current Active Task
 
-**Latest pushed: `0b1a47b - copy: sharpen site CTAs and promo rhythm`.** Tracked working tree clean except known old untracked files (`_handoff/`, `docs/superpowers/plans|specs`, `public/assets/demo/phase3a/*`, `public/assets/logo-to-use.png`). 2T Copy Chief skill (`.claude/skills/2t-copy-chief/SKILL.md`) is active and tracked (`c4e6eed`). Recent copy passes completed + pushed: SocialTeaser tightened + audience doctrine sharpened (`20e30e4`); site CTAs + promo rhythm sharpened (`0b1a47b` — collections hub card CTAs → `SHOP/ASK/START … →` with real arrow; homepage promo de-dup, eyebrow `SHOP THE CASE`; mobile menu WA `TEXT 2T →`). Build + Playwright QA clean (390/1280, no horizontal scroll). All edits copy-string only — no layout/CSS/asset/claim/Shopify changes.
+**Latest pushed: `c1cb8d9 - feat: upgrade product case visuals and whatsapp behavior`.** Hero + Product Case + WhatsApp series (`d16f7ce` → `0302a6a` → `c1cb8d9`) complete and pushed. Tracked working tree clean except known old untracked files (`_handoff/`, `docs/superpowers/plans|specs`, `public/assets/demo/phase3a/*`, `public/assets/logo-to-use.png`). Build + Playwright QA clean (390/1280, no horizontal scroll). No claim/Shopify changes.
+
+**Approved direction now (loud, flashy, icy, product-first, street-luxury — but controlled, premium, readable, claim-safe):**
+- **"Controlled" ≠ quiet or generic.** It means precise execution, not toned-down. 2T must read loud, flashy, icy, product-dominant. Avoid fake slang, boutique-luxury language, and corporate polish. Visuals create desire first; copy then drives Text 2T.
+- **Hero state:** `BANG.` is the approved form — **never `BANG!`**. Clean typographic `BANG.` gold signature (`.bang-signature--hero`) below `BUILT TO HIT.` is the current approved site state. The earlier fake CSS/SVG iced-pendant BANG direction was **rejected — looked AI / not like real jewelry**. A real BANG pendant is a future asset/render project, not CSS text.
+- **Hero subhead (current, sharpened for readability — `0302a6a`):** `Grillz. Watches. Chains. Pendants. Custom pieces.` / `Real Pittsburgh jeweler. Text 2T before you buy.` (white first line ~500 weight + silver second line, text-shadow for legibility over video).
+- **Product Case (PICK THE PIECE) — approved direction: Premium Jewelry Case.** Visual-first, always. Do NOT hide category visuals. Do NOT make product tiles text-only. **All 7 categories need a visual presence.** Current state (`c1cb8d9`): GRILLZ / WATCHES / CHAINS / PENDANTS use demo macro visuals; RINGS / BRACELETS / EARRINGS use `CategorySilhouette.tsx` — clearly non-photographic fine-line case-marker SVGs (gold/ice ink), category markers **not** fake inventory. Low-emphasis text-first exit added under the case ("Don't see it in the case? TEXT 2T — ASK WHAT'S IN →"). Missing real RINGS/BRACELETS/EARRINGS macros remain a future asset need.
+- **WhatsApp behavior (`c1cb8d9`):** Desktop floating WhatsApp and StickyConversionBar must NOT stack. StickyConversionBar shows only after the sentinel scrolls ABOVE the viewport (`boundingClientRect.top < 0`), not while it's still below near the top. While the sticky bar is active it sets `body.sticky-bar-active`, which hides the floating WhatsApp button. Floating WA shows before the sticky bar, hides when the sticky bar is active. MobileCtaBar remains the mobile conversion path.
+- **Asset doctrine:** Real media is now the single biggest quality lever. Never present fake product photos as real inventory. Demo/concept visuals and designed silhouettes are allowed only when clearly NOT presented as real inventory. Future upgrade: replace silhouette vitrines with real category macro photos. Shopify stays a later migration phase — NOT active now.
+
+**Next recommended phase: Custom Order (`/custom`) page audit / strategy pass.** Do NOT jump into code. Start with art direction, copy, conversion path, claim-safety, and visual hierarchy. Implement only after approval.
+
+**Prior copy state (still in place): `0b1a47b - copy: sharpen site CTAs and promo rhythm`.** Tracked working tree clean except known old untracked files (`_handoff/`, `docs/superpowers/plans|specs`, `public/assets/demo/phase3a/*`, `public/assets/logo-to-use.png`). 2T Copy Chief skill (`.claude/skills/2t-copy-chief/SKILL.md`) is active and tracked (`c4e6eed`). Recent copy passes completed + pushed: SocialTeaser tightened + audience doctrine sharpened (`20e30e4`); site CTAs + promo rhythm sharpened (`0b1a47b` — collections hub card CTAs → `SHOP/ASK/START … →` with real arrow; homepage promo de-dup, eyebrow `SHOP THE CASE`; mobile menu WA `TEXT 2T →`). Build + Playwright QA clean (390/1280, no horizontal scroll). All edits copy-string only — no layout/CSS/asset/claim/Shopify changes.
 
 
 
@@ -109,7 +121,7 @@ Claim-safety (`CLAIM_SAFETY.md`) is binding and is never overridden by copy or t
 
 1. Hero - full-bleed campaign, BUILT TO HIT., BANG. gold brand stamp, dual CTAs: SHOP THE PIECES + BUILD CUSTOM; existing video remains unchanged, poster attribute retained, reduced-motion users get poster fallback with video hidden
 2. ProofMarquee — CSS-only animated trust strip, gold borders
-3. PICK THE PIECE — stronger vitrine gateway, anchor row (GRILLZ dominant), TileGlareController (3D cursor tilt/glare on anchor tiles, desktop only); secondary tiles collapse to text-only on mobile. (Material/stone row and discovery strip removed in De-Clutter Pass 1 `c24fd27`)
+3. PICK THE PIECE — Premium Jewelry Case, visual-first. Anchor row (GRILLZ dominant) + TileGlareController (3D cursor tilt/glare, desktop only). Secondary row = case shelf where every tile has a visual: PENDANTS demo macro; RINGS/BRACELETS/EARRINGS = `CategorySilhouette.tsx` fine-line case-marker SVGs (not text-only, not fake inventory). Text-first WhatsApp exit under the case (`WA_CASE`). (Material/stone row and discovery strip removed in De-Clutter Pass 1 `c24fd27`; product-case visuals upgraded `d16f7ce`/`c1cb8d9`)
 4. ShineDirectionBand — METAL: GOLD · SILVER / 925 Sterling Silver — STONE: DIAMONDS · MOISSANITE / D-color VVS Moissanite; section-reveal on scroll
 5. Promo strip — "ASK WHAT'S RUNNING NOW · CUSTOM PIECES BUILT HERE · DETAILS CONFIRMED PER PIECE" — fully claim-safe
 6. ShineRail - seamless auto-scrolling category carousel; first 8 cards are clickable links; duplicate rail cards are aria-hidden/non-link duplicates; hover/focus pauses animation; GRILLZ/WATCHES/CHAINS/PENDANTS/CUSTOM use demo images; RINGS/BRACELETS/EARRINGS use CSS placeholders
@@ -277,7 +289,7 @@ Homepage must create an immediate BAM effect — full-bleed immersive hero, vide
 - product/category dense
 - mobile-first
 - dark cinematic
-- controlled, not flashy
+- loud, flashy, icy, product-first — controlled means precise execution, NOT toned down or quiet
 - not quiet luxury
 - not wedding jewelry / boutique
 - not NFT/crypto

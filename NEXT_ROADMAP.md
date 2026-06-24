@@ -133,6 +133,10 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 - **Trust + Text-Speed + Custom Hero Pass A** (commit `98c56ff`, 2026-06-21) — live-approved by Yaniv. Desktop Header `TEXT 2T` WhatsApp link (`lg+` only); ProofContactZone `text 2T` linked to WhatsApp + new claim-safe material/stone transparency line; CustomBuildFlow upload confidence line ("Your logo, photo, or sketch stays yours. We review it, then quote."); CustomHero desktop right-side CSS-only lit-case/vitrine visual upgrade (`lg+`, static, reduced-motion safe). No new assets, no fake proof/products/pricing/inventory/promos, no Shopify. Build + QA clean. Pushed.
 - **ShineRail relocation** (commit `fbd203c`, 2026-06-21) — moved ShineRail / Most Asked About from upper page to after the Custom lane, before ProofContactZone; cut back-to-back category repetition. JSX move only. Pushed.
 - **Homepage proof-rhythm simplification** (commit `a113a70`, 2026-06-21) — live-approved by Yaniv. Removed ProofMarquee from homepage (trust facts already in ProofContactZone; cut duplicate top marquee + double-ticker noise). ShineRail / Most Asked About kept. Final rhythm (9 sections): Hero → PICK THE PIECE → ShineDirectionBand → Promo strip → Custom lane → ShineRail / Most Asked About → ProofContactZone → SocialTeaser → FinalCTABar. Promo strip is now the only ticker. `app/page.tsx` only; ProofMarquee.tsx / ShineRail.tsx / CSS / data intact (ProofMarquee unmounted, not deleted). No copy/claim/asset/Shopify changes. Pushed.
+- **B2 copy-sharpening** (commit `0b1a47b`, 2026-06) — collections hub card CTAs, homepage promo de-dup, `SHOP THE CASE` eyebrow, mobile-menu `TEXT 2T →`. Copy-string only. Preceded by SocialTeaser tightening + audience doctrine (`20e30e4`) and the 2T Copy Chief skill (`c4e6eed`). Tooling/protocol docs synced (`9d00f0f`, `8163fe3` — code-review gate added).
+- **Product-case visual lift** (commit `d16f7ce`, 2026-06-21) — first product-case visual upgrade (`app/collections/page.tsx`, `app/globals.css`, `app/page.tsx`).
+- **Hero BANG + subhead sharpening** (commit `0302a6a`, 2026-06-23) — hero subhead readability (white first line ~500 wt + silver second line + text-shadow over video): `Grillz. Watches. Chains. Pendants. Custom pieces.` / `Real Pittsburgh jeweler. Text 2T before you buy.` `BANG.` confirmed as the approved form — **never `BANG!`**; the fake CSS/SVG iced-pendant BANG direction was rejected (looked AI); a real BANG pendant is a future asset/render project, not CSS text.
+- **Product case visuals + WhatsApp behavior** (commit `c1cb8d9`, 2026-06-24) — Premium Jewelry Case made fully visual-first: every secondary tile carries a visual; new `components/home/CategorySilhouette.tsx` renders fine-line case-marker SVGs for RINGS/BRACELETS/EARRINGS (gold/ice ink, non-photographic, **not** fake inventory); sharper anchor sub-copy; text-first WhatsApp exit under the case (`WA_CASE`). WhatsApp behavior fixed: StickyConversionBar shows only after the sentinel scrolls ABOVE the viewport (`boundingClientRect.top < 0`) and sets `body.sticky-bar-active` to hide the floating WhatsApp button — the two never stack; MobileCtaBar stays the mobile path. Build + Playwright QA clean.
 
 ### WIP / Approval Pending ⚠️
 
@@ -157,6 +161,8 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 
 ### Next Milestone 🎯
 
+- **Custom Order (`/custom`) page audit / strategy pass** ← NEXT — do NOT jump into code. Start with art direction, copy, conversion path, claim-safety, and visual hierarchy. Implement only after the plan is approved. Hold to the approved direction: loud, flashy, icy, product-first, street-luxury — controlled (= precise, not quiet/generic), premium, readable, claim-safe.
+- **Asset doctrine reminder** — real media is the single biggest quality lever. Never present fake product photos as real inventory. Demo/concept visuals and designed silhouettes are allowed only when clearly not real inventory. Future upgrade: replace RINGS/BRACELETS/EARRINGS silhouette case markers with real macro photos. Shopify stays a later migration phase — not active now.
 - **SocialTeaser tightening/upgrade** — possible separate future pass (reduce height, reconsider demo-thumbnail/scanlines, sharpen follow CTAs). Plan and approve before any implementation. Do not implement yet.
 - **Evaluate homepage after proof-rhythm simplification** (`a113a70`) — assess flow before adding more motion or sections
 - **Visual/UI pass — plan and approve** — use `.interface-design/system.md` as the governing system document before any implementation
@@ -251,7 +257,7 @@ Homepage reset to product store + custom lane. NOT custom-only.
 
 | Section | Component | Notes |
 |---------|-----------|-------|
-| Hero — BUILT TO HIT. + BANG! | inline `app/page.tsx` | Dual CTAs: SHOP JEWELRY + BUILD CUSTOM →. Video slot wired. Sparkle hits. |
+| Hero — BUILT TO HIT. + BANG. | inline `app/page.tsx` | Dual CTAs: SHOP JEWELRY + BUILD CUSTOM →. Video slot wired. Sparkle hits. (`BANG.` is the approved form — never `BANG!`) |
 | ProofMarquee | `components/home/ProofMarquee.tsx` | CSS marquee, trust facts, accessible |
 | SHOP JEWELRY | inline `app/page.tsx` | 8-card gateway: Grillz, Watches, Chains, Rings, Bracelets, Pendants, Earrings, Custom. Priority order. SVG silhouettes. |
 | CUSTOM BUILT HERE | inline `app/page.tsx` | Compressed fast lane. Logo / Name / Photo / Grillz / Watch direction. BUILD CUSTOM → + TEXT 2T →. Keyword chips. |

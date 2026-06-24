@@ -426,9 +426,9 @@ Homepage is a product-first store with a custom lane — NOT custom-only. Hero d
 
 | # | Section | Component | Status |
 |---|---------|-----------|--------|
-| 1 | Hero - BUILT TO HIT. + BANG. stamp | inline in `app/page.tsx` | Completed. Full-bleed campaign video remains unchanged, video opacity 0.60, poster attribute retained; reduced-motion users get a poster fallback with the video layer hidden; CTAs unchanged. |
+| 1 | Hero - BUILT TO HIT. + BANG. stamp | inline in `app/page.tsx` | Completed. Full-bleed campaign video unchanged, opacity 0.60, poster retained; reduced-motion gets poster fallback, video hidden; CTAs unchanged. **`BANG.` is the approved form — never `BANG!`** (clean typographic gold `.bang-signature--hero` below the headline; fake CSS/SVG iced-pendant BANG was rejected — looked AI; real BANG pendant is a future asset/render project). Subhead sharpened for readability (`0302a6a`): `Grillz. Watches. Chains. Pendants. Custom pieces.` (white, ~500 wt) / `Real Pittsburgh jeweler. Text 2T before you buy.` (silver) + text-shadow over video. |
 | 2 | ProofMarquee | `components/home/ProofMarquee.tsx` | ✅ CSS-only marquee, gold borders, trust facts, accessible |
-| 3 | PICK THE PIECE — shop gateway | inline in `app/page.tsx` | ✅ Stronger vitrine gateway; anchor row (GRILLZ dominant); TileGlareController (3D tilt/glare desktop); secondary tiles text-only on mobile (Pass 4C). Material/stone row + discovery strip removed in De-Clutter Pass 1 (`c24fd27`) |
+| 3 | PICK THE PIECE — Premium Jewelry Case | inline in `app/page.tsx` + `components/home/CategorySilhouette.tsx` | ✅ Visual-first. Anchor row (GRILLZ dominant) + TileGlareController (3D tilt/glare desktop). Secondary row is a case shelf where **every tile has a visual**: PENDANTS demo macro; RINGS/BRACELETS/EARRINGS render `CategorySilhouette` fine-line case-marker SVGs (gold/ice ink — non-photographic, NOT fake inventory). No text-only tiles. Text-first WhatsApp exit under the case ("Don't see it in the case? TEXT 2T — ASK WHAT'S IN →", `WA_CASE`). Material/stone row + discovery strip removed in De-Clutter Pass 1 (`c24fd27`); product-case visuals upgraded (`d16f7ce`/`c1cb8d9`) |
 | 3b | ShineRail - category carousel | `components/home/ShineRail.tsx` | Phase B2-safe complete: first 8 cards are clickable links; duplicate rail cards are aria-hidden/non-link duplicates; hover/focus pauses the rail; no prices, badges, inventory labels, or claim copy added. |
 | 4 | ShineDirectionBand - material/stone direction | inline in `app/page.tsx` | Completed. Approved material/stone copy remains unchanged; B2-safe made the micro text more readable without changing claims. |
 | 5 | Promo strip — ASK WHAT'S RUNNING NOW | inline in `app/page.tsx` | ✅ Claim-safe, WhatsApp prefill, promo terms note |
@@ -611,7 +611,13 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 **Homepage proof-rhythm simplification — completed, live-approved, pushed (`a113a70` + `fbd203c`, 2026-06-21):** Yaniv reviewed live — looks good. `fbd203c` relocated ShineRail / Most Asked About below the Custom lane (before ProofContactZone). `a113a70` removed ProofMarquee from the homepage (trust facts already in ProofContactZone; removed duplicate top marquee + double-ticker noise). Final homepage rhythm (9 sections): Hero → PICK THE PIECE → ShineDirectionBand → Promo strip → Custom lane → ShineRail / Most Asked About → ProofContactZone → SocialTeaser → FinalCTABar. Promo strip is now the only ticker. `app/page.tsx` JSX/import only; ProofMarquee.tsx / ShineRail.tsx / CSS / `data/homeMedia.ts` intact (ProofMarquee unmounted, not deleted). No copy/claim/asset/inventory/pricing/review/promo/Shopify/product changes. Build + QA clean.
 
-**Current active phase:** SocialTeaser tightening/upgrade is a possible separate future pass — do NOT implement until separately planned and approved. Then continue Visual/UI pass planning. No further implementation beyond what is committed. Candidate work is defined in the interface-design audit (`.claude/plans/use-the-interface-design-skill-buzzing-fiddle.md`):
+**Hero + Product Case + WhatsApp series — completed, pushed (`d16f7ce` → `0302a6a` → `c1cb8d9`, 2026-06-21 → 2026-06-24):**
+- `d16f7ce` feat: elevate product-case visuals — first product-case visual lift (`app/collections/page.tsx`, `app/globals.css`, `app/page.tsx`).
+- `0302a6a` feat: sharpen hero bang and subhead — hero subhead readability (white first line ~500 wt + silver second line + text-shadow over video): `Grillz. Watches. Chains. Pendants. Custom pieces.` / `Real Pittsburgh jeweler. Text 2T before you buy.` `BANG.` confirmed as the approved form (never `BANG!`); fake CSS/SVG iced-pendant BANG rejected — looked AI.
+- `c1cb8d9` feat: upgrade product case visuals and whatsapp behavior — (1) Premium Jewelry Case: every secondary tile now has a visual; new `components/home/CategorySilhouette.tsx` renders fine-line case-marker SVGs for RINGS/BRACELETS/EARRINGS (gold/ice ink, non-photographic, NOT fake inventory); sharper anchor sub-copy; text-first WhatsApp exit under the case (`WA_CASE`). (2) WhatsApp behavior fixed: StickyConversionBar shows only after the sentinel scrolls ABOVE the viewport (`boundingClientRect.top < 0`), and sets `body.sticky-bar-active` to hide the floating WhatsApp button so the two never stack; floating WA shows before the sticky bar, hides when active; MobileCtaBar stays the mobile conversion path.
+- **Asset doctrine reaffirmed:** real media is the single biggest quality lever. Never present fake product photos as real inventory. Demo/concept visuals and designed silhouettes are allowed only when clearly not real inventory. Future upgrade: replace silhouette vitrines with real RINGS/BRACELETS/EARRINGS macro photos. Shopify stays a later migration phase — not active now.
+
+**Current active phase:** **Custom Order (`/custom`) page audit / strategy pass is the next recommended phase** — do NOT jump into code; start with art direction, copy, conversion path, claim-safety, and visual hierarchy, then implement only after approval. SocialTeaser tightening/upgrade remains a possible separate future pass — do NOT implement until separately planned and approved. Visual/UI pass planning continues with `.interface-design/system.md` as the governing system. No further implementation beyond what is committed. Candidate work is defined in the interface-design audit (`.claude/plans/use-the-interface-design-skill-buzzing-fiddle.md`):
 - P0: eyebrow standardization sitewide, card padding consolidation to `1.25rem`/`1.5rem`, four gold tokens in `globals.css`, MobileCtaBar route audit
 - P1: category cross-sell rail (Grillz/Watches/Chains/Pendants), About page proof-ledger rebuild, `.grain-field` extension to category CTAs, TileGlare expansion to category cards
 - P2: semantic surface tokens sitewide, Watches vitrine left-canvas, category card stagger reveals
@@ -635,6 +641,14 @@ Flow: CustomHero → CustomBuildFlow (THE BUILD: piece type + metal + stone sele
 
 | Commit | Description |
 |---|---|
+| `c1cb8d9` | feat: upgrade product case visuals and whatsapp behavior — `CategorySilhouette.tsx` case markers for RINGS/BRACELETS/EARRINGS, sharper anchor sub-copy, text-first `WA_CASE` exit; StickyConversionBar sentinel-scrolled-past fix + `body.sticky-bar-active` hides floating WA (no stacking) |
+| `0302a6a` | feat: sharpen hero bang and subhead — readability subhead (white/silver + text-shadow), `BANG.` confirmed (never `BANG!`), fake iced-pendant BANG rejected |
+| `d16f7ce` | feat: elevate product-case visuals — first product-case visual lift (collections + homepage) |
+| `8163fe3` | docs: add code review gate to 2t protocol |
+| `9d00f0f` | docs: sync 2t tools and copy protocol |
+| `0b1a47b` | copy: sharpen site CTAs and promo rhythm — collections hub CTAs, homepage promo de-dup, `SHOP THE CASE` eyebrow, mobile-menu `TEXT 2T →` |
+| `20e30e4` | copy: tighten social teaser and audience doctrine |
+| `c4e6eed` | docs: add 2t copy chief skill |
 | `c24fd27` | feat: declutter homepage product flow — removed PICK THE PIECE material/stone row, discovery strip nav block, pb-custom-band interrupt block, and unused pb-custom-band CSS |
 | `a785b85` | feat: standardize visual system details — Visual Pass 1B |
 | `e1caaba` | feat: add midnight flash visual polish — Midnight Flash |
