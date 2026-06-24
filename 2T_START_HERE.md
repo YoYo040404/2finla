@@ -33,12 +33,13 @@ Your job is not to make a normal jewelry website.
 Your job is to help 2T become a real Pittsburgh street-luxury jeweler online: loud, icy, product-first, direct, trusted, simple to text, and built to convert leads.
 
 Think like:
-- a conversion strategist
-- a hip-hop jewelry buyer psychologist
-- a sharp copy chief
-- a visual direction lead
-- a claim-safety reviewer
-- a practical Next.js product advisor
+
+* a conversion strategist
+* a hip-hop jewelry buyer psychologist
+* a sharp copy chief
+* a visual direction lead
+* a claim-safety reviewer
+* a practical Next.js product advisor
 
 The target buyer wants shine, status, identity, and a piece that hits. But they are also scared of being finessed, fake materials, fake stones, bad grillz fit, fake watches, fake timelines, and stores that do not answer.
 
@@ -52,25 +53,27 @@ I do not want to get finessed.
 The voice should feel like a real jeweler across the counter, not a boutique brand, not SaaS, not wedding jewelry, not AI copy, and not fake street slang.
 
 Core audience language:
-- Text 2T
-- Send the photo
-- Send the logo
-- Bring the name
-- Ask what’s in
-- Ask before you buy
-- We quote first
-- No deposit to start
-- Built to hit
-- Built for the light
-- Grillz. Watches. Chains. Pendants. Custom.
-- Gold or silver. Diamond or moissanite. Different shine. Different direction.
+
+* Text 2T
+* Send the photo
+* Send the logo
+* Bring the name
+* Ask what’s in
+* Ask before you buy
+* We quote first
+* No deposit to start
+* Built to hit
+* Built for the light
+* Grillz. Watches. Chains. Pendants. Custom.
+* Gold or silver. Diamond or moissanite. Different shine. Different direction.
 
 Never use:
-- fake AAVE or parody street voice
-- “curated,” “elevated,” “bespoke journey,” “luxury redefined”
-- fake products, fake stock, fake reviews, fake followers
-- fake timeline, free render, CAD promise, guaranteed fit, lifetime warranty
-- “moissanite diamond,” “diamond alternative,” “cheap silver,” or budget framing
+
+* fake AAVE or parody street voice
+* “curated,” “elevated,” “bespoke journey,” “luxury redefined”
+* fake products, fake stock, fake reviews, fake followers
+* fake timeline, free render, CAD promise, guaranteed fit, lifetime warranty
+* “moissanite diamond,” “diamond alternative,” “cheap silver,” or budget framing
 
 Before suggesting anything, ask:
 
@@ -116,21 +119,90 @@ These files define current state, allowed claims, active direction, next task, t
 
 ## Current Project State
 
-- Active repo: `YoYo040404/2finla`
-- Active branch: `main`
-- Active local folder: `C:\Users\yaniv\Downloads\2t-jewelers-next`
-- Latest documented state is pushed to `origin/main`.
-- GitHub is the source of truth for current project context.
-- Shopify is paused for now.
-- Google Drive sync was tested and stopped; do not use Drive as the source of truth.
-- The current approved visual direction is: loud, flashy, icy, product-first, street-luxury, controlled/premium, readable, claim-safe.
-- Current approved hero: clean typographic `BANG.`
-- `BANG.` is a hallmark/stamp system, not the H1 and not `BANG!`.
-- Current approved Product Case: Premium Jewelry Case with all 7 categories visual.
-- Rings / Bracelets / Earrings silhouettes are temporary non-inventory category markers.
-- Desktop floating WhatsApp and StickyConversionBar must not stack.
-- MobileCtaBar remains the mobile conversion path.
-- Next phase: `/custom` page audit / strategy before code.
+* Active repo: `YoYo040404/2finla`
+* Active branch: `main`
+* Active local folder: `C:\Users\yaniv\Downloads\2t-jewelers-next`
+* Latest documented state is pushed to `origin/main`.
+* GitHub is the source of truth for current project context.
+* Shopify is paused for now.
+* Google Drive sync was tested and stopped; do not use Drive as the source of truth.
+* The current approved visual direction is: loud, flashy, icy, product-first, street-luxury, controlled/premium, readable, claim-safe.
+* Current approved hero: clean typographic `BANG.`
+* `BANG.` is a hallmark/stamp system, not the H1 and not `BANG!`.
+* Current approved Product Case: Premium Jewelry Case with all 7 categories visual.
+* Rings / Bracelets / Earrings silhouettes are temporary non-inventory category markers.
+* Desktop floating WhatsApp and StickyConversionBar must not stack.
+* MobileCtaBar remains the mobile conversion path.
+* Next phase: `/custom` page audit / strategy before code.
+
+---
+
+## Claude Code Tooling Reminder
+
+Claude Code has many MCPs, plugins, and skills connected for this project.
+
+Do **not** use all tools on every task.
+
+For every serious 2T task:
+
+1. First understand the task type.
+2. Decide which tools actually improve the result.
+3. Use only the relevant tools.
+4. Avoid tool noise and token waste.
+5. Report briefly what was used, what was skipped, and why.
+
+The goal is not to show that every tool was used.
+
+The goal is to get the best 2T result with the right tools.
+
+### Available MCPs to remember
+
+Use these when they fit the task:
+
+* Vercel MCP — deployment/live context when useful
+* Playwright MCP — visual QA, screenshots, route checks, forms, mobile/desktop inspection
+* 21st.dev Magic MCP — UI/UX pattern inspiration and component direction
+* Magic UI MCP — controlled shine/glow/motion ideas when useful
+* Firecrawl MCP — focused competitor, VOC, and external research
+* Context7 MCP — current framework/library documentation
+* Next DevTools MCP — Next.js route/runtime diagnostics
+* Chrome DevTools MCP — browser console, layout, and network debugging
+
+### Enabled plugins and skills to remember
+
+Use these when they fit the task:
+
+* caveman
+* superpowers
+* frontend-design
+* ui-ux-pro-max
+* ux-strategy
+* ui-design
+* design-systems
+* design-ops
+* interaction-design
+* visual-critique
+* code-review
+* playwright plugin
+* claude-md-management
+* local `.claude/skills/2t-copy-chief/SKILL.md`
+
+### Connected but not automatic for 2T
+
+These are connected, but require explicit user approval before use on the 2T project:
+
+* Shopify
+* Gmail
+* Google Drive
+* Google Calendar
+* Spotify
+
+Default rule:
+
+```text
+Use the right tools, not all tools.
+Remember all available tools, but choose only what the task needs.
+```
 
 ---
 
@@ -176,15 +248,16 @@ Read these before any `/custom` audit, strategy, copy, visual, or implementation
 
 Current `/custom` rule:
 
-- The page is approved/live unless the living docs say otherwise.
-- Do not redesign or restructure `/custom` without explicit user approval.
-- Start with audit/art direction/copy/conversion path first.
-- Do not jump into code.
-- The buyer should immediately understand:
-  - send the idea / photo / logo / name / number / sketch / reference
-  - 2T reviews it
-  - 2T quotes before the build
-  - no fake timeline, render, CAD, warranty, or response-time promise
+* The page is approved/live unless the living docs say otherwise.
+* Do not redesign or restructure `/custom` without explicit user approval.
+* Start with audit/art direction/copy/conversion path first.
+* Do not jump into code.
+* The buyer should immediately understand:
+
+  * send the idea / photo / logo / name / number / sketch / reference
+  * 2T reviews it
+  * 2T quotes before the build
+  * no fake timeline, render, CAD, warranty, or response-time promise
 
 ---
 
@@ -202,14 +275,14 @@ Read these before writing or revising any 2T copy:
 
 Core copy doctrine:
 
-- Product and shine first.
-- Trust anchor second.
-- One trust anchor per surface when possible.
-- Use direct product language: ice, iced-out, flooded, shine, heavy, clean, solid, real, custom, piece.
-- Use direct action language: Text 2T, Send the photo, Send the logo, Ask what’s in, Ask before you buy.
-- Avoid boutique/corporate language.
-- Avoid fake slang or parody street voice.
-- Never let claim-safety scaffolding become the main voice.
+* Product and shine first.
+* Trust anchor second.
+* One trust anchor per surface when possible.
+* Use direct product language: ice, iced-out, flooded, shine, heavy, clean, solid, real, custom, piece.
+* Use direct action language: Text 2T, Send the photo, Send the logo, Ask what’s in, Ask before you buy.
+* Avoid boutique/corporate language.
+* Avoid fake slang or parody street voice.
+* Never let claim-safety scaffolding become the main voice.
 
 ---
 
@@ -227,14 +300,14 @@ Read these before homepage visual, section-order, brand, hero, product-case, mot
 
 Current homepage doctrine:
 
-- Do not reopen homepage unless explicitly approved.
-- Hero state is clean typographic `BANG.` under `BUILT TO HIT.`
-- Fake CSS/SVG iced-pendant BANG direction was rejected.
-- Product Case direction is Premium Jewelry Case.
-- All 7 categories must keep visual presence.
-- Do not hide product/category visuals.
-- Do not make product tiles text-only.
-- Real assets are still the biggest future unlock.
+* Do not reopen homepage unless explicitly approved.
+* Hero state is clean typographic `BANG.` under `BUILT TO HIT.`
+* Fake CSS/SVG iced-pendant BANG direction was rejected.
+* Product Case direction is Premium Jewelry Case.
+* All 7 categories must keep visual presence.
+* Do not hide product/category visuals.
+* Do not make product tiles text-only.
+* Real assets are still the biggest future unlock.
 
 ---
 
@@ -252,11 +325,11 @@ Read these before category pages, SHOP lane, product gateways, or collection arc
 
 Key doctrine:
 
-- SHOP is strategically important, but do not fake ecommerce.
-- Do not invent products, prices, stock, reviews, bestseller claims, or inventory.
-- Use “ask what’s available / ask what’s in stock” until real inventory exists.
-- Product categories remain the primary doors.
-- Gold/Silver and Diamond/Moissanite are parallel directions inside the experience, not budget/premium lanes.
+* SHOP is strategically important, but do not fake ecommerce.
+* Do not invent products, prices, stock, reviews, bestseller claims, or inventory.
+* Use “ask what’s available / ask what’s in stock” until real inventory exists.
+* Product categories remain the primary doors.
+* Gold/Silver and Diamond/Moissanite are parallel directions inside the experience, not budget/premium lanes.
 
 ---
 
@@ -272,24 +345,25 @@ Read these before asset planning, media replacement, product photography, social
 
 Core asset doctrine:
 
-- Real media is the biggest quality lever.
-- Do not use AI-generated product images as real inventory.
-- Do not use stock/competitor images as 2T proof.
-- Demo/concept visuals may be used only when clearly not presented as real product proof.
-- Future priority assets:
-  - hero jewelry loop
-  - real grillz photo
-  - real watch photo only with disclosure discipline
-  - real chain photo
-  - real pendant/custom piece photo
-  - real store interior/counter photo
-  - real @2tjewelers social stills and URLs
+* Real media is the biggest quality lever.
+* Do not use AI-generated product images as real inventory.
+* Do not use stock/competitor images as 2T proof.
+* Demo/concept visuals may be used only when clearly not presented as real product proof.
+* Future priority assets:
+
+  * hero jewelry loop
+  * real grillz photo
+  * real watch photo only with disclosure discipline
+  * real chain photo
+  * real pendant/custom piece photo
+  * real store interior/counter photo
+  * real @2tjewelers social stills and URLs
 
 Social doctrine:
 
-- Phase 1 social should use manual curated cards from real @2tjewelers posts.
-- Do not build TikTok/Instagram APIs unless explicitly approved.
-- No fake follower counts, likes, views, captions, UGC, or testimonials.
+* Phase 1 social should use manual curated cards from real @2tjewelers posts.
+* Do not build TikTok/Instagram APIs unless explicitly approved.
+* No fake follower counts, likes, views, captions, UGC, or testimonials.
 
 ---
 
@@ -304,15 +378,15 @@ Read these before material language, stone language, filters, badges, PDP/spec a
 
 Current doctrine:
 
-- All 2T silver is 925 Sterling Silver at business level.
-- All 2T moissanite is D-color and VVS at business level.
-- These can be used in homepage direction copy when scoped correctly.
-- Per-piece badges still require per-piece verification.
-- Do not say “moissanite diamond.”
-- Do not call moissanite a diamond alternative, substitute, simulant, fake diamond, or cheaper diamond.
-- Do not frame silver as cheap or inferior to gold.
-- Use: Gold or silver. Diamond or moissanite. Different shine. Different direction.
-- Safe fallback: Material and stone details confirmed per piece.
+* All 2T silver is 925 Sterling Silver at business level.
+* All 2T moissanite is D-color and VVS at business level.
+* These can be used in homepage direction copy when scoped correctly.
+* Per-piece badges still require per-piece verification.
+* Do not say “moissanite diamond.”
+* Do not call moissanite a diamond alternative, substitute, simulant, fake diamond, or cheaper diamond.
+* Do not frame silver as cheap or inferior to gold.
+* Use: Gold or silver. Diamond or moissanite. Different shine. Different direction.
+* Safe fallback: Material and stone details confirmed per piece.
 
 ---
 
@@ -328,11 +402,11 @@ Read these before metadata, schema, noindex, local SEO, category SEO, or growth 
 
 Key doctrine:
 
-- SEO should support real buyer intent, not thin pages.
-- Do not create material/stone landing pages until there is enough real inventory/proof.
-- Best Sellers / New Arrivals should not imply fake inventory.
-- Local Pittsburgh proof is a major advantage.
-- Use structured data only when facts are verified.
+* SEO should support real buyer intent, not thin pages.
+* Do not create material/stone landing pages until there is enough real inventory/proof.
+* Best Sellers / New Arrivals should not imply fake inventory.
+* Local Pittsburgh proof is a major advantage.
+* Use structured data only when facts are verified.
 
 ---
 
@@ -349,11 +423,11 @@ Read these before code implementation, framework-sensitive work, major QA, or to
 
 Important:
 
-- `AGENTS.md` says this is not the Next.js you know. Read relevant `node_modules/next/dist/docs/` before code that depends on current Next.js APIs.
-- `QA_CHECKLIST_NEXT.md` may contain stale homepage section order. Do not use it as a controlling source unless it has been synced with current living docs.
-- Always run build and relevant visual QA after UI work.
-- Do not use `git add .`.
-- Do not stage, commit, or push unless user approves.
+* `AGENTS.md` says this is not the Next.js you know. Read relevant `node_modules/next/dist/docs/` before code that depends on current Next.js APIs.
+* `QA_CHECKLIST_NEXT.md` may contain stale homepage section order. Do not use it as a controlling source unless it has been synced with current living docs.
+* Always run build and relevant visual QA after UI work.
+* Do not use `git add .`.
+* Do not stage, commit, or push unless user approves.
 
 ---
 
@@ -363,24 +437,24 @@ These files are useful background, but not controlling current state unless livi
 
 ### Historical implementation references
 
-- `docs/superpowers/plans/2026-06-02-pass3a-copy-implementation.md`
-- `docs/superpowers/plans/2026-06-01-pendants-split-mini-catalog.md`
+* `docs/superpowers/plans/2026-06-02-pass3a-copy-implementation.md`
+* `docs/superpowers/plans/2026-06-01-pendants-split-mini-catalog.md`
 
 Use these to understand prior decisions or patterns. Do not execute them blindly.
 
 ### Archived / deprecated
 
-- `docs/superpowers/plans/2026-05-15-brand-assets-credibility-video.md`
+* `docs/superpowers/plans/2026-05-15-brand-assets-credibility-video.md`
 
 This file is archived. It contains deprecated language.
 
 Never use from that file unless later re-approved:
 
-- `nearly 30 years`
-- `over 30 years`
-- `family-owned`
-- old personal-brand references
-- unapproved credibility claims
+* `nearly 30 years`
+* `over 30 years`
+* `family-owned`
+* old personal-brand references
+* unapproved credibility claims
 
 Current approved tenure language is:
 
@@ -394,20 +468,20 @@ Current approved tenure language is:
 
 Never use old guidance that says or implies:
 
-- `BANG!` instead of `BANG.`
-- `nearly 30 years`
-- `over 30 years`
-- `family-owned`
-- text-only product tiles as acceptable Product Case direction
-- old homepage section order from stale README/QA docs
-- Shopify is active now
-- Google Drive is current source of truth
-- moissanite diamond
-- diamond alternative / diamond substitute
-- silver as budget or cheap
-- free mockup / free render / CAD promise
-- guaranteed grillz fit
-- active stock, bestseller, review, shipping, warranty, or timeline claims without verification
+* `BANG!` instead of `BANG.`
+* `nearly 30 years`
+* `over 30 years`
+* `family-owned`
+* text-only product tiles as acceptable Product Case direction
+* old homepage section order from stale README/QA docs
+* Shopify is active now
+* Google Drive is current source of truth
+* moissanite diamond
+* diamond alternative / diamond substitute
+* silver as budget or cheap
+* free mockup / free render / CAD promise
+* guaranteed grillz fit
+* active stock, bestseller, review, shipping, warranty, or timeline claims without verification
 
 ---
 
@@ -447,11 +521,11 @@ Current next project phase:
 
 Recommended first prompt direction:
 
-- Research + audit only.
-- Read `2T_START_HERE.md` first.
-- Then read current `/custom` code and current living docs from GitHub.
-- Read `/custom` research library files listed above.
-- Judge what is already approved/live versus what still needs improvement.
-- Focus on art direction, copy, conversion path, claim-safety, visual hierarchy.
-- Stop with recommendation.
-- No code until approved.
+* Research + audit only.
+* Read `2T_START_HERE.md` first.
+* Then read current `/custom` code and current living docs from GitHub.
+* Read `/custom` research library files listed above.
+* Judge what is already approved/live versus what still needs improvement.
+* Focus on art direction, copy, conversion path, claim-safety, visual hierarchy.
+* Stop with recommendation.
+* No code until approved.
