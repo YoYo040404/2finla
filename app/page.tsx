@@ -8,12 +8,14 @@ import FinalCTABar from '@/components/home/FinalCTABar'
 import ScrollRevealController from '@/components/home/ScrollRevealController'
 import StickyConversionBar from '@/components/home/StickyConversionBar'
 import { TileGlareController } from '@/components/home/TileGlareController'
+import { CategorySilhouette } from '@/components/home/CategorySilhouette'
 import { HOME_MEDIA } from '@/data/homeMedia'
 
 const WA_BUILD  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20want%20to%20build%20something%20custom.'
 const WA_PROMO  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%27s%20running%20this%20week%3F'
 const WA_STOCK  = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%20do%20you%20have%20in%20stock%20right%20now%3F'
 const WA_ASK    = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20looking%20to%20ask%20about%20a%20piece.'
+const WA_CASE   = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20what%20do%20you%20have%20in%20the%20case%20right%20now%3F'
 
 // Anchor tiles — 1.4fr 1fr 1fr, GRILLZ dominant
 const ANCHOR_TILES = [
@@ -21,7 +23,7 @@ const ANCHOR_TILES = [
     label:    'GRILLZ.',
     tone:     'pb-grillz',
     gleam:    true,
-    sub:      'Top. Bottom. Full mouth. Custom fit.',
+    sub:      'Top, bottom, full mouth. Built around your fit.',
     href:     '/grillz',
     image:    HOME_MEDIA.anchorTiles.grillz.src,
     imageAlt: 'Grillz — demo concept visual',
@@ -30,7 +32,7 @@ const ANCHOR_TILES = [
     label:    'WATCHES.',
     tone:     'pb-watches',
     gleam:    true,
-    sub:      "Iced. Bust-down. Ask what's available.",
+    sub:      "Iced and bust-down. Ask what's in the case now.",
     href:     '/watches',
     image:    HOME_MEDIA.anchorTiles.watches.src,
     imageAlt: 'Watch — demo concept visual',
@@ -39,25 +41,34 @@ const ANCHOR_TILES = [
     label:    'CHAINS.',
     tone:     'pb-chains',
     gleam:    true,
-    sub:      "Cuban. Rope. Tennis. Ask what's in.",
+    sub:      'Cuban, rope, tennis. Match it to your pendant.',
     href:     '/collections/chains',
     image:    HOME_MEDIA.anchorTiles.chains.src,
     imageAlt: 'Chain — demo concept visual',
   },
 ] as const
 
-// Secondary tiles — each tone maps to a per-category vitrine surface in globals.css
-const SECONDARY_TILES = [
-  { label: 'PENDANTS.',  tone: 'pb-pendants',  sub: 'Photo. Logo. Name. Number.',                    href: '/collections/pendants'  },
-  { label: 'RINGS.',     tone: 'pb-rings',     sub: 'Custom or catalog. Ask what fits.',              href: '/collections/rings'     },
-  { label: 'BRACELETS.', tone: 'pb-bracelets', sub: "Tennis. Cuban. Ask what's available.",          href: '/collections/bracelets' },
-  { label: 'EARRINGS.',  tone: 'pb-earrings',  sub: "Studs. Hoops. Ask what's in.",                  href: '/collections/earrings'  },
-] as const
-
-// Demo concept visuals for secondary tiles — replace with real 2T product media when available
-const SECONDARY_DEMO_IMAGES: Record<string, { src: string; alt: string }> = {
-  'PENDANTS.': { src: '/assets/demo/phase3a/2t-demo-pendants-01.png', alt: 'Pendant — demo concept visual' },
+// Secondary tiles — each tone maps to a per-category vitrine surface in globals.css.
+// PENDANTS uses the demo macro; RINGS / BRACELETS / EARRINGS have no product
+// photography yet, so they get a designed fine-line silhouette case marker
+// (CategorySilhouette) — clearly non-photographic, never shown as real inventory.
+// Swap a silhouette tile to `image` when 2T provides a real macro.
+type SecondaryTile = {
+  label:      string
+  tone:       string
+  sub:        string
+  href:       string
+  image?:     { src: string; alt: string }
+  silhouette?: 'ring' | 'bracelet' | 'earring'
+  inkColor?:  string
 }
+
+const SECONDARY_TILES: SecondaryTile[] = [
+  { label: 'PENDANTS.',  tone: 'pb-pendants',  sub: 'Photo, logo, name, number. Made to order.',     href: '/collections/pendants',  image: HOME_MEDIA.pendantSecondary },
+  { label: 'RINGS.',     tone: 'pb-rings',     sub: 'Big face, heavy statement. Catalog or custom.', href: '/collections/rings',     silhouette: 'ring',     inkColor: 'rgba(201,168,76,0.85)' },
+  { label: 'BRACELETS.', tone: 'pb-bracelets', sub: 'Tennis or Cuban. Built to match the chain.',    href: '/collections/bracelets', silhouette: 'bracelet', inkColor: 'rgba(216,235,255,0.82)' },
+  { label: 'EARRINGS.',  tone: 'pb-earrings',  sub: 'Studs and hoops. Clean, iced, ready.',          href: '/collections/earrings',  silhouette: 'earring',  inkColor: 'rgba(238,244,250,0.85)' },
+]
 
 const CUSTOM_CHIPS = ['LOGO PIECE', 'NAME PENDANT', 'PHOTO PENDANT']
 
@@ -303,7 +314,7 @@ export default function HomePage() {
                   <h5 className="pb-tile-label pb-tile-title" style={{ fontSize: 'clamp(1.3rem, 2.8vw, 1.8rem)' }}>{tile.label}</h5>
                 </div>
                 <div style={{ padding: '0 0.875rem 0.875rem' }}>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'var(--color-brand-muted)', lineHeight: 1.5, margin: 0 }}>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', color: 'var(--color-brand-silver)', lineHeight: 1.45, margin: 0 }}>
                     {tile.sub}
                   </p>
                 </div>
@@ -311,44 +322,59 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* ── SECONDARY TILES: 4-col, compressed ── */}
+          {/* ── SECONDARY TILES: 4-col case shelf — every tile has a visual ── */}
           <div className="mi-secondary-row">
             {SECONDARY_TILES.map((tile, idx) => (
               <Link
                 key={tile.label}
                 href={tile.href}
                 className={`pb-tile-link tile-reveal-s${idx}`}
-                style={{ display: 'flex', flexDirection: 'column', minHeight: '200px', textDecoration: 'none', color: 'inherit' }}
+                style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', color: 'inherit' }}
               >
                 <div
-                  className={`mi-vitrine pb-vitrine-${tile.tone}`}
-                  style={{ flex: 1, position: 'relative', overflow: 'hidden' }}
+                  className={`mi-vitrine pb-vitrine-${tile.tone} pb-vitrine-secondary`}
+                  style={{ position: 'relative', overflow: 'hidden' }}
                 >
-                  {/* Demo concept visual — replace with real 2T product media when available */}
-                  {SECONDARY_DEMO_IMAGES[tile.label] && (
+                  {tile.image ? (
+                    /* Demo concept visual — replace with real 2T product media when available */
                     <Image
-                      src={tile.label === 'PENDANTS.' ? HOME_MEDIA.pendantSecondary.src : SECONDARY_DEMO_IMAGES[tile.label].src}
-                      alt={SECONDARY_DEMO_IMAGES[tile.label].alt}
+                      src={tile.image.src}
+                      alt={tile.image.alt}
                       fill
                       sizes="(max-width: 767px) 50vw, 25vw"
-                      style={{
-                        objectFit: 'cover',
-                        opacity: 0.88,
-                      }}
+                      className="pb-anchor-img"
+                      style={{ objectFit: 'cover', objectPosition: 'center 40%', filter: 'brightness(1.06) contrast(1.03)' }}
                     />
-                  )}
+                  ) : tile.silhouette ? (
+                    /* Designed case marker — non-photographic line art, not real inventory */
+                    <div className="pb-silhouette-wrap" style={{ color: tile.inkColor }}>
+                      <CategorySilhouette type={tile.silhouette} />
+                    </div>
+                  ) : null}
                   <div className="mi-gleam" />
                 </div>
                 <div className="pb-tile-foot">
-                  <h5 className="pb-tile-title" style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 'clamp(1.08rem, 2.1vw, 1.35rem)', margin: 0, lineHeight: 0.9 }}>{tile.label}</h5>
+                  <h5 className="pb-tile-title" style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 'clamp(1.25rem, 2.5vw, 1.6rem)', margin: 0, lineHeight: 0.9 }}>{tile.label}</h5>
                 </div>
                 <div className="pb-tile-pills">
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-brand-silver)' }}>{tile.sub}</span>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-brand-silver)', lineHeight: 1.45, margin: 0 }}>{tile.sub}</p>
                 </div>
               </Link>
             ))}
           </div>
 
+          {/* ── Text-first exit — low-emphasis WhatsApp path out of the case ── */}
+          <div className="case-text-exit">
+            <span className="case-text-exit-q">{"Don't see it in the case?"}</span>
+            <a
+              href={WA_CASE}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="case-text-exit-cta"
+            >
+              TEXT 2T — ASK WHAT'S IN →
+            </a>
+          </div>
 
         </div>
       </section>

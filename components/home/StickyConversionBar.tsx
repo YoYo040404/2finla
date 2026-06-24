@@ -22,7 +22,13 @@ export default function StickyConversionBar() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting) {
+        // Show only when the sentinel has scrolled ABOVE the viewport (user is
+        // past it / lower on the page). A non-intersecting sentinel that is
+        // still BELOW the viewport (near the top) must keep the bar hidden,
+        // otherwise the bar shows at the top and the floating WA flips on/off
+        // as the sentinel crosses the viewport.
+        const scrolledPast = !entry.isIntersecting && entry.boundingClientRect.top < 0
+        if (scrolledPast) {
           if (!sessionStorage.getItem(SESSION_KEY)) setVisible(true)
         } else {
           setVisible(false)
@@ -34,6 +40,12 @@ export default function StickyConversionBar() {
     observer.observe(sentinel)
     return () => observer.disconnect()
   }, [])
+
+  // Toggle a body flag so the floating WhatsApp button can hide while this bar shows
+  useEffect(() => {
+    document.body.classList.toggle('sticky-bar-active', visible)
+    return () => document.body.classList.remove('sticky-bar-active')
+  }, [visible])
 
   function dismiss() {
     sessionStorage.setItem(SESSION_KEY, '1')
