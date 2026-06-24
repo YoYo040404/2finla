@@ -3,13 +3,21 @@
 ## Current Active Strategy
 
 ```text
+GitHub repo YoYo040404/2finla remains the source of truth
 Next.js / Tailwind prototype first
-→ approve design and custom flow
-→ deploy Vercel preview if needed
-→ only later decide whether to return to Shopify
+→ strategy, CRO, visual direction, lead capture, and proof-building
+→ optimize lead conversion first
+→ Shopify later, only when inventory, real assets, product data, verified claims, and selling structure are ready
 ```
 
-Shopify is paused/dropped for now.
+Shopify is paused right now. Do not treat Shopify as active, do not run Shopify tools, and do not build fake products, fake inventory, prices, reviews, stock, or PDPs.
+
+Platform doctrine:
+
+- Next.js is the active prototype and live lead-gen site.
+- Any `/custom`, SHOP, category, product-case, or asset strategy should preserve future Shopify compatibility.
+- Future Shopify should inherit the proven visual system, copy doctrine, product taxonomy, claim-safety architecture, and media rules from the Next.js prototype.
+- The future Shopify migration should happen only when 2T is ready to sell real products online with verified data and real assets.
 
 ---
 
@@ -153,7 +161,7 @@ Routes: /, /collections/chains, /collections/pendants, /custom, /watches, /grill
 - Instagram oEmbed Read API / TikTok Display API dynamic feed (future — requires developer apps + app review — see feasibility plan)
 - Production Resend sender domain (`leads@2tjewelers.com` or similar) — current `onboarding@resend.dev` is acceptable for testing
 - Final logo SVG/2x/favicon
-- Shopify recalibration
+- Future Shopify commerce migration planning (paused now; only after product/inventory/claims/assets/selling structure are ready)
 - SEO/schema (after core pages and claims are controlled)
 - Material/stone SEO landing pages (build only when real inventory + assets + proof exists)
 - Material/stone filtering on product/category pages (later, Shopify)
@@ -408,12 +416,14 @@ The rule: verify at product, collection, or policy level — then publish promin
 - full QA before publish
 - mobile review
 
-### Phase 10 — Optional Shopify Recalibration
+### Phase 10 — Future Shopify Commerce Migration
 
-Only if user explicitly approves:
-- decide whether to pay Shopify
-- migrate approved design logic back into Shopify
-- map Next components to Shopify sections
+Paused now. Only if user explicitly approves later, and only after inventory, real assets, product data, verified claims, and selling structure are ready:
+
+- convert/migrate the proven Next.js lead-gen system into Shopify commerce
+- map the approved visual system, copy doctrine, product taxonomy, claim-safety architecture, and media rules into Shopify
+- preserve the lead-capture lessons that proved conversion intent in Next.js
+- use real product data only; no fake products, prices, inventory, reviews, stock, or PDPs
 
 ---
 

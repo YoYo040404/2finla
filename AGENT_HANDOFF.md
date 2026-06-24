@@ -92,8 +92,19 @@ Do not publish as blanket sitewide claims without verification. Do not invent th
 
 ## Current User Intent
 
+GitHub repo `YoYo040404/2finla` remains the source of truth.
+
 Active project: Next.js prototype in `C:\Users\yaniv\Downloads\2t-jewelers-next`.
 Old Shopify folder is archive only. Do not touch it.
+Shopify is paused right now. Do not run Shopify tools or imply Shopify is active.
+
+**Long-term platform doctrine:**
+- Next.js now = strategy, CRO, visual direction, lead capture, and proof-building stage.
+- Current work should still optimize lead conversion first.
+- Shopify later = commerce platform when product/inventory/claims/assets are ready so 2T can sell real products online.
+- Any `/custom`, SHOP, category, product-case, or asset strategy should preserve future Shopify compatibility.
+- Future Shopify should inherit the proven visual system, copy doctrine, product taxonomy, claim-safety architecture, and media rules from the Next.js prototype.
+- Do not create fake products, fake inventory, prices, reviews, stock, PDPs, or unverified selling claims.
 
 **Latest committed state (as of 2026-06-24 - latest: `c1cb8d9`):**
 
@@ -275,7 +286,7 @@ Custom page historical baseline (commit 84af600 — 2026-05-17; superseded by P0
 | WhatsApp floating desktop button | ✅ Live — `components/layout/FloatingWhatsAppButton.tsx` (`.floating-wa-btn`, desktop-only, `TEXT 2T`). Hidden via CSS while `body.sticky-bar-active` so it never stacks with StickyConversionBar (`c1cb8d9`). MobileCtaBar is the mobile path. |
 | Lead capture (Resend) | ✅ Live — all 9 fields including metal/stone direction + file attachments. Custom P2 supports up to 3 files, image thumbnails, oversized-file error + WhatsApp fallback. Sender: onboarding@resend.dev (testing). Production domain polish pending. |
 | Vercel deploy | ✅ Live on Vercel — https://2finla.vercel.app |
-| Shopify | 🚫 Paused |
+| Shopify | 🚫 Paused now; future commerce migration only after real inventory, assets, product data, verified claims, and selling structure are ready |
 
 ---
 

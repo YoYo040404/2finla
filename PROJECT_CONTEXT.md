@@ -8,21 +8,33 @@
 
 ## Critical Current State
 
-Shopify is paused/dropped for now.
+GitHub repo `YoYo040404/2finla` remains the source of truth.
+
+Shopify is paused for now. Next.js is the active prototype and live lead-gen site.
 
 Do **not** continue Shopify work.  
 Do **not** run Shopify CLI.  
 Do **not** edit Shopify files.  
 Do **not** suggest paying Shopify.  
 Do **not** reconnect Shopify unless the user explicitly approves later.
+Do **not** imply Shopify is active now.
 
 Reason: Shopify Admin/API/theme preview was blocked by billing/unavailable-shop errors, and the user does not want to pay Shopify before seeing and approving the site visually.
 
 Active platform now:
 
 ```text
-Next.js + Tailwind prototype
+Next.js + Tailwind prototype / live lead-gen site
 ```
+
+Long-term platform doctrine:
+
+- Next.js now = strategy, CRO, visual direction, lead capture, and proof-building stage.
+- Current work should still optimize lead conversion first.
+- Shopify later = commerce platform when product/inventory/claims/assets are ready.
+- Any `/custom`, SHOP, category, product-case, or asset strategy should preserve future Shopify compatibility.
+- Future Shopify should inherit the proven visual system, copy doctrine, product taxonomy, claim-safety architecture, and media rules from the Next.js prototype.
+- Do not create fake products, fake inventory, prices, reviews, stock, PDPs, or unverified selling claims while preparing for that future.
 
 Current active folder:
 
@@ -44,7 +56,7 @@ http://localhost:3000
 http://localhost:3000/custom
 ```
 
-Shopify may be recalibrated later only after the Next.js prototype is visually approved.
+Shopify may be converted/migrated to later only after inventory, real assets, product data, verified claims, and selling structure are ready.
 
 ---
 

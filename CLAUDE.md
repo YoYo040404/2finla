@@ -4,6 +4,8 @@ Read `PROJECT_CONTEXT.md` before any work.
 
 ## Active Project
 
+GitHub repo `YoYo040404/2finla` remains the source of truth.
+
 Work only in:
 
 ```text
@@ -18,14 +20,23 @@ Do not work in:
 C:\Users\yaniv\Downloads\2t-jewelers-shopify
 ```
 
-The Shopify project is paused/dropped for now because the user does not want to pay Shopify before visually approving the website.
+The Shopify project is paused for now because the user does not want to pay Shopify before visually approving the website. Next.js is the active prototype and live lead-gen site.
 
 Do not run Shopify CLI.  
 Do not edit Shopify files.  
 Do not update Shopify docs.  
 Do not use Shopify Admin/API.  
 Do not suggest paying Shopify.  
-Shopify may be recalibrated later only after the Next.js prototype is approved.
+Do not imply Shopify is active now.
+
+Long-term platform doctrine:
+
+- Next.js now = strategy, CRO, visual direction, lead capture, and proof-building stage.
+- Current work should still optimize lead conversion first.
+- Shopify later = commerce platform when product/inventory/claims/assets are ready.
+- Any `/custom`, SHOP, category, product-case, or asset strategy should preserve future Shopify compatibility.
+- Future Shopify should inherit the proven visual system, copy doctrine, product taxonomy, claim-safety architecture, and media rules from the Next.js prototype.
+- Do not create fake products, fake inventory, prices, reviews, stock, PDPs, or unverified selling claims.
 
 ---
 
