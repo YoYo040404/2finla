@@ -58,8 +58,8 @@ function getCtaConfig(pathname: string): CtaConfig {
   // Custom — user is already on the custom page, avoid redundancy
   if (pathname === '/custom') {
     return {
-      label:  'TEXT 2T →',
-      href:   'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27d%20like%20to%20ask%20about%20a%20custom%20piece.',
+      label:  'START REQUEST →',
+      href:   '#custom-form',
       waText: "Hey 2T — I'd like to ask about a custom piece.",
     }
   }
