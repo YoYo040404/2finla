@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { mainNav, shopCategories } from '@/data/nav'
 
@@ -17,7 +17,7 @@ const SHOP_GROUPS = [
   },
   {
     items: shopCategories.filter(c =>
-      ['Diamond Watches', 'Grillz'].includes(c.label)
+      ['Watches', 'Grillz'].includes(c.label)
     ),
     gold: false,
   },
@@ -35,6 +35,8 @@ const SHOP_GROUPS = [
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [shopOpen, setShopOpen] = useState(false)
+  const shopButtonRef = useRef<HTMLButtonElement>(null)
   const pathname = usePathname()
 
   // Shop is active for /collections and any collection EXCEPT /collections/pendants
@@ -85,16 +87,35 @@ export function Header() {
               /* Shop — dropdown */
               if (item.label === 'Shop') {
                 return (
-                  <div key="shop" className="relative group">
+                  <div
+                    key="shop"
+                    className="relative group"
+                    onMouseEnter={() => setShopOpen(true)}
+                    onMouseLeave={() => setShopOpen(false)}
+                    onBlur={(event) => {
+                      if (!event.currentTarget.contains(event.relatedTarget)) setShopOpen(false)
+                    }}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Escape') {
+                        setShopOpen(false)
+                        shopButtonRef.current?.focus()
+                      }
+                    }}
+                  >
                     <button
+                      ref={shopButtonRef}
                       className="nav-link flex items-center gap-1 bg-transparent border-0 p-0 cursor-pointer"
                       aria-haspopup="true"
+                      aria-expanded={shopOpen}
+                      aria-controls="desktop-shop-menu"
+                      onClick={() => setShopOpen(open => !open)}
                       style={isShopActive ? { color: 'var(--color-brand-gold)' } : undefined}
                     >
                       Shop
                       <svg
                         width="9" height="9" viewBox="0 0 9 9" fill="none"
-                        className="transition-transform duration-200 group-hover:rotate-180"
+                        className={`transition-transform duration-200${shopOpen ? ' rotate-180' : ' group-hover:rotate-180'}`}
+                        aria-hidden="true"
                       >
                         <path d="M1.5 3L4.5 6L7.5 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
                       </svg>
@@ -102,7 +123,8 @@ export function Header() {
 
                     {/* Grouped dropdown — 4 sections with thin dividers */}
                     <div
-                      className="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200"
+                      id="desktop-shop-menu"
+                      className={`absolute transition-all duration-200${shopOpen ? ' visible opacity-100' : ' invisible opacity-0 group-hover:visible group-hover:opacity-100'}`}
                       style={{
                         top:             'calc(100% + 8px)',
                         left:            '50%',
@@ -117,6 +139,7 @@ export function Header() {
                       {/* All Collections — top of dropdown */}
                       <Link
                         href="/collections"
+                        onClick={() => setShopOpen(false)}
                         className="nav-link flex items-center px-3 py-2"
                         style={{
                           fontSize:     '0.8125rem',
@@ -147,6 +170,7 @@ export function Header() {
                             <Link
                               key={cat.href}
                               href={cat.href}
+                              onClick={() => setShopOpen(false)}
                               className="nav-link flex items-center justify-between px-3 py-2"
                               style={{
                                 fontSize:     '0.8125rem',
