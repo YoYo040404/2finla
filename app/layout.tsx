@@ -6,6 +6,7 @@ import { Header }        from '@/components/layout/Header'
 import { Footer }        from '@/components/layout/Footer'
 import { MobileCtaBar }           from '@/components/layout/MobileCtaBar'
 import { FloatingWhatsAppButton } from '@/components/layout/FloatingWhatsAppButton'
+import { Analytics } from '@vercel/analytics/next'
 
 /* ─── Fonts ─────────────────────────────────────────────────────────────── */
 
@@ -108,6 +109,7 @@ export default function RootLayout({
         <Footer />
         <MobileCtaBar />
         <FloatingWhatsAppButton />
+        <Analytics />
       </body>
     </html>
   )
