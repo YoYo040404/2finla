@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Road_Rage } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
 import { CategorySilhouette } from '@/components/home/CategorySilhouette'
@@ -6,6 +7,7 @@ import { HOME_MEDIA } from '@/data/homeMedia'
 import s from './home-preview.module.css'
 
 export const metadata: Metadata = { title: '2T Homepage — Design Preview', robots: { index: false, follow: false } }
+const brush = Road_Rage({ weight: '400', subsets: ['latin'], variable: '--font-home-brush', display: 'swap' })
 const WA = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20saw%20the%20site%20and%20want%20to%20ask%20about%20a%20piece.'
 const categories: { name: string; href: string; image?: string; marker?: 'ring' | 'bracelet' | 'earring'; large?: boolean }[] = [
   { name: 'Chains', href: '/collections/chains', image: HOME_MEDIA.anchorTiles.chains.src, large: true },
@@ -17,7 +19,7 @@ const categories: { name: string; href: string; image?: string; marker?: 'ring' 
   { name: 'Earrings', href: '/collections/earrings', marker: 'earring' },
 ]
 export default function HomePage() {
-  return <div className={s.page}>
+  return <div className={`${s.page} ${brush.variable}`}>
     <p className={s.notice}>PREVIEW CONCEPT — DEMO IMAGERY, NOT INVENTORY</p>
     <section className={s.hero} aria-labelledby="campaign-title">
       <Image src={HOME_MEDIA.hero.posterSrc} alt="Chain and pendant — demo concept visual, not inventory" fill sizes="100vw" preload className={s.heroImage} />
@@ -27,7 +29,7 @@ export default function HomePage() {
         <h1 id="campaign-title" className={s.campaign}>BUILT<br />TO HIT.</h1>
         <span className={`bang-signature ${s.bang}`}>BANG.</span>
         <p className={s.heroCopy}>JEWELRY. CUSTOM PIECES.<br />YOUR LOOK. YOUR DIRECTION.</p>
-        <div className={s.actions}><a href="#home-shop" className="btn-primary">SHOP THE PIECES →</a><Link href="/custom" className="btn-outline-gold">START CUSTOM →</Link></div>
+        <div className={s.actions}><a href="#home-shop" className="btn-primary">SHOP THE PIECES →</a><Link href="/custom" className="btn-primary">START CUSTOM →</Link></div>
       </div>
       <span className={s.imageNote}>DEMO CONCEPT VISUAL</span>
     </section>
