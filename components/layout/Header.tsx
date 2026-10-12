@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { mainNav, shopCategories } from '@/data/nav'
@@ -62,6 +63,10 @@ export function Header() {
             aria-label="2T Jewelers"
             className="header-brand-lockup"
           >
+            {pathname === '/' ? (
+              <Image src="/assets/brand/2t-logo-preview-black.png" alt="" width={78} height={78} style={{ width: 78, height: 68, objectFit: 'contain' }} />
+            ) : (
+              <>
             <span className="header-2t-mark" aria-hidden="true">2T</span>
             <span
               aria-hidden="true"
@@ -75,6 +80,8 @@ export function Header() {
               }}
             />
             <span className="header-brand-wordmark">JEWELERS</span>
+              </>
+            )}
           </Link>
 
           {/* ── Desktop Nav (hidden on mobile) ──────────── */}
