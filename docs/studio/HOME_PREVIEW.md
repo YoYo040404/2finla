@@ -19,3 +19,13 @@ Current owner authorizes continuing, source review and pushing test-site updates
 Changed app/page.tsx and app/home-preview.module.css. Full Next build/TypeScript and scoped ESLint passed; diff check passed. First build failed because shared node_modules symlink was outside Turbopack root; copied dependencies locally and rerun passed. No dependency upgrades performed; earlier security upgrade gate remains open. No rendered desktop/mobile proof or Design Lock; real media and rights remain pending.
 
 Vercel list_projects sees correct project/team, list_deployments returns scope403. No installed Vercel CLI. Cloud preview opens Vercel login, so browser login is not complete. Prior remote b62c82e has successful Vercel GitHub status. Next commit deployment must be checked separately; never infer successful deployment from push. No main merge, real lead send or production release.
+
+## Hero motion preview — 2026-10-13
+
+Owner approved proposed hero-video test-site update and requested viewing link. Code deployment 4e831070cc0f346ce3274d19f82eb5d79b1a03f0 passed Vercel at 9yTKeTfWqZRnFtukPRt4JNAN72cJ. Reuses tracked 8.04-second 1280x720 H264 demo hero-loop-demo.mp4 (8.7 MiB; visibly KlingAI concept). No claim that footage is owned product/customer proof. Existing demo notice remains. No new service or package installed.
+
+Changes: components/home/HomeHeroMotion.tsx; app/page.tsx; app/home-preview.module.css. Muted inline loop above server poster, revealed on loaded data; accessible pause/play control. Reduced-motion and save-data initially avoid assigning source until explicit play. Live preference changes pause playback; manual pause persists. Failed video leaves static poster. Adds short hero-copy entry and subtle image hover with reduced-motion guards.
+
+Native independent reviewer /root/homepage_review checked source, found pause reset and live save-data issues; Director fixed both and reviewer confirmed source correction. Source-reset state concern is out of scope because homepage source is immutable. Review is not rendered visual/playback acceptance.
+
+Local full Next build/TypeScript, scoped ESLint and diff check passed. Same-process HTTP smoke returned 200 with video, play control, demo label and preload none. Cross-process localhost failed due runtime network isolation; hostname binding workaround and same-process smoke succeeded. Existing cloud browser login block remains; desktop/mobile render, actual autoplay/pause/reduced-motion/device/network and performance remain NOT VERIFIED. No Design Lock, main merge or production release. Existing dependency security upgrade gate and real-media rights remain open.
