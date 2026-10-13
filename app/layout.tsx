@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Anton, Archivo, JetBrains_Mono, Cormorant_Garamond } from 'next/font/google'
+import { anton, archivo, jetBrainsMono, cormorant } from '@/data/typography'
 import './globals.css'
 import { PromoBar }      from '@/components/layout/PromoBar'
 import { Header }        from '@/components/layout/Header'
@@ -10,41 +10,13 @@ import { Analytics } from '@vercel/analytics/next'
 
 /* ─── Fonts ─────────────────────────────────────────────────────────────── */
 
-const anton = Anton({
-  variable: '--font-anton',
-  subsets:  ['latin'],
-  weight:   ['400'],
-  display:  'swap',
-})
-
-const archivo = Archivo({
-  variable: '--font-archivo',
-  subsets:  ['latin'],
-  weight:   ['400', '500', '600', '700', '800'],
-  display:  'swap',
-})
-
-const jetBrainsMono = JetBrains_Mono({
-  variable: '--font-jetbrains',
-  subsets:  ['latin'],
-  weight:   ['400', '500'],
-  display:  'swap',
-})
-
-const cormorant = Cormorant_Garamond({
-  variable:  '--font-cormorant',
-  subsets:   ['latin'],
-  weight:    ['300', '400', '500', '600', '700'],
-  style:     ['normal', 'italic'],
-  display:   'swap',
-})
-
 /* ─── Metadata ───────────────────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://2tjewelers.com'),
   title:       '2T Jewelers | Hip Hop Jewelry, Grillz & Custom — Pittsburgh, PA',
-  description: 'Iced-out chains, custom grillz, pendants, and watches at 2T Jewelers — real Pittsburgh store, 25 years. Text 2T before you buy. Details confirmed per piece.',
+  description: 'Iced-out chains, custom grillz, pendants, and watches at 2T Jewelers — Pittsburgh store. Text 2T before you buy. Details confirmed per piece.',
   openGraph: {
     title:       '2T Jewelers',
     description: 'Custom pieces. Real materials. Build the piece around your look.',

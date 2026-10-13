@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { mainNav, shopCategories } from '@/data/nav'
@@ -27,7 +28,7 @@ const SHOP_GROUPS = [
   },
   {
     items: shopCategories.filter(c =>
-      ['Ask What Just Landed', 'Most Asked About'].includes(c.label)
+      ['Ask What’s Available', 'Explore Styles', 'Silver + Moissanite', 'Size Guide'].includes(c.label)
     ),
     gold: false,
   },
@@ -42,7 +43,7 @@ export function Header() {
   // Shop is active for /collections and any collection EXCEPT /collections/pendants
   // (Pendants has its own top-level nav entry)
   const isShopActive =
-    pathname === '/collections' ||
+    pathname === '/materials' || pathname === '/size-guide' || pathname === '/collections' ||
     (pathname.startsWith('/collections/') && pathname !== '/collections/pendants')
 
   return (
@@ -62,19 +63,7 @@ export function Header() {
             aria-label="2T Jewelers"
             className="header-brand-lockup"
           >
-            <span className="header-2t-mark" aria-hidden="true">2T</span>
-            <span
-              aria-hidden="true"
-              style={{
-                display:    'inline-block',
-                width:      '1px',
-                height:     '22px',
-                background: 'rgba(201,168,76,0.45)',
-                flexShrink: 0,
-                alignSelf:  'center',
-              }}
-            />
-            <span className="header-brand-wordmark">JEWELERS</span>
+            <Image src="/assets/brand/2t-logo-preview-black.png" alt="" width={78} height={78} style={{ width: 78, height: 68, objectFit: 'contain' }} />
           </Link>
 
           {/* ── Desktop Nav (hidden on mobile) ──────────── */}
@@ -114,7 +103,7 @@ export function Header() {
                       Shop
                       <svg
                         width="9" height="9" viewBox="0 0 9 9" fill="none"
-                        className={`transition-transform duration-200${shopOpen ? ' rotate-180' : ' group-hover:rotate-180'}`}
+                        className={`transition-transform duration-200${shopOpen ? ' rotate-180' : ''}`}
                         aria-hidden="true"
                       >
                         <path d="M1.5 3L4.5 6L7.5 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
@@ -124,9 +113,9 @@ export function Header() {
                     {/* Grouped dropdown — 4 sections with thin dividers */}
                     <div
                       id="desktop-shop-menu"
-                      className={`absolute transition-all duration-200${shopOpen ? ' visible opacity-100' : ' invisible opacity-0 group-hover:visible group-hover:opacity-100'}`}
+                      className={`absolute transition-all duration-200${shopOpen ? ' visible opacity-100' : ' invisible opacity-0'}`}
                       style={{
-                        top:             'calc(100% + 8px)',
+                        top:             '100%',
                         left:            '50%',
                         transform:       'translateX(-50%)',
                         width:           '204px',

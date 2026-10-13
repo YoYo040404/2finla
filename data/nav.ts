@@ -27,8 +27,10 @@ export const shopCategories: NavItem[] = [
   { label: 'Watches',          href: '/watches' },
   { label: 'Grillz',           href: '/grillz' },
   { label: 'Custom Jewelry',   href: '/custom' },
-  { label: 'Ask What Just Landed', href: '/collections/new-arrivals', tag: 'New' },
-  { label: 'Most Asked About',     href: '/collections/best-sellers' },
+  { label: 'Ask What’s Available', href: '/collections/new-arrivals' },
+  { label: 'Explore Styles',     href: '/collections/best-sellers' },
+  { label: 'Silver + Moissanite', href: '/materials' },
+  { label: 'Size Guide', href: '/size-guide' },
 ]
 
 export const homepageCategories: string[] = [
@@ -66,8 +68,10 @@ export const footerNav: NavGroup[] = [
     title: 'Browse',
     links: [
       { label: 'All Collections', href: '/collections' },
-      { label: 'Most Asked About',     href: '/collections/best-sellers' },
-      { label: 'Ask What Just Landed', href: '/collections/new-arrivals' },
+      { label: 'Silver + Moissanite', href: '/materials' },
+      { label: 'Size Guide', href: '/size-guide' },
+      { label: 'Explore Styles',     href: '/collections/best-sellers' },
+      { label: 'Ask What’s Available', href: '/collections/new-arrivals' },
     ],
   },
 ]

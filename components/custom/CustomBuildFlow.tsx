@@ -1,6 +1,10 @@
 'use client'
 
+import Link from 'next/link'
+
 import React, { useState, useRef, useEffect } from 'react'
+import { FILE_ACCEPT, MAX_FILES, TEXT_LIMITS, validateClientFiles } from '@/lib/custom-request'
+import { classifyRequestResponse } from '@/lib/custom-request-response'
 
 type BuildData = {
   pieceType:      string
@@ -71,8 +75,6 @@ const BUDGET_OPTIONS = [
   { id: '5000-plus',       label: '$5,000+' },
 ]
 
-const MAX_FILE_BYTES = 5 * 1024 * 1024
-const MAX_FILES      = 3
 
 const WA_CHAT_URL =
   'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%27m%20building%20a%20piece%20and%20want%20to%20chat.'
@@ -104,22 +106,25 @@ export function CustomBuildFlow() {
   const [files, setFiles]            = useState<UploadItem[]>([])
   const [submitting, setSubmitting]  = useState(false)
   const [submitted, setSubmitted]    = useState(false)
-  const [submitError, setSubmitError] = useState(false)
+  const [pendingReference, setPendingReference] = useState<string | null>(null)
+  const [submitError, setSubmitError] = useState<string | null>(null)
   const [dragOver, setDragOver]      = useState(false)
-  const [fileTooBig, setFileTooBig]  = useState(false)
+  const [fileError, setFileError]    = useState<string | null>(null)
   const [errors, setErrors]          = useState({ pieceType: false, contact: false, idea: false })
   const fileInputRef                 = useRef<HTMLInputElement>(null)
   const successRef                   = useRef<HTMLElement>(null)
   const filesRef                     = useRef<UploadItem[]>([])
+  const submitLock                   = useRef(false)
+  const pendingRequest               = useRef<{ body: FormData; id: string; data: string; files: File[]; uncertain: boolean } | null>(null)
 
-  useEffect(() => { filesRef.current = files }, [files])
   useEffect(() => () => {
     filesRef.current.forEach(f => f.preview && URL.revokeObjectURL(f.preview))
   }, [])
 
   useEffect(() => {
     if (submitted) {
-      successRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      successRef.current?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' })
+      successRef.current?.focus()
     }
   }, [submitted])
 
@@ -133,24 +138,16 @@ export function CustomBuildFlow() {
   }
 
   const applyFiles = (incoming: File[]) => {
-    if (!incoming.length) return
-    const room = MAX_FILES - files.length
-    const valid: UploadItem[] = []
-    let tooBig = false
-    for (const file of incoming) {
-      if (file.size > MAX_FILE_BYTES) { tooBig = true; continue }
-      if (valid.length < room) {
-        valid.push({
-          file,
-          preview: file.type.startsWith('image/') ? URL.createObjectURL(file) : null,
-        })
-      }
-    }
-    setFileTooBig(tooBig)
-    if (valid.length) {
-      setFiles(prev => [...prev, ...valid].slice(0, MAX_FILES))
-      setErrors(e => ({ ...e, idea: false }))
-    }
+    if (submitLock.current || !incoming.length) return
+    const previous = filesRef.current
+    const error = validateClientFiles([...previous.map(item => item.file), ...incoming])
+    setFileError(error)
+    if (error) return // Reject the entire selection; never silently discard excess files.
+    const additions = incoming.map(file => ({ file, preview: URL.createObjectURL(file) }))
+    const combined = [...previous, ...additions]
+    filesRef.current = combined
+    setFiles(combined)
+    setErrors(previous => ({ ...previous, idea: false }))
   }
 
   const handleDrop = (e: React.DragEvent) => {
@@ -160,16 +157,18 @@ export function CustomBuildFlow() {
   }
 
   const removeFile = (index: number) => {
-    setFileTooBig(false)
-    setFiles(prev => {
-      const target = prev[index]
-      if (target?.preview) URL.revokeObjectURL(target.preview)
-      return prev.filter((_, i) => i !== index)
-    })
+    if (submitLock.current) return
+    setFileError(null)
+    const previous = filesRef.current
+    const target = previous[index]
+    if (target?.preview) URL.revokeObjectURL(target.preview)
+    const remaining = previous.filter((_, position) => position !== index)
+    filesRef.current = remaining
+    setFiles(remaining)
   }
 
   const openChooser = () => {
-    if (files.length < MAX_FILES) fileInputRef.current?.click()
+    if (!submitLock.current && files.length < MAX_FILES) fileInputRef.current?.click()
   }
 
   const truncateFilename = (name: string, max = 24) =>
@@ -197,35 +196,64 @@ export function CustomBuildFlow() {
     return `https://wa.me/14124524343?text=${encodeURIComponent(msg)}`
   }
 
-  const handleSubmit = async () => {
-    setSubmitError(false)
-
+  const handleSubmit = async (retryOriginal = false) => {
+    if (submitLock.current) return
+    setSubmitError(null)
     const next = {
       pieceType: !data.pieceType,
-      contact:   !data.name.trim() || !data.phone.trim(),
-      idea:      !data.idea.trim() && files.length === 0,
+      contact: !data.name.trim() || !data.phone.trim(),
+      idea: !data.idea.trim() && files.length === 0,
     }
-    setErrors(next)
-    if (Object.values(next).some(Boolean)) return
-
+    setErrors(retryOriginal ? { pieceType: false, contact: false, idea: false } : next)
+    if (!retryOriginal && Object.values(next).some(Boolean)) {
+      const target = next.pieceType ? '.piece-chip' : next.contact ? (!data.name.trim() ? '#cf-name' : '#cf-phone') : '#cf-idea'
+      document.querySelector<HTMLElement>(target)?.focus()
+      return
+    }
+    const error = validateClientFiles(files.map(item => item.file))
+    if (!retryOriginal && error) { setFileError(error); return }
+    const dataSnapshot = JSON.stringify(data)
+    if (!retryOriginal && pendingRequest.current && (pendingRequest.current.data !== dataSnapshot ||
+      pendingRequest.current.files.length !== files.length ||
+      pendingRequest.current.files.some((file, index) => file !== files[index].file))) {
+      setSubmitError('The previous request is unconfirmed. Keep its reference and text 2T before starting different details.')
+      return
+    }
+    submitLock.current = true
     setSubmitting(true)
     try {
-      const body = new FormData()
-      body.append('pieceType', data.pieceType)
-      body.append('idea',      data.idea)
-      body.append('name',      data.name)
-      body.append('phone',     data.phone)
-      body.append('budget',    data.budget)
-      if (data.metalDirection) body.append('metalDirection', data.metalDirection)
-      if (data.stoneDirection) body.append('stoneDirection', data.stoneDirection)
-      files.forEach(f => body.append('uploadFile', f.file, f.file.name))
-
-      const res = await fetch('/api/custom-request', { method: 'POST', body })
-      if (!res.ok) { setSubmitError(true); return }
+      if (!pendingRequest.current) {
+        const body = new FormData()
+        const id = crypto.randomUUID()
+        for (const [key, value] of Object.entries(data)) body.append(key, value)
+        body.append('requestId', id)
+        body.append('submittedAt', new Date().toISOString())
+        files.forEach(item => body.append('uploadFile', item.file, item.file.name))
+        pendingRequest.current = { body, id, data: dataSnapshot, files: files.map(item => item.file), uncertain: false }
+        setPendingReference(id)
+      }
+      const res = await fetch('/api/custom-request', { method: 'POST', headers: { 'X-2T-Request-Id': pendingRequest.current.id }, body: pendingRequest.current.body })
+      const result = await res.json().catch(() => null) as { ok?: boolean; source?: string; deliveryState?: string; error?: string; field?: string; requestId?: string } | null
+      const outcome = classifyRequestResponse(res.ok, result, pendingRequest.current.id, pendingRequest.current.uncertain)
+      if (outcome !== 'accepted') {
+        // An intermediary 503 is not proof that the provider was never called.
+        if (outcome === 'not_attempted') { pendingRequest.current = null; setPendingReference(null) }
+        else pendingRequest.current.uncertain = true
+        const publicError = typeof result?.error === 'string' ? result.error.slice(0,240)
+          : 'We could not confirm your request. Keep this reference and try again or text 2T.'
+        setSubmitError(publicError)
+        if (result?.field === 'name' || result?.field === 'phone' || result?.field === 'idea') {
+          document.getElementById('cf-' + result.field)?.focus()
+        }
+        return
+      }
+      setData(JSON.parse(pendingRequest.current.data) as BuildData)
       setSubmitted(true)
     } catch {
-      setSubmitError(true)
+      if (pendingRequest.current) pendingRequest.current.uncertain = true
+      setSubmitError('We could not confirm your request. Keep this reference and try again or text 2T.')
     } finally {
+      submitLock.current = false
       setSubmitting(false)
     }
   }
@@ -236,6 +264,8 @@ export function CustomBuildFlow() {
       <section
         id="custom-form"
         ref={successRef}
+        tabIndex={-1}
+        role="status"
         style={{
           background: 'var(--color-brand-black)',
           borderTop:  '1px solid var(--color-brand-border)',
@@ -278,9 +308,9 @@ export function CustomBuildFlow() {
           }}>
             We&apos;ll review the details and follow up with next steps.
           </p>
-          <a href="/" className="btn-outline-dim" style={{ display: 'inline-block' }}>
+          <Link href="/" className="btn-outline-dim" style={{ display: 'inline-block' }}>
             ← Back to Home
-          </a>
+          </Link>
           <a
             href="https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20just%20sent%20a%20request%20and%20have%20something%20to%20add."
             target="_blank" rel="noopener noreferrer"
@@ -296,7 +326,8 @@ export function CustomBuildFlow() {
   /* ── Main flow ──────────────────────────────────────────────────────────── */
   return (
     <section id="custom-form" className="custom-funnel-section">
-      <div style={{ maxWidth: 760, margin: '0 auto' }}>
+      <form noValidate onSubmit={event => { event.preventDefault(); void handleSubmit() }} style={{ maxWidth: 760, margin: '0 auto' }}>
+        <fieldset disabled={submitting} style={{ border: 0, padding: 0, margin: 0, minWidth: 0 }}>
 
         {/* ── Header + quiet process line ────────────────────────────────── */}
         <div style={{ marginBottom: 'clamp(2rem, 5vw, 3rem)' }}>
@@ -414,15 +445,22 @@ export function CustomBuildFlow() {
             onDragLeave={() => setDragOver(false)}
             onDrop={handleDrop}
             onClick={openChooser}
-            role="button"
-            tabIndex={0}
-            onKeyDown={e => e.key === 'Enter' && openChooser()}
+            role="group"
             aria-label={files.length ? 'Add another reference file' : 'Upload reference file'}
           >
+            <button
+              type="button"
+              onClick={event => { event.stopPropagation(); openChooser() }}
+              disabled={files.length >= MAX_FILES}
+              style={{ display: 'block', width: '100%', minHeight: 44, background: 'transparent', color: 'inherit', border: 0, cursor: 'pointer' }}
+              aria-describedby="cf-upload-limit"
+            >
+              ADD REFERENCE IMAGE →
+            </button>
             <input
               ref={fileInputRef}
               type="file"
-              accept="image/*,.pdf"
+              accept={FILE_ACCEPT}
               multiple
               style={{ display: 'none' }}
               onChange={e => {
@@ -467,13 +505,14 @@ export function CustomBuildFlow() {
                 </span>
                 <span className="upload-hero-label upload-label-touch">TAP TO ADD YOUR PHOTO, LOGO, OR SKETCH</span>
                 <span className="upload-hero-label upload-label-pointer">DROP YOUR PHOTO, LOGO, OR SKETCH</span>
-                <span className="upload-hero-sub">Up to {MAX_FILES} files — or describe it below. Anything works.</span>
+                <span className="upload-hero-sub">JPEG, PNG, WebP. Up to {MAX_FILES} images, 3 MB total — or describe it below.</span>
               </>
             )}
           </div>
-          {fileTooBig && (
-            <p className="cf-error" style={{ marginBottom: '0.875rem' }}>
-              That file&apos;s over 5MB. Try a smaller one — or{' '}
+          <p id="cf-upload-limit" className="cf-hint">JPEG, PNG or WebP. Maximum 3 images, 3 MB combined.</p>
+          {fileError && (
+            <p className="cf-error" role="alert" style={{ marginBottom: '0.875rem' }}>
+              {fileError} Or{' '}
               <a
                 href={WA_FILE_URL}
                 target="_blank" rel="noopener noreferrer"
@@ -486,11 +525,15 @@ export function CustomBuildFlow() {
 
           <p className="cf-upload-confidence">
             <span className="trust-diamond" aria-hidden="true">◆</span>
-            Your logo, photo, or sketch stays yours. We review it, then quote.
+            Only send references you have permission to share. Add the details you want 2T to review.
           </p>
 
+          <label htmlFor="cf-idea" className="cf-field-label">YOUR IDEA</label>
           <textarea
             id="cf-idea"
+            maxLength={TEXT_LIMITS.idea}
+            aria-invalid={errors.idea}
+            aria-describedby={errors.idea ? "cf-idea-error" : undefined}
             className="form-input"
             rows={4}
             placeholder="Describe the piece — a name, idea, reference, or anything you're imagining."
@@ -511,7 +554,7 @@ export function CustomBuildFlow() {
             </p>
           )}
           {errors.idea && (
-            <p className="cf-error">Add an idea or drop a reference — either works.</p>
+            <p id="cf-idea-error" className="cf-error" role="alert">Add an idea or drop a reference — either works.</p>
           )}
         </div>
 
@@ -527,6 +570,9 @@ export function CustomBuildFlow() {
               <label htmlFor="cf-name" className="cf-field-label">YOUR NAME</label>
               <input
                 id="cf-name"
+                maxLength={TEXT_LIMITS.name}
+                aria-invalid={errors.contact && !data.name.trim()}
+                aria-describedby={errors.contact ? "cf-contact-error" : undefined}
                 type="text"
                 className="form-input"
                 placeholder="Your name"
@@ -542,6 +588,9 @@ export function CustomBuildFlow() {
               <label htmlFor="cf-phone" className="cf-field-label">WHATSAPP OR PHONE</label>
               <input
                 id="cf-phone"
+                maxLength={TEXT_LIMITS.phone}
+                aria-invalid={errors.contact && !data.phone.trim()}
+                aria-describedby={errors.contact ? "cf-contact-error" : undefined}
                 type="tel"
                 className="form-input"
                 placeholder="Your number"
@@ -556,7 +605,7 @@ export function CustomBuildFlow() {
             </div>
           </div>
           {errors.contact && (
-            <p className="cf-error" style={{ marginTop: '-0.5rem', marginBottom: '1rem' }}>
+            <p id="cf-contact-error" className="cf-error" role="alert" style={{ marginTop: '-0.5rem', marginBottom: '1rem' }}>
               Name and phone are required.
             </p>
           )}
@@ -596,13 +645,12 @@ export function CustomBuildFlow() {
 
           <div className="custom-trust-callout" style={{ marginBottom: '1.25rem' }}>
             <span className="trust-diamond" aria-hidden="true">◆</span>
-            No deposit. No rush. We quote first.
+            Ask about the quote, timing and deposit terms before you commit.
           </div>
 
           <button
-            type="button"
+            type="submit"
             className="btn-primary"
-            onClick={handleSubmit}
             disabled={submitting}
             style={{
               width: '100%', padding: '1rem 1.5rem',
@@ -633,11 +681,12 @@ export function CustomBuildFlow() {
           </a>
 
           {submitError && (
-            <p style={{
-              color: '#c0392b', fontSize: '0.8125rem',
+            <p role="alert" style={{
+              color: '#ffb7ad', fontSize: '0.8125rem',
               marginTop: '0.875rem', lineHeight: 1.5, letterSpacing: '0.01em',
             }}>
-              Something went wrong.{' '}
+              {submitError}{' '}
+              {pendingReference && <span>Reference: {pendingReference}. </span>}
               <a
                 href={WA_CHAT_URL}
                 target="_blank" rel="noopener noreferrer"
@@ -649,7 +698,13 @@ export function CustomBuildFlow() {
           )}
         </div>
 
-      </div>
+        </fieldset>
+        {submitError && pendingReference && (
+          <button type="button" className="btn-outline-gold" disabled={submitting} onClick={() => { void handleSubmit(true) }}>
+            RETRY ORIGINAL REQUEST →
+          </button>
+        )}
+      </form>
     </section>
   )
 }
