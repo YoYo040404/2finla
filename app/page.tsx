@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Road_Rage } from 'next/font/google'
+import { brushHome as brush } from '@/data/typography'
 import Image from 'next/image'
 import Link from 'next/link'
 import { HomeHeroMotion } from '@/components/home/HomeHeroMotion'
@@ -8,7 +8,6 @@ import { HOME_MEDIA } from '@/data/homeMedia'
 import s from './home-preview.module.css'
 
 export const metadata: Metadata = { title: '2T Homepage — Design Preview', robots: { index: false, follow: false } }
-const brush = Road_Rage({ weight: '400', subsets: ['latin'], variable: '--font-home-brush', display: 'swap' })
 const WA = 'https://wa.me/14124524343?text=Hey%202T%20%E2%80%94%20I%20saw%20the%20site%20and%20want%20to%20ask%20about%20a%20piece.'
 const categories: { name: string; href: string; image?: string; marker?: 'ring' | 'bracelet' | 'earring'; large?: boolean }[] = [
   { name: 'Chains', href: '/collections/chains', image: HOME_MEDIA.anchorTiles.chains.src, large: true },
@@ -47,6 +46,7 @@ export default function HomePage() {
       <div className={s.directionRow}><div className={`${s.direction} ${s.gold}`}><span>METAL DIRECTION</span><h2>GOLD</h2><p>Details confirmed per piece.</p></div><div className={`${s.direction} ${s.silver}`}><span>METAL DIRECTION</span><h2>SILVER</h2><p>Material details confirmed per piece.</p></div></div>
       <div className={s.directionRow}><div className={`${s.direction} ${s.diamond}`}><span>STONE DIRECTION</span><h2>DIAMONDS</h2><p>Details confirmed per piece.</p></div><div className={`${s.direction} ${s.moissanite}`}><span>STONE DIRECTION</span><h2>MOISSANITE</h2><p>Stone details confirmed per piece.</p></div></div>
       <p className={s.directionFoot}>Gold or silver. Diamond or moissanite. Different shine. Different direction. <Link href="/collections">EXPLORE COLLECTIONS →</Link></p>
+      <p className={s.directionFoot}><Link href="/materials">SILVER + MOISSANITE GUIDE →</Link><Link href="/size-guide">EXPLORE SIZE + WIDTH →</Link></p>
     </section>
     <section className={s.custom} aria-labelledby="custom-title">
       <Image src={HOME_MEDIA.customVitrine.src} alt="Sketch and pendant — demo concept, not completed customer work" fill sizes="100vw" className={s.customImage} /><div className={s.customShade} aria-hidden="true" />

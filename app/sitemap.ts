@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/collections/bracelets`,       changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/collections/earrings`,        changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/about`,                       changeFrequency: 'yearly',  priority: 0.5 },
+    { url: `${base}/materials`, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/size-guide`, changeFrequency: 'monthly', priority: 0.6 },
     // /collections/best-sellers and /collections/new-arrivals are noindex — excluded from sitemap
   ]
 }

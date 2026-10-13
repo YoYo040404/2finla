@@ -1,0 +1,1 @@
+Unmodified Latin WOFF2 files from the existing verified Next.js Google Font build cache, reused to eliminate build-time Google network dependency. Families: Anton, Archivo, JetBrains Mono, Cormorant Garamond (normal/italic), Road Rage. Original SIL Open Font License files from google/fonts accompany each family. No outlines were modified.

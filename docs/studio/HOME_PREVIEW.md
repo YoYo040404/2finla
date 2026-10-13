@@ -29,3 +29,7 @@ Changes: components/home/HomeHeroMotion.tsx; app/page.tsx; app/home-preview.modu
 Native independent reviewer /root/homepage_review checked source, found pause reset and live save-data issues; Director fixed both and reviewer confirmed source correction. Source-reset state concern is out of scope because homepage source is immutable. Review is not rendered visual/playback acceptance.
 
 Local full Next build/TypeScript, scoped ESLint and diff check passed. Same-process HTTP smoke returned 200 with video, play control, demo label and preload none. Cross-process localhost failed due runtime network isolation; hostname binding workaround and same-process smoke succeeded. Existing cloud browser login block remains; desktop/mobile render, actual autoplay/pause/reduced-motion/device/network and performance remain NOT VERIFIED. No Design Lock, main merge or production release. Existing dependency security upgrade gate and real-media rights remain open.
+
+## Whole-site alignment preview
+
+Owner-authorized extension on2026-10-13 to remaining pages, Custom and a silver/moissanite guide. Current proposed experience and verification boundaries are in SITE_ALIGNMENT.md. Homepage video retained, guides linked from homepage/header/footer, common typography/font files now local. No main merge, Design Lock or production release.
