@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Road_Rage } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
+import { HomeHeroMotion } from '@/components/home/HomeHeroMotion'
 import { CategorySilhouette } from '@/components/home/CategorySilhouette'
 import { HOME_MEDIA } from '@/data/homeMedia'
 import s from './home-preview.module.css'
@@ -23,6 +24,7 @@ export default function HomePage() {
     <p className={s.notice}>PREVIEW CONCEPT — DEMO IMAGERY, NOT INVENTORY</p>
     <section className={s.hero} aria-labelledby="campaign-title">
       <Image src={HOME_MEDIA.hero.posterSrc} alt="Chain and pendant — demo concept visual, not inventory" fill sizes="100vw" preload className={s.heroImage} />
+      <HomeHeroMotion src={HOME_MEDIA.hero.videoSrc} />
       <div className={s.heroShade} aria-hidden="true" />
       <div className={s.heroContent}>
         <div className="mi-eyebrow"><span className="mi-diamond-sm" aria-hidden="true" /> PITTSBURGH · 2T JEWELERS</div>
