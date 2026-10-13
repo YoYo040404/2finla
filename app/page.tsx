@@ -37,13 +37,13 @@ export default function HomePage() {
       <div className={s.heading}><h2 id="shop-title">PICK THE PIECE.</h2><div><p>CHAINS. PENDANTS. GRILLZ. WATCHES. RINGS. BRACELETS. EARRINGS.</p><span>EXPLORE THE DIRECTION. ASK ABOUT THE DETAILS.</span></div></div>
       <div className={s.grid}>{categories.map(c => <Link key={c.name} href={c.href} className={`${s.category} ${c.large ? s.large : ''}`}>
         {c.image ? <Image src={c.image} alt={`${c.name} — demo concept visual, not inventory`} fill sizes={c.large ? '(max-width: 640px) 100vw, 50vw' : '(max-width: 640px) 50vw, (max-width: 1000px) 33vw, 20vw'} className={s.cardImage} /> : <div className={s.marker}><CategorySilhouette type={c.marker!} /></div>}
-        <div className={s.cardShade} aria-hidden="true" /><span className={s.cardNote}>{c.image ? 'DEMO VISUAL' : 'ILLUSTRATION · PHOTO PENDING'}</span>
+        <div className={s.cardShade} aria-hidden="true" /><span className={s.cardNote}>{c.image ? 'DEMO VISUAL' : 'CATEGORY ILLUSTRATION'}</span>
         <div className={s.cardText}><h3>{c.name}</h3><span>EXPLORE {c.name.toUpperCase()} →</span></div>
       </Link>)}</div>
     </section>
     <section className={s.directions} aria-label="Equal material and stone directions">
-      <div className={s.directionRow}><Link href="/collections" className={`${s.direction} ${s.gold}`}><span>METAL DIRECTION</span><h2>GOLD</h2><p>Details confirmed per piece.</p></Link><Link href="/collections" className={`${s.direction} ${s.silver}`}><span>METAL DIRECTION</span><h2>SILVER</h2><p>925 Sterling Silver</p></Link></div>
-      <div className={s.directionRow}><Link href="/collections" className={`${s.direction} ${s.diamond}`}><span>STONE DIRECTION</span><h2>DIAMONDS</h2><p>Details confirmed per piece.</p></Link><Link href="/collections" className={`${s.direction} ${s.moissanite}`}><span>STONE DIRECTION</span><h2>MOISSANITE</h2><p>D-color VVS Moissanite</p></Link></div>
+      <div className={s.directionRow}><div className={`${s.direction} ${s.gold}`}><span>METAL DIRECTION</span><h2>GOLD</h2><p>Details confirmed per piece.</p></div><div className={`${s.direction} ${s.silver}`}><span>METAL DIRECTION</span><h2>SILVER</h2><p>Material details confirmed per piece.</p></div></div>
+      <div className={s.directionRow}><div className={`${s.direction} ${s.diamond}`}><span>STONE DIRECTION</span><h2>DIAMONDS</h2><p>Details confirmed per piece.</p></div><div className={`${s.direction} ${s.moissanite}`}><span>STONE DIRECTION</span><h2>MOISSANITE</h2><p>Stone details confirmed per piece.</p></div></div>
       <p className={s.directionFoot}>Gold or silver. Diamond or moissanite. Different shine. Different direction. <Link href="/collections">EXPLORE COLLECTIONS →</Link></p>
     </section>
     <section className={s.custom} aria-labelledby="custom-title">
@@ -52,7 +52,7 @@ export default function HomePage() {
         <ol className={s.steps}><li><span>01</span><h3>SEND THE IDEA</h3><p>A photo, sketch<br />or inspiration.</p></li><li><span>02</span><h3>CHOOSE THE DIRECTION</h3><p>Metal. Stone.<br />Your kind of shine.</p></li><li><span>03</span><h3>TALK THROUGH THE DETAILS</h3><p>We review the idea.<br />We quote first.</p></li></ol>
       </div><span className={s.imageNote}>DEMO CONCEPT VISUAL</span>
     </section>
-    <section className={s.social} aria-labelledby="social-title"><div><h2 id="social-title">@2TJEWELERS</h2><p>APPROVED INSTAGRAM<br />MEDIA PENDING</p></div><div className={s.filmstrip} aria-hidden="true"><span /><span /><span /><span /><span /><span /></div><a href="https://www.instagram.com/2tjewelers/" target="_blank" rel="noopener noreferrer" className={s.socialLink}>SEE THE SHOP<br />ON INSTAGRAM →</a></section>
+    <section className={s.social} aria-labelledby="social-title"><div><h2 id="social-title">@2TJEWELERS</h2><p>CONNECT WITH 2T<br />ON INSTAGRAM</p></div><a href="https://www.instagram.com/2tjewelers/" target="_blank" rel="noopener noreferrer" className={s.socialLink}>OPEN INSTAGRAM →</a></section>
     <section className={s.contact} aria-labelledby="pittsburgh-title"><div><div className="mi-eyebrow"><span className="mi-diamond-sm" aria-hidden="true" /> COME THROUGH</div><h2 id="pittsburgh-title">PITTSBURGH.</h2><span className={`bang-signature ${s.contactBang}`}>BANG.</span></div><div className={s.address}><p>332 FIFTH AVE.<br />PITTSBURGH, PA 15222</p><a href="tel:+14122817072">CALL THE STORE · 412-281-7072 →</a></div><a href={WA} target="_blank" rel="noopener noreferrer" className="btn-outline-gold">TEXT 2T ON WHATSAPP →</a></section>
   </div>
 }
